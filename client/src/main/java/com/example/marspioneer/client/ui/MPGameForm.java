@@ -1,10 +1,10 @@
 package com.example.marspioneer.client.ui;
 
 import com.example.marspioneer.client.MPClient;
+import com.example.marspioneer.client.stubs.BuildSandPit;
 import com.example.marspioneer.client.stubs.Stubs;
-import com.example.marspioneer.proto.BuildFarmRequest;
-import com.example.marspioneer.proto.GetStateRequest;
-import com.example.marspioneer.proto.GetStateResponse;
+import com.example.marspioneer.model.MPEntity;
+import com.example.marspioneer.proto.*;
 import com.neovisionaries.ws.client.WebSocketException;
 
 import javax.swing.*;
@@ -14,6 +14,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MPGameForm extends JFrame {
 
@@ -137,6 +138,73 @@ public class MPGameForm extends JFrame {
                         webSocketException.printStackTrace();
                     }
                 }
+                else if (e.getKeyCode() == KeyEvent.VK_M) {
+                    BuildMineRequest request = BuildMineRequest.newBuilder()
+                            .setPosition(client.getSelectedCellPosition().toProto())
+                            .setWorldSessionID(client.getWorldSessionID())
+                            .build();
+                    try {
+                        Stubs.Actions.getBuildMineStub(client).send(request.toByteArray());
+                    } catch (WebSocketException | IOException webSocketException) {
+                        webSocketException.printStackTrace();
+                    }
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_W) {
+                    BuildWellRequest request = BuildWellRequest.newBuilder()
+                            .setPosition(client.getSelectedCellPosition().toProto())
+                            .setWorldSessionID(client.getWorldSessionID())
+                            .build();
+                    try {
+                        Stubs.Actions.getBuildWellStub(client).send(request.toByteArray());
+                    } catch (WebSocketException | IOException webSocketException) {
+                        webSocketException.printStackTrace();
+                    }
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_S) {
+                    BuildSandPitRequest request = BuildSandPitRequest.newBuilder()
+                            .setPosition(client.getSelectedCellPosition().toProto())
+                            .setWorldSessionID(client.getWorldSessionID())
+                            .build();
+                    try {
+                        Stubs.Actions.getBuildSandPitStub(client).send(request.toByteArray());
+                    } catch (WebSocketException | IOException webSocketException) {
+                        webSocketException.printStackTrace();
+                    }
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_H) {
+                    BuildHubRequest request = BuildHubRequest.newBuilder()
+                            .setPosition(client.getSelectedCellPosition().toProto())
+                            .setWorldSessionID(client.getWorldSessionID())
+                            .build();
+                    try {
+                        Stubs.Actions.getBuildHubStub(client).send(request.toByteArray());
+                    } catch (WebSocketException | IOException webSocketException) {
+                        webSocketException.printStackTrace();
+                    }
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_DELETE) {
+
+                    String entityToDeleteID = null;
+
+                    for (Map.Entry<String, MPEntityProto> entry : client.getEntities().entrySet()) {
+                        if (entry.getValue().getPosition().toObject().equals(client.getSelectedCellPosition())) {
+                            entityToDeleteID = entry.getValue().getId();
+                        }
+                    }
+
+                    if (entityToDeleteID != null) {
+                        SellBuildingRequest request = SellBuildingRequest.newBuilder()
+                                .setBuildingID(entityToDeleteID)
+                                .setWorldSessionID(client.getWorldSessionID())
+                                .build();
+                        try {
+                            Stubs.Actions.getSellBuildingStub(client).send(request.toByteArray());
+                        } catch (WebSocketException | IOException webSocketException) {
+                            webSocketException.printStackTrace();
+                        }
+                    }
+                }
+
 
                 gameCanvas.repaint();
 

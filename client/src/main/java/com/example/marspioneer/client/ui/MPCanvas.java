@@ -30,6 +30,10 @@ public class MPCanvas extends Canvas {
     private final Image LAVA = Toolkit.getDefaultToolkit().getImage("client/res/lava.jpg");
     private final Image STONE = Toolkit.getDefaultToolkit().getImage("client/res/stone.jpg");
 
+    private final Image UI_RED = Toolkit.getDefaultToolkit().getImage("client/res/ui-red.png");
+    private final Image UI_GREEN = Toolkit.getDefaultToolkit().getImage("client/res/ui-green.png");
+    private final Image UI_BLUE = Toolkit.getDefaultToolkit().getImage("client/res/ui-blue.png");
+
     private final MPTerrainGenerator terrainGenerator;
 
     private final int DEFAULT_CELL_SIZE = 30;
@@ -74,6 +78,7 @@ public class MPCanvas extends Canvas {
         printUnloadedCells(g);
         printLoadedCells(g);
         printEntities(g);
+        printUI(g);
         printViewportData(g);
     }
 
@@ -112,17 +117,12 @@ public class MPCanvas extends Canvas {
                 g.drawImage(image, positionX, positionY, cellSize, cellSize, MPCanvas.this);
             }
 
-            if (cell.getPosition().getRow() == client.getSelectedCellPosition().getRow() && cell.getPosition().getCol() == client.getSelectedCellPosition().getCol()) {
-                g2d.setColor(Color.WHITE);
-                g2d.setStroke(new BasicStroke(3));
-                g2d.drawRect(positionX, positionY, cellSize, cellSize);
-            }
-
         }
 
         Color fogOfWarColor = new Color(0, 0, 0, 150);
         g2d.setColor(fogOfWarColor);
         g2d.fillRect(0, 0, canvasWidth, canvasHeight);
+
     }
 
     private void printLoadedCells(Graphics g) {
@@ -159,14 +159,8 @@ public class MPCanvas extends Canvas {
             if (image != null) {
                 g.drawImage(image, positionX, positionY, cellSize, cellSize, MPCanvas.this);
             }
-
-            if (cell.getPosition().getRow() == client.getSelectedCellPosition().getRow() && cell.getPosition().getCol() == client.getSelectedCellPosition().getCol()) {
-                g2d.setColor(Color.WHITE);
-                g2d.setStroke(new BasicStroke(3));
-                g2d.drawRect(positionX, positionY, cellSize, cellSize);
-            }
-
         }
+
     }
 
     private void printEntities(Graphics g) {
@@ -202,6 +196,22 @@ public class MPCanvas extends Canvas {
             }
 
         }
+    }
+
+    public void printUI(Graphics g) {
+
+        Graphics2D g2d = (Graphics2D) g;
+
+        final int posSelectX = (canvasWidth / 2 - client.getCameraPosition().getCol() * cellSize + client.getSelectedCellPosition().getCol() * cellSize) - cellSize / 2;
+        final int posSelectY = (canvasHeight / 2 - client.getCameraPosition().getRow() * cellSize + client.getSelectedCellPosition().getRow() * cellSize) - cellSize / 2;
+        g2d.setColor(Color.WHITE);
+        g2d.setStroke(new BasicStroke(3));
+        g2d.drawRect(posSelectX, posSelectY, cellSize, cellSize);
+
+//        Image uiImage;
+//        switch (client)
+//        uiImage = UI_RED;
+//        g.drawImage(uiImage, 0, 0, canvasWidth, canvasHeight, null);
     }
 
     public void printViewportData(Graphics g) {
