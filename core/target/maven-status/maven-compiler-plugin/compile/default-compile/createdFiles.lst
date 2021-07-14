@@ -295,6 +295,7 @@ com\example\marspioneer\proto\DeAuthenticateRequestOrBuilder.class
 com\example\marspioneer\proto\UpdateWorldResponse$Builder.class
 com\example\marspioneer\model\GeoPosition.class
 com\example\marspioneer\proto\AuthenticateResponse$1.class
+com\example\marspioneer\proto\ResourceSetProto.class
 com\example\marspioneer\proto\UpdatePlayerResponseOrBuilder.class
 com\example\marspioneer\proto\UpdateBuildingTypeRequest.class
 com\example\marspioneer\proto\AddPlayerToTeamRequestOrBuilder.class
@@ -326,6 +327,7 @@ com\example\marspioneer\proto\DeleteBuildingTypeRequest$1.class
 com\example\marspioneer\proto\MPPlayerProto$1.class
 com\example\marspioneer\proto\AuthenticateResponse$Status$1.class
 com\example\marspioneer\proto\GetPlayerRequest.class
+com\example\marspioneer\proto\ResourceSetProto$1.class
 com\example\marspioneer\proto\CreateWorldResponse$1.class
 com\example\marspioneer\proto\GetBuildingTypeResponse$Status$1.class
 com\example\marspioneer\proto\MPPartialStateProto$1.class
@@ -357,7 +359,9 @@ com\example\marspioneer\model\MPWorld.class
 com\example\marspioneer\proto\GetStateResponse.class
 com\example\marspioneer\proto\DeleteTeamResponse$Status$1.class
 com\example\marspioneer\proto\MPActionProto.class
+com\example\marspioneer\model\ResourceSet.class
 com\example\marspioneer\proto\RemovePlayerFromTeamResponse$1.class
+com\example\marspioneer\proto\ResourceSetProtoOrBuilder.class
 com\example\marspioneer\proto\UpdatePlayerRequest.class
 com\example\marspioneer\proto\RemovePlayerFromTeamRequest$Builder.class
 com\example\marspioneer\proto\WellResearchLevel$1.class
@@ -432,6 +436,7 @@ com\example\marspioneer\proto\BuildingEntityProto$1.class
 com\example\marspioneer\proto\RemovePlayerFromTeamRequest$1.class
 com\example\marspioneer\proto\UnsubscribeResponse$Status.class
 com\example\marspioneer\proto\BuildWellProto$Builder.class
+com\example\marspioneer\proto\ResourceSetProto$Builder.class
 com\example\marspioneer\proto\ListTeamPlayersResponseOrBuilder.class
 com\example\marspioneer\proto\DeletePlayerResponse$Status.class
 com\example\marspioneer\proto\BuildFarmRequest.class

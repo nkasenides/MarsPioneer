@@ -6,6 +6,7 @@
 package com.example.marspioneer.client.websocket;
 
 import com.example.marspioneer.client.MPClient;
+import com.example.marspioneer.proto.BuildResponse;
 import com.example.marspioneer.proto.SellBuildingResponse;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.neovisionaries.ws.client.WebSocketException;
@@ -29,12 +30,17 @@ public class SellBuildingStub extends BinaryWebSocketClient {
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-            //TODO - Handle exception
+            client.getGameCanvas().showMessage(e.getMessage());
         }
     }
     
     public void handleResponse(SellBuildingResponse response) {
-        //TODO - Implement handling of the response.
+        if (response.getStatus() == SellBuildingResponse.Status.OK) {
+            System.out.println("Building sold by " + client.getWorldSessionID());
+        } else {
+            client.getGameCanvas().showMessage(response.getMessage());
+            System.err.println(response.getMessage());
+        }
     }
 
 }

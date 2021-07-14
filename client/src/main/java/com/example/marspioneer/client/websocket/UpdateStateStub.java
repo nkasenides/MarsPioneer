@@ -29,15 +29,25 @@ public class UpdateStateStub extends BinaryWebSocketClient {
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-            //TODO - Handle exception
         }
     }
     
     public void handleResponse(UpdateStateResponse response) {
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
             System.out.println("State update received.");
+
+            client.getEntities().clear();
+            client.getStateCells().clear();
+
+//            System.out.println("Entities: " + response.getPartialState().getEntitiesMap().size());
             client.getEntities().putAll(response.getPartialState().getEntitiesMap());
+//            System.out.println("Cells: " + response.getPartialState().getCellsMap().size());
             client.getStateCells().putAll(response.getPartialState().getCellsMap());
+
+            client.getPlayerResourceSet().setFood(response.getResourceSet().getFood());
+            client.getPlayerResourceSet().setSand(response.getResourceSet().getSand());
+            client.getPlayerResourceSet().setMetal(response.getResourceSet().getMetal());
+            client.getPlayerResourceSet().setWater(response.getResourceSet().getWater());
             client.getGameCanvas().repaint();
         } else {
             System.err.println(response.getMessage());

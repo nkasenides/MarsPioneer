@@ -12,18 +12,26 @@ option java_multiple_files = true;
 //-- CUSTOM TYPES
 
 message BuildingTypeProto {
-  int32 waterCost = 1;
-  int32 metalCost = 2;
-  int32 waterOutput = 3;
-  repeated EBuildingType prerequisites = 4;
-  int32 areaOfInterest = 5;
-  int32 sandOutput = 6;
-  int32 buildLimit = 7;
-  int32 foodOutput = 8;
-  EBuildingType type = 9;
-  int32 foodCost = 10;
-  int32 metalOutput = 11;
-  int32 citizenAddition = 12;
+  int32 waterOutput = 1;
+  int32 areaOfInterest = 2;
+  int32 buildLimit = 3;
+  int32 foodOutput = 4;
+  int32 sandCost = 5;
+  EBuildingType type = 6;
+  int32 metalOutput = 7;
+  int32 citizenAddition = 8;
+  int32 waterCost = 9;
+  int32 metalCost = 10;
+  repeated EBuildingType prerequisites = 11;
+  int32 sandOutput = 12;
+  int32 foodCost = 13;
+}
+
+message ResourceSetProto {
+  int32 sand = 1;
+  int32 metal = 2;
+  int32 water = 3;
+  int32 food = 4;
 }
 
 //--------------------------------------------------------------------------------
@@ -137,20 +145,20 @@ enum WorldType {
 
 message MPGameSessionProto {
   string ipAddress = 1;
-  MatrixPositionProto cameraPosition = 2;
-  uint64 expiresOn = 3;
-  string id = 4;
-  uint64 createdOn = 5;
-  string playerID = 6;
+  uint64 expiresOn = 2;
+  string id = 3;
+  uint64 createdOn = 4;
+  string playerID = 5;
 }
 
 message MPWorldSessionProto {
   string worldID = 1;
   string ipAddress = 2;
-  uint64 expiresOn = 3;
-  string id = 4;
-  uint64 createdOn = 5;
-  string playerID = 6;
+  MatrixPositionProto cameraPosition = 3;
+  uint64 expiresOn = 4;
+  string id = 5;
+  uint64 createdOn = 6;
+  string playerID = 7;
 }
 
 message MPPlayerProto {
@@ -174,8 +182,9 @@ message MPTeamProto {
   TeamColor color = 1;
   string name = 2;
   string id = 3;
-  repeated string playerIDs = 4;
-  uint32 playerLimit = 5;
+  string ownerID = 4;
+  repeated string playerIDs = 5;
+  uint32 playerLimit = 6;
 }
 
 //- Entities:
@@ -259,8 +268,9 @@ message MPWorldProto {
   string name = 4;
   repeated string chunkIDs = 5;
   string id = 6;
-  uint64 createdOn = 7;
-  sint64 maxCols = 8;
+  string ownerID = 7;
+  uint64 createdOn = 8;
+  sint64 maxCols = 9;
 }
 
 //--------------------------------------------------------------------------------
@@ -529,11 +539,12 @@ message Response {
 
 message AuthenticateResponse {
   enum Status {
-    BAD_CREDENTIALS = 0;
-    OK = 1;
-    NO_SUCH_PLAYER = 2;
-    PLAYER_BANNED = 3;
-    UNKNOWN_ERROR = 4;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    BAD_CREDENTIALS = 2;
+    OK = 3;
+    NO_SUCH_PLAYER = 4;
+    PLAYER_BANNED = 5;
   }
   string message = 1;
   MPGameSessionProto gameSession = 2;
@@ -542,9 +553,10 @@ message AuthenticateResponse {
 
 message DeAuthenticateResponse {
   enum Status {
-    OK = 0;
-    NO_SUCH_GAME_SESSION = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    OK = 2;
+    NO_SUCH_GAME_SESSION = 3;
   }
   string message = 1;
   Status status = 2;
@@ -564,12 +576,14 @@ message ListBuildingTypesResponse {
 
 message AddPlayerToTeamResponse {
   enum Status {
-    PLAYER_ALREADY_IN_TEAM = 0;
-    TEAM_FULL = 1;
-    OK = 2;
-    NO_SUCH_PLAYER = 3;
-    NO_SUCH_TEAM = 4;
-    UNKNOWN_ERROR = 5;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    PLAYER_ALREADY_IN_TEAM = 3;
+    TEAM_FULL = 4;
+    OK = 5;
+    NO_SUCH_PLAYER = 6;
+    NO_SUCH_TEAM = 7;
   }
   string message = 1;
   Status status = 2;
@@ -577,12 +591,11 @@ message AddPlayerToTeamResponse {
 
 message CreateWorldResponse {
   enum Status {
-    INVALID_SEED = 0;
-    INVALID_WORLD_NAME = 1;
-    WORLD_EXISTS = 2;
-    OK = 3;
-    NO_SUCH_GAME_SESSION = 4;
-    UNKNOWN_ERROR = 5;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    WORLD_EXISTS = 3;
+    OK = 4;
   }
   MPWorldProto world = 1;
   string message = 2;
@@ -613,10 +626,12 @@ message DeleteBuildingTypeResponse {
 
 message UpdatePlayerResponse {
   enum Status {
-    CANNOT_UPDATE_PLAYER = 0;
-    OK = 1;
-    NO_SUCH_PLAYER = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    CANNOT_UPDATE_PLAYER = 3;
+    OK = 4;
+    NO_SUCH_PLAYER = 5;
   }
   string message = 1;
   Status status = 2;
@@ -624,11 +639,12 @@ message UpdatePlayerResponse {
 
 message DeleteWorldResponse {
   enum Status {
-    NO_SUCH_WORLD = 0;
-    CANNOT_DELETE_WORLD = 1;
-    OK = 2;
-    NO_SUCH_GAME_SESSION = 3;
-    UNKNOWN_ERROR = 4;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    NO_SUCH_WORLD = 3;
+    CANNOT_DELETE_WORLD = 4;
+    OK = 5;
   }
   string message = 1;
   Status status = 2;
@@ -649,9 +665,11 @@ message CreateBuildingTypeResponse {
 
 message UnsubscribeResponse {
   enum Status {
-    NO_SUCH_WORLD_SESSION = 0;
-    OK = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    NO_SUCH_WORLD_SESSION = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    OK = 4;
   }
   string message = 1;
   Status status = 2;
@@ -659,9 +677,11 @@ message UnsubscribeResponse {
 
 message GetPlayerResponse {
   enum Status {
-    OK = 0;
-    NO_SUCH_PLAYER = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    OK = 3;
+    NO_SUCH_PLAYER = 4;
   }
   string message = 1;
   MPPlayerProto player = 2;
@@ -670,20 +690,25 @@ message GetPlayerResponse {
 
 message ListTeamPlayersResponse {
   enum Status {
-    NO_PLAYERS = 0;
-    OK = 1;
-    NO_SUCH_TEAM = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    NO_PLAYERS = 3;
+    OK = 4;
+    NO_SUCH_TEAM = 5;
   }
-  string message = 1;
-  Status status = 2;
+  repeated MPPlayerProto players = 1;
+  string message = 2;
+  Status status = 3;
 }
 
 message GetTeamResponse {
   enum Status {
-    OK = 0;
-    NO_SUCH_TEAM = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    OK = 3;
+    NO_SUCH_TEAM = 4;
   }
   MPTeamProto team = 1;
   string message = 2;
@@ -692,10 +717,11 @@ message GetTeamResponse {
 
 message ListWorldsResponse {
   enum Status {
-    NO_WORLDS = 0;
-    OK = 1;
-    NO_SUCH_GAME_SESSION = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    NO_WORLDS = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    OK = 4;
   }
   repeated MPWorldProto worlds = 1;
   string message = 2;
@@ -704,11 +730,12 @@ message ListWorldsResponse {
 
 message UpdateWorldResponse {
   enum Status {
-    NO_SUCH_WORLD = 0;
-    CANNOT_UPDATE_WORLD = 1;
-    OK = 2;
-    NO_SUCH_GAME_SESSION = 3;
-    UNKNOWN_ERROR = 4;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    NO_SUCH_WORLD = 3;
+    CANNOT_UPDATE_WORLD = 4;
+    OK = 5;
   }
   string message = 1;
   Status status = 2;
@@ -716,10 +743,12 @@ message UpdateWorldResponse {
 
 message UpdateTeamResponse {
   enum Status {
-    CANNOT_UPDATE_TEAM = 0;
-    OK = 1;
-    NO_SUCH_TEAM = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    CANNOT_UPDATE_TEAM = 3;
+    OK = 4;
+    NO_SUCH_TEAM = 5;
   }
   string message = 1;
   Status status = 2;
@@ -727,9 +756,11 @@ message UpdateTeamResponse {
 
 message ListTeamsResponse {
   enum Status {
-    OK = 0;
-    NO_TEAMS = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    OK = 3;
+    NO_TEAMS = 4;
   }
   repeated MPTeamProto teams = 1;
   string message = 2;
@@ -738,13 +769,14 @@ message ListTeamsResponse {
 
 message JoinWorldResponse {
   enum Status {
-    NO_SUCH_WORLD = 0;
-    CANNOT_COMPOSE_STATE = 1;
-    OK = 2;
-    NO_SUCH_GAME_SESSION = 3;
-    WORLD_FULL = 4;
-    PLAYER_BANNED = 5;
-    UNKNOWN_ERROR = 6;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    NO_SUCH_WORLD = 3;
+    CANNOT_COMPOSE_STATE = 4;
+    OK = 5;
+    WORLD_FULL = 6;
+    PLAYER_BANNED = 7;
   }
   MPPartialStateProto partialState = 1;
   MPWorldProto world = 2;
@@ -756,9 +788,11 @@ message JoinWorldResponse {
 message DeletePlayerResponse {
   enum Status {
     CANNOT_DELETE_PLAYER = 0;
-    OK = 1;
-    NO_SUCH_PLAYER = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    OK = 4;
+    NO_SUCH_PLAYER = 5;
   }
   string message = 1;
   Status status = 2;
@@ -766,11 +800,13 @@ message DeletePlayerResponse {
 
 message RemovePlayerFromTeamResponse {
   enum Status {
-    OK = 0;
-    NO_SUCH_PLAYER = 1;
-    PLAYER_NOT_IN_TEAM = 2;
-    NO_SUCH_TEAM = 3;
-    UNKNOWN_ERROR = 4;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    OK = 3;
+    NO_SUCH_PLAYER = 4;
+    PLAYER_NOT_IN_TEAM = 5;
+    NO_SUCH_TEAM = 6;
   }
   string message = 1;
   Status status = 2;
@@ -778,10 +814,11 @@ message RemovePlayerFromTeamResponse {
 
 message BuildResponse {
   enum Status {
-    INVALID_LOCATION = 0;
-    INSUFFICIENT_FUNDS = 1;
-    CANNOT_BUILD = 2;
-    OK = 3;
+    INVALID_WORLD_SESSION = 0;
+    INVALID_LOCATION = 1;
+    INSUFFICIENT_FUNDS = 2;
+    CANNOT_BUILD = 3;
+    OK = 4;
   }
   string message = 1;
   Status status = 2;
@@ -789,34 +826,42 @@ message BuildResponse {
 
 message GetStateResponse {
   enum Status {
-    NO_SUCH_WORLD_SESSION = 0;
-    CANNOT_COMPOSE_STATE = 1;
-    OK = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    NO_SUCH_WORLD_SESSION = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    CANNOT_COMPOSE_STATE = 4;
+    OK = 5;
   }
   MPPartialStateProto partialState = 1;
-  string message = 2;
-  Status status = 3;
+  ResourceSetProto resourceSet = 2;
+  string message = 3;
+  Status status = 4;
 }
 
 message UpdateStateResponse {
   enum Status {
-    NO_SUCH_WORLD_SESSION = 0;
-    CANNOT_COMPOSE_STATE = 1;
-    OK = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    NO_SUCH_WORLD_SESSION = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    CANNOT_COMPOSE_STATE = 4;
+    OK = 5;
   }
   MPPartialStateProto partialState = 1;
-  string message = 2;
-  Status status = 3;
+  ResourceSetProto resourceSet = 2;
+  string message = 3;
+  Status status = 4;
 }
 
 message SubscribeResponse {
   enum Status {
-    NO_SUCH_WORLD_SESSION = 0;
-    CANNOT_COMPOSE_STATE = 1;
-    OK = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    NO_SUCH_WORLD_SESSION = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    CANNOT_COMPOSE_STATE = 4;
+    OK = 5;
   }
   MPPartialStateProto partialState = 1;
   string message = 2;
@@ -825,10 +870,10 @@ message SubscribeResponse {
 
 message CreatePlayerResponse {
   enum Status {
-    INVALID_NAME = 0;
-    OK = 1;
-    PLAYER_EXISTS = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    OK = 2;
+    PLAYER_EXISTS = 3;
   }
   string message = 1;
   MPPlayerProto player = 2;
@@ -837,10 +882,11 @@ message CreatePlayerResponse {
 
 message GetWorldResponse {
   enum Status {
-    NO_SUCH_WORLD = 0;
-    OK = 1;
-    NO_SUCH_GAME_SESSION = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    NO_SUCH_WORLD = 3;
+    OK = 4;
   }
   MPWorldProto world = 1;
   string message = 2;
@@ -861,10 +907,12 @@ message UpdateBuildingTypeResponse {
 
 message DeleteTeamResponse {
   enum Status {
-    CANNOT_DELETE_TEAM = 0;
-    OK = 1;
-    NO_SUCH_TEAM = 2;
-    UNKNOWN_ERROR = 3;
+    SERVER_ERROR = 0;
+    CANNOT_DELETE_TEAM = 1;
+    INVALID_DATA = 2;
+    NOT_AUTHORIZED = 3;
+    OK = 4;
+    NO_SUCH_TEAM = 5;
   }
   string message = 1;
   Status status = 2;
@@ -872,9 +920,10 @@ message DeleteTeamResponse {
 
 message LeaveWorldResponse {
   enum Status {
-    NO_SUCH_WORLD_SESSION = 0;
-    OK = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    OK = 3;
   }
   string message = 1;
   Status status = 2;
@@ -894,9 +943,11 @@ message GetBuildingTypeResponse {
 
 message ListPlayersResponse {
   enum Status {
-    NO_PLAYERS = 0;
-    OK = 1;
-    UNKNOWN_ERROR = 2;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    NO_PLAYERS = 3;
+    OK = 4;
   }
   repeated MPPlayerProto players = 1;
   string message = 2;
@@ -905,11 +956,11 @@ message ListPlayersResponse {
 
 message CreateTeamResponse {
   enum Status {
-    NOT_AUTHORIZED = 0;
-    TEAM_EXISTS = 1;
-    INVALID_NAME = 2;
-    OK = 3;
-    UNKNOWN_ERROR = 4;
+    SERVER_ERROR = 0;
+    INVALID_DATA = 1;
+    NOT_AUTHORIZED = 2;
+    TEAM_EXISTS = 3;
+    OK = 4;
   }
   MPTeamProto team = 1;
   string message = 2;

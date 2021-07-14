@@ -33,6 +33,8 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
     private MatrixPosition cameraPosition;
     private MatrixPosition selectedCellPosition = new MatrixPosition();
 
+    private ResourceSet playerResourceSet;
+
     private String playerName;
     private String worldID;
     private MPCanvas gameCanvas;
@@ -72,6 +74,14 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
 
     public void setGeneratedCells(HashMap<String, MPTerrainCellProto> generatedCells) {
         this.generatedCells = generatedCells;
+    }
+
+    public ResourceSet getPlayerResourceSet() {
+        return playerResourceSet;
+    }
+
+    public void setPlayerResourceSet(ResourceSet playerResourceSet) {
+        this.playerResourceSet = playerResourceSet;
     }
 
     public String getWorldSessionID() {
@@ -276,6 +286,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                         System.out.println("Initial state retrieved for player '" + player.getName() + "'.");
                                         setStateCells(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
                                         setEntities(new HashMap<>(getStateResponse.getPartialState().getEntitiesMap()));
+                                        setPlayerResourceSet(getStateResponse.getResourceSet().toObject());
                                         selectedCellPosition = getStateResponse.getPartialState().getWorldSession().getCameraPosition().toObject();
                                         try {
                                             final UpdateStateStub updateStateStub = Stubs.getUpdateStateStub(this);

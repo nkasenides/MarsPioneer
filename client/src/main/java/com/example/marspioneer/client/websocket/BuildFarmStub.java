@@ -29,7 +29,7 @@ public class BuildFarmStub extends BinaryWebSocketClient {
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-            //TODO - Handle exception
+            client.getGameCanvas().showMessage(e.getMessage());
         }
     }
     
@@ -37,6 +37,7 @@ public class BuildFarmStub extends BinaryWebSocketClient {
         if (response.getStatus() == BuildResponse.Status.OK) {
             System.out.println("Farm built by " + client.getWorldSessionID());
         } else {
+            client.getGameCanvas().showMessage(response.getMessage());
             System.err.println(response.getMessage());
         }
     }

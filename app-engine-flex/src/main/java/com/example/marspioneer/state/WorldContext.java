@@ -232,7 +232,6 @@ public class WorldContext {
                 .build();
     }
 
-    //TODO - ADD THIS FUNCTION TO FRAMEWORK
     /**
      * Composes a state update.
      * @param worldSession The world session to compose the state for.

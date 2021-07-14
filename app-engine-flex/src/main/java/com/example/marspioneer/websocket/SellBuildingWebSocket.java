@@ -88,6 +88,14 @@ public class SellBuildingWebSocket {
         //Retrieve the building:
         final BuildingEntity building = DBManager.buildingEntity.get(request.getBuildingID());
 
+        if (building == null) {
+            send(SellBuildingResponse.newBuilder()
+                    .setStatus(SellBuildingResponse.Status.CANNOT_SELL)
+                    .setMessage("NO_BUILDING_HERE")
+                    .build());
+            return;
+        }
+
         //Check if current player is the owner:
         if (!building.getPlayerID().equals(player.getId())) {
             send(SellBuildingResponse.newBuilder()

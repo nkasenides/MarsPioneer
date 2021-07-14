@@ -16,32 +16,47 @@ public interface GetStateResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    * @return The partialState.
    */
-  com.example.marspioneer.proto.MPPartialStateProto getPartialState();
+  MPPartialStateProto getPartialState();
   /**
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    */
-  com.example.marspioneer.proto.MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
+  MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
 
   /**
-   * <code>string message = 2;</code>
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
+   * @return Whether the resourceSet field is set.
+   */
+  boolean hasResourceSet();
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
+   * @return The resourceSet.
+   */
+  com.example.marspioneer.proto.ResourceSetProto getResourceSet();
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
+   */
+  com.example.marspioneer.proto.ResourceSetProtoOrBuilder getResourceSetOrBuilder();
+
+  /**
+   * <code>string message = 3;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
-   * <code>string message = 2;</code>
+   * <code>string message = 3;</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();
 
   /**
-   * <code>.com.example.marspioneer.proto.GetStateResponse.Status status = 3;</code>
+   * <code>.com.example.marspioneer.proto.GetStateResponse.Status status = 4;</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.com.example.marspioneer.proto.GetStateResponse.Status status = 3;</code>
+   * <code>.com.example.marspioneer.proto.GetStateResponse.Status status = 4;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.GetStateResponse.Status getStatus();
+  GetStateResponse.Status getStatus();
 }

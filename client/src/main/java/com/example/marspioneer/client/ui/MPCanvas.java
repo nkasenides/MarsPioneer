@@ -3,10 +3,13 @@ package com.example.marspioneer.client.ui;
 import com.example.marspioneer.client.MPClient;
 import com.example.marspioneer.generation.MPTerrainGenerator;
 import com.example.marspioneer.model.MPTerrainCell;
+import com.example.marspioneer.model.MatrixPosition;
 import com.example.marspioneer.proto.MPEntityProto;
 import com.example.marspioneer.proto.MPTerrainCellProto;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +44,8 @@ public class MPCanvas extends Canvas {
     private final int MAX_CELL_SIZE = 50;
     private final int CELL_SIZE_CHANGE = 5;
     private int cellSize = DEFAULT_CELL_SIZE;
+
+    String message = "";
 
     private final MPClient client;
 
@@ -80,6 +85,24 @@ public class MPCanvas extends Canvas {
         printEntities(g);
         printUI(g);
         printViewportData(g);
+
+        addMouseListener(new MouseAdapter() {
+
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                int x = e.getX();
+                int y = e.getY();
+
+                int col = (int) Math.floor((x * (canvasWidth / cellSize)) / canvasWidth - (canvasWidth / cellSize / 2) + client.getCameraPosition().getCol());
+                int row = (int) Math.floor((y * (canvasHeight / cellSize)) / canvasHeight - (canvasHeight / cellSize / 2) + client.getCameraPosition().getRow());
+
+                client.getSelectedCellPosition().setRow(row);
+                client.getSelectedCellPosition().setCol(col);
+                repaint();
+            }
+        });
+
     }
 
     private void printUnloadedCells(Graphics g) {
@@ -208,6 +231,13 @@ public class MPCanvas extends Canvas {
         g2d.setStroke(new BasicStroke(3));
         g2d.drawRect(posSelectX, posSelectY, cellSize, cellSize);
 
+        g2d.drawString("Food: " + client.getPlayerResourceSet().getFood(), 10, 100);
+        g2d.drawString("Sand: " + client.getPlayerResourceSet().getFood(), 10, 125);
+        g2d.drawString("Water: " + client.getPlayerResourceSet().getFood(), 10, 150);
+        g2d.drawString("Metal: " + client.getPlayerResourceSet().getFood(), 10, 175);
+
+        g2d.drawString(message, canvasWidth / 2 - 100, canvasHeight / 2 + 200);
+
 //        Image uiImage;
 //        switch (client)
 //        uiImage = UI_RED;
@@ -256,6 +286,19 @@ public class MPCanvas extends Canvas {
         if (cellSize - CELL_SIZE_CHANGE >= MIN_CELL_SIZE) {
             cellSize -= CELL_SIZE_CHANGE;
         }
+    }
+
+    public void showMessage(String message) {
+        this.message = message;
+        repaint();
+        new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            MPCanvas.this.message = "";
+        }).start();
     }
 
 }

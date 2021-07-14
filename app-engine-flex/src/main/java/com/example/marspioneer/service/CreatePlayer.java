@@ -69,10 +69,10 @@ public class CreatePlayer implements AthlosService<CreatePlayerRequest, CreatePl
         player.setMiningResearch(MineResearchLevel.LEVEL_1_MineResearchLevel);
         player.setSandResearch(SandPitResearchLevel.LEVEL_1_SandPitResearchLevel);
         player.setWaterResearch(WellResearchLevel.LEVEL_1_WellResearchLevel);
-        player.setFood(500);
-        player.setWater(200);
-        player.setSand(0);
-        player.setMetal(0);
+        player.setFood(20000);
+        player.setWater(20000);
+        player.setSand(20000);
+        player.setMetal(20000);
         player.setLastCollected(System.currentTimeMillis());
 
         //Create the player:

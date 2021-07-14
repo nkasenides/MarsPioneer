@@ -29,12 +29,17 @@ public class BuildWellStub extends BinaryWebSocketClient {
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-            //TODO - Handle exception
+            client.getGameCanvas().showMessage(e.getMessage());
         }
     }
     
     public void handleResponse(BuildResponse response) {
-        //TODO - Implement handling of the response.
+        if (response.getStatus() == BuildResponse.Status.OK) {
+            System.out.println("Water well built by " + client.getWorldSessionID());
+        } else {
+            client.getGameCanvas().showMessage(response.getMessage());
+            System.err.println(response.getMessage());
+        }
     }
 
 }
