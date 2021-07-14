@@ -2,9 +2,7 @@ package com.example.marspioneer.client.ui;
 
 import com.example.marspioneer.client.MPClient;
 import com.example.marspioneer.generation.MPTerrainGenerator;
-import com.example.marspioneer.model.GeoPosition;
 import com.example.marspioneer.model.MPTerrainCell;
-import com.example.marspioneer.model.MatrixPosition;
 import com.example.marspioneer.proto.MPEntityProto;
 import com.example.marspioneer.proto.MPTerrainCellProto;
 
@@ -34,7 +32,11 @@ public class MPCanvas extends Canvas {
 
     private final MPTerrainGenerator terrainGenerator;
 
-    private final int CELL_SIZE = 30;
+    private final int DEFAULT_CELL_SIZE = 30;
+    private final int MIN_CELL_SIZE = 10;
+    private final int MAX_CELL_SIZE = 50;
+    private final int CELL_SIZE_CHANGE = 5;
+    private int cellSize = DEFAULT_CELL_SIZE;
 
     private final MPClient client;
 
@@ -52,10 +54,10 @@ public class MPCanvas extends Canvas {
         canvasWidth = getWidth();
         canvasHeight = getHeight();
 
-        int minRow = client.getCameraPosition().getRow() - (canvasHeight / 2 / CELL_SIZE) - 1;
-        int maxRow = client.getCameraPosition().getRow() + (canvasHeight / 2 / CELL_SIZE) + 1;
-        int minCol = client.getCameraPosition().getCol() - (canvasWidth / 2 / CELL_SIZE) - 1;
-        int maxCol = client.getCameraPosition().getCol() + (canvasWidth / 2 / CELL_SIZE) + 1;
+        int minRow = client.getCameraPosition().getRow() - (canvasHeight / 2 / cellSize) - 1;
+        int maxRow = client.getCameraPosition().getRow() + (canvasHeight / 2 / cellSize) + 1;
+        int minCol = client.getCameraPosition().getCol() - (canvasWidth / 2 / cellSize) - 1;
+        int maxCol = client.getCameraPosition().getCol() + (canvasWidth / 2 / cellSize) + 1;
 
         HashMap<String, MPTerrainCellProto> cells = new HashMap<>();
 
@@ -103,71 +105,64 @@ public class MPCanvas extends Canvas {
                     break;
             }
 
-            final int positionX = (canvasWidth / 2 - client.getCameraPosition().getCol() * CELL_SIZE + cell.getPosition().getCol() * CELL_SIZE) - CELL_SIZE / 2;
-            final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * CELL_SIZE + cell.getPosition().getRow() * CELL_SIZE) - CELL_SIZE / 2;
+            final int positionX = (canvasWidth / 2 - client.getCameraPosition().getCol() * cellSize + cell.getPosition().getCol() * cellSize) - cellSize / 2;
+            final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * cellSize + cell.getPosition().getRow() * cellSize) - cellSize / 2;
 
             if (image != null) {
-                g.drawImage(image, positionX, positionY, CELL_SIZE, CELL_SIZE, MPCanvas.this);
+                g.drawImage(image, positionX, positionY, cellSize, cellSize, MPCanvas.this);
             }
 
-            Color fogOfWarColor = new Color(0, 0, 0, 191);
-            g.setColor(fogOfWarColor);
-            g.drawRect(0, 0, canvasWidth, canvasHeight);
-
-//            MatrixPosition paintPosition = new MatrixPosition(positionY, positionX);
-//            g.setColor(color);
-//            g.fillRect(paintPosition.getCol(), paintPosition.getRow(), CELL_SIZE, CELL_SIZE);
-
             if (cell.getPosition().getRow() == client.getSelectedCellPosition().getRow() && cell.getPosition().getCol() == client.getSelectedCellPosition().getCol()) {
-                g2d.setColor(Color.RED);
+                g2d.setColor(Color.WHITE);
                 g2d.setStroke(new BasicStroke(3));
-                g2d.drawRect(positionX, positionY, CELL_SIZE, CELL_SIZE);
+                g2d.drawRect(positionX, positionY, cellSize, cellSize);
             }
 
         }
+        Color fogOfWarColor = new Color(0, 0, 0, 191);
+        g.setColor(fogOfWarColor);
+        g.drawRect(0, 0, canvasWidth, canvasHeight);
     }
 
     private void printLoadedCells(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
 
-        for (Map.Entry<String, MPTerrainCellProto> entry : client.getStateCells().entrySet()) {
+        for (Map.Entry<String, MPTerrainCellProto> entry : client.getGeneratedCells().entrySet()) {
 
             final MPTerrainCellProto cell = entry.getValue();
-
-            Color color = null;
-
-            switch (cell.getType()) {
+            Image image = null;
+            switch (entry.getValue().getType()) {
                 case SAND_CellType:
-                    color = Color.YELLOW;
+                    image = SAND;
                     break;
                 case ROCK_CellType:
-                    color = Color.DARK_GRAY;
+                    image = STONE;
                     break;
                 case LAVA_CellType:
-                    color = Color.RED;
+                    image = LAVA;
                     break;
                 case ICE_CellType:
-                    color = Color.WHITE;
+                    image = ICE;
                     break;
                 case GRAVEL_CellType:
-                    color = Color.LIGHT_GRAY;
+                    image = GRAVEL;
                     break;
                 case UNRECOGNIZED:
                     break;
             }
 
-            final int positionX = (canvasWidth / 2 - client.getCameraPosition().getCol() * CELL_SIZE + cell.getPosition().getCol() * CELL_SIZE) - CELL_SIZE / 2;
-            final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * CELL_SIZE + cell.getPosition().getRow() * CELL_SIZE) - CELL_SIZE / 2;
+            final int positionX = (canvasWidth / 2 - client.getCameraPosition().getCol() * cellSize + cell.getPosition().getCol() * cellSize) - cellSize / 2;
+            final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * cellSize + cell.getPosition().getRow() * cellSize) - cellSize / 2;
 
-            MatrixPosition paintPosition = new MatrixPosition(positionY, positionX);
-            g.setColor(color);
-            g.fillRect(paintPosition.getCol(), paintPosition.getRow(), CELL_SIZE, CELL_SIZE);
+            if (image != null) {
+                g.drawImage(image, positionX, positionY, cellSize, cellSize, MPCanvas.this);
+            }
 
             if (cell.getPosition().getRow() == client.getSelectedCellPosition().getRow() && cell.getPosition().getCol() == client.getSelectedCellPosition().getCol()) {
-                g2d.setColor(Color.RED);
+                g2d.setColor(Color.WHITE);
                 g2d.setStroke(new BasicStroke(3));
-                g2d.drawRect(positionX, positionY, CELL_SIZE, CELL_SIZE);
+                g2d.drawRect(positionX, positionY, cellSize, cellSize);
             }
 
         }
@@ -177,8 +172,8 @@ public class MPCanvas extends Canvas {
 
         for (Map.Entry<String, MPEntityProto> entry : client.getEntities().entrySet()) {
 
-            final int positionX = (canvasWidth / 2 - client.getCameraPosition().getCol() * CELL_SIZE + entry.getValue().getPosition().getCol() * CELL_SIZE) - CELL_SIZE / 2;
-            final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * CELL_SIZE + entry.getValue().getPosition().getRow() * CELL_SIZE) - CELL_SIZE / 2;
+            final int positionX = (canvasWidth / 2 - client.getCameraPosition().getCol() * cellSize + entry.getValue().getPosition().getCol() * cellSize) - cellSize / 2;
+            final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * cellSize + entry.getValue().getPosition().getRow() * cellSize) - cellSize / 2;
 
             Image image = null;
             switch (entry.getValue().getBuildingEntity().getBuildingType()) {
@@ -202,7 +197,7 @@ public class MPCanvas extends Canvas {
             }
 
             if (image != null) {
-                g.drawImage(image, positionX, positionY, CELL_SIZE, CELL_SIZE, MPCanvas.this);
+                g.drawImage(image, positionX, positionY, cellSize, cellSize, MPCanvas.this);
             }
 
         }
@@ -240,5 +235,16 @@ public class MPCanvas extends Canvas {
         return new Color(a << 24 | r << 16 | g << 8 | b);
     }
 
+    public void increaseCellSize() {
+        if (cellSize + CELL_SIZE_CHANGE <= MAX_CELL_SIZE) {
+            cellSize += CELL_SIZE_CHANGE;
+        }
+    }
+
+    public void decreaseCellSize() {
+        if (cellSize - CELL_SIZE_CHANGE >= MIN_CELL_SIZE) {
+            cellSize -= CELL_SIZE_CHANGE;
+        }
+    }
 
 }

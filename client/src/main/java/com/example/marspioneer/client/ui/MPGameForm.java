@@ -59,11 +59,31 @@ public class MPGameForm extends JFrame {
                 else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
                     client.getCameraPosition().setRow(client.getCameraPosition().getRow() + 1);
                 }
-                if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
+                else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
                     client.getCameraPosition().setCol(client.getCameraPosition().getCol() - 1);
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
                     client.getCameraPosition().setCol(client.getCameraPosition().getCol() + 1);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+                    client.getCameraPosition().setCol(client.getCameraPosition().getCol() - 1);
+                    client.getCameraPosition().setRow(client.getCameraPosition().getRow() - 1);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
+                    client.getCameraPosition().setCol(client.getCameraPosition().getCol() + 1);
+                    client.getCameraPosition().setRow(client.getCameraPosition().getRow() - 1);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+                    client.getCameraPosition().setCol(client.getCameraPosition().getCol() - 1);
+                    client.getCameraPosition().setRow(client.getCameraPosition().getRow() + 1);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+                    client.getCameraPosition().setCol(client.getCameraPosition().getCol() + 1);
+                    client.getCameraPosition().setRow(client.getCameraPosition().getRow() + 1);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
+                    client.getCameraPosition().setCol(client.getSelectedCellPosition().getCol());
+                    client.getCameraPosition().setRow(client.getSelectedCellPosition().getRow());
                 }
 
                 //Selected cell movement:
@@ -98,6 +118,14 @@ public class MPGameForm extends JFrame {
                     );
                 }
 
+                if (e.getKeyCode() == KeyEvent.VK_ADD) {
+                    canvas.increaseCellSize();
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
+                    canvas.decreaseCellSize();
+                }
+
+                //Actions:
                 if (e.getKeyCode() == KeyEvent.VK_F) {
                     BuildFarmRequest request = BuildFarmRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
