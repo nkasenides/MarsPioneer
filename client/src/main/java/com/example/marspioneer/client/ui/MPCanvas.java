@@ -119,16 +119,17 @@ public class MPCanvas extends Canvas {
             }
 
         }
-        Color fogOfWarColor = new Color(0, 0, 0, 191);
-        g.setColor(fogOfWarColor);
-        g.drawRect(0, 0, canvasWidth, canvasHeight);
+
+        Color fogOfWarColor = new Color(0, 0, 0, 150);
+        g2d.setColor(fogOfWarColor);
+        g2d.fillRect(0, 0, canvasWidth, canvasHeight);
     }
 
     private void printLoadedCells(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
 
-        for (Map.Entry<String, MPTerrainCellProto> entry : client.getGeneratedCells().entrySet()) {
+        for (Map.Entry<String, MPTerrainCellProto> entry : client.getStateCells().entrySet()) {
 
             final MPTerrainCellProto cell = entry.getValue();
             Image image = null;
