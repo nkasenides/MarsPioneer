@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="app-engine-flex:war">
+    <output-path>$PROJECT_DIR$/app-engine-flex/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>app-engine-flex</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="app-engine-flex-1.war">
+      <element id="artifact" artifact-name="app-engine-flex:war exploded" />
+    </root>
+  </artifact>
+</component>

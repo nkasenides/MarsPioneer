@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.raylabz:athlos-core:0.0.24" type="repository">
+    <properties maven-id="com.raylabz:athlos-core:0.0.24" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/raylabz/athlos-core/0.0.24/athlos-core-0.0.24.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.12.2/protobuf-java-3.12.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/raylabz/jsec/1.0.0/jsec-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
