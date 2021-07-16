@@ -10,8 +10,10 @@ import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
+import java.io.Serializable;
+
 @FirestormObject
-public class MPGameSession implements Transmittable<MPGameSessionProto.Builder>, IGameSession {
+public class MPGameSession implements Transmittable<MPGameSessionProto.Builder>, IGameSession, Serializable {
     private String ipAddress;    
     private long expiresOn;    
     private String id;    

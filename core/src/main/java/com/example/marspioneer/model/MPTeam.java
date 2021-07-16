@@ -5,6 +5,7 @@
 
 package com.example.marspioneer.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
@@ -12,7 +13,7 @@ import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
 @FirestormObject
-public class MPTeam implements Transmittable<MPTeamProto.Builder>, ITeam {
+public class MPTeam implements Transmittable<MPTeamProto.Builder>, ITeam, Serializable {
     private TeamColor color;    
     private String name;    
     private String id;    

@@ -5,7 +5,9 @@ import com.nkasenides.athlos.proto.Transmittable;
 import com.raylabz.jsec.HashType;
 import com.raylabz.jsec.Hashing;
 
-public final class GeoPosition implements Transmittable<GeoPositionProto.Builder> {
+import java.io.Serializable;
+
+public final class GeoPosition implements Transmittable<GeoPositionProto.Builder>, Serializable {
 
     private float x = 0;
     private float y = 0;

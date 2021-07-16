@@ -11,8 +11,10 @@ import com.nkasenides.athlos.model.*;
 import com.nkasenides.athlos.proto.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
+import java.io.Serializable;
 
-public interface MPEntity extends IEntity, Transmittable<MPEntityProto.Builder> {
+
+public interface MPEntity extends IEntity, Transmittable<MPEntityProto.Builder>, Serializable {
 
     String getWorldID();    
     float getAreaOfInterest();    

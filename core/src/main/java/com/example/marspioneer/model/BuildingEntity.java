@@ -10,6 +10,8 @@ import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
+import java.io.Serializable;
+
 @FirestormObject
 public class BuildingEntity implements MPEntity {
     private String worldID;    

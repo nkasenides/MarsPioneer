@@ -10,8 +10,10 @@ import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
+import java.io.Serializable;
+
 @FirestormObject
-public class MPPlayer implements Transmittable<MPPlayerProto.Builder>, IPlayer {
+public class MPPlayer implements Transmittable<MPPlayerProto.Builder>, IPlayer, Serializable {
     private FarmResearchLevel farmingResearch;    
     private int metal;    
     private WellResearchLevel waterResearch;    

@@ -5,12 +5,13 @@
 
 package com.example.marspioneer.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 
-public class BuildingType implements Transmittable<BuildingTypeProto.Builder> {
+public class BuildingType implements Transmittable<BuildingTypeProto.Builder>, Serializable {
 
     public static final BuildingType HUB = new Builder(EBuildingType.HUB_EBuildingType)
             .setFoodCost(10)

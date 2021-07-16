@@ -5,6 +5,7 @@
 
 package com.example.marspioneer.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
@@ -12,7 +13,7 @@ import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
 @FirestormObject
-public class MPTerrainChunk implements Transmittable<MPTerrainChunkProto.Builder>, ITerrainChunk {
+public class MPTerrainChunk implements Transmittable<MPTerrainChunkProto.Builder>, ITerrainChunk, Serializable {
     private HashMap<String, MPTerrainCell> cells = new HashMap<>();
     private String worldID;    
     private String id;    

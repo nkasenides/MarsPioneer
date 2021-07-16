@@ -5,6 +5,7 @@
 
 package com.example.marspioneer.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
@@ -12,7 +13,7 @@ import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
 @FirestormObject
-public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World {
+public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World, Serializable {
 
     public static final WorldType type = WorldType.TILE_HEX;
 

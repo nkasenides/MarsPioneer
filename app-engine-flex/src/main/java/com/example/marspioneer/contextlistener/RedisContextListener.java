@@ -1,5 +1,11 @@
 package com.example.marspioneer.contextlistener;
 
+import com.example.marspioneer.model.BuildingEntity;
+import com.example.marspioneer.model.MPEntity;
+import com.example.marspioneer.model.MPTerrainCell;
+import com.example.marspioneer.model.MPTerrainChunk;
+import com.raylabz.objectis.Objectis;
+import com.raylabz.objectis.exception.ClassRegistrationException;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -47,8 +53,16 @@ public class RedisContextListener implements ServletContextListener {
         if (jedisPool == null) {
             try {
                 jedisPool = createJedisPool();
+
+                Objectis.init(jedisPool.getResource());
+                Objectis.register(MPEntity.class);
+                Objectis.register(BuildingEntity.class);
+                Objectis.register(MPTerrainCell.class);
+                Objectis.register(MPTerrainChunk.class);
+
+
                 event.getServletContext().setAttribute("jedisPool", jedisPool);
-            } catch (IOException e) {
+            } catch (IOException | ClassRegistrationException e) {
                 // handle exception
             }
         }

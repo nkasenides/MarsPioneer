@@ -5,7 +5,9 @@ import com.nkasenides.athlos.proto.Transmittable;
 import com.raylabz.jsec.HashType;
 import com.raylabz.jsec.Hashing;
 
-public final class MatrixPosition implements Transmittable<MatrixPositionProto.Builder> {
+import java.io.Serializable;
+
+public final class MatrixPosition implements Transmittable<MatrixPositionProto.Builder>, Serializable {
 
     private int row;
     private int col;

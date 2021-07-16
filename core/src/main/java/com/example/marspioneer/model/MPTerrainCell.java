@@ -10,8 +10,10 @@ import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
 
+import java.io.Serializable;
+
 @FirestormObject
-public class MPTerrainCell implements Transmittable<MPTerrainCellProto.Builder>, ITerrainCell {
+public class MPTerrainCell implements Transmittable<MPTerrainCellProto.Builder>, ITerrainCell, Serializable {
     private MatrixPosition position;    
     private CellType type;    
     private int height;    

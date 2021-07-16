@@ -9,7 +9,9 @@ import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 
-public class ResourceSet implements Transmittable<ResourceSetProto.Builder> {
+import java.io.Serializable;
+
+public class ResourceSet implements Transmittable<ResourceSetProto.Builder>, Serializable {
     private int sand;    
     private int metal;    
     private int water;    
