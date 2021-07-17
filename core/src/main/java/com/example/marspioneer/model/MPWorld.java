@@ -11,8 +11,10 @@ import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
+import com.raylabz.objectis.annotation.ObjectisObject;
 
 @FirestormObject
+@ObjectisObject
 public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World, Serializable {
 
     public static final WorldType type = WorldType.TILE_HEX;

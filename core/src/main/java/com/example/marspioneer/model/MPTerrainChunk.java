@@ -11,8 +11,10 @@ import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
+import com.raylabz.objectis.annotation.ObjectisObject;
 
 @FirestormObject
+@ObjectisObject
 public class MPTerrainChunk implements Transmittable<MPTerrainChunkProto.Builder>, ITerrainChunk, Serializable {
     private HashMap<String, MPTerrainCell> cells = new HashMap<>();
     private String worldID;    

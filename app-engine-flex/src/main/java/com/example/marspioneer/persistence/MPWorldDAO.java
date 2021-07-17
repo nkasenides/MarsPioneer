@@ -11,6 +11,7 @@ import com.example.marspioneer.model.MPWorld;
 import com.nkasenides.athlos.persistence.MultiDAO;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
+import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,34 +22,40 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
 
     @Override
     public boolean create(MPWorld object) {
-        return Firestorm.create(object) != null;
+        Firestorm.create(object);
+        Objectis.create(object);
+        return true;
     }
 
     @Override
     public boolean update(MPWorld object) {
-        Firestorm.update(object);
+        Firestorm.create(object);
+        Objectis.create(object);
         return true;
     }
 
     @Override
     public boolean delete(MPWorld object) {
-        Firestorm.delete(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
     @Override
     public MPWorld get(String id) {
-        return Firestorm.get(MPWorld.class, id);
+        return Objectis.get(MPWorld.class, id);
     }
 
     @Override
     public Collection<MPWorld> getMany(String... ids) {
-        return Firestorm.filter(MPWorld.class).whereIn("id", Arrays.asList(ids)).fetch().getItems();
+        return Objectis.filter(MPWorld.class)
+                .whereArrayContainsAny("id", Arrays.asList(ids))
+                .fetch();
     }
 
     @Override
     public Collection<MPWorld> list() {
-        return Firestorm.listAll(MPWorld.class);
+        return Objectis.list(MPWorld.class);
     }
 
     @Override
@@ -58,6 +65,7 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
             public void execute() {
                 for (MPWorld g : objects) {
                     create(g);
+                    Objectis.create(g);
                 }
             }
 
@@ -76,7 +84,11 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
 
     @Override
     public boolean update(Collection<MPWorld> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+        for (MPWorld object : objects) {
+            Objectis.update(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPWorld g : objects) {
@@ -93,13 +105,19 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
+
         return true;
     }
 
     @Override
     public boolean delete(Collection<MPWorld> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+        for (MPWorld object : objects) {
+            Objectis.delete(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPWorld g : objects) {
@@ -116,7 +134,8 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
         return true;
     }
 
@@ -126,11 +145,10 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
      * @return Returns a world object.
      */
     public MPWorld getByName(String name) {
-        final ArrayList<MPWorld> items = Firestorm.filter(MPWorld.class)
+        final ArrayList<MPWorld> items = Objectis.filter(MPWorld.class)
                 .whereEqualTo("name", name)
                 .limit(1)
-                .fetch()
-                .getItems();
+                .fetch();
 
         if (items.size() == 0) {
             return null;
@@ -144,10 +162,9 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
      * @return Returns a collection of worlds.
      */
     public Collection<MPWorld> listByPlayer(String playerID) {
-        return Firestorm.filter(MPWorld.class)
+        return Objectis.filter(MPWorld.class)
                 .whereEqualTo("playerID", playerID)
-                .fetch()
-                .getItems();
+                .fetch();
     }
 
 

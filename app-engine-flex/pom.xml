@@ -94,6 +94,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.raylabz</groupId>
+            <artifactId>objectis</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>6.0</version>

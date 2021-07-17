@@ -12,6 +12,7 @@ import com.example.marspioneer.model.MPWorld;
 import com.example.marspioneer.model.MPWorldSession;
 import com.nkasenides.athlos.persistence.WorldBasedDAO;
 import com.raylabz.firestorm.Firestorm;
+import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,12 +23,15 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
 
     @Override
     public boolean create(MPWorldSession object) {
-        return Firestorm.create(object) != null;
+        Firestorm.create(object);
+        Objectis.create(object);
+        return true;
     }
 
     @Override
     public boolean update(MPWorldSession object) {
-        Firestorm.update(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
@@ -39,17 +43,26 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
 
 //    @Override
     public MPWorldSession get(String s) {
-        return Firestorm.get(MPWorldSession.class, s);
+        return Objectis.get(MPWorldSession.class, s);
     }
 
     @Override
     public MPWorldSession getForWorld(String worldID, String itemID) {
-        return Firestorm.filter(MPWorldSession.class).whereEqualTo("worldID", worldID).whereEqualTo("id", itemID).fetch().getItems().get(0);
+        final ArrayList<MPWorldSession> items = Objectis.filter(MPWorldSession.class)
+                .whereEqualTo("worldID", worldID)
+                .whereEqualTo("id", itemID)
+                .fetch();
+        if (items.size() == 0) {
+            return null;
+        }
+        return items.get(0);
     }
 
     @Override
     public Collection<MPWorldSession> listForWorld(String worldID) {
-        return Firestorm.listAll(MPWorldSession.class);
+        return Objectis.filter(MPWorldSession.class)
+                .whereEqualTo("worldID", worldID)
+                .fetch();
     }
 
     /**
@@ -59,11 +72,11 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
      */
     public MPPlayer getPlayer(final String worldSessionID) {
 //        System.out.println("DAO wsid -> " + worldSessionID);
-        final MPWorldSession worldSession = Firestorm.get(MPWorldSession.class, worldSessionID);
+        final MPWorldSession worldSession = Objectis.get(MPWorldSession.class, worldSessionID);
         if (worldSession == null) {
             return null;
         }
-        return Firestorm.get(MPPlayer.class, worldSession.getPlayerID());
+        return Objectis.get(MPPlayer.class, worldSession.getPlayerID());
     }
 
     /**
@@ -72,10 +85,9 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
      * @return Returns a WorldSession, or null.
      */
     public Collection<MPWorldSession> listForPlayer(final String playerID) {
-        return Firestorm.filter(MPWorldSession.class)
+        return Objectis.filter(MPWorldSession.class)
                 .whereEqualTo("playerID", playerID)
-                .fetch()
-                .getItems();
+                .fetch();
     }
 
     /**
@@ -85,12 +97,11 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
      * @return Returns a WorldSession.
      */
     public MPWorldSession getForPlayerAndWorld(final String playerID, final String worldID) {
-        final ArrayList<MPWorldSession> items = Firestorm.filter(MPWorldSession.class)
+        final ArrayList<MPWorldSession> items = Objectis.filter(MPWorldSession.class)
                 .whereEqualTo("playerID", playerID)
                 .whereEqualTo("worldID", worldID)
                 .limit(1)
-                .fetch()
-                .getItems();
+                .fetch();
         if (items.size() == 0) {
             return null;
         }
@@ -98,5 +109,4 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
     }
 
 }
-
 

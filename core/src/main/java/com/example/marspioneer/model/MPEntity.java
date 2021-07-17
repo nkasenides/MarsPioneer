@@ -10,9 +10,9 @@ import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.nkasenides.athlos.proto.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
+import com.raylabz.objectis.annotation.ObjectisObject;
 
 import java.io.Serializable;
-
 
 public interface MPEntity extends IEntity, Transmittable<MPEntityProto.Builder>, Serializable {
 

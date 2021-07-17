@@ -6,11 +6,13 @@
 package com.example.marspioneer.persistence;
 
 
+import com.example.marspioneer.model.BuildingEntity;
 import com.example.marspioneer.model.MPGameSession;
 import com.example.marspioneer.model.MPPlayer;
 import com.nkasenides.athlos.persistence.MultiDAO;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
+import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,34 +24,40 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
 
     @Override
     public boolean create(MPGameSession object) {
-        return Firestorm.create(object) != null;
+        Firestorm.create(object);
+        Objectis.create(object);
+        return true;
     }
 
     @Override
     public boolean update(MPGameSession object) {
-        Firestorm.update(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object));
         return true;
     }
 
     @Override
     public boolean delete(MPGameSession object) {
-        Firestorm.delete(object);
+        Objectis.delete(object);
+        new Thread(() -> Firestorm.delete(object));
         return true;
     }
 
     @Override
     public MPGameSession get(String id) {
-        return Firestorm.get(MPGameSession.class, id);
+        return Objectis.get(MPGameSession.class, id);
     }
 
     @Override
     public Collection<MPGameSession> getMany(String... ids) {
-        return Firestorm.filter(MPGameSession.class).whereIn("id", Arrays.asList(ids)).fetch().getItems();
+        return Objectis.filter(MPGameSession.class)
+                .whereArrayContainsAny("id", Arrays.asList(ids))
+                .fetch();
     }
 
     @Override
     public Collection<MPGameSession> list() {
-        return Firestorm.listAll(MPGameSession.class);
+        return Objectis.list(MPGameSession.class);
     }
 
     @Override
@@ -59,6 +67,7 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
             public void execute() {
                 for (MPGameSession g : objects) {
                     create(g);
+                    Objectis.create(g);
                 }
             }
 
@@ -77,7 +86,11 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
 
     @Override
     public boolean update(Collection<MPGameSession> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+        for (MPGameSession object : objects) {
+            Objectis.update(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPGameSession g : objects) {
@@ -94,13 +107,20 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
+
         return true;
     }
 
     @Override
     public boolean delete(Collection<MPGameSession> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+
+        for (MPGameSession object : objects) {
+            Objectis.delete(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPGameSession g : objects) {
@@ -117,7 +137,8 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
         return true;
     }
 
@@ -126,7 +147,7 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
         if (gameSession == null) {
             return null;
         }
-        return Firestorm.get(MPPlayer.class, gameSession.getPlayerID());
+        return Objectis.get(MPPlayer.class, gameSession.getPlayerID());
     }
 
     /**
@@ -135,11 +156,10 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
      * @return Returns a GameSession, or null.
      */
     public MPGameSession getForPlayer(final String playerID) {
-        final ArrayList<MPGameSession> players = Firestorm.filter(MPGameSession.class)
+        final ArrayList<MPGameSession> players = Objectis.filter(MPGameSession.class)
                 .whereEqualTo("playerID", playerID)
                 .limit(1)
-                .fetch()
-                .getItems();
+                .fetch();
         if (players.size() == 0) {
             return null;
         }

@@ -11,6 +11,7 @@ import com.nkasenides.athlos.persistence.WorldBasedDAO;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.jsec.HashType;
 import com.raylabz.jsec.Hashing;
+import com.raylabz.objectis.Objectis;
 import redis.clients.jedis.Jedis;
 
 import java.util.ArrayList;
@@ -27,87 +28,49 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
 
     @Override
     public boolean create(MPTerrainChunk object) {
-        final String chunkHash = Hashing.hash(HashType.MD5, object.getPosition().getRow() + "," + object.getPosition().getCol());
-        Cache.setObject(jedis, chunkHash, object);
-        Cache.addToList(jedis, "TC_WORLD_" + object.getWorldID(), chunkHash);
-        new Thread(() -> Firestorm.create(object, chunkHash)).start();
+        final String chunkHash = object.getPosition().toHash();
+        Firestorm.create(object, chunkHash);
+        Objectis.create(object, chunkHash);
         return true;
     }
 
     @Override
     public boolean update(MPTerrainChunk object) {
-        final String chunkHash = Hashing.hash(HashType.MD5, object.getPosition().getRow() + "," + object.getPosition().getCol());
-        Cache.setObject(jedis, chunkHash,object);
+        Objectis.update(object);
         new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
     @Override
     public boolean delete(MPTerrainChunk object) {
-        final String chunkHash = Hashing.hash(HashType.MD5, object.getPosition().getRow() + "," + object.getPosition().getCol());
-        Cache.remove(jedis, chunkHash);
-        Cache.removeFromList(jedis, "TC_WORLD_" + object.getWorldID(), chunkHash);
-        new Thread(() -> Firestorm.delete(object)).start();
+        Objectis.delete(MPTerrainChunk.class, object.getPosition().toHash());
+        new Thread(() -> Firestorm.delete(MPTerrainChunk.class, object.getPosition().toHash())).start();
         return true;
     }
 
 //    @Override
-    public MPTerrainChunk get(String s) {
-        final MPTerrainChunk object = Cache.getObject(jedis, s, MPTerrainChunk.class);
-        if (object == null) {
-            Firestorm.get(MPTerrainChunk.class, s);
-        }
-        return object;
+    public MPTerrainChunk get(String chunkHash) {
+        return Objectis.get(MPTerrainChunk.class, chunkHash);
     }
 
     @Override
     public MPTerrainChunk getForWorld(String worldID, String itemID) {
-
-        final String[] cacheItems = Cache.getAsList(jedis, "TC_WORLD_" + worldID);
-        for (String s : cacheItems) {
-            final MPTerrainChunk object = Cache.getObject(jedis, s, MPTerrainChunk.class);
-            if (object != null && object.getId().equals(itemID)) {
-                return object;
-            }
-        }
-
-        final ArrayList<MPTerrainChunk> items = Firestorm.filter(MPTerrainChunk.class)
+        final ArrayList<MPTerrainChunk> items = Objectis.filter(MPTerrainChunk.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("id", itemID)
-                .fetch()
-                .getItems();
+                .fetch();
         if (items.size() == 0) {
             return null;
         }
-        Cache.setObject(jedis, itemID, items.get(0));
-        Cache.addToList(jedis, "TC_WORLD_" + worldID, itemID);
         return items.get(0);
     }
 
     @Override
     public Collection<MPTerrainChunk> listForWorld(String worldID) {
-
-        final String[] cacheItems = Cache.getAsList(jedis, "TC_WORLD_" + worldID);
-        ArrayList<MPTerrainChunk> chunks = new ArrayList<>();
-
-        for (String s : cacheItems) {
-            final MPTerrainChunk object = Cache.getObject(jedis, s, MPTerrainChunk.class);
-            chunks.add(object);
-        }
-
-        if (chunks.size() > 0) {
-            return chunks;
-        }
-
-        final ArrayList<MPTerrainChunk> dbChunks = Firestorm.filter(MPTerrainChunk.class)
+        return Objectis.filter(MPTerrainChunk.class)
                 .whereEqualTo("worldID", worldID)
                 .limit(1)
-                .fetch()
-                .getItems();
-        for (MPTerrainChunk t : dbChunks) {
-            Cache.addToList(jedis, "TC_WORLD_" + worldID, t.getId());
-        }
-        return dbChunks;
+                .fetch();
     }
 
 }

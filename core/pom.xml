@@ -24,6 +24,13 @@
             <artifactId>opensimplex</artifactId>
             <version>1.0.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.raylabz</groupId>
+            <artifactId>objectis</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+
     </dependencies>
 
     <properties>

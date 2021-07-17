@@ -9,10 +9,12 @@ import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.firestorm.annotation.FirestormObject;
+import com.raylabz.objectis.annotation.ObjectisObject;
 
 import java.io.Serializable;
 
 @FirestormObject
+@ObjectisObject
 public class MPTerrainCell implements Transmittable<MPTerrainCellProto.Builder>, ITerrainCell, Serializable {
     private MatrixPosition position;    
     private CellType type;    

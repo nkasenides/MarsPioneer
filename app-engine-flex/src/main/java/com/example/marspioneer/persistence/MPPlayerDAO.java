@@ -6,10 +6,13 @@
 package com.example.marspioneer.persistence;
 
 
+import com.example.marspioneer.model.BuildingEntity;
+import com.example.marspioneer.model.MPGameSession;
 import com.example.marspioneer.model.MPPlayer;
 import com.nkasenides.athlos.persistence.MultiDAO;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
+import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,12 +24,15 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
 
     @Override
     public boolean create(MPPlayer object) {
-        return Firestorm.create(object) != null;
+        Firestorm.create(object);
+        Objectis.create(object);
+        return true;
     }
 
     @Override
     public boolean update(MPPlayer object) {
-        Firestorm.update(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
@@ -38,17 +44,19 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
 
     @Override
     public MPPlayer get(String id) {
-        return Firestorm.get(MPPlayer.class, id);
+        return Objectis.get(MPPlayer.class, id);
     }
 
     @Override
     public Collection<MPPlayer> getMany(String... ids) {
-        return Firestorm.filter(MPPlayer.class).whereIn("id", Arrays.asList(ids)).fetch().getItems();
+        return Objectis.filter(MPPlayer.class)
+                .whereArrayContainsAny("id", Arrays.asList(ids))
+                .fetch();
     }
 
     @Override
     public Collection<MPPlayer> list() {
-        return Firestorm.listAll(MPPlayer.class);
+        return Objectis.list(MPPlayer.class);
     }
 
     @Override
@@ -58,6 +66,7 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
             public void execute() {
                 for (MPPlayer g : objects) {
                     create(g);
+                    Objectis.create(g);
                 }
             }
 
@@ -76,7 +85,11 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
 
     @Override
     public boolean update(Collection<MPPlayer> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+        for (MPPlayer object : objects) {
+            Objectis.update(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPPlayer g : objects) {
@@ -93,13 +106,19 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
+
         return true;
     }
 
     @Override
     public boolean delete(Collection<MPPlayer> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+        for (MPPlayer object : objects) {
+            Objectis.delete(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPPlayer g : objects) {
@@ -116,7 +135,8 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
         return true;
     }
 
@@ -126,11 +146,10 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
      * @return Returns a Player object.
      */
     public MPPlayer getByName(String name) {
-        final ArrayList<MPPlayer> items = Firestorm.filter(MPPlayer.class)
+        final ArrayList<MPPlayer> items = Objectis.filter(MPPlayer.class)
                 .whereEqualTo("name", name)
                 .limit(1)
-                .fetch()
-                .getItems();
+                .fetch();
 
         if (items.size() == 0) {
             return null;

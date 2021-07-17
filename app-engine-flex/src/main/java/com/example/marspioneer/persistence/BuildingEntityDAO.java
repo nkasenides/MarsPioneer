@@ -9,6 +9,7 @@ package com.example.marspioneer.persistence;
 import com.nkasenides.athlos.persistence.*;
 import com.example.marspioneer.model.*;
 import com.raylabz.firestorm.Firestorm;
+import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,34 +22,36 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
     @Override
     public boolean create(BuildingEntity object) {
         Firestorm.create(object);
+        Objectis.create(object);
         return true;
     }
 
     @Override
     public boolean update(BuildingEntity object) {
-        Firestorm.update(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
     @Override
     public boolean delete(BuildingEntity object) {
-        Firestorm.delete(object);
+        Objectis.delete(object);
+        new Thread(() -> Firestorm.delete(object)).start();
         return true;
     }
 
 //    @Override
     public BuildingEntity get(String s) {
-        return Firestorm.get(BuildingEntity.class, s);
+        return Objectis.get(BuildingEntity.class, s);
     }
 
     @Override
     public BuildingEntity getForWorld(String worldID, String itemID) {
-        final ArrayList<BuildingEntity> items = Firestorm.filter(BuildingEntity.class)
+        final ArrayList<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("id", itemID)
                 .limit(1)
-                .fetch()
-                .getItems();
+                .fetch();
         if (items.size() == 0) {
             return null;
         }
@@ -57,11 +60,10 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
 
     @Override
     public Collection<BuildingEntity> listForWorld(String worldID) {
-        return Firestorm.filter(BuildingEntity.class)
+        return Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .limit(1)
-                .fetch()
-                .getItems();
+                .fetch();
     }
 
 /**
@@ -71,11 +73,10 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForPlayerAndWorld(String worldID, String playerID) {
-        return Firestorm.filter(BuildingEntity.class)
+        return Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)
-                .fetch()
-                .getItems();
+                .fetch();
     }
     /**
      * Retrieves a player's entities.
@@ -83,10 +84,9 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForPlayer(String playerID) {
-        return Firestorm.filter(BuildingEntity.class)
+        return Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("playerID", playerID)
-                .fetch()
-                .getItems();
+                .fetch();
     }
 
     /**
@@ -96,10 +96,9 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForWorldExcludingPlayer(String worldID, String excludedPlayerID) {
-        final ArrayList<BuildingEntity> entities = Firestorm.filter(BuildingEntity.class)
+        final ArrayList<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
-                .fetch()
-                .getItems();
+                .fetch();
 
         final ArrayList<BuildingEntity> oEntities = new ArrayList<>();
         for (BuildingEntity entity : entities) {

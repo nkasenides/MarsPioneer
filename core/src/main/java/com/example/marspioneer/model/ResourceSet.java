@@ -8,9 +8,11 @@ package com.example.marspioneer.model;
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
+import com.raylabz.objectis.annotation.ObjectisObject;
 
 import java.io.Serializable;
 
+@ObjectisObject
 public class ResourceSet implements Transmittable<ResourceSetProto.Builder>, Serializable {
     private int sand;    
     private int metal;    

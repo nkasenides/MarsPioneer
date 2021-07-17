@@ -14,6 +14,7 @@ import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
 import com.raylabz.firestorm.FirestormTransaction;
 import com.raylabz.firestorm.QueryResult;
+import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,18 +25,29 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
 
     @Override
     public boolean create(MPTeam object) {
-        return Firestorm.create(object) != null;
+        Firestorm.create(object);
+        Objectis.create(object);
+        return true;
     }
 
     @Override
     public boolean update(MPTeam object) {
-        Firestorm.update(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
     @Override
     public boolean delete(MPTeam object) {
-        Firestorm.runTransaction(new FirestormTransaction() {
+
+        for (String id : object.getPlayerIDs()) {
+            MPPlayer player = Objectis.get(MPPlayer.class, id);
+            player.setTeamID(null);
+            Objectis.update(player);
+        }
+        Objectis.delete(object);
+
+        new Thread(() -> Firestorm.runTransaction(new FirestormTransaction() {
             @Override
             public void execute() {
                 for (String id : object.getPlayerIDs()) {
@@ -55,23 +67,26 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
+
         return true;
     }
 
     @Override
     public MPTeam get(String id) {
-        return Firestorm.get(MPTeam.class, id);
+        return Objectis.get(MPTeam.class, id);
     }
 
     @Override
     public Collection<MPTeam> getMany(String... ids) {
-        return Firestorm.filter(MPTeam.class).whereIn("id", Arrays.asList(ids)).fetch().getItems();
+        return Objectis.filter(MPTeam.class)
+                .whereArrayContainsAny("id", Arrays.asList(ids))
+                .fetch();
     }
 
     @Override
     public Collection<MPTeam> list() {
-        return Firestorm.listAll(MPTeam.class);
+        return Objectis.list(MPTeam.class);
     }
 
     @Override
@@ -81,6 +96,7 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
             public void execute() {
                 for (MPTeam g : objects) {
                     create(g);
+                    Objectis.create(g);
                 }
             }
 
@@ -99,7 +115,12 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
 
     @Override
     public boolean update(Collection<MPTeam> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+
+        for (MPTeam object : objects) {
+            Objectis.update(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPTeam g : objects) {
@@ -116,13 +137,18 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
         return true;
     }
 
     @Override
     public boolean delete(Collection<MPTeam> objects) {
-        Firestorm.runBatch(new FirestormBatch() {
+
+        for (MPTeam object : objects) {
+            Objectis.delete(object);
+        }
+
+        new Thread(() -> Firestorm.runBatch(new FirestormBatch() {
             @Override
             public void execute() {
                 for (MPTeam g : objects) {
@@ -139,7 +165,7 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
             public void onSuccess() {
 
             }
-        });
+        })).start();
         return true;
     }
 
@@ -149,30 +175,29 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
      * @return Returns a collection of Players.
      */
     public Collection<MPPlayer> listPlayers(String teamID) {
-        return Firestorm.filter(MPPlayer.class)
+        return Objectis.filter(MPPlayer.class)
                 .whereEqualTo("teamID", teamID)
-                .fetch()
-                .getItems();
+                .fetch();
     }
 
     public MPTeam getByName(String name) {
-        final QueryResult<MPTeam> teams = Firestorm.filter(MPTeam.class)
+        final ArrayList<MPTeam> teams = Objectis.filter(MPTeam.class)
                 .whereEqualTo("name", name)
                 .limit(1)
                 .fetch();
-        if (teams.hasItems()) {
-            return teams.getItems().get(0);
+        if (!teams.isEmpty()) {
+            return teams.get(0);
         }
         return null;
     }
 
     public MPTeam getByColor(TeamColor color) {
-        final QueryResult<MPTeam> teams = Firestorm.filter(MPTeam.class)
+        final ArrayList<MPTeam> teams = Objectis.filter(MPTeam.class)
                 .whereEqualTo("color", color)
                 .limit(1)
                 .fetch();
-        if (teams.hasItems()) {
-            return teams.getItems().get(0);
+        if (!teams.isEmpty()) {
+            return teams.get(0);
         }
         return null;
     }
