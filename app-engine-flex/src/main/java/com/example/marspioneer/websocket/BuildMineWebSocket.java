@@ -189,12 +189,14 @@ public class BuildMineWebSocket {
         building.setWorldID(worldSession.getWorldID());
 
         DBManager.buildingEntity.create(building);
+        DBManager.player.update(player);
+
         send(BuildResponse.newBuilder()
                 .setStatus(BuildResponse.Status.OK)
                 .setMessage("OK")
                 .build());
 
-        UpdateStateWebSocket.filteredUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()));
+        UpdateStateWebSocket.filteredUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
 
     }
 

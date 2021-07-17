@@ -10,13 +10,10 @@ import com.example.marspioneer.model.MPPlayer;
 import com.example.marspioneer.model.MPWorldSession;
 import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
-import com.example.marspioneer.proto.GetPlayerResponse;
-import com.example.marspioneer.proto.MPPartialStateProto;
+import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
 import com.nkasenides.athlos.backend.AthlosService;
-import com.example.marspioneer.proto.GetStateRequest;
 import com.example.marspioneer.auth.*;
-import com.example.marspioneer.proto.GetStateResponse;
 import redis.clients.jedis.Jedis;
 
 import javax.servlet.ServletContext;
@@ -52,6 +49,14 @@ public class GetState implements AthlosService<GetStateRequest, GetStateResponse
             return GetStateResponse.newBuilder()
                     .setStatus(GetStateResponse.Status.OK)
                     .setMessage("OK")
+                    .setResourceSet(
+                            ResourceSetProto.newBuilder()
+                                    .setFood(callingPlayer.getFood())
+                                    .setMetal(callingPlayer.getMetal())
+                                    .setSand(callingPlayer.getSand())
+                                    .setWater(callingPlayer.getWater())
+                                    .build()
+                    )
                     .setPartialState(mpPartialStateProto)
                     .build();
 

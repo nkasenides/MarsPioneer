@@ -77,7 +77,7 @@ public class UpdateStateWebSocket {
      * @param areaOfEffect The area of effect (AoE) of the action that initiated the state update.
      * @throws IOException thrown when the message cannot be sent via the socket.
      */
-    public static void filteredUpdate(final MPWorldSession worldSession, final MatrixPosition actionPosition, final float areaOfEffect, Jedis jedis) throws IOException {
+    public static void filteredUpdate(final MPWorldSession worldSession, final MatrixPosition actionPosition, final float areaOfEffect, Jedis jedis, MPPlayer player) throws IOException {
         final Collection<MPWorldSession> allSessions = DBManager.worldSession.listForWorld(worldSession.getWorldID());
         final Collection<MPWorldSession> sessionsToUpdate = State.filterUpdateSessions(allSessions, actionPosition, areaOfEffect);
         for (MPWorldSession session : sessionsToUpdate) {
@@ -86,6 +86,14 @@ public class UpdateStateWebSocket {
             final UpdateStateResponse response = UpdateStateResponse.newBuilder()
                     .setStatus(UpdateStateResponse.Status.OK)
                     .setMessage("OK")
+                    .setResourceSet(
+                            ResourceSetProto.newBuilder()
+                            .setFood(player.getFood())
+                            .setMetal(player.getMetal())
+                            .setSand(player.getSand())
+                            .setWater(player.getWater())
+                            .build()
+                    )
                     .setPartialState(State.forWorld(worldSession.getWorldID(), jedis).composeStateUpdate(session))
                     .build();
             socket.send(socketSession, response);

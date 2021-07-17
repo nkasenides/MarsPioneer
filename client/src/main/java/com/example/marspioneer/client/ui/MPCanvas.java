@@ -232,9 +232,9 @@ public class MPCanvas extends Canvas {
         g2d.drawRect(posSelectX, posSelectY, cellSize, cellSize);
 
         g2d.drawString("Food: " + client.getPlayerResourceSet().getFood(), 10, 100);
-        g2d.drawString("Sand: " + client.getPlayerResourceSet().getFood(), 10, 125);
-        g2d.drawString("Water: " + client.getPlayerResourceSet().getFood(), 10, 150);
-        g2d.drawString("Metal: " + client.getPlayerResourceSet().getFood(), 10, 175);
+        g2d.drawString("Sand: " + client.getPlayerResourceSet().getSand(), 10, 125);
+        g2d.drawString("Water: " + client.getPlayerResourceSet().getWater(), 10, 150);
+        g2d.drawString("Metal: " + client.getPlayerResourceSet().getMetal(), 10, 175);
 
         g2d.drawString(message, canvasWidth / 2 - 100, canvasHeight / 2 + 200);
 

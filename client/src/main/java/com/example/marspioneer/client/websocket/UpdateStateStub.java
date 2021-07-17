@@ -44,10 +44,8 @@ public class UpdateStateStub extends BinaryWebSocketClient {
 //            System.out.println("Cells: " + response.getPartialState().getCellsMap().size());
             client.getStateCells().putAll(response.getPartialState().getCellsMap());
 
-            client.getPlayerResourceSet().setFood(response.getResourceSet().getFood());
-            client.getPlayerResourceSet().setSand(response.getResourceSet().getSand());
-            client.getPlayerResourceSet().setMetal(response.getResourceSet().getMetal());
-            client.getPlayerResourceSet().setWater(response.getResourceSet().getWater());
+            client.setPlayerResourceSet(response.getResourceSet().toObject());
+
             client.getGameCanvas().repaint();
         } else {
             System.err.println(response.getMessage());
