@@ -17,6 +17,7 @@ import com.raylabz.objectis.Objectis;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class MPPlayerDAO implements MultiDAO<MPPlayer> {
@@ -24,8 +25,10 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
 
     @Override
     public boolean create(MPPlayer object) {
-        Firestorm.create(object);
-        Objectis.create(object);
+        String uuid = UUID.randomUUID().toString();
+        object.setId(uuid);
+        Objectis.create(object, uuid);
+        new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
 

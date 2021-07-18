@@ -14,6 +14,7 @@ import com.raylabz.objectis.Objectis;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
@@ -21,8 +22,10 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
 
     @Override
     public boolean create(BuildingEntity object) {
-        Firestorm.create(object);
-        Objectis.create(object);
+        String uuid = UUID.randomUUID().toString();
+        object.setId(uuid);
+        Objectis.create(object, uuid);
+        new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
 

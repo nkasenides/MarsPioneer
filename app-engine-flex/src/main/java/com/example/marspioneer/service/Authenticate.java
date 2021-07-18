@@ -20,66 +20,76 @@ public class Authenticate implements AthlosService<AuthenticateRequest, Authenti
     @Override    
     public AuthenticateResponse serve(AuthenticateRequest request, Object... additionalParams) {
 
-        //Check for the player name:
-        final String playerName = request.getPlayerName();
-        if (playerName.isEmpty()) {
-            return AuthenticateResponse.newBuilder()
-                    .setStatus(AuthenticateResponse.Status.BAD_CREDENTIALS)
-                    .setMessage("BAD_PLAYER_NAME")
-                    .build();
-        }
+        try {
 
-        //Try to get the player by name:
-        final MPPlayer player = DBManager.player.getByName(playerName);
-        if (player == null) {
-            return AuthenticateResponse.newBuilder()
-                    .setStatus(AuthenticateResponse.Status.NO_SUCH_PLAYER)
-                    .setMessage("NO_SUCH_PLAYER")
-                    .build();
-        }
-
-        //Authenticate:
-        if (player.getPassword() != null) { //Note: Null password signifies a user without a password, who logs in automatically.
-            if (!Hashing.hash(HashType.MD5, player.getPassword()).equals(Hashing.hash(HashType.MD5, request.getPassword()))) {
+            //Check for the player name:
+            final String playerName = request.getPlayerName();
+            if (playerName.isEmpty()) {
                 return AuthenticateResponse.newBuilder()
                         .setStatus(AuthenticateResponse.Status.BAD_CREDENTIALS)
-                        .setMessage("INVALID_PASSWORD")
+                        .setMessage("BAD_PLAYER_NAME")
                         .build();
             }
-        }
 
-        //Check if this player already has a game session that hasn't expired:
-        final MPGameSession existingGameSession = DBManager.gameSession.getForPlayer(player.getId());
-        if (existingGameSession != null) {
-            if (existingGameSession.getExpiresOn() > System.currentTimeMillis()) {
+            //Try to get the player by name:
+            final MPPlayer player = DBManager.player.getByName(playerName);
+            if (player == null) {
                 return AuthenticateResponse.newBuilder()
-                        .setStatus(AuthenticateResponse.Status.OK)
-                        .setMessage("SUCCESS")
-                        .setGameSession(existingGameSession.toProto())
+                        .setStatus(AuthenticateResponse.Status.NO_SUCH_PLAYER)
+                        .setMessage("NO_SUCH_PLAYER")
                         .build();
             }
-            //Delete the expired game session:
-            else {
-                DBManager.gameSession.delete(existingGameSession);
+
+            //Authenticate:
+            if (player.getPassword() != null) { //Note: Null password signifies a user without a password, who logs in automatically.
+                if (!Hashing.hash(HashType.MD5, player.getPassword()).equals(Hashing.hash(HashType.MD5, request.getPassword()))) {
+                    return AuthenticateResponse.newBuilder()
+                            .setStatus(AuthenticateResponse.Status.BAD_CREDENTIALS)
+                            .setMessage("INVALID_PASSWORD")
+                            .build();
+                }
             }
+
+            //Check if this player already has a game session that hasn't expired:
+            final MPGameSession existingGameSession = DBManager.gameSession.getForPlayer(player.getId());
+            if (existingGameSession != null) {
+                if (existingGameSession.getExpiresOn() > System.currentTimeMillis()) {
+                    return AuthenticateResponse.newBuilder()
+                            .setStatus(AuthenticateResponse.Status.OK)
+                            .setMessage("SUCCESS")
+                            .setGameSession(existingGameSession.toProto())
+                            .build();
+                }
+                //Delete the expired game session:
+                else {
+                    DBManager.gameSession.delete(existingGameSession);
+                }
+            }
+
+            //Create game session:
+            MPGameSession gameSession = new MPGameSession();
+            gameSession.setCreatedOn(System.currentTimeMillis());
+            gameSession.setExpiresOn(System.currentTimeMillis() + 604800);
+            gameSession.setIpAddress((String) additionalParams[0]);
+            gameSession.setPlayerID(player.getId());
+
+            DBManager.gameSession.create(gameSession);
+
+            //Response:
+            return AuthenticateResponse.
+                    newBuilder()
+                    .setGameSession(gameSession.toProto())
+                    .setStatus(AuthenticateResponse.Status.OK)
+                    .setMessage("OK")
+                    .build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AuthenticateResponse.
+                    newBuilder()
+                    .setStatus(AuthenticateResponse.Status.SERVER_ERROR)
+                    .setMessage(e.getMessage())
+                    .build();
         }
-
-        //Create game session:
-        MPGameSession gameSession = new MPGameSession();
-        gameSession.setCreatedOn(System.currentTimeMillis());
-        gameSession.setExpiresOn(System.currentTimeMillis() + 604800);
-        gameSession.setIpAddress((String) additionalParams[0]);
-        gameSession.setPlayerID(player.getId());
-
-        DBManager.gameSession.create(gameSession);
-
-        //Response:
-        return AuthenticateResponse.
-                newBuilder()
-                .setGameSession(gameSession.toProto())
-                .setStatus(AuthenticateResponse.Status.OK)
-                .setMessage("OK")
-                .build();
 
     }    
     

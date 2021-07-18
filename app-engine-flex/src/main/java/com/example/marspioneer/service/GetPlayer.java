@@ -17,6 +17,8 @@ public class GetPlayer implements AthlosService<GetPlayerRequest, GetPlayerRespo
     @Override    
     public GetPlayerResponse serve(GetPlayerRequest request, Object... additionalParams) {
 
+        System.out.println(request.getGameSessionID());
+
         //Verify game session:
         final MPPlayer callingPlayer = Auth.verifyGameSessionID(request.getGameSessionID());
         if (callingPlayer == null) {

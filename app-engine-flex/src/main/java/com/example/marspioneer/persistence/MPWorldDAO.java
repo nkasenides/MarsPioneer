@@ -16,14 +16,17 @@ import com.raylabz.objectis.Objectis;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class MPWorldDAO implements MultiDAO<MPWorld> {
 
     @Override
     public boolean create(MPWorld object) {
-        Firestorm.create(object);
-        Objectis.create(object);
+        String uuid = UUID.randomUUID().toString();
+        object.setId(uuid);
+        Objectis.create(object, uuid);
+        new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
 

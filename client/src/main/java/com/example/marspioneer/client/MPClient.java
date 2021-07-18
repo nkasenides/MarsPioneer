@@ -156,7 +156,6 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                         .build(),
                 authResponse -> {
                     if (authResponse.getStatus() == AuthenticateResponse.Status.OK) {
-                        System.out.println("Player 'admin' created, ID: " + authResponse.getGameSession().getPlayerID());
                         System.out.println("Game session ID: " + authResponse.getGameSession().getId());
                         adminGameSessionID = authResponse.getGameSession().getId();
                         Stubs.getPlayerStub().sendAndWait(
@@ -166,10 +165,11 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                         .build(),
                                 getPlayerResponse -> {
                                     if (getPlayerResponse.getStatus() == GetPlayerResponse.Status.OK) {
-                                        System.out.println("Player with ID '" + authResponse.getGameSession().getPlayerID() + "' retrieved.");
+                                        System.out.println("Player with ID '" + getPlayerResponse.getPlayer().getId() + "' retrieved.");
                                         adminPlayer = getPlayerResponse.getPlayer().toObject();
                                     } else {
-                                        System.err.println("Failed to get player with ID " + authResponse.getGameSession().getPlayerID());
+                                        System.err.println("Failed to get player with ID " + getPlayerResponse.getPlayer().getId());
+                                        System.err.println(getPlayerResponse.getMessage());
                                     }
                                 }
                         );

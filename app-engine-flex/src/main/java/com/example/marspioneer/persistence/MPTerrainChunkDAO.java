@@ -16,6 +16,7 @@ import redis.clients.jedis.Jedis;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
@@ -29,8 +30,9 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
     @Override
     public boolean create(MPTerrainChunk object) {
         final String chunkHash = object.getPosition().toHash();
-        Firestorm.create(object, chunkHash);
+        object.setId(chunkHash);
         Objectis.create(object, chunkHash);
+        new Thread(() -> Firestorm.create(object, chunkHash)).start();
         return true;
     }
 

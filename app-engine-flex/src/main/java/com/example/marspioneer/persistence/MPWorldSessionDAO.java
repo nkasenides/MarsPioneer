@@ -16,6 +16,7 @@ import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
@@ -23,8 +24,10 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
 
     @Override
     public boolean create(MPWorldSession object) {
-        Firestorm.create(object);
-        Objectis.create(object);
+        String uuid = UUID.randomUUID().toString();
+        object.setId(uuid);
+        Objectis.create(object, uuid);
+        new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
 

@@ -17,6 +17,7 @@ import com.raylabz.objectis.Objectis;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.UUID;
 
 
 public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
@@ -24,8 +25,10 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
 
     @Override
     public boolean create(MPGameSession object) {
-        Firestorm.create(object);
-        Objectis.create(object);
+        String uuid = UUID.randomUUID().toString();
+        object.setId(uuid);
+        Objectis.create(object, uuid);
+        new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
 
@@ -143,7 +146,7 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
     }
 
     public MPPlayer getPlayer(final String gameSessionID) {
-        final MPGameSession gameSession = Firestorm.get(MPGameSession.class, gameSessionID);
+        final MPGameSession gameSession = Objectis.get(MPGameSession.class, gameSessionID);
         if (gameSession == null) {
             return null;
         }
