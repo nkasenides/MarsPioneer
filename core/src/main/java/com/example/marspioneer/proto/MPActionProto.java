@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private MPActionProto() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MPActionProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,84 +49,84 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.example.marspioneer.proto.BuildHubProto.Builder subBuilder = null;
+            BuildHubProto.Builder subBuilder = null;
             if (actionCase_ == 1) {
-              subBuilder = ((com.example.marspioneer.proto.BuildHubProto) action_).toBuilder();
+              subBuilder = ((BuildHubProto) action_).toBuilder();
             }
             action_ =
-                input.readMessage(com.example.marspioneer.proto.BuildHubProto.parser(), extensionRegistry);
+                input.readMessage(BuildHubProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildHubProto) action_);
+              subBuilder.mergeFrom((BuildHubProto) action_);
               action_ = subBuilder.buildPartial();
             }
             actionCase_ = 1;
             break;
           }
           case 18: {
-            com.example.marspioneer.proto.SellBuildingProto.Builder subBuilder = null;
+            SellBuildingProto.Builder subBuilder = null;
             if (actionCase_ == 2) {
-              subBuilder = ((com.example.marspioneer.proto.SellBuildingProto) action_).toBuilder();
+              subBuilder = ((SellBuildingProto) action_).toBuilder();
             }
             action_ =
-                input.readMessage(com.example.marspioneer.proto.SellBuildingProto.parser(), extensionRegistry);
+                input.readMessage(SellBuildingProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.SellBuildingProto) action_);
+              subBuilder.mergeFrom((SellBuildingProto) action_);
               action_ = subBuilder.buildPartial();
             }
             actionCase_ = 2;
             break;
           }
           case 26: {
-            com.example.marspioneer.proto.BuildSandPitProto.Builder subBuilder = null;
+            BuildSandPitProto.Builder subBuilder = null;
             if (actionCase_ == 3) {
-              subBuilder = ((com.example.marspioneer.proto.BuildSandPitProto) action_).toBuilder();
+              subBuilder = ((BuildSandPitProto) action_).toBuilder();
             }
             action_ =
-                input.readMessage(com.example.marspioneer.proto.BuildSandPitProto.parser(), extensionRegistry);
+                input.readMessage(BuildSandPitProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildSandPitProto) action_);
+              subBuilder.mergeFrom((BuildSandPitProto) action_);
               action_ = subBuilder.buildPartial();
             }
             actionCase_ = 3;
             break;
           }
           case 34: {
-            com.example.marspioneer.proto.BuildMineProto.Builder subBuilder = null;
+            BuildMineProto.Builder subBuilder = null;
             if (actionCase_ == 4) {
-              subBuilder = ((com.example.marspioneer.proto.BuildMineProto) action_).toBuilder();
+              subBuilder = ((BuildMineProto) action_).toBuilder();
             }
             action_ =
-                input.readMessage(com.example.marspioneer.proto.BuildMineProto.parser(), extensionRegistry);
+                input.readMessage(BuildMineProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildMineProto) action_);
+              subBuilder.mergeFrom((BuildMineProto) action_);
               action_ = subBuilder.buildPartial();
             }
             actionCase_ = 4;
             break;
           }
           case 42: {
-            com.example.marspioneer.proto.BuildFarmProto.Builder subBuilder = null;
+            BuildFarmProto.Builder subBuilder = null;
             if (actionCase_ == 5) {
-              subBuilder = ((com.example.marspioneer.proto.BuildFarmProto) action_).toBuilder();
+              subBuilder = ((BuildFarmProto) action_).toBuilder();
             }
             action_ =
-                input.readMessage(com.example.marspioneer.proto.BuildFarmProto.parser(), extensionRegistry);
+                input.readMessage(BuildFarmProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildFarmProto) action_);
+              subBuilder.mergeFrom((BuildFarmProto) action_);
               action_ = subBuilder.buildPartial();
             }
             actionCase_ = 5;
             break;
           }
           case 50: {
-            com.example.marspioneer.proto.BuildWellProto.Builder subBuilder = null;
+            BuildWellProto.Builder subBuilder = null;
             if (actionCase_ == 6) {
-              subBuilder = ((com.example.marspioneer.proto.BuildWellProto) action_).toBuilder();
+              subBuilder = ((BuildWellProto) action_).toBuilder();
             }
             action_ =
-                input.readMessage(com.example.marspioneer.proto.BuildWellProto.parser(), extensionRegistry);
+                input.readMessage(BuildWellProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildWellProto) action_);
+              subBuilder.mergeFrom((BuildWellProto) action_);
               action_ = subBuilder.buildPartial();
             }
             actionCase_ = 6;
@@ -153,22 +153,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.MPActionProto.class, com.example.marspioneer.proto.MPActionProto.Builder.class);
+            MPActionProto.class, Builder.class);
   }
 
   private int actionCase_ = 0;
-  private java.lang.Object action_;
+  private Object action_;
   public enum ActionCase
       implements com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          InternalOneOfEnum {
     BUILDHUB(1),
     SELLBUILDING(2),
     BUILDSANDPIT(3),
@@ -185,7 +185,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ActionCase valueOf(int value) {
       return forNumber(value);
     }
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
    * @return Whether the buildHub field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildHub() {
     return actionCase_ == 1;
   }
@@ -226,22 +226,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
    * @return The buildHub.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildHubProto getBuildHub() {
+  @Override
+  public BuildHubProto getBuildHub() {
     if (actionCase_ == 1) {
-       return (com.example.marspioneer.proto.BuildHubProto) action_;
+       return (BuildHubProto) action_;
     }
-    return com.example.marspioneer.proto.BuildHubProto.getDefaultInstance();
+    return BuildHubProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildHubProtoOrBuilder getBuildHubOrBuilder() {
+  @Override
+  public BuildHubProtoOrBuilder getBuildHubOrBuilder() {
     if (actionCase_ == 1) {
-       return (com.example.marspioneer.proto.BuildHubProto) action_;
+       return (BuildHubProto) action_;
     }
-    return com.example.marspioneer.proto.BuildHubProto.getDefaultInstance();
+    return BuildHubProto.getDefaultInstance();
   }
 
   public static final int SELLBUILDING_FIELD_NUMBER = 2;
@@ -249,7 +249,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
    * @return Whether the sellBuilding field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSellBuilding() {
     return actionCase_ == 2;
   }
@@ -257,22 +257,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
    * @return The sellBuilding.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.SellBuildingProto getSellBuilding() {
+  @Override
+  public SellBuildingProto getSellBuilding() {
     if (actionCase_ == 2) {
-       return (com.example.marspioneer.proto.SellBuildingProto) action_;
+       return (SellBuildingProto) action_;
     }
-    return com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance();
+    return SellBuildingProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.SellBuildingProtoOrBuilder getSellBuildingOrBuilder() {
+  @Override
+  public SellBuildingProtoOrBuilder getSellBuildingOrBuilder() {
     if (actionCase_ == 2) {
-       return (com.example.marspioneer.proto.SellBuildingProto) action_;
+       return (SellBuildingProto) action_;
     }
-    return com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance();
+    return SellBuildingProto.getDefaultInstance();
   }
 
   public static final int BUILDSANDPIT_FIELD_NUMBER = 3;
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
    * @return Whether the buildSandPit field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildSandPit() {
     return actionCase_ == 3;
   }
@@ -288,22 +288,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
    * @return The buildSandPit.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildSandPitProto getBuildSandPit() {
+  @Override
+  public BuildSandPitProto getBuildSandPit() {
     if (actionCase_ == 3) {
-       return (com.example.marspioneer.proto.BuildSandPitProto) action_;
+       return (BuildSandPitProto) action_;
     }
-    return com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance();
+    return BuildSandPitProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildSandPitProtoOrBuilder getBuildSandPitOrBuilder() {
+  @Override
+  public BuildSandPitProtoOrBuilder getBuildSandPitOrBuilder() {
     if (actionCase_ == 3) {
-       return (com.example.marspioneer.proto.BuildSandPitProto) action_;
+       return (BuildSandPitProto) action_;
     }
-    return com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance();
+    return BuildSandPitProto.getDefaultInstance();
   }
 
   public static final int BUILDMINE_FIELD_NUMBER = 4;
@@ -311,7 +311,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
    * @return Whether the buildMine field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildMine() {
     return actionCase_ == 4;
   }
@@ -319,22 +319,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
    * @return The buildMine.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildMineProto getBuildMine() {
+  @Override
+  public BuildMineProto getBuildMine() {
     if (actionCase_ == 4) {
-       return (com.example.marspioneer.proto.BuildMineProto) action_;
+       return (BuildMineProto) action_;
     }
-    return com.example.marspioneer.proto.BuildMineProto.getDefaultInstance();
+    return BuildMineProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildMineProtoOrBuilder getBuildMineOrBuilder() {
+  @Override
+  public BuildMineProtoOrBuilder getBuildMineOrBuilder() {
     if (actionCase_ == 4) {
-       return (com.example.marspioneer.proto.BuildMineProto) action_;
+       return (BuildMineProto) action_;
     }
-    return com.example.marspioneer.proto.BuildMineProto.getDefaultInstance();
+    return BuildMineProto.getDefaultInstance();
   }
 
   public static final int BUILDFARM_FIELD_NUMBER = 5;
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
    * @return Whether the buildFarm field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildFarm() {
     return actionCase_ == 5;
   }
@@ -350,22 +350,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
    * @return The buildFarm.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildFarmProto getBuildFarm() {
+  @Override
+  public BuildFarmProto getBuildFarm() {
     if (actionCase_ == 5) {
-       return (com.example.marspioneer.proto.BuildFarmProto) action_;
+       return (BuildFarmProto) action_;
     }
-    return com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance();
+    return BuildFarmProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildFarmProtoOrBuilder getBuildFarmOrBuilder() {
+  @Override
+  public BuildFarmProtoOrBuilder getBuildFarmOrBuilder() {
     if (actionCase_ == 5) {
-       return (com.example.marspioneer.proto.BuildFarmProto) action_;
+       return (BuildFarmProto) action_;
     }
-    return com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance();
+    return BuildFarmProto.getDefaultInstance();
   }
 
   public static final int BUILDWELL_FIELD_NUMBER = 6;
@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
    * @return Whether the buildWell field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildWell() {
     return actionCase_ == 6;
   }
@@ -381,26 +381,26 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
    * @return The buildWell.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildWellProto getBuildWell() {
+  @Override
+  public BuildWellProto getBuildWell() {
     if (actionCase_ == 6) {
-       return (com.example.marspioneer.proto.BuildWellProto) action_;
+       return (BuildWellProto) action_;
     }
-    return com.example.marspioneer.proto.BuildWellProto.getDefaultInstance();
+    return BuildWellProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildWellProtoOrBuilder getBuildWellOrBuilder() {
+  @Override
+  public BuildWellProtoOrBuilder getBuildWellOrBuilder() {
     if (actionCase_ == 6) {
-       return (com.example.marspioneer.proto.BuildWellProto) action_;
+       return (BuildWellProto) action_;
     }
-    return com.example.marspioneer.proto.BuildWellProto.getDefaultInstance();
+    return BuildWellProto.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -410,31 +410,31 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (actionCase_ == 1) {
-      output.writeMessage(1, (com.example.marspioneer.proto.BuildHubProto) action_);
+      output.writeMessage(1, (BuildHubProto) action_);
     }
     if (actionCase_ == 2) {
-      output.writeMessage(2, (com.example.marspioneer.proto.SellBuildingProto) action_);
+      output.writeMessage(2, (SellBuildingProto) action_);
     }
     if (actionCase_ == 3) {
-      output.writeMessage(3, (com.example.marspioneer.proto.BuildSandPitProto) action_);
+      output.writeMessage(3, (BuildSandPitProto) action_);
     }
     if (actionCase_ == 4) {
-      output.writeMessage(4, (com.example.marspioneer.proto.BuildMineProto) action_);
+      output.writeMessage(4, (BuildMineProto) action_);
     }
     if (actionCase_ == 5) {
-      output.writeMessage(5, (com.example.marspioneer.proto.BuildFarmProto) action_);
+      output.writeMessage(5, (BuildFarmProto) action_);
     }
     if (actionCase_ == 6) {
-      output.writeMessage(6, (com.example.marspioneer.proto.BuildWellProto) action_);
+      output.writeMessage(6, (BuildWellProto) action_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -442,42 +442,42 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (actionCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.example.marspioneer.proto.BuildHubProto) action_);
+        .computeMessageSize(1, (BuildHubProto) action_);
     }
     if (actionCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.example.marspioneer.proto.SellBuildingProto) action_);
+        .computeMessageSize(2, (SellBuildingProto) action_);
     }
     if (actionCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.example.marspioneer.proto.BuildSandPitProto) action_);
+        .computeMessageSize(3, (BuildSandPitProto) action_);
     }
     if (actionCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.example.marspioneer.proto.BuildMineProto) action_);
+        .computeMessageSize(4, (BuildMineProto) action_);
     }
     if (actionCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.example.marspioneer.proto.BuildFarmProto) action_);
+        .computeMessageSize(5, (BuildFarmProto) action_);
     }
     if (actionCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.example.marspioneer.proto.BuildWellProto) action_);
+        .computeMessageSize(6, (BuildWellProto) action_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.MPActionProto)) {
+    if (!(obj instanceof MPActionProto)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.MPActionProto other = (com.example.marspioneer.proto.MPActionProto) obj;
+    MPActionProto other = (MPActionProto) obj;
 
     if (!getActionCase().equals(other.getActionCase())) return false;
     switch (actionCase_) {
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -552,69 +552,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(byte[] data)
+  public static MPActionProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(java.io.InputStream input)
+  public static MPActionProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseDelimitedFrom(java.io.InputStream input)
+  public static MPActionProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseDelimitedFrom(
+  public static MPActionProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPActionProto parseFrom(
+  public static MPActionProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -622,23 +622,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.MPActionProto prototype) {
+  public static Builder newBuilder(MPActionProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -648,18 +648,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.MPActionProto)
-      com.example.marspioneer.proto.MPActionProtoOrBuilder {
+      MPActionProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.MPActionProto.class, com.example.marspioneer.proto.MPActionProto.Builder.class);
+              MPActionProto.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.MPActionProto.newBuilder()
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       actionCase_ = 0;
@@ -685,29 +685,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPActionProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPActionProto getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.MPActionProto.getDefaultInstance();
+    @Override
+    public MPActionProto getDefaultInstanceForType() {
+      return MPActionProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPActionProto build() {
-      com.example.marspioneer.proto.MPActionProto result = buildPartial();
+    @Override
+    public MPActionProto build() {
+      MPActionProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPActionProto buildPartial() {
-      com.example.marspioneer.proto.MPActionProto result = new com.example.marspioneer.proto.MPActionProto(this);
+    @Override
+    public MPActionProto buildPartial() {
+      MPActionProto result = new MPActionProto(this);
       if (actionCase_ == 1) {
         if (buildHubBuilder_ == null) {
           result.action_ = action_;
@@ -755,50 +755,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.MPActionProto) {
-        return mergeFrom((com.example.marspioneer.proto.MPActionProto)other);
+      if (other instanceof MPActionProto) {
+        return mergeFrom((MPActionProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.MPActionProto other) {
-      if (other == com.example.marspioneer.proto.MPActionProto.getDefaultInstance()) return this;
+    public Builder mergeFrom(MPActionProto other) {
+      if (other == MPActionProto.getDefaultInstance()) return this;
       switch (other.getActionCase()) {
         case BUILDHUB: {
           mergeBuildHub(other.getBuildHub());
@@ -833,21 +833,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.MPActionProto parsedMessage = null;
+      MPActionProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.MPActionProto) e.getUnfinishedMessage();
+        parsedMessage = (MPActionProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int actionCase_ = 0;
-    private java.lang.Object action_;
+    private Object action_;
     public ActionCase
         getActionCase() {
       return ActionCase.forNumber(
@@ -873,12 +873,12 @@ private static final long serialVersionUID = 0L;
 
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildHubProto, com.example.marspioneer.proto.BuildHubProto.Builder, com.example.marspioneer.proto.BuildHubProtoOrBuilder> buildHubBuilder_;
+        BuildHubProto, BuildHubProto.Builder, BuildHubProtoOrBuilder> buildHubBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      * @return Whether the buildHub field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildHub() {
       return actionCase_ == 1;
     }
@@ -886,24 +886,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      * @return The buildHub.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildHubProto getBuildHub() {
+    @Override
+    public BuildHubProto getBuildHub() {
       if (buildHubBuilder_ == null) {
         if (actionCase_ == 1) {
-          return (com.example.marspioneer.proto.BuildHubProto) action_;
+          return (BuildHubProto) action_;
         }
-        return com.example.marspioneer.proto.BuildHubProto.getDefaultInstance();
+        return BuildHubProto.getDefaultInstance();
       } else {
         if (actionCase_ == 1) {
           return buildHubBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildHubProto.getDefaultInstance();
+        return BuildHubProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      */
-    public Builder setBuildHub(com.example.marspioneer.proto.BuildHubProto value) {
+    public Builder setBuildHub(BuildHubProto value) {
       if (buildHubBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      */
     public Builder setBuildHub(
-        com.example.marspioneer.proto.BuildHubProto.Builder builderForValue) {
+        BuildHubProto.Builder builderForValue) {
       if (buildHubBuilder_ == null) {
         action_ = builderForValue.build();
         onChanged();
@@ -933,11 +933,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      */
-    public Builder mergeBuildHub(com.example.marspioneer.proto.BuildHubProto value) {
+    public Builder mergeBuildHub(BuildHubProto value) {
       if (buildHubBuilder_ == null) {
         if (actionCase_ == 1 &&
-            action_ != com.example.marspioneer.proto.BuildHubProto.getDefaultInstance()) {
-          action_ = com.example.marspioneer.proto.BuildHubProto.newBuilder((com.example.marspioneer.proto.BuildHubProto) action_)
+            action_ != BuildHubProto.getDefaultInstance()) {
+          action_ = BuildHubProto.newBuilder((BuildHubProto) action_)
               .mergeFrom(value).buildPartial();
         } else {
           action_ = value;
@@ -974,36 +974,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      */
-    public com.example.marspioneer.proto.BuildHubProto.Builder getBuildHubBuilder() {
+    public BuildHubProto.Builder getBuildHubBuilder() {
       return getBuildHubFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildHubProtoOrBuilder getBuildHubOrBuilder() {
+    @Override
+    public BuildHubProtoOrBuilder getBuildHubOrBuilder() {
       if ((actionCase_ == 1) && (buildHubBuilder_ != null)) {
         return buildHubBuilder_.getMessageOrBuilder();
       } else {
         if (actionCase_ == 1) {
-          return (com.example.marspioneer.proto.BuildHubProto) action_;
+          return (BuildHubProto) action_;
         }
-        return com.example.marspioneer.proto.BuildHubProto.getDefaultInstance();
+        return BuildHubProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildHubProto, com.example.marspioneer.proto.BuildHubProto.Builder, com.example.marspioneer.proto.BuildHubProtoOrBuilder> 
+        BuildHubProto, BuildHubProto.Builder, BuildHubProtoOrBuilder>
         getBuildHubFieldBuilder() {
       if (buildHubBuilder_ == null) {
         if (!(actionCase_ == 1)) {
-          action_ = com.example.marspioneer.proto.BuildHubProto.getDefaultInstance();
+          action_ = BuildHubProto.getDefaultInstance();
         }
         buildHubBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildHubProto, com.example.marspioneer.proto.BuildHubProto.Builder, com.example.marspioneer.proto.BuildHubProtoOrBuilder>(
-                (com.example.marspioneer.proto.BuildHubProto) action_,
+            BuildHubProto, BuildHubProto.Builder, BuildHubProtoOrBuilder>(
+                (BuildHubProto) action_,
                 getParentForChildren(),
                 isClean());
         action_ = null;
@@ -1014,12 +1014,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.SellBuildingProto, com.example.marspioneer.proto.SellBuildingProto.Builder, com.example.marspioneer.proto.SellBuildingProtoOrBuilder> sellBuildingBuilder_;
+        SellBuildingProto, SellBuildingProto.Builder, SellBuildingProtoOrBuilder> sellBuildingBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      * @return Whether the sellBuilding field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasSellBuilding() {
       return actionCase_ == 2;
     }
@@ -1027,24 +1027,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      * @return The sellBuilding.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SellBuildingProto getSellBuilding() {
+    @Override
+    public SellBuildingProto getSellBuilding() {
       if (sellBuildingBuilder_ == null) {
         if (actionCase_ == 2) {
-          return (com.example.marspioneer.proto.SellBuildingProto) action_;
+          return (SellBuildingProto) action_;
         }
-        return com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance();
+        return SellBuildingProto.getDefaultInstance();
       } else {
         if (actionCase_ == 2) {
           return sellBuildingBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance();
+        return SellBuildingProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      */
-    public Builder setSellBuilding(com.example.marspioneer.proto.SellBuildingProto value) {
+    public Builder setSellBuilding(SellBuildingProto value) {
       if (sellBuildingBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1061,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      */
     public Builder setSellBuilding(
-        com.example.marspioneer.proto.SellBuildingProto.Builder builderForValue) {
+        SellBuildingProto.Builder builderForValue) {
       if (sellBuildingBuilder_ == null) {
         action_ = builderForValue.build();
         onChanged();
@@ -1074,11 +1074,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      */
-    public Builder mergeSellBuilding(com.example.marspioneer.proto.SellBuildingProto value) {
+    public Builder mergeSellBuilding(SellBuildingProto value) {
       if (sellBuildingBuilder_ == null) {
         if (actionCase_ == 2 &&
-            action_ != com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance()) {
-          action_ = com.example.marspioneer.proto.SellBuildingProto.newBuilder((com.example.marspioneer.proto.SellBuildingProto) action_)
+            action_ != SellBuildingProto.getDefaultInstance()) {
+          action_ = SellBuildingProto.newBuilder((SellBuildingProto) action_)
               .mergeFrom(value).buildPartial();
         } else {
           action_ = value;
@@ -1115,36 +1115,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      */
-    public com.example.marspioneer.proto.SellBuildingProto.Builder getSellBuildingBuilder() {
+    public SellBuildingProto.Builder getSellBuildingBuilder() {
       return getSellBuildingFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SellBuildingProtoOrBuilder getSellBuildingOrBuilder() {
+    @Override
+    public SellBuildingProtoOrBuilder getSellBuildingOrBuilder() {
       if ((actionCase_ == 2) && (sellBuildingBuilder_ != null)) {
         return sellBuildingBuilder_.getMessageOrBuilder();
       } else {
         if (actionCase_ == 2) {
-          return (com.example.marspioneer.proto.SellBuildingProto) action_;
+          return (SellBuildingProto) action_;
         }
-        return com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance();
+        return SellBuildingProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.SellBuildingProto, com.example.marspioneer.proto.SellBuildingProto.Builder, com.example.marspioneer.proto.SellBuildingProtoOrBuilder> 
+        SellBuildingProto, SellBuildingProto.Builder, SellBuildingProtoOrBuilder>
         getSellBuildingFieldBuilder() {
       if (sellBuildingBuilder_ == null) {
         if (!(actionCase_ == 2)) {
-          action_ = com.example.marspioneer.proto.SellBuildingProto.getDefaultInstance();
+          action_ = SellBuildingProto.getDefaultInstance();
         }
         sellBuildingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.SellBuildingProto, com.example.marspioneer.proto.SellBuildingProto.Builder, com.example.marspioneer.proto.SellBuildingProtoOrBuilder>(
-                (com.example.marspioneer.proto.SellBuildingProto) action_,
+            SellBuildingProto, SellBuildingProto.Builder, SellBuildingProtoOrBuilder>(
+                (SellBuildingProto) action_,
                 getParentForChildren(),
                 isClean());
         action_ = null;
@@ -1155,12 +1155,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildSandPitProto, com.example.marspioneer.proto.BuildSandPitProto.Builder, com.example.marspioneer.proto.BuildSandPitProtoOrBuilder> buildSandPitBuilder_;
+        BuildSandPitProto, BuildSandPitProto.Builder, BuildSandPitProtoOrBuilder> buildSandPitBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      * @return Whether the buildSandPit field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildSandPit() {
       return actionCase_ == 3;
     }
@@ -1168,24 +1168,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      * @return The buildSandPit.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildSandPitProto getBuildSandPit() {
+    @Override
+    public BuildSandPitProto getBuildSandPit() {
       if (buildSandPitBuilder_ == null) {
         if (actionCase_ == 3) {
-          return (com.example.marspioneer.proto.BuildSandPitProto) action_;
+          return (BuildSandPitProto) action_;
         }
-        return com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance();
+        return BuildSandPitProto.getDefaultInstance();
       } else {
         if (actionCase_ == 3) {
           return buildSandPitBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance();
+        return BuildSandPitProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      */
-    public Builder setBuildSandPit(com.example.marspioneer.proto.BuildSandPitProto value) {
+    public Builder setBuildSandPit(BuildSandPitProto value) {
       if (buildSandPitBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1202,7 +1202,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      */
     public Builder setBuildSandPit(
-        com.example.marspioneer.proto.BuildSandPitProto.Builder builderForValue) {
+        BuildSandPitProto.Builder builderForValue) {
       if (buildSandPitBuilder_ == null) {
         action_ = builderForValue.build();
         onChanged();
@@ -1215,11 +1215,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      */
-    public Builder mergeBuildSandPit(com.example.marspioneer.proto.BuildSandPitProto value) {
+    public Builder mergeBuildSandPit(BuildSandPitProto value) {
       if (buildSandPitBuilder_ == null) {
         if (actionCase_ == 3 &&
-            action_ != com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance()) {
-          action_ = com.example.marspioneer.proto.BuildSandPitProto.newBuilder((com.example.marspioneer.proto.BuildSandPitProto) action_)
+            action_ != BuildSandPitProto.getDefaultInstance()) {
+          action_ = BuildSandPitProto.newBuilder((BuildSandPitProto) action_)
               .mergeFrom(value).buildPartial();
         } else {
           action_ = value;
@@ -1256,36 +1256,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      */
-    public com.example.marspioneer.proto.BuildSandPitProto.Builder getBuildSandPitBuilder() {
+    public BuildSandPitProto.Builder getBuildSandPitBuilder() {
       return getBuildSandPitFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildSandPitProtoOrBuilder getBuildSandPitOrBuilder() {
+    @Override
+    public BuildSandPitProtoOrBuilder getBuildSandPitOrBuilder() {
       if ((actionCase_ == 3) && (buildSandPitBuilder_ != null)) {
         return buildSandPitBuilder_.getMessageOrBuilder();
       } else {
         if (actionCase_ == 3) {
-          return (com.example.marspioneer.proto.BuildSandPitProto) action_;
+          return (BuildSandPitProto) action_;
         }
-        return com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance();
+        return BuildSandPitProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildSandPitProto, com.example.marspioneer.proto.BuildSandPitProto.Builder, com.example.marspioneer.proto.BuildSandPitProtoOrBuilder> 
+        BuildSandPitProto, BuildSandPitProto.Builder, BuildSandPitProtoOrBuilder>
         getBuildSandPitFieldBuilder() {
       if (buildSandPitBuilder_ == null) {
         if (!(actionCase_ == 3)) {
-          action_ = com.example.marspioneer.proto.BuildSandPitProto.getDefaultInstance();
+          action_ = BuildSandPitProto.getDefaultInstance();
         }
         buildSandPitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildSandPitProto, com.example.marspioneer.proto.BuildSandPitProto.Builder, com.example.marspioneer.proto.BuildSandPitProtoOrBuilder>(
-                (com.example.marspioneer.proto.BuildSandPitProto) action_,
+            BuildSandPitProto, BuildSandPitProto.Builder, BuildSandPitProtoOrBuilder>(
+                (BuildSandPitProto) action_,
                 getParentForChildren(),
                 isClean());
         action_ = null;
@@ -1296,12 +1296,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildMineProto, com.example.marspioneer.proto.BuildMineProto.Builder, com.example.marspioneer.proto.BuildMineProtoOrBuilder> buildMineBuilder_;
+        BuildMineProto, BuildMineProto.Builder, BuildMineProtoOrBuilder> buildMineBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      * @return Whether the buildMine field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildMine() {
       return actionCase_ == 4;
     }
@@ -1309,24 +1309,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      * @return The buildMine.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildMineProto getBuildMine() {
+    @Override
+    public BuildMineProto getBuildMine() {
       if (buildMineBuilder_ == null) {
         if (actionCase_ == 4) {
-          return (com.example.marspioneer.proto.BuildMineProto) action_;
+          return (BuildMineProto) action_;
         }
-        return com.example.marspioneer.proto.BuildMineProto.getDefaultInstance();
+        return BuildMineProto.getDefaultInstance();
       } else {
         if (actionCase_ == 4) {
           return buildMineBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildMineProto.getDefaultInstance();
+        return BuildMineProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      */
-    public Builder setBuildMine(com.example.marspioneer.proto.BuildMineProto value) {
+    public Builder setBuildMine(BuildMineProto value) {
       if (buildMineBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1343,7 +1343,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      */
     public Builder setBuildMine(
-        com.example.marspioneer.proto.BuildMineProto.Builder builderForValue) {
+        BuildMineProto.Builder builderForValue) {
       if (buildMineBuilder_ == null) {
         action_ = builderForValue.build();
         onChanged();
@@ -1356,11 +1356,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      */
-    public Builder mergeBuildMine(com.example.marspioneer.proto.BuildMineProto value) {
+    public Builder mergeBuildMine(BuildMineProto value) {
       if (buildMineBuilder_ == null) {
         if (actionCase_ == 4 &&
-            action_ != com.example.marspioneer.proto.BuildMineProto.getDefaultInstance()) {
-          action_ = com.example.marspioneer.proto.BuildMineProto.newBuilder((com.example.marspioneer.proto.BuildMineProto) action_)
+            action_ != BuildMineProto.getDefaultInstance()) {
+          action_ = BuildMineProto.newBuilder((BuildMineProto) action_)
               .mergeFrom(value).buildPartial();
         } else {
           action_ = value;
@@ -1397,36 +1397,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      */
-    public com.example.marspioneer.proto.BuildMineProto.Builder getBuildMineBuilder() {
+    public BuildMineProto.Builder getBuildMineBuilder() {
       return getBuildMineFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildMineProtoOrBuilder getBuildMineOrBuilder() {
+    @Override
+    public BuildMineProtoOrBuilder getBuildMineOrBuilder() {
       if ((actionCase_ == 4) && (buildMineBuilder_ != null)) {
         return buildMineBuilder_.getMessageOrBuilder();
       } else {
         if (actionCase_ == 4) {
-          return (com.example.marspioneer.proto.BuildMineProto) action_;
+          return (BuildMineProto) action_;
         }
-        return com.example.marspioneer.proto.BuildMineProto.getDefaultInstance();
+        return BuildMineProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildMineProto, com.example.marspioneer.proto.BuildMineProto.Builder, com.example.marspioneer.proto.BuildMineProtoOrBuilder> 
+        BuildMineProto, BuildMineProto.Builder, BuildMineProtoOrBuilder>
         getBuildMineFieldBuilder() {
       if (buildMineBuilder_ == null) {
         if (!(actionCase_ == 4)) {
-          action_ = com.example.marspioneer.proto.BuildMineProto.getDefaultInstance();
+          action_ = BuildMineProto.getDefaultInstance();
         }
         buildMineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildMineProto, com.example.marspioneer.proto.BuildMineProto.Builder, com.example.marspioneer.proto.BuildMineProtoOrBuilder>(
-                (com.example.marspioneer.proto.BuildMineProto) action_,
+            BuildMineProto, BuildMineProto.Builder, BuildMineProtoOrBuilder>(
+                (BuildMineProto) action_,
                 getParentForChildren(),
                 isClean());
         action_ = null;
@@ -1437,12 +1437,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildFarmProto, com.example.marspioneer.proto.BuildFarmProto.Builder, com.example.marspioneer.proto.BuildFarmProtoOrBuilder> buildFarmBuilder_;
+        BuildFarmProto, BuildFarmProto.Builder, BuildFarmProtoOrBuilder> buildFarmBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      * @return Whether the buildFarm field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildFarm() {
       return actionCase_ == 5;
     }
@@ -1450,24 +1450,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      * @return The buildFarm.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildFarmProto getBuildFarm() {
+    @Override
+    public BuildFarmProto getBuildFarm() {
       if (buildFarmBuilder_ == null) {
         if (actionCase_ == 5) {
-          return (com.example.marspioneer.proto.BuildFarmProto) action_;
+          return (BuildFarmProto) action_;
         }
-        return com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance();
+        return BuildFarmProto.getDefaultInstance();
       } else {
         if (actionCase_ == 5) {
           return buildFarmBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance();
+        return BuildFarmProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      */
-    public Builder setBuildFarm(com.example.marspioneer.proto.BuildFarmProto value) {
+    public Builder setBuildFarm(BuildFarmProto value) {
       if (buildFarmBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1484,7 +1484,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      */
     public Builder setBuildFarm(
-        com.example.marspioneer.proto.BuildFarmProto.Builder builderForValue) {
+        BuildFarmProto.Builder builderForValue) {
       if (buildFarmBuilder_ == null) {
         action_ = builderForValue.build();
         onChanged();
@@ -1497,11 +1497,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      */
-    public Builder mergeBuildFarm(com.example.marspioneer.proto.BuildFarmProto value) {
+    public Builder mergeBuildFarm(BuildFarmProto value) {
       if (buildFarmBuilder_ == null) {
         if (actionCase_ == 5 &&
-            action_ != com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance()) {
-          action_ = com.example.marspioneer.proto.BuildFarmProto.newBuilder((com.example.marspioneer.proto.BuildFarmProto) action_)
+            action_ != BuildFarmProto.getDefaultInstance()) {
+          action_ = BuildFarmProto.newBuilder((BuildFarmProto) action_)
               .mergeFrom(value).buildPartial();
         } else {
           action_ = value;
@@ -1538,36 +1538,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      */
-    public com.example.marspioneer.proto.BuildFarmProto.Builder getBuildFarmBuilder() {
+    public BuildFarmProto.Builder getBuildFarmBuilder() {
       return getBuildFarmFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildFarmProtoOrBuilder getBuildFarmOrBuilder() {
+    @Override
+    public BuildFarmProtoOrBuilder getBuildFarmOrBuilder() {
       if ((actionCase_ == 5) && (buildFarmBuilder_ != null)) {
         return buildFarmBuilder_.getMessageOrBuilder();
       } else {
         if (actionCase_ == 5) {
-          return (com.example.marspioneer.proto.BuildFarmProto) action_;
+          return (BuildFarmProto) action_;
         }
-        return com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance();
+        return BuildFarmProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildFarmProto, com.example.marspioneer.proto.BuildFarmProto.Builder, com.example.marspioneer.proto.BuildFarmProtoOrBuilder> 
+        BuildFarmProto, BuildFarmProto.Builder, BuildFarmProtoOrBuilder>
         getBuildFarmFieldBuilder() {
       if (buildFarmBuilder_ == null) {
         if (!(actionCase_ == 5)) {
-          action_ = com.example.marspioneer.proto.BuildFarmProto.getDefaultInstance();
+          action_ = BuildFarmProto.getDefaultInstance();
         }
         buildFarmBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildFarmProto, com.example.marspioneer.proto.BuildFarmProto.Builder, com.example.marspioneer.proto.BuildFarmProtoOrBuilder>(
-                (com.example.marspioneer.proto.BuildFarmProto) action_,
+            BuildFarmProto, BuildFarmProto.Builder, BuildFarmProtoOrBuilder>(
+                (BuildFarmProto) action_,
                 getParentForChildren(),
                 isClean());
         action_ = null;
@@ -1578,12 +1578,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildWellProto, com.example.marspioneer.proto.BuildWellProto.Builder, com.example.marspioneer.proto.BuildWellProtoOrBuilder> buildWellBuilder_;
+        BuildWellProto, BuildWellProto.Builder, BuildWellProtoOrBuilder> buildWellBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      * @return Whether the buildWell field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildWell() {
       return actionCase_ == 6;
     }
@@ -1591,24 +1591,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      * @return The buildWell.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildWellProto getBuildWell() {
+    @Override
+    public BuildWellProto getBuildWell() {
       if (buildWellBuilder_ == null) {
         if (actionCase_ == 6) {
-          return (com.example.marspioneer.proto.BuildWellProto) action_;
+          return (BuildWellProto) action_;
         }
-        return com.example.marspioneer.proto.BuildWellProto.getDefaultInstance();
+        return BuildWellProto.getDefaultInstance();
       } else {
         if (actionCase_ == 6) {
           return buildWellBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildWellProto.getDefaultInstance();
+        return BuildWellProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      */
-    public Builder setBuildWell(com.example.marspioneer.proto.BuildWellProto value) {
+    public Builder setBuildWell(BuildWellProto value) {
       if (buildWellBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1625,7 +1625,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      */
     public Builder setBuildWell(
-        com.example.marspioneer.proto.BuildWellProto.Builder builderForValue) {
+        BuildWellProto.Builder builderForValue) {
       if (buildWellBuilder_ == null) {
         action_ = builderForValue.build();
         onChanged();
@@ -1638,11 +1638,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      */
-    public Builder mergeBuildWell(com.example.marspioneer.proto.BuildWellProto value) {
+    public Builder mergeBuildWell(BuildWellProto value) {
       if (buildWellBuilder_ == null) {
         if (actionCase_ == 6 &&
-            action_ != com.example.marspioneer.proto.BuildWellProto.getDefaultInstance()) {
-          action_ = com.example.marspioneer.proto.BuildWellProto.newBuilder((com.example.marspioneer.proto.BuildWellProto) action_)
+            action_ != BuildWellProto.getDefaultInstance()) {
+          action_ = BuildWellProto.newBuilder((BuildWellProto) action_)
               .mergeFrom(value).buildPartial();
         } else {
           action_ = value;
@@ -1679,36 +1679,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      */
-    public com.example.marspioneer.proto.BuildWellProto.Builder getBuildWellBuilder() {
+    public BuildWellProto.Builder getBuildWellBuilder() {
       return getBuildWellFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildWellProtoOrBuilder getBuildWellOrBuilder() {
+    @Override
+    public BuildWellProtoOrBuilder getBuildWellOrBuilder() {
       if ((actionCase_ == 6) && (buildWellBuilder_ != null)) {
         return buildWellBuilder_.getMessageOrBuilder();
       } else {
         if (actionCase_ == 6) {
-          return (com.example.marspioneer.proto.BuildWellProto) action_;
+          return (BuildWellProto) action_;
         }
-        return com.example.marspioneer.proto.BuildWellProto.getDefaultInstance();
+        return BuildWellProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildWellProto, com.example.marspioneer.proto.BuildWellProto.Builder, com.example.marspioneer.proto.BuildWellProtoOrBuilder> 
+        BuildWellProto, BuildWellProto.Builder, BuildWellProtoOrBuilder>
         getBuildWellFieldBuilder() {
       if (buildWellBuilder_ == null) {
         if (!(actionCase_ == 6)) {
-          action_ = com.example.marspioneer.proto.BuildWellProto.getDefaultInstance();
+          action_ = BuildWellProto.getDefaultInstance();
         }
         buildWellBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildWellProto, com.example.marspioneer.proto.BuildWellProto.Builder, com.example.marspioneer.proto.BuildWellProtoOrBuilder>(
-                (com.example.marspioneer.proto.BuildWellProto) action_,
+            BuildWellProto, BuildWellProto.Builder, BuildWellProtoOrBuilder>(
+                (BuildWellProto) action_,
                 getParentForChildren(),
                 isClean());
         action_ = null;
@@ -1717,13 +1717,13 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return buildWellBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1734,18 +1734,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.MPActionProto)
-  private static final com.example.marspioneer.proto.MPActionProto DEFAULT_INSTANCE;
+  private static final MPActionProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.MPActionProto();
+    DEFAULT_INSTANCE = new MPActionProto();
   }
 
-  public static com.example.marspioneer.proto.MPActionProto getDefaultInstance() {
+  public static MPActionProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MPActionProto>
       PARSER = new com.google.protobuf.AbstractParser<MPActionProto>() {
-    @java.lang.Override
+    @Override
     public MPActionProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1758,13 +1758,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MPActionProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPActionProto getDefaultInstanceForType() {
+  @Override
+  public MPActionProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

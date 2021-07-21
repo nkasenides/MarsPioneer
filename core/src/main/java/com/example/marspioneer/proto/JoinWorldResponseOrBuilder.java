@@ -16,11 +16,11 @@ public interface JoinWorldResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    * @return The partialState.
    */
-  com.example.marspioneer.proto.MPPartialStateProto getPartialState();
+  MPPartialStateProto getPartialState();
   /**
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    */
-  com.example.marspioneer.proto.MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
+  MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
@@ -31,11 +31,11 @@ public interface JoinWorldResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    * @return The world.
    */
-  com.example.marspioneer.proto.MPWorldProto getWorld();
+  MPWorldProto getWorld();
   /**
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    */
-  com.example.marspioneer.proto.MPWorldProtoOrBuilder getWorldOrBuilder();
+  MPWorldProtoOrBuilder getWorldOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 3;</code>
@@ -46,17 +46,17 @@ public interface JoinWorldResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 3;</code>
    * @return The worldSession.
    */
-  com.example.marspioneer.proto.MPWorldSessionProto getWorldSession();
+  MPWorldSessionProto getWorldSession();
   /**
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 3;</code>
    */
-  com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
+  MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
 
   /**
    * <code>string message = 4;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 4;</code>
    * @return The bytes for message.
@@ -73,5 +73,5 @@ public interface JoinWorldResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.JoinWorldResponse.Status status = 5;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.JoinWorldResponse.Status getStatus();
+  JoinWorldResponse.Status getStatus();
 }

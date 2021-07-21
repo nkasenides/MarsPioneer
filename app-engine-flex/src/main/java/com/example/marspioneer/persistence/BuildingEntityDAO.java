@@ -50,11 +50,11 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
 
     @Override
     public BuildingEntity getForWorld(String worldID, String itemID) {
-        final ArrayList<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
+        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("id", itemID)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
         if (items.size() == 0) {
             return null;
         }
@@ -66,7 +66,7 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
         return Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
     }
 
 /**
@@ -76,10 +76,13 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForPlayerAndWorld(String worldID, String playerID) {
-        return Objectis.filter(BuildingEntity.class)
+        final long start = System.currentTimeMillis();
+        final List<BuildingEntity> fetch = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)
-                .fetch();
+                .fetch().getItems();
+        System.out.println("BuildingEntity listForPlayerAndWorld: " + (System.currentTimeMillis() - start));
+        return fetch;
     }
     /**
      * Retrieves a player's entities.
@@ -89,7 +92,7 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
     public Collection<BuildingEntity> listForPlayer(String playerID) {
         return Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("playerID", playerID)
-                .fetch();
+                .fetch().getItems();
     }
 
     /**
@@ -99,9 +102,9 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForWorldExcludingPlayer(String worldID, String excludedPlayerID) {
-        final ArrayList<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
+        final List<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
-                .fetch();
+                .fetch().getItems();
 
         final ArrayList<BuildingEntity> oEntities = new ArrayList<>();
         for (BuildingEntity entity : entities) {

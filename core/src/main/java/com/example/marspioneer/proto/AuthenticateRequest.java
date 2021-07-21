@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     playerName_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new AuthenticateRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,13 +51,13 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             password_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             playerName_ = s;
             break;
@@ -83,32 +83,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.AuthenticateRequest.class, com.example.marspioneer.proto.AuthenticateRequest.Builder.class);
+            AuthenticateRequest.class, Builder.class);
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object password_;
+  private volatile Object password_;
   /**
    * <code>string password = 1;</code>
    * @return The password.
    */
-  @java.lang.Override
-  public java.lang.String getPassword() {
-    java.lang.Object ref = password_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getPassword() {
+    Object ref = password_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       password_ = s;
       return s;
     }
@@ -117,14 +117,14 @@ private static final long serialVersionUID = 0L;
    * <code>string password = 1;</code>
    * @return The bytes for password.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getPasswordBytes() {
-    java.lang.Object ref = password_;
-    if (ref instanceof java.lang.String) {
+    Object ref = password_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       password_ = b;
       return b;
     } else {
@@ -133,20 +133,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PLAYERNAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object playerName_;
+  private volatile Object playerName_;
   /**
    * <code>string playerName = 2;</code>
    * @return The playerName.
    */
-  @java.lang.Override
-  public java.lang.String getPlayerName() {
-    java.lang.Object ref = playerName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getPlayerName() {
+    Object ref = playerName_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       playerName_ = s;
       return s;
     }
@@ -155,14 +155,14 @@ private static final long serialVersionUID = 0L;
    * <code>string playerName = 2;</code>
    * @return The bytes for playerName.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getPlayerNameBytes() {
-    java.lang.Object ref = playerName_;
-    if (ref instanceof java.lang.String) {
+    Object ref = playerName_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       playerName_ = b;
       return b;
     } else {
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getPasswordBytes().isEmpty()) {
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -210,15 +210,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.AuthenticateRequest)) {
+    if (!(obj instanceof AuthenticateRequest)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.AuthenticateRequest other = (com.example.marspioneer.proto.AuthenticateRequest) obj;
+    AuthenticateRequest other = (AuthenticateRequest) obj;
 
     if (!getPassword()
         .equals(other.getPassword())) return false;
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -244,69 +244,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(byte[] data)
+  public static AuthenticateRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(java.io.InputStream input)
+  public static AuthenticateRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseDelimitedFrom(java.io.InputStream input)
+  public static AuthenticateRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseDelimitedFrom(
+  public static AuthenticateRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.AuthenticateRequest parseFrom(
+  public static AuthenticateRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -314,23 +314,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.AuthenticateRequest prototype) {
+  public static Builder newBuilder(AuthenticateRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -340,18 +340,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.AuthenticateRequest)
-      com.example.marspioneer.proto.AuthenticateRequestOrBuilder {
+      AuthenticateRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.AuthenticateRequest.class, com.example.marspioneer.proto.AuthenticateRequest.Builder.class);
+              AuthenticateRequest.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.AuthenticateRequest.newBuilder()
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       password_ = "";
@@ -379,79 +379,79 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_AuthenticateRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.AuthenticateRequest getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.AuthenticateRequest.getDefaultInstance();
+    @Override
+    public AuthenticateRequest getDefaultInstanceForType() {
+      return AuthenticateRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.AuthenticateRequest build() {
-      com.example.marspioneer.proto.AuthenticateRequest result = buildPartial();
+    @Override
+    public AuthenticateRequest build() {
+      AuthenticateRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.AuthenticateRequest buildPartial() {
-      com.example.marspioneer.proto.AuthenticateRequest result = new com.example.marspioneer.proto.AuthenticateRequest(this);
+    @Override
+    public AuthenticateRequest buildPartial() {
+      AuthenticateRequest result = new AuthenticateRequest(this);
       result.password_ = password_;
       result.playerName_ = playerName_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.AuthenticateRequest) {
-        return mergeFrom((com.example.marspioneer.proto.AuthenticateRequest)other);
+      if (other instanceof AuthenticateRequest) {
+        return mergeFrom((AuthenticateRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.AuthenticateRequest other) {
-      if (other == com.example.marspioneer.proto.AuthenticateRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(AuthenticateRequest other) {
+      if (other == AuthenticateRequest.getDefaultInstance()) return this;
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
         onChanged();
@@ -465,21 +465,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.AuthenticateRequest parsedMessage = null;
+      AuthenticateRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.AuthenticateRequest) e.getUnfinishedMessage();
+        parsedMessage = (AuthenticateRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -489,21 +489,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object password_ = "";
+    private Object password_ = "";
     /**
      * <code>string password = 1;</code>
      * @return The password.
      */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getPassword() {
+      Object ref = password_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         password_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -512,11 +512,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPasswordBytes() {
-      java.lang.Object ref = password_;
+      Object ref = password_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         password_ = b;
         return b;
       } else {
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setPassword(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -565,21 +565,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object playerName_ = "";
+    private Object playerName_ = "";
     /**
      * <code>string playerName = 2;</code>
      * @return The playerName.
      */
-    public java.lang.String getPlayerName() {
-      java.lang.Object ref = playerName_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getPlayerName() {
+      Object ref = playerName_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         playerName_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -588,11 +588,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPlayerNameBytes() {
-      java.lang.Object ref = playerName_;
+      Object ref = playerName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         playerName_ = b;
         return b;
       } else {
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setPlayerName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -640,13 +640,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -657,18 +657,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.AuthenticateRequest)
-  private static final com.example.marspioneer.proto.AuthenticateRequest DEFAULT_INSTANCE;
+  private static final AuthenticateRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.AuthenticateRequest();
+    DEFAULT_INSTANCE = new AuthenticateRequest();
   }
 
-  public static com.example.marspioneer.proto.AuthenticateRequest getDefaultInstance() {
+  public static AuthenticateRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<AuthenticateRequest>
       PARSER = new com.google.protobuf.AbstractParser<AuthenticateRequest>() {
-    @java.lang.Override
+    @Override
     public AuthenticateRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -681,13 +681,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<AuthenticateRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.AuthenticateRequest getDefaultInstanceForType() {
+  @Override
+  public AuthenticateRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

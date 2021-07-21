@@ -16,11 +16,11 @@ public interface MPPartialStateProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
    * @return The worldSession.
    */
-  com.example.marspioneer.proto.MPWorldSessionProto getWorldSession();
+  MPWorldSessionProto getWorldSession();
   /**
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
    */
-  com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
+  MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
 
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
@@ -30,31 +30,31 @@ public interface MPPartialStateProtoOrBuilder extends
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
   boolean containsCells(
-      java.lang.String key);
+      String key);
   /**
    * Use {@link #getCellsMap()} instead.
    */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+  @Deprecated
+  java.util.Map<String, MPTerrainCellProto>
   getCells();
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
-  java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+  java.util.Map<String, MPTerrainCellProto>
   getCellsMap();
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
 
-  com.example.marspioneer.proto.MPTerrainCellProto getCellsOrDefault(
-      java.lang.String key,
-      com.example.marspioneer.proto.MPTerrainCellProto defaultValue);
+  MPTerrainCellProto getCellsOrDefault(
+      String key,
+      MPTerrainCellProto defaultValue);
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
 
-  com.example.marspioneer.proto.MPTerrainCellProto getCellsOrThrow(
-      java.lang.String key);
+  MPTerrainCellProto getCellsOrThrow(
+      String key);
 
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
@@ -64,29 +64,29 @@ public interface MPPartialStateProtoOrBuilder extends
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
   boolean containsEntities(
-      java.lang.String key);
+      String key);
   /**
    * Use {@link #getEntitiesMap()} instead.
    */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+  @Deprecated
+  java.util.Map<String, MPEntityProto>
   getEntities();
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
-  java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+  java.util.Map<String, MPEntityProto>
   getEntitiesMap();
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
 
-  com.example.marspioneer.proto.MPEntityProto getEntitiesOrDefault(
-      java.lang.String key,
-      com.example.marspioneer.proto.MPEntityProto defaultValue);
+  MPEntityProto getEntitiesOrDefault(
+      String key,
+      MPEntityProto defaultValue);
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
 
-  com.example.marspioneer.proto.MPEntityProto getEntitiesOrThrow(
-      java.lang.String key);
+  MPEntityProto getEntitiesOrThrow(
+      String key);
 }

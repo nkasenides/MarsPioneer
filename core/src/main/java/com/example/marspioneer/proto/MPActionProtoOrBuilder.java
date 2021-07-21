@@ -16,11 +16,11 @@ public interface MPActionProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
    * @return The buildHub.
    */
-  com.example.marspioneer.proto.BuildHubProto getBuildHub();
+  BuildHubProto getBuildHub();
   /**
    * <code>.com.example.marspioneer.proto.BuildHubProto buildHub = 1;</code>
    */
-  com.example.marspioneer.proto.BuildHubProtoOrBuilder getBuildHubOrBuilder();
+  BuildHubProtoOrBuilder getBuildHubOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
@@ -31,11 +31,11 @@ public interface MPActionProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
    * @return The sellBuilding.
    */
-  com.example.marspioneer.proto.SellBuildingProto getSellBuilding();
+  SellBuildingProto getSellBuilding();
   /**
    * <code>.com.example.marspioneer.proto.SellBuildingProto sellBuilding = 2;</code>
    */
-  com.example.marspioneer.proto.SellBuildingProtoOrBuilder getSellBuildingOrBuilder();
+  SellBuildingProtoOrBuilder getSellBuildingOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
@@ -46,11 +46,11 @@ public interface MPActionProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
    * @return The buildSandPit.
    */
-  com.example.marspioneer.proto.BuildSandPitProto getBuildSandPit();
+  BuildSandPitProto getBuildSandPit();
   /**
    * <code>.com.example.marspioneer.proto.BuildSandPitProto buildSandPit = 3;</code>
    */
-  com.example.marspioneer.proto.BuildSandPitProtoOrBuilder getBuildSandPitOrBuilder();
+  BuildSandPitProtoOrBuilder getBuildSandPitOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
@@ -61,11 +61,11 @@ public interface MPActionProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
    * @return The buildMine.
    */
-  com.example.marspioneer.proto.BuildMineProto getBuildMine();
+  BuildMineProto getBuildMine();
   /**
    * <code>.com.example.marspioneer.proto.BuildMineProto buildMine = 4;</code>
    */
-  com.example.marspioneer.proto.BuildMineProtoOrBuilder getBuildMineOrBuilder();
+  BuildMineProtoOrBuilder getBuildMineOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
@@ -76,11 +76,11 @@ public interface MPActionProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
    * @return The buildFarm.
    */
-  com.example.marspioneer.proto.BuildFarmProto getBuildFarm();
+  BuildFarmProto getBuildFarm();
   /**
    * <code>.com.example.marspioneer.proto.BuildFarmProto buildFarm = 5;</code>
    */
-  com.example.marspioneer.proto.BuildFarmProtoOrBuilder getBuildFarmOrBuilder();
+  BuildFarmProtoOrBuilder getBuildFarmOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
@@ -91,11 +91,11 @@ public interface MPActionProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
    * @return The buildWell.
    */
-  com.example.marspioneer.proto.BuildWellProto getBuildWell();
+  BuildWellProto getBuildWell();
   /**
    * <code>.com.example.marspioneer.proto.BuildWellProto buildWell = 6;</code>
    */
-  com.example.marspioneer.proto.BuildWellProtoOrBuilder getBuildWellOrBuilder();
+  BuildWellProtoOrBuilder getBuildWellOrBuilder();
 
-  public com.example.marspioneer.proto.MPActionProto.ActionCase getActionCase();
+  public MPActionProto.ActionCase getActionCase();
 }

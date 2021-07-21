@@ -10,12 +10,12 @@ public interface ListWorldsResponseOrBuilder extends
   /**
    * <code>repeated .com.example.marspioneer.proto.MPWorldProto worlds = 1;</code>
    */
-  java.util.List<com.example.marspioneer.proto.MPWorldProto> 
+  java.util.List<MPWorldProto>
       getWorldsList();
   /**
    * <code>repeated .com.example.marspioneer.proto.MPWorldProto worlds = 1;</code>
    */
-  com.example.marspioneer.proto.MPWorldProto getWorlds(int index);
+  MPWorldProto getWorlds(int index);
   /**
    * <code>repeated .com.example.marspioneer.proto.MPWorldProto worlds = 1;</code>
    */
@@ -23,19 +23,19 @@ public interface ListWorldsResponseOrBuilder extends
   /**
    * <code>repeated .com.example.marspioneer.proto.MPWorldProto worlds = 1;</code>
    */
-  java.util.List<? extends com.example.marspioneer.proto.MPWorldProtoOrBuilder> 
+  java.util.List<? extends MPWorldProtoOrBuilder>
       getWorldsOrBuilderList();
   /**
    * <code>repeated .com.example.marspioneer.proto.MPWorldProto worlds = 1;</code>
    */
-  com.example.marspioneer.proto.MPWorldProtoOrBuilder getWorldsOrBuilder(
+  MPWorldProtoOrBuilder getWorldsOrBuilder(
       int index);
 
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -52,5 +52,5 @@ public interface ListWorldsResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListWorldsResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.ListWorldsResponse.Status getStatus();
+  ListWorldsResponse.Status getStatus();
 }

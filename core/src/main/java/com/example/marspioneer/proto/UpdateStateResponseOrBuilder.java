@@ -31,11 +31,11 @@ public interface UpdateStateResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
    * @return The resourceSet.
    */
-  com.example.marspioneer.proto.ResourceSetProto getResourceSet();
+  ResourceSetProto getResourceSet();
   /**
    * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
    */
-  com.example.marspioneer.proto.ResourceSetProtoOrBuilder getResourceSetOrBuilder();
+  ResourceSetProtoOrBuilder getResourceSetOrBuilder();
 
   /**
    * <code>string message = 3;</code>

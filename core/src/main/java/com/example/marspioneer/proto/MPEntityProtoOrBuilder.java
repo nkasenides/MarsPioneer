@@ -11,7 +11,7 @@ public interface MPEntityProtoOrBuilder extends
    * <code>string worldID = 1;</code>
    * @return The worldID.
    */
-  java.lang.String getWorldID();
+  String getWorldID();
   /**
    * <code>string worldID = 1;</code>
    * @return The bytes for worldID.
@@ -29,7 +29,7 @@ public interface MPEntityProtoOrBuilder extends
    * <code>string id = 3;</code>
    * @return The id.
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 3;</code>
    * @return The bytes for id.
@@ -46,17 +46,17 @@ public interface MPEntityProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    * @return The position.
    */
-  com.example.marspioneer.proto.MatrixPositionProto getPosition();
+  MatrixPositionProto getPosition();
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    */
-  com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder();
+  MatrixPositionProtoOrBuilder getPositionOrBuilder();
 
   /**
    * <code>string playerID = 5;</code>
    * @return The playerID.
    */
-  java.lang.String getPlayerID();
+  String getPlayerID();
   /**
    * <code>string playerID = 5;</code>
    * @return The bytes for playerID.
@@ -73,7 +73,7 @@ public interface MPEntityProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.Direction4 direction = 6;</code>
    * @return The direction.
    */
-  com.example.marspioneer.proto.Direction4 getDirection();
+  Direction4 getDirection();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
@@ -84,11 +84,11 @@ public interface MPEntityProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
    * @return The buildingEntity.
    */
-  com.example.marspioneer.proto.BuildingEntityProto getBuildingEntity();
+  BuildingEntityProto getBuildingEntity();
   /**
    * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
    */
-  com.example.marspioneer.proto.BuildingEntityProtoOrBuilder getBuildingEntityOrBuilder();
+  BuildingEntityProtoOrBuilder getBuildingEntityOrBuilder();
 
-  public com.example.marspioneer.proto.MPEntityProto.EntityCase getEntityCase();
+  public MPEntityProto.EntityCase getEntityCase();
 }

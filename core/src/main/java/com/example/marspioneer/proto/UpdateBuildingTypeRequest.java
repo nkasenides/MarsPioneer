@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private UpdateBuildingTypeRequest() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new UpdateBuildingTypeRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.example.marspioneer.proto.MPGameSessionProto.Builder subBuilder = null;
+            MPGameSessionProto.Builder subBuilder = null;
             if (gameSessionID_ != null) {
               subBuilder = gameSessionID_.toBuilder();
             }
-            gameSessionID_ = input.readMessage(com.example.marspioneer.proto.MPGameSessionProto.parser(), extensionRegistry);
+            gameSessionID_ = input.readMessage(MPGameSessionProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(gameSessionID_);
               gameSessionID_ = subBuilder.buildPartial();
@@ -62,11 +62,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.example.marspioneer.proto.BuildingTypeProto.Builder subBuilder = null;
+            BuildingTypeProto.Builder subBuilder = null;
             if (buildingType_ != null) {
               subBuilder = buildingType_.toBuilder();
             }
-            buildingType_ = input.readMessage(com.example.marspioneer.proto.BuildingTypeProto.parser(), extensionRegistry);
+            buildingType_ = input.readMessage(BuildingTypeProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(buildingType_);
               buildingType_ = subBuilder.buildPartial();
@@ -95,24 +95,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.UpdateBuildingTypeRequest.class, com.example.marspioneer.proto.UpdateBuildingTypeRequest.Builder.class);
+            UpdateBuildingTypeRequest.class, Builder.class);
   }
 
   public static final int GAMESESSIONID_FIELD_NUMBER = 1;
-  private com.example.marspioneer.proto.MPGameSessionProto gameSessionID_;
+  private MPGameSessionProto gameSessionID_;
   /**
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    * @return Whether the gameSessionID field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasGameSessionID() {
     return gameSessionID_ != null;
   }
@@ -120,25 +120,25 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPGameSessionProto getGameSessionID() {
-    return gameSessionID_ == null ? com.example.marspioneer.proto.MPGameSessionProto.getDefaultInstance() : gameSessionID_;
+  @Override
+  public MPGameSessionProto getGameSessionID() {
+    return gameSessionID_ == null ? MPGameSessionProto.getDefaultInstance() : gameSessionID_;
   }
   /**
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder() {
+  @Override
+  public MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder() {
     return getGameSessionID();
   }
 
   public static final int BUILDINGTYPE_FIELD_NUMBER = 2;
-  private com.example.marspioneer.proto.BuildingTypeProto buildingType_;
+  private BuildingTypeProto buildingType_;
   /**
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    * @return Whether the buildingType field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildingType() {
     return buildingType_ != null;
   }
@@ -146,20 +146,20 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    * @return The buildingType.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildingTypeProto getBuildingType() {
-    return buildingType_ == null ? com.example.marspioneer.proto.BuildingTypeProto.getDefaultInstance() : buildingType_;
+  @Override
+  public BuildingTypeProto getBuildingType() {
+    return buildingType_ == null ? BuildingTypeProto.getDefaultInstance() : buildingType_;
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder() {
+  @Override
+  public BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder() {
     return getBuildingType();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (gameSessionID_ != null) {
@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -200,15 +200,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.UpdateBuildingTypeRequest)) {
+    if (!(obj instanceof UpdateBuildingTypeRequest)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.UpdateBuildingTypeRequest other = (com.example.marspioneer.proto.UpdateBuildingTypeRequest) obj;
+    UpdateBuildingTypeRequest other = (UpdateBuildingTypeRequest) obj;
 
     if (hasGameSessionID() != other.hasGameSessionID()) return false;
     if (hasGameSessionID()) {
@@ -224,7 +224,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -244,69 +244,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(byte[] data)
+  public static UpdateBuildingTypeRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(java.io.InputStream input)
+  public static UpdateBuildingTypeRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseDelimitedFrom(java.io.InputStream input)
+  public static UpdateBuildingTypeRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseDelimitedFrom(
+  public static UpdateBuildingTypeRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest parseFrom(
+  public static UpdateBuildingTypeRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -314,23 +314,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.UpdateBuildingTypeRequest prototype) {
+  public static Builder newBuilder(UpdateBuildingTypeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -340,18 +340,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.UpdateBuildingTypeRequest)
-      com.example.marspioneer.proto.UpdateBuildingTypeRequestOrBuilder {
+      UpdateBuildingTypeRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.UpdateBuildingTypeRequest.class, com.example.marspioneer.proto.UpdateBuildingTypeRequest.Builder.class);
+              UpdateBuildingTypeRequest.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.UpdateBuildingTypeRequest.newBuilder()
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (gameSessionIDBuilder_ == null) {
@@ -387,29 +387,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_UpdateBuildingTypeRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateBuildingTypeRequest getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.UpdateBuildingTypeRequest.getDefaultInstance();
+    @Override
+    public UpdateBuildingTypeRequest getDefaultInstanceForType() {
+      return UpdateBuildingTypeRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateBuildingTypeRequest build() {
-      com.example.marspioneer.proto.UpdateBuildingTypeRequest result = buildPartial();
+    @Override
+    public UpdateBuildingTypeRequest build() {
+      UpdateBuildingTypeRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateBuildingTypeRequest buildPartial() {
-      com.example.marspioneer.proto.UpdateBuildingTypeRequest result = new com.example.marspioneer.proto.UpdateBuildingTypeRequest(this);
+    @Override
+    public UpdateBuildingTypeRequest buildPartial() {
+      UpdateBuildingTypeRequest result = new UpdateBuildingTypeRequest(this);
       if (gameSessionIDBuilder_ == null) {
         result.gameSessionID_ = gameSessionID_;
       } else {
@@ -424,50 +424,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.UpdateBuildingTypeRequest) {
-        return mergeFrom((com.example.marspioneer.proto.UpdateBuildingTypeRequest)other);
+      if (other instanceof UpdateBuildingTypeRequest) {
+        return mergeFrom((UpdateBuildingTypeRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.UpdateBuildingTypeRequest other) {
-      if (other == com.example.marspioneer.proto.UpdateBuildingTypeRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(UpdateBuildingTypeRequest other) {
+      if (other == UpdateBuildingTypeRequest.getDefaultInstance()) return this;
       if (other.hasGameSessionID()) {
         mergeGameSessionID(other.getGameSessionID());
       }
@@ -479,21 +479,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.UpdateBuildingTypeRequest parsedMessage = null;
+      UpdateBuildingTypeRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.UpdateBuildingTypeRequest) e.getUnfinishedMessage();
+        parsedMessage = (UpdateBuildingTypeRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -503,9 +503,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.example.marspioneer.proto.MPGameSessionProto gameSessionID_;
+    private MPGameSessionProto gameSessionID_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MPGameSessionProto, com.example.marspioneer.proto.MPGameSessionProto.Builder, com.example.marspioneer.proto.MPGameSessionProtoOrBuilder> gameSessionIDBuilder_;
+        MPGameSessionProto, MPGameSessionProto.Builder, MPGameSessionProtoOrBuilder> gameSessionIDBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      * @return Whether the gameSessionID field is set.
@@ -517,9 +517,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      * @return The gameSessionID.
      */
-    public com.example.marspioneer.proto.MPGameSessionProto getGameSessionID() {
+    public MPGameSessionProto getGameSessionID() {
       if (gameSessionIDBuilder_ == null) {
-        return gameSessionID_ == null ? com.example.marspioneer.proto.MPGameSessionProto.getDefaultInstance() : gameSessionID_;
+        return gameSessionID_ == null ? MPGameSessionProto.getDefaultInstance() : gameSessionID_;
       } else {
         return gameSessionIDBuilder_.getMessage();
       }
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      */
-    public Builder setGameSessionID(com.example.marspioneer.proto.MPGameSessionProto value) {
+    public Builder setGameSessionID(MPGameSessionProto value) {
       if (gameSessionIDBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      */
     public Builder setGameSessionID(
-        com.example.marspioneer.proto.MPGameSessionProto.Builder builderForValue) {
+        MPGameSessionProto.Builder builderForValue) {
       if (gameSessionIDBuilder_ == null) {
         gameSessionID_ = builderForValue.build();
         onChanged();
@@ -557,11 +557,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      */
-    public Builder mergeGameSessionID(com.example.marspioneer.proto.MPGameSessionProto value) {
+    public Builder mergeGameSessionID(MPGameSessionProto value) {
       if (gameSessionIDBuilder_ == null) {
         if (gameSessionID_ != null) {
           gameSessionID_ =
-            com.example.marspioneer.proto.MPGameSessionProto.newBuilder(gameSessionID_).mergeFrom(value).buildPartial();
+            MPGameSessionProto.newBuilder(gameSessionID_).mergeFrom(value).buildPartial();
         } else {
           gameSessionID_ = value;
         }
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      */
-    public com.example.marspioneer.proto.MPGameSessionProto.Builder getGameSessionIDBuilder() {
+    public MPGameSessionProto.Builder getGameSessionIDBuilder() {
       
       onChanged();
       return getGameSessionIDFieldBuilder().getBuilder();
@@ -597,23 +597,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      */
-    public com.example.marspioneer.proto.MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder() {
+    public MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder() {
       if (gameSessionIDBuilder_ != null) {
         return gameSessionIDBuilder_.getMessageOrBuilder();
       } else {
         return gameSessionID_ == null ?
-            com.example.marspioneer.proto.MPGameSessionProto.getDefaultInstance() : gameSessionID_;
+            MPGameSessionProto.getDefaultInstance() : gameSessionID_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MPGameSessionProto, com.example.marspioneer.proto.MPGameSessionProto.Builder, com.example.marspioneer.proto.MPGameSessionProtoOrBuilder> 
+        MPGameSessionProto, MPGameSessionProto.Builder, MPGameSessionProtoOrBuilder>
         getGameSessionIDFieldBuilder() {
       if (gameSessionIDBuilder_ == null) {
         gameSessionIDBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.MPGameSessionProto, com.example.marspioneer.proto.MPGameSessionProto.Builder, com.example.marspioneer.proto.MPGameSessionProtoOrBuilder>(
+            MPGameSessionProto, MPGameSessionProto.Builder, MPGameSessionProtoOrBuilder>(
                 getGameSessionID(),
                 getParentForChildren(),
                 isClean());
@@ -622,9 +622,9 @@ private static final long serialVersionUID = 0L;
       return gameSessionIDBuilder_;
     }
 
-    private com.example.marspioneer.proto.BuildingTypeProto buildingType_;
+    private BuildingTypeProto buildingType_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildingTypeProto, com.example.marspioneer.proto.BuildingTypeProto.Builder, com.example.marspioneer.proto.BuildingTypeProtoOrBuilder> buildingTypeBuilder_;
+        BuildingTypeProto, BuildingTypeProto.Builder, BuildingTypeProtoOrBuilder> buildingTypeBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      * @return Whether the buildingType field is set.
@@ -636,9 +636,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      * @return The buildingType.
      */
-    public com.example.marspioneer.proto.BuildingTypeProto getBuildingType() {
+    public BuildingTypeProto getBuildingType() {
       if (buildingTypeBuilder_ == null) {
-        return buildingType_ == null ? com.example.marspioneer.proto.BuildingTypeProto.getDefaultInstance() : buildingType_;
+        return buildingType_ == null ? BuildingTypeProto.getDefaultInstance() : buildingType_;
       } else {
         return buildingTypeBuilder_.getMessage();
       }
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      */
-    public Builder setBuildingType(com.example.marspioneer.proto.BuildingTypeProto value) {
+    public Builder setBuildingType(BuildingTypeProto value) {
       if (buildingTypeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      */
     public Builder setBuildingType(
-        com.example.marspioneer.proto.BuildingTypeProto.Builder builderForValue) {
+        BuildingTypeProto.Builder builderForValue) {
       if (buildingTypeBuilder_ == null) {
         buildingType_ = builderForValue.build();
         onChanged();
@@ -676,11 +676,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      */
-    public Builder mergeBuildingType(com.example.marspioneer.proto.BuildingTypeProto value) {
+    public Builder mergeBuildingType(BuildingTypeProto value) {
       if (buildingTypeBuilder_ == null) {
         if (buildingType_ != null) {
           buildingType_ =
-            com.example.marspioneer.proto.BuildingTypeProto.newBuilder(buildingType_).mergeFrom(value).buildPartial();
+            BuildingTypeProto.newBuilder(buildingType_).mergeFrom(value).buildPartial();
         } else {
           buildingType_ = value;
         }
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      */
-    public com.example.marspioneer.proto.BuildingTypeProto.Builder getBuildingTypeBuilder() {
+    public BuildingTypeProto.Builder getBuildingTypeBuilder() {
       
       onChanged();
       return getBuildingTypeFieldBuilder().getBuilder();
@@ -716,23 +716,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      */
-    public com.example.marspioneer.proto.BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder() {
+    public BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder() {
       if (buildingTypeBuilder_ != null) {
         return buildingTypeBuilder_.getMessageOrBuilder();
       } else {
         return buildingType_ == null ?
-            com.example.marspioneer.proto.BuildingTypeProto.getDefaultInstance() : buildingType_;
+            BuildingTypeProto.getDefaultInstance() : buildingType_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildingTypeProto, com.example.marspioneer.proto.BuildingTypeProto.Builder, com.example.marspioneer.proto.BuildingTypeProtoOrBuilder> 
+        BuildingTypeProto, BuildingTypeProto.Builder, BuildingTypeProtoOrBuilder>
         getBuildingTypeFieldBuilder() {
       if (buildingTypeBuilder_ == null) {
         buildingTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildingTypeProto, com.example.marspioneer.proto.BuildingTypeProto.Builder, com.example.marspioneer.proto.BuildingTypeProtoOrBuilder>(
+            BuildingTypeProto, BuildingTypeProto.Builder, BuildingTypeProtoOrBuilder>(
                 getBuildingType(),
                 getParentForChildren(),
                 isClean());
@@ -740,13 +740,13 @@ private static final long serialVersionUID = 0L;
       }
       return buildingTypeBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -757,18 +757,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.UpdateBuildingTypeRequest)
-  private static final com.example.marspioneer.proto.UpdateBuildingTypeRequest DEFAULT_INSTANCE;
+  private static final UpdateBuildingTypeRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.UpdateBuildingTypeRequest();
+    DEFAULT_INSTANCE = new UpdateBuildingTypeRequest();
   }
 
-  public static com.example.marspioneer.proto.UpdateBuildingTypeRequest getDefaultInstance() {
+  public static UpdateBuildingTypeRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<UpdateBuildingTypeRequest>
       PARSER = new com.google.protobuf.AbstractParser<UpdateBuildingTypeRequest>() {
-    @java.lang.Override
+    @Override
     public UpdateBuildingTypeRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -781,13 +781,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<UpdateBuildingTypeRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateBuildingTypeRequest getDefaultInstanceForType() {
+  @Override
+  public UpdateBuildingTypeRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

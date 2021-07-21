@@ -611,13 +611,17 @@ private static final long serialVersionUID = 0L;
         for (int i = 0; i < getChunkIDsCount(); i++) {        
             chunkIDsList.add(getChunkIDs(i));            
         }        
-        item.setChunkIDs(chunkIDsList);        
+        item.setChunkIDs(chunkIDsList);
         item.setId(getId());        
         item.setOwnerID(getOwnerID());        
         item.setCreatedOn(getCreatedOn());        
         item.setMaxCols(getMaxCols());        
         return item;        
     }    
+    
+        public java.util.List<String> getChunkIDs() {
+        return chunkIDs_;
+    }
     
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1378,13 +1382,17 @@ private static final long serialVersionUID = 0L;
         for (int i = 0; i < getChunkIDsCount(); i++) {        
             chunkIDsList.add(getChunkIDs(i));            
         }        
-        item.setChunkIDs(chunkIDsList);        
+        item.setChunkIDs(chunkIDsList);
         item.setId(getId());        
         item.setOwnerID(getOwnerID());        
         item.setCreatedOn(getCreatedOn());        
         item.setMaxCols(getMaxCols());        
         return item;        
     }    
+    
+        public java.util.List<String> getChunkIDs() {
+        return chunkIDs_;
+    }
     
     public final boolean cellIsInBounds(int cellRow, int cellCol) {
 
@@ -1424,6 +1432,7 @@ private static final long serialVersionUID = 0L;
             return true;
         }
     }
+
 
     public final boolean cellIsInBounds(final MatrixPositionProto cellPosition) {
         return cellIsInBounds(cellPosition.getRow(), cellPosition.getCol());

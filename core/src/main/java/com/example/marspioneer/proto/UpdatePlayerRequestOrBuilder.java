@@ -11,7 +11,7 @@ public interface UpdatePlayerRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
@@ -28,9 +28,9 @@ public interface UpdatePlayerRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPlayerProto player = 2;</code>
    * @return The player.
    */
-  com.example.marspioneer.proto.MPPlayerProto getPlayer();
+  MPPlayerProto getPlayer();
   /**
    * <code>.com.example.marspioneer.proto.MPPlayerProto player = 2;</code>
    */
-  com.example.marspioneer.proto.MPPlayerProtoOrBuilder getPlayerOrBuilder();
+  MPPlayerProtoOrBuilder getPlayerOrBuilder();
 }

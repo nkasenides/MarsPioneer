@@ -16,11 +16,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.UpdatePlayerRequest updatePlayerRequest = 1;</code>
    * @return The updatePlayerRequest.
    */
-  com.example.marspioneer.proto.UpdatePlayerRequest getUpdatePlayerRequest();
+  UpdatePlayerRequest getUpdatePlayerRequest();
   /**
    * <code>.com.example.marspioneer.proto.UpdatePlayerRequest updatePlayerRequest = 1;</code>
    */
-  com.example.marspioneer.proto.UpdatePlayerRequestOrBuilder getUpdatePlayerRequestOrBuilder();
+  UpdatePlayerRequestOrBuilder getUpdatePlayerRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.UpdateBuildingTypeRequest updateBuildingTypeRequest = 2;</code>
@@ -31,11 +31,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.UpdateBuildingTypeRequest updateBuildingTypeRequest = 2;</code>
    * @return The updateBuildingTypeRequest.
    */
-  com.example.marspioneer.proto.UpdateBuildingTypeRequest getUpdateBuildingTypeRequest();
+  UpdateBuildingTypeRequest getUpdateBuildingTypeRequest();
   /**
    * <code>.com.example.marspioneer.proto.UpdateBuildingTypeRequest updateBuildingTypeRequest = 2;</code>
    */
-  com.example.marspioneer.proto.UpdateBuildingTypeRequestOrBuilder getUpdateBuildingTypeRequestOrBuilder();
+  UpdateBuildingTypeRequestOrBuilder getUpdateBuildingTypeRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildFarmRequest buildFarmRequest = 3;</code>
@@ -46,11 +46,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildFarmRequest buildFarmRequest = 3;</code>
    * @return The buildFarmRequest.
    */
-  com.example.marspioneer.proto.BuildFarmRequest getBuildFarmRequest();
+  BuildFarmRequest getBuildFarmRequest();
   /**
    * <code>.com.example.marspioneer.proto.BuildFarmRequest buildFarmRequest = 3;</code>
    */
-  com.example.marspioneer.proto.BuildFarmRequestOrBuilder getBuildFarmRequestOrBuilder();
+  BuildFarmRequestOrBuilder getBuildFarmRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.DeleteBuildingTypeRequest deleteBuildingTypeRequest = 4;</code>
@@ -61,11 +61,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.DeleteBuildingTypeRequest deleteBuildingTypeRequest = 4;</code>
    * @return The deleteBuildingTypeRequest.
    */
-  com.example.marspioneer.proto.DeleteBuildingTypeRequest getDeleteBuildingTypeRequest();
+  DeleteBuildingTypeRequest getDeleteBuildingTypeRequest();
   /**
    * <code>.com.example.marspioneer.proto.DeleteBuildingTypeRequest deleteBuildingTypeRequest = 4;</code>
    */
-  com.example.marspioneer.proto.DeleteBuildingTypeRequestOrBuilder getDeleteBuildingTypeRequestOrBuilder();
+  DeleteBuildingTypeRequestOrBuilder getDeleteBuildingTypeRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetPlayerRequest getPlayerRequest = 5;</code>
@@ -76,11 +76,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetPlayerRequest getPlayerRequest = 5;</code>
    * @return The getPlayerRequest.
    */
-  com.example.marspioneer.proto.GetPlayerRequest getGetPlayerRequest();
+  GetPlayerRequest getGetPlayerRequest();
   /**
    * <code>.com.example.marspioneer.proto.GetPlayerRequest getPlayerRequest = 5;</code>
    */
-  com.example.marspioneer.proto.GetPlayerRequestOrBuilder getGetPlayerRequestOrBuilder();
+  GetPlayerRequestOrBuilder getGetPlayerRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.UpdateTeamRequest updateTeamRequest = 6;</code>
@@ -91,11 +91,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.UpdateTeamRequest updateTeamRequest = 6;</code>
    * @return The updateTeamRequest.
    */
-  com.example.marspioneer.proto.UpdateTeamRequest getUpdateTeamRequest();
+  UpdateTeamRequest getUpdateTeamRequest();
   /**
    * <code>.com.example.marspioneer.proto.UpdateTeamRequest updateTeamRequest = 6;</code>
    */
-  com.example.marspioneer.proto.UpdateTeamRequestOrBuilder getUpdateTeamRequestOrBuilder();
+  UpdateTeamRequestOrBuilder getUpdateTeamRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.ListWorldsRequest listWorldsRequest = 7;</code>
@@ -106,11 +106,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListWorldsRequest listWorldsRequest = 7;</code>
    * @return The listWorldsRequest.
    */
-  com.example.marspioneer.proto.ListWorldsRequest getListWorldsRequest();
+  ListWorldsRequest getListWorldsRequest();
   /**
    * <code>.com.example.marspioneer.proto.ListWorldsRequest listWorldsRequest = 7;</code>
    */
-  com.example.marspioneer.proto.ListWorldsRequestOrBuilder getListWorldsRequestOrBuilder();
+  ListWorldsRequestOrBuilder getListWorldsRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.UpdateWorldRequest updateWorldRequest = 8;</code>
@@ -121,11 +121,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.UpdateWorldRequest updateWorldRequest = 8;</code>
    * @return The updateWorldRequest.
    */
-  com.example.marspioneer.proto.UpdateWorldRequest getUpdateWorldRequest();
+  UpdateWorldRequest getUpdateWorldRequest();
   /**
    * <code>.com.example.marspioneer.proto.UpdateWorldRequest updateWorldRequest = 8;</code>
    */
-  com.example.marspioneer.proto.UpdateWorldRequestOrBuilder getUpdateWorldRequestOrBuilder();
+  UpdateWorldRequestOrBuilder getUpdateWorldRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetTeamRequest getTeamRequest = 9;</code>
@@ -136,11 +136,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetTeamRequest getTeamRequest = 9;</code>
    * @return The getTeamRequest.
    */
-  com.example.marspioneer.proto.GetTeamRequest getGetTeamRequest();
+  GetTeamRequest getGetTeamRequest();
   /**
    * <code>.com.example.marspioneer.proto.GetTeamRequest getTeamRequest = 9;</code>
    */
-  com.example.marspioneer.proto.GetTeamRequestOrBuilder getGetTeamRequestOrBuilder();
+  GetTeamRequestOrBuilder getGetTeamRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.ListTeamPlayersRequest listTeamPlayersRequest = 10;</code>
@@ -151,11 +151,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListTeamPlayersRequest listTeamPlayersRequest = 10;</code>
    * @return The listTeamPlayersRequest.
    */
-  com.example.marspioneer.proto.ListTeamPlayersRequest getListTeamPlayersRequest();
+  ListTeamPlayersRequest getListTeamPlayersRequest();
   /**
    * <code>.com.example.marspioneer.proto.ListTeamPlayersRequest listTeamPlayersRequest = 10;</code>
    */
-  com.example.marspioneer.proto.ListTeamPlayersRequestOrBuilder getListTeamPlayersRequestOrBuilder();
+  ListTeamPlayersRequestOrBuilder getListTeamPlayersRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildSandPitRequest buildSandPitRequest = 11;</code>
@@ -166,11 +166,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildSandPitRequest buildSandPitRequest = 11;</code>
    * @return The buildSandPitRequest.
    */
-  com.example.marspioneer.proto.BuildSandPitRequest getBuildSandPitRequest();
+  BuildSandPitRequest getBuildSandPitRequest();
   /**
    * <code>.com.example.marspioneer.proto.BuildSandPitRequest buildSandPitRequest = 11;</code>
    */
-  com.example.marspioneer.proto.BuildSandPitRequestOrBuilder getBuildSandPitRequestOrBuilder();
+  BuildSandPitRequestOrBuilder getBuildSandPitRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.CreateWorldRequest createWorldRequest = 12;</code>
@@ -181,11 +181,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.CreateWorldRequest createWorldRequest = 12;</code>
    * @return The createWorldRequest.
    */
-  com.example.marspioneer.proto.CreateWorldRequest getCreateWorldRequest();
+  CreateWorldRequest getCreateWorldRequest();
   /**
    * <code>.com.example.marspioneer.proto.CreateWorldRequest createWorldRequest = 12;</code>
    */
-  com.example.marspioneer.proto.CreateWorldRequestOrBuilder getCreateWorldRequestOrBuilder();
+  CreateWorldRequestOrBuilder getCreateWorldRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.SubscribeRequest subscribeRequest = 13;</code>
@@ -196,11 +196,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.SubscribeRequest subscribeRequest = 13;</code>
    * @return The subscribeRequest.
    */
-  com.example.marspioneer.proto.SubscribeRequest getSubscribeRequest();
+  SubscribeRequest getSubscribeRequest();
   /**
    * <code>.com.example.marspioneer.proto.SubscribeRequest subscribeRequest = 13;</code>
    */
-  com.example.marspioneer.proto.SubscribeRequestOrBuilder getSubscribeRequestOrBuilder();
+  SubscribeRequestOrBuilder getSubscribeRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildHubRequest buildHubRequest = 14;</code>
@@ -211,11 +211,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildHubRequest buildHubRequest = 14;</code>
    * @return The buildHubRequest.
    */
-  com.example.marspioneer.proto.BuildHubRequest getBuildHubRequest();
+  BuildHubRequest getBuildHubRequest();
   /**
    * <code>.com.example.marspioneer.proto.BuildHubRequest buildHubRequest = 14;</code>
    */
-  com.example.marspioneer.proto.BuildHubRequestOrBuilder getBuildHubRequestOrBuilder();
+  BuildHubRequestOrBuilder getBuildHubRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.ListPlayersRequest listPlayersRequest = 15;</code>
@@ -226,11 +226,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListPlayersRequest listPlayersRequest = 15;</code>
    * @return The listPlayersRequest.
    */
-  com.example.marspioneer.proto.ListPlayersRequest getListPlayersRequest();
+  ListPlayersRequest getListPlayersRequest();
   /**
    * <code>.com.example.marspioneer.proto.ListPlayersRequest listPlayersRequest = 15;</code>
    */
-  com.example.marspioneer.proto.ListPlayersRequestOrBuilder getListPlayersRequestOrBuilder();
+  ListPlayersRequestOrBuilder getListPlayersRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetBuildingTypeRequest getBuildingTypeRequest = 16;</code>
@@ -241,11 +241,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetBuildingTypeRequest getBuildingTypeRequest = 16;</code>
    * @return The getBuildingTypeRequest.
    */
-  com.example.marspioneer.proto.GetBuildingTypeRequest getGetBuildingTypeRequest();
+  GetBuildingTypeRequest getGetBuildingTypeRequest();
   /**
    * <code>.com.example.marspioneer.proto.GetBuildingTypeRequest getBuildingTypeRequest = 16;</code>
    */
-  com.example.marspioneer.proto.GetBuildingTypeRequestOrBuilder getGetBuildingTypeRequestOrBuilder();
+  GetBuildingTypeRequestOrBuilder getGetBuildingTypeRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.ListTeamsRequest listTeamsRequest = 17;</code>
@@ -256,11 +256,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListTeamsRequest listTeamsRequest = 17;</code>
    * @return The listTeamsRequest.
    */
-  com.example.marspioneer.proto.ListTeamsRequest getListTeamsRequest();
+  ListTeamsRequest getListTeamsRequest();
   /**
    * <code>.com.example.marspioneer.proto.ListTeamsRequest listTeamsRequest = 17;</code>
    */
-  com.example.marspioneer.proto.ListTeamsRequestOrBuilder getListTeamsRequestOrBuilder();
+  ListTeamsRequestOrBuilder getListTeamsRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.CreatePlayerRequest createPlayerRequest = 18;</code>
@@ -271,11 +271,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.CreatePlayerRequest createPlayerRequest = 18;</code>
    * @return The createPlayerRequest.
    */
-  com.example.marspioneer.proto.CreatePlayerRequest getCreatePlayerRequest();
+  CreatePlayerRequest getCreatePlayerRequest();
   /**
    * <code>.com.example.marspioneer.proto.CreatePlayerRequest createPlayerRequest = 18;</code>
    */
-  com.example.marspioneer.proto.CreatePlayerRequestOrBuilder getCreatePlayerRequestOrBuilder();
+  CreatePlayerRequestOrBuilder getCreatePlayerRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.DeletePlayerRequest deletePlayerRequest = 19;</code>
@@ -286,11 +286,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.DeletePlayerRequest deletePlayerRequest = 19;</code>
    * @return The deletePlayerRequest.
    */
-  com.example.marspioneer.proto.DeletePlayerRequest getDeletePlayerRequest();
+  DeletePlayerRequest getDeletePlayerRequest();
   /**
    * <code>.com.example.marspioneer.proto.DeletePlayerRequest deletePlayerRequest = 19;</code>
    */
-  com.example.marspioneer.proto.DeletePlayerRequestOrBuilder getDeletePlayerRequestOrBuilder();
+  DeletePlayerRequestOrBuilder getDeletePlayerRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.DeleteWorldRequest deleteWorldRequest = 20;</code>
@@ -301,11 +301,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.DeleteWorldRequest deleteWorldRequest = 20;</code>
    * @return The deleteWorldRequest.
    */
-  com.example.marspioneer.proto.DeleteWorldRequest getDeleteWorldRequest();
+  DeleteWorldRequest getDeleteWorldRequest();
   /**
    * <code>.com.example.marspioneer.proto.DeleteWorldRequest deleteWorldRequest = 20;</code>
    */
-  com.example.marspioneer.proto.DeleteWorldRequestOrBuilder getDeleteWorldRequestOrBuilder();
+  DeleteWorldRequestOrBuilder getDeleteWorldRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetWorldRequest getWorldRequest = 21;</code>
@@ -316,11 +316,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetWorldRequest getWorldRequest = 21;</code>
    * @return The getWorldRequest.
    */
-  com.example.marspioneer.proto.GetWorldRequest getGetWorldRequest();
+  GetWorldRequest getGetWorldRequest();
   /**
    * <code>.com.example.marspioneer.proto.GetWorldRequest getWorldRequest = 21;</code>
    */
-  com.example.marspioneer.proto.GetWorldRequestOrBuilder getGetWorldRequestOrBuilder();
+  GetWorldRequestOrBuilder getGetWorldRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.CreateTeamRequest createTeamRequest = 22;</code>
@@ -331,11 +331,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.CreateTeamRequest createTeamRequest = 22;</code>
    * @return The createTeamRequest.
    */
-  com.example.marspioneer.proto.CreateTeamRequest getCreateTeamRequest();
+  CreateTeamRequest getCreateTeamRequest();
   /**
    * <code>.com.example.marspioneer.proto.CreateTeamRequest createTeamRequest = 22;</code>
    */
-  com.example.marspioneer.proto.CreateTeamRequestOrBuilder getCreateTeamRequestOrBuilder();
+  CreateTeamRequestOrBuilder getCreateTeamRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.UnsubscribeRequest unsubscribeRequest = 23;</code>
@@ -346,11 +346,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.UnsubscribeRequest unsubscribeRequest = 23;</code>
    * @return The unsubscribeRequest.
    */
-  com.example.marspioneer.proto.UnsubscribeRequest getUnsubscribeRequest();
+  UnsubscribeRequest getUnsubscribeRequest();
   /**
    * <code>.com.example.marspioneer.proto.UnsubscribeRequest unsubscribeRequest = 23;</code>
    */
-  com.example.marspioneer.proto.UnsubscribeRequestOrBuilder getUnsubscribeRequestOrBuilder();
+  UnsubscribeRequestOrBuilder getUnsubscribeRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.CreateBuildingTypeRequest createBuildingTypeRequest = 24;</code>
@@ -361,11 +361,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.CreateBuildingTypeRequest createBuildingTypeRequest = 24;</code>
    * @return The createBuildingTypeRequest.
    */
-  com.example.marspioneer.proto.CreateBuildingTypeRequest getCreateBuildingTypeRequest();
+  CreateBuildingTypeRequest getCreateBuildingTypeRequest();
   /**
    * <code>.com.example.marspioneer.proto.CreateBuildingTypeRequest createBuildingTypeRequest = 24;</code>
    */
-  com.example.marspioneer.proto.CreateBuildingTypeRequestOrBuilder getCreateBuildingTypeRequestOrBuilder();
+  CreateBuildingTypeRequestOrBuilder getCreateBuildingTypeRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.DeleteTeamRequest deleteTeamRequest = 25;</code>
@@ -376,11 +376,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.DeleteTeamRequest deleteTeamRequest = 25;</code>
    * @return The deleteTeamRequest.
    */
-  com.example.marspioneer.proto.DeleteTeamRequest getDeleteTeamRequest();
+  DeleteTeamRequest getDeleteTeamRequest();
   /**
    * <code>.com.example.marspioneer.proto.DeleteTeamRequest deleteTeamRequest = 25;</code>
    */
-  com.example.marspioneer.proto.DeleteTeamRequestOrBuilder getDeleteTeamRequestOrBuilder();
+  DeleteTeamRequestOrBuilder getDeleteTeamRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.AddPlayerToTeamRequest addPlayerToTeamRequest = 26;</code>
@@ -391,11 +391,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.AddPlayerToTeamRequest addPlayerToTeamRequest = 26;</code>
    * @return The addPlayerToTeamRequest.
    */
-  com.example.marspioneer.proto.AddPlayerToTeamRequest getAddPlayerToTeamRequest();
+  AddPlayerToTeamRequest getAddPlayerToTeamRequest();
   /**
    * <code>.com.example.marspioneer.proto.AddPlayerToTeamRequest addPlayerToTeamRequest = 26;</code>
    */
-  com.example.marspioneer.proto.AddPlayerToTeamRequestOrBuilder getAddPlayerToTeamRequestOrBuilder();
+  AddPlayerToTeamRequestOrBuilder getAddPlayerToTeamRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.JoinWorldRequest joinWorldRequest = 27;</code>
@@ -406,11 +406,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.JoinWorldRequest joinWorldRequest = 27;</code>
    * @return The joinWorldRequest.
    */
-  com.example.marspioneer.proto.JoinWorldRequest getJoinWorldRequest();
+  JoinWorldRequest getJoinWorldRequest();
   /**
    * <code>.com.example.marspioneer.proto.JoinWorldRequest joinWorldRequest = 27;</code>
    */
-  com.example.marspioneer.proto.JoinWorldRequestOrBuilder getJoinWorldRequestOrBuilder();
+  JoinWorldRequestOrBuilder getJoinWorldRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildWellRequest buildWellRequest = 28;</code>
@@ -421,11 +421,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildWellRequest buildWellRequest = 28;</code>
    * @return The buildWellRequest.
    */
-  com.example.marspioneer.proto.BuildWellRequest getBuildWellRequest();
+  BuildWellRequest getBuildWellRequest();
   /**
    * <code>.com.example.marspioneer.proto.BuildWellRequest buildWellRequest = 28;</code>
    */
-  com.example.marspioneer.proto.BuildWellRequestOrBuilder getBuildWellRequestOrBuilder();
+  BuildWellRequestOrBuilder getBuildWellRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamRequest removePlayerFromTeamRequest = 29;</code>
@@ -436,11 +436,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamRequest removePlayerFromTeamRequest = 29;</code>
    * @return The removePlayerFromTeamRequest.
    */
-  com.example.marspioneer.proto.RemovePlayerFromTeamRequest getRemovePlayerFromTeamRequest();
+  RemovePlayerFromTeamRequest getRemovePlayerFromTeamRequest();
   /**
    * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamRequest removePlayerFromTeamRequest = 29;</code>
    */
-  com.example.marspioneer.proto.RemovePlayerFromTeamRequestOrBuilder getRemovePlayerFromTeamRequestOrBuilder();
+  RemovePlayerFromTeamRequestOrBuilder getRemovePlayerFromTeamRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.AuthenticateRequest authenticateRequest = 30;</code>
@@ -451,11 +451,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.AuthenticateRequest authenticateRequest = 30;</code>
    * @return The authenticateRequest.
    */
-  com.example.marspioneer.proto.AuthenticateRequest getAuthenticateRequest();
+  AuthenticateRequest getAuthenticateRequest();
   /**
    * <code>.com.example.marspioneer.proto.AuthenticateRequest authenticateRequest = 30;</code>
    */
-  com.example.marspioneer.proto.AuthenticateRequestOrBuilder getAuthenticateRequestOrBuilder();
+  AuthenticateRequestOrBuilder getAuthenticateRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetStateRequest getStateRequest = 31;</code>
@@ -466,11 +466,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetStateRequest getStateRequest = 31;</code>
    * @return The getStateRequest.
    */
-  com.example.marspioneer.proto.GetStateRequest getGetStateRequest();
+  GetStateRequest getGetStateRequest();
   /**
    * <code>.com.example.marspioneer.proto.GetStateRequest getStateRequest = 31;</code>
    */
-  com.example.marspioneer.proto.GetStateRequestOrBuilder getGetStateRequestOrBuilder();
+  GetStateRequestOrBuilder getGetStateRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.SellBuildingRequest sellBuildingRequest = 32;</code>
@@ -481,11 +481,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.SellBuildingRequest sellBuildingRequest = 32;</code>
    * @return The sellBuildingRequest.
    */
-  com.example.marspioneer.proto.SellBuildingRequest getSellBuildingRequest();
+  SellBuildingRequest getSellBuildingRequest();
   /**
    * <code>.com.example.marspioneer.proto.SellBuildingRequest sellBuildingRequest = 32;</code>
    */
-  com.example.marspioneer.proto.SellBuildingRequestOrBuilder getSellBuildingRequestOrBuilder();
+  SellBuildingRequestOrBuilder getSellBuildingRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.LeaveWorldRequest leaveWorldRequest = 33;</code>
@@ -496,11 +496,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.LeaveWorldRequest leaveWorldRequest = 33;</code>
    * @return The leaveWorldRequest.
    */
-  com.example.marspioneer.proto.LeaveWorldRequest getLeaveWorldRequest();
+  LeaveWorldRequest getLeaveWorldRequest();
   /**
    * <code>.com.example.marspioneer.proto.LeaveWorldRequest leaveWorldRequest = 33;</code>
    */
-  com.example.marspioneer.proto.LeaveWorldRequestOrBuilder getLeaveWorldRequestOrBuilder();
+  LeaveWorldRequestOrBuilder getLeaveWorldRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.UpdateStateRequest updateStateRequest = 34;</code>
@@ -511,11 +511,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.UpdateStateRequest updateStateRequest = 34;</code>
    * @return The updateStateRequest.
    */
-  com.example.marspioneer.proto.UpdateStateRequest getUpdateStateRequest();
+  UpdateStateRequest getUpdateStateRequest();
   /**
    * <code>.com.example.marspioneer.proto.UpdateStateRequest updateStateRequest = 34;</code>
    */
-  com.example.marspioneer.proto.UpdateStateRequestOrBuilder getUpdateStateRequestOrBuilder();
+  UpdateStateRequestOrBuilder getUpdateStateRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.DeAuthenticateRequest deAuthenticateRequest = 35;</code>
@@ -526,11 +526,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.DeAuthenticateRequest deAuthenticateRequest = 35;</code>
    * @return The deAuthenticateRequest.
    */
-  com.example.marspioneer.proto.DeAuthenticateRequest getDeAuthenticateRequest();
+  DeAuthenticateRequest getDeAuthenticateRequest();
   /**
    * <code>.com.example.marspioneer.proto.DeAuthenticateRequest deAuthenticateRequest = 35;</code>
    */
-  com.example.marspioneer.proto.DeAuthenticateRequestOrBuilder getDeAuthenticateRequestOrBuilder();
+  DeAuthenticateRequestOrBuilder getDeAuthenticateRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildMineRequest buildMineRequest = 36;</code>
@@ -541,11 +541,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildMineRequest buildMineRequest = 36;</code>
    * @return The buildMineRequest.
    */
-  com.example.marspioneer.proto.BuildMineRequest getBuildMineRequest();
+  BuildMineRequest getBuildMineRequest();
   /**
    * <code>.com.example.marspioneer.proto.BuildMineRequest buildMineRequest = 36;</code>
    */
-  com.example.marspioneer.proto.BuildMineRequestOrBuilder getBuildMineRequestOrBuilder();
+  BuildMineRequestOrBuilder getBuildMineRequestOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.ListBuildingTypesRequest listBuildingTypesRequest = 37;</code>
@@ -556,11 +556,11 @@ public interface RequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListBuildingTypesRequest listBuildingTypesRequest = 37;</code>
    * @return The listBuildingTypesRequest.
    */
-  com.example.marspioneer.proto.ListBuildingTypesRequest getListBuildingTypesRequest();
+  ListBuildingTypesRequest getListBuildingTypesRequest();
   /**
    * <code>.com.example.marspioneer.proto.ListBuildingTypesRequest listBuildingTypesRequest = 37;</code>
    */
-  com.example.marspioneer.proto.ListBuildingTypesRequestOrBuilder getListBuildingTypesRequestOrBuilder();
+  ListBuildingTypesRequestOrBuilder getListBuildingTypesRequestOrBuilder();
 
-  public com.example.marspioneer.proto.Request.RequestCase getRequestCase();
+  public Request.RequestCase getRequestCase();
 }

@@ -11,7 +11,7 @@ public interface AuthenticateRequestOrBuilder extends
    * <code>string password = 1;</code>
    * @return The password.
    */
-  java.lang.String getPassword();
+  String getPassword();
   /**
    * <code>string password = 1;</code>
    * @return The bytes for password.
@@ -23,7 +23,7 @@ public interface AuthenticateRequestOrBuilder extends
    * <code>string playerName = 2;</code>
    * @return The playerName.
    */
-  java.lang.String getPlayerName();
+  String getPlayerName();
   /**
    * <code>string playerName = 2;</code>
    * @return The bytes for playerName.

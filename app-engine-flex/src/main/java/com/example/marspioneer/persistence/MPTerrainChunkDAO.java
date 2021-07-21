@@ -16,6 +16,7 @@ import redis.clients.jedis.Jedis;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -57,10 +58,10 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
 
     @Override
     public MPTerrainChunk getForWorld(String worldID, String itemID) {
-        final ArrayList<MPTerrainChunk> items = Objectis.filter(MPTerrainChunk.class)
+        final List<MPTerrainChunk> items = Objectis.filter(MPTerrainChunk.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("id", itemID)
-                .fetch();
+                .fetch().getItems();
         if (items.size() == 0) {
             return null;
         }
@@ -72,7 +73,7 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
         return Objectis.filter(MPTerrainChunk.class)
                 .whereEqualTo("worldID", worldID)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
     }
 
 }

@@ -187,7 +187,8 @@ public class WorldContext {
         }
         return entitiesInAOI;
     }
-/**
+
+    /**
      * Composes the partial state for a given world session and set of entities.
      * @param worldSession The world session to compose the state for.
      * @return Returns a PartialStateProto.
@@ -208,6 +209,7 @@ public class WorldContext {
                 .putAllCells(terrainInAOI)
                 .build();
     }
+
     /**
      * Composes a state update.
      * @param worldSession The world session to compose the state for.
@@ -254,6 +256,75 @@ public class WorldContext {
                 .build();
     }
 
+    //TODO - Not within the framework!
+    /**
+     * Composes a state update.
+     * @param worldSession The world session to compose the state for.
+     * @return Returns a PartialStateProto.
+     */
+    public MPPartialStateProto composeStateUpdateWithTerrain(MPWorldSession worldSession, HashMap<String, MPTerrainCellProto> existingTerrain) {
+        //Retrieve the player's own entities:
+        final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
+        playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+
+        //Retrieve foreign entities that are within the area of interest of the player's entities:
+        final HashMap<String, MPEntityProto> entitiesInAOI = new HashMap<>(getEntities(playerEntities));
+
+        //Retrieve the terrain:
+        return MPPartialStateProto.newBuilder()
+                .setWorldSession(worldSession.toProto())
+                .putAllEntities(entitiesInAOI)
+                .putAllCells(existingTerrain)
+                .build();
+    }
+
+    //TODO - Not within the framework!
+    /**
+     * Composes a state update.
+     * @param worldSession The world session to compose the state for.
+     * @return Returns a PartialStateProto.
+     */
+    public MPPartialStateProto composeStateUpdateWithEntities(MPWorldSession worldSession, HashMap<String, MPEntityProto> existingEntities) {
+        //Retrieve the player's own entities:
+        final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
+        playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+
+        //Retrieve the terrain:
+        final HashMap<String, MPTerrainCellProto> terrainInAOI = new HashMap<>(getTerrain(playerEntities));
+        return MPPartialStateProto.newBuilder()
+                .setWorldSession(worldSession.toProto())
+                .putAllEntities(existingEntities)
+                .putAllCells(terrainInAOI)
+                .build();
+    }
+
+    //TODO - Not within the framework!
+    /**
+     * Composes a state update.
+     * @param worldSession The world session to compose the state for.
+     * @return Returns a PartialStateProto.
+     */
+    public MPPartialStateProto composeStateUpdateWithEntitiesAndTerrain(MPWorldSession worldSession, Collection<MPEntityProto> existingEntities, Collection<MPTerrainCellProto> existingTerrain) {
+        //Retrieve the player's own entities:
+        final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
+        playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+
+        HashMap<String, MPEntityProto> entities = new HashMap<>();
+        HashMap<String, MPTerrainCellProto> terrain = new HashMap<>();
+        for (MPEntityProto existingEntity : existingEntities) {
+            entities.put(existingEntity.getId(), existingEntity);
+        }
+        for (MPTerrainCellProto mpTerrainCellProto : existingTerrain) {
+            terrain.put(mpTerrainCellProto.getPosition().toHash(), mpTerrainCellProto);
+        }
+
+        return MPPartialStateProto.newBuilder()
+                .setWorldSession(worldSession.toProto())
+                .putAllEntities(entities)
+                .putAllCells(terrain)
+                .build();
+    }
+
     /**
      * Returns the active sessions for this world.
      * @return Returns a collection of WorldSessions.
@@ -262,7 +333,7 @@ public class WorldContext {
         return DBManager.worldSession.listForWorld(worldID);
     }
 
-/**
+    /**
      * Subscribes a world session to a world.
      * @param worldSession The world session.
      */

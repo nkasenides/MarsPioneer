@@ -16,7 +16,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.FarmResearchLevel farmingResearch = 1;</code>
    * @return The farmingResearch.
    */
-  com.example.marspioneer.proto.FarmResearchLevel getFarmingResearch();
+  FarmResearchLevel getFarmingResearch();
 
   /**
    * <code>int32 metal = 2;</code>
@@ -33,7 +33,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.WellResearchLevel waterResearch = 3;</code>
    * @return The waterResearch.
    */
-  com.example.marspioneer.proto.WellResearchLevel getWaterResearch();
+  WellResearchLevel getWaterResearch();
 
   /**
    * <code>uint64 createdOn = 4;</code>
@@ -62,7 +62,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.SandPitResearchLevel sandResearch = 7;</code>
    * @return The sandResearch.
    */
-  com.example.marspioneer.proto.SandPitResearchLevel getSandResearch();
+  SandPitResearchLevel getSandResearch();
 
   /**
    * <code>int32 sand = 8;</code>
@@ -74,7 +74,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>string password = 9;</code>
    * @return The password.
    */
-  java.lang.String getPassword();
+  String getPassword();
   /**
    * <code>string password = 9;</code>
    * @return The bytes for password.
@@ -86,7 +86,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>string teamID = 10;</code>
    * @return The teamID.
    */
-  java.lang.String getTeamID();
+  String getTeamID();
   /**
    * <code>string teamID = 10;</code>
    * @return The bytes for teamID.
@@ -98,7 +98,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>string name = 11;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <code>string name = 11;</code>
    * @return The bytes for name.
@@ -110,7 +110,7 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>string id = 12;</code>
    * @return The id.
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 12;</code>
    * @return The bytes for id.
@@ -133,5 +133,5 @@ public interface MPPlayerProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.MineResearchLevel miningResearch = 14;</code>
    * @return The miningResearch.
    */
-  com.example.marspioneer.proto.MineResearchLevel getMiningResearch();
+  MineResearchLevel getMiningResearch();
 }

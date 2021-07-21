@@ -13,10 +13,7 @@ import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
 import com.raylabz.objectis.Objectis;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.UUID;
+import java.util.*;
 
 
 public class MPWorldDAO implements MultiDAO<MPWorld> {
@@ -53,7 +50,7 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
     public Collection<MPWorld> getMany(String... ids) {
         return Objectis.filter(MPWorld.class)
                 .whereArrayContainsAny("id", Arrays.asList(ids))
-                .fetch();
+                .fetch().getItems();
     }
 
     @Override
@@ -148,10 +145,10 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
      * @return Returns a world object.
      */
     public MPWorld getByName(String name) {
-        final ArrayList<MPWorld> items = Objectis.filter(MPWorld.class)
+        final List<MPWorld> items = Objectis.filter(MPWorld.class)
                 .whereEqualTo("name", name)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
 
         if (items.size() == 0) {
             return null;
@@ -167,7 +164,7 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
     public Collection<MPWorld> listByPlayer(String playerID) {
         return Objectis.filter(MPWorld.class)
                 .whereEqualTo("playerID", playerID)
-                .fetch();
+                .fetch().getItems();
     }
 
 

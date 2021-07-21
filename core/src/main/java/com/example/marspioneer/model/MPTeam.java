@@ -7,6 +7,8 @@ package com.example.marspioneer.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
@@ -38,8 +40,9 @@ public class MPTeam implements Transmittable<MPTeamProto.Builder>, ITeam, Serial
     public String getOwnerID() {    
         return ownerID;        
     }    
-    
-    public ArrayList<String> getPlayerIDs() {
+
+    @Override
+    public List<String> getPlayerIDs() {
         return playerIDs;        
     }    
     

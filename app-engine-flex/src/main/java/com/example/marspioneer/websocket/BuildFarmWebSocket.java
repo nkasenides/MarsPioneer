@@ -6,10 +6,7 @@
 package com.example.marspioneer.websocket;
 
 import com.example.marspioneer.auth.Auth;
-import com.example.marspioneer.model.BuildingEntity;
-import com.example.marspioneer.model.BuildingType;
-import com.example.marspioneer.model.MPPlayer;
-import com.example.marspioneer.model.MPWorldSession;
+import com.example.marspioneer.model.*;
 import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
@@ -23,9 +20,12 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @WebSocket(maxIdleTime = -1)
 public class BuildFarmWebSocket {
@@ -212,7 +212,14 @@ public class BuildFarmWebSocket {
 
         System.out.println("Create building, update player + send: " + (System.currentTimeMillis() - l));
 
+        l = System.currentTimeMillis();
+
+
+        //TODO - Conversion to appropriate types for UpdateStateWebSocket and WorldContext.......
+        //TODO - Then, implement the new methods in UpdateStateWebSocket and WorldContext in the generator...
+
         UpdateStateWebSocket.filteredUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
+
 
     }
 

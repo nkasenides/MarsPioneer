@@ -540,6 +540,10 @@ private static final long serialVersionUID = 0L;
         return item;        
     }    
     
+        public java.util.List<String> getPlayerIDs() {
+        return playerIDs_;
+    }
+    
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1215,6 +1219,10 @@ private static final long serialVersionUID = 0L;
         item.setPlayerLimit(getPlayerLimit());        
         return item;        
     }    
+    
+        public java.util.List<String> getPlayerIDs() {
+        return playerIDs_;
+    }
     
 }
 

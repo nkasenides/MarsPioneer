@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListTeamPlayersResponse() {
-    message_ = "";
     players_ = java.util.Collections.emptyList();
+    message_ = "";
     status_ = 0;
   }
 
@@ -53,18 +53,18 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
-
-            message_ = s;
-            break;
-          }
-          case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               players_ = new java.util.ArrayList<MPPlayerProto>();
               mutable_bitField0_ |= 0x00000001;
             }
             players_.add(
                 input.readMessage(MPPlayerProto.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            String s = input.readStringRequireUtf8();
+
+            message_ = s;
             break;
           }
           case 24: {
@@ -252,10 +252,50 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:com.example.marspioneer.proto.ListTeamPlayersResponse.Status)
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 1;
+  public static final int PLAYERS_FIELD_NUMBER = 1;
+  private java.util.List<MPPlayerProto> players_;
+  /**
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
+   */
+  @Override
+  public java.util.List<MPPlayerProto> getPlayersList() {
+    return players_;
+  }
+  /**
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
+   */
+  @Override
+  public java.util.List<? extends MPPlayerProtoOrBuilder>
+      getPlayersOrBuilderList() {
+    return players_;
+  }
+  /**
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
+   */
+  @Override
+  public int getPlayersCount() {
+    return players_.size();
+  }
+  /**
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
+   */
+  @Override
+  public MPPlayerProto getPlayers(int index) {
+    return players_.get(index);
+  }
+  /**
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
+   */
+  @Override
+  public MPPlayerProtoOrBuilder getPlayersOrBuilder(
+      int index) {
+    return players_.get(index);
+  }
+
+  public static final int MESSAGE_FIELD_NUMBER = 2;
   private volatile Object message_;
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The message.
    */
   @Override
@@ -272,7 +312,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The bytes for message.
    */
   @Override
@@ -288,46 +328,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int PLAYERS_FIELD_NUMBER = 2;
-  private java.util.List<MPPlayerProto> players_;
-  /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
-   */
-  @Override
-  public java.util.List<MPPlayerProto> getPlayersList() {
-    return players_;
-  }
-  /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
-   */
-  @Override
-  public java.util.List<? extends MPPlayerProtoOrBuilder>
-      getPlayersOrBuilderList() {
-    return players_;
-  }
-  /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
-   */
-  @Override
-  public int getPlayersCount() {
-    return players_.size();
-  }
-  /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
-   */
-  @Override
-  public MPPlayerProto getPlayers(int index) {
-    return players_.get(index);
-  }
-  /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
-   */
-  @Override
-  public MPPlayerProtoOrBuilder getPlayersOrBuilder(
-      int index) {
-    return players_.get(index);
   }
 
   public static final int STATUS_FIELD_NUMBER = 3;
@@ -363,11 +363,11 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
-    }
     for (int i = 0; i < players_.size(); i++) {
-      output.writeMessage(2, players_.get(i));
+      output.writeMessage(1, players_.get(i));
+    }
+    if (!getMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     if (status_ != Status.SERVER_ERROR.getNumber()) {
       output.writeEnum(3, status_);
@@ -381,12 +381,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
-    }
     for (int i = 0; i < players_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, players_.get(i));
+        .computeMessageSize(1, players_.get(i));
+    }
+    if (!getMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     if (status_ != Status.SERVER_ERROR.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -407,10 +407,10 @@ private static final long serialVersionUID = 0L;
     }
     ListTeamPlayersResponse other = (ListTeamPlayersResponse) obj;
 
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
     if (!getPlayersList()
         .equals(other.getPlayersList())) return false;
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
     if (status_ != other.status_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -423,12 +423,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
     if (getPlayersCount() > 0) {
       hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
       hash = (53 * hash) + getPlayersList().hashCode();
     }
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -565,14 +565,14 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      message_ = "";
-
       if (playersBuilder_ == null) {
         players_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         playersBuilder_.clear();
       }
+      message_ = "";
+
       status_ = 0;
 
       return this;
@@ -602,7 +602,6 @@ private static final long serialVersionUID = 0L;
     public ListTeamPlayersResponse buildPartial() {
       ListTeamPlayersResponse result = new ListTeamPlayersResponse(this);
       int from_bitField0_ = bitField0_;
-      result.message_ = message_;
       if (playersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           players_ = java.util.Collections.unmodifiableList(players_);
@@ -612,6 +611,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.players_ = playersBuilder_.build();
       }
+      result.message_ = message_;
       result.status_ = status_;
       onBuilt();
       return result;
@@ -661,10 +661,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(ListTeamPlayersResponse other) {
       if (other == ListTeamPlayersResponse.getDefaultInstance()) return this;
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
-      }
       if (playersBuilder_ == null) {
         if (!other.players_.isEmpty()) {
           if (players_.isEmpty()) {
@@ -690,6 +686,10 @@ private static final long serialVersionUID = 0L;
             playersBuilder_.addAllMessages(other.players_);
           }
         }
+      }
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
+        onChanged();
       }
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
@@ -724,82 +724,6 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private Object message_ = "";
-    /**
-     * <code>string message = 1;</code>
-     * @return The message.
-     */
-    public String getMessage() {
-      Object ref = message_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      } else {
-        return (String) ref;
-      }
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @param value The message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessage(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @param value The bytes for message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<MPPlayerProto> players_ =
       java.util.Collections.emptyList();
     private void ensurePlayersIsMutable() {
@@ -813,7 +737,7 @@ private static final long serialVersionUID = 0L;
         MPPlayerProto, MPPlayerProto.Builder, MPPlayerProtoOrBuilder> playersBuilder_;
 
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public java.util.List<MPPlayerProto> getPlayersList() {
       if (playersBuilder_ == null) {
@@ -823,7 +747,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public int getPlayersCount() {
       if (playersBuilder_ == null) {
@@ -833,7 +757,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public MPPlayerProto getPlayers(int index) {
       if (playersBuilder_ == null) {
@@ -843,7 +767,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder setPlayers(
         int index, MPPlayerProto value) {
@@ -860,7 +784,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder setPlayers(
         int index, MPPlayerProto.Builder builderForValue) {
@@ -874,7 +798,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(MPPlayerProto value) {
       if (playersBuilder_ == null) {
@@ -890,7 +814,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(
         int index, MPPlayerProto value) {
@@ -907,7 +831,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(
         MPPlayerProto.Builder builderForValue) {
@@ -921,7 +845,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(
         int index, MPPlayerProto.Builder builderForValue) {
@@ -935,7 +859,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addAllPlayers(
         Iterable<? extends MPPlayerProto> values) {
@@ -950,7 +874,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder clearPlayers() {
       if (playersBuilder_ == null) {
@@ -963,7 +887,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder removePlayers(int index) {
       if (playersBuilder_ == null) {
@@ -976,14 +900,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public MPPlayerProto.Builder getPlayersBuilder(
         int index) {
       return getPlayersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public MPPlayerProtoOrBuilder getPlayersOrBuilder(
         int index) {
@@ -993,7 +917,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public java.util.List<? extends MPPlayerProtoOrBuilder>
          getPlayersOrBuilderList() {
@@ -1004,14 +928,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public MPPlayerProto.Builder addPlayersBuilder() {
       return getPlayersFieldBuilder().addBuilder(
           MPPlayerProto.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public MPPlayerProto.Builder addPlayersBuilder(
         int index) {
@@ -1019,7 +943,7 @@ private static final long serialVersionUID = 0L;
           index, MPPlayerProto.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+     * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public java.util.List<MPPlayerProto.Builder>
          getPlayersBuilderList() {
@@ -1038,6 +962,82 @@ private static final long serialVersionUID = 0L;
         players_ = null;
       }
       return playersBuilder_;
+    }
+
+    private Object message_ = "";
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    public String getMessage() {
+      Object ref = message_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      Object ref = message_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessage(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      message_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      message_ = value;
+      onChanged();
+      return this;
     }
 
     private int status_ = 0;

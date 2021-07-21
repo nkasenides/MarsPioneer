@@ -1,5 +1,6 @@
 package com.example.marspioneer.client.ui;
 
+import com.example.marspioneer.client.Benchmarking;
 import com.example.marspioneer.client.MPClient;
 import com.example.marspioneer.client.stubs.BuildSandPit;
 import com.example.marspioneer.client.stubs.Stubs;
@@ -128,6 +129,7 @@ public class MPGameForm extends JFrame {
 
                 //Actions:
                 if (e.getKeyCode() == KeyEvent.VK_F) {
+                    Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildFarmRequest request = BuildFarmRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
                             .setWorldSessionID(client.getWorldSessionID())
@@ -139,6 +141,7 @@ public class MPGameForm extends JFrame {
                     }
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_M) {
+                    Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildMineRequest request = BuildMineRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
                             .setWorldSessionID(client.getWorldSessionID())
@@ -150,6 +153,7 @@ public class MPGameForm extends JFrame {
                     }
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_W) {
+                    Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildWellRequest request = BuildWellRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
                             .setWorldSessionID(client.getWorldSessionID())
@@ -161,6 +165,7 @@ public class MPGameForm extends JFrame {
                     }
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_S) {
+                    Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildSandPitRequest request = BuildSandPitRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
                             .setWorldSessionID(client.getWorldSessionID())
@@ -172,6 +177,7 @@ public class MPGameForm extends JFrame {
                     }
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_H) {
+                    Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildHubRequest request = BuildHubRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
                             .setWorldSessionID(client.getWorldSessionID())
@@ -183,7 +189,7 @@ public class MPGameForm extends JFrame {
                     }
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_DELETE) {
-
+                    Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     String entityToDeleteID = null;
 
                     for (Map.Entry<String, MPEntityProto> entry : client.getEntities().entrySet()) {

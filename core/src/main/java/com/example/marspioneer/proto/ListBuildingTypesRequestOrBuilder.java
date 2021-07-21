@@ -16,9 +16,9 @@ public interface ListBuildingTypesRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  com.example.marspioneer.proto.MPGameSessionProto getGameSessionID();
+  MPGameSessionProto getGameSessionID();
   /**
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    */
-  com.example.marspioneer.proto.MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder();
+  MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder();
 }

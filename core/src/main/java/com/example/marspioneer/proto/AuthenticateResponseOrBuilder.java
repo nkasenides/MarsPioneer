@@ -11,7 +11,7 @@ public interface AuthenticateResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,11 +28,11 @@ public interface AuthenticateResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSession = 2;</code>
    * @return The gameSession.
    */
-  com.example.marspioneer.proto.MPGameSessionProto getGameSession();
+  MPGameSessionProto getGameSession();
   /**
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSession = 2;</code>
    */
-  com.example.marspioneer.proto.MPGameSessionProtoOrBuilder getGameSessionOrBuilder();
+  MPGameSessionProtoOrBuilder getGameSessionOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.AuthenticateResponse.Status status = 3;</code>
@@ -43,5 +43,5 @@ public interface AuthenticateResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.AuthenticateResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.AuthenticateResponse.Status getStatus();
+  AuthenticateResponse.Status getStatus();
 }

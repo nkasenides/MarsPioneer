@@ -16,17 +16,17 @@ public interface GetWorldResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 1;</code>
    * @return The world.
    */
-  com.example.marspioneer.proto.MPWorldProto getWorld();
+  MPWorldProto getWorld();
   /**
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 1;</code>
    */
-  com.example.marspioneer.proto.MPWorldProtoOrBuilder getWorldOrBuilder();
+  MPWorldProtoOrBuilder getWorldOrBuilder();
 
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -43,5 +43,5 @@ public interface GetWorldResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetWorldResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.GetWorldResponse.Status getStatus();
+  GetWorldResponse.Status getStatus();
 }

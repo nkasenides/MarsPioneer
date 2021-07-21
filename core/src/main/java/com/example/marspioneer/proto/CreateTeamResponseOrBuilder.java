@@ -16,17 +16,17 @@ public interface CreateTeamResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPTeamProto team = 1;</code>
    * @return The team.
    */
-  com.example.marspioneer.proto.MPTeamProto getTeam();
+  MPTeamProto getTeam();
   /**
    * <code>.com.example.marspioneer.proto.MPTeamProto team = 1;</code>
    */
-  com.example.marspioneer.proto.MPTeamProtoOrBuilder getTeamOrBuilder();
+  MPTeamProtoOrBuilder getTeamOrBuilder();
 
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -43,5 +43,5 @@ public interface CreateTeamResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.CreateTeamResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.CreateTeamResponse.Status getStatus();
+  CreateTeamResponse.Status getStatus();
 }

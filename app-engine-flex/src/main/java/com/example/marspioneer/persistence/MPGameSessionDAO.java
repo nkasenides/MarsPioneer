@@ -14,10 +14,7 @@ import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
 import com.raylabz.objectis.Objectis;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.UUID;
+import java.util.*;
 
 
 public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
@@ -55,7 +52,7 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
     public Collection<MPGameSession> getMany(String... ids) {
         return Objectis.filter(MPGameSession.class)
                 .whereArrayContainsAny("id", Arrays.asList(ids))
-                .fetch();
+                .fetch().getItems();
     }
 
     @Override
@@ -159,10 +156,10 @@ public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
      * @return Returns a GameSession, or null.
      */
     public MPGameSession getForPlayer(final String playerID) {
-        final ArrayList<MPGameSession> players = Objectis.filter(MPGameSession.class)
+        final List<MPGameSession> players = Objectis.filter(MPGameSession.class)
                 .whereEqualTo("playerID", playerID)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
         if (players.size() == 0) {
             return null;
         }

@@ -26,14 +26,14 @@ private static final long serialVersionUID = 0L;
     miningResearch_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MPPlayerProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -100,25 +100,25 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             password_ = s;
             break;
           }
           case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             teamID_ = s;
             break;
           }
           case 90: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             name_ = s;
             break;
           }
           case 98: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             id_ = s;
             break;
@@ -155,15 +155,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.MPPlayerProto.class, com.example.marspioneer.proto.MPPlayerProto.Builder.class);
+            MPPlayerProto.class, Builder.class);
   }
 
   public static final int FARMINGRESEARCH_FIELD_NUMBER = 1;
@@ -172,17 +172,17 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.FarmResearchLevel farmingResearch = 1;</code>
    * @return The enum numeric value on the wire for farmingResearch.
    */
-  @java.lang.Override public int getFarmingResearchValue() {
+  @Override public int getFarmingResearchValue() {
     return farmingResearch_;
   }
   /**
    * <code>.com.example.marspioneer.proto.FarmResearchLevel farmingResearch = 1;</code>
    * @return The farmingResearch.
    */
-  @java.lang.Override public com.example.marspioneer.proto.FarmResearchLevel getFarmingResearch() {
+  @Override public FarmResearchLevel getFarmingResearch() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.FarmResearchLevel result = com.example.marspioneer.proto.FarmResearchLevel.valueOf(farmingResearch_);
-    return result == null ? com.example.marspioneer.proto.FarmResearchLevel.UNRECOGNIZED : result;
+    FarmResearchLevel result = FarmResearchLevel.valueOf(farmingResearch_);
+    return result == null ? FarmResearchLevel.UNRECOGNIZED : result;
   }
 
   public static final int METAL_FIELD_NUMBER = 2;
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 metal = 2;</code>
    * @return The metal.
    */
-  @java.lang.Override
+  @Override
   public int getMetal() {
     return metal_;
   }
@@ -202,17 +202,17 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.WellResearchLevel waterResearch = 3;</code>
    * @return The enum numeric value on the wire for waterResearch.
    */
-  @java.lang.Override public int getWaterResearchValue() {
+  @Override public int getWaterResearchValue() {
     return waterResearch_;
   }
   /**
    * <code>.com.example.marspioneer.proto.WellResearchLevel waterResearch = 3;</code>
    * @return The waterResearch.
    */
-  @java.lang.Override public com.example.marspioneer.proto.WellResearchLevel getWaterResearch() {
+  @Override public WellResearchLevel getWaterResearch() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.WellResearchLevel result = com.example.marspioneer.proto.WellResearchLevel.valueOf(waterResearch_);
-    return result == null ? com.example.marspioneer.proto.WellResearchLevel.UNRECOGNIZED : result;
+    WellResearchLevel result = WellResearchLevel.valueOf(waterResearch_);
+    return result == null ? WellResearchLevel.UNRECOGNIZED : result;
   }
 
   public static final int CREATEDON_FIELD_NUMBER = 4;
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint64 createdOn = 4;</code>
    * @return The createdOn.
    */
-  @java.lang.Override
+  @Override
   public long getCreatedOn() {
     return createdOn_;
   }
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 water = 5;</code>
    * @return The water.
    */
-  @java.lang.Override
+  @Override
   public int getWater() {
     return water_;
   }
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 food = 6;</code>
    * @return The food.
    */
-  @java.lang.Override
+  @Override
   public int getFood() {
     return food_;
   }
@@ -254,17 +254,17 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SandPitResearchLevel sandResearch = 7;</code>
    * @return The enum numeric value on the wire for sandResearch.
    */
-  @java.lang.Override public int getSandResearchValue() {
+  @Override public int getSandResearchValue() {
     return sandResearch_;
   }
   /**
    * <code>.com.example.marspioneer.proto.SandPitResearchLevel sandResearch = 7;</code>
    * @return The sandResearch.
    */
-  @java.lang.Override public com.example.marspioneer.proto.SandPitResearchLevel getSandResearch() {
+  @Override public SandPitResearchLevel getSandResearch() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.SandPitResearchLevel result = com.example.marspioneer.proto.SandPitResearchLevel.valueOf(sandResearch_);
-    return result == null ? com.example.marspioneer.proto.SandPitResearchLevel.UNRECOGNIZED : result;
+    SandPitResearchLevel result = SandPitResearchLevel.valueOf(sandResearch_);
+    return result == null ? SandPitResearchLevel.UNRECOGNIZED : result;
   }
 
   public static final int SAND_FIELD_NUMBER = 8;
@@ -273,26 +273,26 @@ private static final long serialVersionUID = 0L;
    * <code>int32 sand = 8;</code>
    * @return The sand.
    */
-  @java.lang.Override
+  @Override
   public int getSand() {
     return sand_;
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 9;
-  private volatile java.lang.Object password_;
+  private volatile Object password_;
   /**
    * <code>string password = 9;</code>
    * @return The password.
    */
-  @java.lang.Override
-  public java.lang.String getPassword() {
-    java.lang.Object ref = password_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getPassword() {
+    Object ref = password_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       password_ = s;
       return s;
     }
@@ -301,14 +301,14 @@ private static final long serialVersionUID = 0L;
    * <code>string password = 9;</code>
    * @return The bytes for password.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getPasswordBytes() {
-    java.lang.Object ref = password_;
-    if (ref instanceof java.lang.String) {
+    Object ref = password_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       password_ = b;
       return b;
     } else {
@@ -317,20 +317,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TEAMID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object teamID_;
+  private volatile Object teamID_;
   /**
    * <code>string teamID = 10;</code>
    * @return The teamID.
    */
-  @java.lang.Override
-  public java.lang.String getTeamID() {
-    java.lang.Object ref = teamID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getTeamID() {
+    Object ref = teamID_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       teamID_ = s;
       return s;
     }
@@ -339,14 +339,14 @@ private static final long serialVersionUID = 0L;
    * <code>string teamID = 10;</code>
    * @return The bytes for teamID.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getTeamIDBytes() {
-    java.lang.Object ref = teamID_;
-    if (ref instanceof java.lang.String) {
+    Object ref = teamID_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       teamID_ = b;
       return b;
     } else {
@@ -355,20 +355,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 11;
-  private volatile java.lang.Object name_;
+  private volatile Object name_;
   /**
    * <code>string name = 11;</code>
    * @return The name.
    */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getName() {
+    Object ref = name_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
@@ -377,14 +377,14 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 11;</code>
    * @return The bytes for name.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
+    Object ref = name_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       name_ = b;
       return b;
     } else {
@@ -393,20 +393,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 12;
-  private volatile java.lang.Object id_;
+  private volatile Object id_;
   /**
    * <code>string id = 12;</code>
    * @return The id.
    */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getId() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
@@ -415,14 +415,14 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 12;</code>
    * @return The bytes for id.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
+    Object ref = id_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       id_ = b;
       return b;
     } else {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
    * <code>int64 lastCollected = 13;</code>
    * @return The lastCollected.
    */
-  @java.lang.Override
+  @Override
   public long getLastCollected() {
     return lastCollected_;
   }
@@ -447,21 +447,21 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.MineResearchLevel miningResearch = 14;</code>
    * @return The enum numeric value on the wire for miningResearch.
    */
-  @java.lang.Override public int getMiningResearchValue() {
+  @Override public int getMiningResearchValue() {
     return miningResearch_;
   }
   /**
    * <code>.com.example.marspioneer.proto.MineResearchLevel miningResearch = 14;</code>
    * @return The miningResearch.
    */
-  @java.lang.Override public com.example.marspioneer.proto.MineResearchLevel getMiningResearch() {
+  @Override public MineResearchLevel getMiningResearch() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.MineResearchLevel result = com.example.marspioneer.proto.MineResearchLevel.valueOf(miningResearch_);
-    return result == null ? com.example.marspioneer.proto.MineResearchLevel.UNRECOGNIZED : result;
+    MineResearchLevel result = MineResearchLevel.valueOf(miningResearch_);
+    return result == null ? MineResearchLevel.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -471,16 +471,16 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (farmingResearch_ != com.example.marspioneer.proto.FarmResearchLevel.LEVEL_1_FarmResearchLevel.getNumber()) {
+    if (farmingResearch_ != FarmResearchLevel.LEVEL_1_FarmResearchLevel.getNumber()) {
       output.writeEnum(1, farmingResearch_);
     }
     if (metal_ != 0) {
       output.writeInt32(2, metal_);
     }
-    if (waterResearch_ != com.example.marspioneer.proto.WellResearchLevel.LEVEL_1_WellResearchLevel.getNumber()) {
+    if (waterResearch_ != WellResearchLevel.LEVEL_1_WellResearchLevel.getNumber()) {
       output.writeEnum(3, waterResearch_);
     }
     if (createdOn_ != 0L) {
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
     if (food_ != 0) {
       output.writeInt32(6, food_);
     }
-    if (sandResearch_ != com.example.marspioneer.proto.SandPitResearchLevel.LEVEL_1_SandPitResearchLevel.getNumber()) {
+    if (sandResearch_ != SandPitResearchLevel.LEVEL_1_SandPitResearchLevel.getNumber()) {
       output.writeEnum(7, sandResearch_);
     }
     if (sand_ != 0) {
@@ -513,19 +513,19 @@ private static final long serialVersionUID = 0L;
     if (lastCollected_ != 0L) {
       output.writeInt64(13, lastCollected_);
     }
-    if (miningResearch_ != com.example.marspioneer.proto.MineResearchLevel.LEVEL_1_MineResearchLevel.getNumber()) {
+    if (miningResearch_ != MineResearchLevel.LEVEL_1_MineResearchLevel.getNumber()) {
       output.writeEnum(14, miningResearch_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (farmingResearch_ != com.example.marspioneer.proto.FarmResearchLevel.LEVEL_1_FarmResearchLevel.getNumber()) {
+    if (farmingResearch_ != FarmResearchLevel.LEVEL_1_FarmResearchLevel.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, farmingResearch_);
     }
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, metal_);
     }
-    if (waterResearch_ != com.example.marspioneer.proto.WellResearchLevel.LEVEL_1_WellResearchLevel.getNumber()) {
+    if (waterResearch_ != WellResearchLevel.LEVEL_1_WellResearchLevel.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, waterResearch_);
     }
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, food_);
     }
-    if (sandResearch_ != com.example.marspioneer.proto.SandPitResearchLevel.LEVEL_1_SandPitResearchLevel.getNumber()) {
+    if (sandResearch_ != SandPitResearchLevel.LEVEL_1_SandPitResearchLevel.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, sandResearch_);
     }
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(13, lastCollected_);
     }
-    if (miningResearch_ != com.example.marspioneer.proto.MineResearchLevel.LEVEL_1_MineResearchLevel.getNumber()) {
+    if (miningResearch_ != MineResearchLevel.LEVEL_1_MineResearchLevel.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(14, miningResearch_);
     }
@@ -582,15 +582,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.MPPlayerProto)) {
+    if (!(obj instanceof MPPlayerProto)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.MPPlayerProto other = (com.example.marspioneer.proto.MPPlayerProto) obj;
+    MPPlayerProto other = (MPPlayerProto) obj;
 
     if (farmingResearch_ != other.farmingResearch_) return false;
     if (getMetal()
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -662,69 +662,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(byte[] data)
+  public static MPPlayerProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(java.io.InputStream input)
+  public static MPPlayerProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseDelimitedFrom(java.io.InputStream input)
+  public static MPPlayerProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseDelimitedFrom(
+  public static MPPlayerProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPPlayerProto parseFrom(
+  public static MPPlayerProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -732,23 +732,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.MPPlayerProto prototype) {
+  public static Builder newBuilder(MPPlayerProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements com.nkasenides.athlos.model.IPlayer, com.nkasenides.athlos.proto.Modelable<com.example.marspioneer.model.MPPlayer>, 
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.MPPlayerProto)
-      com.example.marspioneer.proto.MPPlayerProtoOrBuilder {    @java.lang.Override    
+      MPPlayerProtoOrBuilder {    @Override
     public com.example.marspioneer.model.MPPlayer toObject() {    
         com.example.marspioneer.model.MPPlayer item = new com.example.marspioneer.model.MPPlayer();        
         item.setFarmingResearch(getFarmingResearch());        
@@ -781,15 +781,15 @@ private static final long serialVersionUID = 0L;
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.MPPlayerProto.class, com.example.marspioneer.proto.MPPlayerProto.Builder.class);
+              MPPlayerProto.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.MPPlayerProto.newBuilder()
@@ -798,7 +798,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       farmingResearch_ = 0;
@@ -841,29 +841,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPlayerProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPPlayerProto getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.MPPlayerProto.getDefaultInstance();
+    @Override
+    public MPPlayerProto getDefaultInstanceForType() {
+      return MPPlayerProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPPlayerProto build() {
-      com.example.marspioneer.proto.MPPlayerProto result = buildPartial();
+    @Override
+    public MPPlayerProto build() {
+      MPPlayerProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPPlayerProto buildPartial() {
-      com.example.marspioneer.proto.MPPlayerProto result = new com.example.marspioneer.proto.MPPlayerProto(this);
+    @Override
+    public MPPlayerProto buildPartial() {
+      MPPlayerProto result = new MPPlayerProto(this);
       result.farmingResearch_ = farmingResearch_;
       result.metal_ = metal_;
       result.waterResearch_ = waterResearch_;
@@ -882,50 +882,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.MPPlayerProto) {
-        return mergeFrom((com.example.marspioneer.proto.MPPlayerProto)other);
+      if (other instanceof MPPlayerProto) {
+        return mergeFrom((MPPlayerProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.MPPlayerProto other) {
-      if (other == com.example.marspioneer.proto.MPPlayerProto.getDefaultInstance()) return this;
+    public Builder mergeFrom(MPPlayerProto other) {
+      if (other == MPPlayerProto.getDefaultInstance()) return this;
       if (other.farmingResearch_ != 0) {
         setFarmingResearchValue(other.getFarmingResearchValue());
       }
@@ -977,21 +977,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.MPPlayerProto parsedMessage = null;
+      MPPlayerProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.MPPlayerProto) e.getUnfinishedMessage();
+        parsedMessage = (MPPlayerProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1006,7 +1006,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.FarmResearchLevel farmingResearch = 1;</code>
      * @return The enum numeric value on the wire for farmingResearch.
      */
-    @java.lang.Override public int getFarmingResearchValue() {
+    @Override public int getFarmingResearchValue() {
       return farmingResearch_;
     }
     /**
@@ -1024,18 +1024,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.FarmResearchLevel farmingResearch = 1;</code>
      * @return The farmingResearch.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.FarmResearchLevel getFarmingResearch() {
+    @Override
+    public FarmResearchLevel getFarmingResearch() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.FarmResearchLevel result = com.example.marspioneer.proto.FarmResearchLevel.valueOf(farmingResearch_);
-      return result == null ? com.example.marspioneer.proto.FarmResearchLevel.UNRECOGNIZED : result;
+      FarmResearchLevel result = FarmResearchLevel.valueOf(farmingResearch_);
+      return result == null ? FarmResearchLevel.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.FarmResearchLevel farmingResearch = 1;</code>
      * @param value The farmingResearch to set.
      * @return This builder for chaining.
      */
-    public Builder setFarmingResearch(com.example.marspioneer.proto.FarmResearchLevel value) {
+    public Builder setFarmingResearch(FarmResearchLevel value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1060,7 +1060,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 metal = 2;</code>
      * @return The metal.
      */
-    @java.lang.Override
+    @Override
     public int getMetal() {
       return metal_;
     }
@@ -1091,7 +1091,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.WellResearchLevel waterResearch = 3;</code>
      * @return The enum numeric value on the wire for waterResearch.
      */
-    @java.lang.Override public int getWaterResearchValue() {
+    @Override public int getWaterResearchValue() {
       return waterResearch_;
     }
     /**
@@ -1109,18 +1109,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.WellResearchLevel waterResearch = 3;</code>
      * @return The waterResearch.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.WellResearchLevel getWaterResearch() {
+    @Override
+    public WellResearchLevel getWaterResearch() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.WellResearchLevel result = com.example.marspioneer.proto.WellResearchLevel.valueOf(waterResearch_);
-      return result == null ? com.example.marspioneer.proto.WellResearchLevel.UNRECOGNIZED : result;
+      WellResearchLevel result = WellResearchLevel.valueOf(waterResearch_);
+      return result == null ? WellResearchLevel.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.WellResearchLevel waterResearch = 3;</code>
      * @param value The waterResearch to set.
      * @return This builder for chaining.
      */
-    public Builder setWaterResearch(com.example.marspioneer.proto.WellResearchLevel value) {
+    public Builder setWaterResearch(WellResearchLevel value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1145,7 +1145,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint64 createdOn = 4;</code>
      * @return The createdOn.
      */
-    @java.lang.Override
+    @Override
     public long getCreatedOn() {
       return createdOn_;
     }
@@ -1176,7 +1176,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 water = 5;</code>
      * @return The water.
      */
-    @java.lang.Override
+    @Override
     public int getWater() {
       return water_;
     }
@@ -1207,7 +1207,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 food = 6;</code>
      * @return The food.
      */
-    @java.lang.Override
+    @Override
     public int getFood() {
       return food_;
     }
@@ -1238,7 +1238,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SandPitResearchLevel sandResearch = 7;</code>
      * @return The enum numeric value on the wire for sandResearch.
      */
-    @java.lang.Override public int getSandResearchValue() {
+    @Override public int getSandResearchValue() {
       return sandResearch_;
     }
     /**
@@ -1256,18 +1256,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SandPitResearchLevel sandResearch = 7;</code>
      * @return The sandResearch.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SandPitResearchLevel getSandResearch() {
+    @Override
+    public SandPitResearchLevel getSandResearch() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.SandPitResearchLevel result = com.example.marspioneer.proto.SandPitResearchLevel.valueOf(sandResearch_);
-      return result == null ? com.example.marspioneer.proto.SandPitResearchLevel.UNRECOGNIZED : result;
+      SandPitResearchLevel result = SandPitResearchLevel.valueOf(sandResearch_);
+      return result == null ? SandPitResearchLevel.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.SandPitResearchLevel sandResearch = 7;</code>
      * @param value The sandResearch to set.
      * @return This builder for chaining.
      */
-    public Builder setSandResearch(com.example.marspioneer.proto.SandPitResearchLevel value) {
+    public Builder setSandResearch(SandPitResearchLevel value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1292,7 +1292,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 sand = 8;</code>
      * @return The sand.
      */
-    @java.lang.Override
+    @Override
     public int getSand() {
       return sand_;
     }
@@ -1318,21 +1318,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object password_ = "";
+    private Object password_ = "";
     /**
      * <code>string password = 9;</code>
      * @return The password.
      */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getPassword() {
+      Object ref = password_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         password_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1341,11 +1341,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPasswordBytes() {
-      java.lang.Object ref = password_;
+      Object ref = password_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         password_ = b;
         return b;
       } else {
@@ -1358,7 +1358,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setPassword(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1394,21 +1394,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object teamID_ = "";
+    private Object teamID_ = "";
     /**
      * <code>string teamID = 10;</code>
      * @return The teamID.
      */
-    public java.lang.String getTeamID() {
-      java.lang.Object ref = teamID_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getTeamID() {
+      Object ref = teamID_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         teamID_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1417,11 +1417,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTeamIDBytes() {
-      java.lang.Object ref = teamID_;
+      Object ref = teamID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         teamID_ = b;
         return b;
       } else {
@@ -1434,7 +1434,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTeamID(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1470,21 +1470,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private Object name_ = "";
     /**
      * <code>string name = 11;</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getName() {
+      Object ref = name_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         name_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1493,11 +1493,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         name_ = b;
         return b;
       } else {
@@ -1510,7 +1510,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1546,21 +1546,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private Object id_ = "";
     /**
      * <code>string id = 12;</code>
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getId() {
+      Object ref = id_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         id_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1569,11 +1569,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
+      Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         id_ = b;
         return b;
       } else {
@@ -1586,7 +1586,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1627,7 +1627,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 lastCollected = 13;</code>
      * @return The lastCollected.
      */
-    @java.lang.Override
+    @Override
     public long getLastCollected() {
       return lastCollected_;
     }
@@ -1658,7 +1658,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MineResearchLevel miningResearch = 14;</code>
      * @return The enum numeric value on the wire for miningResearch.
      */
-    @java.lang.Override public int getMiningResearchValue() {
+    @Override public int getMiningResearchValue() {
       return miningResearch_;
     }
     /**
@@ -1676,18 +1676,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MineResearchLevel miningResearch = 14;</code>
      * @return The miningResearch.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.MineResearchLevel getMiningResearch() {
+    @Override
+    public MineResearchLevel getMiningResearch() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.MineResearchLevel result = com.example.marspioneer.proto.MineResearchLevel.valueOf(miningResearch_);
-      return result == null ? com.example.marspioneer.proto.MineResearchLevel.UNRECOGNIZED : result;
+      MineResearchLevel result = MineResearchLevel.valueOf(miningResearch_);
+      return result == null ? MineResearchLevel.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.MineResearchLevel miningResearch = 14;</code>
      * @param value The miningResearch to set.
      * @return This builder for chaining.
      */
-    public Builder setMiningResearch(com.example.marspioneer.proto.MineResearchLevel value) {
+    public Builder setMiningResearch(MineResearchLevel value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1706,13 +1706,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1723,18 +1723,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.MPPlayerProto)
-  private static final com.example.marspioneer.proto.MPPlayerProto DEFAULT_INSTANCE;
+  private static final MPPlayerProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.MPPlayerProto();
+    DEFAULT_INSTANCE = new MPPlayerProto();
   }
 
-  public static com.example.marspioneer.proto.MPPlayerProto getDefaultInstance() {
+  public static MPPlayerProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MPPlayerProto>
       PARSER = new com.google.protobuf.AbstractParser<MPPlayerProto>() {
-    @java.lang.Override
+    @Override
     public MPPlayerProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1747,17 +1747,17 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MPPlayerProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPPlayerProto getDefaultInstanceForType() {
+  @Override
+  public MPPlayerProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
-    @java.lang.Override    
+    @Override
     public com.example.marspioneer.model.MPPlayer toObject() {    
         com.example.marspioneer.model.MPPlayer item = new com.example.marspioneer.model.MPPlayer();        
         item.setFarmingResearch(getFarmingResearch());        

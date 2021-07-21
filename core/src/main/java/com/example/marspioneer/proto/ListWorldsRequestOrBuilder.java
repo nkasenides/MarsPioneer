@@ -11,7 +11,7 @@ public interface ListWorldsRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.

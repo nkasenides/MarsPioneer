@@ -17,10 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @WebSocket(maxIdleTime = -1)
 public class UpdateStateWebSocket {
@@ -95,6 +98,37 @@ public class UpdateStateWebSocket {
                             .build()
                     )
                     .setPartialState(State.forWorld(worldSession.getWorldID(), jedis).composeStateUpdate(session))
+                    .build();
+            socket.send(socketSession, response);
+        }
+    }
+
+    /**
+     * TODO - Not in framework!
+     * Runs a state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
+     * @param worldSession The world session initiating the state update.
+     * @param actionPosition The position of the action that initiated the state update.
+     * @param areaOfEffect The area of effect (AoE) of the action that initiated the state update.
+     * @throws IOException thrown when the message cannot be sent via the socket.
+     */
+    public static void filteredUpdate(final MPWorldSession worldSession, final Collection<MPEntityProto> existingEntities, Collection<MPTerrainCellProto> existingTerrain, final MatrixPosition actionPosition, final float areaOfEffect, Jedis jedis, MPPlayer player) throws IOException {
+        final Collection<MPWorldSession> allSessions = DBManager.worldSession.listForWorld(worldSession.getWorldID());
+        final Collection<MPWorldSession> sessionsToUpdate = State.filterUpdateSessions(allSessions, actionPosition, areaOfEffect);
+        for (MPWorldSession session : sessionsToUpdate) {
+            final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
+            final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
+            final UpdateStateResponse response = UpdateStateResponse.newBuilder()
+                    .setStatus(UpdateStateResponse.Status.OK)
+                    .setMessage("OK")
+                    .setResourceSet(
+                            ResourceSetProto.newBuilder()
+                                    .setFood(player.getFood())
+                                    .setMetal(player.getMetal())
+                                    .setSand(player.getSand())
+                                    .setWater(player.getWater())
+                                    .build()
+                    )
+                    .setPartialState(State.forWorld(worldSession.getWorldID(), jedis).composeStateUpdateWithEntitiesAndTerrain(session, existingEntities, existingTerrain))
                     .build();
             socket.send(socketSession, response);
         }

@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     type_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MPTerrainCellProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50,11 +50,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.example.marspioneer.proto.MatrixPositionProto.Builder subBuilder = null;
+            MatrixPositionProto.Builder subBuilder = null;
             if (position_ != null) {
               subBuilder = position_.toBuilder();
             }
-            position_ = input.readMessage(com.example.marspioneer.proto.MatrixPositionProto.parser(), extensionRegistry);
+            position_ = input.readMessage(MatrixPositionProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(position_);
               position_ = subBuilder.buildPartial();
@@ -94,24 +94,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.MPTerrainCellProto.class, com.example.marspioneer.proto.MPTerrainCellProto.Builder.class);
+            MPTerrainCellProto.class, Builder.class);
   }
 
   public static final int POSITION_FIELD_NUMBER = 1;
-  private com.example.marspioneer.proto.MatrixPositionProto position_;
+  private MatrixPositionProto position_;
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
    * @return Whether the position field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPosition() {
     return position_ != null;
   }
@@ -119,15 +119,15 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
    * @return The position.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MatrixPositionProto getPosition() {
-    return position_ == null ? com.example.marspioneer.proto.MatrixPositionProto.getDefaultInstance() : position_;
+  @Override
+  public MatrixPositionProto getPosition() {
+    return position_ == null ? MatrixPositionProto.getDefaultInstance() : position_;
   }
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder() {
+  @Override
+  public MatrixPositionProtoOrBuilder getPositionOrBuilder() {
     return getPosition();
   }
 
@@ -137,17 +137,17 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
    * @return The enum numeric value on the wire for type.
    */
-  @java.lang.Override public int getTypeValue() {
+  @Override public int getTypeValue() {
     return type_;
   }
   /**
    * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
    * @return The type.
    */
-  @java.lang.Override public com.example.marspioneer.proto.CellType getType() {
+  @Override public CellType getType() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.CellType result = com.example.marspioneer.proto.CellType.valueOf(type_);
-    return result == null ? com.example.marspioneer.proto.CellType.UNRECOGNIZED : result;
+    CellType result = CellType.valueOf(type_);
+    return result == null ? CellType.UNRECOGNIZED : result;
   }
 
   public static final int HEIGHT_FIELD_NUMBER = 3;
@@ -156,13 +156,13 @@ private static final long serialVersionUID = 0L;
    * <code>int32 height = 3;</code>
    * @return The height.
    */
-  @java.lang.Override
+  @Override
   public int getHeight() {
     return height_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -172,13 +172,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (position_ != null) {
       output.writeMessage(1, getPosition());
     }
-    if (type_ != com.example.marspioneer.proto.CellType.SAND_CellType.getNumber()) {
+    if (type_ != CellType.SAND_CellType.getNumber()) {
       output.writeEnum(2, type_);
     }
     if (height_ != 0) {
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getPosition());
     }
-    if (type_ != com.example.marspioneer.proto.CellType.SAND_CellType.getNumber()) {
+    if (type_ != CellType.SAND_CellType.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, type_);
     }
@@ -210,15 +210,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.MPTerrainCellProto)) {
+    if (!(obj instanceof MPTerrainCellProto)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.MPTerrainCellProto other = (com.example.marspioneer.proto.MPTerrainCellProto) obj;
+    MPTerrainCellProto other = (MPTerrainCellProto) obj;
 
     if (hasPosition() != other.hasPosition()) return false;
     if (hasPosition()) {
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -252,69 +252,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(byte[] data)
+  public static MPTerrainCellProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(java.io.InputStream input)
+  public static MPTerrainCellProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseDelimitedFrom(java.io.InputStream input)
+  public static MPTerrainCellProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseDelimitedFrom(
+  public static MPTerrainCellProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPTerrainCellProto parseFrom(
+  public static MPTerrainCellProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -322,23 +322,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.MPTerrainCellProto prototype) {
+  public static Builder newBuilder(MPTerrainCellProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -348,7 +348,7 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements com.nkasenides.athlos.model.ITerrainCell, com.nkasenides.athlos.proto.Modelable<com.example.marspioneer.model.MPTerrainCell>, 
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.MPTerrainCellProto)
-      com.example.marspioneer.proto.MPTerrainCellProtoOrBuilder {    @java.lang.Override    
+      MPTerrainCellProtoOrBuilder {    @Override
     public com.example.marspioneer.model.MPTerrainCell toObject() {    
         com.example.marspioneer.model.MPTerrainCell item = new com.example.marspioneer.model.MPTerrainCell();        
         item.setPosition(getPosition().toObject());        
@@ -360,15 +360,15 @@ private static final long serialVersionUID = 0L;
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.MPTerrainCellProto.class, com.example.marspioneer.proto.MPTerrainCellProto.Builder.class);
+              MPTerrainCellProto.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.MPTerrainCellProto.newBuilder()
@@ -377,7 +377,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (positionBuilder_ == null) {
@@ -402,29 +402,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPTerrainCellProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPTerrainCellProto getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.MPTerrainCellProto.getDefaultInstance();
+    @Override
+    public MPTerrainCellProto getDefaultInstanceForType() {
+      return MPTerrainCellProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPTerrainCellProto build() {
-      com.example.marspioneer.proto.MPTerrainCellProto result = buildPartial();
+    @Override
+    public MPTerrainCellProto build() {
+      MPTerrainCellProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPTerrainCellProto buildPartial() {
-      com.example.marspioneer.proto.MPTerrainCellProto result = new com.example.marspioneer.proto.MPTerrainCellProto(this);
+    @Override
+    public MPTerrainCellProto buildPartial() {
+      MPTerrainCellProto result = new MPTerrainCellProto(this);
       if (positionBuilder_ == null) {
         result.position_ = position_;
       } else {
@@ -436,50 +436,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.MPTerrainCellProto) {
-        return mergeFrom((com.example.marspioneer.proto.MPTerrainCellProto)other);
+      if (other instanceof MPTerrainCellProto) {
+        return mergeFrom((MPTerrainCellProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.MPTerrainCellProto other) {
-      if (other == com.example.marspioneer.proto.MPTerrainCellProto.getDefaultInstance()) return this;
+    public Builder mergeFrom(MPTerrainCellProto other) {
+      if (other == MPTerrainCellProto.getDefaultInstance()) return this;
       if (other.hasPosition()) {
         mergePosition(other.getPosition());
       }
@@ -494,21 +494,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.MPTerrainCellProto parsedMessage = null;
+      MPTerrainCellProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.MPTerrainCellProto) e.getUnfinishedMessage();
+        parsedMessage = (MPTerrainCellProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -518,9 +518,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.example.marspioneer.proto.MatrixPositionProto position_;
+    private MatrixPositionProto position_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MatrixPositionProto, com.example.marspioneer.proto.MatrixPositionProto.Builder, com.example.marspioneer.proto.MatrixPositionProtoOrBuilder> positionBuilder_;
+        MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder> positionBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      * @return Whether the position field is set.
@@ -532,9 +532,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      * @return The position.
      */
-    public com.example.marspioneer.proto.MatrixPositionProto getPosition() {
+    public MatrixPositionProto getPosition() {
       if (positionBuilder_ == null) {
-        return position_ == null ? com.example.marspioneer.proto.MatrixPositionProto.getDefaultInstance() : position_;
+        return position_ == null ? MatrixPositionProto.getDefaultInstance() : position_;
       } else {
         return positionBuilder_.getMessage();
       }
@@ -542,7 +542,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      */
-    public Builder setPosition(com.example.marspioneer.proto.MatrixPositionProto value) {
+    public Builder setPosition(MatrixPositionProto value) {
       if (positionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      */
     public Builder setPosition(
-        com.example.marspioneer.proto.MatrixPositionProto.Builder builderForValue) {
+        MatrixPositionProto.Builder builderForValue) {
       if (positionBuilder_ == null) {
         position_ = builderForValue.build();
         onChanged();
@@ -572,11 +572,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      */
-    public Builder mergePosition(com.example.marspioneer.proto.MatrixPositionProto value) {
+    public Builder mergePosition(MatrixPositionProto value) {
       if (positionBuilder_ == null) {
         if (position_ != null) {
           position_ =
-            com.example.marspioneer.proto.MatrixPositionProto.newBuilder(position_).mergeFrom(value).buildPartial();
+            MatrixPositionProto.newBuilder(position_).mergeFrom(value).buildPartial();
         } else {
           position_ = value;
         }
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      */
-    public com.example.marspioneer.proto.MatrixPositionProto.Builder getPositionBuilder() {
+    public MatrixPositionProto.Builder getPositionBuilder() {
       
       onChanged();
       return getPositionFieldBuilder().getBuilder();
@@ -612,23 +612,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      */
-    public com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder() {
+    public MatrixPositionProtoOrBuilder getPositionOrBuilder() {
       if (positionBuilder_ != null) {
         return positionBuilder_.getMessageOrBuilder();
       } else {
         return position_ == null ?
-            com.example.marspioneer.proto.MatrixPositionProto.getDefaultInstance() : position_;
+            MatrixPositionProto.getDefaultInstance() : position_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MatrixPositionProto, com.example.marspioneer.proto.MatrixPositionProto.Builder, com.example.marspioneer.proto.MatrixPositionProtoOrBuilder> 
+        MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder>
         getPositionFieldBuilder() {
       if (positionBuilder_ == null) {
         positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.MatrixPositionProto, com.example.marspioneer.proto.MatrixPositionProto.Builder, com.example.marspioneer.proto.MatrixPositionProtoOrBuilder>(
+            MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder>(
                 getPosition(),
                 getParentForChildren(),
                 isClean());
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    @Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -660,18 +660,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
      * @return The type.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CellType getType() {
+    @Override
+    public CellType getType() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.CellType result = com.example.marspioneer.proto.CellType.valueOf(type_);
-      return result == null ? com.example.marspioneer.proto.CellType.UNRECOGNIZED : result;
+      CellType result = CellType.valueOf(type_);
+      return result == null ? CellType.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(com.example.marspioneer.proto.CellType value) {
+    public Builder setType(CellType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 height = 3;</code>
      * @return The height.
      */
-    @java.lang.Override
+    @Override
     public int getHeight() {
       return height_;
     }
@@ -721,13 +721,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -738,18 +738,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.MPTerrainCellProto)
-  private static final com.example.marspioneer.proto.MPTerrainCellProto DEFAULT_INSTANCE;
+  private static final MPTerrainCellProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.MPTerrainCellProto();
+    DEFAULT_INSTANCE = new MPTerrainCellProto();
   }
 
-  public static com.example.marspioneer.proto.MPTerrainCellProto getDefaultInstance() {
+  public static MPTerrainCellProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MPTerrainCellProto>
       PARSER = new com.google.protobuf.AbstractParser<MPTerrainCellProto>() {
-    @java.lang.Override
+    @Override
     public MPTerrainCellProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -762,17 +762,17 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MPTerrainCellProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPTerrainCellProto getDefaultInstanceForType() {
+  @Override
+  public MPTerrainCellProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
-    @java.lang.Override    
+    @Override
     public com.example.marspioneer.model.MPTerrainCell toObject() {    
         com.example.marspioneer.model.MPTerrainCell item = new com.example.marspioneer.model.MPTerrainCell();        
         item.setPosition(getPosition().toObject());        

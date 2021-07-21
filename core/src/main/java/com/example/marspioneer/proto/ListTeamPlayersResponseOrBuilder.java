@@ -8,40 +8,40 @@ public interface ListTeamPlayersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
-   * @return The message.
-   */
-  String getMessage();
-  /**
-   * <code>string message = 1;</code>
-   * @return The bytes for message.
-   */
-  com.google.protobuf.ByteString
-      getMessageBytes();
-
-  /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
   java.util.List<MPPlayerProto>
       getPlayersList();
   /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
   MPPlayerProto getPlayers(int index);
   /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
   int getPlayersCount();
   /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
   java.util.List<? extends MPPlayerProtoOrBuilder>
       getPlayersOrBuilderList();
   /**
-   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 2;</code>
+   * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
   MPPlayerProtoOrBuilder getPlayersOrBuilder(
       int index);
+
+  /**
+   * <code>string message = 2;</code>
+   * @return The message.
+   */
+  String getMessage();
+  /**
+   * <code>string message = 2;</code>
+   * @return The bytes for message.
+   */
+  com.google.protobuf.ByteString
+      getMessageBytes();
 
   /**
    * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse.Status status = 3;</code>

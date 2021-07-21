@@ -11,7 +11,7 @@ public interface MPTerrainChunkProtoOrBuilder extends
    * <code>string id = 1;</code>
    * @return The id.
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 1;</code>
    * @return The bytes for id.
@@ -23,7 +23,7 @@ public interface MPTerrainChunkProtoOrBuilder extends
    * <code>string worldID = 2;</code>
    * @return The worldID.
    */
-  java.lang.String getWorldID();
+  String getWorldID();
   /**
    * <code>string worldID = 2;</code>
    * @return The bytes for worldID.
@@ -40,11 +40,11 @@ public interface MPTerrainChunkProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 3;</code>
    * @return The position.
    */
-  com.example.marspioneer.proto.MatrixPositionProto getPosition();
+  MatrixPositionProto getPosition();
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 3;</code>
    */
-  com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder();
+  MatrixPositionProtoOrBuilder getPositionOrBuilder();
 
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 4;</code>
@@ -54,29 +54,29 @@ public interface MPTerrainChunkProtoOrBuilder extends
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 4;</code>
    */
   boolean containsCells(
-      java.lang.String key);
+      String key);
   /**
    * Use {@link #getCellsMap()} instead.
    */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+  @Deprecated
+  java.util.Map<String, MPTerrainCellProto>
   getCells();
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 4;</code>
    */
-  java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+  java.util.Map<String, MPTerrainCellProto>
   getCellsMap();
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 4;</code>
    */
 
-  com.example.marspioneer.proto.MPTerrainCellProto getCellsOrDefault(
-      java.lang.String key,
-      com.example.marspioneer.proto.MPTerrainCellProto defaultValue);
+  MPTerrainCellProto getCellsOrDefault(
+      String key,
+      MPTerrainCellProto defaultValue);
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 4;</code>
    */
 
-  com.example.marspioneer.proto.MPTerrainCellProto getCellsOrThrow(
-      java.lang.String key);
+  MPTerrainCellProto getCellsOrThrow(
+      String key);
 }

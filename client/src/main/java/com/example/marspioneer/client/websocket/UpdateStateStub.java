@@ -5,6 +5,7 @@
 
 package com.example.marspioneer.client.websocket;
 
+import com.example.marspioneer.client.Benchmarking;
 import com.example.marspioneer.client.MPClient;
 import com.example.marspioneer.proto.UpdateStateResponse;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -33,6 +34,8 @@ public class UpdateStateStub extends BinaryWebSocketClient {
     }
     
     public void handleResponse(UpdateStateResponse response) {
+        Benchmarking.actionFinishedTime = System.currentTimeMillis();
+        System.out.println("Action latency: " + (Benchmarking.actionFinishedTime - Benchmarking.actionInitiatedTime) + "ms");
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
             System.out.println("State update received.");
 

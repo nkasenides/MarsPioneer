@@ -39,7 +39,7 @@ public enum FarmResearchLevel
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
-      throw new java.lang.IllegalArgumentException(
+      throw new IllegalArgumentException(
           "Can't get the number of an unknown enum value.");
     }
     return value;
@@ -50,7 +50,7 @@ public enum FarmResearchLevel
    * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
-  @java.lang.Deprecated
+  @Deprecated
   public static FarmResearchLevel valueOf(int value) {
     return forNumber(value);
   }
@@ -83,7 +83,7 @@ public enum FarmResearchLevel
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
     if (this == UNRECOGNIZED) {
-      throw new java.lang.IllegalStateException(
+      throw new IllegalStateException(
           "Can't get the descriptor of an unrecognized enum value.");
     }
     return getDescriptor().getValues().get(ordinal());
@@ -94,7 +94,7 @@ public enum FarmResearchLevel
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.getDescriptor().getEnumTypes().get(0);
+    return MarsPioneerProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final FarmResearchLevel[] VALUES = values();
@@ -102,7 +102,7 @@ public enum FarmResearchLevel
   public static FarmResearchLevel valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
+      throw new IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {

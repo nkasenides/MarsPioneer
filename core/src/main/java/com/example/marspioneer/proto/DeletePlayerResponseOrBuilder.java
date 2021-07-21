@@ -11,7 +11,7 @@ public interface DeletePlayerResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,5 +28,5 @@ public interface DeletePlayerResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.DeletePlayerResponse.Status status = 2;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.DeletePlayerResponse.Status getStatus();
+  DeletePlayerResponse.Status getStatus();
 }

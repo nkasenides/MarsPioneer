@@ -11,7 +11,7 @@ public interface BuildMineRequestOrBuilder extends
    * <code>string worldSessionID = 1;</code>
    * @return The worldSessionID.
    */
-  java.lang.String getWorldSessionID();
+  String getWorldSessionID();
   /**
    * <code>string worldSessionID = 1;</code>
    * @return The bytes for worldSessionID.
@@ -28,9 +28,9 @@ public interface BuildMineRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 2;</code>
    * @return The position.
    */
-  com.example.marspioneer.proto.MatrixPositionProto getPosition();
+  MatrixPositionProto getPosition();
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 2;</code>
    */
-  com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder();
+  MatrixPositionProtoOrBuilder getPositionOrBuilder();
 }

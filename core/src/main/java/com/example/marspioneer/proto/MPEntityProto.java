@@ -22,14 +22,14 @@ private static final long serialVersionUID = 0L;
     direction_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MPEntityProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +40,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             worldID_ = s;
             break;
@@ -64,17 +64,17 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             id_ = s;
             break;
           }
           case 34: {
-            com.example.marspioneer.proto.MatrixPositionProto.Builder subBuilder = null;
+            MatrixPositionProto.Builder subBuilder = null;
             if (position_ != null) {
               subBuilder = position_.toBuilder();
             }
-            position_ = input.readMessage(com.example.marspioneer.proto.MatrixPositionProto.parser(), extensionRegistry);
+            position_ = input.readMessage(MatrixPositionProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(position_);
               position_ = subBuilder.buildPartial();
@@ -83,7 +83,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             playerID_ = s;
             break;
@@ -95,14 +95,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            com.example.marspioneer.proto.BuildingEntityProto.Builder subBuilder = null;
+            BuildingEntityProto.Builder subBuilder = null;
             if (entityCase_ == 7) {
-              subBuilder = ((com.example.marspioneer.proto.BuildingEntityProto) entity_).toBuilder();
+              subBuilder = ((BuildingEntityProto) entity_).toBuilder();
             }
             entity_ =
-                input.readMessage(com.example.marspioneer.proto.BuildingEntityProto.parser(), extensionRegistry);
+                input.readMessage(BuildingEntityProto.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildingEntityProto) entity_);
+              subBuilder.mergeFrom((BuildingEntityProto) entity_);
               entity_ = subBuilder.buildPartial();
             }
             entityCase_ = 7;
@@ -129,22 +129,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.MPEntityProto.class, com.example.marspioneer.proto.MPEntityProto.Builder.class);
+            MPEntityProto.class, Builder.class);
   }
 
   private int entityCase_ = 0;
-  private java.lang.Object entity_;
+  private Object entity_;
   public enum EntityCase
       implements com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          InternalOneOfEnum {
     BUILDINGENTITY(7),
     ENTITY_NOT_SET(0);
     private final int value;
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static EntityCase valueOf(int value) {
       return forNumber(value);
     }
@@ -180,20 +180,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int WORLDID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object worldID_;
+  private volatile Object worldID_;
   /**
    * <code>string worldID = 1;</code>
    * @return The worldID.
    */
-  @java.lang.Override
-  public java.lang.String getWorldID() {
-    java.lang.Object ref = worldID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getWorldID() {
+    Object ref = worldID_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       worldID_ = s;
       return s;
     }
@@ -202,14 +202,14 @@ private static final long serialVersionUID = 0L;
    * <code>string worldID = 1;</code>
    * @return The bytes for worldID.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getWorldIDBytes() {
-    java.lang.Object ref = worldID_;
-    if (ref instanceof java.lang.String) {
+    Object ref = worldID_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       worldID_ = b;
       return b;
     } else {
@@ -223,26 +223,26 @@ private static final long serialVersionUID = 0L;
    * <code>float areaOfInterest = 2;</code>
    * @return The areaOfInterest.
    */
-  @java.lang.Override
+  @Override
   public float getAreaOfInterest() {
     return areaOfInterest_;
   }
 
   public static final int ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object id_;
+  private volatile Object id_;
   /**
    * <code>string id = 3;</code>
    * @return The id.
    */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getId() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
@@ -251,14 +251,14 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 3;</code>
    * @return The bytes for id.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
+    Object ref = id_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       id_ = b;
       return b;
     } else {
@@ -267,12 +267,12 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int POSITION_FIELD_NUMBER = 4;
-  private com.example.marspioneer.proto.MatrixPositionProto position_;
+  private MatrixPositionProto position_;
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    * @return Whether the position field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPosition() {
     return position_ != null;
   }
@@ -280,33 +280,33 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    * @return The position.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MatrixPositionProto getPosition() {
-    return position_ == null ? com.example.marspioneer.proto.MatrixPositionProto.getDefaultInstance() : position_;
+  @Override
+  public MatrixPositionProto getPosition() {
+    return position_ == null ? MatrixPositionProto.getDefaultInstance() : position_;
   }
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder() {
+  @Override
+  public MatrixPositionProtoOrBuilder getPositionOrBuilder() {
     return getPosition();
   }
 
   public static final int PLAYERID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object playerID_;
+  private volatile Object playerID_;
   /**
    * <code>string playerID = 5;</code>
    * @return The playerID.
    */
-  @java.lang.Override
-  public java.lang.String getPlayerID() {
-    java.lang.Object ref = playerID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getPlayerID() {
+    Object ref = playerID_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       playerID_ = s;
       return s;
     }
@@ -315,14 +315,14 @@ private static final long serialVersionUID = 0L;
    * <code>string playerID = 5;</code>
    * @return The bytes for playerID.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getPlayerIDBytes() {
-    java.lang.Object ref = playerID_;
-    if (ref instanceof java.lang.String) {
+    Object ref = playerID_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       playerID_ = b;
       return b;
     } else {
@@ -336,17 +336,17 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.Direction4 direction = 6;</code>
    * @return The enum numeric value on the wire for direction.
    */
-  @java.lang.Override public int getDirectionValue() {
+  @Override public int getDirectionValue() {
     return direction_;
   }
   /**
    * <code>.com.example.marspioneer.proto.Direction4 direction = 6;</code>
    * @return The direction.
    */
-  @java.lang.Override public com.example.marspioneer.proto.Direction4 getDirection() {
+  @Override public Direction4 getDirection() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.Direction4 result = com.example.marspioneer.proto.Direction4.valueOf(direction_);
-    return result == null ? com.example.marspioneer.proto.Direction4.UNRECOGNIZED : result;
+    Direction4 result = Direction4.valueOf(direction_);
+    return result == null ? Direction4.UNRECOGNIZED : result;
   }
 
   public static final int BUILDINGENTITY_FIELD_NUMBER = 7;
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
    * @return Whether the buildingEntity field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildingEntity() {
     return entityCase_ == 7;
   }
@@ -362,26 +362,26 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
    * @return The buildingEntity.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildingEntityProto getBuildingEntity() {
+  @Override
+  public BuildingEntityProto getBuildingEntity() {
     if (entityCase_ == 7) {
-       return (com.example.marspioneer.proto.BuildingEntityProto) entity_;
+       return (BuildingEntityProto) entity_;
     }
-    return com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance();
+    return BuildingEntityProto.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildingEntityProtoOrBuilder getBuildingEntityOrBuilder() {
+  @Override
+  public BuildingEntityProtoOrBuilder getBuildingEntityOrBuilder() {
     if (entityCase_ == 7) {
-       return (com.example.marspioneer.proto.BuildingEntityProto) entity_;
+       return (BuildingEntityProto) entity_;
     }
-    return com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance();
+    return BuildingEntityProto.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getWorldIDBytes().isEmpty()) {
@@ -409,16 +409,16 @@ private static final long serialVersionUID = 0L;
     if (!getPlayerIDBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, playerID_);
     }
-    if (direction_ != com.example.marspioneer.proto.Direction4.NORTH.getNumber()) {
+    if (direction_ != Direction4.NORTH.getNumber()) {
       output.writeEnum(6, direction_);
     }
     if (entityCase_ == 7) {
-      output.writeMessage(7, (com.example.marspioneer.proto.BuildingEntityProto) entity_);
+      output.writeMessage(7, (BuildingEntityProto) entity_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -441,33 +441,33 @@ private static final long serialVersionUID = 0L;
     if (!getPlayerIDBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, playerID_);
     }
-    if (direction_ != com.example.marspioneer.proto.Direction4.NORTH.getNumber()) {
+    if (direction_ != Direction4.NORTH.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, direction_);
     }
     if (entityCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.example.marspioneer.proto.BuildingEntityProto) entity_);
+        .computeMessageSize(7, (BuildingEntityProto) entity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.MPEntityProto)) {
+    if (!(obj instanceof MPEntityProto)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.MPEntityProto other = (com.example.marspioneer.proto.MPEntityProto) obj;
+    MPEntityProto other = (MPEntityProto) obj;
 
     if (!getWorldID()
         .equals(other.getWorldID())) return false;
-    if (java.lang.Float.floatToIntBits(getAreaOfInterest())
-        != java.lang.Float.floatToIntBits(
+    if (Float.floatToIntBits(getAreaOfInterest())
+        != Float.floatToIntBits(
             other.getAreaOfInterest())) return false;
     if (!getId()
         .equals(other.getId())) return false;
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + WORLDID_FIELD_NUMBER;
     hash = (53 * hash) + getWorldID().hashCode();
     hash = (37 * hash) + AREAOFINTEREST_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+    hash = (53 * hash) + Float.floatToIntBits(
         getAreaOfInterest());
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
@@ -527,69 +527,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(byte[] data)
+  public static MPEntityProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(java.io.InputStream input)
+  public static MPEntityProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseDelimitedFrom(java.io.InputStream input)
+  public static MPEntityProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseDelimitedFrom(
+  public static MPEntityProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPEntityProto parseFrom(
+  public static MPEntityProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -597,23 +597,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.MPEntityProto prototype) {
+  public static Builder newBuilder(MPEntityProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -623,18 +623,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements com.nkasenides.athlos.model.IEntity, 
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.MPEntityProto)
-      com.example.marspioneer.proto.MPEntityProtoOrBuilder {
+      MPEntityProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.MPEntityProto.class, com.example.marspioneer.proto.MPEntityProto.Builder.class);
+              MPEntityProto.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.MPEntityProto.newBuilder()
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       worldID_ = "";
@@ -676,29 +676,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPEntityProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPEntityProto getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.MPEntityProto.getDefaultInstance();
+    @Override
+    public MPEntityProto getDefaultInstanceForType() {
+      return MPEntityProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPEntityProto build() {
-      com.example.marspioneer.proto.MPEntityProto result = buildPartial();
+    @Override
+    public MPEntityProto build() {
+      MPEntityProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPEntityProto buildPartial() {
-      com.example.marspioneer.proto.MPEntityProto result = new com.example.marspioneer.proto.MPEntityProto(this);
+    @Override
+    public MPEntityProto buildPartial() {
+      MPEntityProto result = new MPEntityProto(this);
       result.worldID_ = worldID_;
       result.areaOfInterest_ = areaOfInterest_;
       result.id_ = id_;
@@ -721,50 +721,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.MPEntityProto) {
-        return mergeFrom((com.example.marspioneer.proto.MPEntityProto)other);
+      if (other instanceof MPEntityProto) {
+        return mergeFrom((MPEntityProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.MPEntityProto other) {
-      if (other == com.example.marspioneer.proto.MPEntityProto.getDefaultInstance()) return this;
+    public Builder mergeFrom(MPEntityProto other) {
+      if (other == MPEntityProto.getDefaultInstance()) return this;
       if (!other.getWorldID().isEmpty()) {
         worldID_ = other.worldID_;
         onChanged();
@@ -800,21 +800,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.MPEntityProto parsedMessage = null;
+      MPEntityProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.MPEntityProto) e.getUnfinishedMessage();
+        parsedMessage = (MPEntityProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int entityCase_ = 0;
-    private java.lang.Object entity_;
+    private Object entity_;
     public EntityCase
         getEntityCase() {
       return EntityCase.forNumber(
@@ -839,21 +839,21 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    private java.lang.Object worldID_ = "";
+    private Object worldID_ = "";
     /**
      * <code>string worldID = 1;</code>
      * @return The worldID.
      */
-    public java.lang.String getWorldID() {
-      java.lang.Object ref = worldID_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getWorldID() {
+      Object ref = worldID_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         worldID_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -862,11 +862,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getWorldIDBytes() {
-      java.lang.Object ref = worldID_;
+      Object ref = worldID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         worldID_ = b;
         return b;
       } else {
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setWorldID(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
      * <code>float areaOfInterest = 2;</code>
      * @return The areaOfInterest.
      */
-    @java.lang.Override
+    @Override
     public float getAreaOfInterest() {
       return areaOfInterest_;
     }
@@ -946,21 +946,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private Object id_ = "";
     /**
      * <code>string id = 3;</code>
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getId() {
+      Object ref = id_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         id_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -969,11 +969,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
+      Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         id_ = b;
         return b;
       } else {
@@ -986,7 +986,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1022,9 +1022,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.example.marspioneer.proto.MatrixPositionProto position_;
+    private MatrixPositionProto position_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MatrixPositionProto, com.example.marspioneer.proto.MatrixPositionProto.Builder, com.example.marspioneer.proto.MatrixPositionProtoOrBuilder> positionBuilder_;
+        MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder> positionBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      * @return Whether the position field is set.
@@ -1036,9 +1036,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      * @return The position.
      */
-    public com.example.marspioneer.proto.MatrixPositionProto getPosition() {
+    public MatrixPositionProto getPosition() {
       if (positionBuilder_ == null) {
-        return position_ == null ? com.example.marspioneer.proto.MatrixPositionProto.getDefaultInstance() : position_;
+        return position_ == null ? MatrixPositionProto.getDefaultInstance() : position_;
       } else {
         return positionBuilder_.getMessage();
       }
@@ -1046,7 +1046,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      */
-    public Builder setPosition(com.example.marspioneer.proto.MatrixPositionProto value) {
+    public Builder setPosition(MatrixPositionProto value) {
       if (positionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1063,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      */
     public Builder setPosition(
-        com.example.marspioneer.proto.MatrixPositionProto.Builder builderForValue) {
+        MatrixPositionProto.Builder builderForValue) {
       if (positionBuilder_ == null) {
         position_ = builderForValue.build();
         onChanged();
@@ -1076,11 +1076,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      */
-    public Builder mergePosition(com.example.marspioneer.proto.MatrixPositionProto value) {
+    public Builder mergePosition(MatrixPositionProto value) {
       if (positionBuilder_ == null) {
         if (position_ != null) {
           position_ =
-            com.example.marspioneer.proto.MatrixPositionProto.newBuilder(position_).mergeFrom(value).buildPartial();
+            MatrixPositionProto.newBuilder(position_).mergeFrom(value).buildPartial();
         } else {
           position_ = value;
         }
@@ -1108,7 +1108,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      */
-    public com.example.marspioneer.proto.MatrixPositionProto.Builder getPositionBuilder() {
+    public MatrixPositionProto.Builder getPositionBuilder() {
       
       onChanged();
       return getPositionFieldBuilder().getBuilder();
@@ -1116,23 +1116,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      */
-    public com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder() {
+    public MatrixPositionProtoOrBuilder getPositionOrBuilder() {
       if (positionBuilder_ != null) {
         return positionBuilder_.getMessageOrBuilder();
       } else {
         return position_ == null ?
-            com.example.marspioneer.proto.MatrixPositionProto.getDefaultInstance() : position_;
+            MatrixPositionProto.getDefaultInstance() : position_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MatrixPositionProto, com.example.marspioneer.proto.MatrixPositionProto.Builder, com.example.marspioneer.proto.MatrixPositionProtoOrBuilder> 
+        MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder>
         getPositionFieldBuilder() {
       if (positionBuilder_ == null) {
         positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.MatrixPositionProto, com.example.marspioneer.proto.MatrixPositionProto.Builder, com.example.marspioneer.proto.MatrixPositionProtoOrBuilder>(
+            MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder>(
                 getPosition(),
                 getParentForChildren(),
                 isClean());
@@ -1141,21 +1141,21 @@ private static final long serialVersionUID = 0L;
       return positionBuilder_;
     }
 
-    private java.lang.Object playerID_ = "";
+    private Object playerID_ = "";
     /**
      * <code>string playerID = 5;</code>
      * @return The playerID.
      */
-    public java.lang.String getPlayerID() {
-      java.lang.Object ref = playerID_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getPlayerID() {
+      Object ref = playerID_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         playerID_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1164,11 +1164,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPlayerIDBytes() {
-      java.lang.Object ref = playerID_;
+      Object ref = playerID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         playerID_ = b;
         return b;
       } else {
@@ -1181,7 +1181,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setPlayerID(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1222,7 +1222,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.Direction4 direction = 6;</code>
      * @return The enum numeric value on the wire for direction.
      */
-    @java.lang.Override public int getDirectionValue() {
+    @Override public int getDirectionValue() {
       return direction_;
     }
     /**
@@ -1240,18 +1240,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.Direction4 direction = 6;</code>
      * @return The direction.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.Direction4 getDirection() {
+    @Override
+    public Direction4 getDirection() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.Direction4 result = com.example.marspioneer.proto.Direction4.valueOf(direction_);
-      return result == null ? com.example.marspioneer.proto.Direction4.UNRECOGNIZED : result;
+      Direction4 result = Direction4.valueOf(direction_);
+      return result == null ? Direction4.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.Direction4 direction = 6;</code>
      * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirection(com.example.marspioneer.proto.Direction4 value) {
+    public Builder setDirection(Direction4 value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1272,12 +1272,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildingEntityProto, com.example.marspioneer.proto.BuildingEntityProto.Builder, com.example.marspioneer.proto.BuildingEntityProtoOrBuilder> buildingEntityBuilder_;
+        BuildingEntityProto, BuildingEntityProto.Builder, BuildingEntityProtoOrBuilder> buildingEntityBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      * @return Whether the buildingEntity field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildingEntity() {
       return entityCase_ == 7;
     }
@@ -1285,24 +1285,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      * @return The buildingEntity.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildingEntityProto getBuildingEntity() {
+    @Override
+    public BuildingEntityProto getBuildingEntity() {
       if (buildingEntityBuilder_ == null) {
         if (entityCase_ == 7) {
-          return (com.example.marspioneer.proto.BuildingEntityProto) entity_;
+          return (BuildingEntityProto) entity_;
         }
-        return com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance();
+        return BuildingEntityProto.getDefaultInstance();
       } else {
         if (entityCase_ == 7) {
           return buildingEntityBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance();
+        return BuildingEntityProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      */
-    public Builder setBuildingEntity(com.example.marspioneer.proto.BuildingEntityProto value) {
+    public Builder setBuildingEntity(BuildingEntityProto value) {
       if (buildingEntityBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1319,7 +1319,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      */
     public Builder setBuildingEntity(
-        com.example.marspioneer.proto.BuildingEntityProto.Builder builderForValue) {
+        BuildingEntityProto.Builder builderForValue) {
       if (buildingEntityBuilder_ == null) {
         entity_ = builderForValue.build();
         onChanged();
@@ -1332,11 +1332,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      */
-    public Builder mergeBuildingEntity(com.example.marspioneer.proto.BuildingEntityProto value) {
+    public Builder mergeBuildingEntity(BuildingEntityProto value) {
       if (buildingEntityBuilder_ == null) {
         if (entityCase_ == 7 &&
-            entity_ != com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance()) {
-          entity_ = com.example.marspioneer.proto.BuildingEntityProto.newBuilder((com.example.marspioneer.proto.BuildingEntityProto) entity_)
+            entity_ != BuildingEntityProto.getDefaultInstance()) {
+          entity_ = BuildingEntityProto.newBuilder((BuildingEntityProto) entity_)
               .mergeFrom(value).buildPartial();
         } else {
           entity_ = value;
@@ -1373,36 +1373,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      */
-    public com.example.marspioneer.proto.BuildingEntityProto.Builder getBuildingEntityBuilder() {
+    public BuildingEntityProto.Builder getBuildingEntityBuilder() {
       return getBuildingEntityFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildingEntityProtoOrBuilder getBuildingEntityOrBuilder() {
+    @Override
+    public BuildingEntityProtoOrBuilder getBuildingEntityOrBuilder() {
       if ((entityCase_ == 7) && (buildingEntityBuilder_ != null)) {
         return buildingEntityBuilder_.getMessageOrBuilder();
       } else {
         if (entityCase_ == 7) {
-          return (com.example.marspioneer.proto.BuildingEntityProto) entity_;
+          return (BuildingEntityProto) entity_;
         }
-        return com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance();
+        return BuildingEntityProto.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildingEntityProto buildingEntity = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildingEntityProto, com.example.marspioneer.proto.BuildingEntityProto.Builder, com.example.marspioneer.proto.BuildingEntityProtoOrBuilder> 
+        BuildingEntityProto, BuildingEntityProto.Builder, BuildingEntityProtoOrBuilder>
         getBuildingEntityFieldBuilder() {
       if (buildingEntityBuilder_ == null) {
         if (!(entityCase_ == 7)) {
-          entity_ = com.example.marspioneer.proto.BuildingEntityProto.getDefaultInstance();
+          entity_ = BuildingEntityProto.getDefaultInstance();
         }
         buildingEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildingEntityProto, com.example.marspioneer.proto.BuildingEntityProto.Builder, com.example.marspioneer.proto.BuildingEntityProtoOrBuilder>(
-                (com.example.marspioneer.proto.BuildingEntityProto) entity_,
+            BuildingEntityProto, BuildingEntityProto.Builder, BuildingEntityProtoOrBuilder>(
+                (BuildingEntityProto) entity_,
                 getParentForChildren(),
                 isClean());
         entity_ = null;
@@ -1411,13 +1411,13 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return buildingEntityBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1428,18 +1428,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.MPEntityProto)
-  private static final com.example.marspioneer.proto.MPEntityProto DEFAULT_INSTANCE;
+  private static final MPEntityProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.MPEntityProto();
+    DEFAULT_INSTANCE = new MPEntityProto();
   }
 
-  public static com.example.marspioneer.proto.MPEntityProto getDefaultInstance() {
+  public static MPEntityProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MPEntityProto>
       PARSER = new com.google.protobuf.AbstractParser<MPEntityProto>() {
-    @java.lang.Override
+    @Override
     public MPEntityProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1452,13 +1452,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MPEntityProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPEntityProto getDefaultInstanceForType() {
+  @Override
+  public MPEntityProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

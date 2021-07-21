@@ -16,17 +16,17 @@ public interface UpdateStateRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    * @return The partialState.
    */
-  com.example.marspioneer.proto.MPPartialStateProto getPartialState();
+  MPPartialStateProto getPartialState();
   /**
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    */
-  com.example.marspioneer.proto.MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
+  MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
 
   /**
    * <code>string worldSessionID = 2;</code>
    * @return The worldSessionID.
    */
-  java.lang.String getWorldSessionID();
+  String getWorldSessionID();
   /**
    * <code>string worldSessionID = 2;</code>
    * @return The bytes for worldSessionID.
@@ -43,9 +43,9 @@ public interface UpdateStateRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPActionProto action = 3;</code>
    * @return The action.
    */
-  com.example.marspioneer.proto.MPActionProto getAction();
+  MPActionProto getAction();
   /**
    * <code>.com.example.marspioneer.proto.MPActionProto action = 3;</code>
    */
-  com.example.marspioneer.proto.MPActionProtoOrBuilder getActionOrBuilder();
+  MPActionProtoOrBuilder getActionOrBuilder();
 }

@@ -1508,5 +1508,9 @@ private static final long serialVersionUID = 0L;
         return item;        
     }    
     
+        public java.util.List<Integer> getPrerequisites() {
+        return prerequisites_;
+    }
+    
 }
 

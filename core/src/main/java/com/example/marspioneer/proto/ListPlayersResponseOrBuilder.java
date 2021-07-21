@@ -10,12 +10,12 @@ public interface ListPlayersResponseOrBuilder extends
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  java.util.List<com.example.marspioneer.proto.MPPlayerProto> 
+  java.util.List<MPPlayerProto>
       getPlayersList();
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  com.example.marspioneer.proto.MPPlayerProto getPlayers(int index);
+  MPPlayerProto getPlayers(int index);
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
@@ -23,19 +23,19 @@ public interface ListPlayersResponseOrBuilder extends
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  java.util.List<? extends com.example.marspioneer.proto.MPPlayerProtoOrBuilder> 
+  java.util.List<? extends MPPlayerProtoOrBuilder>
       getPlayersOrBuilderList();
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  com.example.marspioneer.proto.MPPlayerProtoOrBuilder getPlayersOrBuilder(
+  MPPlayerProtoOrBuilder getPlayersOrBuilder(
       int index);
 
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -52,5 +52,5 @@ public interface ListPlayersResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListPlayersResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.ListPlayersResponse.Status getStatus();
+  ListPlayersResponse.Status getStatus();
 }

@@ -11,7 +11,7 @@ public interface DeleteWorldRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
@@ -23,7 +23,7 @@ public interface DeleteWorldRequestOrBuilder extends
    * <code>string worldID = 2;</code>
    * @return The worldID.
    */
-  java.lang.String getWorldID();
+  String getWorldID();
   /**
    * <code>string worldID = 2;</code>
    * @return The bytes for worldID.

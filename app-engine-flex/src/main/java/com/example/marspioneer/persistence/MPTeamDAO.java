@@ -16,10 +16,7 @@ import com.raylabz.firestorm.FirestormTransaction;
 import com.raylabz.firestorm.QueryResult;
 import com.raylabz.objectis.Objectis;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.UUID;
+import java.util.*;
 
 
 public class MPTeamDAO implements MultiDAO<MPTeam> {
@@ -84,7 +81,7 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
     public Collection<MPTeam> getMany(String... ids) {
         return Objectis.filter(MPTeam.class)
                 .whereArrayContainsAny("id", Arrays.asList(ids))
-                .fetch();
+                .fetch().getItems();
     }
 
     @Override
@@ -180,14 +177,14 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
     public Collection<MPPlayer> listPlayers(String teamID) {
         return Objectis.filter(MPPlayer.class)
                 .whereEqualTo("teamID", teamID)
-                .fetch();
+                .fetch().getItems();
     }
 
     public MPTeam getByName(String name) {
-        final ArrayList<MPTeam> teams = Objectis.filter(MPTeam.class)
+        final List<MPTeam> teams = Objectis.filter(MPTeam.class)
                 .whereEqualTo("name", name)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
         if (!teams.isEmpty()) {
             return teams.get(0);
         }
@@ -195,10 +192,10 @@ public class MPTeamDAO implements MultiDAO<MPTeam> {
     }
 
     public MPTeam getByColor(TeamColor color) {
-        final ArrayList<MPTeam> teams = Objectis.filter(MPTeam.class)
+        final List<MPTeam> teams = Objectis.filter(MPTeam.class)
                 .whereEqualTo("color", color)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
         if (!teams.isEmpty()) {
             return teams.get(0);
         }

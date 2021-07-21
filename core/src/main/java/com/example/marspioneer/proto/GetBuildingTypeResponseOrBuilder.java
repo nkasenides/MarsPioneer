@@ -11,7 +11,7 @@ public interface GetBuildingTypeResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,11 +28,11 @@ public interface GetBuildingTypeResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    * @return The buildingType.
    */
-  com.example.marspioneer.proto.BuildingTypeProto getBuildingType();
+  BuildingTypeProto getBuildingType();
   /**
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    */
-  com.example.marspioneer.proto.BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder();
+  BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse.Status status = 3;</code>
@@ -43,5 +43,5 @@ public interface GetBuildingTypeResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.GetBuildingTypeResponse.Status getStatus();
+  GetBuildingTypeResponse.Status getStatus();
 }

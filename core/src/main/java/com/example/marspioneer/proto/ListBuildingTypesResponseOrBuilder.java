@@ -10,12 +10,12 @@ public interface ListBuildingTypesResponseOrBuilder extends
   /**
    * <code>repeated .com.example.marspioneer.proto.BuildingTypeProto buildingTypes = 1;</code>
    */
-  java.util.List<com.example.marspioneer.proto.BuildingTypeProto> 
+  java.util.List<BuildingTypeProto>
       getBuildingTypesList();
   /**
    * <code>repeated .com.example.marspioneer.proto.BuildingTypeProto buildingTypes = 1;</code>
    */
-  com.example.marspioneer.proto.BuildingTypeProto getBuildingTypes(int index);
+  BuildingTypeProto getBuildingTypes(int index);
   /**
    * <code>repeated .com.example.marspioneer.proto.BuildingTypeProto buildingTypes = 1;</code>
    */
@@ -23,19 +23,19 @@ public interface ListBuildingTypesResponseOrBuilder extends
   /**
    * <code>repeated .com.example.marspioneer.proto.BuildingTypeProto buildingTypes = 1;</code>
    */
-  java.util.List<? extends com.example.marspioneer.proto.BuildingTypeProtoOrBuilder> 
+  java.util.List<? extends BuildingTypeProtoOrBuilder>
       getBuildingTypesOrBuilderList();
   /**
    * <code>repeated .com.example.marspioneer.proto.BuildingTypeProto buildingTypes = 1;</code>
    */
-  com.example.marspioneer.proto.BuildingTypeProtoOrBuilder getBuildingTypesOrBuilder(
+  BuildingTypeProtoOrBuilder getBuildingTypesOrBuilder(
       int index);
 
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -52,5 +52,5 @@ public interface ListBuildingTypesResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.ListBuildingTypesResponse.Status getStatus();
+  ListBuildingTypesResponse.Status getStatus();
 }

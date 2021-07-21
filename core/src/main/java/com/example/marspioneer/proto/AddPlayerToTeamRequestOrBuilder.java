@@ -11,7 +11,7 @@ public interface AddPlayerToTeamRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
@@ -23,7 +23,7 @@ public interface AddPlayerToTeamRequestOrBuilder extends
    * <code>string teamID = 2;</code>
    * @return The teamID.
    */
-  java.lang.String getTeamID();
+  String getTeamID();
   /**
    * <code>string teamID = 2;</code>
    * @return The bytes for teamID.
@@ -35,7 +35,7 @@ public interface AddPlayerToTeamRequestOrBuilder extends
    * <code>string playerID = 3;</code>
    * @return The playerID.
    */
-  java.lang.String getPlayerID();
+  String getPlayerID();
   /**
    * <code>string playerID = 3;</code>
    * @return The bytes for playerID.

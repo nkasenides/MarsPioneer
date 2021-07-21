@@ -11,7 +11,7 @@ public interface GetPlayerResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,11 +28,11 @@ public interface GetPlayerResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPlayerProto player = 2;</code>
    * @return The player.
    */
-  com.example.marspioneer.proto.MPPlayerProto getPlayer();
+  MPPlayerProto getPlayer();
   /**
    * <code>.com.example.marspioneer.proto.MPPlayerProto player = 2;</code>
    */
-  com.example.marspioneer.proto.MPPlayerProtoOrBuilder getPlayerOrBuilder();
+  MPPlayerProtoOrBuilder getPlayerOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.GetPlayerResponse.Status status = 3;</code>
@@ -43,5 +43,5 @@ public interface GetPlayerResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.GetPlayerResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.GetPlayerResponse.Status getStatus();
+  GetPlayerResponse.Status getStatus();
 }

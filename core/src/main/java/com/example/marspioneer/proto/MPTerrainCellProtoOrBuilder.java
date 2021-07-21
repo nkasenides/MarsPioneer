@@ -16,11 +16,11 @@ public interface MPTerrainCellProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
    * @return The position.
    */
-  com.example.marspioneer.proto.MatrixPositionProto getPosition();
+  MatrixPositionProto getPosition();
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 1;</code>
    */
-  com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder();
+  MatrixPositionProtoOrBuilder getPositionOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
@@ -31,7 +31,7 @@ public interface MPTerrainCellProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.CellType type = 2;</code>
    * @return The type.
    */
-  com.example.marspioneer.proto.CellType getType();
+  CellType getType();
 
   /**
    * <code>int32 height = 3;</code>

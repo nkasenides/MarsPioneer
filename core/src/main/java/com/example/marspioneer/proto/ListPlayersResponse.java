@@ -21,14 +21,14 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new ListPlayersResponse();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -54,15 +54,15 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              players_ = new java.util.ArrayList<com.example.marspioneer.proto.MPPlayerProto>();
+              players_ = new java.util.ArrayList<MPPlayerProto>();
               mutable_bitField0_ |= 0x00000001;
             }
             players_.add(
-                input.readMessage(com.example.marspioneer.proto.MPPlayerProto.parser(), extensionRegistry));
+                input.readMessage(MPPlayerProto.parser(), extensionRegistry));
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             message_ = s;
             break;
@@ -97,15 +97,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.ListPlayersResponse.class, com.example.marspioneer.proto.ListPlayersResponse.Builder.class);
+            ListPlayersResponse.class, Builder.class);
   }
 
   /**
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
     }
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.ListPlayersResponse.getDescriptor().getEnumTypes().get(0);
+      return ListPlayersResponse.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Status[] VALUES = values();
@@ -225,7 +225,7 @@ private static final long serialVersionUID = 0L;
     public static Status valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -244,60 +244,60 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PLAYERS_FIELD_NUMBER = 1;
-  private java.util.List<com.example.marspioneer.proto.MPPlayerProto> players_;
+  private java.util.List<MPPlayerProto> players_;
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  @java.lang.Override
-  public java.util.List<com.example.marspioneer.proto.MPPlayerProto> getPlayersList() {
+  @Override
+  public java.util.List<MPPlayerProto> getPlayersList() {
     return players_;
   }
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends com.example.marspioneer.proto.MPPlayerProtoOrBuilder> 
+  @Override
+  public java.util.List<? extends MPPlayerProtoOrBuilder>
       getPlayersOrBuilderList() {
     return players_;
   }
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  @java.lang.Override
+  @Override
   public int getPlayersCount() {
     return players_.size();
   }
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPPlayerProto getPlayers(int index) {
+  @Override
+  public MPPlayerProto getPlayers(int index) {
     return players_.get(index);
   }
   /**
    * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPPlayerProtoOrBuilder getPlayersOrBuilder(
+  @Override
+  public MPPlayerProtoOrBuilder getPlayersOrBuilder(
       int index) {
     return players_.get(index);
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
+  private volatile Object message_;
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getMessage() {
+    Object ref = message_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       message_ = s;
       return s;
     }
@@ -306,14 +306,14 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 2;</code>
    * @return The bytes for message.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
+    Object ref = message_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       message_ = b;
       return b;
     } else {
@@ -327,21 +327,21 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListPlayersResponse.Status status = 3;</code>
    * @return The enum numeric value on the wire for status.
    */
-  @java.lang.Override public int getStatusValue() {
+  @Override public int getStatusValue() {
     return status_;
   }
   /**
    * <code>.com.example.marspioneer.proto.ListPlayersResponse.Status status = 3;</code>
    * @return The status.
    */
-  @java.lang.Override public com.example.marspioneer.proto.ListPlayersResponse.Status getStatus() {
+  @Override public Status getStatus() {
     @SuppressWarnings("deprecation")
-    com.example.marspioneer.proto.ListPlayersResponse.Status result = com.example.marspioneer.proto.ListPlayersResponse.Status.valueOf(status_);
-    return result == null ? com.example.marspioneer.proto.ListPlayersResponse.Status.UNRECOGNIZED : result;
+    Status result = Status.valueOf(status_);
+    return result == null ? Status.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < players_.size(); i++) {
@@ -360,13 +360,13 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
-    if (status_ != com.example.marspioneer.proto.ListPlayersResponse.Status.SERVER_ERROR.getNumber()) {
+    if (status_ != Status.SERVER_ERROR.getNumber()) {
       output.writeEnum(3, status_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -379,7 +379,7 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
-    if (status_ != com.example.marspioneer.proto.ListPlayersResponse.Status.SERVER_ERROR.getNumber()) {
+    if (status_ != Status.SERVER_ERROR.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, status_);
     }
@@ -388,15 +388,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.ListPlayersResponse)) {
+    if (!(obj instanceof ListPlayersResponse)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.ListPlayersResponse other = (com.example.marspioneer.proto.ListPlayersResponse) obj;
+    ListPlayersResponse other = (ListPlayersResponse) obj;
 
     if (!getPlayersList()
         .equals(other.getPlayersList())) return false;
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -427,69 +427,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(byte[] data)
+  public static ListPlayersResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(java.io.InputStream input)
+  public static ListPlayersResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseDelimitedFrom(java.io.InputStream input)
+  public static ListPlayersResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseDelimitedFrom(
+  public static ListPlayersResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.ListPlayersResponse parseFrom(
+  public static ListPlayersResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -497,23 +497,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.ListPlayersResponse prototype) {
+  public static Builder newBuilder(ListPlayersResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -523,18 +523,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.ListPlayersResponse)
-      com.example.marspioneer.proto.ListPlayersResponseOrBuilder {
+      ListPlayersResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.ListPlayersResponse.class, com.example.marspioneer.proto.ListPlayersResponse.Builder.class);
+              ListPlayersResponse.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.ListPlayersResponse.newBuilder()
@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
         getPlayersFieldBuilder();
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (playersBuilder_ == null) {
@@ -569,29 +569,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_ListPlayersResponse_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListPlayersResponse getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+    @Override
+    public ListPlayersResponse getDefaultInstanceForType() {
+      return ListPlayersResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListPlayersResponse build() {
-      com.example.marspioneer.proto.ListPlayersResponse result = buildPartial();
+    @Override
+    public ListPlayersResponse build() {
+      ListPlayersResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListPlayersResponse buildPartial() {
-      com.example.marspioneer.proto.ListPlayersResponse result = new com.example.marspioneer.proto.ListPlayersResponse(this);
+    @Override
+    public ListPlayersResponse buildPartial() {
+      ListPlayersResponse result = new ListPlayersResponse(this);
       int from_bitField0_ = bitField0_;
       if (playersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -608,50 +608,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.ListPlayersResponse) {
-        return mergeFrom((com.example.marspioneer.proto.ListPlayersResponse)other);
+      if (other instanceof ListPlayersResponse) {
+        return mergeFrom((ListPlayersResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.ListPlayersResponse other) {
-      if (other == com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(ListPlayersResponse other) {
+      if (other == ListPlayersResponse.getDefaultInstance()) return this;
       if (playersBuilder_ == null) {
         if (!other.players_.isEmpty()) {
           if (players_.isEmpty()) {
@@ -690,21 +690,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.ListPlayersResponse parsedMessage = null;
+      ListPlayersResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.ListPlayersResponse) e.getUnfinishedMessage();
+        parsedMessage = (ListPlayersResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -715,22 +715,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.example.marspioneer.proto.MPPlayerProto> players_ =
+    private java.util.List<MPPlayerProto> players_ =
       java.util.Collections.emptyList();
     private void ensurePlayersIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        players_ = new java.util.ArrayList<com.example.marspioneer.proto.MPPlayerProto>(players_);
+        players_ = new java.util.ArrayList<MPPlayerProto>(players_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.example.marspioneer.proto.MPPlayerProto, com.example.marspioneer.proto.MPPlayerProto.Builder, com.example.marspioneer.proto.MPPlayerProtoOrBuilder> playersBuilder_;
+        MPPlayerProto, MPPlayerProto.Builder, MPPlayerProtoOrBuilder> playersBuilder_;
 
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public java.util.List<com.example.marspioneer.proto.MPPlayerProto> getPlayersList() {
+    public java.util.List<MPPlayerProto> getPlayersList() {
       if (playersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(players_);
       } else {
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public com.example.marspioneer.proto.MPPlayerProto getPlayers(int index) {
+    public MPPlayerProto getPlayers(int index) {
       if (playersBuilder_ == null) {
         return players_.get(index);
       } else {
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder setPlayers(
-        int index, com.example.marspioneer.proto.MPPlayerProto value) {
+        int index, MPPlayerProto value) {
       if (playersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder setPlayers(
-        int index, com.example.marspioneer.proto.MPPlayerProto.Builder builderForValue) {
+        int index, MPPlayerProto.Builder builderForValue) {
       if (playersBuilder_ == null) {
         ensurePlayersIsMutable();
         players_.set(index, builderForValue.build());
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public Builder addPlayers(com.example.marspioneer.proto.MPPlayerProto value) {
+    public Builder addPlayers(MPPlayerProto value) {
       if (playersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(
-        int index, com.example.marspioneer.proto.MPPlayerProto value) {
+        int index, MPPlayerProto value) {
       if (playersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(
-        com.example.marspioneer.proto.MPPlayerProto.Builder builderForValue) {
+        MPPlayerProto.Builder builderForValue) {
       if (playersBuilder_ == null) {
         ensurePlayersIsMutable();
         players_.add(builderForValue.build());
@@ -839,7 +839,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addPlayers(
-        int index, com.example.marspioneer.proto.MPPlayerProto.Builder builderForValue) {
+        int index, MPPlayerProto.Builder builderForValue) {
       if (playersBuilder_ == null) {
         ensurePlayersIsMutable();
         players_.add(index, builderForValue.build());
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
     public Builder addAllPlayers(
-        java.lang.Iterable<? extends com.example.marspioneer.proto.MPPlayerProto> values) {
+        Iterable<? extends MPPlayerProto> values) {
       if (playersBuilder_ == null) {
         ensurePlayersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -893,14 +893,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public com.example.marspioneer.proto.MPPlayerProto.Builder getPlayersBuilder(
+    public MPPlayerProto.Builder getPlayersBuilder(
         int index) {
       return getPlayersFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public com.example.marspioneer.proto.MPPlayerProtoOrBuilder getPlayersOrBuilder(
+    public MPPlayerProtoOrBuilder getPlayersOrBuilder(
         int index) {
       if (playersBuilder_ == null) {
         return players_.get(index);  } else {
@@ -910,7 +910,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public java.util.List<? extends com.example.marspioneer.proto.MPPlayerProtoOrBuilder> 
+    public java.util.List<? extends MPPlayerProtoOrBuilder>
          getPlayersOrBuilderList() {
       if (playersBuilder_ != null) {
         return playersBuilder_.getMessageOrBuilderList();
@@ -921,31 +921,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public com.example.marspioneer.proto.MPPlayerProto.Builder addPlayersBuilder() {
+    public MPPlayerProto.Builder addPlayersBuilder() {
       return getPlayersFieldBuilder().addBuilder(
-          com.example.marspioneer.proto.MPPlayerProto.getDefaultInstance());
+          MPPlayerProto.getDefaultInstance());
     }
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public com.example.marspioneer.proto.MPPlayerProto.Builder addPlayersBuilder(
+    public MPPlayerProto.Builder addPlayersBuilder(
         int index) {
       return getPlayersFieldBuilder().addBuilder(
-          index, com.example.marspioneer.proto.MPPlayerProto.getDefaultInstance());
+          index, MPPlayerProto.getDefaultInstance());
     }
     /**
      * <code>repeated .com.example.marspioneer.proto.MPPlayerProto players = 1;</code>
      */
-    public java.util.List<com.example.marspioneer.proto.MPPlayerProto.Builder> 
+    public java.util.List<MPPlayerProto.Builder>
          getPlayersBuilderList() {
       return getPlayersFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.example.marspioneer.proto.MPPlayerProto, com.example.marspioneer.proto.MPPlayerProto.Builder, com.example.marspioneer.proto.MPPlayerProtoOrBuilder> 
+        MPPlayerProto, MPPlayerProto.Builder, MPPlayerProtoOrBuilder>
         getPlayersFieldBuilder() {
       if (playersBuilder_ == null) {
         playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.example.marspioneer.proto.MPPlayerProto, com.example.marspioneer.proto.MPPlayerProto.Builder, com.example.marspioneer.proto.MPPlayerProtoOrBuilder>(
+            MPPlayerProto, MPPlayerProto.Builder, MPPlayerProtoOrBuilder>(
                 players_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -955,21 +955,21 @@ private static final long serialVersionUID = 0L;
       return playersBuilder_;
     }
 
-    private java.lang.Object message_ = "";
+    private Object message_ = "";
     /**
      * <code>string message = 2;</code>
      * @return The message.
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getMessage() {
+      Object ref = message_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         message_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -978,11 +978,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      java.lang.Object ref = message_;
+      Object ref = message_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         message_ = b;
         return b;
       } else {
@@ -995,7 +995,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setMessage(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListPlayersResponse.Status status = 3;</code>
      * @return The enum numeric value on the wire for status.
      */
-    @java.lang.Override public int getStatusValue() {
+    @Override public int getStatusValue() {
       return status_;
     }
     /**
@@ -1054,18 +1054,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListPlayersResponse.Status status = 3;</code>
      * @return The status.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListPlayersResponse.Status getStatus() {
+    @Override
+    public Status getStatus() {
       @SuppressWarnings("deprecation")
-      com.example.marspioneer.proto.ListPlayersResponse.Status result = com.example.marspioneer.proto.ListPlayersResponse.Status.valueOf(status_);
-      return result == null ? com.example.marspioneer.proto.ListPlayersResponse.Status.UNRECOGNIZED : result;
+      Status result = Status.valueOf(status_);
+      return result == null ? Status.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse.Status status = 3;</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.example.marspioneer.proto.ListPlayersResponse.Status value) {
+    public Builder setStatus(Status value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1084,13 +1084,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1101,18 +1101,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.ListPlayersResponse)
-  private static final com.example.marspioneer.proto.ListPlayersResponse DEFAULT_INSTANCE;
+  private static final ListPlayersResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.ListPlayersResponse();
+    DEFAULT_INSTANCE = new ListPlayersResponse();
   }
 
-  public static com.example.marspioneer.proto.ListPlayersResponse getDefaultInstance() {
+  public static ListPlayersResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ListPlayersResponse>
       PARSER = new com.google.protobuf.AbstractParser<ListPlayersResponse>() {
-    @java.lang.Override
+    @Override
     public ListPlayersResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1125,13 +1125,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ListPlayersResponse> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListPlayersResponse getDefaultInstanceForType() {
+  @Override
+  public ListPlayersResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

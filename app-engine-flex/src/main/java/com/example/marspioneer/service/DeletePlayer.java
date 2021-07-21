@@ -39,7 +39,7 @@ public class DeletePlayer implements AthlosService<DeletePlayerRequest, DeletePl
         //Delete from any team:
         if (player.getTeamID() != null) {
             final MPTeam team = DBManager.team.get(player.getTeamID());
-            final ArrayList<String> playerIDs = team.getPlayerIDs();
+            final ArrayList<String> playerIDs = new ArrayList<>(team.getPlayerIDs());
             playerIDs.remove(player.getId());
             team.setPlayerIDs(playerIDs);
             DBManager.team.update(team);

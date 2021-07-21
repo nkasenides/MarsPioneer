@@ -16,17 +16,17 @@ public interface GetBuildingTypeRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  com.example.marspioneer.proto.MPGameSessionProto getGameSessionID();
+  MPGameSessionProto getGameSessionID();
   /**
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    */
-  com.example.marspioneer.proto.MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder();
+  MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder();
 
   /**
    * <code>string buildingTypeID = 2;</code>
    * @return The buildingTypeID.
    */
-  java.lang.String getBuildingTypeID();
+  String getBuildingTypeID();
   /**
    * <code>string buildingTypeID = 2;</code>
    * @return The bytes for buildingTypeID.

@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private Response() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new Response();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,462 +49,462 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.example.marspioneer.proto.AuthenticateResponse.Builder subBuilder = null;
+            AuthenticateResponse.Builder subBuilder = null;
             if (responseCase_ == 1) {
-              subBuilder = ((com.example.marspioneer.proto.AuthenticateResponse) response_).toBuilder();
+              subBuilder = ((AuthenticateResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.AuthenticateResponse.parser(), extensionRegistry);
+                input.readMessage(AuthenticateResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.AuthenticateResponse) response_);
+              subBuilder.mergeFrom((AuthenticateResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 1;
             break;
           }
           case 18: {
-            com.example.marspioneer.proto.DeAuthenticateResponse.Builder subBuilder = null;
+            DeAuthenticateResponse.Builder subBuilder = null;
             if (responseCase_ == 2) {
-              subBuilder = ((com.example.marspioneer.proto.DeAuthenticateResponse) response_).toBuilder();
+              subBuilder = ((DeAuthenticateResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.DeAuthenticateResponse.parser(), extensionRegistry);
+                input.readMessage(DeAuthenticateResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.DeAuthenticateResponse) response_);
+              subBuilder.mergeFrom((DeAuthenticateResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 2;
             break;
           }
           case 26: {
-            com.example.marspioneer.proto.ListBuildingTypesResponse.Builder subBuilder = null;
+            ListBuildingTypesResponse.Builder subBuilder = null;
             if (responseCase_ == 3) {
-              subBuilder = ((com.example.marspioneer.proto.ListBuildingTypesResponse) response_).toBuilder();
+              subBuilder = ((ListBuildingTypesResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.ListBuildingTypesResponse.parser(), extensionRegistry);
+                input.readMessage(ListBuildingTypesResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.ListBuildingTypesResponse) response_);
+              subBuilder.mergeFrom((ListBuildingTypesResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 3;
             break;
           }
           case 34: {
-            com.example.marspioneer.proto.AddPlayerToTeamResponse.Builder subBuilder = null;
+            AddPlayerToTeamResponse.Builder subBuilder = null;
             if (responseCase_ == 4) {
-              subBuilder = ((com.example.marspioneer.proto.AddPlayerToTeamResponse) response_).toBuilder();
+              subBuilder = ((AddPlayerToTeamResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.AddPlayerToTeamResponse.parser(), extensionRegistry);
+                input.readMessage(AddPlayerToTeamResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.AddPlayerToTeamResponse) response_);
+              subBuilder.mergeFrom((AddPlayerToTeamResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 4;
             break;
           }
           case 42: {
-            com.example.marspioneer.proto.CreateWorldResponse.Builder subBuilder = null;
+            CreateWorldResponse.Builder subBuilder = null;
             if (responseCase_ == 5) {
-              subBuilder = ((com.example.marspioneer.proto.CreateWorldResponse) response_).toBuilder();
+              subBuilder = ((CreateWorldResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.CreateWorldResponse.parser(), extensionRegistry);
+                input.readMessage(CreateWorldResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.CreateWorldResponse) response_);
+              subBuilder.mergeFrom((CreateWorldResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 5;
             break;
           }
           case 50: {
-            com.example.marspioneer.proto.SellBuildingResponse.Builder subBuilder = null;
+            SellBuildingResponse.Builder subBuilder = null;
             if (responseCase_ == 6) {
-              subBuilder = ((com.example.marspioneer.proto.SellBuildingResponse) response_).toBuilder();
+              subBuilder = ((SellBuildingResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.SellBuildingResponse.parser(), extensionRegistry);
+                input.readMessage(SellBuildingResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.SellBuildingResponse) response_);
+              subBuilder.mergeFrom((SellBuildingResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 6;
             break;
           }
           case 58: {
-            com.example.marspioneer.proto.DeleteBuildingTypeResponse.Builder subBuilder = null;
+            DeleteBuildingTypeResponse.Builder subBuilder = null;
             if (responseCase_ == 7) {
-              subBuilder = ((com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_).toBuilder();
+              subBuilder = ((DeleteBuildingTypeResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.DeleteBuildingTypeResponse.parser(), extensionRegistry);
+                input.readMessage(DeleteBuildingTypeResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_);
+              subBuilder.mergeFrom((DeleteBuildingTypeResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 7;
             break;
           }
           case 66: {
-            com.example.marspioneer.proto.UpdatePlayerResponse.Builder subBuilder = null;
+            UpdatePlayerResponse.Builder subBuilder = null;
             if (responseCase_ == 8) {
-              subBuilder = ((com.example.marspioneer.proto.UpdatePlayerResponse) response_).toBuilder();
+              subBuilder = ((UpdatePlayerResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.UpdatePlayerResponse.parser(), extensionRegistry);
+                input.readMessage(UpdatePlayerResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.UpdatePlayerResponse) response_);
+              subBuilder.mergeFrom((UpdatePlayerResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 8;
             break;
           }
           case 74: {
-            com.example.marspioneer.proto.DeleteWorldResponse.Builder subBuilder = null;
+            DeleteWorldResponse.Builder subBuilder = null;
             if (responseCase_ == 9) {
-              subBuilder = ((com.example.marspioneer.proto.DeleteWorldResponse) response_).toBuilder();
+              subBuilder = ((DeleteWorldResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.DeleteWorldResponse.parser(), extensionRegistry);
+                input.readMessage(DeleteWorldResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.DeleteWorldResponse) response_);
+              subBuilder.mergeFrom((DeleteWorldResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 9;
             break;
           }
           case 82: {
-            com.example.marspioneer.proto.CreateBuildingTypeResponse.Builder subBuilder = null;
+            CreateBuildingTypeResponse.Builder subBuilder = null;
             if (responseCase_ == 10) {
-              subBuilder = ((com.example.marspioneer.proto.CreateBuildingTypeResponse) response_).toBuilder();
+              subBuilder = ((CreateBuildingTypeResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.CreateBuildingTypeResponse.parser(), extensionRegistry);
+                input.readMessage(CreateBuildingTypeResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.CreateBuildingTypeResponse) response_);
+              subBuilder.mergeFrom((CreateBuildingTypeResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 10;
             break;
           }
           case 90: {
-            com.example.marspioneer.proto.UnsubscribeResponse.Builder subBuilder = null;
+            UnsubscribeResponse.Builder subBuilder = null;
             if (responseCase_ == 11) {
-              subBuilder = ((com.example.marspioneer.proto.UnsubscribeResponse) response_).toBuilder();
+              subBuilder = ((UnsubscribeResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.UnsubscribeResponse.parser(), extensionRegistry);
+                input.readMessage(UnsubscribeResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.UnsubscribeResponse) response_);
+              subBuilder.mergeFrom((UnsubscribeResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 11;
             break;
           }
           case 98: {
-            com.example.marspioneer.proto.GetPlayerResponse.Builder subBuilder = null;
+            GetPlayerResponse.Builder subBuilder = null;
             if (responseCase_ == 12) {
-              subBuilder = ((com.example.marspioneer.proto.GetPlayerResponse) response_).toBuilder();
+              subBuilder = ((GetPlayerResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.GetPlayerResponse.parser(), extensionRegistry);
+                input.readMessage(GetPlayerResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.GetPlayerResponse) response_);
+              subBuilder.mergeFrom((GetPlayerResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 12;
             break;
           }
           case 106: {
-            com.example.marspioneer.proto.ListTeamPlayersResponse.Builder subBuilder = null;
+            ListTeamPlayersResponse.Builder subBuilder = null;
             if (responseCase_ == 13) {
-              subBuilder = ((com.example.marspioneer.proto.ListTeamPlayersResponse) response_).toBuilder();
+              subBuilder = ((ListTeamPlayersResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.ListTeamPlayersResponse.parser(), extensionRegistry);
+                input.readMessage(ListTeamPlayersResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.ListTeamPlayersResponse) response_);
+              subBuilder.mergeFrom((ListTeamPlayersResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 13;
             break;
           }
           case 114: {
-            com.example.marspioneer.proto.GetTeamResponse.Builder subBuilder = null;
+            GetTeamResponse.Builder subBuilder = null;
             if (responseCase_ == 14) {
-              subBuilder = ((com.example.marspioneer.proto.GetTeamResponse) response_).toBuilder();
+              subBuilder = ((GetTeamResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.GetTeamResponse.parser(), extensionRegistry);
+                input.readMessage(GetTeamResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.GetTeamResponse) response_);
+              subBuilder.mergeFrom((GetTeamResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 14;
             break;
           }
           case 122: {
-            com.example.marspioneer.proto.ListWorldsResponse.Builder subBuilder = null;
+            ListWorldsResponse.Builder subBuilder = null;
             if (responseCase_ == 15) {
-              subBuilder = ((com.example.marspioneer.proto.ListWorldsResponse) response_).toBuilder();
+              subBuilder = ((ListWorldsResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.ListWorldsResponse.parser(), extensionRegistry);
+                input.readMessage(ListWorldsResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.ListWorldsResponse) response_);
+              subBuilder.mergeFrom((ListWorldsResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 15;
             break;
           }
           case 130: {
-            com.example.marspioneer.proto.UpdateWorldResponse.Builder subBuilder = null;
+            UpdateWorldResponse.Builder subBuilder = null;
             if (responseCase_ == 16) {
-              subBuilder = ((com.example.marspioneer.proto.UpdateWorldResponse) response_).toBuilder();
+              subBuilder = ((UpdateWorldResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.UpdateWorldResponse.parser(), extensionRegistry);
+                input.readMessage(UpdateWorldResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.UpdateWorldResponse) response_);
+              subBuilder.mergeFrom((UpdateWorldResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 16;
             break;
           }
           case 138: {
-            com.example.marspioneer.proto.UpdateTeamResponse.Builder subBuilder = null;
+            UpdateTeamResponse.Builder subBuilder = null;
             if (responseCase_ == 17) {
-              subBuilder = ((com.example.marspioneer.proto.UpdateTeamResponse) response_).toBuilder();
+              subBuilder = ((UpdateTeamResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.UpdateTeamResponse.parser(), extensionRegistry);
+                input.readMessage(UpdateTeamResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.UpdateTeamResponse) response_);
+              subBuilder.mergeFrom((UpdateTeamResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 17;
             break;
           }
           case 146: {
-            com.example.marspioneer.proto.ListTeamsResponse.Builder subBuilder = null;
+            ListTeamsResponse.Builder subBuilder = null;
             if (responseCase_ == 18) {
-              subBuilder = ((com.example.marspioneer.proto.ListTeamsResponse) response_).toBuilder();
+              subBuilder = ((ListTeamsResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.ListTeamsResponse.parser(), extensionRegistry);
+                input.readMessage(ListTeamsResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.ListTeamsResponse) response_);
+              subBuilder.mergeFrom((ListTeamsResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 18;
             break;
           }
           case 154: {
-            com.example.marspioneer.proto.JoinWorldResponse.Builder subBuilder = null;
+            JoinWorldResponse.Builder subBuilder = null;
             if (responseCase_ == 19) {
-              subBuilder = ((com.example.marspioneer.proto.JoinWorldResponse) response_).toBuilder();
+              subBuilder = ((JoinWorldResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.JoinWorldResponse.parser(), extensionRegistry);
+                input.readMessage(JoinWorldResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.JoinWorldResponse) response_);
+              subBuilder.mergeFrom((JoinWorldResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 19;
             break;
           }
           case 162: {
-            com.example.marspioneer.proto.DeletePlayerResponse.Builder subBuilder = null;
+            DeletePlayerResponse.Builder subBuilder = null;
             if (responseCase_ == 20) {
-              subBuilder = ((com.example.marspioneer.proto.DeletePlayerResponse) response_).toBuilder();
+              subBuilder = ((DeletePlayerResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.DeletePlayerResponse.parser(), extensionRegistry);
+                input.readMessage(DeletePlayerResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.DeletePlayerResponse) response_);
+              subBuilder.mergeFrom((DeletePlayerResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 20;
             break;
           }
           case 170: {
-            com.example.marspioneer.proto.RemovePlayerFromTeamResponse.Builder subBuilder = null;
+            RemovePlayerFromTeamResponse.Builder subBuilder = null;
             if (responseCase_ == 21) {
-              subBuilder = ((com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_).toBuilder();
+              subBuilder = ((RemovePlayerFromTeamResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.RemovePlayerFromTeamResponse.parser(), extensionRegistry);
+                input.readMessage(RemovePlayerFromTeamResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_);
+              subBuilder.mergeFrom((RemovePlayerFromTeamResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 21;
             break;
           }
           case 178: {
-            com.example.marspioneer.proto.BuildResponse.Builder subBuilder = null;
+            BuildResponse.Builder subBuilder = null;
             if (responseCase_ == 22) {
-              subBuilder = ((com.example.marspioneer.proto.BuildResponse) response_).toBuilder();
+              subBuilder = ((BuildResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.BuildResponse.parser(), extensionRegistry);
+                input.readMessage(BuildResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.BuildResponse) response_);
+              subBuilder.mergeFrom((BuildResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 22;
             break;
           }
           case 186: {
-            com.example.marspioneer.proto.GetStateResponse.Builder subBuilder = null;
+            GetStateResponse.Builder subBuilder = null;
             if (responseCase_ == 23) {
-              subBuilder = ((com.example.marspioneer.proto.GetStateResponse) response_).toBuilder();
+              subBuilder = ((GetStateResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.GetStateResponse.parser(), extensionRegistry);
+                input.readMessage(GetStateResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.GetStateResponse) response_);
+              subBuilder.mergeFrom((GetStateResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 23;
             break;
           }
           case 194: {
-            com.example.marspioneer.proto.UpdateStateResponse.Builder subBuilder = null;
+            UpdateStateResponse.Builder subBuilder = null;
             if (responseCase_ == 24) {
-              subBuilder = ((com.example.marspioneer.proto.UpdateStateResponse) response_).toBuilder();
+              subBuilder = ((UpdateStateResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.UpdateStateResponse.parser(), extensionRegistry);
+                input.readMessage(UpdateStateResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.UpdateStateResponse) response_);
+              subBuilder.mergeFrom((UpdateStateResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 24;
             break;
           }
           case 202: {
-            com.example.marspioneer.proto.SubscribeResponse.Builder subBuilder = null;
+            SubscribeResponse.Builder subBuilder = null;
             if (responseCase_ == 25) {
-              subBuilder = ((com.example.marspioneer.proto.SubscribeResponse) response_).toBuilder();
+              subBuilder = ((SubscribeResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.SubscribeResponse.parser(), extensionRegistry);
+                input.readMessage(SubscribeResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.SubscribeResponse) response_);
+              subBuilder.mergeFrom((SubscribeResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 25;
             break;
           }
           case 210: {
-            com.example.marspioneer.proto.CreatePlayerResponse.Builder subBuilder = null;
+            CreatePlayerResponse.Builder subBuilder = null;
             if (responseCase_ == 26) {
-              subBuilder = ((com.example.marspioneer.proto.CreatePlayerResponse) response_).toBuilder();
+              subBuilder = ((CreatePlayerResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.CreatePlayerResponse.parser(), extensionRegistry);
+                input.readMessage(CreatePlayerResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.CreatePlayerResponse) response_);
+              subBuilder.mergeFrom((CreatePlayerResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 26;
             break;
           }
           case 218: {
-            com.example.marspioneer.proto.GetWorldResponse.Builder subBuilder = null;
+            GetWorldResponse.Builder subBuilder = null;
             if (responseCase_ == 27) {
-              subBuilder = ((com.example.marspioneer.proto.GetWorldResponse) response_).toBuilder();
+              subBuilder = ((GetWorldResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.GetWorldResponse.parser(), extensionRegistry);
+                input.readMessage(GetWorldResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.GetWorldResponse) response_);
+              subBuilder.mergeFrom((GetWorldResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 27;
             break;
           }
           case 226: {
-            com.example.marspioneer.proto.UpdateBuildingTypeResponse.Builder subBuilder = null;
+            UpdateBuildingTypeResponse.Builder subBuilder = null;
             if (responseCase_ == 28) {
-              subBuilder = ((com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_).toBuilder();
+              subBuilder = ((UpdateBuildingTypeResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.UpdateBuildingTypeResponse.parser(), extensionRegistry);
+                input.readMessage(UpdateBuildingTypeResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_);
+              subBuilder.mergeFrom((UpdateBuildingTypeResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 28;
             break;
           }
           case 234: {
-            com.example.marspioneer.proto.DeleteTeamResponse.Builder subBuilder = null;
+            DeleteTeamResponse.Builder subBuilder = null;
             if (responseCase_ == 29) {
-              subBuilder = ((com.example.marspioneer.proto.DeleteTeamResponse) response_).toBuilder();
+              subBuilder = ((DeleteTeamResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.DeleteTeamResponse.parser(), extensionRegistry);
+                input.readMessage(DeleteTeamResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.DeleteTeamResponse) response_);
+              subBuilder.mergeFrom((DeleteTeamResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 29;
             break;
           }
           case 242: {
-            com.example.marspioneer.proto.LeaveWorldResponse.Builder subBuilder = null;
+            LeaveWorldResponse.Builder subBuilder = null;
             if (responseCase_ == 30) {
-              subBuilder = ((com.example.marspioneer.proto.LeaveWorldResponse) response_).toBuilder();
+              subBuilder = ((LeaveWorldResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.LeaveWorldResponse.parser(), extensionRegistry);
+                input.readMessage(LeaveWorldResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.LeaveWorldResponse) response_);
+              subBuilder.mergeFrom((LeaveWorldResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 30;
             break;
           }
           case 250: {
-            com.example.marspioneer.proto.GetBuildingTypeResponse.Builder subBuilder = null;
+            GetBuildingTypeResponse.Builder subBuilder = null;
             if (responseCase_ == 31) {
-              subBuilder = ((com.example.marspioneer.proto.GetBuildingTypeResponse) response_).toBuilder();
+              subBuilder = ((GetBuildingTypeResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.GetBuildingTypeResponse.parser(), extensionRegistry);
+                input.readMessage(GetBuildingTypeResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.GetBuildingTypeResponse) response_);
+              subBuilder.mergeFrom((GetBuildingTypeResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 31;
             break;
           }
           case 258: {
-            com.example.marspioneer.proto.ListPlayersResponse.Builder subBuilder = null;
+            ListPlayersResponse.Builder subBuilder = null;
             if (responseCase_ == 32) {
-              subBuilder = ((com.example.marspioneer.proto.ListPlayersResponse) response_).toBuilder();
+              subBuilder = ((ListPlayersResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.ListPlayersResponse.parser(), extensionRegistry);
+                input.readMessage(ListPlayersResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.ListPlayersResponse) response_);
+              subBuilder.mergeFrom((ListPlayersResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 32;
             break;
           }
           case 266: {
-            com.example.marspioneer.proto.CreateTeamResponse.Builder subBuilder = null;
+            CreateTeamResponse.Builder subBuilder = null;
             if (responseCase_ == 33) {
-              subBuilder = ((com.example.marspioneer.proto.CreateTeamResponse) response_).toBuilder();
+              subBuilder = ((CreateTeamResponse) response_).toBuilder();
             }
             response_ =
-                input.readMessage(com.example.marspioneer.proto.CreateTeamResponse.parser(), extensionRegistry);
+                input.readMessage(CreateTeamResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.example.marspioneer.proto.CreateTeamResponse) response_);
+              subBuilder.mergeFrom((CreateTeamResponse) response_);
               response_ = subBuilder.buildPartial();
             }
             responseCase_ = 33;
@@ -531,22 +531,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.Response.class, com.example.marspioneer.proto.Response.Builder.class);
+            Response.class, Builder.class);
   }
 
   private int responseCase_ = 0;
-  private java.lang.Object response_;
+  private Object response_;
   public enum ResponseCase
       implements com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          InternalOneOfEnum {
     AUTHENTICATERESPONSE(1),
     DEAUTHENTICATERESPONSE(2),
     LISTBUILDINGTYPESRESPONSE(3),
@@ -590,7 +590,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ResponseCase valueOf(int value) {
       return forNumber(value);
     }
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
    * @return Whether the authenticateResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasAuthenticateResponse() {
     return responseCase_ == 1;
   }
@@ -658,22 +658,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
    * @return The authenticateResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.AuthenticateResponse getAuthenticateResponse() {
+  @Override
+  public AuthenticateResponse getAuthenticateResponse() {
     if (responseCase_ == 1) {
-       return (com.example.marspioneer.proto.AuthenticateResponse) response_;
+       return (AuthenticateResponse) response_;
     }
-    return com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance();
+    return AuthenticateResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.AuthenticateResponseOrBuilder getAuthenticateResponseOrBuilder() {
+  @Override
+  public AuthenticateResponseOrBuilder getAuthenticateResponseOrBuilder() {
     if (responseCase_ == 1) {
-       return (com.example.marspioneer.proto.AuthenticateResponse) response_;
+       return (AuthenticateResponse) response_;
     }
-    return com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance();
+    return AuthenticateResponse.getDefaultInstance();
   }
 
   public static final int DEAUTHENTICATERESPONSE_FIELD_NUMBER = 2;
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
    * @return Whether the deAuthenticateResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDeAuthenticateResponse() {
     return responseCase_ == 2;
   }
@@ -689,22 +689,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
    * @return The deAuthenticateResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeAuthenticateResponse getDeAuthenticateResponse() {
+  @Override
+  public DeAuthenticateResponse getDeAuthenticateResponse() {
     if (responseCase_ == 2) {
-       return (com.example.marspioneer.proto.DeAuthenticateResponse) response_;
+       return (DeAuthenticateResponse) response_;
     }
-    return com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance();
+    return DeAuthenticateResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeAuthenticateResponseOrBuilder getDeAuthenticateResponseOrBuilder() {
+  @Override
+  public DeAuthenticateResponseOrBuilder getDeAuthenticateResponseOrBuilder() {
     if (responseCase_ == 2) {
-       return (com.example.marspioneer.proto.DeAuthenticateResponse) response_;
+       return (DeAuthenticateResponse) response_;
     }
-    return com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance();
+    return DeAuthenticateResponse.getDefaultInstance();
   }
 
   public static final int LISTBUILDINGTYPESRESPONSE_FIELD_NUMBER = 3;
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
    * @return Whether the listBuildingTypesResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasListBuildingTypesResponse() {
     return responseCase_ == 3;
   }
@@ -720,22 +720,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
    * @return The listBuildingTypesResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListBuildingTypesResponse getListBuildingTypesResponse() {
+  @Override
+  public ListBuildingTypesResponse getListBuildingTypesResponse() {
     if (responseCase_ == 3) {
-       return (com.example.marspioneer.proto.ListBuildingTypesResponse) response_;
+       return (ListBuildingTypesResponse) response_;
     }
-    return com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance();
+    return ListBuildingTypesResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListBuildingTypesResponseOrBuilder getListBuildingTypesResponseOrBuilder() {
+  @Override
+  public ListBuildingTypesResponseOrBuilder getListBuildingTypesResponseOrBuilder() {
     if (responseCase_ == 3) {
-       return (com.example.marspioneer.proto.ListBuildingTypesResponse) response_;
+       return (ListBuildingTypesResponse) response_;
     }
-    return com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance();
+    return ListBuildingTypesResponse.getDefaultInstance();
   }
 
   public static final int ADDPLAYERTOTEAMRESPONSE_FIELD_NUMBER = 4;
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
    * @return Whether the addPlayerToTeamResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasAddPlayerToTeamResponse() {
     return responseCase_ == 4;
   }
@@ -751,22 +751,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
    * @return The addPlayerToTeamResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.AddPlayerToTeamResponse getAddPlayerToTeamResponse() {
+  @Override
+  public AddPlayerToTeamResponse getAddPlayerToTeamResponse() {
     if (responseCase_ == 4) {
-       return (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_;
+       return (AddPlayerToTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance();
+    return AddPlayerToTeamResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.AddPlayerToTeamResponseOrBuilder getAddPlayerToTeamResponseOrBuilder() {
+  @Override
+  public AddPlayerToTeamResponseOrBuilder getAddPlayerToTeamResponseOrBuilder() {
     if (responseCase_ == 4) {
-       return (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_;
+       return (AddPlayerToTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance();
+    return AddPlayerToTeamResponse.getDefaultInstance();
   }
 
   public static final int CREATEWORLDRESPONSE_FIELD_NUMBER = 5;
@@ -774,7 +774,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
    * @return Whether the createWorldResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasCreateWorldResponse() {
     return responseCase_ == 5;
   }
@@ -782,22 +782,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
    * @return The createWorldResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateWorldResponse getCreateWorldResponse() {
+  @Override
+  public CreateWorldResponse getCreateWorldResponse() {
     if (responseCase_ == 5) {
-       return (com.example.marspioneer.proto.CreateWorldResponse) response_;
+       return (CreateWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance();
+    return CreateWorldResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateWorldResponseOrBuilder getCreateWorldResponseOrBuilder() {
+  @Override
+  public CreateWorldResponseOrBuilder getCreateWorldResponseOrBuilder() {
     if (responseCase_ == 5) {
-       return (com.example.marspioneer.proto.CreateWorldResponse) response_;
+       return (CreateWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance();
+    return CreateWorldResponse.getDefaultInstance();
   }
 
   public static final int SELLBUILDINGRESPONSE_FIELD_NUMBER = 6;
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
    * @return Whether the sellBuildingResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSellBuildingResponse() {
     return responseCase_ == 6;
   }
@@ -813,22 +813,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
    * @return The sellBuildingResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.SellBuildingResponse getSellBuildingResponse() {
+  @Override
+  public SellBuildingResponse getSellBuildingResponse() {
     if (responseCase_ == 6) {
-       return (com.example.marspioneer.proto.SellBuildingResponse) response_;
+       return (SellBuildingResponse) response_;
     }
-    return com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance();
+    return SellBuildingResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.SellBuildingResponseOrBuilder getSellBuildingResponseOrBuilder() {
+  @Override
+  public SellBuildingResponseOrBuilder getSellBuildingResponseOrBuilder() {
     if (responseCase_ == 6) {
-       return (com.example.marspioneer.proto.SellBuildingResponse) response_;
+       return (SellBuildingResponse) response_;
     }
-    return com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance();
+    return SellBuildingResponse.getDefaultInstance();
   }
 
   public static final int DELETEBUILDINGTYPERESPONSE_FIELD_NUMBER = 7;
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
    * @return Whether the deleteBuildingTypeResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDeleteBuildingTypeResponse() {
     return responseCase_ == 7;
   }
@@ -844,22 +844,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
    * @return The deleteBuildingTypeResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeleteBuildingTypeResponse getDeleteBuildingTypeResponse() {
+  @Override
+  public DeleteBuildingTypeResponse getDeleteBuildingTypeResponse() {
     if (responseCase_ == 7) {
-       return (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_;
+       return (DeleteBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance();
+    return DeleteBuildingTypeResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeleteBuildingTypeResponseOrBuilder getDeleteBuildingTypeResponseOrBuilder() {
+  @Override
+  public DeleteBuildingTypeResponseOrBuilder getDeleteBuildingTypeResponseOrBuilder() {
     if (responseCase_ == 7) {
-       return (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_;
+       return (DeleteBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance();
+    return DeleteBuildingTypeResponse.getDefaultInstance();
   }
 
   public static final int UPDATEPLAYERRESPONSE_FIELD_NUMBER = 8;
@@ -867,7 +867,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
    * @return Whether the updatePlayerResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUpdatePlayerResponse() {
     return responseCase_ == 8;
   }
@@ -875,22 +875,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
    * @return The updatePlayerResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdatePlayerResponse getUpdatePlayerResponse() {
+  @Override
+  public UpdatePlayerResponse getUpdatePlayerResponse() {
     if (responseCase_ == 8) {
-       return (com.example.marspioneer.proto.UpdatePlayerResponse) response_;
+       return (UpdatePlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance();
+    return UpdatePlayerResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdatePlayerResponseOrBuilder getUpdatePlayerResponseOrBuilder() {
+  @Override
+  public UpdatePlayerResponseOrBuilder getUpdatePlayerResponseOrBuilder() {
     if (responseCase_ == 8) {
-       return (com.example.marspioneer.proto.UpdatePlayerResponse) response_;
+       return (UpdatePlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance();
+    return UpdatePlayerResponse.getDefaultInstance();
   }
 
   public static final int DELETEWORLDRESPONSE_FIELD_NUMBER = 9;
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
    * @return Whether the deleteWorldResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDeleteWorldResponse() {
     return responseCase_ == 9;
   }
@@ -906,22 +906,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
    * @return The deleteWorldResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeleteWorldResponse getDeleteWorldResponse() {
+  @Override
+  public DeleteWorldResponse getDeleteWorldResponse() {
     if (responseCase_ == 9) {
-       return (com.example.marspioneer.proto.DeleteWorldResponse) response_;
+       return (DeleteWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance();
+    return DeleteWorldResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeleteWorldResponseOrBuilder getDeleteWorldResponseOrBuilder() {
+  @Override
+  public DeleteWorldResponseOrBuilder getDeleteWorldResponseOrBuilder() {
     if (responseCase_ == 9) {
-       return (com.example.marspioneer.proto.DeleteWorldResponse) response_;
+       return (DeleteWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance();
+    return DeleteWorldResponse.getDefaultInstance();
   }
 
   public static final int CREATEBUILDINGTYPERESPONSE_FIELD_NUMBER = 10;
@@ -929,7 +929,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
    * @return Whether the createBuildingTypeResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasCreateBuildingTypeResponse() {
     return responseCase_ == 10;
   }
@@ -937,22 +937,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
    * @return The createBuildingTypeResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateBuildingTypeResponse getCreateBuildingTypeResponse() {
+  @Override
+  public CreateBuildingTypeResponse getCreateBuildingTypeResponse() {
     if (responseCase_ == 10) {
-       return (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_;
+       return (CreateBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance();
+    return CreateBuildingTypeResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateBuildingTypeResponseOrBuilder getCreateBuildingTypeResponseOrBuilder() {
+  @Override
+  public CreateBuildingTypeResponseOrBuilder getCreateBuildingTypeResponseOrBuilder() {
     if (responseCase_ == 10) {
-       return (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_;
+       return (CreateBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance();
+    return CreateBuildingTypeResponse.getDefaultInstance();
   }
 
   public static final int UNSUBSCRIBERESPONSE_FIELD_NUMBER = 11;
@@ -960,7 +960,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
    * @return Whether the unsubscribeResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUnsubscribeResponse() {
     return responseCase_ == 11;
   }
@@ -968,22 +968,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
    * @return The unsubscribeResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UnsubscribeResponse getUnsubscribeResponse() {
+  @Override
+  public UnsubscribeResponse getUnsubscribeResponse() {
     if (responseCase_ == 11) {
-       return (com.example.marspioneer.proto.UnsubscribeResponse) response_;
+       return (UnsubscribeResponse) response_;
     }
-    return com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance();
+    return UnsubscribeResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UnsubscribeResponseOrBuilder getUnsubscribeResponseOrBuilder() {
+  @Override
+  public UnsubscribeResponseOrBuilder getUnsubscribeResponseOrBuilder() {
     if (responseCase_ == 11) {
-       return (com.example.marspioneer.proto.UnsubscribeResponse) response_;
+       return (UnsubscribeResponse) response_;
     }
-    return com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance();
+    return UnsubscribeResponse.getDefaultInstance();
   }
 
   public static final int GETPLAYERRESPONSE_FIELD_NUMBER = 12;
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
    * @return Whether the getPlayerResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasGetPlayerResponse() {
     return responseCase_ == 12;
   }
@@ -999,22 +999,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
    * @return The getPlayerResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetPlayerResponse getGetPlayerResponse() {
+  @Override
+  public GetPlayerResponse getGetPlayerResponse() {
     if (responseCase_ == 12) {
-       return (com.example.marspioneer.proto.GetPlayerResponse) response_;
+       return (GetPlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance();
+    return GetPlayerResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetPlayerResponseOrBuilder getGetPlayerResponseOrBuilder() {
+  @Override
+  public GetPlayerResponseOrBuilder getGetPlayerResponseOrBuilder() {
     if (responseCase_ == 12) {
-       return (com.example.marspioneer.proto.GetPlayerResponse) response_;
+       return (GetPlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance();
+    return GetPlayerResponse.getDefaultInstance();
   }
 
   public static final int LISTTEAMPLAYERSRESPONSE_FIELD_NUMBER = 13;
@@ -1022,7 +1022,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
    * @return Whether the listTeamPlayersResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasListTeamPlayersResponse() {
     return responseCase_ == 13;
   }
@@ -1030,22 +1030,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
    * @return The listTeamPlayersResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListTeamPlayersResponse getListTeamPlayersResponse() {
+  @Override
+  public ListTeamPlayersResponse getListTeamPlayersResponse() {
     if (responseCase_ == 13) {
-       return (com.example.marspioneer.proto.ListTeamPlayersResponse) response_;
+       return (ListTeamPlayersResponse) response_;
     }
-    return com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance();
+    return ListTeamPlayersResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListTeamPlayersResponseOrBuilder getListTeamPlayersResponseOrBuilder() {
+  @Override
+  public ListTeamPlayersResponseOrBuilder getListTeamPlayersResponseOrBuilder() {
     if (responseCase_ == 13) {
-       return (com.example.marspioneer.proto.ListTeamPlayersResponse) response_;
+       return (ListTeamPlayersResponse) response_;
     }
-    return com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance();
+    return ListTeamPlayersResponse.getDefaultInstance();
   }
 
   public static final int GETTEAMRESPONSE_FIELD_NUMBER = 14;
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
    * @return Whether the getTeamResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasGetTeamResponse() {
     return responseCase_ == 14;
   }
@@ -1061,22 +1061,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
    * @return The getTeamResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetTeamResponse getGetTeamResponse() {
+  @Override
+  public GetTeamResponse getGetTeamResponse() {
     if (responseCase_ == 14) {
-       return (com.example.marspioneer.proto.GetTeamResponse) response_;
+       return (GetTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance();
+    return GetTeamResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetTeamResponseOrBuilder getGetTeamResponseOrBuilder() {
+  @Override
+  public GetTeamResponseOrBuilder getGetTeamResponseOrBuilder() {
     if (responseCase_ == 14) {
-       return (com.example.marspioneer.proto.GetTeamResponse) response_;
+       return (GetTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance();
+    return GetTeamResponse.getDefaultInstance();
   }
 
   public static final int LISTWORLDSRESPONSE_FIELD_NUMBER = 15;
@@ -1084,7 +1084,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
    * @return Whether the listWorldsResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasListWorldsResponse() {
     return responseCase_ == 15;
   }
@@ -1092,22 +1092,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
    * @return The listWorldsResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListWorldsResponse getListWorldsResponse() {
+  @Override
+  public ListWorldsResponse getListWorldsResponse() {
     if (responseCase_ == 15) {
-       return (com.example.marspioneer.proto.ListWorldsResponse) response_;
+       return (ListWorldsResponse) response_;
     }
-    return com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance();
+    return ListWorldsResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListWorldsResponseOrBuilder getListWorldsResponseOrBuilder() {
+  @Override
+  public ListWorldsResponseOrBuilder getListWorldsResponseOrBuilder() {
     if (responseCase_ == 15) {
-       return (com.example.marspioneer.proto.ListWorldsResponse) response_;
+       return (ListWorldsResponse) response_;
     }
-    return com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance();
+    return ListWorldsResponse.getDefaultInstance();
   }
 
   public static final int UPDATEWORLDRESPONSE_FIELD_NUMBER = 16;
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
    * @return Whether the updateWorldResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUpdateWorldResponse() {
     return responseCase_ == 16;
   }
@@ -1123,22 +1123,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
    * @return The updateWorldResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateWorldResponse getUpdateWorldResponse() {
+  @Override
+  public UpdateWorldResponse getUpdateWorldResponse() {
     if (responseCase_ == 16) {
-       return (com.example.marspioneer.proto.UpdateWorldResponse) response_;
+       return (UpdateWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance();
+    return UpdateWorldResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateWorldResponseOrBuilder getUpdateWorldResponseOrBuilder() {
+  @Override
+  public UpdateWorldResponseOrBuilder getUpdateWorldResponseOrBuilder() {
     if (responseCase_ == 16) {
-       return (com.example.marspioneer.proto.UpdateWorldResponse) response_;
+       return (UpdateWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance();
+    return UpdateWorldResponse.getDefaultInstance();
   }
 
   public static final int UPDATETEAMRESPONSE_FIELD_NUMBER = 17;
@@ -1146,7 +1146,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
    * @return Whether the updateTeamResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUpdateTeamResponse() {
     return responseCase_ == 17;
   }
@@ -1154,22 +1154,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
    * @return The updateTeamResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateTeamResponse getUpdateTeamResponse() {
+  @Override
+  public UpdateTeamResponse getUpdateTeamResponse() {
     if (responseCase_ == 17) {
-       return (com.example.marspioneer.proto.UpdateTeamResponse) response_;
+       return (UpdateTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance();
+    return UpdateTeamResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateTeamResponseOrBuilder getUpdateTeamResponseOrBuilder() {
+  @Override
+  public UpdateTeamResponseOrBuilder getUpdateTeamResponseOrBuilder() {
     if (responseCase_ == 17) {
-       return (com.example.marspioneer.proto.UpdateTeamResponse) response_;
+       return (UpdateTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance();
+    return UpdateTeamResponse.getDefaultInstance();
   }
 
   public static final int LISTTEAMSRESPONSE_FIELD_NUMBER = 18;
@@ -1177,7 +1177,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
    * @return Whether the listTeamsResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasListTeamsResponse() {
     return responseCase_ == 18;
   }
@@ -1185,22 +1185,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
    * @return The listTeamsResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListTeamsResponse getListTeamsResponse() {
+  @Override
+  public ListTeamsResponse getListTeamsResponse() {
     if (responseCase_ == 18) {
-       return (com.example.marspioneer.proto.ListTeamsResponse) response_;
+       return (ListTeamsResponse) response_;
     }
-    return com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance();
+    return ListTeamsResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListTeamsResponseOrBuilder getListTeamsResponseOrBuilder() {
+  @Override
+  public ListTeamsResponseOrBuilder getListTeamsResponseOrBuilder() {
     if (responseCase_ == 18) {
-       return (com.example.marspioneer.proto.ListTeamsResponse) response_;
+       return (ListTeamsResponse) response_;
     }
-    return com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance();
+    return ListTeamsResponse.getDefaultInstance();
   }
 
   public static final int JOINWORLDRESPONSE_FIELD_NUMBER = 19;
@@ -1208,7 +1208,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
    * @return Whether the joinWorldResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasJoinWorldResponse() {
     return responseCase_ == 19;
   }
@@ -1216,22 +1216,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
    * @return The joinWorldResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.JoinWorldResponse getJoinWorldResponse() {
+  @Override
+  public JoinWorldResponse getJoinWorldResponse() {
     if (responseCase_ == 19) {
-       return (com.example.marspioneer.proto.JoinWorldResponse) response_;
+       return (JoinWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance();
+    return JoinWorldResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.JoinWorldResponseOrBuilder getJoinWorldResponseOrBuilder() {
+  @Override
+  public JoinWorldResponseOrBuilder getJoinWorldResponseOrBuilder() {
     if (responseCase_ == 19) {
-       return (com.example.marspioneer.proto.JoinWorldResponse) response_;
+       return (JoinWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance();
+    return JoinWorldResponse.getDefaultInstance();
   }
 
   public static final int DELETEPLAYERRESPONSE_FIELD_NUMBER = 20;
@@ -1239,7 +1239,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
    * @return Whether the deletePlayerResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDeletePlayerResponse() {
     return responseCase_ == 20;
   }
@@ -1247,22 +1247,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
    * @return The deletePlayerResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeletePlayerResponse getDeletePlayerResponse() {
+  @Override
+  public DeletePlayerResponse getDeletePlayerResponse() {
     if (responseCase_ == 20) {
-       return (com.example.marspioneer.proto.DeletePlayerResponse) response_;
+       return (DeletePlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance();
+    return DeletePlayerResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeletePlayerResponseOrBuilder getDeletePlayerResponseOrBuilder() {
+  @Override
+  public DeletePlayerResponseOrBuilder getDeletePlayerResponseOrBuilder() {
     if (responseCase_ == 20) {
-       return (com.example.marspioneer.proto.DeletePlayerResponse) response_;
+       return (DeletePlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance();
+    return DeletePlayerResponse.getDefaultInstance();
   }
 
   public static final int REMOVEPLAYERFROMTEAMRESPONSE_FIELD_NUMBER = 21;
@@ -1270,7 +1270,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
    * @return Whether the removePlayerFromTeamResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRemovePlayerFromTeamResponse() {
     return responseCase_ == 21;
   }
@@ -1278,22 +1278,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
    * @return The removePlayerFromTeamResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.RemovePlayerFromTeamResponse getRemovePlayerFromTeamResponse() {
+  @Override
+  public RemovePlayerFromTeamResponse getRemovePlayerFromTeamResponse() {
     if (responseCase_ == 21) {
-       return (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_;
+       return (RemovePlayerFromTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance();
+    return RemovePlayerFromTeamResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.RemovePlayerFromTeamResponseOrBuilder getRemovePlayerFromTeamResponseOrBuilder() {
+  @Override
+  public RemovePlayerFromTeamResponseOrBuilder getRemovePlayerFromTeamResponseOrBuilder() {
     if (responseCase_ == 21) {
-       return (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_;
+       return (RemovePlayerFromTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance();
+    return RemovePlayerFromTeamResponse.getDefaultInstance();
   }
 
   public static final int BUILDRESPONSE_FIELD_NUMBER = 22;
@@ -1301,7 +1301,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
    * @return Whether the buildResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasBuildResponse() {
     return responseCase_ == 22;
   }
@@ -1309,22 +1309,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
    * @return The buildResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildResponse getBuildResponse() {
+  @Override
+  public BuildResponse getBuildResponse() {
     if (responseCase_ == 22) {
-       return (com.example.marspioneer.proto.BuildResponse) response_;
+       return (BuildResponse) response_;
     }
-    return com.example.marspioneer.proto.BuildResponse.getDefaultInstance();
+    return BuildResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.BuildResponseOrBuilder getBuildResponseOrBuilder() {
+  @Override
+  public BuildResponseOrBuilder getBuildResponseOrBuilder() {
     if (responseCase_ == 22) {
-       return (com.example.marspioneer.proto.BuildResponse) response_;
+       return (BuildResponse) response_;
     }
-    return com.example.marspioneer.proto.BuildResponse.getDefaultInstance();
+    return BuildResponse.getDefaultInstance();
   }
 
   public static final int GETSTATERESPONSE_FIELD_NUMBER = 23;
@@ -1332,7 +1332,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
    * @return Whether the getStateResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasGetStateResponse() {
     return responseCase_ == 23;
   }
@@ -1340,22 +1340,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
    * @return The getStateResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetStateResponse getGetStateResponse() {
+  @Override
+  public GetStateResponse getGetStateResponse() {
     if (responseCase_ == 23) {
-       return (com.example.marspioneer.proto.GetStateResponse) response_;
+       return (GetStateResponse) response_;
     }
-    return com.example.marspioneer.proto.GetStateResponse.getDefaultInstance();
+    return GetStateResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetStateResponseOrBuilder getGetStateResponseOrBuilder() {
+  @Override
+  public GetStateResponseOrBuilder getGetStateResponseOrBuilder() {
     if (responseCase_ == 23) {
-       return (com.example.marspioneer.proto.GetStateResponse) response_;
+       return (GetStateResponse) response_;
     }
-    return com.example.marspioneer.proto.GetStateResponse.getDefaultInstance();
+    return GetStateResponse.getDefaultInstance();
   }
 
   public static final int UPDATESTATERESPONSE_FIELD_NUMBER = 24;
@@ -1363,7 +1363,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
    * @return Whether the updateStateResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUpdateStateResponse() {
     return responseCase_ == 24;
   }
@@ -1371,22 +1371,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
    * @return The updateStateResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateStateResponse getUpdateStateResponse() {
+  @Override
+  public UpdateStateResponse getUpdateStateResponse() {
     if (responseCase_ == 24) {
-       return (com.example.marspioneer.proto.UpdateStateResponse) response_;
+       return (UpdateStateResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance();
+    return UpdateStateResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateStateResponseOrBuilder getUpdateStateResponseOrBuilder() {
+  @Override
+  public UpdateStateResponseOrBuilder getUpdateStateResponseOrBuilder() {
     if (responseCase_ == 24) {
-       return (com.example.marspioneer.proto.UpdateStateResponse) response_;
+       return (UpdateStateResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance();
+    return UpdateStateResponse.getDefaultInstance();
   }
 
   public static final int SUBSCRIBERESPONSE_FIELD_NUMBER = 25;
@@ -1394,7 +1394,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
    * @return Whether the subscribeResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSubscribeResponse() {
     return responseCase_ == 25;
   }
@@ -1402,22 +1402,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
    * @return The subscribeResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.SubscribeResponse getSubscribeResponse() {
+  @Override
+  public SubscribeResponse getSubscribeResponse() {
     if (responseCase_ == 25) {
-       return (com.example.marspioneer.proto.SubscribeResponse) response_;
+       return (SubscribeResponse) response_;
     }
-    return com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance();
+    return SubscribeResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.SubscribeResponseOrBuilder getSubscribeResponseOrBuilder() {
+  @Override
+  public SubscribeResponseOrBuilder getSubscribeResponseOrBuilder() {
     if (responseCase_ == 25) {
-       return (com.example.marspioneer.proto.SubscribeResponse) response_;
+       return (SubscribeResponse) response_;
     }
-    return com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance();
+    return SubscribeResponse.getDefaultInstance();
   }
 
   public static final int CREATEPLAYERRESPONSE_FIELD_NUMBER = 26;
@@ -1425,7 +1425,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
    * @return Whether the createPlayerResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasCreatePlayerResponse() {
     return responseCase_ == 26;
   }
@@ -1433,22 +1433,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
    * @return The createPlayerResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreatePlayerResponse getCreatePlayerResponse() {
+  @Override
+  public CreatePlayerResponse getCreatePlayerResponse() {
     if (responseCase_ == 26) {
-       return (com.example.marspioneer.proto.CreatePlayerResponse) response_;
+       return (CreatePlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance();
+    return CreatePlayerResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreatePlayerResponseOrBuilder getCreatePlayerResponseOrBuilder() {
+  @Override
+  public CreatePlayerResponseOrBuilder getCreatePlayerResponseOrBuilder() {
     if (responseCase_ == 26) {
-       return (com.example.marspioneer.proto.CreatePlayerResponse) response_;
+       return (CreatePlayerResponse) response_;
     }
-    return com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance();
+    return CreatePlayerResponse.getDefaultInstance();
   }
 
   public static final int GETWORLDRESPONSE_FIELD_NUMBER = 27;
@@ -1456,7 +1456,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
    * @return Whether the getWorldResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasGetWorldResponse() {
     return responseCase_ == 27;
   }
@@ -1464,22 +1464,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
    * @return The getWorldResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetWorldResponse getGetWorldResponse() {
+  @Override
+  public GetWorldResponse getGetWorldResponse() {
     if (responseCase_ == 27) {
-       return (com.example.marspioneer.proto.GetWorldResponse) response_;
+       return (GetWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance();
+    return GetWorldResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetWorldResponseOrBuilder getGetWorldResponseOrBuilder() {
+  @Override
+  public GetWorldResponseOrBuilder getGetWorldResponseOrBuilder() {
     if (responseCase_ == 27) {
-       return (com.example.marspioneer.proto.GetWorldResponse) response_;
+       return (GetWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance();
+    return GetWorldResponse.getDefaultInstance();
   }
 
   public static final int UPDATEBUILDINGTYPERESPONSE_FIELD_NUMBER = 28;
@@ -1487,7 +1487,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
    * @return Whether the updateBuildingTypeResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUpdateBuildingTypeResponse() {
     return responseCase_ == 28;
   }
@@ -1495,22 +1495,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
    * @return The updateBuildingTypeResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateBuildingTypeResponse getUpdateBuildingTypeResponse() {
+  @Override
+  public UpdateBuildingTypeResponse getUpdateBuildingTypeResponse() {
     if (responseCase_ == 28) {
-       return (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_;
+       return (UpdateBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance();
+    return UpdateBuildingTypeResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.UpdateBuildingTypeResponseOrBuilder getUpdateBuildingTypeResponseOrBuilder() {
+  @Override
+  public UpdateBuildingTypeResponseOrBuilder getUpdateBuildingTypeResponseOrBuilder() {
     if (responseCase_ == 28) {
-       return (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_;
+       return (UpdateBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance();
+    return UpdateBuildingTypeResponse.getDefaultInstance();
   }
 
   public static final int DELETETEAMRESPONSE_FIELD_NUMBER = 29;
@@ -1518,7 +1518,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
    * @return Whether the deleteTeamResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDeleteTeamResponse() {
     return responseCase_ == 29;
   }
@@ -1526,22 +1526,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
    * @return The deleteTeamResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeleteTeamResponse getDeleteTeamResponse() {
+  @Override
+  public DeleteTeamResponse getDeleteTeamResponse() {
     if (responseCase_ == 29) {
-       return (com.example.marspioneer.proto.DeleteTeamResponse) response_;
+       return (DeleteTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance();
+    return DeleteTeamResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.DeleteTeamResponseOrBuilder getDeleteTeamResponseOrBuilder() {
+  @Override
+  public DeleteTeamResponseOrBuilder getDeleteTeamResponseOrBuilder() {
     if (responseCase_ == 29) {
-       return (com.example.marspioneer.proto.DeleteTeamResponse) response_;
+       return (DeleteTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance();
+    return DeleteTeamResponse.getDefaultInstance();
   }
 
   public static final int LEAVEWORLDRESPONSE_FIELD_NUMBER = 30;
@@ -1549,7 +1549,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
    * @return Whether the leaveWorldResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasLeaveWorldResponse() {
     return responseCase_ == 30;
   }
@@ -1557,22 +1557,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
    * @return The leaveWorldResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.LeaveWorldResponse getLeaveWorldResponse() {
+  @Override
+  public LeaveWorldResponse getLeaveWorldResponse() {
     if (responseCase_ == 30) {
-       return (com.example.marspioneer.proto.LeaveWorldResponse) response_;
+       return (LeaveWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance();
+    return LeaveWorldResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.LeaveWorldResponseOrBuilder getLeaveWorldResponseOrBuilder() {
+  @Override
+  public LeaveWorldResponseOrBuilder getLeaveWorldResponseOrBuilder() {
     if (responseCase_ == 30) {
-       return (com.example.marspioneer.proto.LeaveWorldResponse) response_;
+       return (LeaveWorldResponse) response_;
     }
-    return com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance();
+    return LeaveWorldResponse.getDefaultInstance();
   }
 
   public static final int GETBUILDINGTYPERESPONSE_FIELD_NUMBER = 31;
@@ -1580,7 +1580,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
    * @return Whether the getBuildingTypeResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasGetBuildingTypeResponse() {
     return responseCase_ == 31;
   }
@@ -1588,22 +1588,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
    * @return The getBuildingTypeResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetBuildingTypeResponse getGetBuildingTypeResponse() {
+  @Override
+  public GetBuildingTypeResponse getGetBuildingTypeResponse() {
     if (responseCase_ == 31) {
-       return (com.example.marspioneer.proto.GetBuildingTypeResponse) response_;
+       return (GetBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance();
+    return GetBuildingTypeResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.GetBuildingTypeResponseOrBuilder getGetBuildingTypeResponseOrBuilder() {
+  @Override
+  public GetBuildingTypeResponseOrBuilder getGetBuildingTypeResponseOrBuilder() {
     if (responseCase_ == 31) {
-       return (com.example.marspioneer.proto.GetBuildingTypeResponse) response_;
+       return (GetBuildingTypeResponse) response_;
     }
-    return com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance();
+    return GetBuildingTypeResponse.getDefaultInstance();
   }
 
   public static final int LISTPLAYERSRESPONSE_FIELD_NUMBER = 32;
@@ -1611,7 +1611,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
    * @return Whether the listPlayersResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasListPlayersResponse() {
     return responseCase_ == 32;
   }
@@ -1619,22 +1619,22 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
    * @return The listPlayersResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListPlayersResponse getListPlayersResponse() {
+  @Override
+  public ListPlayersResponse getListPlayersResponse() {
     if (responseCase_ == 32) {
-       return (com.example.marspioneer.proto.ListPlayersResponse) response_;
+       return (ListPlayersResponse) response_;
     }
-    return com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+    return ListPlayersResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.ListPlayersResponseOrBuilder getListPlayersResponseOrBuilder() {
+  @Override
+  public ListPlayersResponseOrBuilder getListPlayersResponseOrBuilder() {
     if (responseCase_ == 32) {
-       return (com.example.marspioneer.proto.ListPlayersResponse) response_;
+       return (ListPlayersResponse) response_;
     }
-    return com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+    return ListPlayersResponse.getDefaultInstance();
   }
 
   public static final int CREATETEAMRESPONSE_FIELD_NUMBER = 33;
@@ -1642,7 +1642,7 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
    * @return Whether the createTeamResponse field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasCreateTeamResponse() {
     return responseCase_ == 33;
   }
@@ -1650,26 +1650,26 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
    * @return The createTeamResponse.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateTeamResponse getCreateTeamResponse() {
+  @Override
+  public CreateTeamResponse getCreateTeamResponse() {
     if (responseCase_ == 33) {
-       return (com.example.marspioneer.proto.CreateTeamResponse) response_;
+       return (CreateTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance();
+    return CreateTeamResponse.getDefaultInstance();
   }
   /**
    * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateTeamResponseOrBuilder getCreateTeamResponseOrBuilder() {
+  @Override
+  public CreateTeamResponseOrBuilder getCreateTeamResponseOrBuilder() {
     if (responseCase_ == 33) {
-       return (com.example.marspioneer.proto.CreateTeamResponse) response_;
+       return (CreateTeamResponse) response_;
     }
-    return com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance();
+    return CreateTeamResponse.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1679,112 +1679,112 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (responseCase_ == 1) {
-      output.writeMessage(1, (com.example.marspioneer.proto.AuthenticateResponse) response_);
+      output.writeMessage(1, (AuthenticateResponse) response_);
     }
     if (responseCase_ == 2) {
-      output.writeMessage(2, (com.example.marspioneer.proto.DeAuthenticateResponse) response_);
+      output.writeMessage(2, (DeAuthenticateResponse) response_);
     }
     if (responseCase_ == 3) {
-      output.writeMessage(3, (com.example.marspioneer.proto.ListBuildingTypesResponse) response_);
+      output.writeMessage(3, (ListBuildingTypesResponse) response_);
     }
     if (responseCase_ == 4) {
-      output.writeMessage(4, (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_);
+      output.writeMessage(4, (AddPlayerToTeamResponse) response_);
     }
     if (responseCase_ == 5) {
-      output.writeMessage(5, (com.example.marspioneer.proto.CreateWorldResponse) response_);
+      output.writeMessage(5, (CreateWorldResponse) response_);
     }
     if (responseCase_ == 6) {
-      output.writeMessage(6, (com.example.marspioneer.proto.SellBuildingResponse) response_);
+      output.writeMessage(6, (SellBuildingResponse) response_);
     }
     if (responseCase_ == 7) {
-      output.writeMessage(7, (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_);
+      output.writeMessage(7, (DeleteBuildingTypeResponse) response_);
     }
     if (responseCase_ == 8) {
-      output.writeMessage(8, (com.example.marspioneer.proto.UpdatePlayerResponse) response_);
+      output.writeMessage(8, (UpdatePlayerResponse) response_);
     }
     if (responseCase_ == 9) {
-      output.writeMessage(9, (com.example.marspioneer.proto.DeleteWorldResponse) response_);
+      output.writeMessage(9, (DeleteWorldResponse) response_);
     }
     if (responseCase_ == 10) {
-      output.writeMessage(10, (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_);
+      output.writeMessage(10, (CreateBuildingTypeResponse) response_);
     }
     if (responseCase_ == 11) {
-      output.writeMessage(11, (com.example.marspioneer.proto.UnsubscribeResponse) response_);
+      output.writeMessage(11, (UnsubscribeResponse) response_);
     }
     if (responseCase_ == 12) {
-      output.writeMessage(12, (com.example.marspioneer.proto.GetPlayerResponse) response_);
+      output.writeMessage(12, (GetPlayerResponse) response_);
     }
     if (responseCase_ == 13) {
-      output.writeMessage(13, (com.example.marspioneer.proto.ListTeamPlayersResponse) response_);
+      output.writeMessage(13, (ListTeamPlayersResponse) response_);
     }
     if (responseCase_ == 14) {
-      output.writeMessage(14, (com.example.marspioneer.proto.GetTeamResponse) response_);
+      output.writeMessage(14, (GetTeamResponse) response_);
     }
     if (responseCase_ == 15) {
-      output.writeMessage(15, (com.example.marspioneer.proto.ListWorldsResponse) response_);
+      output.writeMessage(15, (ListWorldsResponse) response_);
     }
     if (responseCase_ == 16) {
-      output.writeMessage(16, (com.example.marspioneer.proto.UpdateWorldResponse) response_);
+      output.writeMessage(16, (UpdateWorldResponse) response_);
     }
     if (responseCase_ == 17) {
-      output.writeMessage(17, (com.example.marspioneer.proto.UpdateTeamResponse) response_);
+      output.writeMessage(17, (UpdateTeamResponse) response_);
     }
     if (responseCase_ == 18) {
-      output.writeMessage(18, (com.example.marspioneer.proto.ListTeamsResponse) response_);
+      output.writeMessage(18, (ListTeamsResponse) response_);
     }
     if (responseCase_ == 19) {
-      output.writeMessage(19, (com.example.marspioneer.proto.JoinWorldResponse) response_);
+      output.writeMessage(19, (JoinWorldResponse) response_);
     }
     if (responseCase_ == 20) {
-      output.writeMessage(20, (com.example.marspioneer.proto.DeletePlayerResponse) response_);
+      output.writeMessage(20, (DeletePlayerResponse) response_);
     }
     if (responseCase_ == 21) {
-      output.writeMessage(21, (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_);
+      output.writeMessage(21, (RemovePlayerFromTeamResponse) response_);
     }
     if (responseCase_ == 22) {
-      output.writeMessage(22, (com.example.marspioneer.proto.BuildResponse) response_);
+      output.writeMessage(22, (BuildResponse) response_);
     }
     if (responseCase_ == 23) {
-      output.writeMessage(23, (com.example.marspioneer.proto.GetStateResponse) response_);
+      output.writeMessage(23, (GetStateResponse) response_);
     }
     if (responseCase_ == 24) {
-      output.writeMessage(24, (com.example.marspioneer.proto.UpdateStateResponse) response_);
+      output.writeMessage(24, (UpdateStateResponse) response_);
     }
     if (responseCase_ == 25) {
-      output.writeMessage(25, (com.example.marspioneer.proto.SubscribeResponse) response_);
+      output.writeMessage(25, (SubscribeResponse) response_);
     }
     if (responseCase_ == 26) {
-      output.writeMessage(26, (com.example.marspioneer.proto.CreatePlayerResponse) response_);
+      output.writeMessage(26, (CreatePlayerResponse) response_);
     }
     if (responseCase_ == 27) {
-      output.writeMessage(27, (com.example.marspioneer.proto.GetWorldResponse) response_);
+      output.writeMessage(27, (GetWorldResponse) response_);
     }
     if (responseCase_ == 28) {
-      output.writeMessage(28, (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_);
+      output.writeMessage(28, (UpdateBuildingTypeResponse) response_);
     }
     if (responseCase_ == 29) {
-      output.writeMessage(29, (com.example.marspioneer.proto.DeleteTeamResponse) response_);
+      output.writeMessage(29, (DeleteTeamResponse) response_);
     }
     if (responseCase_ == 30) {
-      output.writeMessage(30, (com.example.marspioneer.proto.LeaveWorldResponse) response_);
+      output.writeMessage(30, (LeaveWorldResponse) response_);
     }
     if (responseCase_ == 31) {
-      output.writeMessage(31, (com.example.marspioneer.proto.GetBuildingTypeResponse) response_);
+      output.writeMessage(31, (GetBuildingTypeResponse) response_);
     }
     if (responseCase_ == 32) {
-      output.writeMessage(32, (com.example.marspioneer.proto.ListPlayersResponse) response_);
+      output.writeMessage(32, (ListPlayersResponse) response_);
     }
     if (responseCase_ == 33) {
-      output.writeMessage(33, (com.example.marspioneer.proto.CreateTeamResponse) response_);
+      output.writeMessage(33, (CreateTeamResponse) response_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1792,150 +1792,150 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (responseCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.example.marspioneer.proto.AuthenticateResponse) response_);
+        .computeMessageSize(1, (AuthenticateResponse) response_);
     }
     if (responseCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.example.marspioneer.proto.DeAuthenticateResponse) response_);
+        .computeMessageSize(2, (DeAuthenticateResponse) response_);
     }
     if (responseCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.example.marspioneer.proto.ListBuildingTypesResponse) response_);
+        .computeMessageSize(3, (ListBuildingTypesResponse) response_);
     }
     if (responseCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_);
+        .computeMessageSize(4, (AddPlayerToTeamResponse) response_);
     }
     if (responseCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.example.marspioneer.proto.CreateWorldResponse) response_);
+        .computeMessageSize(5, (CreateWorldResponse) response_);
     }
     if (responseCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.example.marspioneer.proto.SellBuildingResponse) response_);
+        .computeMessageSize(6, (SellBuildingResponse) response_);
     }
     if (responseCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_);
+        .computeMessageSize(7, (DeleteBuildingTypeResponse) response_);
     }
     if (responseCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (com.example.marspioneer.proto.UpdatePlayerResponse) response_);
+        .computeMessageSize(8, (UpdatePlayerResponse) response_);
     }
     if (responseCase_ == 9) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (com.example.marspioneer.proto.DeleteWorldResponse) response_);
+        .computeMessageSize(9, (DeleteWorldResponse) response_);
     }
     if (responseCase_ == 10) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_);
+        .computeMessageSize(10, (CreateBuildingTypeResponse) response_);
     }
     if (responseCase_ == 11) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, (com.example.marspioneer.proto.UnsubscribeResponse) response_);
+        .computeMessageSize(11, (UnsubscribeResponse) response_);
     }
     if (responseCase_ == 12) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, (com.example.marspioneer.proto.GetPlayerResponse) response_);
+        .computeMessageSize(12, (GetPlayerResponse) response_);
     }
     if (responseCase_ == 13) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, (com.example.marspioneer.proto.ListTeamPlayersResponse) response_);
+        .computeMessageSize(13, (ListTeamPlayersResponse) response_);
     }
     if (responseCase_ == 14) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, (com.example.marspioneer.proto.GetTeamResponse) response_);
+        .computeMessageSize(14, (GetTeamResponse) response_);
     }
     if (responseCase_ == 15) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, (com.example.marspioneer.proto.ListWorldsResponse) response_);
+        .computeMessageSize(15, (ListWorldsResponse) response_);
     }
     if (responseCase_ == 16) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(16, (com.example.marspioneer.proto.UpdateWorldResponse) response_);
+        .computeMessageSize(16, (UpdateWorldResponse) response_);
     }
     if (responseCase_ == 17) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(17, (com.example.marspioneer.proto.UpdateTeamResponse) response_);
+        .computeMessageSize(17, (UpdateTeamResponse) response_);
     }
     if (responseCase_ == 18) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, (com.example.marspioneer.proto.ListTeamsResponse) response_);
+        .computeMessageSize(18, (ListTeamsResponse) response_);
     }
     if (responseCase_ == 19) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, (com.example.marspioneer.proto.JoinWorldResponse) response_);
+        .computeMessageSize(19, (JoinWorldResponse) response_);
     }
     if (responseCase_ == 20) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(20, (com.example.marspioneer.proto.DeletePlayerResponse) response_);
+        .computeMessageSize(20, (DeletePlayerResponse) response_);
     }
     if (responseCase_ == 21) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(21, (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_);
+        .computeMessageSize(21, (RemovePlayerFromTeamResponse) response_);
     }
     if (responseCase_ == 22) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(22, (com.example.marspioneer.proto.BuildResponse) response_);
+        .computeMessageSize(22, (BuildResponse) response_);
     }
     if (responseCase_ == 23) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(23, (com.example.marspioneer.proto.GetStateResponse) response_);
+        .computeMessageSize(23, (GetStateResponse) response_);
     }
     if (responseCase_ == 24) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(24, (com.example.marspioneer.proto.UpdateStateResponse) response_);
+        .computeMessageSize(24, (UpdateStateResponse) response_);
     }
     if (responseCase_ == 25) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(25, (com.example.marspioneer.proto.SubscribeResponse) response_);
+        .computeMessageSize(25, (SubscribeResponse) response_);
     }
     if (responseCase_ == 26) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(26, (com.example.marspioneer.proto.CreatePlayerResponse) response_);
+        .computeMessageSize(26, (CreatePlayerResponse) response_);
     }
     if (responseCase_ == 27) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(27, (com.example.marspioneer.proto.GetWorldResponse) response_);
+        .computeMessageSize(27, (GetWorldResponse) response_);
     }
     if (responseCase_ == 28) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(28, (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_);
+        .computeMessageSize(28, (UpdateBuildingTypeResponse) response_);
     }
     if (responseCase_ == 29) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(29, (com.example.marspioneer.proto.DeleteTeamResponse) response_);
+        .computeMessageSize(29, (DeleteTeamResponse) response_);
     }
     if (responseCase_ == 30) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(30, (com.example.marspioneer.proto.LeaveWorldResponse) response_);
+        .computeMessageSize(30, (LeaveWorldResponse) response_);
     }
     if (responseCase_ == 31) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(31, (com.example.marspioneer.proto.GetBuildingTypeResponse) response_);
+        .computeMessageSize(31, (GetBuildingTypeResponse) response_);
     }
     if (responseCase_ == 32) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(32, (com.example.marspioneer.proto.ListPlayersResponse) response_);
+        .computeMessageSize(32, (ListPlayersResponse) response_);
     }
     if (responseCase_ == 33) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(33, (com.example.marspioneer.proto.CreateTeamResponse) response_);
+        .computeMessageSize(33, (CreateTeamResponse) response_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.Response)) {
+    if (!(obj instanceof Response)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.Response other = (com.example.marspioneer.proto.Response) obj;
+    Response other = (Response) obj;
 
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
@@ -2078,7 +2078,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -2226,69 +2226,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(byte[] data)
+  public static Response parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(java.io.InputStream input)
+  public static Response parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.Response parseDelimitedFrom(java.io.InputStream input)
+  public static Response parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.Response parseDelimitedFrom(
+  public static Response parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.Response parseFrom(
+  public static Response parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -2296,23 +2296,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.Response prototype) {
+  public static Builder newBuilder(Response prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -2322,18 +2322,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.Response)
-      com.example.marspioneer.proto.ResponseOrBuilder {
+      ResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.Response.class, com.example.marspioneer.proto.Response.Builder.class);
+              Response.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.Response.newBuilder()
@@ -2342,7 +2342,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -2351,7 +2351,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       responseCase_ = 0;
@@ -2359,29 +2359,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_Response_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.Response getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.Response.getDefaultInstance();
+    @Override
+    public Response getDefaultInstanceForType() {
+      return Response.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.Response build() {
-      com.example.marspioneer.proto.Response result = buildPartial();
+    @Override
+    public Response build() {
+      Response result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.Response buildPartial() {
-      com.example.marspioneer.proto.Response result = new com.example.marspioneer.proto.Response(this);
+    @Override
+    public Response buildPartial() {
+      Response result = new Response(this);
       if (responseCase_ == 1) {
         if (authenticateResponseBuilder_ == null) {
           result.response_ = response_;
@@ -2618,50 +2618,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.Response) {
-        return mergeFrom((com.example.marspioneer.proto.Response)other);
+      if (other instanceof Response) {
+        return mergeFrom((Response)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.Response other) {
-      if (other == com.example.marspioneer.proto.Response.getDefaultInstance()) return this;
+    public Builder mergeFrom(Response other) {
+      if (other == Response.getDefaultInstance()) return this;
       switch (other.getResponseCase()) {
         case AUTHENTICATERESPONSE: {
           mergeAuthenticateResponse(other.getAuthenticateResponse());
@@ -2804,21 +2804,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.Response parsedMessage = null;
+      Response parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.Response) e.getUnfinishedMessage();
+        parsedMessage = (Response) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -2828,7 +2828,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int responseCase_ = 0;
-    private java.lang.Object response_;
+    private Object response_;
     public ResponseCase
         getResponseCase() {
       return ResponseCase.forNumber(
@@ -2844,12 +2844,12 @@ private static final long serialVersionUID = 0L;
 
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.AuthenticateResponse, com.example.marspioneer.proto.AuthenticateResponse.Builder, com.example.marspioneer.proto.AuthenticateResponseOrBuilder> authenticateResponseBuilder_;
+        AuthenticateResponse, AuthenticateResponse.Builder, AuthenticateResponseOrBuilder> authenticateResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      * @return Whether the authenticateResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasAuthenticateResponse() {
       return responseCase_ == 1;
     }
@@ -2857,24 +2857,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      * @return The authenticateResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.AuthenticateResponse getAuthenticateResponse() {
+    @Override
+    public AuthenticateResponse getAuthenticateResponse() {
       if (authenticateResponseBuilder_ == null) {
         if (responseCase_ == 1) {
-          return (com.example.marspioneer.proto.AuthenticateResponse) response_;
+          return (AuthenticateResponse) response_;
         }
-        return com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance();
+        return AuthenticateResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 1) {
           return authenticateResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance();
+        return AuthenticateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      */
-    public Builder setAuthenticateResponse(com.example.marspioneer.proto.AuthenticateResponse value) {
+    public Builder setAuthenticateResponse(AuthenticateResponse value) {
       if (authenticateResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2891,7 +2891,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      */
     public Builder setAuthenticateResponse(
-        com.example.marspioneer.proto.AuthenticateResponse.Builder builderForValue) {
+        AuthenticateResponse.Builder builderForValue) {
       if (authenticateResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -2904,11 +2904,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      */
-    public Builder mergeAuthenticateResponse(com.example.marspioneer.proto.AuthenticateResponse value) {
+    public Builder mergeAuthenticateResponse(AuthenticateResponse value) {
       if (authenticateResponseBuilder_ == null) {
         if (responseCase_ == 1 &&
-            response_ != com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.AuthenticateResponse.newBuilder((com.example.marspioneer.proto.AuthenticateResponse) response_)
+            response_ != AuthenticateResponse.getDefaultInstance()) {
+          response_ = AuthenticateResponse.newBuilder((AuthenticateResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -2945,36 +2945,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      */
-    public com.example.marspioneer.proto.AuthenticateResponse.Builder getAuthenticateResponseBuilder() {
+    public AuthenticateResponse.Builder getAuthenticateResponseBuilder() {
       return getAuthenticateResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.AuthenticateResponseOrBuilder getAuthenticateResponseOrBuilder() {
+    @Override
+    public AuthenticateResponseOrBuilder getAuthenticateResponseOrBuilder() {
       if ((responseCase_ == 1) && (authenticateResponseBuilder_ != null)) {
         return authenticateResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 1) {
-          return (com.example.marspioneer.proto.AuthenticateResponse) response_;
+          return (AuthenticateResponse) response_;
         }
-        return com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance();
+        return AuthenticateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.AuthenticateResponse authenticateResponse = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.AuthenticateResponse, com.example.marspioneer.proto.AuthenticateResponse.Builder, com.example.marspioneer.proto.AuthenticateResponseOrBuilder> 
+        AuthenticateResponse, AuthenticateResponse.Builder, AuthenticateResponseOrBuilder>
         getAuthenticateResponseFieldBuilder() {
       if (authenticateResponseBuilder_ == null) {
         if (!(responseCase_ == 1)) {
-          response_ = com.example.marspioneer.proto.AuthenticateResponse.getDefaultInstance();
+          response_ = AuthenticateResponse.getDefaultInstance();
         }
         authenticateResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.AuthenticateResponse, com.example.marspioneer.proto.AuthenticateResponse.Builder, com.example.marspioneer.proto.AuthenticateResponseOrBuilder>(
-                (com.example.marspioneer.proto.AuthenticateResponse) response_,
+            AuthenticateResponse, AuthenticateResponse.Builder, AuthenticateResponseOrBuilder>(
+                (AuthenticateResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -2985,12 +2985,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeAuthenticateResponse, com.example.marspioneer.proto.DeAuthenticateResponse.Builder, com.example.marspioneer.proto.DeAuthenticateResponseOrBuilder> deAuthenticateResponseBuilder_;
+        DeAuthenticateResponse, DeAuthenticateResponse.Builder, DeAuthenticateResponseOrBuilder> deAuthenticateResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      * @return Whether the deAuthenticateResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasDeAuthenticateResponse() {
       return responseCase_ == 2;
     }
@@ -2998,24 +2998,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      * @return The deAuthenticateResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeAuthenticateResponse getDeAuthenticateResponse() {
+    @Override
+    public DeAuthenticateResponse getDeAuthenticateResponse() {
       if (deAuthenticateResponseBuilder_ == null) {
         if (responseCase_ == 2) {
-          return (com.example.marspioneer.proto.DeAuthenticateResponse) response_;
+          return (DeAuthenticateResponse) response_;
         }
-        return com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance();
+        return DeAuthenticateResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 2) {
           return deAuthenticateResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance();
+        return DeAuthenticateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      */
-    public Builder setDeAuthenticateResponse(com.example.marspioneer.proto.DeAuthenticateResponse value) {
+    public Builder setDeAuthenticateResponse(DeAuthenticateResponse value) {
       if (deAuthenticateResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3032,7 +3032,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      */
     public Builder setDeAuthenticateResponse(
-        com.example.marspioneer.proto.DeAuthenticateResponse.Builder builderForValue) {
+        DeAuthenticateResponse.Builder builderForValue) {
       if (deAuthenticateResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3045,11 +3045,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      */
-    public Builder mergeDeAuthenticateResponse(com.example.marspioneer.proto.DeAuthenticateResponse value) {
+    public Builder mergeDeAuthenticateResponse(DeAuthenticateResponse value) {
       if (deAuthenticateResponseBuilder_ == null) {
         if (responseCase_ == 2 &&
-            response_ != com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.DeAuthenticateResponse.newBuilder((com.example.marspioneer.proto.DeAuthenticateResponse) response_)
+            response_ != DeAuthenticateResponse.getDefaultInstance()) {
+          response_ = DeAuthenticateResponse.newBuilder((DeAuthenticateResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3086,36 +3086,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      */
-    public com.example.marspioneer.proto.DeAuthenticateResponse.Builder getDeAuthenticateResponseBuilder() {
+    public DeAuthenticateResponse.Builder getDeAuthenticateResponseBuilder() {
       return getDeAuthenticateResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeAuthenticateResponseOrBuilder getDeAuthenticateResponseOrBuilder() {
+    @Override
+    public DeAuthenticateResponseOrBuilder getDeAuthenticateResponseOrBuilder() {
       if ((responseCase_ == 2) && (deAuthenticateResponseBuilder_ != null)) {
         return deAuthenticateResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 2) {
-          return (com.example.marspioneer.proto.DeAuthenticateResponse) response_;
+          return (DeAuthenticateResponse) response_;
         }
-        return com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance();
+        return DeAuthenticateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeAuthenticateResponse deAuthenticateResponse = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeAuthenticateResponse, com.example.marspioneer.proto.DeAuthenticateResponse.Builder, com.example.marspioneer.proto.DeAuthenticateResponseOrBuilder> 
+        DeAuthenticateResponse, DeAuthenticateResponse.Builder, DeAuthenticateResponseOrBuilder>
         getDeAuthenticateResponseFieldBuilder() {
       if (deAuthenticateResponseBuilder_ == null) {
         if (!(responseCase_ == 2)) {
-          response_ = com.example.marspioneer.proto.DeAuthenticateResponse.getDefaultInstance();
+          response_ = DeAuthenticateResponse.getDefaultInstance();
         }
         deAuthenticateResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.DeAuthenticateResponse, com.example.marspioneer.proto.DeAuthenticateResponse.Builder, com.example.marspioneer.proto.DeAuthenticateResponseOrBuilder>(
-                (com.example.marspioneer.proto.DeAuthenticateResponse) response_,
+            DeAuthenticateResponse, DeAuthenticateResponse.Builder, DeAuthenticateResponseOrBuilder>(
+                (DeAuthenticateResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3126,12 +3126,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListBuildingTypesResponse, com.example.marspioneer.proto.ListBuildingTypesResponse.Builder, com.example.marspioneer.proto.ListBuildingTypesResponseOrBuilder> listBuildingTypesResponseBuilder_;
+        ListBuildingTypesResponse, ListBuildingTypesResponse.Builder, ListBuildingTypesResponseOrBuilder> listBuildingTypesResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      * @return Whether the listBuildingTypesResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasListBuildingTypesResponse() {
       return responseCase_ == 3;
     }
@@ -3139,24 +3139,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      * @return The listBuildingTypesResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListBuildingTypesResponse getListBuildingTypesResponse() {
+    @Override
+    public ListBuildingTypesResponse getListBuildingTypesResponse() {
       if (listBuildingTypesResponseBuilder_ == null) {
         if (responseCase_ == 3) {
-          return (com.example.marspioneer.proto.ListBuildingTypesResponse) response_;
+          return (ListBuildingTypesResponse) response_;
         }
-        return com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance();
+        return ListBuildingTypesResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 3) {
           return listBuildingTypesResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance();
+        return ListBuildingTypesResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      */
-    public Builder setListBuildingTypesResponse(com.example.marspioneer.proto.ListBuildingTypesResponse value) {
+    public Builder setListBuildingTypesResponse(ListBuildingTypesResponse value) {
       if (listBuildingTypesResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3173,7 +3173,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      */
     public Builder setListBuildingTypesResponse(
-        com.example.marspioneer.proto.ListBuildingTypesResponse.Builder builderForValue) {
+        ListBuildingTypesResponse.Builder builderForValue) {
       if (listBuildingTypesResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3186,11 +3186,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      */
-    public Builder mergeListBuildingTypesResponse(com.example.marspioneer.proto.ListBuildingTypesResponse value) {
+    public Builder mergeListBuildingTypesResponse(ListBuildingTypesResponse value) {
       if (listBuildingTypesResponseBuilder_ == null) {
         if (responseCase_ == 3 &&
-            response_ != com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.ListBuildingTypesResponse.newBuilder((com.example.marspioneer.proto.ListBuildingTypesResponse) response_)
+            response_ != ListBuildingTypesResponse.getDefaultInstance()) {
+          response_ = ListBuildingTypesResponse.newBuilder((ListBuildingTypesResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3227,36 +3227,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      */
-    public com.example.marspioneer.proto.ListBuildingTypesResponse.Builder getListBuildingTypesResponseBuilder() {
+    public ListBuildingTypesResponse.Builder getListBuildingTypesResponseBuilder() {
       return getListBuildingTypesResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListBuildingTypesResponseOrBuilder getListBuildingTypesResponseOrBuilder() {
+    @Override
+    public ListBuildingTypesResponseOrBuilder getListBuildingTypesResponseOrBuilder() {
       if ((responseCase_ == 3) && (listBuildingTypesResponseBuilder_ != null)) {
         return listBuildingTypesResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 3) {
-          return (com.example.marspioneer.proto.ListBuildingTypesResponse) response_;
+          return (ListBuildingTypesResponse) response_;
         }
-        return com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance();
+        return ListBuildingTypesResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListBuildingTypesResponse listBuildingTypesResponse = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListBuildingTypesResponse, com.example.marspioneer.proto.ListBuildingTypesResponse.Builder, com.example.marspioneer.proto.ListBuildingTypesResponseOrBuilder> 
+        ListBuildingTypesResponse, ListBuildingTypesResponse.Builder, ListBuildingTypesResponseOrBuilder>
         getListBuildingTypesResponseFieldBuilder() {
       if (listBuildingTypesResponseBuilder_ == null) {
         if (!(responseCase_ == 3)) {
-          response_ = com.example.marspioneer.proto.ListBuildingTypesResponse.getDefaultInstance();
+          response_ = ListBuildingTypesResponse.getDefaultInstance();
         }
         listBuildingTypesResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.ListBuildingTypesResponse, com.example.marspioneer.proto.ListBuildingTypesResponse.Builder, com.example.marspioneer.proto.ListBuildingTypesResponseOrBuilder>(
-                (com.example.marspioneer.proto.ListBuildingTypesResponse) response_,
+            ListBuildingTypesResponse, ListBuildingTypesResponse.Builder, ListBuildingTypesResponseOrBuilder>(
+                (ListBuildingTypesResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3267,12 +3267,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.AddPlayerToTeamResponse, com.example.marspioneer.proto.AddPlayerToTeamResponse.Builder, com.example.marspioneer.proto.AddPlayerToTeamResponseOrBuilder> addPlayerToTeamResponseBuilder_;
+        AddPlayerToTeamResponse, AddPlayerToTeamResponse.Builder, AddPlayerToTeamResponseOrBuilder> addPlayerToTeamResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      * @return Whether the addPlayerToTeamResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasAddPlayerToTeamResponse() {
       return responseCase_ == 4;
     }
@@ -3280,24 +3280,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      * @return The addPlayerToTeamResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.AddPlayerToTeamResponse getAddPlayerToTeamResponse() {
+    @Override
+    public AddPlayerToTeamResponse getAddPlayerToTeamResponse() {
       if (addPlayerToTeamResponseBuilder_ == null) {
         if (responseCase_ == 4) {
-          return (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_;
+          return (AddPlayerToTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance();
+        return AddPlayerToTeamResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 4) {
           return addPlayerToTeamResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance();
+        return AddPlayerToTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      */
-    public Builder setAddPlayerToTeamResponse(com.example.marspioneer.proto.AddPlayerToTeamResponse value) {
+    public Builder setAddPlayerToTeamResponse(AddPlayerToTeamResponse value) {
       if (addPlayerToTeamResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3314,7 +3314,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      */
     public Builder setAddPlayerToTeamResponse(
-        com.example.marspioneer.proto.AddPlayerToTeamResponse.Builder builderForValue) {
+        AddPlayerToTeamResponse.Builder builderForValue) {
       if (addPlayerToTeamResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3327,11 +3327,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      */
-    public Builder mergeAddPlayerToTeamResponse(com.example.marspioneer.proto.AddPlayerToTeamResponse value) {
+    public Builder mergeAddPlayerToTeamResponse(AddPlayerToTeamResponse value) {
       if (addPlayerToTeamResponseBuilder_ == null) {
         if (responseCase_ == 4 &&
-            response_ != com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.AddPlayerToTeamResponse.newBuilder((com.example.marspioneer.proto.AddPlayerToTeamResponse) response_)
+            response_ != AddPlayerToTeamResponse.getDefaultInstance()) {
+          response_ = AddPlayerToTeamResponse.newBuilder((AddPlayerToTeamResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3368,36 +3368,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      */
-    public com.example.marspioneer.proto.AddPlayerToTeamResponse.Builder getAddPlayerToTeamResponseBuilder() {
+    public AddPlayerToTeamResponse.Builder getAddPlayerToTeamResponseBuilder() {
       return getAddPlayerToTeamResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.AddPlayerToTeamResponseOrBuilder getAddPlayerToTeamResponseOrBuilder() {
+    @Override
+    public AddPlayerToTeamResponseOrBuilder getAddPlayerToTeamResponseOrBuilder() {
       if ((responseCase_ == 4) && (addPlayerToTeamResponseBuilder_ != null)) {
         return addPlayerToTeamResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 4) {
-          return (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_;
+          return (AddPlayerToTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance();
+        return AddPlayerToTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.AddPlayerToTeamResponse addPlayerToTeamResponse = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.AddPlayerToTeamResponse, com.example.marspioneer.proto.AddPlayerToTeamResponse.Builder, com.example.marspioneer.proto.AddPlayerToTeamResponseOrBuilder> 
+        AddPlayerToTeamResponse, AddPlayerToTeamResponse.Builder, AddPlayerToTeamResponseOrBuilder>
         getAddPlayerToTeamResponseFieldBuilder() {
       if (addPlayerToTeamResponseBuilder_ == null) {
         if (!(responseCase_ == 4)) {
-          response_ = com.example.marspioneer.proto.AddPlayerToTeamResponse.getDefaultInstance();
+          response_ = AddPlayerToTeamResponse.getDefaultInstance();
         }
         addPlayerToTeamResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.AddPlayerToTeamResponse, com.example.marspioneer.proto.AddPlayerToTeamResponse.Builder, com.example.marspioneer.proto.AddPlayerToTeamResponseOrBuilder>(
-                (com.example.marspioneer.proto.AddPlayerToTeamResponse) response_,
+            AddPlayerToTeamResponse, AddPlayerToTeamResponse.Builder, AddPlayerToTeamResponseOrBuilder>(
+                (AddPlayerToTeamResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3408,12 +3408,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreateWorldResponse, com.example.marspioneer.proto.CreateWorldResponse.Builder, com.example.marspioneer.proto.CreateWorldResponseOrBuilder> createWorldResponseBuilder_;
+        CreateWorldResponse, CreateWorldResponse.Builder, CreateWorldResponseOrBuilder> createWorldResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      * @return Whether the createWorldResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasCreateWorldResponse() {
       return responseCase_ == 5;
     }
@@ -3421,24 +3421,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      * @return The createWorldResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateWorldResponse getCreateWorldResponse() {
+    @Override
+    public CreateWorldResponse getCreateWorldResponse() {
       if (createWorldResponseBuilder_ == null) {
         if (responseCase_ == 5) {
-          return (com.example.marspioneer.proto.CreateWorldResponse) response_;
+          return (CreateWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance();
+        return CreateWorldResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 5) {
           return createWorldResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance();
+        return CreateWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      */
-    public Builder setCreateWorldResponse(com.example.marspioneer.proto.CreateWorldResponse value) {
+    public Builder setCreateWorldResponse(CreateWorldResponse value) {
       if (createWorldResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3455,7 +3455,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      */
     public Builder setCreateWorldResponse(
-        com.example.marspioneer.proto.CreateWorldResponse.Builder builderForValue) {
+        CreateWorldResponse.Builder builderForValue) {
       if (createWorldResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3468,11 +3468,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      */
-    public Builder mergeCreateWorldResponse(com.example.marspioneer.proto.CreateWorldResponse value) {
+    public Builder mergeCreateWorldResponse(CreateWorldResponse value) {
       if (createWorldResponseBuilder_ == null) {
         if (responseCase_ == 5 &&
-            response_ != com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.CreateWorldResponse.newBuilder((com.example.marspioneer.proto.CreateWorldResponse) response_)
+            response_ != CreateWorldResponse.getDefaultInstance()) {
+          response_ = CreateWorldResponse.newBuilder((CreateWorldResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3509,36 +3509,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      */
-    public com.example.marspioneer.proto.CreateWorldResponse.Builder getCreateWorldResponseBuilder() {
+    public CreateWorldResponse.Builder getCreateWorldResponseBuilder() {
       return getCreateWorldResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateWorldResponseOrBuilder getCreateWorldResponseOrBuilder() {
+    @Override
+    public CreateWorldResponseOrBuilder getCreateWorldResponseOrBuilder() {
       if ((responseCase_ == 5) && (createWorldResponseBuilder_ != null)) {
         return createWorldResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 5) {
-          return (com.example.marspioneer.proto.CreateWorldResponse) response_;
+          return (CreateWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance();
+        return CreateWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateWorldResponse createWorldResponse = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreateWorldResponse, com.example.marspioneer.proto.CreateWorldResponse.Builder, com.example.marspioneer.proto.CreateWorldResponseOrBuilder> 
+        CreateWorldResponse, CreateWorldResponse.Builder, CreateWorldResponseOrBuilder>
         getCreateWorldResponseFieldBuilder() {
       if (createWorldResponseBuilder_ == null) {
         if (!(responseCase_ == 5)) {
-          response_ = com.example.marspioneer.proto.CreateWorldResponse.getDefaultInstance();
+          response_ = CreateWorldResponse.getDefaultInstance();
         }
         createWorldResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.CreateWorldResponse, com.example.marspioneer.proto.CreateWorldResponse.Builder, com.example.marspioneer.proto.CreateWorldResponseOrBuilder>(
-                (com.example.marspioneer.proto.CreateWorldResponse) response_,
+            CreateWorldResponse, CreateWorldResponse.Builder, CreateWorldResponseOrBuilder>(
+                (CreateWorldResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3549,12 +3549,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.SellBuildingResponse, com.example.marspioneer.proto.SellBuildingResponse.Builder, com.example.marspioneer.proto.SellBuildingResponseOrBuilder> sellBuildingResponseBuilder_;
+        SellBuildingResponse, SellBuildingResponse.Builder, SellBuildingResponseOrBuilder> sellBuildingResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      * @return Whether the sellBuildingResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasSellBuildingResponse() {
       return responseCase_ == 6;
     }
@@ -3562,24 +3562,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      * @return The sellBuildingResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SellBuildingResponse getSellBuildingResponse() {
+    @Override
+    public SellBuildingResponse getSellBuildingResponse() {
       if (sellBuildingResponseBuilder_ == null) {
         if (responseCase_ == 6) {
-          return (com.example.marspioneer.proto.SellBuildingResponse) response_;
+          return (SellBuildingResponse) response_;
         }
-        return com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance();
+        return SellBuildingResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 6) {
           return sellBuildingResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance();
+        return SellBuildingResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      */
-    public Builder setSellBuildingResponse(com.example.marspioneer.proto.SellBuildingResponse value) {
+    public Builder setSellBuildingResponse(SellBuildingResponse value) {
       if (sellBuildingResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3596,7 +3596,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      */
     public Builder setSellBuildingResponse(
-        com.example.marspioneer.proto.SellBuildingResponse.Builder builderForValue) {
+        SellBuildingResponse.Builder builderForValue) {
       if (sellBuildingResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3609,11 +3609,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      */
-    public Builder mergeSellBuildingResponse(com.example.marspioneer.proto.SellBuildingResponse value) {
+    public Builder mergeSellBuildingResponse(SellBuildingResponse value) {
       if (sellBuildingResponseBuilder_ == null) {
         if (responseCase_ == 6 &&
-            response_ != com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.SellBuildingResponse.newBuilder((com.example.marspioneer.proto.SellBuildingResponse) response_)
+            response_ != SellBuildingResponse.getDefaultInstance()) {
+          response_ = SellBuildingResponse.newBuilder((SellBuildingResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3650,36 +3650,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      */
-    public com.example.marspioneer.proto.SellBuildingResponse.Builder getSellBuildingResponseBuilder() {
+    public SellBuildingResponse.Builder getSellBuildingResponseBuilder() {
       return getSellBuildingResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SellBuildingResponseOrBuilder getSellBuildingResponseOrBuilder() {
+    @Override
+    public SellBuildingResponseOrBuilder getSellBuildingResponseOrBuilder() {
       if ((responseCase_ == 6) && (sellBuildingResponseBuilder_ != null)) {
         return sellBuildingResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 6) {
-          return (com.example.marspioneer.proto.SellBuildingResponse) response_;
+          return (SellBuildingResponse) response_;
         }
-        return com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance();
+        return SellBuildingResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.SellBuildingResponse sellBuildingResponse = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.SellBuildingResponse, com.example.marspioneer.proto.SellBuildingResponse.Builder, com.example.marspioneer.proto.SellBuildingResponseOrBuilder> 
+        SellBuildingResponse, SellBuildingResponse.Builder, SellBuildingResponseOrBuilder>
         getSellBuildingResponseFieldBuilder() {
       if (sellBuildingResponseBuilder_ == null) {
         if (!(responseCase_ == 6)) {
-          response_ = com.example.marspioneer.proto.SellBuildingResponse.getDefaultInstance();
+          response_ = SellBuildingResponse.getDefaultInstance();
         }
         sellBuildingResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.SellBuildingResponse, com.example.marspioneer.proto.SellBuildingResponse.Builder, com.example.marspioneer.proto.SellBuildingResponseOrBuilder>(
-                (com.example.marspioneer.proto.SellBuildingResponse) response_,
+            SellBuildingResponse, SellBuildingResponse.Builder, SellBuildingResponseOrBuilder>(
+                (SellBuildingResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3690,12 +3690,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeleteBuildingTypeResponse, com.example.marspioneer.proto.DeleteBuildingTypeResponse.Builder, com.example.marspioneer.proto.DeleteBuildingTypeResponseOrBuilder> deleteBuildingTypeResponseBuilder_;
+        DeleteBuildingTypeResponse, DeleteBuildingTypeResponse.Builder, DeleteBuildingTypeResponseOrBuilder> deleteBuildingTypeResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      * @return Whether the deleteBuildingTypeResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasDeleteBuildingTypeResponse() {
       return responseCase_ == 7;
     }
@@ -3703,24 +3703,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      * @return The deleteBuildingTypeResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeleteBuildingTypeResponse getDeleteBuildingTypeResponse() {
+    @Override
+    public DeleteBuildingTypeResponse getDeleteBuildingTypeResponse() {
       if (deleteBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 7) {
-          return (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_;
+          return (DeleteBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance();
+        return DeleteBuildingTypeResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 7) {
           return deleteBuildingTypeResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance();
+        return DeleteBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      */
-    public Builder setDeleteBuildingTypeResponse(com.example.marspioneer.proto.DeleteBuildingTypeResponse value) {
+    public Builder setDeleteBuildingTypeResponse(DeleteBuildingTypeResponse value) {
       if (deleteBuildingTypeResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3737,7 +3737,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      */
     public Builder setDeleteBuildingTypeResponse(
-        com.example.marspioneer.proto.DeleteBuildingTypeResponse.Builder builderForValue) {
+        DeleteBuildingTypeResponse.Builder builderForValue) {
       if (deleteBuildingTypeResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3750,11 +3750,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      */
-    public Builder mergeDeleteBuildingTypeResponse(com.example.marspioneer.proto.DeleteBuildingTypeResponse value) {
+    public Builder mergeDeleteBuildingTypeResponse(DeleteBuildingTypeResponse value) {
       if (deleteBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 7 &&
-            response_ != com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.DeleteBuildingTypeResponse.newBuilder((com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_)
+            response_ != DeleteBuildingTypeResponse.getDefaultInstance()) {
+          response_ = DeleteBuildingTypeResponse.newBuilder((DeleteBuildingTypeResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3791,36 +3791,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      */
-    public com.example.marspioneer.proto.DeleteBuildingTypeResponse.Builder getDeleteBuildingTypeResponseBuilder() {
+    public DeleteBuildingTypeResponse.Builder getDeleteBuildingTypeResponseBuilder() {
       return getDeleteBuildingTypeResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeleteBuildingTypeResponseOrBuilder getDeleteBuildingTypeResponseOrBuilder() {
+    @Override
+    public DeleteBuildingTypeResponseOrBuilder getDeleteBuildingTypeResponseOrBuilder() {
       if ((responseCase_ == 7) && (deleteBuildingTypeResponseBuilder_ != null)) {
         return deleteBuildingTypeResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 7) {
-          return (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_;
+          return (DeleteBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance();
+        return DeleteBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteBuildingTypeResponse deleteBuildingTypeResponse = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeleteBuildingTypeResponse, com.example.marspioneer.proto.DeleteBuildingTypeResponse.Builder, com.example.marspioneer.proto.DeleteBuildingTypeResponseOrBuilder> 
+        DeleteBuildingTypeResponse, DeleteBuildingTypeResponse.Builder, DeleteBuildingTypeResponseOrBuilder>
         getDeleteBuildingTypeResponseFieldBuilder() {
       if (deleteBuildingTypeResponseBuilder_ == null) {
         if (!(responseCase_ == 7)) {
-          response_ = com.example.marspioneer.proto.DeleteBuildingTypeResponse.getDefaultInstance();
+          response_ = DeleteBuildingTypeResponse.getDefaultInstance();
         }
         deleteBuildingTypeResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.DeleteBuildingTypeResponse, com.example.marspioneer.proto.DeleteBuildingTypeResponse.Builder, com.example.marspioneer.proto.DeleteBuildingTypeResponseOrBuilder>(
-                (com.example.marspioneer.proto.DeleteBuildingTypeResponse) response_,
+            DeleteBuildingTypeResponse, DeleteBuildingTypeResponse.Builder, DeleteBuildingTypeResponseOrBuilder>(
+                (DeleteBuildingTypeResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3831,12 +3831,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdatePlayerResponse, com.example.marspioneer.proto.UpdatePlayerResponse.Builder, com.example.marspioneer.proto.UpdatePlayerResponseOrBuilder> updatePlayerResponseBuilder_;
+        UpdatePlayerResponse, UpdatePlayerResponse.Builder, UpdatePlayerResponseOrBuilder> updatePlayerResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      * @return Whether the updatePlayerResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasUpdatePlayerResponse() {
       return responseCase_ == 8;
     }
@@ -3844,24 +3844,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      * @return The updatePlayerResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdatePlayerResponse getUpdatePlayerResponse() {
+    @Override
+    public UpdatePlayerResponse getUpdatePlayerResponse() {
       if (updatePlayerResponseBuilder_ == null) {
         if (responseCase_ == 8) {
-          return (com.example.marspioneer.proto.UpdatePlayerResponse) response_;
+          return (UpdatePlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance();
+        return UpdatePlayerResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 8) {
           return updatePlayerResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance();
+        return UpdatePlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      */
-    public Builder setUpdatePlayerResponse(com.example.marspioneer.proto.UpdatePlayerResponse value) {
+    public Builder setUpdatePlayerResponse(UpdatePlayerResponse value) {
       if (updatePlayerResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3878,7 +3878,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      */
     public Builder setUpdatePlayerResponse(
-        com.example.marspioneer.proto.UpdatePlayerResponse.Builder builderForValue) {
+        UpdatePlayerResponse.Builder builderForValue) {
       if (updatePlayerResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -3891,11 +3891,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      */
-    public Builder mergeUpdatePlayerResponse(com.example.marspioneer.proto.UpdatePlayerResponse value) {
+    public Builder mergeUpdatePlayerResponse(UpdatePlayerResponse value) {
       if (updatePlayerResponseBuilder_ == null) {
         if (responseCase_ == 8 &&
-            response_ != com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.UpdatePlayerResponse.newBuilder((com.example.marspioneer.proto.UpdatePlayerResponse) response_)
+            response_ != UpdatePlayerResponse.getDefaultInstance()) {
+          response_ = UpdatePlayerResponse.newBuilder((UpdatePlayerResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -3932,36 +3932,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      */
-    public com.example.marspioneer.proto.UpdatePlayerResponse.Builder getUpdatePlayerResponseBuilder() {
+    public UpdatePlayerResponse.Builder getUpdatePlayerResponseBuilder() {
       return getUpdatePlayerResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdatePlayerResponseOrBuilder getUpdatePlayerResponseOrBuilder() {
+    @Override
+    public UpdatePlayerResponseOrBuilder getUpdatePlayerResponseOrBuilder() {
       if ((responseCase_ == 8) && (updatePlayerResponseBuilder_ != null)) {
         return updatePlayerResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 8) {
-          return (com.example.marspioneer.proto.UpdatePlayerResponse) response_;
+          return (UpdatePlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance();
+        return UpdatePlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdatePlayerResponse updatePlayerResponse = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdatePlayerResponse, com.example.marspioneer.proto.UpdatePlayerResponse.Builder, com.example.marspioneer.proto.UpdatePlayerResponseOrBuilder> 
+        UpdatePlayerResponse, UpdatePlayerResponse.Builder, UpdatePlayerResponseOrBuilder>
         getUpdatePlayerResponseFieldBuilder() {
       if (updatePlayerResponseBuilder_ == null) {
         if (!(responseCase_ == 8)) {
-          response_ = com.example.marspioneer.proto.UpdatePlayerResponse.getDefaultInstance();
+          response_ = UpdatePlayerResponse.getDefaultInstance();
         }
         updatePlayerResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.UpdatePlayerResponse, com.example.marspioneer.proto.UpdatePlayerResponse.Builder, com.example.marspioneer.proto.UpdatePlayerResponseOrBuilder>(
-                (com.example.marspioneer.proto.UpdatePlayerResponse) response_,
+            UpdatePlayerResponse, UpdatePlayerResponse.Builder, UpdatePlayerResponseOrBuilder>(
+                (UpdatePlayerResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -3972,12 +3972,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeleteWorldResponse, com.example.marspioneer.proto.DeleteWorldResponse.Builder, com.example.marspioneer.proto.DeleteWorldResponseOrBuilder> deleteWorldResponseBuilder_;
+        DeleteWorldResponse, DeleteWorldResponse.Builder, DeleteWorldResponseOrBuilder> deleteWorldResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      * @return Whether the deleteWorldResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasDeleteWorldResponse() {
       return responseCase_ == 9;
     }
@@ -3985,24 +3985,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      * @return The deleteWorldResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeleteWorldResponse getDeleteWorldResponse() {
+    @Override
+    public DeleteWorldResponse getDeleteWorldResponse() {
       if (deleteWorldResponseBuilder_ == null) {
         if (responseCase_ == 9) {
-          return (com.example.marspioneer.proto.DeleteWorldResponse) response_;
+          return (DeleteWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance();
+        return DeleteWorldResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 9) {
           return deleteWorldResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance();
+        return DeleteWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      */
-    public Builder setDeleteWorldResponse(com.example.marspioneer.proto.DeleteWorldResponse value) {
+    public Builder setDeleteWorldResponse(DeleteWorldResponse value) {
       if (deleteWorldResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4019,7 +4019,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      */
     public Builder setDeleteWorldResponse(
-        com.example.marspioneer.proto.DeleteWorldResponse.Builder builderForValue) {
+        DeleteWorldResponse.Builder builderForValue) {
       if (deleteWorldResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4032,11 +4032,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      */
-    public Builder mergeDeleteWorldResponse(com.example.marspioneer.proto.DeleteWorldResponse value) {
+    public Builder mergeDeleteWorldResponse(DeleteWorldResponse value) {
       if (deleteWorldResponseBuilder_ == null) {
         if (responseCase_ == 9 &&
-            response_ != com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.DeleteWorldResponse.newBuilder((com.example.marspioneer.proto.DeleteWorldResponse) response_)
+            response_ != DeleteWorldResponse.getDefaultInstance()) {
+          response_ = DeleteWorldResponse.newBuilder((DeleteWorldResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4073,36 +4073,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      */
-    public com.example.marspioneer.proto.DeleteWorldResponse.Builder getDeleteWorldResponseBuilder() {
+    public DeleteWorldResponse.Builder getDeleteWorldResponseBuilder() {
       return getDeleteWorldResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeleteWorldResponseOrBuilder getDeleteWorldResponseOrBuilder() {
+    @Override
+    public DeleteWorldResponseOrBuilder getDeleteWorldResponseOrBuilder() {
       if ((responseCase_ == 9) && (deleteWorldResponseBuilder_ != null)) {
         return deleteWorldResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 9) {
-          return (com.example.marspioneer.proto.DeleteWorldResponse) response_;
+          return (DeleteWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance();
+        return DeleteWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteWorldResponse deleteWorldResponse = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeleteWorldResponse, com.example.marspioneer.proto.DeleteWorldResponse.Builder, com.example.marspioneer.proto.DeleteWorldResponseOrBuilder> 
+        DeleteWorldResponse, DeleteWorldResponse.Builder, DeleteWorldResponseOrBuilder>
         getDeleteWorldResponseFieldBuilder() {
       if (deleteWorldResponseBuilder_ == null) {
         if (!(responseCase_ == 9)) {
-          response_ = com.example.marspioneer.proto.DeleteWorldResponse.getDefaultInstance();
+          response_ = DeleteWorldResponse.getDefaultInstance();
         }
         deleteWorldResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.DeleteWorldResponse, com.example.marspioneer.proto.DeleteWorldResponse.Builder, com.example.marspioneer.proto.DeleteWorldResponseOrBuilder>(
-                (com.example.marspioneer.proto.DeleteWorldResponse) response_,
+            DeleteWorldResponse, DeleteWorldResponse.Builder, DeleteWorldResponseOrBuilder>(
+                (DeleteWorldResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4113,12 +4113,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreateBuildingTypeResponse, com.example.marspioneer.proto.CreateBuildingTypeResponse.Builder, com.example.marspioneer.proto.CreateBuildingTypeResponseOrBuilder> createBuildingTypeResponseBuilder_;
+        CreateBuildingTypeResponse, CreateBuildingTypeResponse.Builder, CreateBuildingTypeResponseOrBuilder> createBuildingTypeResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      * @return Whether the createBuildingTypeResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasCreateBuildingTypeResponse() {
       return responseCase_ == 10;
     }
@@ -4126,24 +4126,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      * @return The createBuildingTypeResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateBuildingTypeResponse getCreateBuildingTypeResponse() {
+    @Override
+    public CreateBuildingTypeResponse getCreateBuildingTypeResponse() {
       if (createBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 10) {
-          return (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_;
+          return (CreateBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance();
+        return CreateBuildingTypeResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 10) {
           return createBuildingTypeResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance();
+        return CreateBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      */
-    public Builder setCreateBuildingTypeResponse(com.example.marspioneer.proto.CreateBuildingTypeResponse value) {
+    public Builder setCreateBuildingTypeResponse(CreateBuildingTypeResponse value) {
       if (createBuildingTypeResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4160,7 +4160,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      */
     public Builder setCreateBuildingTypeResponse(
-        com.example.marspioneer.proto.CreateBuildingTypeResponse.Builder builderForValue) {
+        CreateBuildingTypeResponse.Builder builderForValue) {
       if (createBuildingTypeResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4173,11 +4173,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      */
-    public Builder mergeCreateBuildingTypeResponse(com.example.marspioneer.proto.CreateBuildingTypeResponse value) {
+    public Builder mergeCreateBuildingTypeResponse(CreateBuildingTypeResponse value) {
       if (createBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 10 &&
-            response_ != com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.CreateBuildingTypeResponse.newBuilder((com.example.marspioneer.proto.CreateBuildingTypeResponse) response_)
+            response_ != CreateBuildingTypeResponse.getDefaultInstance()) {
+          response_ = CreateBuildingTypeResponse.newBuilder((CreateBuildingTypeResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4214,36 +4214,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      */
-    public com.example.marspioneer.proto.CreateBuildingTypeResponse.Builder getCreateBuildingTypeResponseBuilder() {
+    public CreateBuildingTypeResponse.Builder getCreateBuildingTypeResponseBuilder() {
       return getCreateBuildingTypeResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateBuildingTypeResponseOrBuilder getCreateBuildingTypeResponseOrBuilder() {
+    @Override
+    public CreateBuildingTypeResponseOrBuilder getCreateBuildingTypeResponseOrBuilder() {
       if ((responseCase_ == 10) && (createBuildingTypeResponseBuilder_ != null)) {
         return createBuildingTypeResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 10) {
-          return (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_;
+          return (CreateBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance();
+        return CreateBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateBuildingTypeResponse createBuildingTypeResponse = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreateBuildingTypeResponse, com.example.marspioneer.proto.CreateBuildingTypeResponse.Builder, com.example.marspioneer.proto.CreateBuildingTypeResponseOrBuilder> 
+        CreateBuildingTypeResponse, CreateBuildingTypeResponse.Builder, CreateBuildingTypeResponseOrBuilder>
         getCreateBuildingTypeResponseFieldBuilder() {
       if (createBuildingTypeResponseBuilder_ == null) {
         if (!(responseCase_ == 10)) {
-          response_ = com.example.marspioneer.proto.CreateBuildingTypeResponse.getDefaultInstance();
+          response_ = CreateBuildingTypeResponse.getDefaultInstance();
         }
         createBuildingTypeResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.CreateBuildingTypeResponse, com.example.marspioneer.proto.CreateBuildingTypeResponse.Builder, com.example.marspioneer.proto.CreateBuildingTypeResponseOrBuilder>(
-                (com.example.marspioneer.proto.CreateBuildingTypeResponse) response_,
+            CreateBuildingTypeResponse, CreateBuildingTypeResponse.Builder, CreateBuildingTypeResponseOrBuilder>(
+                (CreateBuildingTypeResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4254,12 +4254,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UnsubscribeResponse, com.example.marspioneer.proto.UnsubscribeResponse.Builder, com.example.marspioneer.proto.UnsubscribeResponseOrBuilder> unsubscribeResponseBuilder_;
+        UnsubscribeResponse, UnsubscribeResponse.Builder, UnsubscribeResponseOrBuilder> unsubscribeResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      * @return Whether the unsubscribeResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasUnsubscribeResponse() {
       return responseCase_ == 11;
     }
@@ -4267,24 +4267,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      * @return The unsubscribeResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UnsubscribeResponse getUnsubscribeResponse() {
+    @Override
+    public UnsubscribeResponse getUnsubscribeResponse() {
       if (unsubscribeResponseBuilder_ == null) {
         if (responseCase_ == 11) {
-          return (com.example.marspioneer.proto.UnsubscribeResponse) response_;
+          return (UnsubscribeResponse) response_;
         }
-        return com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance();
+        return UnsubscribeResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 11) {
           return unsubscribeResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance();
+        return UnsubscribeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      */
-    public Builder setUnsubscribeResponse(com.example.marspioneer.proto.UnsubscribeResponse value) {
+    public Builder setUnsubscribeResponse(UnsubscribeResponse value) {
       if (unsubscribeResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4301,7 +4301,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      */
     public Builder setUnsubscribeResponse(
-        com.example.marspioneer.proto.UnsubscribeResponse.Builder builderForValue) {
+        UnsubscribeResponse.Builder builderForValue) {
       if (unsubscribeResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4314,11 +4314,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      */
-    public Builder mergeUnsubscribeResponse(com.example.marspioneer.proto.UnsubscribeResponse value) {
+    public Builder mergeUnsubscribeResponse(UnsubscribeResponse value) {
       if (unsubscribeResponseBuilder_ == null) {
         if (responseCase_ == 11 &&
-            response_ != com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.UnsubscribeResponse.newBuilder((com.example.marspioneer.proto.UnsubscribeResponse) response_)
+            response_ != UnsubscribeResponse.getDefaultInstance()) {
+          response_ = UnsubscribeResponse.newBuilder((UnsubscribeResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4355,36 +4355,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      */
-    public com.example.marspioneer.proto.UnsubscribeResponse.Builder getUnsubscribeResponseBuilder() {
+    public UnsubscribeResponse.Builder getUnsubscribeResponseBuilder() {
       return getUnsubscribeResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UnsubscribeResponseOrBuilder getUnsubscribeResponseOrBuilder() {
+    @Override
+    public UnsubscribeResponseOrBuilder getUnsubscribeResponseOrBuilder() {
       if ((responseCase_ == 11) && (unsubscribeResponseBuilder_ != null)) {
         return unsubscribeResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 11) {
-          return (com.example.marspioneer.proto.UnsubscribeResponse) response_;
+          return (UnsubscribeResponse) response_;
         }
-        return com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance();
+        return UnsubscribeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UnsubscribeResponse unsubscribeResponse = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UnsubscribeResponse, com.example.marspioneer.proto.UnsubscribeResponse.Builder, com.example.marspioneer.proto.UnsubscribeResponseOrBuilder> 
+        UnsubscribeResponse, UnsubscribeResponse.Builder, UnsubscribeResponseOrBuilder>
         getUnsubscribeResponseFieldBuilder() {
       if (unsubscribeResponseBuilder_ == null) {
         if (!(responseCase_ == 11)) {
-          response_ = com.example.marspioneer.proto.UnsubscribeResponse.getDefaultInstance();
+          response_ = UnsubscribeResponse.getDefaultInstance();
         }
         unsubscribeResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.UnsubscribeResponse, com.example.marspioneer.proto.UnsubscribeResponse.Builder, com.example.marspioneer.proto.UnsubscribeResponseOrBuilder>(
-                (com.example.marspioneer.proto.UnsubscribeResponse) response_,
+            UnsubscribeResponse, UnsubscribeResponse.Builder, UnsubscribeResponseOrBuilder>(
+                (UnsubscribeResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4395,12 +4395,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetPlayerResponse, com.example.marspioneer.proto.GetPlayerResponse.Builder, com.example.marspioneer.proto.GetPlayerResponseOrBuilder> getPlayerResponseBuilder_;
+        GetPlayerResponse, GetPlayerResponse.Builder, GetPlayerResponseOrBuilder> getPlayerResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      * @return Whether the getPlayerResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasGetPlayerResponse() {
       return responseCase_ == 12;
     }
@@ -4408,24 +4408,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      * @return The getPlayerResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetPlayerResponse getGetPlayerResponse() {
+    @Override
+    public GetPlayerResponse getGetPlayerResponse() {
       if (getPlayerResponseBuilder_ == null) {
         if (responseCase_ == 12) {
-          return (com.example.marspioneer.proto.GetPlayerResponse) response_;
+          return (GetPlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance();
+        return GetPlayerResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 12) {
           return getPlayerResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance();
+        return GetPlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      */
-    public Builder setGetPlayerResponse(com.example.marspioneer.proto.GetPlayerResponse value) {
+    public Builder setGetPlayerResponse(GetPlayerResponse value) {
       if (getPlayerResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4442,7 +4442,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      */
     public Builder setGetPlayerResponse(
-        com.example.marspioneer.proto.GetPlayerResponse.Builder builderForValue) {
+        GetPlayerResponse.Builder builderForValue) {
       if (getPlayerResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4455,11 +4455,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      */
-    public Builder mergeGetPlayerResponse(com.example.marspioneer.proto.GetPlayerResponse value) {
+    public Builder mergeGetPlayerResponse(GetPlayerResponse value) {
       if (getPlayerResponseBuilder_ == null) {
         if (responseCase_ == 12 &&
-            response_ != com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.GetPlayerResponse.newBuilder((com.example.marspioneer.proto.GetPlayerResponse) response_)
+            response_ != GetPlayerResponse.getDefaultInstance()) {
+          response_ = GetPlayerResponse.newBuilder((GetPlayerResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4496,36 +4496,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      */
-    public com.example.marspioneer.proto.GetPlayerResponse.Builder getGetPlayerResponseBuilder() {
+    public GetPlayerResponse.Builder getGetPlayerResponseBuilder() {
       return getGetPlayerResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetPlayerResponseOrBuilder getGetPlayerResponseOrBuilder() {
+    @Override
+    public GetPlayerResponseOrBuilder getGetPlayerResponseOrBuilder() {
       if ((responseCase_ == 12) && (getPlayerResponseBuilder_ != null)) {
         return getPlayerResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 12) {
-          return (com.example.marspioneer.proto.GetPlayerResponse) response_;
+          return (GetPlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance();
+        return GetPlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetPlayerResponse getPlayerResponse = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetPlayerResponse, com.example.marspioneer.proto.GetPlayerResponse.Builder, com.example.marspioneer.proto.GetPlayerResponseOrBuilder> 
+        GetPlayerResponse, GetPlayerResponse.Builder, GetPlayerResponseOrBuilder>
         getGetPlayerResponseFieldBuilder() {
       if (getPlayerResponseBuilder_ == null) {
         if (!(responseCase_ == 12)) {
-          response_ = com.example.marspioneer.proto.GetPlayerResponse.getDefaultInstance();
+          response_ = GetPlayerResponse.getDefaultInstance();
         }
         getPlayerResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.GetPlayerResponse, com.example.marspioneer.proto.GetPlayerResponse.Builder, com.example.marspioneer.proto.GetPlayerResponseOrBuilder>(
-                (com.example.marspioneer.proto.GetPlayerResponse) response_,
+            GetPlayerResponse, GetPlayerResponse.Builder, GetPlayerResponseOrBuilder>(
+                (GetPlayerResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4536,12 +4536,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListTeamPlayersResponse, com.example.marspioneer.proto.ListTeamPlayersResponse.Builder, com.example.marspioneer.proto.ListTeamPlayersResponseOrBuilder> listTeamPlayersResponseBuilder_;
+        ListTeamPlayersResponse, ListTeamPlayersResponse.Builder, ListTeamPlayersResponseOrBuilder> listTeamPlayersResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      * @return Whether the listTeamPlayersResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasListTeamPlayersResponse() {
       return responseCase_ == 13;
     }
@@ -4549,24 +4549,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      * @return The listTeamPlayersResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListTeamPlayersResponse getListTeamPlayersResponse() {
+    @Override
+    public ListTeamPlayersResponse getListTeamPlayersResponse() {
       if (listTeamPlayersResponseBuilder_ == null) {
         if (responseCase_ == 13) {
-          return (com.example.marspioneer.proto.ListTeamPlayersResponse) response_;
+          return (ListTeamPlayersResponse) response_;
         }
-        return com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance();
+        return ListTeamPlayersResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 13) {
           return listTeamPlayersResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance();
+        return ListTeamPlayersResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      */
-    public Builder setListTeamPlayersResponse(com.example.marspioneer.proto.ListTeamPlayersResponse value) {
+    public Builder setListTeamPlayersResponse(ListTeamPlayersResponse value) {
       if (listTeamPlayersResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4583,7 +4583,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      */
     public Builder setListTeamPlayersResponse(
-        com.example.marspioneer.proto.ListTeamPlayersResponse.Builder builderForValue) {
+        ListTeamPlayersResponse.Builder builderForValue) {
       if (listTeamPlayersResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4596,11 +4596,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      */
-    public Builder mergeListTeamPlayersResponse(com.example.marspioneer.proto.ListTeamPlayersResponse value) {
+    public Builder mergeListTeamPlayersResponse(ListTeamPlayersResponse value) {
       if (listTeamPlayersResponseBuilder_ == null) {
         if (responseCase_ == 13 &&
-            response_ != com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.ListTeamPlayersResponse.newBuilder((com.example.marspioneer.proto.ListTeamPlayersResponse) response_)
+            response_ != ListTeamPlayersResponse.getDefaultInstance()) {
+          response_ = ListTeamPlayersResponse.newBuilder((ListTeamPlayersResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4637,36 +4637,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      */
-    public com.example.marspioneer.proto.ListTeamPlayersResponse.Builder getListTeamPlayersResponseBuilder() {
+    public ListTeamPlayersResponse.Builder getListTeamPlayersResponseBuilder() {
       return getListTeamPlayersResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListTeamPlayersResponseOrBuilder getListTeamPlayersResponseOrBuilder() {
+    @Override
+    public ListTeamPlayersResponseOrBuilder getListTeamPlayersResponseOrBuilder() {
       if ((responseCase_ == 13) && (listTeamPlayersResponseBuilder_ != null)) {
         return listTeamPlayersResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 13) {
-          return (com.example.marspioneer.proto.ListTeamPlayersResponse) response_;
+          return (ListTeamPlayersResponse) response_;
         }
-        return com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance();
+        return ListTeamPlayersResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListTeamPlayersResponse listTeamPlayersResponse = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListTeamPlayersResponse, com.example.marspioneer.proto.ListTeamPlayersResponse.Builder, com.example.marspioneer.proto.ListTeamPlayersResponseOrBuilder> 
+        ListTeamPlayersResponse, ListTeamPlayersResponse.Builder, ListTeamPlayersResponseOrBuilder>
         getListTeamPlayersResponseFieldBuilder() {
       if (listTeamPlayersResponseBuilder_ == null) {
         if (!(responseCase_ == 13)) {
-          response_ = com.example.marspioneer.proto.ListTeamPlayersResponse.getDefaultInstance();
+          response_ = ListTeamPlayersResponse.getDefaultInstance();
         }
         listTeamPlayersResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.ListTeamPlayersResponse, com.example.marspioneer.proto.ListTeamPlayersResponse.Builder, com.example.marspioneer.proto.ListTeamPlayersResponseOrBuilder>(
-                (com.example.marspioneer.proto.ListTeamPlayersResponse) response_,
+            ListTeamPlayersResponse, ListTeamPlayersResponse.Builder, ListTeamPlayersResponseOrBuilder>(
+                (ListTeamPlayersResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4677,12 +4677,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetTeamResponse, com.example.marspioneer.proto.GetTeamResponse.Builder, com.example.marspioneer.proto.GetTeamResponseOrBuilder> getTeamResponseBuilder_;
+        GetTeamResponse, GetTeamResponse.Builder, GetTeamResponseOrBuilder> getTeamResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      * @return Whether the getTeamResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasGetTeamResponse() {
       return responseCase_ == 14;
     }
@@ -4690,24 +4690,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      * @return The getTeamResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetTeamResponse getGetTeamResponse() {
+    @Override
+    public GetTeamResponse getGetTeamResponse() {
       if (getTeamResponseBuilder_ == null) {
         if (responseCase_ == 14) {
-          return (com.example.marspioneer.proto.GetTeamResponse) response_;
+          return (GetTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance();
+        return GetTeamResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 14) {
           return getTeamResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance();
+        return GetTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      */
-    public Builder setGetTeamResponse(com.example.marspioneer.proto.GetTeamResponse value) {
+    public Builder setGetTeamResponse(GetTeamResponse value) {
       if (getTeamResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4724,7 +4724,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      */
     public Builder setGetTeamResponse(
-        com.example.marspioneer.proto.GetTeamResponse.Builder builderForValue) {
+        GetTeamResponse.Builder builderForValue) {
       if (getTeamResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4737,11 +4737,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      */
-    public Builder mergeGetTeamResponse(com.example.marspioneer.proto.GetTeamResponse value) {
+    public Builder mergeGetTeamResponse(GetTeamResponse value) {
       if (getTeamResponseBuilder_ == null) {
         if (responseCase_ == 14 &&
-            response_ != com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.GetTeamResponse.newBuilder((com.example.marspioneer.proto.GetTeamResponse) response_)
+            response_ != GetTeamResponse.getDefaultInstance()) {
+          response_ = GetTeamResponse.newBuilder((GetTeamResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4778,36 +4778,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      */
-    public com.example.marspioneer.proto.GetTeamResponse.Builder getGetTeamResponseBuilder() {
+    public GetTeamResponse.Builder getGetTeamResponseBuilder() {
       return getGetTeamResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetTeamResponseOrBuilder getGetTeamResponseOrBuilder() {
+    @Override
+    public GetTeamResponseOrBuilder getGetTeamResponseOrBuilder() {
       if ((responseCase_ == 14) && (getTeamResponseBuilder_ != null)) {
         return getTeamResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 14) {
-          return (com.example.marspioneer.proto.GetTeamResponse) response_;
+          return (GetTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance();
+        return GetTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetTeamResponse getTeamResponse = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetTeamResponse, com.example.marspioneer.proto.GetTeamResponse.Builder, com.example.marspioneer.proto.GetTeamResponseOrBuilder> 
+        GetTeamResponse, GetTeamResponse.Builder, GetTeamResponseOrBuilder>
         getGetTeamResponseFieldBuilder() {
       if (getTeamResponseBuilder_ == null) {
         if (!(responseCase_ == 14)) {
-          response_ = com.example.marspioneer.proto.GetTeamResponse.getDefaultInstance();
+          response_ = GetTeamResponse.getDefaultInstance();
         }
         getTeamResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.GetTeamResponse, com.example.marspioneer.proto.GetTeamResponse.Builder, com.example.marspioneer.proto.GetTeamResponseOrBuilder>(
-                (com.example.marspioneer.proto.GetTeamResponse) response_,
+            GetTeamResponse, GetTeamResponse.Builder, GetTeamResponseOrBuilder>(
+                (GetTeamResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4818,12 +4818,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListWorldsResponse, com.example.marspioneer.proto.ListWorldsResponse.Builder, com.example.marspioneer.proto.ListWorldsResponseOrBuilder> listWorldsResponseBuilder_;
+        ListWorldsResponse, ListWorldsResponse.Builder, ListWorldsResponseOrBuilder> listWorldsResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      * @return Whether the listWorldsResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasListWorldsResponse() {
       return responseCase_ == 15;
     }
@@ -4831,24 +4831,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      * @return The listWorldsResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListWorldsResponse getListWorldsResponse() {
+    @Override
+    public ListWorldsResponse getListWorldsResponse() {
       if (listWorldsResponseBuilder_ == null) {
         if (responseCase_ == 15) {
-          return (com.example.marspioneer.proto.ListWorldsResponse) response_;
+          return (ListWorldsResponse) response_;
         }
-        return com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance();
+        return ListWorldsResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 15) {
           return listWorldsResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance();
+        return ListWorldsResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      */
-    public Builder setListWorldsResponse(com.example.marspioneer.proto.ListWorldsResponse value) {
+    public Builder setListWorldsResponse(ListWorldsResponse value) {
       if (listWorldsResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4865,7 +4865,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      */
     public Builder setListWorldsResponse(
-        com.example.marspioneer.proto.ListWorldsResponse.Builder builderForValue) {
+        ListWorldsResponse.Builder builderForValue) {
       if (listWorldsResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -4878,11 +4878,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      */
-    public Builder mergeListWorldsResponse(com.example.marspioneer.proto.ListWorldsResponse value) {
+    public Builder mergeListWorldsResponse(ListWorldsResponse value) {
       if (listWorldsResponseBuilder_ == null) {
         if (responseCase_ == 15 &&
-            response_ != com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.ListWorldsResponse.newBuilder((com.example.marspioneer.proto.ListWorldsResponse) response_)
+            response_ != ListWorldsResponse.getDefaultInstance()) {
+          response_ = ListWorldsResponse.newBuilder((ListWorldsResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -4919,36 +4919,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      */
-    public com.example.marspioneer.proto.ListWorldsResponse.Builder getListWorldsResponseBuilder() {
+    public ListWorldsResponse.Builder getListWorldsResponseBuilder() {
       return getListWorldsResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListWorldsResponseOrBuilder getListWorldsResponseOrBuilder() {
+    @Override
+    public ListWorldsResponseOrBuilder getListWorldsResponseOrBuilder() {
       if ((responseCase_ == 15) && (listWorldsResponseBuilder_ != null)) {
         return listWorldsResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 15) {
-          return (com.example.marspioneer.proto.ListWorldsResponse) response_;
+          return (ListWorldsResponse) response_;
         }
-        return com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance();
+        return ListWorldsResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListWorldsResponse listWorldsResponse = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListWorldsResponse, com.example.marspioneer.proto.ListWorldsResponse.Builder, com.example.marspioneer.proto.ListWorldsResponseOrBuilder> 
+        ListWorldsResponse, ListWorldsResponse.Builder, ListWorldsResponseOrBuilder>
         getListWorldsResponseFieldBuilder() {
       if (listWorldsResponseBuilder_ == null) {
         if (!(responseCase_ == 15)) {
-          response_ = com.example.marspioneer.proto.ListWorldsResponse.getDefaultInstance();
+          response_ = ListWorldsResponse.getDefaultInstance();
         }
         listWorldsResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.ListWorldsResponse, com.example.marspioneer.proto.ListWorldsResponse.Builder, com.example.marspioneer.proto.ListWorldsResponseOrBuilder>(
-                (com.example.marspioneer.proto.ListWorldsResponse) response_,
+            ListWorldsResponse, ListWorldsResponse.Builder, ListWorldsResponseOrBuilder>(
+                (ListWorldsResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -4959,12 +4959,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateWorldResponse, com.example.marspioneer.proto.UpdateWorldResponse.Builder, com.example.marspioneer.proto.UpdateWorldResponseOrBuilder> updateWorldResponseBuilder_;
+        UpdateWorldResponse, UpdateWorldResponse.Builder, UpdateWorldResponseOrBuilder> updateWorldResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      * @return Whether the updateWorldResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasUpdateWorldResponse() {
       return responseCase_ == 16;
     }
@@ -4972,24 +4972,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      * @return The updateWorldResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateWorldResponse getUpdateWorldResponse() {
+    @Override
+    public UpdateWorldResponse getUpdateWorldResponse() {
       if (updateWorldResponseBuilder_ == null) {
         if (responseCase_ == 16) {
-          return (com.example.marspioneer.proto.UpdateWorldResponse) response_;
+          return (UpdateWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance();
+        return UpdateWorldResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 16) {
           return updateWorldResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance();
+        return UpdateWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      */
-    public Builder setUpdateWorldResponse(com.example.marspioneer.proto.UpdateWorldResponse value) {
+    public Builder setUpdateWorldResponse(UpdateWorldResponse value) {
       if (updateWorldResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5006,7 +5006,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      */
     public Builder setUpdateWorldResponse(
-        com.example.marspioneer.proto.UpdateWorldResponse.Builder builderForValue) {
+        UpdateWorldResponse.Builder builderForValue) {
       if (updateWorldResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5019,11 +5019,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      */
-    public Builder mergeUpdateWorldResponse(com.example.marspioneer.proto.UpdateWorldResponse value) {
+    public Builder mergeUpdateWorldResponse(UpdateWorldResponse value) {
       if (updateWorldResponseBuilder_ == null) {
         if (responseCase_ == 16 &&
-            response_ != com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.UpdateWorldResponse.newBuilder((com.example.marspioneer.proto.UpdateWorldResponse) response_)
+            response_ != UpdateWorldResponse.getDefaultInstance()) {
+          response_ = UpdateWorldResponse.newBuilder((UpdateWorldResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5060,36 +5060,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      */
-    public com.example.marspioneer.proto.UpdateWorldResponse.Builder getUpdateWorldResponseBuilder() {
+    public UpdateWorldResponse.Builder getUpdateWorldResponseBuilder() {
       return getUpdateWorldResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateWorldResponseOrBuilder getUpdateWorldResponseOrBuilder() {
+    @Override
+    public UpdateWorldResponseOrBuilder getUpdateWorldResponseOrBuilder() {
       if ((responseCase_ == 16) && (updateWorldResponseBuilder_ != null)) {
         return updateWorldResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 16) {
-          return (com.example.marspioneer.proto.UpdateWorldResponse) response_;
+          return (UpdateWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance();
+        return UpdateWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateWorldResponse updateWorldResponse = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateWorldResponse, com.example.marspioneer.proto.UpdateWorldResponse.Builder, com.example.marspioneer.proto.UpdateWorldResponseOrBuilder> 
+        UpdateWorldResponse, UpdateWorldResponse.Builder, UpdateWorldResponseOrBuilder>
         getUpdateWorldResponseFieldBuilder() {
       if (updateWorldResponseBuilder_ == null) {
         if (!(responseCase_ == 16)) {
-          response_ = com.example.marspioneer.proto.UpdateWorldResponse.getDefaultInstance();
+          response_ = UpdateWorldResponse.getDefaultInstance();
         }
         updateWorldResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.UpdateWorldResponse, com.example.marspioneer.proto.UpdateWorldResponse.Builder, com.example.marspioneer.proto.UpdateWorldResponseOrBuilder>(
-                (com.example.marspioneer.proto.UpdateWorldResponse) response_,
+            UpdateWorldResponse, UpdateWorldResponse.Builder, UpdateWorldResponseOrBuilder>(
+                (UpdateWorldResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5100,12 +5100,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateTeamResponse, com.example.marspioneer.proto.UpdateTeamResponse.Builder, com.example.marspioneer.proto.UpdateTeamResponseOrBuilder> updateTeamResponseBuilder_;
+        UpdateTeamResponse, UpdateTeamResponse.Builder, UpdateTeamResponseOrBuilder> updateTeamResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      * @return Whether the updateTeamResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasUpdateTeamResponse() {
       return responseCase_ == 17;
     }
@@ -5113,24 +5113,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      * @return The updateTeamResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateTeamResponse getUpdateTeamResponse() {
+    @Override
+    public UpdateTeamResponse getUpdateTeamResponse() {
       if (updateTeamResponseBuilder_ == null) {
         if (responseCase_ == 17) {
-          return (com.example.marspioneer.proto.UpdateTeamResponse) response_;
+          return (UpdateTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance();
+        return UpdateTeamResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 17) {
           return updateTeamResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance();
+        return UpdateTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      */
-    public Builder setUpdateTeamResponse(com.example.marspioneer.proto.UpdateTeamResponse value) {
+    public Builder setUpdateTeamResponse(UpdateTeamResponse value) {
       if (updateTeamResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5147,7 +5147,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      */
     public Builder setUpdateTeamResponse(
-        com.example.marspioneer.proto.UpdateTeamResponse.Builder builderForValue) {
+        UpdateTeamResponse.Builder builderForValue) {
       if (updateTeamResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5160,11 +5160,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      */
-    public Builder mergeUpdateTeamResponse(com.example.marspioneer.proto.UpdateTeamResponse value) {
+    public Builder mergeUpdateTeamResponse(UpdateTeamResponse value) {
       if (updateTeamResponseBuilder_ == null) {
         if (responseCase_ == 17 &&
-            response_ != com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.UpdateTeamResponse.newBuilder((com.example.marspioneer.proto.UpdateTeamResponse) response_)
+            response_ != UpdateTeamResponse.getDefaultInstance()) {
+          response_ = UpdateTeamResponse.newBuilder((UpdateTeamResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5201,36 +5201,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      */
-    public com.example.marspioneer.proto.UpdateTeamResponse.Builder getUpdateTeamResponseBuilder() {
+    public UpdateTeamResponse.Builder getUpdateTeamResponseBuilder() {
       return getUpdateTeamResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateTeamResponseOrBuilder getUpdateTeamResponseOrBuilder() {
+    @Override
+    public UpdateTeamResponseOrBuilder getUpdateTeamResponseOrBuilder() {
       if ((responseCase_ == 17) && (updateTeamResponseBuilder_ != null)) {
         return updateTeamResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 17) {
-          return (com.example.marspioneer.proto.UpdateTeamResponse) response_;
+          return (UpdateTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance();
+        return UpdateTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateTeamResponse updateTeamResponse = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateTeamResponse, com.example.marspioneer.proto.UpdateTeamResponse.Builder, com.example.marspioneer.proto.UpdateTeamResponseOrBuilder> 
+        UpdateTeamResponse, UpdateTeamResponse.Builder, UpdateTeamResponseOrBuilder>
         getUpdateTeamResponseFieldBuilder() {
       if (updateTeamResponseBuilder_ == null) {
         if (!(responseCase_ == 17)) {
-          response_ = com.example.marspioneer.proto.UpdateTeamResponse.getDefaultInstance();
+          response_ = UpdateTeamResponse.getDefaultInstance();
         }
         updateTeamResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.UpdateTeamResponse, com.example.marspioneer.proto.UpdateTeamResponse.Builder, com.example.marspioneer.proto.UpdateTeamResponseOrBuilder>(
-                (com.example.marspioneer.proto.UpdateTeamResponse) response_,
+            UpdateTeamResponse, UpdateTeamResponse.Builder, UpdateTeamResponseOrBuilder>(
+                (UpdateTeamResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5241,12 +5241,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListTeamsResponse, com.example.marspioneer.proto.ListTeamsResponse.Builder, com.example.marspioneer.proto.ListTeamsResponseOrBuilder> listTeamsResponseBuilder_;
+        ListTeamsResponse, ListTeamsResponse.Builder, ListTeamsResponseOrBuilder> listTeamsResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      * @return Whether the listTeamsResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasListTeamsResponse() {
       return responseCase_ == 18;
     }
@@ -5254,24 +5254,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      * @return The listTeamsResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListTeamsResponse getListTeamsResponse() {
+    @Override
+    public ListTeamsResponse getListTeamsResponse() {
       if (listTeamsResponseBuilder_ == null) {
         if (responseCase_ == 18) {
-          return (com.example.marspioneer.proto.ListTeamsResponse) response_;
+          return (ListTeamsResponse) response_;
         }
-        return com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance();
+        return ListTeamsResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 18) {
           return listTeamsResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance();
+        return ListTeamsResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      */
-    public Builder setListTeamsResponse(com.example.marspioneer.proto.ListTeamsResponse value) {
+    public Builder setListTeamsResponse(ListTeamsResponse value) {
       if (listTeamsResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5288,7 +5288,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      */
     public Builder setListTeamsResponse(
-        com.example.marspioneer.proto.ListTeamsResponse.Builder builderForValue) {
+        ListTeamsResponse.Builder builderForValue) {
       if (listTeamsResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5301,11 +5301,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      */
-    public Builder mergeListTeamsResponse(com.example.marspioneer.proto.ListTeamsResponse value) {
+    public Builder mergeListTeamsResponse(ListTeamsResponse value) {
       if (listTeamsResponseBuilder_ == null) {
         if (responseCase_ == 18 &&
-            response_ != com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.ListTeamsResponse.newBuilder((com.example.marspioneer.proto.ListTeamsResponse) response_)
+            response_ != ListTeamsResponse.getDefaultInstance()) {
+          response_ = ListTeamsResponse.newBuilder((ListTeamsResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5342,36 +5342,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      */
-    public com.example.marspioneer.proto.ListTeamsResponse.Builder getListTeamsResponseBuilder() {
+    public ListTeamsResponse.Builder getListTeamsResponseBuilder() {
       return getListTeamsResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListTeamsResponseOrBuilder getListTeamsResponseOrBuilder() {
+    @Override
+    public ListTeamsResponseOrBuilder getListTeamsResponseOrBuilder() {
       if ((responseCase_ == 18) && (listTeamsResponseBuilder_ != null)) {
         return listTeamsResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 18) {
-          return (com.example.marspioneer.proto.ListTeamsResponse) response_;
+          return (ListTeamsResponse) response_;
         }
-        return com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance();
+        return ListTeamsResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListTeamsResponse listTeamsResponse = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListTeamsResponse, com.example.marspioneer.proto.ListTeamsResponse.Builder, com.example.marspioneer.proto.ListTeamsResponseOrBuilder> 
+        ListTeamsResponse, ListTeamsResponse.Builder, ListTeamsResponseOrBuilder>
         getListTeamsResponseFieldBuilder() {
       if (listTeamsResponseBuilder_ == null) {
         if (!(responseCase_ == 18)) {
-          response_ = com.example.marspioneer.proto.ListTeamsResponse.getDefaultInstance();
+          response_ = ListTeamsResponse.getDefaultInstance();
         }
         listTeamsResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.ListTeamsResponse, com.example.marspioneer.proto.ListTeamsResponse.Builder, com.example.marspioneer.proto.ListTeamsResponseOrBuilder>(
-                (com.example.marspioneer.proto.ListTeamsResponse) response_,
+            ListTeamsResponse, ListTeamsResponse.Builder, ListTeamsResponseOrBuilder>(
+                (ListTeamsResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5382,12 +5382,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.JoinWorldResponse, com.example.marspioneer.proto.JoinWorldResponse.Builder, com.example.marspioneer.proto.JoinWorldResponseOrBuilder> joinWorldResponseBuilder_;
+        JoinWorldResponse, JoinWorldResponse.Builder, JoinWorldResponseOrBuilder> joinWorldResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      * @return Whether the joinWorldResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasJoinWorldResponse() {
       return responseCase_ == 19;
     }
@@ -5395,24 +5395,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      * @return The joinWorldResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.JoinWorldResponse getJoinWorldResponse() {
+    @Override
+    public JoinWorldResponse getJoinWorldResponse() {
       if (joinWorldResponseBuilder_ == null) {
         if (responseCase_ == 19) {
-          return (com.example.marspioneer.proto.JoinWorldResponse) response_;
+          return (JoinWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance();
+        return JoinWorldResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 19) {
           return joinWorldResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance();
+        return JoinWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      */
-    public Builder setJoinWorldResponse(com.example.marspioneer.proto.JoinWorldResponse value) {
+    public Builder setJoinWorldResponse(JoinWorldResponse value) {
       if (joinWorldResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5429,7 +5429,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      */
     public Builder setJoinWorldResponse(
-        com.example.marspioneer.proto.JoinWorldResponse.Builder builderForValue) {
+        JoinWorldResponse.Builder builderForValue) {
       if (joinWorldResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5442,11 +5442,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      */
-    public Builder mergeJoinWorldResponse(com.example.marspioneer.proto.JoinWorldResponse value) {
+    public Builder mergeJoinWorldResponse(JoinWorldResponse value) {
       if (joinWorldResponseBuilder_ == null) {
         if (responseCase_ == 19 &&
-            response_ != com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.JoinWorldResponse.newBuilder((com.example.marspioneer.proto.JoinWorldResponse) response_)
+            response_ != JoinWorldResponse.getDefaultInstance()) {
+          response_ = JoinWorldResponse.newBuilder((JoinWorldResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5483,36 +5483,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      */
-    public com.example.marspioneer.proto.JoinWorldResponse.Builder getJoinWorldResponseBuilder() {
+    public JoinWorldResponse.Builder getJoinWorldResponseBuilder() {
       return getJoinWorldResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.JoinWorldResponseOrBuilder getJoinWorldResponseOrBuilder() {
+    @Override
+    public JoinWorldResponseOrBuilder getJoinWorldResponseOrBuilder() {
       if ((responseCase_ == 19) && (joinWorldResponseBuilder_ != null)) {
         return joinWorldResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 19) {
-          return (com.example.marspioneer.proto.JoinWorldResponse) response_;
+          return (JoinWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance();
+        return JoinWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.JoinWorldResponse joinWorldResponse = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.JoinWorldResponse, com.example.marspioneer.proto.JoinWorldResponse.Builder, com.example.marspioneer.proto.JoinWorldResponseOrBuilder> 
+        JoinWorldResponse, JoinWorldResponse.Builder, JoinWorldResponseOrBuilder>
         getJoinWorldResponseFieldBuilder() {
       if (joinWorldResponseBuilder_ == null) {
         if (!(responseCase_ == 19)) {
-          response_ = com.example.marspioneer.proto.JoinWorldResponse.getDefaultInstance();
+          response_ = JoinWorldResponse.getDefaultInstance();
         }
         joinWorldResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.JoinWorldResponse, com.example.marspioneer.proto.JoinWorldResponse.Builder, com.example.marspioneer.proto.JoinWorldResponseOrBuilder>(
-                (com.example.marspioneer.proto.JoinWorldResponse) response_,
+            JoinWorldResponse, JoinWorldResponse.Builder, JoinWorldResponseOrBuilder>(
+                (JoinWorldResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5523,12 +5523,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeletePlayerResponse, com.example.marspioneer.proto.DeletePlayerResponse.Builder, com.example.marspioneer.proto.DeletePlayerResponseOrBuilder> deletePlayerResponseBuilder_;
+        DeletePlayerResponse, DeletePlayerResponse.Builder, DeletePlayerResponseOrBuilder> deletePlayerResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      * @return Whether the deletePlayerResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasDeletePlayerResponse() {
       return responseCase_ == 20;
     }
@@ -5536,24 +5536,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      * @return The deletePlayerResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeletePlayerResponse getDeletePlayerResponse() {
+    @Override
+    public DeletePlayerResponse getDeletePlayerResponse() {
       if (deletePlayerResponseBuilder_ == null) {
         if (responseCase_ == 20) {
-          return (com.example.marspioneer.proto.DeletePlayerResponse) response_;
+          return (DeletePlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance();
+        return DeletePlayerResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 20) {
           return deletePlayerResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance();
+        return DeletePlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      */
-    public Builder setDeletePlayerResponse(com.example.marspioneer.proto.DeletePlayerResponse value) {
+    public Builder setDeletePlayerResponse(DeletePlayerResponse value) {
       if (deletePlayerResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5570,7 +5570,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      */
     public Builder setDeletePlayerResponse(
-        com.example.marspioneer.proto.DeletePlayerResponse.Builder builderForValue) {
+        DeletePlayerResponse.Builder builderForValue) {
       if (deletePlayerResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5583,11 +5583,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      */
-    public Builder mergeDeletePlayerResponse(com.example.marspioneer.proto.DeletePlayerResponse value) {
+    public Builder mergeDeletePlayerResponse(DeletePlayerResponse value) {
       if (deletePlayerResponseBuilder_ == null) {
         if (responseCase_ == 20 &&
-            response_ != com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.DeletePlayerResponse.newBuilder((com.example.marspioneer.proto.DeletePlayerResponse) response_)
+            response_ != DeletePlayerResponse.getDefaultInstance()) {
+          response_ = DeletePlayerResponse.newBuilder((DeletePlayerResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5624,36 +5624,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      */
-    public com.example.marspioneer.proto.DeletePlayerResponse.Builder getDeletePlayerResponseBuilder() {
+    public DeletePlayerResponse.Builder getDeletePlayerResponseBuilder() {
       return getDeletePlayerResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeletePlayerResponseOrBuilder getDeletePlayerResponseOrBuilder() {
+    @Override
+    public DeletePlayerResponseOrBuilder getDeletePlayerResponseOrBuilder() {
       if ((responseCase_ == 20) && (deletePlayerResponseBuilder_ != null)) {
         return deletePlayerResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 20) {
-          return (com.example.marspioneer.proto.DeletePlayerResponse) response_;
+          return (DeletePlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance();
+        return DeletePlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeletePlayerResponse deletePlayerResponse = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeletePlayerResponse, com.example.marspioneer.proto.DeletePlayerResponse.Builder, com.example.marspioneer.proto.DeletePlayerResponseOrBuilder> 
+        DeletePlayerResponse, DeletePlayerResponse.Builder, DeletePlayerResponseOrBuilder>
         getDeletePlayerResponseFieldBuilder() {
       if (deletePlayerResponseBuilder_ == null) {
         if (!(responseCase_ == 20)) {
-          response_ = com.example.marspioneer.proto.DeletePlayerResponse.getDefaultInstance();
+          response_ = DeletePlayerResponse.getDefaultInstance();
         }
         deletePlayerResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.DeletePlayerResponse, com.example.marspioneer.proto.DeletePlayerResponse.Builder, com.example.marspioneer.proto.DeletePlayerResponseOrBuilder>(
-                (com.example.marspioneer.proto.DeletePlayerResponse) response_,
+            DeletePlayerResponse, DeletePlayerResponse.Builder, DeletePlayerResponseOrBuilder>(
+                (DeletePlayerResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5664,12 +5664,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.RemovePlayerFromTeamResponse, com.example.marspioneer.proto.RemovePlayerFromTeamResponse.Builder, com.example.marspioneer.proto.RemovePlayerFromTeamResponseOrBuilder> removePlayerFromTeamResponseBuilder_;
+        RemovePlayerFromTeamResponse, RemovePlayerFromTeamResponse.Builder, RemovePlayerFromTeamResponseOrBuilder> removePlayerFromTeamResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      * @return Whether the removePlayerFromTeamResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasRemovePlayerFromTeamResponse() {
       return responseCase_ == 21;
     }
@@ -5677,24 +5677,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      * @return The removePlayerFromTeamResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.RemovePlayerFromTeamResponse getRemovePlayerFromTeamResponse() {
+    @Override
+    public RemovePlayerFromTeamResponse getRemovePlayerFromTeamResponse() {
       if (removePlayerFromTeamResponseBuilder_ == null) {
         if (responseCase_ == 21) {
-          return (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_;
+          return (RemovePlayerFromTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance();
+        return RemovePlayerFromTeamResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 21) {
           return removePlayerFromTeamResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance();
+        return RemovePlayerFromTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      */
-    public Builder setRemovePlayerFromTeamResponse(com.example.marspioneer.proto.RemovePlayerFromTeamResponse value) {
+    public Builder setRemovePlayerFromTeamResponse(RemovePlayerFromTeamResponse value) {
       if (removePlayerFromTeamResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5711,7 +5711,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      */
     public Builder setRemovePlayerFromTeamResponse(
-        com.example.marspioneer.proto.RemovePlayerFromTeamResponse.Builder builderForValue) {
+        RemovePlayerFromTeamResponse.Builder builderForValue) {
       if (removePlayerFromTeamResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5724,11 +5724,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      */
-    public Builder mergeRemovePlayerFromTeamResponse(com.example.marspioneer.proto.RemovePlayerFromTeamResponse value) {
+    public Builder mergeRemovePlayerFromTeamResponse(RemovePlayerFromTeamResponse value) {
       if (removePlayerFromTeamResponseBuilder_ == null) {
         if (responseCase_ == 21 &&
-            response_ != com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.RemovePlayerFromTeamResponse.newBuilder((com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_)
+            response_ != RemovePlayerFromTeamResponse.getDefaultInstance()) {
+          response_ = RemovePlayerFromTeamResponse.newBuilder((RemovePlayerFromTeamResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5765,36 +5765,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      */
-    public com.example.marspioneer.proto.RemovePlayerFromTeamResponse.Builder getRemovePlayerFromTeamResponseBuilder() {
+    public RemovePlayerFromTeamResponse.Builder getRemovePlayerFromTeamResponseBuilder() {
       return getRemovePlayerFromTeamResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.RemovePlayerFromTeamResponseOrBuilder getRemovePlayerFromTeamResponseOrBuilder() {
+    @Override
+    public RemovePlayerFromTeamResponseOrBuilder getRemovePlayerFromTeamResponseOrBuilder() {
       if ((responseCase_ == 21) && (removePlayerFromTeamResponseBuilder_ != null)) {
         return removePlayerFromTeamResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 21) {
-          return (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_;
+          return (RemovePlayerFromTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance();
+        return RemovePlayerFromTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.RemovePlayerFromTeamResponse removePlayerFromTeamResponse = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.RemovePlayerFromTeamResponse, com.example.marspioneer.proto.RemovePlayerFromTeamResponse.Builder, com.example.marspioneer.proto.RemovePlayerFromTeamResponseOrBuilder> 
+        RemovePlayerFromTeamResponse, RemovePlayerFromTeamResponse.Builder, RemovePlayerFromTeamResponseOrBuilder>
         getRemovePlayerFromTeamResponseFieldBuilder() {
       if (removePlayerFromTeamResponseBuilder_ == null) {
         if (!(responseCase_ == 21)) {
-          response_ = com.example.marspioneer.proto.RemovePlayerFromTeamResponse.getDefaultInstance();
+          response_ = RemovePlayerFromTeamResponse.getDefaultInstance();
         }
         removePlayerFromTeamResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.RemovePlayerFromTeamResponse, com.example.marspioneer.proto.RemovePlayerFromTeamResponse.Builder, com.example.marspioneer.proto.RemovePlayerFromTeamResponseOrBuilder>(
-                (com.example.marspioneer.proto.RemovePlayerFromTeamResponse) response_,
+            RemovePlayerFromTeamResponse, RemovePlayerFromTeamResponse.Builder, RemovePlayerFromTeamResponseOrBuilder>(
+                (RemovePlayerFromTeamResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5805,12 +5805,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildResponse, com.example.marspioneer.proto.BuildResponse.Builder, com.example.marspioneer.proto.BuildResponseOrBuilder> buildResponseBuilder_;
+        BuildResponse, BuildResponse.Builder, BuildResponseOrBuilder> buildResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      * @return Whether the buildResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasBuildResponse() {
       return responseCase_ == 22;
     }
@@ -5818,24 +5818,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      * @return The buildResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildResponse getBuildResponse() {
+    @Override
+    public BuildResponse getBuildResponse() {
       if (buildResponseBuilder_ == null) {
         if (responseCase_ == 22) {
-          return (com.example.marspioneer.proto.BuildResponse) response_;
+          return (BuildResponse) response_;
         }
-        return com.example.marspioneer.proto.BuildResponse.getDefaultInstance();
+        return BuildResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 22) {
           return buildResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.BuildResponse.getDefaultInstance();
+        return BuildResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      */
-    public Builder setBuildResponse(com.example.marspioneer.proto.BuildResponse value) {
+    public Builder setBuildResponse(BuildResponse value) {
       if (buildResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5852,7 +5852,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      */
     public Builder setBuildResponse(
-        com.example.marspioneer.proto.BuildResponse.Builder builderForValue) {
+        BuildResponse.Builder builderForValue) {
       if (buildResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -5865,11 +5865,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      */
-    public Builder mergeBuildResponse(com.example.marspioneer.proto.BuildResponse value) {
+    public Builder mergeBuildResponse(BuildResponse value) {
       if (buildResponseBuilder_ == null) {
         if (responseCase_ == 22 &&
-            response_ != com.example.marspioneer.proto.BuildResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.BuildResponse.newBuilder((com.example.marspioneer.proto.BuildResponse) response_)
+            response_ != BuildResponse.getDefaultInstance()) {
+          response_ = BuildResponse.newBuilder((BuildResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -5906,36 +5906,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      */
-    public com.example.marspioneer.proto.BuildResponse.Builder getBuildResponseBuilder() {
+    public BuildResponse.Builder getBuildResponseBuilder() {
       return getBuildResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.BuildResponseOrBuilder getBuildResponseOrBuilder() {
+    @Override
+    public BuildResponseOrBuilder getBuildResponseOrBuilder() {
       if ((responseCase_ == 22) && (buildResponseBuilder_ != null)) {
         return buildResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 22) {
-          return (com.example.marspioneer.proto.BuildResponse) response_;
+          return (BuildResponse) response_;
         }
-        return com.example.marspioneer.proto.BuildResponse.getDefaultInstance();
+        return BuildResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.BuildResponse buildResponse = 22;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.BuildResponse, com.example.marspioneer.proto.BuildResponse.Builder, com.example.marspioneer.proto.BuildResponseOrBuilder> 
+        BuildResponse, BuildResponse.Builder, BuildResponseOrBuilder>
         getBuildResponseFieldBuilder() {
       if (buildResponseBuilder_ == null) {
         if (!(responseCase_ == 22)) {
-          response_ = com.example.marspioneer.proto.BuildResponse.getDefaultInstance();
+          response_ = BuildResponse.getDefaultInstance();
         }
         buildResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.BuildResponse, com.example.marspioneer.proto.BuildResponse.Builder, com.example.marspioneer.proto.BuildResponseOrBuilder>(
-                (com.example.marspioneer.proto.BuildResponse) response_,
+            BuildResponse, BuildResponse.Builder, BuildResponseOrBuilder>(
+                (BuildResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -5946,12 +5946,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetStateResponse, com.example.marspioneer.proto.GetStateResponse.Builder, com.example.marspioneer.proto.GetStateResponseOrBuilder> getStateResponseBuilder_;
+        GetStateResponse, GetStateResponse.Builder, GetStateResponseOrBuilder> getStateResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      * @return Whether the getStateResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasGetStateResponse() {
       return responseCase_ == 23;
     }
@@ -5959,24 +5959,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      * @return The getStateResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetStateResponse getGetStateResponse() {
+    @Override
+    public GetStateResponse getGetStateResponse() {
       if (getStateResponseBuilder_ == null) {
         if (responseCase_ == 23) {
-          return (com.example.marspioneer.proto.GetStateResponse) response_;
+          return (GetStateResponse) response_;
         }
-        return com.example.marspioneer.proto.GetStateResponse.getDefaultInstance();
+        return GetStateResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 23) {
           return getStateResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.GetStateResponse.getDefaultInstance();
+        return GetStateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      */
-    public Builder setGetStateResponse(com.example.marspioneer.proto.GetStateResponse value) {
+    public Builder setGetStateResponse(GetStateResponse value) {
       if (getStateResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5993,7 +5993,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      */
     public Builder setGetStateResponse(
-        com.example.marspioneer.proto.GetStateResponse.Builder builderForValue) {
+        GetStateResponse.Builder builderForValue) {
       if (getStateResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6006,11 +6006,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      */
-    public Builder mergeGetStateResponse(com.example.marspioneer.proto.GetStateResponse value) {
+    public Builder mergeGetStateResponse(GetStateResponse value) {
       if (getStateResponseBuilder_ == null) {
         if (responseCase_ == 23 &&
-            response_ != com.example.marspioneer.proto.GetStateResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.GetStateResponse.newBuilder((com.example.marspioneer.proto.GetStateResponse) response_)
+            response_ != GetStateResponse.getDefaultInstance()) {
+          response_ = GetStateResponse.newBuilder((GetStateResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6047,36 +6047,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      */
-    public com.example.marspioneer.proto.GetStateResponse.Builder getGetStateResponseBuilder() {
+    public GetStateResponse.Builder getGetStateResponseBuilder() {
       return getGetStateResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetStateResponseOrBuilder getGetStateResponseOrBuilder() {
+    @Override
+    public GetStateResponseOrBuilder getGetStateResponseOrBuilder() {
       if ((responseCase_ == 23) && (getStateResponseBuilder_ != null)) {
         return getStateResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 23) {
-          return (com.example.marspioneer.proto.GetStateResponse) response_;
+          return (GetStateResponse) response_;
         }
-        return com.example.marspioneer.proto.GetStateResponse.getDefaultInstance();
+        return GetStateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetStateResponse getStateResponse = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetStateResponse, com.example.marspioneer.proto.GetStateResponse.Builder, com.example.marspioneer.proto.GetStateResponseOrBuilder> 
+        GetStateResponse, GetStateResponse.Builder, GetStateResponseOrBuilder>
         getGetStateResponseFieldBuilder() {
       if (getStateResponseBuilder_ == null) {
         if (!(responseCase_ == 23)) {
-          response_ = com.example.marspioneer.proto.GetStateResponse.getDefaultInstance();
+          response_ = GetStateResponse.getDefaultInstance();
         }
         getStateResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.GetStateResponse, com.example.marspioneer.proto.GetStateResponse.Builder, com.example.marspioneer.proto.GetStateResponseOrBuilder>(
-                (com.example.marspioneer.proto.GetStateResponse) response_,
+            GetStateResponse, GetStateResponse.Builder, GetStateResponseOrBuilder>(
+                (GetStateResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6087,12 +6087,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateStateResponse, com.example.marspioneer.proto.UpdateStateResponse.Builder, com.example.marspioneer.proto.UpdateStateResponseOrBuilder> updateStateResponseBuilder_;
+        UpdateStateResponse, UpdateStateResponse.Builder, UpdateStateResponseOrBuilder> updateStateResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      * @return Whether the updateStateResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasUpdateStateResponse() {
       return responseCase_ == 24;
     }
@@ -6100,24 +6100,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      * @return The updateStateResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateStateResponse getUpdateStateResponse() {
+    @Override
+    public UpdateStateResponse getUpdateStateResponse() {
       if (updateStateResponseBuilder_ == null) {
         if (responseCase_ == 24) {
-          return (com.example.marspioneer.proto.UpdateStateResponse) response_;
+          return (UpdateStateResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance();
+        return UpdateStateResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 24) {
           return updateStateResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance();
+        return UpdateStateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      */
-    public Builder setUpdateStateResponse(com.example.marspioneer.proto.UpdateStateResponse value) {
+    public Builder setUpdateStateResponse(UpdateStateResponse value) {
       if (updateStateResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6134,7 +6134,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      */
     public Builder setUpdateStateResponse(
-        com.example.marspioneer.proto.UpdateStateResponse.Builder builderForValue) {
+        UpdateStateResponse.Builder builderForValue) {
       if (updateStateResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6147,11 +6147,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      */
-    public Builder mergeUpdateStateResponse(com.example.marspioneer.proto.UpdateStateResponse value) {
+    public Builder mergeUpdateStateResponse(UpdateStateResponse value) {
       if (updateStateResponseBuilder_ == null) {
         if (responseCase_ == 24 &&
-            response_ != com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.UpdateStateResponse.newBuilder((com.example.marspioneer.proto.UpdateStateResponse) response_)
+            response_ != UpdateStateResponse.getDefaultInstance()) {
+          response_ = UpdateStateResponse.newBuilder((UpdateStateResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6188,36 +6188,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      */
-    public com.example.marspioneer.proto.UpdateStateResponse.Builder getUpdateStateResponseBuilder() {
+    public UpdateStateResponse.Builder getUpdateStateResponseBuilder() {
       return getUpdateStateResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateStateResponseOrBuilder getUpdateStateResponseOrBuilder() {
+    @Override
+    public UpdateStateResponseOrBuilder getUpdateStateResponseOrBuilder() {
       if ((responseCase_ == 24) && (updateStateResponseBuilder_ != null)) {
         return updateStateResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 24) {
-          return (com.example.marspioneer.proto.UpdateStateResponse) response_;
+          return (UpdateStateResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance();
+        return UpdateStateResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateStateResponse updateStateResponse = 24;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateStateResponse, com.example.marspioneer.proto.UpdateStateResponse.Builder, com.example.marspioneer.proto.UpdateStateResponseOrBuilder> 
+        UpdateStateResponse, UpdateStateResponse.Builder, UpdateStateResponseOrBuilder>
         getUpdateStateResponseFieldBuilder() {
       if (updateStateResponseBuilder_ == null) {
         if (!(responseCase_ == 24)) {
-          response_ = com.example.marspioneer.proto.UpdateStateResponse.getDefaultInstance();
+          response_ = UpdateStateResponse.getDefaultInstance();
         }
         updateStateResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.UpdateStateResponse, com.example.marspioneer.proto.UpdateStateResponse.Builder, com.example.marspioneer.proto.UpdateStateResponseOrBuilder>(
-                (com.example.marspioneer.proto.UpdateStateResponse) response_,
+            UpdateStateResponse, UpdateStateResponse.Builder, UpdateStateResponseOrBuilder>(
+                (UpdateStateResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6228,12 +6228,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.SubscribeResponse, com.example.marspioneer.proto.SubscribeResponse.Builder, com.example.marspioneer.proto.SubscribeResponseOrBuilder> subscribeResponseBuilder_;
+        SubscribeResponse, SubscribeResponse.Builder, SubscribeResponseOrBuilder> subscribeResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      * @return Whether the subscribeResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasSubscribeResponse() {
       return responseCase_ == 25;
     }
@@ -6241,24 +6241,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      * @return The subscribeResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SubscribeResponse getSubscribeResponse() {
+    @Override
+    public SubscribeResponse getSubscribeResponse() {
       if (subscribeResponseBuilder_ == null) {
         if (responseCase_ == 25) {
-          return (com.example.marspioneer.proto.SubscribeResponse) response_;
+          return (SubscribeResponse) response_;
         }
-        return com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance();
+        return SubscribeResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 25) {
           return subscribeResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance();
+        return SubscribeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      */
-    public Builder setSubscribeResponse(com.example.marspioneer.proto.SubscribeResponse value) {
+    public Builder setSubscribeResponse(SubscribeResponse value) {
       if (subscribeResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6275,7 +6275,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      */
     public Builder setSubscribeResponse(
-        com.example.marspioneer.proto.SubscribeResponse.Builder builderForValue) {
+        SubscribeResponse.Builder builderForValue) {
       if (subscribeResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6288,11 +6288,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      */
-    public Builder mergeSubscribeResponse(com.example.marspioneer.proto.SubscribeResponse value) {
+    public Builder mergeSubscribeResponse(SubscribeResponse value) {
       if (subscribeResponseBuilder_ == null) {
         if (responseCase_ == 25 &&
-            response_ != com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.SubscribeResponse.newBuilder((com.example.marspioneer.proto.SubscribeResponse) response_)
+            response_ != SubscribeResponse.getDefaultInstance()) {
+          response_ = SubscribeResponse.newBuilder((SubscribeResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6329,36 +6329,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      */
-    public com.example.marspioneer.proto.SubscribeResponse.Builder getSubscribeResponseBuilder() {
+    public SubscribeResponse.Builder getSubscribeResponseBuilder() {
       return getSubscribeResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.SubscribeResponseOrBuilder getSubscribeResponseOrBuilder() {
+    @Override
+    public SubscribeResponseOrBuilder getSubscribeResponseOrBuilder() {
       if ((responseCase_ == 25) && (subscribeResponseBuilder_ != null)) {
         return subscribeResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 25) {
-          return (com.example.marspioneer.proto.SubscribeResponse) response_;
+          return (SubscribeResponse) response_;
         }
-        return com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance();
+        return SubscribeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.SubscribeResponse subscribeResponse = 25;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.SubscribeResponse, com.example.marspioneer.proto.SubscribeResponse.Builder, com.example.marspioneer.proto.SubscribeResponseOrBuilder> 
+        SubscribeResponse, SubscribeResponse.Builder, SubscribeResponseOrBuilder>
         getSubscribeResponseFieldBuilder() {
       if (subscribeResponseBuilder_ == null) {
         if (!(responseCase_ == 25)) {
-          response_ = com.example.marspioneer.proto.SubscribeResponse.getDefaultInstance();
+          response_ = SubscribeResponse.getDefaultInstance();
         }
         subscribeResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.SubscribeResponse, com.example.marspioneer.proto.SubscribeResponse.Builder, com.example.marspioneer.proto.SubscribeResponseOrBuilder>(
-                (com.example.marspioneer.proto.SubscribeResponse) response_,
+            SubscribeResponse, SubscribeResponse.Builder, SubscribeResponseOrBuilder>(
+                (SubscribeResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6369,12 +6369,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreatePlayerResponse, com.example.marspioneer.proto.CreatePlayerResponse.Builder, com.example.marspioneer.proto.CreatePlayerResponseOrBuilder> createPlayerResponseBuilder_;
+        CreatePlayerResponse, CreatePlayerResponse.Builder, CreatePlayerResponseOrBuilder> createPlayerResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      * @return Whether the createPlayerResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasCreatePlayerResponse() {
       return responseCase_ == 26;
     }
@@ -6382,24 +6382,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      * @return The createPlayerResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreatePlayerResponse getCreatePlayerResponse() {
+    @Override
+    public CreatePlayerResponse getCreatePlayerResponse() {
       if (createPlayerResponseBuilder_ == null) {
         if (responseCase_ == 26) {
-          return (com.example.marspioneer.proto.CreatePlayerResponse) response_;
+          return (CreatePlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance();
+        return CreatePlayerResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 26) {
           return createPlayerResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance();
+        return CreatePlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      */
-    public Builder setCreatePlayerResponse(com.example.marspioneer.proto.CreatePlayerResponse value) {
+    public Builder setCreatePlayerResponse(CreatePlayerResponse value) {
       if (createPlayerResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6416,7 +6416,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      */
     public Builder setCreatePlayerResponse(
-        com.example.marspioneer.proto.CreatePlayerResponse.Builder builderForValue) {
+        CreatePlayerResponse.Builder builderForValue) {
       if (createPlayerResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6429,11 +6429,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      */
-    public Builder mergeCreatePlayerResponse(com.example.marspioneer.proto.CreatePlayerResponse value) {
+    public Builder mergeCreatePlayerResponse(CreatePlayerResponse value) {
       if (createPlayerResponseBuilder_ == null) {
         if (responseCase_ == 26 &&
-            response_ != com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.CreatePlayerResponse.newBuilder((com.example.marspioneer.proto.CreatePlayerResponse) response_)
+            response_ != CreatePlayerResponse.getDefaultInstance()) {
+          response_ = CreatePlayerResponse.newBuilder((CreatePlayerResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6470,36 +6470,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      */
-    public com.example.marspioneer.proto.CreatePlayerResponse.Builder getCreatePlayerResponseBuilder() {
+    public CreatePlayerResponse.Builder getCreatePlayerResponseBuilder() {
       return getCreatePlayerResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreatePlayerResponseOrBuilder getCreatePlayerResponseOrBuilder() {
+    @Override
+    public CreatePlayerResponseOrBuilder getCreatePlayerResponseOrBuilder() {
       if ((responseCase_ == 26) && (createPlayerResponseBuilder_ != null)) {
         return createPlayerResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 26) {
-          return (com.example.marspioneer.proto.CreatePlayerResponse) response_;
+          return (CreatePlayerResponse) response_;
         }
-        return com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance();
+        return CreatePlayerResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreatePlayerResponse createPlayerResponse = 26;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreatePlayerResponse, com.example.marspioneer.proto.CreatePlayerResponse.Builder, com.example.marspioneer.proto.CreatePlayerResponseOrBuilder> 
+        CreatePlayerResponse, CreatePlayerResponse.Builder, CreatePlayerResponseOrBuilder>
         getCreatePlayerResponseFieldBuilder() {
       if (createPlayerResponseBuilder_ == null) {
         if (!(responseCase_ == 26)) {
-          response_ = com.example.marspioneer.proto.CreatePlayerResponse.getDefaultInstance();
+          response_ = CreatePlayerResponse.getDefaultInstance();
         }
         createPlayerResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.CreatePlayerResponse, com.example.marspioneer.proto.CreatePlayerResponse.Builder, com.example.marspioneer.proto.CreatePlayerResponseOrBuilder>(
-                (com.example.marspioneer.proto.CreatePlayerResponse) response_,
+            CreatePlayerResponse, CreatePlayerResponse.Builder, CreatePlayerResponseOrBuilder>(
+                (CreatePlayerResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6510,12 +6510,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetWorldResponse, com.example.marspioneer.proto.GetWorldResponse.Builder, com.example.marspioneer.proto.GetWorldResponseOrBuilder> getWorldResponseBuilder_;
+        GetWorldResponse, GetWorldResponse.Builder, GetWorldResponseOrBuilder> getWorldResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      * @return Whether the getWorldResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasGetWorldResponse() {
       return responseCase_ == 27;
     }
@@ -6523,24 +6523,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      * @return The getWorldResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetWorldResponse getGetWorldResponse() {
+    @Override
+    public GetWorldResponse getGetWorldResponse() {
       if (getWorldResponseBuilder_ == null) {
         if (responseCase_ == 27) {
-          return (com.example.marspioneer.proto.GetWorldResponse) response_;
+          return (GetWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance();
+        return GetWorldResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 27) {
           return getWorldResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance();
+        return GetWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      */
-    public Builder setGetWorldResponse(com.example.marspioneer.proto.GetWorldResponse value) {
+    public Builder setGetWorldResponse(GetWorldResponse value) {
       if (getWorldResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6557,7 +6557,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      */
     public Builder setGetWorldResponse(
-        com.example.marspioneer.proto.GetWorldResponse.Builder builderForValue) {
+        GetWorldResponse.Builder builderForValue) {
       if (getWorldResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6570,11 +6570,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      */
-    public Builder mergeGetWorldResponse(com.example.marspioneer.proto.GetWorldResponse value) {
+    public Builder mergeGetWorldResponse(GetWorldResponse value) {
       if (getWorldResponseBuilder_ == null) {
         if (responseCase_ == 27 &&
-            response_ != com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.GetWorldResponse.newBuilder((com.example.marspioneer.proto.GetWorldResponse) response_)
+            response_ != GetWorldResponse.getDefaultInstance()) {
+          response_ = GetWorldResponse.newBuilder((GetWorldResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6611,36 +6611,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      */
-    public com.example.marspioneer.proto.GetWorldResponse.Builder getGetWorldResponseBuilder() {
+    public GetWorldResponse.Builder getGetWorldResponseBuilder() {
       return getGetWorldResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetWorldResponseOrBuilder getGetWorldResponseOrBuilder() {
+    @Override
+    public GetWorldResponseOrBuilder getGetWorldResponseOrBuilder() {
       if ((responseCase_ == 27) && (getWorldResponseBuilder_ != null)) {
         return getWorldResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 27) {
-          return (com.example.marspioneer.proto.GetWorldResponse) response_;
+          return (GetWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance();
+        return GetWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetWorldResponse getWorldResponse = 27;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetWorldResponse, com.example.marspioneer.proto.GetWorldResponse.Builder, com.example.marspioneer.proto.GetWorldResponseOrBuilder> 
+        GetWorldResponse, GetWorldResponse.Builder, GetWorldResponseOrBuilder>
         getGetWorldResponseFieldBuilder() {
       if (getWorldResponseBuilder_ == null) {
         if (!(responseCase_ == 27)) {
-          response_ = com.example.marspioneer.proto.GetWorldResponse.getDefaultInstance();
+          response_ = GetWorldResponse.getDefaultInstance();
         }
         getWorldResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.GetWorldResponse, com.example.marspioneer.proto.GetWorldResponse.Builder, com.example.marspioneer.proto.GetWorldResponseOrBuilder>(
-                (com.example.marspioneer.proto.GetWorldResponse) response_,
+            GetWorldResponse, GetWorldResponse.Builder, GetWorldResponseOrBuilder>(
+                (GetWorldResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6651,12 +6651,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateBuildingTypeResponse, com.example.marspioneer.proto.UpdateBuildingTypeResponse.Builder, com.example.marspioneer.proto.UpdateBuildingTypeResponseOrBuilder> updateBuildingTypeResponseBuilder_;
+        UpdateBuildingTypeResponse, UpdateBuildingTypeResponse.Builder, UpdateBuildingTypeResponseOrBuilder> updateBuildingTypeResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      * @return Whether the updateBuildingTypeResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasUpdateBuildingTypeResponse() {
       return responseCase_ == 28;
     }
@@ -6664,24 +6664,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      * @return The updateBuildingTypeResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateBuildingTypeResponse getUpdateBuildingTypeResponse() {
+    @Override
+    public UpdateBuildingTypeResponse getUpdateBuildingTypeResponse() {
       if (updateBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 28) {
-          return (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_;
+          return (UpdateBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance();
+        return UpdateBuildingTypeResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 28) {
           return updateBuildingTypeResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance();
+        return UpdateBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      */
-    public Builder setUpdateBuildingTypeResponse(com.example.marspioneer.proto.UpdateBuildingTypeResponse value) {
+    public Builder setUpdateBuildingTypeResponse(UpdateBuildingTypeResponse value) {
       if (updateBuildingTypeResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6698,7 +6698,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      */
     public Builder setUpdateBuildingTypeResponse(
-        com.example.marspioneer.proto.UpdateBuildingTypeResponse.Builder builderForValue) {
+        UpdateBuildingTypeResponse.Builder builderForValue) {
       if (updateBuildingTypeResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6711,11 +6711,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      */
-    public Builder mergeUpdateBuildingTypeResponse(com.example.marspioneer.proto.UpdateBuildingTypeResponse value) {
+    public Builder mergeUpdateBuildingTypeResponse(UpdateBuildingTypeResponse value) {
       if (updateBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 28 &&
-            response_ != com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.UpdateBuildingTypeResponse.newBuilder((com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_)
+            response_ != UpdateBuildingTypeResponse.getDefaultInstance()) {
+          response_ = UpdateBuildingTypeResponse.newBuilder((UpdateBuildingTypeResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6752,36 +6752,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      */
-    public com.example.marspioneer.proto.UpdateBuildingTypeResponse.Builder getUpdateBuildingTypeResponseBuilder() {
+    public UpdateBuildingTypeResponse.Builder getUpdateBuildingTypeResponseBuilder() {
       return getUpdateBuildingTypeResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.UpdateBuildingTypeResponseOrBuilder getUpdateBuildingTypeResponseOrBuilder() {
+    @Override
+    public UpdateBuildingTypeResponseOrBuilder getUpdateBuildingTypeResponseOrBuilder() {
       if ((responseCase_ == 28) && (updateBuildingTypeResponseBuilder_ != null)) {
         return updateBuildingTypeResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 28) {
-          return (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_;
+          return (UpdateBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance();
+        return UpdateBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.UpdateBuildingTypeResponse updateBuildingTypeResponse = 28;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.UpdateBuildingTypeResponse, com.example.marspioneer.proto.UpdateBuildingTypeResponse.Builder, com.example.marspioneer.proto.UpdateBuildingTypeResponseOrBuilder> 
+        UpdateBuildingTypeResponse, UpdateBuildingTypeResponse.Builder, UpdateBuildingTypeResponseOrBuilder>
         getUpdateBuildingTypeResponseFieldBuilder() {
       if (updateBuildingTypeResponseBuilder_ == null) {
         if (!(responseCase_ == 28)) {
-          response_ = com.example.marspioneer.proto.UpdateBuildingTypeResponse.getDefaultInstance();
+          response_ = UpdateBuildingTypeResponse.getDefaultInstance();
         }
         updateBuildingTypeResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.UpdateBuildingTypeResponse, com.example.marspioneer.proto.UpdateBuildingTypeResponse.Builder, com.example.marspioneer.proto.UpdateBuildingTypeResponseOrBuilder>(
-                (com.example.marspioneer.proto.UpdateBuildingTypeResponse) response_,
+            UpdateBuildingTypeResponse, UpdateBuildingTypeResponse.Builder, UpdateBuildingTypeResponseOrBuilder>(
+                (UpdateBuildingTypeResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6792,12 +6792,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeleteTeamResponse, com.example.marspioneer.proto.DeleteTeamResponse.Builder, com.example.marspioneer.proto.DeleteTeamResponseOrBuilder> deleteTeamResponseBuilder_;
+        DeleteTeamResponse, DeleteTeamResponse.Builder, DeleteTeamResponseOrBuilder> deleteTeamResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      * @return Whether the deleteTeamResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasDeleteTeamResponse() {
       return responseCase_ == 29;
     }
@@ -6805,24 +6805,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      * @return The deleteTeamResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeleteTeamResponse getDeleteTeamResponse() {
+    @Override
+    public DeleteTeamResponse getDeleteTeamResponse() {
       if (deleteTeamResponseBuilder_ == null) {
         if (responseCase_ == 29) {
-          return (com.example.marspioneer.proto.DeleteTeamResponse) response_;
+          return (DeleteTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance();
+        return DeleteTeamResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 29) {
           return deleteTeamResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance();
+        return DeleteTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      */
-    public Builder setDeleteTeamResponse(com.example.marspioneer.proto.DeleteTeamResponse value) {
+    public Builder setDeleteTeamResponse(DeleteTeamResponse value) {
       if (deleteTeamResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6839,7 +6839,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      */
     public Builder setDeleteTeamResponse(
-        com.example.marspioneer.proto.DeleteTeamResponse.Builder builderForValue) {
+        DeleteTeamResponse.Builder builderForValue) {
       if (deleteTeamResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6852,11 +6852,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      */
-    public Builder mergeDeleteTeamResponse(com.example.marspioneer.proto.DeleteTeamResponse value) {
+    public Builder mergeDeleteTeamResponse(DeleteTeamResponse value) {
       if (deleteTeamResponseBuilder_ == null) {
         if (responseCase_ == 29 &&
-            response_ != com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.DeleteTeamResponse.newBuilder((com.example.marspioneer.proto.DeleteTeamResponse) response_)
+            response_ != DeleteTeamResponse.getDefaultInstance()) {
+          response_ = DeleteTeamResponse.newBuilder((DeleteTeamResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -6893,36 +6893,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      */
-    public com.example.marspioneer.proto.DeleteTeamResponse.Builder getDeleteTeamResponseBuilder() {
+    public DeleteTeamResponse.Builder getDeleteTeamResponseBuilder() {
       return getDeleteTeamResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.DeleteTeamResponseOrBuilder getDeleteTeamResponseOrBuilder() {
+    @Override
+    public DeleteTeamResponseOrBuilder getDeleteTeamResponseOrBuilder() {
       if ((responseCase_ == 29) && (deleteTeamResponseBuilder_ != null)) {
         return deleteTeamResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 29) {
-          return (com.example.marspioneer.proto.DeleteTeamResponse) response_;
+          return (DeleteTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance();
+        return DeleteTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.DeleteTeamResponse deleteTeamResponse = 29;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.DeleteTeamResponse, com.example.marspioneer.proto.DeleteTeamResponse.Builder, com.example.marspioneer.proto.DeleteTeamResponseOrBuilder> 
+        DeleteTeamResponse, DeleteTeamResponse.Builder, DeleteTeamResponseOrBuilder>
         getDeleteTeamResponseFieldBuilder() {
       if (deleteTeamResponseBuilder_ == null) {
         if (!(responseCase_ == 29)) {
-          response_ = com.example.marspioneer.proto.DeleteTeamResponse.getDefaultInstance();
+          response_ = DeleteTeamResponse.getDefaultInstance();
         }
         deleteTeamResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.DeleteTeamResponse, com.example.marspioneer.proto.DeleteTeamResponse.Builder, com.example.marspioneer.proto.DeleteTeamResponseOrBuilder>(
-                (com.example.marspioneer.proto.DeleteTeamResponse) response_,
+            DeleteTeamResponse, DeleteTeamResponse.Builder, DeleteTeamResponseOrBuilder>(
+                (DeleteTeamResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -6933,12 +6933,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.LeaveWorldResponse, com.example.marspioneer.proto.LeaveWorldResponse.Builder, com.example.marspioneer.proto.LeaveWorldResponseOrBuilder> leaveWorldResponseBuilder_;
+        LeaveWorldResponse, LeaveWorldResponse.Builder, LeaveWorldResponseOrBuilder> leaveWorldResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      * @return Whether the leaveWorldResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasLeaveWorldResponse() {
       return responseCase_ == 30;
     }
@@ -6946,24 +6946,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      * @return The leaveWorldResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.LeaveWorldResponse getLeaveWorldResponse() {
+    @Override
+    public LeaveWorldResponse getLeaveWorldResponse() {
       if (leaveWorldResponseBuilder_ == null) {
         if (responseCase_ == 30) {
-          return (com.example.marspioneer.proto.LeaveWorldResponse) response_;
+          return (LeaveWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance();
+        return LeaveWorldResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 30) {
           return leaveWorldResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance();
+        return LeaveWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      */
-    public Builder setLeaveWorldResponse(com.example.marspioneer.proto.LeaveWorldResponse value) {
+    public Builder setLeaveWorldResponse(LeaveWorldResponse value) {
       if (leaveWorldResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6980,7 +6980,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      */
     public Builder setLeaveWorldResponse(
-        com.example.marspioneer.proto.LeaveWorldResponse.Builder builderForValue) {
+        LeaveWorldResponse.Builder builderForValue) {
       if (leaveWorldResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -6993,11 +6993,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      */
-    public Builder mergeLeaveWorldResponse(com.example.marspioneer.proto.LeaveWorldResponse value) {
+    public Builder mergeLeaveWorldResponse(LeaveWorldResponse value) {
       if (leaveWorldResponseBuilder_ == null) {
         if (responseCase_ == 30 &&
-            response_ != com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.LeaveWorldResponse.newBuilder((com.example.marspioneer.proto.LeaveWorldResponse) response_)
+            response_ != LeaveWorldResponse.getDefaultInstance()) {
+          response_ = LeaveWorldResponse.newBuilder((LeaveWorldResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -7034,36 +7034,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      */
-    public com.example.marspioneer.proto.LeaveWorldResponse.Builder getLeaveWorldResponseBuilder() {
+    public LeaveWorldResponse.Builder getLeaveWorldResponseBuilder() {
       return getLeaveWorldResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.LeaveWorldResponseOrBuilder getLeaveWorldResponseOrBuilder() {
+    @Override
+    public LeaveWorldResponseOrBuilder getLeaveWorldResponseOrBuilder() {
       if ((responseCase_ == 30) && (leaveWorldResponseBuilder_ != null)) {
         return leaveWorldResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 30) {
-          return (com.example.marspioneer.proto.LeaveWorldResponse) response_;
+          return (LeaveWorldResponse) response_;
         }
-        return com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance();
+        return LeaveWorldResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.LeaveWorldResponse leaveWorldResponse = 30;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.LeaveWorldResponse, com.example.marspioneer.proto.LeaveWorldResponse.Builder, com.example.marspioneer.proto.LeaveWorldResponseOrBuilder> 
+        LeaveWorldResponse, LeaveWorldResponse.Builder, LeaveWorldResponseOrBuilder>
         getLeaveWorldResponseFieldBuilder() {
       if (leaveWorldResponseBuilder_ == null) {
         if (!(responseCase_ == 30)) {
-          response_ = com.example.marspioneer.proto.LeaveWorldResponse.getDefaultInstance();
+          response_ = LeaveWorldResponse.getDefaultInstance();
         }
         leaveWorldResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.LeaveWorldResponse, com.example.marspioneer.proto.LeaveWorldResponse.Builder, com.example.marspioneer.proto.LeaveWorldResponseOrBuilder>(
-                (com.example.marspioneer.proto.LeaveWorldResponse) response_,
+            LeaveWorldResponse, LeaveWorldResponse.Builder, LeaveWorldResponseOrBuilder>(
+                (LeaveWorldResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -7074,12 +7074,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetBuildingTypeResponse, com.example.marspioneer.proto.GetBuildingTypeResponse.Builder, com.example.marspioneer.proto.GetBuildingTypeResponseOrBuilder> getBuildingTypeResponseBuilder_;
+        GetBuildingTypeResponse, GetBuildingTypeResponse.Builder, GetBuildingTypeResponseOrBuilder> getBuildingTypeResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      * @return Whether the getBuildingTypeResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasGetBuildingTypeResponse() {
       return responseCase_ == 31;
     }
@@ -7087,24 +7087,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      * @return The getBuildingTypeResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetBuildingTypeResponse getGetBuildingTypeResponse() {
+    @Override
+    public GetBuildingTypeResponse getGetBuildingTypeResponse() {
       if (getBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 31) {
-          return (com.example.marspioneer.proto.GetBuildingTypeResponse) response_;
+          return (GetBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance();
+        return GetBuildingTypeResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 31) {
           return getBuildingTypeResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance();
+        return GetBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      */
-    public Builder setGetBuildingTypeResponse(com.example.marspioneer.proto.GetBuildingTypeResponse value) {
+    public Builder setGetBuildingTypeResponse(GetBuildingTypeResponse value) {
       if (getBuildingTypeResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -7121,7 +7121,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      */
     public Builder setGetBuildingTypeResponse(
-        com.example.marspioneer.proto.GetBuildingTypeResponse.Builder builderForValue) {
+        GetBuildingTypeResponse.Builder builderForValue) {
       if (getBuildingTypeResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -7134,11 +7134,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      */
-    public Builder mergeGetBuildingTypeResponse(com.example.marspioneer.proto.GetBuildingTypeResponse value) {
+    public Builder mergeGetBuildingTypeResponse(GetBuildingTypeResponse value) {
       if (getBuildingTypeResponseBuilder_ == null) {
         if (responseCase_ == 31 &&
-            response_ != com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.GetBuildingTypeResponse.newBuilder((com.example.marspioneer.proto.GetBuildingTypeResponse) response_)
+            response_ != GetBuildingTypeResponse.getDefaultInstance()) {
+          response_ = GetBuildingTypeResponse.newBuilder((GetBuildingTypeResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -7175,36 +7175,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      */
-    public com.example.marspioneer.proto.GetBuildingTypeResponse.Builder getGetBuildingTypeResponseBuilder() {
+    public GetBuildingTypeResponse.Builder getGetBuildingTypeResponseBuilder() {
       return getGetBuildingTypeResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.GetBuildingTypeResponseOrBuilder getGetBuildingTypeResponseOrBuilder() {
+    @Override
+    public GetBuildingTypeResponseOrBuilder getGetBuildingTypeResponseOrBuilder() {
       if ((responseCase_ == 31) && (getBuildingTypeResponseBuilder_ != null)) {
         return getBuildingTypeResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 31) {
-          return (com.example.marspioneer.proto.GetBuildingTypeResponse) response_;
+          return (GetBuildingTypeResponse) response_;
         }
-        return com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance();
+        return GetBuildingTypeResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.GetBuildingTypeResponse getBuildingTypeResponse = 31;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.GetBuildingTypeResponse, com.example.marspioneer.proto.GetBuildingTypeResponse.Builder, com.example.marspioneer.proto.GetBuildingTypeResponseOrBuilder> 
+        GetBuildingTypeResponse, GetBuildingTypeResponse.Builder, GetBuildingTypeResponseOrBuilder>
         getGetBuildingTypeResponseFieldBuilder() {
       if (getBuildingTypeResponseBuilder_ == null) {
         if (!(responseCase_ == 31)) {
-          response_ = com.example.marspioneer.proto.GetBuildingTypeResponse.getDefaultInstance();
+          response_ = GetBuildingTypeResponse.getDefaultInstance();
         }
         getBuildingTypeResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.GetBuildingTypeResponse, com.example.marspioneer.proto.GetBuildingTypeResponse.Builder, com.example.marspioneer.proto.GetBuildingTypeResponseOrBuilder>(
-                (com.example.marspioneer.proto.GetBuildingTypeResponse) response_,
+            GetBuildingTypeResponse, GetBuildingTypeResponse.Builder, GetBuildingTypeResponseOrBuilder>(
+                (GetBuildingTypeResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -7215,12 +7215,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListPlayersResponse, com.example.marspioneer.proto.ListPlayersResponse.Builder, com.example.marspioneer.proto.ListPlayersResponseOrBuilder> listPlayersResponseBuilder_;
+        ListPlayersResponse, ListPlayersResponse.Builder, ListPlayersResponseOrBuilder> listPlayersResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      * @return Whether the listPlayersResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasListPlayersResponse() {
       return responseCase_ == 32;
     }
@@ -7228,24 +7228,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      * @return The listPlayersResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListPlayersResponse getListPlayersResponse() {
+    @Override
+    public ListPlayersResponse getListPlayersResponse() {
       if (listPlayersResponseBuilder_ == null) {
         if (responseCase_ == 32) {
-          return (com.example.marspioneer.proto.ListPlayersResponse) response_;
+          return (ListPlayersResponse) response_;
         }
-        return com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+        return ListPlayersResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 32) {
           return listPlayersResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+        return ListPlayersResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      */
-    public Builder setListPlayersResponse(com.example.marspioneer.proto.ListPlayersResponse value) {
+    public Builder setListPlayersResponse(ListPlayersResponse value) {
       if (listPlayersResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -7262,7 +7262,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      */
     public Builder setListPlayersResponse(
-        com.example.marspioneer.proto.ListPlayersResponse.Builder builderForValue) {
+        ListPlayersResponse.Builder builderForValue) {
       if (listPlayersResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -7275,11 +7275,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      */
-    public Builder mergeListPlayersResponse(com.example.marspioneer.proto.ListPlayersResponse value) {
+    public Builder mergeListPlayersResponse(ListPlayersResponse value) {
       if (listPlayersResponseBuilder_ == null) {
         if (responseCase_ == 32 &&
-            response_ != com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.ListPlayersResponse.newBuilder((com.example.marspioneer.proto.ListPlayersResponse) response_)
+            response_ != ListPlayersResponse.getDefaultInstance()) {
+          response_ = ListPlayersResponse.newBuilder((ListPlayersResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -7316,36 +7316,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      */
-    public com.example.marspioneer.proto.ListPlayersResponse.Builder getListPlayersResponseBuilder() {
+    public ListPlayersResponse.Builder getListPlayersResponseBuilder() {
       return getListPlayersResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.ListPlayersResponseOrBuilder getListPlayersResponseOrBuilder() {
+    @Override
+    public ListPlayersResponseOrBuilder getListPlayersResponseOrBuilder() {
       if ((responseCase_ == 32) && (listPlayersResponseBuilder_ != null)) {
         return listPlayersResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 32) {
-          return (com.example.marspioneer.proto.ListPlayersResponse) response_;
+          return (ListPlayersResponse) response_;
         }
-        return com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+        return ListPlayersResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ListPlayersResponse listPlayersResponse = 32;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ListPlayersResponse, com.example.marspioneer.proto.ListPlayersResponse.Builder, com.example.marspioneer.proto.ListPlayersResponseOrBuilder> 
+        ListPlayersResponse, ListPlayersResponse.Builder, ListPlayersResponseOrBuilder>
         getListPlayersResponseFieldBuilder() {
       if (listPlayersResponseBuilder_ == null) {
         if (!(responseCase_ == 32)) {
-          response_ = com.example.marspioneer.proto.ListPlayersResponse.getDefaultInstance();
+          response_ = ListPlayersResponse.getDefaultInstance();
         }
         listPlayersResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.ListPlayersResponse, com.example.marspioneer.proto.ListPlayersResponse.Builder, com.example.marspioneer.proto.ListPlayersResponseOrBuilder>(
-                (com.example.marspioneer.proto.ListPlayersResponse) response_,
+            ListPlayersResponse, ListPlayersResponse.Builder, ListPlayersResponseOrBuilder>(
+                (ListPlayersResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -7356,12 +7356,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreateTeamResponse, com.example.marspioneer.proto.CreateTeamResponse.Builder, com.example.marspioneer.proto.CreateTeamResponseOrBuilder> createTeamResponseBuilder_;
+        CreateTeamResponse, CreateTeamResponse.Builder, CreateTeamResponseOrBuilder> createTeamResponseBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      * @return Whether the createTeamResponse field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasCreateTeamResponse() {
       return responseCase_ == 33;
     }
@@ -7369,24 +7369,24 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      * @return The createTeamResponse.
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateTeamResponse getCreateTeamResponse() {
+    @Override
+    public CreateTeamResponse getCreateTeamResponse() {
       if (createTeamResponseBuilder_ == null) {
         if (responseCase_ == 33) {
-          return (com.example.marspioneer.proto.CreateTeamResponse) response_;
+          return (CreateTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance();
+        return CreateTeamResponse.getDefaultInstance();
       } else {
         if (responseCase_ == 33) {
           return createTeamResponseBuilder_.getMessage();
         }
-        return com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance();
+        return CreateTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      */
-    public Builder setCreateTeamResponse(com.example.marspioneer.proto.CreateTeamResponse value) {
+    public Builder setCreateTeamResponse(CreateTeamResponse value) {
       if (createTeamResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -7403,7 +7403,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      */
     public Builder setCreateTeamResponse(
-        com.example.marspioneer.proto.CreateTeamResponse.Builder builderForValue) {
+        CreateTeamResponse.Builder builderForValue) {
       if (createTeamResponseBuilder_ == null) {
         response_ = builderForValue.build();
         onChanged();
@@ -7416,11 +7416,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      */
-    public Builder mergeCreateTeamResponse(com.example.marspioneer.proto.CreateTeamResponse value) {
+    public Builder mergeCreateTeamResponse(CreateTeamResponse value) {
       if (createTeamResponseBuilder_ == null) {
         if (responseCase_ == 33 &&
-            response_ != com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance()) {
-          response_ = com.example.marspioneer.proto.CreateTeamResponse.newBuilder((com.example.marspioneer.proto.CreateTeamResponse) response_)
+            response_ != CreateTeamResponse.getDefaultInstance()) {
+          response_ = CreateTeamResponse.newBuilder((CreateTeamResponse) response_)
               .mergeFrom(value).buildPartial();
         } else {
           response_ = value;
@@ -7457,36 +7457,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      */
-    public com.example.marspioneer.proto.CreateTeamResponse.Builder getCreateTeamResponseBuilder() {
+    public CreateTeamResponse.Builder getCreateTeamResponseBuilder() {
       return getCreateTeamResponseFieldBuilder().getBuilder();
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      */
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateTeamResponseOrBuilder getCreateTeamResponseOrBuilder() {
+    @Override
+    public CreateTeamResponseOrBuilder getCreateTeamResponseOrBuilder() {
       if ((responseCase_ == 33) && (createTeamResponseBuilder_ != null)) {
         return createTeamResponseBuilder_.getMessageOrBuilder();
       } else {
         if (responseCase_ == 33) {
-          return (com.example.marspioneer.proto.CreateTeamResponse) response_;
+          return (CreateTeamResponse) response_;
         }
-        return com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance();
+        return CreateTeamResponse.getDefaultInstance();
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.CreateTeamResponse createTeamResponse = 33;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.CreateTeamResponse, com.example.marspioneer.proto.CreateTeamResponse.Builder, com.example.marspioneer.proto.CreateTeamResponseOrBuilder> 
+        CreateTeamResponse, CreateTeamResponse.Builder, CreateTeamResponseOrBuilder>
         getCreateTeamResponseFieldBuilder() {
       if (createTeamResponseBuilder_ == null) {
         if (!(responseCase_ == 33)) {
-          response_ = com.example.marspioneer.proto.CreateTeamResponse.getDefaultInstance();
+          response_ = CreateTeamResponse.getDefaultInstance();
         }
         createTeamResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.CreateTeamResponse, com.example.marspioneer.proto.CreateTeamResponse.Builder, com.example.marspioneer.proto.CreateTeamResponseOrBuilder>(
-                (com.example.marspioneer.proto.CreateTeamResponse) response_,
+            CreateTeamResponse, CreateTeamResponse.Builder, CreateTeamResponseOrBuilder>(
+                (CreateTeamResponse) response_,
                 getParentForChildren(),
                 isClean());
         response_ = null;
@@ -7495,13 +7495,13 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return createTeamResponseBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -7512,18 +7512,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.Response)
-  private static final com.example.marspioneer.proto.Response DEFAULT_INSTANCE;
+  private static final Response DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.Response();
+    DEFAULT_INSTANCE = new Response();
   }
 
-  public static com.example.marspioneer.proto.Response getDefaultInstance() {
+  public static Response getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<Response>
       PARSER = new com.google.protobuf.AbstractParser<Response>() {
-    @java.lang.Override
+    @Override
     public Response parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7536,13 +7536,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Response> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.Response getDefaultInstanceForType() {
+  @Override
+  public Response getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

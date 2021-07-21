@@ -11,7 +11,7 @@ public interface BuildingEntityProtoOrBuilder extends
    * <code>string worldID = 1;</code>
    * @return The worldID.
    */
-  java.lang.String getWorldID();
+  String getWorldID();
   /**
    * <code>string worldID = 1;</code>
    * @return The bytes for worldID.
@@ -29,7 +29,7 @@ public interface BuildingEntityProtoOrBuilder extends
    * <code>string id = 3;</code>
    * @return The id.
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 3;</code>
    * @return The bytes for id.
@@ -46,11 +46,11 @@ public interface BuildingEntityProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    * @return The position.
    */
-  com.example.marspioneer.proto.MatrixPositionProto getPosition();
+  MatrixPositionProto getPosition();
   /**
    * <code>.com.example.marspioneer.proto.MatrixPositionProto position = 4;</code>
    */
-  com.example.marspioneer.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder();
+  MatrixPositionProtoOrBuilder getPositionOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.EBuildingType buildingType = 5;</code>
@@ -61,13 +61,13 @@ public interface BuildingEntityProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.EBuildingType buildingType = 5;</code>
    * @return The buildingType.
    */
-  com.example.marspioneer.proto.EBuildingType getBuildingType();
+  EBuildingType getBuildingType();
 
   /**
    * <code>string playerID = 6;</code>
    * @return The playerID.
    */
-  java.lang.String getPlayerID();
+  String getPlayerID();
   /**
    * <code>string playerID = 6;</code>
    * @return The bytes for playerID.
@@ -84,5 +84,5 @@ public interface BuildingEntityProtoOrBuilder extends
    * <code>.com.example.marspioneer.proto.Direction4 direction = 7;</code>
    * @return The direction.
    */
-  com.example.marspioneer.proto.Direction4 getDirection();
+  Direction4 getDirection();
 }

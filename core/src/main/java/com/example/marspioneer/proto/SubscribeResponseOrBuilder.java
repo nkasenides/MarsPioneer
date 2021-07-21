@@ -16,17 +16,17 @@ public interface SubscribeResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    * @return The partialState.
    */
-  com.example.marspioneer.proto.MPPartialStateProto getPartialState();
+  MPPartialStateProto getPartialState();
   /**
    * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
    */
-  com.example.marspioneer.proto.MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
+  MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
 
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -43,5 +43,5 @@ public interface SubscribeResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.SubscribeResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.SubscribeResponse.Status getStatus();
+  SubscribeResponse.Status getStatus();
 }

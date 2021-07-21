@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private MPPartialStateProto() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MPPartialStateProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -50,11 +50,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.example.marspioneer.proto.MPWorldSessionProto.Builder subBuilder = null;
+            MPWorldSessionProto.Builder subBuilder = null;
             if (worldSession_ != null) {
               subBuilder = worldSession_.toBuilder();
             }
-            worldSession_ = input.readMessage(com.example.marspioneer.proto.MPWorldSessionProto.parser(), extensionRegistry);
+            worldSession_ = input.readMessage(MPWorldSessionProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(worldSession_);
               worldSession_ = subBuilder.buildPartial();
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
                   CellsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000001;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+            com.google.protobuf.MapEntry<String, MPTerrainCellProto>
             cells__ = input.readMessage(
                 CellsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             cells_.getMutableMap().put(
@@ -81,7 +81,7 @@ private static final long serialVersionUID = 0L;
                   EntitiesDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000002;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+            com.google.protobuf.MapEntry<String, MPEntityProto>
             entities__ = input.readMessage(
                 EntitiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             entities_.getMutableMap().put(
@@ -109,11 +109,11 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
+  @Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -126,21 +126,21 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.MPPartialStateProto.class, com.example.marspioneer.proto.MPPartialStateProto.Builder.class);
+            MPPartialStateProto.class, Builder.class);
   }
 
   public static final int WORLDSESSION_FIELD_NUMBER = 1;
-  private com.example.marspioneer.proto.MPWorldSessionProto worldSession_;
+  private MPWorldSessionProto worldSession_;
   /**
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
    * @return Whether the worldSession field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasWorldSession() {
     return worldSession_ != null;
   }
@@ -148,33 +148,33 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
    * @return The worldSession.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPWorldSessionProto getWorldSession() {
-    return worldSession_ == null ? com.example.marspioneer.proto.MPWorldSessionProto.getDefaultInstance() : worldSession_;
+  @Override
+  public MPWorldSessionProto getWorldSession() {
+    return worldSession_ == null ? MPWorldSessionProto.getDefaultInstance() : worldSession_;
   }
   /**
    * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
+  @Override
+  public MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
     return getWorldSession();
   }
 
   public static final int CELLS_FIELD_NUMBER = 2;
   private static final class CellsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> defaultEntry =
+        String, MPTerrainCellProto> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>newDefaultInstance(
-                com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_descriptor, 
+            .<String, MPTerrainCellProto>newDefaultInstance(
+                MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_descriptor,
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.example.marspioneer.proto.MPTerrainCellProto.getDefaultInstance());
+                MPTerrainCellProto.getDefaultInstance());
   }
   private com.google.protobuf.MapField<
-      java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> cells_;
-  private com.google.protobuf.MapField<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+      String, MPTerrainCellProto> cells_;
+  private com.google.protobuf.MapField<String, MPTerrainCellProto>
   internalGetCells() {
     if (cells_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -190,53 +190,53 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
 
-  @java.lang.Override
+  @Override
   public boolean containsCells(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
     return internalGetCells().getMap().containsKey(key);
   }
   /**
    * Use {@link #getCellsMap()} instead.
    */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> getCells() {
+  @Override
+  @Deprecated
+  public java.util.Map<String, MPTerrainCellProto> getCells() {
     return getCellsMap();
   }
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> getCellsMap() {
+  public java.util.Map<String, MPTerrainCellProto> getCellsMap() {
     return internalGetCells().getMap();
   }
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.example.marspioneer.proto.MPTerrainCellProto getCellsOrDefault(
-      java.lang.String key,
-      com.example.marspioneer.proto.MPTerrainCellProto defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> map =
+  public MPTerrainCellProto getCellsOrDefault(
+      String key,
+      MPTerrainCellProto defaultValue) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MPTerrainCellProto> map =
         internalGetCells().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.example.marspioneer.proto.MPTerrainCellProto getCellsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> map =
+  public MPTerrainCellProto getCellsOrThrow(
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MPTerrainCellProto> map =
         internalGetCells().getMap();
     if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
     return map.get(key);
   }
@@ -244,18 +244,18 @@ private static final long serialVersionUID = 0L;
   public static final int ENTITIES_FIELD_NUMBER = 3;
   private static final class EntitiesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.example.marspioneer.proto.MPEntityProto> defaultEntry =
+        String, MPEntityProto> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.example.marspioneer.proto.MPEntityProto>newDefaultInstance(
-                com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_descriptor, 
+            .<String, MPEntityProto>newDefaultInstance(
+                MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_descriptor,
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.example.marspioneer.proto.MPEntityProto.getDefaultInstance());
+                MPEntityProto.getDefaultInstance());
   }
   private com.google.protobuf.MapField<
-      java.lang.String, com.example.marspioneer.proto.MPEntityProto> entities_;
-  private com.google.protobuf.MapField<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+      String, MPEntityProto> entities_;
+  private com.google.protobuf.MapField<String, MPEntityProto>
   internalGetEntities() {
     if (entities_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -271,59 +271,59 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
 
-  @java.lang.Override
+  @Override
   public boolean containsEntities(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
     return internalGetEntities().getMap().containsKey(key);
   }
   /**
    * Use {@link #getEntitiesMap()} instead.
    */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> getEntities() {
+  @Override
+  @Deprecated
+  public java.util.Map<String, MPEntityProto> getEntities() {
     return getEntitiesMap();
   }
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> getEntitiesMap() {
+  public java.util.Map<String, MPEntityProto> getEntitiesMap() {
     return internalGetEntities().getMap();
   }
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.example.marspioneer.proto.MPEntityProto getEntitiesOrDefault(
-      java.lang.String key,
-      com.example.marspioneer.proto.MPEntityProto defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> map =
+  public MPEntityProto getEntitiesOrDefault(
+      String key,
+      MPEntityProto defaultValue) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MPEntityProto> map =
         internalGetEntities().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.example.marspioneer.proto.MPEntityProto getEntitiesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> map =
+  public MPEntityProto getEntitiesOrThrow(
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MPEntityProto> map =
         internalGetEntities().getMap();
     if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
     return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (worldSession_ != null) {
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -364,9 +364,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getWorldSession());
     }
-    for (java.util.Map.Entry<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> entry
+    for (java.util.Map.Entry<String, MPTerrainCellProto> entry
          : internalGetCells().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+      com.google.protobuf.MapEntry<String, MPTerrainCellProto>
       cells__ = CellsDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
@@ -374,9 +374,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, cells__);
     }
-    for (java.util.Map.Entry<java.lang.String, com.example.marspioneer.proto.MPEntityProto> entry
+    for (java.util.Map.Entry<String, MPEntityProto> entry
          : internalGetEntities().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+      com.google.protobuf.MapEntry<String, MPEntityProto>
       entities__ = EntitiesDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
@@ -389,15 +389,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.MPPartialStateProto)) {
+    if (!(obj instanceof MPPartialStateProto)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.MPPartialStateProto other = (com.example.marspioneer.proto.MPPartialStateProto) obj;
+    MPPartialStateProto other = (MPPartialStateProto) obj;
 
     if (hasWorldSession() != other.hasWorldSession()) return false;
     if (hasWorldSession()) {
@@ -412,7 +412,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -436,69 +436,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(byte[] data)
+  public static MPPartialStateProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(java.io.InputStream input)
+  public static MPPartialStateProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseDelimitedFrom(java.io.InputStream input)
+  public static MPPartialStateProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseDelimitedFrom(
+  public static MPPartialStateProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.MPPartialStateProto parseFrom(
+  public static MPPartialStateProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -506,23 +506,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.MPPartialStateProto prototype) {
+  public static Builder newBuilder(MPPartialStateProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -532,10 +532,10 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements com.nkasenides.athlos.model.IPartialState, 
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.MPPartialStateProto)
-      com.example.marspioneer.proto.MPPartialStateProtoOrBuilder {
+      MPPartialStateProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -564,12 +564,12 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.MPPartialStateProto.class, com.example.marspioneer.proto.MPPartialStateProto.Builder.class);
+              MPPartialStateProto.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.MPPartialStateProto.newBuilder()
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (worldSessionBuilder_ == null) {
@@ -601,29 +601,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPPartialStateProto getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.MPPartialStateProto.getDefaultInstance();
+    @Override
+    public MPPartialStateProto getDefaultInstanceForType() {
+      return MPPartialStateProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPPartialStateProto build() {
-      com.example.marspioneer.proto.MPPartialStateProto result = buildPartial();
+    @Override
+    public MPPartialStateProto build() {
+      MPPartialStateProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.MPPartialStateProto buildPartial() {
-      com.example.marspioneer.proto.MPPartialStateProto result = new com.example.marspioneer.proto.MPPartialStateProto(this);
+    @Override
+    public MPPartialStateProto buildPartial() {
+      MPPartialStateProto result = new MPPartialStateProto(this);
       int from_bitField0_ = bitField0_;
       if (worldSessionBuilder_ == null) {
         result.worldSession_ = worldSession_;
@@ -638,50 +638,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.MPPartialStateProto) {
-        return mergeFrom((com.example.marspioneer.proto.MPPartialStateProto)other);
+      if (other instanceof MPPartialStateProto) {
+        return mergeFrom((MPPartialStateProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.MPPartialStateProto other) {
-      if (other == com.example.marspioneer.proto.MPPartialStateProto.getDefaultInstance()) return this;
+    public Builder mergeFrom(MPPartialStateProto other) {
+      if (other == MPPartialStateProto.getDefaultInstance()) return this;
       if (other.hasWorldSession()) {
         mergeWorldSession(other.getWorldSession());
       }
@@ -694,21 +694,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.MPPartialStateProto parsedMessage = null;
+      MPPartialStateProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.MPPartialStateProto) e.getUnfinishedMessage();
+        parsedMessage = (MPPartialStateProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -719,9 +719,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.example.marspioneer.proto.MPWorldSessionProto worldSession_;
+    private MPWorldSessionProto worldSession_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MPWorldSessionProto, com.example.marspioneer.proto.MPWorldSessionProto.Builder, com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder> worldSessionBuilder_;
+        MPWorldSessionProto, MPWorldSessionProto.Builder, MPWorldSessionProtoOrBuilder> worldSessionBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      * @return Whether the worldSession field is set.
@@ -733,9 +733,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      * @return The worldSession.
      */
-    public com.example.marspioneer.proto.MPWorldSessionProto getWorldSession() {
+    public MPWorldSessionProto getWorldSession() {
       if (worldSessionBuilder_ == null) {
-        return worldSession_ == null ? com.example.marspioneer.proto.MPWorldSessionProto.getDefaultInstance() : worldSession_;
+        return worldSession_ == null ? MPWorldSessionProto.getDefaultInstance() : worldSession_;
       } else {
         return worldSessionBuilder_.getMessage();
       }
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      */
-    public Builder setWorldSession(com.example.marspioneer.proto.MPWorldSessionProto value) {
+    public Builder setWorldSession(MPWorldSessionProto value) {
       if (worldSessionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -760,7 +760,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      */
     public Builder setWorldSession(
-        com.example.marspioneer.proto.MPWorldSessionProto.Builder builderForValue) {
+        MPWorldSessionProto.Builder builderForValue) {
       if (worldSessionBuilder_ == null) {
         worldSession_ = builderForValue.build();
         onChanged();
@@ -773,11 +773,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      */
-    public Builder mergeWorldSession(com.example.marspioneer.proto.MPWorldSessionProto value) {
+    public Builder mergeWorldSession(MPWorldSessionProto value) {
       if (worldSessionBuilder_ == null) {
         if (worldSession_ != null) {
           worldSession_ =
-            com.example.marspioneer.proto.MPWorldSessionProto.newBuilder(worldSession_).mergeFrom(value).buildPartial();
+            MPWorldSessionProto.newBuilder(worldSession_).mergeFrom(value).buildPartial();
         } else {
           worldSession_ = value;
         }
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      */
-    public com.example.marspioneer.proto.MPWorldSessionProto.Builder getWorldSessionBuilder() {
+    public MPWorldSessionProto.Builder getWorldSessionBuilder() {
       
       onChanged();
       return getWorldSessionFieldBuilder().getBuilder();
@@ -813,23 +813,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      */
-    public com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
+    public MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
       if (worldSessionBuilder_ != null) {
         return worldSessionBuilder_.getMessageOrBuilder();
       } else {
         return worldSession_ == null ?
-            com.example.marspioneer.proto.MPWorldSessionProto.getDefaultInstance() : worldSession_;
+            MPWorldSessionProto.getDefaultInstance() : worldSession_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MPWorldSessionProto, com.example.marspioneer.proto.MPWorldSessionProto.Builder, com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder> 
+        MPWorldSessionProto, MPWorldSessionProto.Builder, MPWorldSessionProtoOrBuilder>
         getWorldSessionFieldBuilder() {
       if (worldSessionBuilder_ == null) {
         worldSessionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.MPWorldSessionProto, com.example.marspioneer.proto.MPWorldSessionProto.Builder, com.example.marspioneer.proto.MPWorldSessionProtoOrBuilder>(
+            MPWorldSessionProto, MPWorldSessionProto.Builder, MPWorldSessionProtoOrBuilder>(
                 getWorldSession(),
                 getParentForChildren(),
                 isClean());
@@ -839,8 +839,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> cells_;
-    private com.google.protobuf.MapField<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+        String, MPTerrainCellProto> cells_;
+    private com.google.protobuf.MapField<String, MPTerrainCellProto>
     internalGetCells() {
       if (cells_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
       }
       return cells_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+    private com.google.protobuf.MapField<String, MPTerrainCellProto>
     internalGetMutableCells() {
       onChanged();;
       if (cells_ == null) {
@@ -868,53 +868,53 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
      */
 
-    @java.lang.Override
+    @Override
     public boolean containsCells(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       return internalGetCells().getMap().containsKey(key);
     }
     /**
      * Use {@link #getCellsMap()} instead.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> getCells() {
+    @Override
+    @Deprecated
+    public java.util.Map<String, MPTerrainCellProto> getCells() {
       return getCellsMap();
     }
     /**
      * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> getCellsMap() {
+    public java.util.Map<String, MPTerrainCellProto> getCellsMap() {
       return internalGetCells().getMap();
     }
     /**
      * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.example.marspioneer.proto.MPTerrainCellProto getCellsOrDefault(
-        java.lang.String key,
-        com.example.marspioneer.proto.MPTerrainCellProto defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> map =
+    public MPTerrainCellProto getCellsOrDefault(
+        String key,
+        MPTerrainCellProto defaultValue) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MPTerrainCellProto> map =
           internalGetCells().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.example.marspioneer.proto.MPTerrainCellProto getCellsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> map =
+    public MPTerrainCellProto getCellsOrThrow(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MPTerrainCellProto> map =
           internalGetCells().getMap();
       if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+        throw new IllegalArgumentException();
       }
       return map.get(key);
     }
@@ -929,8 +929,8 @@ private static final long serialVersionUID = 0L;
      */
 
     public Builder removeCells(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       internalGetMutableCells().getMutableMap()
           .remove(key);
       return this;
@@ -938,8 +938,8 @@ private static final long serialVersionUID = 0L;
     /**
      * Use alternate mutation accessors instead.
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto>
+    @Deprecated
+    public java.util.Map<String, MPTerrainCellProto>
     getMutableCells() {
       return internalGetMutableCells().getMutableMap();
     }
@@ -947,10 +947,10 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
      */
     public Builder putCells(
-        java.lang.String key,
-        com.example.marspioneer.proto.MPTerrainCellProto value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+        String key,
+        MPTerrainCellProto value) {
+      if (key == null) { throw new NullPointerException(); }
+      if (value == null) { throw new NullPointerException(); }
       internalGetMutableCells().getMutableMap()
           .put(key, value);
       return this;
@@ -960,15 +960,15 @@ private static final long serialVersionUID = 0L;
      */
 
     public Builder putAllCells(
-        java.util.Map<java.lang.String, com.example.marspioneer.proto.MPTerrainCellProto> values) {
+        java.util.Map<String, MPTerrainCellProto> values) {
       internalGetMutableCells().getMutableMap()
           .putAll(values);
       return this;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.example.marspioneer.proto.MPEntityProto> entities_;
-    private com.google.protobuf.MapField<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+        String, MPEntityProto> entities_;
+    private com.google.protobuf.MapField<String, MPEntityProto>
     internalGetEntities() {
       if (entities_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
       }
       return entities_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+    private com.google.protobuf.MapField<String, MPEntityProto>
     internalGetMutableEntities() {
       onChanged();;
       if (entities_ == null) {
@@ -996,53 +996,53 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
      */
 
-    @java.lang.Override
+    @Override
     public boolean containsEntities(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       return internalGetEntities().getMap().containsKey(key);
     }
     /**
      * Use {@link #getEntitiesMap()} instead.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> getEntities() {
+    @Override
+    @Deprecated
+    public java.util.Map<String, MPEntityProto> getEntities() {
       return getEntitiesMap();
     }
     /**
      * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> getEntitiesMap() {
+    public java.util.Map<String, MPEntityProto> getEntitiesMap() {
       return internalGetEntities().getMap();
     }
     /**
      * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.example.marspioneer.proto.MPEntityProto getEntitiesOrDefault(
-        java.lang.String key,
-        com.example.marspioneer.proto.MPEntityProto defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> map =
+    public MPEntityProto getEntitiesOrDefault(
+        String key,
+        MPEntityProto defaultValue) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MPEntityProto> map =
           internalGetEntities().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.example.marspioneer.proto.MPEntityProto getEntitiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> map =
+    public MPEntityProto getEntitiesOrThrow(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MPEntityProto> map =
           internalGetEntities().getMap();
       if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+        throw new IllegalArgumentException();
       }
       return map.get(key);
     }
@@ -1057,8 +1057,8 @@ private static final long serialVersionUID = 0L;
      */
 
     public Builder removeEntities(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       internalGetMutableEntities().getMutableMap()
           .remove(key);
       return this;
@@ -1066,8 +1066,8 @@ private static final long serialVersionUID = 0L;
     /**
      * Use alternate mutation accessors instead.
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto>
+    @Deprecated
+    public java.util.Map<String, MPEntityProto>
     getMutableEntities() {
       return internalGetMutableEntities().getMutableMap();
     }
@@ -1075,10 +1075,10 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
      */
     public Builder putEntities(
-        java.lang.String key,
-        com.example.marspioneer.proto.MPEntityProto value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+        String key,
+        MPEntityProto value) {
+      if (key == null) { throw new NullPointerException(); }
+      if (value == null) { throw new NullPointerException(); }
       internalGetMutableEntities().getMutableMap()
           .put(key, value);
       return this;
@@ -1088,18 +1088,18 @@ private static final long serialVersionUID = 0L;
      */
 
     public Builder putAllEntities(
-        java.util.Map<java.lang.String, com.example.marspioneer.proto.MPEntityProto> values) {
+        java.util.Map<String, MPEntityProto> values) {
       internalGetMutableEntities().getMutableMap()
           .putAll(values);
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1110,18 +1110,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.MPPartialStateProto)
-  private static final com.example.marspioneer.proto.MPPartialStateProto DEFAULT_INSTANCE;
+  private static final MPPartialStateProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.MPPartialStateProto();
+    DEFAULT_INSTANCE = new MPPartialStateProto();
   }
 
-  public static com.example.marspioneer.proto.MPPartialStateProto getDefaultInstance() {
+  public static MPPartialStateProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MPPartialStateProto>
       PARSER = new com.google.protobuf.AbstractParser<MPPartialStateProto>() {
-    @java.lang.Override
+    @Override
     public MPPartialStateProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1134,13 +1134,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MPPartialStateProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPPartialStateProto getDefaultInstanceForType() {
+  @Override
+  public MPPartialStateProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

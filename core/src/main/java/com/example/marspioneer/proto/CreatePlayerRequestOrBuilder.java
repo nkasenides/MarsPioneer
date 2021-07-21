@@ -16,9 +16,9 @@ public interface CreatePlayerRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPPlayerProto player = 1;</code>
    * @return The player.
    */
-  com.example.marspioneer.proto.MPPlayerProto getPlayer();
+  MPPlayerProto getPlayer();
   /**
    * <code>.com.example.marspioneer.proto.MPPlayerProto player = 1;</code>
    */
-  com.example.marspioneer.proto.MPPlayerProtoOrBuilder getPlayerOrBuilder();
+  MPPlayerProtoOrBuilder getPlayerOrBuilder();
 }

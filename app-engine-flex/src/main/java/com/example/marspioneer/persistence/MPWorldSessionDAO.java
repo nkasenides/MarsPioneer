@@ -16,6 +16,7 @@ import com.raylabz.objectis.Objectis;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -51,10 +52,10 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
 
     @Override
     public MPWorldSession getForWorld(String worldID, String itemID) {
-        final ArrayList<MPWorldSession> items = Objectis.filter(MPWorldSession.class)
+        final List<MPWorldSession> items = Objectis.filter(MPWorldSession.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("id", itemID)
-                .fetch();
+                .fetch().getItems();
         if (items.size() == 0) {
             return null;
         }
@@ -65,7 +66,7 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
     public Collection<MPWorldSession> listForWorld(String worldID) {
         return Objectis.filter(MPWorldSession.class)
                 .whereEqualTo("worldID", worldID)
-                .fetch();
+                .fetch().getItems();
     }
 
     /**
@@ -90,7 +91,7 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
     public Collection<MPWorldSession> listForPlayer(final String playerID) {
         return Objectis.filter(MPWorldSession.class)
                 .whereEqualTo("playerID", playerID)
-                .fetch();
+                .fetch().getItems();
     }
 
     /**
@@ -100,11 +101,11 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
      * @return Returns a WorldSession.
      */
     public MPWorldSession getForPlayerAndWorld(final String playerID, final String worldID) {
-        final ArrayList<MPWorldSession> items = Objectis.filter(MPWorldSession.class)
+        final List<MPWorldSession> items = Objectis.filter(MPWorldSession.class)
                 .whereEqualTo("playerID", playerID)
                 .whereEqualTo("worldID", worldID)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
         if (items.size() == 0) {
             return null;
         }

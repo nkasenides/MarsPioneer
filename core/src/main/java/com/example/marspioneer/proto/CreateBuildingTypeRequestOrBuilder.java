@@ -16,11 +16,11 @@ public interface CreateBuildingTypeRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  com.example.marspioneer.proto.MPGameSessionProto getGameSessionID();
+  MPGameSessionProto getGameSessionID();
   /**
    * <code>.com.example.marspioneer.proto.MPGameSessionProto gameSessionID = 1;</code>
    */
-  com.example.marspioneer.proto.MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder();
+  MPGameSessionProtoOrBuilder getGameSessionIDOrBuilder();
 
   /**
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
@@ -31,9 +31,9 @@ public interface CreateBuildingTypeRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    * @return The buildingType.
    */
-  com.example.marspioneer.proto.BuildingTypeProto getBuildingType();
+  BuildingTypeProto getBuildingType();
   /**
    * <code>.com.example.marspioneer.proto.BuildingTypeProto buildingType = 2;</code>
    */
-  com.example.marspioneer.proto.BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder();
+  BuildingTypeProtoOrBuilder getBuildingTypeOrBuilder();
 }

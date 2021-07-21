@@ -11,7 +11,7 @@ public interface CreateWorldRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
@@ -28,9 +28,9 @@ public interface CreateWorldRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    * @return The world.
    */
-  com.example.marspioneer.proto.MPWorldProto getWorld();
+  MPWorldProto getWorld();
   /**
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    */
-  com.example.marspioneer.proto.MPWorldProtoOrBuilder getWorldOrBuilder();
+  MPWorldProtoOrBuilder getWorldOrBuilder();
 }

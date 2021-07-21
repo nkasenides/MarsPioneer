@@ -11,7 +11,7 @@ public interface UpdatePlayerResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,5 +28,5 @@ public interface UpdatePlayerResponseOrBuilder extends
    * <code>.com.example.marspioneer.proto.UpdatePlayerResponse.Status status = 2;</code>
    * @return The status.
    */
-  com.example.marspioneer.proto.UpdatePlayerResponse.Status getStatus();
+  UpdatePlayerResponse.Status getStatus();
 }

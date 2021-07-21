@@ -11,7 +11,7 @@ public interface SellBuildingRequestOrBuilder extends
    * <code>string worldSessionID = 1;</code>
    * @return The worldSessionID.
    */
-  java.lang.String getWorldSessionID();
+  String getWorldSessionID();
   /**
    * <code>string worldSessionID = 1;</code>
    * @return The bytes for worldSessionID.
@@ -23,7 +23,7 @@ public interface SellBuildingRequestOrBuilder extends
    * <code>string buildingID = 2;</code>
    * @return The buildingID.
    */
-  java.lang.String getBuildingID();
+  String getBuildingID();
   /**
    * <code>string buildingID = 2;</code>
    * @return The bytes for buildingID.

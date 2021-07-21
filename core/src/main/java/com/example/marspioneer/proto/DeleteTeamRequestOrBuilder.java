@@ -11,7 +11,7 @@ public interface DeleteTeamRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
@@ -23,7 +23,7 @@ public interface DeleteTeamRequestOrBuilder extends
    * <code>string teamID = 2;</code>
    * @return The teamID.
    */
-  java.lang.String getTeamID();
+  String getTeamID();
   /**
    * <code>string teamID = 2;</code>
    * @return The bytes for teamID.

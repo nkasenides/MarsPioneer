@@ -14,10 +14,7 @@ import com.raylabz.firestorm.Firestorm;
 import com.raylabz.firestorm.FirestormBatch;
 import com.raylabz.objectis.Objectis;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.UUID;
+import java.util.*;
 
 
 public class MPPlayerDAO implements MultiDAO<MPPlayer> {
@@ -54,7 +51,7 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
     public Collection<MPPlayer> getMany(String... ids) {
         return Objectis.filter(MPPlayer.class)
                 .whereArrayContainsAny("id", Arrays.asList(ids))
-                .fetch();
+                .fetch().getItems();
     }
 
     @Override
@@ -149,10 +146,10 @@ public class MPPlayerDAO implements MultiDAO<MPPlayer> {
      * @return Returns a Player object.
      */
     public MPPlayer getByName(String name) {
-        final ArrayList<MPPlayer> items = Objectis.filter(MPPlayer.class)
+        final List<MPPlayer> items = Objectis.filter(MPPlayer.class)
                 .whereEqualTo("name", name)
                 .limit(1)
-                .fetch();
+                .fetch().getItems();
 
         if (items.size() == 0) {
             return null;

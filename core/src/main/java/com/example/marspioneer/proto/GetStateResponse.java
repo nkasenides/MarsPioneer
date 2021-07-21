@@ -64,11 +64,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.example.marspioneer.proto.ResourceSetProto.Builder subBuilder = null;
+            ResourceSetProto.Builder subBuilder = null;
             if (resourceSet_ != null) {
               subBuilder = resourceSet_.toBuilder();
             }
-            resourceSet_ = input.readMessage(com.example.marspioneer.proto.ResourceSetProto.parser(), extensionRegistry);
+            resourceSet_ = input.readMessage(ResourceSetProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(resourceSet_);
               resourceSet_ = subBuilder.buildPartial();
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCESET_FIELD_NUMBER = 2;
-  private com.example.marspioneer.proto.ResourceSetProto resourceSet_;
+  private ResourceSetProto resourceSet_;
   /**
    * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
    * @return Whether the resourceSet field is set.
@@ -305,14 +305,14 @@ private static final long serialVersionUID = 0L;
    * @return The resourceSet.
    */
   @Override
-  public com.example.marspioneer.proto.ResourceSetProto getResourceSet() {
-    return resourceSet_ == null ? com.example.marspioneer.proto.ResourceSetProto.getDefaultInstance() : resourceSet_;
+  public ResourceSetProto getResourceSet() {
+    return resourceSet_ == null ? ResourceSetProto.getDefaultInstance() : resourceSet_;
   }
   /**
    * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
    */
   @Override
-  public com.example.marspioneer.proto.ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
+  public ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
     return getResourceSet();
   }
 
@@ -870,9 +870,9 @@ private static final long serialVersionUID = 0L;
       return partialStateBuilder_;
     }
 
-    private com.example.marspioneer.proto.ResourceSetProto resourceSet_;
+    private ResourceSetProto resourceSet_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ResourceSetProto, com.example.marspioneer.proto.ResourceSetProto.Builder, com.example.marspioneer.proto.ResourceSetProtoOrBuilder> resourceSetBuilder_;
+        ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder> resourceSetBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      * @return Whether the resourceSet field is set.
@@ -884,9 +884,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      * @return The resourceSet.
      */
-    public com.example.marspioneer.proto.ResourceSetProto getResourceSet() {
+    public ResourceSetProto getResourceSet() {
       if (resourceSetBuilder_ == null) {
-        return resourceSet_ == null ? com.example.marspioneer.proto.ResourceSetProto.getDefaultInstance() : resourceSet_;
+        return resourceSet_ == null ? ResourceSetProto.getDefaultInstance() : resourceSet_;
       } else {
         return resourceSetBuilder_.getMessage();
       }
@@ -894,7 +894,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      */
-    public Builder setResourceSet(com.example.marspioneer.proto.ResourceSetProto value) {
+    public Builder setResourceSet(ResourceSetProto value) {
       if (resourceSetBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -911,7 +911,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      */
     public Builder setResourceSet(
-        com.example.marspioneer.proto.ResourceSetProto.Builder builderForValue) {
+        ResourceSetProto.Builder builderForValue) {
       if (resourceSetBuilder_ == null) {
         resourceSet_ = builderForValue.build();
         onChanged();
@@ -924,11 +924,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      */
-    public Builder mergeResourceSet(com.example.marspioneer.proto.ResourceSetProto value) {
+    public Builder mergeResourceSet(ResourceSetProto value) {
       if (resourceSetBuilder_ == null) {
         if (resourceSet_ != null) {
           resourceSet_ =
-            com.example.marspioneer.proto.ResourceSetProto.newBuilder(resourceSet_).mergeFrom(value).buildPartial();
+            ResourceSetProto.newBuilder(resourceSet_).mergeFrom(value).buildPartial();
         } else {
           resourceSet_ = value;
         }
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      */
-    public com.example.marspioneer.proto.ResourceSetProto.Builder getResourceSetBuilder() {
+    public ResourceSetProto.Builder getResourceSetBuilder() {
       
       onChanged();
       return getResourceSetFieldBuilder().getBuilder();
@@ -964,23 +964,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      */
-    public com.example.marspioneer.proto.ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
+    public ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
       if (resourceSetBuilder_ != null) {
         return resourceSetBuilder_.getMessageOrBuilder();
       } else {
         return resourceSet_ == null ?
-            com.example.marspioneer.proto.ResourceSetProto.getDefaultInstance() : resourceSet_;
+            ResourceSetProto.getDefaultInstance() : resourceSet_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.ResourceSetProto, com.example.marspioneer.proto.ResourceSetProto.Builder, com.example.marspioneer.proto.ResourceSetProtoOrBuilder> 
+        ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder>
         getResourceSetFieldBuilder() {
       if (resourceSetBuilder_ == null) {
         resourceSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.ResourceSetProto, com.example.marspioneer.proto.ResourceSetProto.Builder, com.example.marspioneer.proto.ResourceSetProtoOrBuilder>(
+            ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder>(
                 getResourceSet(),
                 getParentForChildren(),
                 isClean());

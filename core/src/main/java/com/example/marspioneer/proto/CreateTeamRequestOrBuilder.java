@@ -11,7 +11,7 @@ public interface CreateTeamRequestOrBuilder extends
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
@@ -28,9 +28,9 @@ public interface CreateTeamRequestOrBuilder extends
    * <code>.com.example.marspioneer.proto.MPTeamProto team = 2;</code>
    * @return The team.
    */
-  com.example.marspioneer.proto.MPTeamProto getTeam();
+  MPTeamProto getTeam();
   /**
    * <code>.com.example.marspioneer.proto.MPTeamProto team = 2;</code>
    */
-  com.example.marspioneer.proto.MPTeamProtoOrBuilder getTeamOrBuilder();
+  MPTeamProtoOrBuilder getTeamOrBuilder();
 }

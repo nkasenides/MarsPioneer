@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     gameSessionID_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new CreateWorldRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50,17 +50,17 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             gameSessionID_ = s;
             break;
           }
           case 18: {
-            com.example.marspioneer.proto.MPWorldProto.Builder subBuilder = null;
+            MPWorldProto.Builder subBuilder = null;
             if (world_ != null) {
               subBuilder = world_.toBuilder();
             }
-            world_ = input.readMessage(com.example.marspioneer.proto.MPWorldProto.parser(), extensionRegistry);
+            world_ = input.readMessage(MPWorldProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(world_);
               world_ = subBuilder.buildPartial();
@@ -89,32 +89,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_descriptor;
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_fieldAccessorTable
+    return MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.marspioneer.proto.CreateWorldRequest.class, com.example.marspioneer.proto.CreateWorldRequest.Builder.class);
+            CreateWorldRequest.class, Builder.class);
   }
 
   public static final int GAMESESSIONID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gameSessionID_;
+  private volatile Object gameSessionID_;
   /**
    * <code>string gameSessionID = 1;</code>
    * @return The gameSessionID.
    */
-  @java.lang.Override
-  public java.lang.String getGameSessionID() {
-    java.lang.Object ref = gameSessionID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getGameSessionID() {
+    Object ref = gameSessionID_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       gameSessionID_ = s;
       return s;
     }
@@ -123,14 +123,14 @@ private static final long serialVersionUID = 0L;
    * <code>string gameSessionID = 1;</code>
    * @return The bytes for gameSessionID.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getGameSessionIDBytes() {
-    java.lang.Object ref = gameSessionID_;
-    if (ref instanceof java.lang.String) {
+    Object ref = gameSessionID_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       gameSessionID_ = b;
       return b;
     } else {
@@ -139,12 +139,12 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int WORLD_FIELD_NUMBER = 2;
-  private com.example.marspioneer.proto.MPWorldProto world_;
+  private MPWorldProto world_;
   /**
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    * @return Whether the world field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasWorld() {
     return world_ != null;
   }
@@ -152,20 +152,20 @@ private static final long serialVersionUID = 0L;
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    * @return The world.
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPWorldProto getWorld() {
-    return world_ == null ? com.example.marspioneer.proto.MPWorldProto.getDefaultInstance() : world_;
+  @Override
+  public MPWorldProto getWorld() {
+    return world_ == null ? MPWorldProto.getDefaultInstance() : world_;
   }
   /**
    * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
    */
-  @java.lang.Override
-  public com.example.marspioneer.proto.MPWorldProtoOrBuilder getWorldOrBuilder() {
+  @Override
+  public MPWorldProtoOrBuilder getWorldOrBuilder() {
     return getWorld();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getGameSessionIDBytes().isEmpty()) {
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -205,15 +205,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.marspioneer.proto.CreateWorldRequest)) {
+    if (!(obj instanceof CreateWorldRequest)) {
       return super.equals(obj);
     }
-    com.example.marspioneer.proto.CreateWorldRequest other = (com.example.marspioneer.proto.CreateWorldRequest) obj;
+    CreateWorldRequest other = (CreateWorldRequest) obj;
 
     if (!getGameSessionID()
         .equals(other.getGameSessionID())) return false;
@@ -226,7 +226,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -244,69 +244,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(byte[] data)
+  public static CreateWorldRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(java.io.InputStream input)
+  public static CreateWorldRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseDelimitedFrom(java.io.InputStream input)
+  public static CreateWorldRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseDelimitedFrom(
+  public static CreateWorldRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.marspioneer.proto.CreateWorldRequest parseFrom(
+  public static CreateWorldRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -314,23 +314,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.marspioneer.proto.CreateWorldRequest prototype) {
+  public static Builder newBuilder(CreateWorldRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -340,18 +340,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.CreateWorldRequest)
-      com.example.marspioneer.proto.CreateWorldRequestOrBuilder {
+      CreateWorldRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_fieldAccessorTable
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.marspioneer.proto.CreateWorldRequest.class, com.example.marspioneer.proto.CreateWorldRequest.Builder.class);
+              CreateWorldRequest.class, Builder.class);
     }
 
     // Construct using com.example.marspioneer.proto.CreateWorldRequest.newBuilder()
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       gameSessionID_ = "";
@@ -383,29 +383,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.marspioneer.proto.MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_descriptor;
+      return MarsPioneerProto.internal_static_com_example_marspioneer_proto_CreateWorldRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateWorldRequest getDefaultInstanceForType() {
-      return com.example.marspioneer.proto.CreateWorldRequest.getDefaultInstance();
+    @Override
+    public CreateWorldRequest getDefaultInstanceForType() {
+      return CreateWorldRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateWorldRequest build() {
-      com.example.marspioneer.proto.CreateWorldRequest result = buildPartial();
+    @Override
+    public CreateWorldRequest build() {
+      CreateWorldRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.example.marspioneer.proto.CreateWorldRequest buildPartial() {
-      com.example.marspioneer.proto.CreateWorldRequest result = new com.example.marspioneer.proto.CreateWorldRequest(this);
+    @Override
+    public CreateWorldRequest buildPartial() {
+      CreateWorldRequest result = new CreateWorldRequest(this);
       result.gameSessionID_ = gameSessionID_;
       if (worldBuilder_ == null) {
         result.world_ = world_;
@@ -416,50 +416,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.marspioneer.proto.CreateWorldRequest) {
-        return mergeFrom((com.example.marspioneer.proto.CreateWorldRequest)other);
+      if (other instanceof CreateWorldRequest) {
+        return mergeFrom((CreateWorldRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.marspioneer.proto.CreateWorldRequest other) {
-      if (other == com.example.marspioneer.proto.CreateWorldRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(CreateWorldRequest other) {
+      if (other == CreateWorldRequest.getDefaultInstance()) return this;
       if (!other.getGameSessionID().isEmpty()) {
         gameSessionID_ = other.gameSessionID_;
         onChanged();
@@ -472,21 +472,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.marspioneer.proto.CreateWorldRequest parsedMessage = null;
+      CreateWorldRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.marspioneer.proto.CreateWorldRequest) e.getUnfinishedMessage();
+        parsedMessage = (CreateWorldRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -496,21 +496,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object gameSessionID_ = "";
+    private Object gameSessionID_ = "";
     /**
      * <code>string gameSessionID = 1;</code>
      * @return The gameSessionID.
      */
-    public java.lang.String getGameSessionID() {
-      java.lang.Object ref = gameSessionID_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getGameSessionID() {
+      Object ref = gameSessionID_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         gameSessionID_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -519,11 +519,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getGameSessionIDBytes() {
-      java.lang.Object ref = gameSessionID_;
+      Object ref = gameSessionID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         gameSessionID_ = b;
         return b;
       } else {
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setGameSessionID(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -572,9 +572,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.example.marspioneer.proto.MPWorldProto world_;
+    private MPWorldProto world_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MPWorldProto, com.example.marspioneer.proto.MPWorldProto.Builder, com.example.marspioneer.proto.MPWorldProtoOrBuilder> worldBuilder_;
+        MPWorldProto, MPWorldProto.Builder, MPWorldProtoOrBuilder> worldBuilder_;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      * @return Whether the world field is set.
@@ -586,9 +586,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      * @return The world.
      */
-    public com.example.marspioneer.proto.MPWorldProto getWorld() {
+    public MPWorldProto getWorld() {
       if (worldBuilder_ == null) {
-        return world_ == null ? com.example.marspioneer.proto.MPWorldProto.getDefaultInstance() : world_;
+        return world_ == null ? MPWorldProto.getDefaultInstance() : world_;
       } else {
         return worldBuilder_.getMessage();
       }
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      */
-    public Builder setWorld(com.example.marspioneer.proto.MPWorldProto value) {
+    public Builder setWorld(MPWorldProto value) {
       if (worldBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      */
     public Builder setWorld(
-        com.example.marspioneer.proto.MPWorldProto.Builder builderForValue) {
+        MPWorldProto.Builder builderForValue) {
       if (worldBuilder_ == null) {
         world_ = builderForValue.build();
         onChanged();
@@ -626,11 +626,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      */
-    public Builder mergeWorld(com.example.marspioneer.proto.MPWorldProto value) {
+    public Builder mergeWorld(MPWorldProto value) {
       if (worldBuilder_ == null) {
         if (world_ != null) {
           world_ =
-            com.example.marspioneer.proto.MPWorldProto.newBuilder(world_).mergeFrom(value).buildPartial();
+            MPWorldProto.newBuilder(world_).mergeFrom(value).buildPartial();
         } else {
           world_ = value;
         }
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      */
-    public com.example.marspioneer.proto.MPWorldProto.Builder getWorldBuilder() {
+    public MPWorldProto.Builder getWorldBuilder() {
       
       onChanged();
       return getWorldFieldBuilder().getBuilder();
@@ -666,23 +666,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      */
-    public com.example.marspioneer.proto.MPWorldProtoOrBuilder getWorldOrBuilder() {
+    public MPWorldProtoOrBuilder getWorldOrBuilder() {
       if (worldBuilder_ != null) {
         return worldBuilder_.getMessageOrBuilder();
       } else {
         return world_ == null ?
-            com.example.marspioneer.proto.MPWorldProto.getDefaultInstance() : world_;
+            MPWorldProto.getDefaultInstance() : world_;
       }
     }
     /**
      * <code>.com.example.marspioneer.proto.MPWorldProto world = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.example.marspioneer.proto.MPWorldProto, com.example.marspioneer.proto.MPWorldProto.Builder, com.example.marspioneer.proto.MPWorldProtoOrBuilder> 
+        MPWorldProto, MPWorldProto.Builder, MPWorldProtoOrBuilder>
         getWorldFieldBuilder() {
       if (worldBuilder_ == null) {
         worldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.example.marspioneer.proto.MPWorldProto, com.example.marspioneer.proto.MPWorldProto.Builder, com.example.marspioneer.proto.MPWorldProtoOrBuilder>(
+            MPWorldProto, MPWorldProto.Builder, MPWorldProtoOrBuilder>(
                 getWorld(),
                 getParentForChildren(),
                 isClean());
@@ -690,13 +690,13 @@ private static final long serialVersionUID = 0L;
       }
       return worldBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -707,18 +707,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.example.marspioneer.proto.CreateWorldRequest)
-  private static final com.example.marspioneer.proto.CreateWorldRequest DEFAULT_INSTANCE;
+  private static final CreateWorldRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.marspioneer.proto.CreateWorldRequest();
+    DEFAULT_INSTANCE = new CreateWorldRequest();
   }
 
-  public static com.example.marspioneer.proto.CreateWorldRequest getDefaultInstance() {
+  public static CreateWorldRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<CreateWorldRequest>
       PARSER = new com.google.protobuf.AbstractParser<CreateWorldRequest>() {
-    @java.lang.Override
+    @Override
     public CreateWorldRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -731,13 +731,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<CreateWorldRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.example.marspioneer.proto.CreateWorldRequest getDefaultInstanceForType() {
+  @Override
+  public CreateWorldRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
