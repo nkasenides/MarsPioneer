@@ -1,5 +1,4 @@
 com\example\marspioneer\persistence\MPWorldDAO$3.class
-com\example\marspioneer\service\DeleteWorld$1.class
 com\example\marspioneer\service\UpdateTeam.class
 com\example\marspioneer\servlet\BuildSandPitServlet.class
 com\example\marspioneer\servlet\CreateWorldServlet.class
@@ -65,6 +64,7 @@ com\example\marspioneer\service\CreateWorld.class
 com\example\marspioneer\service\GetState.class
 com\example\marspioneer\websocket\BuildHubWebSocket.class
 com\example\marspioneer\auth\Auth.class
+com\example\marspioneer\persistence\MPTerrainIdentifierDAO.class
 com\example\marspioneer\persistence\MPWorldDAO$2.class
 com\example\marspioneer\service\GetPlayer.class
 com\example\marspioneer\servlet\TestServlet.class
@@ -74,7 +74,6 @@ com\example\marspioneer\state\State.class
 com\example\marspioneer\persistence\BuildingEntityDAO.class
 com\example\marspioneer\servlet\GetPlayerServlet.class
 com\example\marspioneer\persistence\MPTeamDAO$4.class
-com\example\marspioneer\service\DeleteWorld$2.class
 com\example\marspioneer\contextlistener\FirestormContextListener.class
 com\example\marspioneer\servlet\GetWorldServlet.class
 com\example\marspioneer\service\Services.class
@@ -90,6 +89,5 @@ com\example\marspioneer\service\DeletePlayer.class
 com\example\marspioneer\servlet\GetTeamServlet.class
 com\example\marspioneer\service\GetTeam.class
 com\example\marspioneer\service\ListWorlds.class
-com\example\marspioneer\service\DeleteWorld$3.class
 com\example\marspioneer\websocket\BuildFarmWebSocket.class
 com\example\marspioneer\websocket\SellBuildingWebSocket.class

@@ -6,6 +6,7 @@
 package com.example.marspioneer.persistence;
 
 
+import com.example.marspioneer.model.MPTerrainIdentifier;
 import redis.clients.jedis.Jedis;
 
 public final class DBManager {
@@ -16,14 +17,8 @@ public final class DBManager {
     public static final MPEntityDAO entity  = new MPEntityDAO();
     public static final MPGameSessionDAO gameSession  = new MPGameSessionDAO();
     public static final MPPlayerDAO player  = new MPPlayerDAO();
-    private static MPTerrainChunkDAO terrainChunkDAOInstance  = null;
     public static final MPWorldDAO world  = new MPWorldDAO();
-
-    public static MPTerrainChunkDAO terrainChunk(Jedis jedis) {
-        if (terrainChunkDAOInstance == null) {
-            terrainChunkDAOInstance = new MPTerrainChunkDAO(jedis);
-        }
-        return terrainChunkDAOInstance;
-    }
+    public static MPTerrainChunkDAO terrainChunk = new MPTerrainChunkDAO();
+    public static final MPTerrainIdentifierDAO terrainIdentifier = new MPTerrainIdentifierDAO(); //NEW
 
 }

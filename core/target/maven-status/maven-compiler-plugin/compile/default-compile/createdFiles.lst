@@ -30,6 +30,7 @@ com\example\marspioneer\proto\UpdateStateResponseOrBuilder.class
 com\example\marspioneer\proto\ListBuildingTypesRequestOrBuilder.class
 com\example\marspioneer\proto\DeletePlayerRequest$1.class
 com\example\marspioneer\proto\UpdatePlayerResponse$Status.class
+com\example\marspioneer\model\MPTerrainIdentifier.class
 com\example\marspioneer\proto\ListBuildingTypesResponse$1.class
 com\example\marspioneer\proto\BuildSandPitRequest.class
 com\example\marspioneer\proto\RemovePlayerFromTeamRequestOrBuilder.class

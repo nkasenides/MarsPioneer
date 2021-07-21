@@ -42,6 +42,7 @@ public class FirestormContextListener implements ServletContextListener {
         Firestorm.register(MPTeam.class);
         Firestorm.register(MPPlayer.class);
         Firestorm.register(MPTerrainChunk.class);
+        Firestorm.register(MPTerrainIdentifier.class);
 
     }
 

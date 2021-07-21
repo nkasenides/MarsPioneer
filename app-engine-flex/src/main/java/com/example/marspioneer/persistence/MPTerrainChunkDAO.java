@@ -7,6 +7,8 @@ package com.example.marspioneer.persistence;
 
 
 import com.example.marspioneer.model.MPTerrainChunk;
+import com.example.marspioneer.model.MPTerrainIdentifier;
+import com.example.marspioneer.model.MPWorld;
 import com.nkasenides.athlos.persistence.WorldBasedDAO;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.jsec.HashType;
@@ -22,18 +24,25 @@ import java.util.UUID;
 
 public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
 
-    private final Jedis jedis;
-
-    public MPTerrainChunkDAO(Jedis jedis) {
-        this.jedis = jedis;
-    }
-
     @Override
     public boolean create(MPTerrainChunk object) {
-        final String chunkHash = object.getPosition().toHash();
-        object.setId(chunkHash);
-        Objectis.create(object, chunkHash);
-        new Thread(() -> Firestorm.create(object, chunkHash)).start();
+        String uuid = UUID.randomUUID().toString();
+        object.setId(uuid);
+        Objectis.create(object, uuid);
+        Objectis.collection(MPTerrainChunk.class, "terrain_" + object.getWorldID()).add(object);
+
+        MPTerrainIdentifier identifier = new MPTerrainIdentifier();
+        identifier.setChunkID(object.getId());
+        identifier.setChunkPosition(object.getPosition());
+        identifier.setWorldID(object.getWorldID());
+        DBManager.terrainIdentifier.create(identifier);
+
+        new Thread(() -> {
+            Firestorm.create(object, uuid);
+//            final MPWorld mpWorld = Objectis.get(MPWorld.class, object.getWorldID());
+//            mpWorld.addChunk(object.getId());
+//            Objectis.update(mpWorld);
+        }).start();
         return true;
     }
 
@@ -46,34 +55,36 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
 
     @Override
     public boolean delete(MPTerrainChunk object) {
-        Objectis.delete(MPTerrainChunk.class, object.getPosition().toHash());
-        new Thread(() -> Firestorm.delete(MPTerrainChunk.class, object.getPosition().toHash())).start();
+        Objectis.delete(object);
+        //TODO - Use object.getIdentifier() to obtain identifier and delete it.
+        new Thread(() -> {
+            Firestorm.delete(object);
+//            final MPWorld mpWorld = Objectis.get(MPWorld.class, object.getWorldID());
+//            mpWorld.getChunkIDs().remove(object.getId());
+//            Objectis.update(mpWorld);
+        }).start();
         return true;
     }
 
 //    @Override
-    public MPTerrainChunk get(String chunkHash) {
-        return Objectis.get(MPTerrainChunk.class, chunkHash);
+    public MPTerrainChunk get(String id) {
+        return Objectis.get(MPTerrainChunk.class, id);
     }
 
     @Override
-    public MPTerrainChunk getForWorld(String worldID, String itemID) {
-        final List<MPTerrainChunk> items = Objectis.filter(MPTerrainChunk.class)
-                .whereEqualTo("worldID", worldID)
-                .whereEqualTo("id", itemID)
-                .fetch().getItems();
-        if (items.size() == 0) {
-            return null;
+    public MPTerrainChunk getForWorld(String worldID, String hash) {
+        final List<MPTerrainChunk> chunks = Objectis.collection(MPTerrainChunk.class, "terrain_" + worldID).list();
+        for (MPTerrainChunk chunk : chunks) {
+            if (chunk.getPosition().toHash().equals(hash)) {
+                return chunk;
+            }
         }
-        return items.get(0);
+        return null;
     }
 
     @Override
     public Collection<MPTerrainChunk> listForWorld(String worldID) {
-        return Objectis.filter(MPTerrainChunk.class)
-                .whereEqualTo("worldID", worldID)
-                .limit(1)
-                .fetch().getItems();
+        return Objectis.collection(MPTerrainChunk.class, "terrain_" + worldID).list();
     }
 
 }

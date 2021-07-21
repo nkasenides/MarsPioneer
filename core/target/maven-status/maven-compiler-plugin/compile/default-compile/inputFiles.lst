@@ -62,6 +62,7 @@ D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\Rotation.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\CreateWorldRequestOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\ListTeamPlayersRequestOrBuilder.java
+D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\model\MPTerrainIdentifier.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\AuthenticateRequest.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\GetWorldRequestOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MatrixPositionProtoOrBuilder.java

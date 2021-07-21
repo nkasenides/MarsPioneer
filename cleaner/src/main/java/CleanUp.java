@@ -36,6 +36,7 @@ public class CleanUp {
         Firestorm.register(MPTeam.class);
         Firestorm.register(MPPlayer.class);
         Firestorm.register(MPTerrainChunk.class);
+        Firestorm.register(MPTerrainIdentifier.class);
 
         System.out.println("--- STARTING CLEANUP ---");
 
@@ -90,6 +91,13 @@ public class CleanUp {
         {
             final ArrayList<MPTerrainChunk> items = Firestorm.listAll(MPTerrainChunk.class);
             for (MPTerrainChunk i : items) {
+                System.out.println("Deleting " + i.getId());
+                Firestorm.delete(i);
+            }
+        }
+        {
+            final ArrayList<MPTerrainIdentifier> items = Firestorm.listAll(MPTerrainIdentifier.class);
+            for (MPTerrainIdentifier i : items) {
                 System.out.println("Deleting " + i.getId());
                 Firestorm.delete(i);
             }

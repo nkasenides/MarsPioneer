@@ -62,6 +62,7 @@ public class RedisContextListener implements ServletContextListener {
                 Objectis.register(MPTeam.class);
                 Objectis.register(MPPlayer.class);
                 Objectis.register(MPTerrainChunk.class);
+                Objectis.register(MPTerrainIdentifier.class);
 
                 event.getServletContext().setAttribute("jedisPool", jedisPool);
             } catch (IOException | ClassRegistrationException e) {

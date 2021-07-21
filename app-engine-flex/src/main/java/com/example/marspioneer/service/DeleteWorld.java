@@ -25,115 +25,62 @@ public class DeleteWorld implements AthlosService<DeleteWorldRequest, DeleteWorl
     @Override    
     public DeleteWorldResponse serve(DeleteWorldRequest request, Object... additionalParams) {
 
-        try {
-
-            //Verify game session:
-            final MPPlayer player = Auth.verifyGameSessionID(request.getGameSessionID());
-            if (player == null) {
-                return DeleteWorldResponse.newBuilder()
-                        .setStatus(DeleteWorldResponse.Status.NOT_AUTHORIZED)
-                        .setMessage("NOT_AUTHORIZED")
-                        .build();
-            }
-
-            //Retrieve world:
-            final MPWorld world = DBManager.world.get(request.getWorldID());
-            if (world == null) {
-                return DeleteWorldResponse.newBuilder()
-                        .setStatus(DeleteWorldResponse.Status.NO_SUCH_WORLD)
-                        .setMessage("NO_SUCH_WORLD")
-                        .build();
-            }
-
-            //Is the current player the owner of the world?
-            if (!player.getId().equals(world.getOwnerID())) {
-                return DeleteWorldResponse.newBuilder()
-                        .setStatus(DeleteWorldResponse.Status.NOT_AUTHORIZED)
-                        .setMessage("NOT_AN_OWNER")
-                        .build();
-            }
-
-            //Delete all entities in this world:
-            final Collection<MPEntity> entities = DBManager.entity.listForWorld(world.getId());
-            entities.addAll(DBManager.buildingEntity.listForWorld(world.getId()));
-            Firestorm.runBatch(new FirestormBatch() {
-                @Override
-                public void execute() {
-                    for (MPEntity e : entities) {
-                        delete(e);
-                    }
-                }
-
-                @Override
-                public void onFailure(Exception e) {
-
-                }
-
-                @Override
-                public void onSuccess() {
-
-                }
-            });
-
-            //Delete all world sessions for this world:
-            final Collection<MPWorldSession> mpWorldSessions = DBManager.worldSession.listForWorld(world.getId());
-            Firestorm.runBatch(new FirestormBatch() {
-                @Override
-                public void execute() {
-                    for (MPWorldSession worldSession : mpWorldSessions) {
-                        delete(worldSession);
-                    }
-                }
-
-                @Override
-                public void onFailure(Exception e) {
-
-                }
-
-                @Override
-                public void onSuccess() {
-
-                }
-            });
-
-            //Delete world terrain:
-            final Collection<MPTerrainChunk> mpTerrainChunks = DBManager.terrainChunk(Cache.getJedis((ServletContext) additionalParams[1])).listForWorld(world.getId());
-            Firestorm.runBatch(new FirestormBatch() {
-                @Override
-                public void execute() {
-                    for (MPTerrainChunk terrainChunk : mpTerrainChunks) {
-                        delete(terrainChunk);
-                    }
-                }
-
-                @Override
-                public void onFailure(Exception e) {
-
-                }
-
-                @Override
-                public void onSuccess() {
-
-                }
-            });
-
-            //Delete the world:
-            DBManager.world.delete(world);
-
+        //Verify game session:
+        final MPPlayer player = Auth.verifyGameSessionID(request.getGameSessionID());
+        if (player == null) {
             return DeleteWorldResponse.newBuilder()
-                    .setStatus(DeleteWorldResponse.Status.OK)
-                    .setMessage("OK")
-                    .build();
-
-        } catch (SocketException e) {
-            e.printStackTrace();
-            return DeleteWorldResponse.newBuilder()
-                    .setStatus(DeleteWorldResponse.Status.SERVER_ERROR)
-                    .setMessage(e.getMessage())
+                    .setStatus(DeleteWorldResponse.Status.NOT_AUTHORIZED)
+                    .setMessage("NOT_AUTHORIZED")
                     .build();
         }
 
-    }    
+        //Retrieve world:
+        final MPWorld world = DBManager.world.get(request.getWorldID());
+        if (world == null) {
+            return DeleteWorldResponse.newBuilder()
+                    .setStatus(DeleteWorldResponse.Status.NO_SUCH_WORLD)
+                    .setMessage("NO_SUCH_WORLD")
+                    .build();
+        }
+
+        //Is the current player the owner of the world?
+        if (!player.getId().equals(world.getOwnerID())) {
+            return DeleteWorldResponse.newBuilder()
+                    .setStatus(DeleteWorldResponse.Status.NOT_AUTHORIZED)
+                    .setMessage("NOT_AN_OWNER")
+                    .build();
+        }
+
+
+        //Delete world terrain, entities & sessions:
+        final Collection<MPTerrainChunk> mpTerrainChunks = DBManager.terrainChunk.listForWorld(world.getId());
+        final Collection<MPTerrainIdentifier> mpTerrainIdentifiers = DBManager.terrainIdentifier.listForWorld(world.getId());
+        final Collection<MPWorldSession> mpWorldSessions = DBManager.worldSession.listForWorld(world.getId());
+        final Collection<BuildingEntity> entities = DBManager.buildingEntity.listForWorld(world.getId());
+
+        for (MPTerrainChunk terrainChunk : mpTerrainChunks) {
+            DBManager.terrainChunk.delete(terrainChunk);
+        }
+        for (MPTerrainIdentifier terrainIdentifier : mpTerrainIdentifiers) {
+            DBManager.terrainIdentifier.delete(terrainIdentifier);
+        }
+        for (MPWorldSession worldSession : mpWorldSessions) {
+            DBManager.worldSession.delete(worldSession);
+        }
+        for (BuildingEntity entity : entities) {
+            DBManager.buildingEntity.delete(entity);
+        }
+
+
+        //Delete the world:
+        DBManager.world.delete(world);
+
+        return DeleteWorldResponse.newBuilder()
+                .setStatus(DeleteWorldResponse.Status.OK)
+                .setMessage("OK")
+                .build();
+
+    }
     
 }
 

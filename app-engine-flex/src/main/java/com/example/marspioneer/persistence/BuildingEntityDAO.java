@@ -76,12 +76,10 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForPlayerAndWorld(String worldID, String playerID) {
-        final long start = System.currentTimeMillis();
         final List<BuildingEntity> fetch = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)
                 .fetch().getItems();
-        System.out.println("BuildingEntity listForPlayerAndWorld: " + (System.currentTimeMillis() - start));
         return fetch;
     }
     /**

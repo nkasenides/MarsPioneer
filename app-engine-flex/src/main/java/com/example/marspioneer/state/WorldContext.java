@@ -7,7 +7,6 @@ package com.example.marspioneer.state;
 
 
 import com.example.marspioneer.model.*;
-import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.generation.MPTerrainGenerator;
@@ -15,11 +14,7 @@ import com.raylabz.jsec.HashType;
 import com.raylabz.jsec.Hashing;
 import redis.clients.jedis.Jedis;
 
-import javax.servlet.ServletContext;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class WorldContext {
 
@@ -56,18 +51,29 @@ public class WorldContext {
      */
     private MPTerrainChunk requestChunk(int chunkRow, int chunkCol) {
         final String chunkHash = Hashing.hash(HashType.MD5, chunkRow + "," + chunkCol);
-        MPTerrainChunk chunk = DBManager.terrainChunk(jedis).getForWorld(worldID, chunkHash);
 
+        //Find the chunk using the identifier:
+        MPTerrainIdentifier chunkIdentifier = null;
+        final Collection<MPTerrainIdentifier> terrainIdentifiers = DBManager.terrainIdentifier.listForWorld(worldID);
+        for (MPTerrainIdentifier terrainIdentifier : terrainIdentifiers) {
+            if (terrainIdentifier.getChunkPosition().toHash().equals(chunkHash)) {
+                chunkIdentifier = terrainIdentifier;
+            }
+        }
+
+        //Retrieve the chunk by ID, if it exists:
+        if (chunkIdentifier != null) {
+            return DBManager.terrainChunk.get(chunkIdentifier.getChunkID());
+        }
         //If cache and/or database don't have the chunk, generate it and store it:
-        if (chunk == null) {
+        else {
             final MPTerrainChunk generatedChunk = terrainGenerator.generateChunk(chunkRow, chunkCol);
-            DBManager.terrainChunk(jedis).create(generatedChunk);
+            DBManager.terrainChunk.create(generatedChunk);
             MPWorld updatedWorld = DBManager.world.get(worldID);
             updatedWorld.addChunk(generatedChunk.getId());
             DBManager.world.update(updatedWorld);
-            chunk = generatedChunk;
+            return generatedChunk;
         }
-        return chunk;
     }
 
     /**
@@ -76,7 +82,10 @@ public class WorldContext {
      * @return Returns a Map containing the terrain cells.
      */
     public Map<String, MPTerrainCellProto> getTerrain(Collection<MPEntity> entities) {
+
         HashMap<String, MPTerrainCellProto> cells = new HashMap<>();
+
+        HashSet<MatrixPosition> chunksNeeded = new HashSet<>();
         for (MPEntity entity : entities) {
             int minRow, maxRow, minCol, maxCol;
             minRow = (int) (entity.getPosition().getRow() - entity.getAreaOfInterest());
@@ -88,19 +97,30 @@ public class WorldContext {
 
             for (int cellRow = minRow; cellRow <= maxRow; cellRow += INCREMENTATION_STEP) {
                 for (int cellCol = minCol; cellCol <= maxCol; cellCol += INCREMENTATION_STEP) {
-                    final int chunkRow = MPTerrainChunk.getChunkRow(cellRow);
-                    final int chunkCol = MPTerrainChunk.getChunkCol(cellCol);
-                    if (world.chunkIsInBounds(chunkRow, chunkCol)) {
-                        //Request the entire chunk:
-                        MPTerrainChunk chunk = requestChunk(chunkRow, chunkCol);
-                        //Only include cells from this chunk that are within the AoI:
-                        for (Map.Entry<String, MPTerrainCell> entry : chunk.getCells().entrySet()) {
-                            final MatrixPosition position = entry.getValue().getPosition();
-                            final double distance = position.distanceTo(entity.getPosition());
-                            if (distance <= entity.getAreaOfInterest()) {
-                                cells.put(position.toHash(), entry.getValue().toProto().build());
-                            }
-                        }
+                    chunksNeeded.add(MPTerrainChunk.getChunkPosition(cellRow, cellCol));
+                }
+            }
+        }
+
+        ArrayList<MPTerrainChunk> chunks = new ArrayList<>();
+        for (MatrixPosition chunkPos : chunksNeeded) {
+            if (world.chunkIsInBounds(chunkPos.getRow(), chunkPos.getCol())) {
+                //Request the entire chunk:
+                long t = System.currentTimeMillis();
+                MPTerrainChunk chunk = requestChunk(chunkPos.getRow(), chunkPos.getCol());
+                System.out.println("requestChunk(" + chunkPos.getRow() + "," + chunkPos.getCol() + ") -> " + (System.currentTimeMillis() - t));
+                chunks.add(chunk);
+            }
+        }
+
+        for (MPEntity entity : entities) {
+            for (MPTerrainChunk chunk : chunks) {
+                //Only include cells from this chunk that are within the AoI:
+                for (Map.Entry<String, MPTerrainCell> entry : chunk.getCells().entrySet()) {
+                    final MatrixPosition position = entry.getValue().getPosition();
+                    final double distance = position.distanceTo(entity.getPosition());
+                    if (distance <= entity.getAreaOfInterest()) {
+                        cells.put(position.toHash(), entry.getValue().toProto().build());
                     }
                 }
             }
@@ -242,18 +262,23 @@ public class WorldContext {
     public MPPartialStateProto composeStateUpdate(MPWorldSession worldSession) {
         //Retrieve the player's own entities:
         final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
-        playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+//        playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
 
         //Retrieve foreign entities that are within the area of interest of the player's entities:
         final HashMap<String, MPEntityProto> entitiesInAOI = new HashMap<>(getEntities(playerEntities));
 
         //Retrieve the terrain:
+        long t = System.currentTimeMillis();
         final HashMap<String, MPTerrainCellProto> terrainInAOI = new HashMap<>(getTerrain(playerEntities));
-        return MPPartialStateProto.newBuilder()
+        System.out.println("getTerrain -> " + (System.currentTimeMillis() - t));
+
+        final MPPartialStateProto build = MPPartialStateProto.newBuilder()
                 .setWorldSession(worldSession.toProto())
                 .putAllEntities(entitiesInAOI)
                 .putAllCells(terrainInAOI)
                 .build();
+
+        return build;
     }
 
     //TODO - Not within the framework!

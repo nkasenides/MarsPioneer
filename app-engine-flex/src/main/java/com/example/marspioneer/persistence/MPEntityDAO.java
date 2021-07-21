@@ -61,12 +61,10 @@ public class MPEntityDAO implements WorldBasedDAO<MPEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<MPEntity> listForPlayerAndWorld(String worldID, String playerID) {
-        final long start = System.currentTimeMillis();
         final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)
                 .fetch().getItems();
-        System.out.println("MPEntity listForPlayerAndWorld: " + (System.currentTimeMillis() - start));
         return new ArrayList<>(items);
     }
 

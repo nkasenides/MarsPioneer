@@ -54,9 +54,7 @@ public class BuildFarmWebSocket {
 
     @OnWebSocketMessage
     public void onMessage(byte[] bytes, int offset, int length) throws IOException {
-        final long l = System.currentTimeMillis();
         BuildFarmRequest request = BuildFarmRequest.parseFrom(bytes);
-        System.out.println("Parse time: " + (System.currentTimeMillis() - l));
         this.worldSessionID = request.getWorldSessionID();
         handleMessage(request);
     }
@@ -66,8 +64,6 @@ public class BuildFarmWebSocket {
      * @param request The incoming request.
      */
     public void handleMessage(BuildFarmRequest request) throws IOException {
-
-        long l = System.currentTimeMillis();
 
         //Retrieve the session:
         final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
@@ -91,8 +87,7 @@ public class BuildFarmWebSocket {
             return;
         }
 
-        System.out.println("Session retrieval and parsing: " + (System.currentTimeMillis() - l));
-        l = System.currentTimeMillis();
+        long l = System.currentTimeMillis();
 
         //+++++++++++++ Resource rules ++++++++++++++
         //Check resources:
@@ -200,8 +195,6 @@ public class BuildFarmWebSocket {
         building.setPlayerID(player.getId());
         building.setWorldID(worldSession.getWorldID());
 
-        l = System.currentTimeMillis();
-
         DBManager.buildingEntity.create(building);
         DBManager.player.update(player);
 
@@ -209,10 +202,6 @@ public class BuildFarmWebSocket {
                 .setStatus(BuildResponse.Status.OK)
                 .setMessage("OK")
                 .build());
-
-        System.out.println("Create building, update player + send: " + (System.currentTimeMillis() - l));
-
-        l = System.currentTimeMillis();
 
 
         //TODO - Conversion to appropriate types for UpdateStateWebSocket and WorldContext.......
