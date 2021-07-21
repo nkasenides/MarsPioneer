@@ -136,6 +136,8 @@ public class WorldContext {
      */
     public Map<String, MPTerrainCellProto> getTerrain(MatrixPosition position, float radius) {
         HashMap<String, MPTerrainCellProto> cells = new HashMap<>();
+
+        HashSet<MatrixPosition> chunksNeeded = new HashSet<>();
         int minRow, maxRow, minCol, maxCol;
         minRow = (int) (position.getRow() - radius);
         maxRow = (int) (position.getRow() + radius);
@@ -146,19 +148,28 @@ public class WorldContext {
 
         for (int cellRow = minRow; cellRow <= maxRow; cellRow += INCREMENTATION_STEP) {
             for (int cellCol = minCol; cellCol <= maxCol; cellCol += INCREMENTATION_STEP) {
-                final int chunkRow = MPTerrainChunk.getChunkRow(cellRow);
-                final int chunkCol = MPTerrainChunk.getChunkCol(cellCol);
-                if (world.chunkIsInBounds(chunkRow, chunkCol)) {
-                    //Request the entire chunk:
-                    MPTerrainChunk chunk = requestChunk(chunkRow, chunkCol);
-                    //Only include cells from this chunk that are within the AoI:
-                    for (Map.Entry<String, MPTerrainCell> entry : chunk.getCells().entrySet()) {
-                        final MatrixPosition cellPosition = entry.getValue().getPosition();
-                        final double distance = cellPosition.distanceTo(position);
-                        if (distance <= radius) {
-                            cells.put(cellPosition.toHash(), entry.getValue().toProto().build());
-                        }
-                    }
+                chunksNeeded.add(MPTerrainChunk.getChunkPosition(cellRow, cellCol));
+            }
+        }
+
+        ArrayList<MPTerrainChunk> chunks = new ArrayList<>();
+        for (MatrixPosition chunkPos : chunksNeeded) {
+            if (world.chunkIsInBounds(chunkPos.getRow(), chunkPos.getCol())) {
+                //Request the entire chunk:
+                long t = System.currentTimeMillis();
+                MPTerrainChunk chunk = requestChunk(chunkPos.getRow(), chunkPos.getCol());
+                System.out.println("requestChunk(" + chunkPos.getRow() + "," + chunkPos.getCol() + ") -> " + (System.currentTimeMillis() - t));
+                chunks.add(chunk);
+            }
+        }
+
+        for (MPTerrainChunk chunk : chunks) {
+            //Only include cells from this chunk that are within the AoI:
+            for (Map.Entry<String, MPTerrainCell> entry : chunk.getCells().entrySet()) {
+                final MatrixPosition cellPosition = entry.getValue().getPosition();
+                final double distance = cellPosition.distanceTo(position);
+                if (distance <= radius) {
+                    cells.put(cellPosition.toHash(), entry.getValue().toProto().build());
                 }
             }
         }
