@@ -8,7 +8,9 @@ package com.example.marspioneer.websocket;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.model.*;
 import com.example.marspioneer.persistence.DBManager;
-import com.example.marspioneer.state.State;import com.google.protobuf.InvalidProtocolBufferException;
+import com.example.marspioneer.state.State;
+import com.example.marspioneer.state.StateUpdateBuilder;
+import com.google.protobuf.InvalidProtocolBufferException;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 import redis.clients.jedis.Jedis;
@@ -74,13 +76,15 @@ public class UpdateStateWebSocket {
     }
 
     /**
-     * Runs a state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
+     * Runs a <b>lightweight</b> state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
+     * The state sent to the client will contain only what is defined in parameter <i>stateUpdate</i>, as defined by the caller of this method.
+     * Use this method to <b>update</b> the existing states of clients. To refresh the entire client state, use <i>sendRefresh()</i> instead.
      * @param worldSession The world session initiating the state update.
      * @param actionPosition The position of the action that initiated the state update.
      * @param areaOfEffect The area of effect (AoE) of the action that initiated the state update.
      * @throws IOException thrown when the message cannot be sent via the socket.
      */
-    public static void filteredUpdate(final MPWorldSession worldSession, final MatrixPosition actionPosition, final float areaOfEffect, Jedis jedis, MPPlayer player) throws IOException {
+    public static void sendUpdate(final MPWorldSession worldSession, MPStateUpdateProto stateUpdate, final MatrixPosition actionPosition, final float areaOfEffect) throws IOException {
         final Collection<MPWorldSession> allSessions = DBManager.worldSession.listForWorld(worldSession.getWorldID());
         final Collection<MPWorldSession> sessionsToUpdate = State.filterUpdateSessions(allSessions, actionPosition, areaOfEffect);
         for (MPWorldSession session : sessionsToUpdate) {
@@ -89,50 +93,41 @@ public class UpdateStateWebSocket {
             final UpdateStateResponse response = UpdateStateResponse.newBuilder()
                     .setStatus(UpdateStateResponse.Status.OK)
                     .setMessage("OK")
-                    .setResourceSet(
-                            ResourceSetProto.newBuilder()
-                            .setFood(player.getFood())
-                            .setMetal(player.getMetal())
-                            .setSand(player.getSand())
-                            .setWater(player.getWater())
-                            .build()
-                    )
-                    .setPartialState(State.forWorld(worldSession.getWorldID(), jedis).composeStateUpdate(session))
+                    .setStateUpdate(stateUpdate)
                     .build();
             socket.send(socketSession, response);
         }
     }
 
     /**
-     * TODO - Not in framework!
-     * Runs a state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
-     * @param worldSession The world session initiating the state update.
-     * @param actionPosition The position of the action that initiated the state update.
-     * @param areaOfEffect The area of effect (AoE) of the action that initiated the state update.
+     * Runs a <b>heavy</b> state refresh across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
+     * The state sent to the client will contain everything that should be perceived by the client - this works in the same way as the GetUpdate service and the composeState() method in WorldContext.
+     * Use this method to <b>refresh</b> a client's state - i.e. when an entity is moved/teleported. To update a subset of the state, use <i>sendUpdate()</i> instead.
+     * @param worldSession The world session initiating the state refresh.
+     * @param actionPosition The position of the action that initiated the state refresh.
+     * @param areaOfEffect The area of effect (AoE) of the action that initiated the state refresh.
      * @throws IOException thrown when the message cannot be sent via the socket.
      */
-    public static void filteredUpdate(final MPWorldSession worldSession, final Collection<MPEntityProto> existingEntities, Collection<MPTerrainCellProto> existingTerrain, final MatrixPosition actionPosition, final float areaOfEffect, Jedis jedis, MPPlayer player) throws IOException {
+    public static void sendRefresh(final MPWorldSession worldSession, final MatrixPosition actionPosition, final float areaOfEffect) throws IOException {
         final Collection<MPWorldSession> allSessions = DBManager.worldSession.listForWorld(worldSession.getWorldID());
         final Collection<MPWorldSession> sessionsToUpdate = State.filterUpdateSessions(allSessions, actionPosition, areaOfEffect);
         for (MPWorldSession session : sessionsToUpdate) {
             final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
             final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
+            final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).composeState(worldSession, actionPosition, areaOfEffect);
+            final MPStateUpdateProto stateUpdate = StateUpdateBuilder.create()
+                    .setUpdatedTerrainProto(partialState.getCellsMap())
+                    .setUpdatedEntitiesProto(partialState.getEntitiesMap())
+                    .build();
             final UpdateStateResponse response = UpdateStateResponse.newBuilder()
                     .setStatus(UpdateStateResponse.Status.OK)
                     .setMessage("OK")
-                    .setResourceSet(
-                            ResourceSetProto.newBuilder()
-                                    .setFood(player.getFood())
-                                    .setMetal(player.getMetal())
-                                    .setSand(player.getSand())
-                                    .setWater(player.getWater())
-                                    .build()
-                    )
-                    .setPartialState(State.forWorld(worldSession.getWorldID(), jedis).composeStateUpdateWithEntitiesAndTerrain(session, existingEntities, existingTerrain))
+                    .setStateUpdate(stateUpdate)
                     .build();
             socket.send(socketSession, response);
         }
     }
+
 
     /**
      * Broadcasts a state update to all connected sessions.

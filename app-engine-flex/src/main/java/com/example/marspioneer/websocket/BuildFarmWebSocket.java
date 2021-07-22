@@ -11,7 +11,6 @@ import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
-import com.google.protobuf.InvalidProtocolBufferException;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 
@@ -20,12 +19,8 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @WebSocket(maxIdleTime = -1)
 public class BuildFarmWebSocket {
@@ -207,7 +202,7 @@ public class BuildFarmWebSocket {
         //TODO - Conversion to appropriate types for UpdateStateWebSocket and WorldContext.......
         //TODO - Then, implement the new methods in UpdateStateWebSocket and WorldContext in the generator...
 
-        UpdateStateWebSocket.filteredUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
+        UpdateStateWebSocket.sendUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
 
 
     }

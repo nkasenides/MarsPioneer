@@ -13,7 +13,6 @@ import com.example.marspioneer.model.MPWorldSession;
 import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
-import com.google.protobuf.InvalidProtocolBufferException;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 
@@ -160,7 +159,7 @@ public class SellBuildingWebSocket {
                 .setMessage("OK")
                 .build());
 
-        UpdateStateWebSocket.filteredUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
+        UpdateStateWebSocket.sendUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
 
     }
 

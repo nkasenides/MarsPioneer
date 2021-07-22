@@ -9,6 +9,8 @@ package com.example.marspioneer.state;
 import com.example.marspioneer.model.*;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.GeoPositionProto;
+import com.example.marspioneer.proto.MPPartialStateProto;
+import com.example.marspioneer.proto.MPTerrainChunkProto;
 import com.example.marspioneer.proto.MatrixPositionProto;
 import com.raylabz.jsec.HashType;
 import com.raylabz.jsec.Hashing;
@@ -21,9 +23,9 @@ public class State {
 
     private static WorldContext currentContext;
 
-    public static WorldContext forWorld(String worldID, Jedis jedis) {
+    public static WorldContext forWorld(String worldID) {
         if (currentContext == null || !currentContext.getWorldID().equals(worldID)) {
-            currentContext = new WorldContext(worldID, jedis);
+            currentContext = new WorldContext(worldID);
         }
         return currentContext;
     }

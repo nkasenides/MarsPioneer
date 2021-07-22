@@ -51,38 +51,25 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            MPPartialStateProto.Builder subBuilder = null;
-            if (partialState_ != null) {
-              subBuilder = partialState_.toBuilder();
-            }
-            partialState_ = input.readMessage(MPPartialStateProto.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(partialState_);
-              partialState_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            ResourceSetProto.Builder subBuilder = null;
-            if (resourceSet_ != null) {
-              subBuilder = resourceSet_.toBuilder();
-            }
-            resourceSet_ = input.readMessage(ResourceSetProto.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(resourceSet_);
-              resourceSet_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 26: {
             String s = input.readStringRequireUtf8();
 
             message_ = s;
             break;
           }
-          case 32: {
+          case 18: {
+            MPStateUpdateProto.Builder subBuilder = null;
+            if (stateUpdate_ != null) {
+              subBuilder = stateUpdate_.toBuilder();
+            }
+            stateUpdate_ = input.readMessage(MPStateUpdateProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(stateUpdate_);
+              stateUpdate_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 24: {
             int rawValue = input.readEnum();
 
             status_ = rawValue;
@@ -264,62 +251,10 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:com.example.marspioneer.proto.UpdateStateResponse.Status)
   }
 
-  public static final int PARTIALSTATE_FIELD_NUMBER = 1;
-  private MPPartialStateProto partialState_;
-  /**
-   * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-   * @return Whether the partialState field is set.
-   */
-  @Override
-  public boolean hasPartialState() {
-    return partialState_ != null;
-  }
-  /**
-   * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-   * @return The partialState.
-   */
-  @Override
-  public MPPartialStateProto getPartialState() {
-    return partialState_ == null ? MPPartialStateProto.getDefaultInstance() : partialState_;
-  }
-  /**
-   * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-   */
-  @Override
-  public MPPartialStateProtoOrBuilder getPartialStateOrBuilder() {
-    return getPartialState();
-  }
-
-  public static final int RESOURCESET_FIELD_NUMBER = 2;
-  private ResourceSetProto resourceSet_;
-  /**
-   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-   * @return Whether the resourceSet field is set.
-   */
-  @Override
-  public boolean hasResourceSet() {
-    return resourceSet_ != null;
-  }
-  /**
-   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-   * @return The resourceSet.
-   */
-  @Override
-  public ResourceSetProto getResourceSet() {
-    return resourceSet_ == null ? ResourceSetProto.getDefaultInstance() : resourceSet_;
-  }
-  /**
-   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-   */
-  @Override
-  public ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
-    return getResourceSet();
-  }
-
-  public static final int MESSAGE_FIELD_NUMBER = 3;
+  public static final int MESSAGE_FIELD_NUMBER = 1;
   private volatile Object message_;
   /**
-   * <code>string message = 3;</code>
+   * <code>string message = 1;</code>
    * @return The message.
    */
   @Override
@@ -336,7 +271,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string message = 3;</code>
+   * <code>string message = 1;</code>
    * @return The bytes for message.
    */
   @Override
@@ -354,17 +289,43 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 4;
+  public static final int STATEUPDATE_FIELD_NUMBER = 2;
+  private MPStateUpdateProto stateUpdate_;
+  /**
+   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+   * @return Whether the stateUpdate field is set.
+   */
+  @Override
+  public boolean hasStateUpdate() {
+    return stateUpdate_ != null;
+  }
+  /**
+   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+   * @return The stateUpdate.
+   */
+  @Override
+  public MPStateUpdateProto getStateUpdate() {
+    return stateUpdate_ == null ? MPStateUpdateProto.getDefaultInstance() : stateUpdate_;
+  }
+  /**
+   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+   */
+  @Override
+  public MPStateUpdateProtoOrBuilder getStateUpdateOrBuilder() {
+    return getStateUpdate();
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 3;
   private int status_;
   /**
-   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
    * @return The enum numeric value on the wire for status.
    */
   @Override public int getStatusValue() {
     return status_;
   }
   /**
-   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
    * @return The status.
    */
   @Override public Status getStatus() {
@@ -387,17 +348,14 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (partialState_ != null) {
-      output.writeMessage(1, getPartialState());
-    }
-    if (resourceSet_ != null) {
-      output.writeMessage(2, getResourceSet());
-    }
     if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+    }
+    if (stateUpdate_ != null) {
+      output.writeMessage(2, getStateUpdate());
     }
     if (status_ != Status.SERVER_ERROR.getNumber()) {
-      output.writeEnum(4, status_);
+      output.writeEnum(3, status_);
     }
     unknownFields.writeTo(output);
   }
@@ -408,20 +366,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (partialState_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getPartialState());
-    }
-    if (resourceSet_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getResourceSet());
-    }
     if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+    }
+    if (stateUpdate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getStateUpdate());
     }
     if (status_ != Status.SERVER_ERROR.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, status_);
+        .computeEnumSize(3, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -438,18 +392,13 @@ private static final long serialVersionUID = 0L;
     }
     UpdateStateResponse other = (UpdateStateResponse) obj;
 
-    if (hasPartialState() != other.hasPartialState()) return false;
-    if (hasPartialState()) {
-      if (!getPartialState()
-          .equals(other.getPartialState())) return false;
-    }
-    if (hasResourceSet() != other.hasResourceSet()) return false;
-    if (hasResourceSet()) {
-      if (!getResourceSet()
-          .equals(other.getResourceSet())) return false;
-    }
     if (!getMessage()
         .equals(other.getMessage())) return false;
+    if (hasStateUpdate() != other.hasStateUpdate()) return false;
+    if (hasStateUpdate()) {
+      if (!getStateUpdate()
+          .equals(other.getStateUpdate())) return false;
+    }
     if (status_ != other.status_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -462,16 +411,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasPartialState()) {
-      hash = (37 * hash) + PARTIALSTATE_FIELD_NUMBER;
-      hash = (53 * hash) + getPartialState().hashCode();
-    }
-    if (hasResourceSet()) {
-      hash = (37 * hash) + RESOURCESET_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceSet().hashCode();
-    }
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    if (hasStateUpdate()) {
+      hash = (37 * hash) + STATEUPDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getStateUpdate().hashCode();
+    }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -607,20 +552,14 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      if (partialStateBuilder_ == null) {
-        partialState_ = null;
-      } else {
-        partialState_ = null;
-        partialStateBuilder_ = null;
-      }
-      if (resourceSetBuilder_ == null) {
-        resourceSet_ = null;
-      } else {
-        resourceSet_ = null;
-        resourceSetBuilder_ = null;
-      }
       message_ = "";
 
+      if (stateUpdateBuilder_ == null) {
+        stateUpdate_ = null;
+      } else {
+        stateUpdate_ = null;
+        stateUpdateBuilder_ = null;
+      }
       status_ = 0;
 
       return this;
@@ -649,17 +588,12 @@ private static final long serialVersionUID = 0L;
     @Override
     public UpdateStateResponse buildPartial() {
       UpdateStateResponse result = new UpdateStateResponse(this);
-      if (partialStateBuilder_ == null) {
-        result.partialState_ = partialState_;
-      } else {
-        result.partialState_ = partialStateBuilder_.build();
-      }
-      if (resourceSetBuilder_ == null) {
-        result.resourceSet_ = resourceSet_;
-      } else {
-        result.resourceSet_ = resourceSetBuilder_.build();
-      }
       result.message_ = message_;
+      if (stateUpdateBuilder_ == null) {
+        result.stateUpdate_ = stateUpdate_;
+      } else {
+        result.stateUpdate_ = stateUpdateBuilder_.build();
+      }
       result.status_ = status_;
       onBuilt();
       return result;
@@ -709,15 +643,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(UpdateStateResponse other) {
       if (other == UpdateStateResponse.getDefaultInstance()) return this;
-      if (other.hasPartialState()) {
-        mergePartialState(other.getPartialState());
-      }
-      if (other.hasResourceSet()) {
-        mergeResourceSet(other.getResourceSet());
-      }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
+      }
+      if (other.hasStateUpdate()) {
+        mergeStateUpdate(other.getStateUpdate());
       }
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
@@ -751,247 +682,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private MPPartialStateProto partialState_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        MPPartialStateProto, MPPartialStateProto.Builder, MPPartialStateProtoOrBuilder> partialStateBuilder_;
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     * @return Whether the partialState field is set.
-     */
-    public boolean hasPartialState() {
-      return partialStateBuilder_ != null || partialState_ != null;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     * @return The partialState.
-     */
-    public MPPartialStateProto getPartialState() {
-      if (partialStateBuilder_ == null) {
-        return partialState_ == null ? MPPartialStateProto.getDefaultInstance() : partialState_;
-      } else {
-        return partialStateBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    public Builder setPartialState(MPPartialStateProto value) {
-      if (partialStateBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        partialState_ = value;
-        onChanged();
-      } else {
-        partialStateBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    public Builder setPartialState(
-        MPPartialStateProto.Builder builderForValue) {
-      if (partialStateBuilder_ == null) {
-        partialState_ = builderForValue.build();
-        onChanged();
-      } else {
-        partialStateBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    public Builder mergePartialState(MPPartialStateProto value) {
-      if (partialStateBuilder_ == null) {
-        if (partialState_ != null) {
-          partialState_ =
-            MPPartialStateProto.newBuilder(partialState_).mergeFrom(value).buildPartial();
-        } else {
-          partialState_ = value;
-        }
-        onChanged();
-      } else {
-        partialStateBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    public Builder clearPartialState() {
-      if (partialStateBuilder_ == null) {
-        partialState_ = null;
-        onChanged();
-      } else {
-        partialState_ = null;
-        partialStateBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    public MPPartialStateProto.Builder getPartialStateBuilder() {
-      
-      onChanged();
-      return getPartialStateFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    public MPPartialStateProtoOrBuilder getPartialStateOrBuilder() {
-      if (partialStateBuilder_ != null) {
-        return partialStateBuilder_.getMessageOrBuilder();
-      } else {
-        return partialState_ == null ?
-            MPPartialStateProto.getDefaultInstance() : partialState_;
-      }
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        MPPartialStateProto, MPPartialStateProto.Builder, MPPartialStateProtoOrBuilder>
-        getPartialStateFieldBuilder() {
-      if (partialStateBuilder_ == null) {
-        partialStateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            MPPartialStateProto, MPPartialStateProto.Builder, MPPartialStateProtoOrBuilder>(
-                getPartialState(),
-                getParentForChildren(),
-                isClean());
-        partialState_ = null;
-      }
-      return partialStateBuilder_;
-    }
-
-    private ResourceSetProto resourceSet_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder> resourceSetBuilder_;
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     * @return Whether the resourceSet field is set.
-     */
-    public boolean hasResourceSet() {
-      return resourceSetBuilder_ != null || resourceSet_ != null;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     * @return The resourceSet.
-     */
-    public ResourceSetProto getResourceSet() {
-      if (resourceSetBuilder_ == null) {
-        return resourceSet_ == null ? ResourceSetProto.getDefaultInstance() : resourceSet_;
-      } else {
-        return resourceSetBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    public Builder setResourceSet(ResourceSetProto value) {
-      if (resourceSetBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        resourceSet_ = value;
-        onChanged();
-      } else {
-        resourceSetBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    public Builder setResourceSet(
-        ResourceSetProto.Builder builderForValue) {
-      if (resourceSetBuilder_ == null) {
-        resourceSet_ = builderForValue.build();
-        onChanged();
-      } else {
-        resourceSetBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    public Builder mergeResourceSet(ResourceSetProto value) {
-      if (resourceSetBuilder_ == null) {
-        if (resourceSet_ != null) {
-          resourceSet_ =
-            ResourceSetProto.newBuilder(resourceSet_).mergeFrom(value).buildPartial();
-        } else {
-          resourceSet_ = value;
-        }
-        onChanged();
-      } else {
-        resourceSetBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    public Builder clearResourceSet() {
-      if (resourceSetBuilder_ == null) {
-        resourceSet_ = null;
-        onChanged();
-      } else {
-        resourceSet_ = null;
-        resourceSetBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    public ResourceSetProto.Builder getResourceSetBuilder() {
-      
-      onChanged();
-      return getResourceSetFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    public ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
-      if (resourceSetBuilder_ != null) {
-        return resourceSetBuilder_.getMessageOrBuilder();
-      } else {
-        return resourceSet_ == null ?
-            ResourceSetProto.getDefaultInstance() : resourceSet_;
-      }
-    }
-    /**
-     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder>
-        getResourceSetFieldBuilder() {
-      if (resourceSetBuilder_ == null) {
-        resourceSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder>(
-                getResourceSet(),
-                getParentForChildren(),
-                isClean());
-        resourceSet_ = null;
-      }
-      return resourceSetBuilder_;
-    }
-
     private Object message_ = "";
     /**
-     * <code>string message = 3;</code>
+     * <code>string message = 1;</code>
      * @return The message.
      */
     public String getMessage() {
@@ -1007,7 +700,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string message = 3;</code>
+     * <code>string message = 1;</code>
      * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
@@ -1024,7 +717,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string message = 3;</code>
+     * <code>string message = 1;</code>
      * @param value The message to set.
      * @return This builder for chaining.
      */
@@ -1039,7 +732,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string message = 3;</code>
+     * <code>string message = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
@@ -1049,7 +742,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string message = 3;</code>
+     * <code>string message = 1;</code>
      * @param value The bytes for message to set.
      * @return This builder for chaining.
      */
@@ -1065,16 +758,135 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private MPStateUpdateProto stateUpdate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        MPStateUpdateProto, MPStateUpdateProto.Builder, MPStateUpdateProtoOrBuilder> stateUpdateBuilder_;
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     * @return Whether the stateUpdate field is set.
+     */
+    public boolean hasStateUpdate() {
+      return stateUpdateBuilder_ != null || stateUpdate_ != null;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     * @return The stateUpdate.
+     */
+    public MPStateUpdateProto getStateUpdate() {
+      if (stateUpdateBuilder_ == null) {
+        return stateUpdate_ == null ? MPStateUpdateProto.getDefaultInstance() : stateUpdate_;
+      } else {
+        return stateUpdateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    public Builder setStateUpdate(MPStateUpdateProto value) {
+      if (stateUpdateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stateUpdate_ = value;
+        onChanged();
+      } else {
+        stateUpdateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    public Builder setStateUpdate(
+        MPStateUpdateProto.Builder builderForValue) {
+      if (stateUpdateBuilder_ == null) {
+        stateUpdate_ = builderForValue.build();
+        onChanged();
+      } else {
+        stateUpdateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    public Builder mergeStateUpdate(MPStateUpdateProto value) {
+      if (stateUpdateBuilder_ == null) {
+        if (stateUpdate_ != null) {
+          stateUpdate_ =
+            MPStateUpdateProto.newBuilder(stateUpdate_).mergeFrom(value).buildPartial();
+        } else {
+          stateUpdate_ = value;
+        }
+        onChanged();
+      } else {
+        stateUpdateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    public Builder clearStateUpdate() {
+      if (stateUpdateBuilder_ == null) {
+        stateUpdate_ = null;
+        onChanged();
+      } else {
+        stateUpdate_ = null;
+        stateUpdateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    public MPStateUpdateProto.Builder getStateUpdateBuilder() {
+      
+      onChanged();
+      return getStateUpdateFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    public MPStateUpdateProtoOrBuilder getStateUpdateOrBuilder() {
+      if (stateUpdateBuilder_ != null) {
+        return stateUpdateBuilder_.getMessageOrBuilder();
+      } else {
+        return stateUpdate_ == null ?
+            MPStateUpdateProto.getDefaultInstance() : stateUpdate_;
+      }
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        MPStateUpdateProto, MPStateUpdateProto.Builder, MPStateUpdateProtoOrBuilder>
+        getStateUpdateFieldBuilder() {
+      if (stateUpdateBuilder_ == null) {
+        stateUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            MPStateUpdateProto, MPStateUpdateProto.Builder, MPStateUpdateProtoOrBuilder>(
+                getStateUpdate(),
+                getParentForChildren(),
+                isClean());
+        stateUpdate_ = null;
+      }
+      return stateUpdateBuilder_;
+    }
+
     private int status_ = 0;
     /**
-     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
      * @return The enum numeric value on the wire for status.
      */
     @Override public int getStatusValue() {
       return status_;
     }
     /**
-     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
      */
@@ -1085,7 +897,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
      * @return The status.
      */
     @Override
@@ -1095,7 +907,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? Status.UNRECOGNIZED : result;
     }
     /**
-     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -1109,7 +921,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
+     * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
