@@ -7,12 +7,16 @@ package com.example.marspioneer.client.websocket;
 
 import com.example.marspioneer.client.Benchmarking;
 import com.example.marspioneer.client.MPClient;
+import com.example.marspioneer.model.MPTerrainCell;
+import com.example.marspioneer.proto.MPEntityProto;
+import com.example.marspioneer.proto.MPTerrainCellProto;
 import com.example.marspioneer.proto.UpdateStateResponse;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.neovisionaries.ws.client.WebSocketException;
 import com.raylabz.mocha.binary.client.BinaryWebSocketClient;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class UpdateStateStub extends BinaryWebSocketClient {
 
@@ -39,15 +43,31 @@ public class UpdateStateStub extends BinaryWebSocketClient {
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
             System.out.println("State update received.");
 
-            client.getEntities().clear();
-            client.getStateCells().clear();
-
-//            System.out.println("Entities: " + response.getPartialState().getEntitiesMap().size());
-            client.getEntities().putAll(response.getPartialState().getEntitiesMap());
-//            System.out.println("Cells: " + response.getPartialState().getCellsMap().size());
-            client.getStateCells().putAll(response.getPartialState().getCellsMap());
-
             client.setPlayerResourceSet(response.getResourceSet().toObject());
+
+            for (MPEntityProto value : response.getStateUpdate().getNewEntitiesMap().values()) {
+                client.getEntities().put(value.getId(), value);
+            }
+
+            for (MPEntityProto value : response.getStateUpdate().getUpdatedEntitiesMap().values()) {
+                client.getEntities().put(value.getId(), value);
+            }
+
+            for (String entityID : response.getStateUpdate().getRemovedEntitiesList()) {
+                client.getEntities().remove(entityID);
+            }
+
+            for (MPTerrainCellProto value : response.getStateUpdate().getNewTerrainCellsMap().values()) {
+                client.getStateCells().put(value.getPosition().toHash(), value);
+            }
+
+            for (MPTerrainCellProto value : response.getStateUpdate().getUpdatedTerrainCellsMap().values()) {
+                client.getStateCells().put(value.getPosition().toHash(), value);
+            }
+
+            for (String entityID : response.getStateUpdate().getRemovedTerrainCellsList()) {
+                client.getStateCells().remove(entityID);
+            }
 
             client.getGameCanvas().repaint();
         } else {

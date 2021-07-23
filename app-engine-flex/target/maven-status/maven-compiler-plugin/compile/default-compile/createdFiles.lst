@@ -34,6 +34,7 @@ com\example\marspioneer\service\DeAuthenticate.class
 com\example\marspioneer\persistence\MPWorldDAO$1.class
 com\example\marspioneer\persistence\MPPlayerDAO$1.class
 com\example\marspioneer\persistence\MPTeamDAO$1.class
+com\example\marspioneer\state\StateUpdateBuilder.class
 com\example\marspioneer\persistence\MPTerrainChunkDAO.class
 com\example\marspioneer\websocket\BuildWellWebSocket.class
 com\example\marspioneer\servlet\GetStateServlet.class
@@ -43,6 +44,7 @@ com\example\marspioneer\persistence\MPGameSessionDAO$3.class
 com\example\marspioneer\servlet\ListTeamPlayersServlet.class
 com\example\marspioneer\service\DeleteWorld.class
 com\example\marspioneer\servlet\UpdateTeamServlet.class
+com\example\marspioneer\state\StateUpdateType.class
 com\example\marspioneer\servlet\BuildMineServlet.class
 com\example\marspioneer\servlet\SellBuildingServlet.class
 com\example\marspioneer\persistence\MPEntityDAO.class

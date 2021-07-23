@@ -65,6 +65,7 @@ public class State {
     public static String identify(GeoPositionProto geoPositionProto) {
         return identify(geoPositionProto.toMatrixPosition());
     }
+
     /**
      * Filters the sessions that should be updated based on game-specific criteria.
      * TODO - Change this function based on your game-specific needs for custom filtering of state updates.
@@ -74,7 +75,9 @@ public class State {
     public static Collection<MPWorldSession> filterUpdateSessions(Collection<MPWorldSession> allSessions, MatrixPosition actionPosition, float areaOfEffect) {
         ArrayList<MPWorldSession> filteredSessions = new ArrayList<>();
         for (MPWorldSession worldSession : allSessions) {
+
             //Check entity area of interest vs action area of effect:
+            boolean hasEntitiesInAOI = false;
             final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
             playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
 
@@ -82,11 +85,19 @@ public class State {
                 if (entity.getAreaOfInterest() > 0) {
                     boolean intersects = Math.hypot(actionPosition.getCol() - entity.getPosition().getCol(), actionPosition.getRow() - entity.getPosition().getRow()) <= (areaOfEffect + entity.getAreaOfInterest());
                     if (intersects) {
-                        filteredSessions.add(worldSession);
+                        hasEntitiesInAOI = true;
                         break;
                     }
                 }
             }
+
+            //Check camera positioning:
+            boolean cameraIsInRange = worldSession.getCameraPosition().distanceTo(actionPosition) <= areaOfEffect;
+
+            if (hasEntitiesInAOI && cameraIsInRange) {
+                filteredSessions.add(worldSession);
+            }
+
         }
         return filteredSessions;
     }

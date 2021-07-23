@@ -8,39 +8,54 @@ public interface UpdateStateResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   * @return Whether the resourceSet field is set.
+   */
+  boolean hasResourceSet();
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   * @return The resourceSet.
+   */
+  ResourceSetProto getResourceSet();
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   */
+  ResourceSetProtoOrBuilder getResourceSetOrBuilder();
+
+  /**
+   * <code>string message = 2;</code>
    * @return The message.
    */
   String getMessage();
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();
 
   /**
-   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 3;</code>
    * @return Whether the stateUpdate field is set.
    */
   boolean hasStateUpdate();
   /**
-   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 3;</code>
    * @return The stateUpdate.
    */
   MPStateUpdateProto getStateUpdate();
   /**
-   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 2;</code>
+   * <code>.com.example.marspioneer.proto.MPStateUpdateProto stateUpdate = 3;</code>
    */
   MPStateUpdateProtoOrBuilder getStateUpdateOrBuilder();
 
   /**
-   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
+   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 3;</code>
+   * <code>.com.example.marspioneer.proto.UpdateStateResponse.Status status = 4;</code>
    * @return The status.
    */
   UpdateStateResponse.Status getStatus();

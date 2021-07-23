@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     chunkIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     id_ = "";
     ownerID_ = "";
+    subscribedSessionIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @Override
@@ -105,6 +106,15 @@ private static final long serialVersionUID = 0L;
             maxCols_ = input.readSInt64();
             break;
           }
+          case 82: {
+            String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              subscribedSessionIDs_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            subscribedSessionIDs_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -122,6 +132,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         chunkIDs_ = chunkIDs_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        subscribedSessionIDs_ = subscribedSessionIDs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -344,6 +357,41 @@ private static final long serialVersionUID = 0L;
     return maxCols_;
   }
 
+  public static final int SUBSCRIBEDSESSIONIDS_FIELD_NUMBER = 10;
+  private com.google.protobuf.LazyStringList subscribedSessionIDs_;
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @return A list containing the subscribedSessionIDs.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getSubscribedSessionIDsList() {
+    return subscribedSessionIDs_;
+  }
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @return The count of subscribedSessionIDs.
+   */
+  public int getSubscribedSessionIDsCount() {
+    return subscribedSessionIDs_.size();
+  }
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @param index The index of the element to return.
+   * @return The subscribedSessionIDs at the given index.
+   */
+  public String getSubscribedSessionIDs(int index) {
+    return subscribedSessionIDs_.get(index);
+  }
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the subscribedSessionIDs at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getSubscribedSessionIDsBytes(int index) {
+    return subscribedSessionIDs_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @Override
   public final boolean isInitialized() {
@@ -384,6 +432,9 @@ private static final long serialVersionUID = 0L;
     }
     if (maxCols_ != 0L) {
       output.writeSInt64(9, maxCols_);
+    }
+    for (int i = 0; i < subscribedSessionIDs_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, subscribedSessionIDs_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -431,6 +482,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeSInt64Size(9, maxCols_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < subscribedSessionIDs_.size(); i++) {
+        dataSize += computeStringSizeNoTag(subscribedSessionIDs_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSubscribedSessionIDsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -464,6 +523,8 @@ private static final long serialVersionUID = 0L;
         != other.getCreatedOn()) return false;
     if (getMaxCols()
         != other.getMaxCols()) return false;
+    if (!getSubscribedSessionIDsList()
+        .equals(other.getSubscribedSessionIDsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -499,6 +560,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAXCOLS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaxCols());
+    if (getSubscribedSessionIDsCount() > 0) {
+      hash = (37 * hash) + SUBSCRIBEDSESSIONIDS_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscribedSessionIDsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -611,16 +676,25 @@ private static final long serialVersionUID = 0L;
         for (int i = 0; i < getChunkIDsCount(); i++) {        
             chunkIDsList.add(getChunkIDs(i));            
         }        
-        item.setChunkIDs(chunkIDsList);
+        item.setChunkIDs(chunkIDsList);        
         item.setId(getId());        
         item.setOwnerID(getOwnerID());        
         item.setCreatedOn(getCreatedOn());        
         item.setMaxCols(getMaxCols());        
+        java.util.ArrayList<String> subscribedSessionIDsList = new java.util.ArrayList<>();        
+        for (int i = 0; i < getSubscribedSessionIDsCount(); i++) {        
+            subscribedSessionIDsList.add(getSubscribedSessionIDs(i));            
+        }        
+        item.setSubscribedSessionIDs(subscribedSessionIDsList);        
         return item;        
     }    
     
         public java.util.List<String> getChunkIDs() {
         return chunkIDs_;
+    }
+    
+        public java.util.List<String> getSubscribedSessionIDs() {
+        return subscribedSessionIDs_;
     }
     
 
@@ -673,6 +747,8 @@ private static final long serialVersionUID = 0L;
 
       maxCols_ = 0L;
 
+      subscribedSessionIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -713,6 +789,11 @@ private static final long serialVersionUID = 0L;
       result.ownerID_ = ownerID_;
       result.createdOn_ = createdOn_;
       result.maxCols_ = maxCols_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        subscribedSessionIDs_ = subscribedSessionIDs_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.subscribedSessionIDs_ = subscribedSessionIDs_;
       onBuilt();
       return result;
     }
@@ -797,6 +878,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaxCols() != 0L) {
         setMaxCols(other.getMaxCols());
+      }
+      if (!other.subscribedSessionIDs_.isEmpty()) {
+        if (subscribedSessionIDs_.isEmpty()) {
+          subscribedSessionIDs_ = other.subscribedSessionIDs_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureSubscribedSessionIDsIsMutable();
+          subscribedSessionIDs_.addAll(other.subscribedSessionIDs_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1320,6 +1411,116 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private com.google.protobuf.LazyStringList subscribedSessionIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureSubscribedSessionIDsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        subscribedSessionIDs_ = new com.google.protobuf.LazyStringArrayList(subscribedSessionIDs_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @return A list containing the subscribedSessionIDs.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSubscribedSessionIDsList() {
+      return subscribedSessionIDs_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @return The count of subscribedSessionIDs.
+     */
+    public int getSubscribedSessionIDsCount() {
+      return subscribedSessionIDs_.size();
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @param index The index of the element to return.
+     * @return The subscribedSessionIDs at the given index.
+     */
+    public String getSubscribedSessionIDs(int index) {
+      return subscribedSessionIDs_.get(index);
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the subscribedSessionIDs at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getSubscribedSessionIDsBytes(int index) {
+      return subscribedSessionIDs_.getByteString(index);
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @param index The index to set the value at.
+     * @param value The subscribedSessionIDs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubscribedSessionIDs(
+        int index, String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSubscribedSessionIDsIsMutable();
+      subscribedSessionIDs_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @param value The subscribedSessionIDs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSubscribedSessionIDs(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSubscribedSessionIDsIsMutable();
+      subscribedSessionIDs_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @param values The subscribedSessionIDs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSubscribedSessionIDs(
+        Iterable<String> values) {
+      ensureSubscribedSessionIDsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, subscribedSessionIDs_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSubscribedSessionIDs() {
+      subscribedSessionIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string subscribedSessionIDs = 10;</code>
+     * @param value The bytes of the subscribedSessionIDs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSubscribedSessionIDsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureSubscribedSessionIDsIsMutable();
+      subscribedSessionIDs_.add(value);
+      onChanged();
+      return this;
+    }
     @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1382,16 +1583,25 @@ private static final long serialVersionUID = 0L;
         for (int i = 0; i < getChunkIDsCount(); i++) {        
             chunkIDsList.add(getChunkIDs(i));            
         }        
-        item.setChunkIDs(chunkIDsList);
+        item.setChunkIDs(chunkIDsList);        
         item.setId(getId());        
         item.setOwnerID(getOwnerID());        
         item.setCreatedOn(getCreatedOn());        
         item.setMaxCols(getMaxCols());        
+        java.util.ArrayList<String> subscribedSessionIDsList = new java.util.ArrayList<>();        
+        for (int i = 0; i < getSubscribedSessionIDsCount(); i++) {        
+            subscribedSessionIDsList.add(getSubscribedSessionIDs(i));            
+        }        
+        item.setSubscribedSessionIDs(subscribedSessionIDsList);        
         return item;        
     }    
     
         public java.util.List<String> getChunkIDs() {
         return chunkIDs_;
+    }
+    
+        public java.util.List<String> getSubscribedSessionIDs() {
+        return subscribedSessionIDs_;
     }
     
     public final boolean cellIsInBounds(int cellRow, int cellCol) {

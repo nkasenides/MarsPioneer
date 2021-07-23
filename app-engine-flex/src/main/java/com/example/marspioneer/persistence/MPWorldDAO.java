@@ -29,8 +29,8 @@ public class MPWorldDAO implements MultiDAO<MPWorld> {
 
     @Override
     public boolean update(MPWorld object) {
-        Firestorm.create(object);
-        Objectis.create(object);
+        Objectis.update(object);
+        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 

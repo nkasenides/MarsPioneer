@@ -23,41 +23,31 @@ public class Subscribe implements AthlosService<SubscribeRequest, SubscribeRespo
     @Override    
     public SubscribeResponse serve(SubscribeRequest request, Object... additionalParams) {
 
-        try {
-
-            //Verify game session:
-            final MPPlayer callingPlayer = Auth.verifyWorldSessionID(request.getWorldSessionID());
-            if (callingPlayer == null) {
-                return SubscribeResponse.newBuilder()
-                        .setStatus(SubscribeResponse.Status.NOT_AUTHORIZED)
-                        .setMessage("NOT_AUTHORIZED")
-                        .build();
-            }
-
-            final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
-            if (worldSession == null) {
-                return SubscribeResponse.newBuilder()
-                        .setStatus(SubscribeResponse.Status.NO_SUCH_WORLD_SESSION)
-                        .setMessage("NO_SUCH_WORLD_SESSION")
-                        .build();
-            }
-
-            State.forWorld(worldSession.getWorldID(), Cache.getJedis((ServletContext) additionalParams[1])).subscribe(worldSession);
-
+        //Verify game session:
+        final MPPlayer callingPlayer = Auth.verifyWorldSessionID(request.getWorldSessionID());
+        if (callingPlayer == null) {
             return SubscribeResponse.newBuilder()
-                    .setStatus(SubscribeResponse.Status.OK)
-                    .setMessage("OK")
-                    .build();
-
-        } catch (SocketException e) {
-            e.printStackTrace();
-            return SubscribeResponse.newBuilder()
-                    .setStatus(SubscribeResponse.Status.SERVER_ERROR)
-                    .setMessage(e.getMessage())
+                    .setStatus(SubscribeResponse.Status.NOT_AUTHORIZED)
+                    .setMessage("NOT_AUTHORIZED")
                     .build();
         }
 
-    }    
+        final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
+        if (worldSession == null) {
+            return SubscribeResponse.newBuilder()
+                    .setStatus(SubscribeResponse.Status.NO_SUCH_WORLD_SESSION)
+                    .setMessage("NO_SUCH_WORLD_SESSION")
+                    .build();
+        }
+
+        State.forWorld(worldSession.getWorldID()).subscribe(worldSession);
+
+        return SubscribeResponse.newBuilder()
+                .setStatus(SubscribeResponse.Status.OK)
+                .setMessage("OK")
+                .build();
+
+    }
     
 }
 

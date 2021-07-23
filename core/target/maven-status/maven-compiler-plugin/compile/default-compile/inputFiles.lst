@@ -46,6 +46,7 @@ D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\AddPlayerToTeamResponseOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\ListTeamPlayersRequest.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\DeAuthenticateRequestOrBuilder.java
+D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPStateUpdateProtoOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MineResearchLevel.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\model\MPWorldSession.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\GetPlayerResponse.java
@@ -101,6 +102,7 @@ D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\GetWorldResponseOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\DeleteWorldRequestOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\GetBuildingTypeRequest.java
+D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPStateUpdateProto.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\CreateBuildingTypeResponse.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\UnsubscribeResponseOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPGameSessionProto.java

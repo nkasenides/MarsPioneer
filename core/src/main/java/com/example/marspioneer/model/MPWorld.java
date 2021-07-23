@@ -5,16 +5,16 @@
 
 package com.example.marspioneer.model;
 
+import com.example.marspioneer.proto.MPWorldProto;
+import com.example.marspioneer.proto.WorldType;
+import com.nkasenides.athlos.model.IGrid4World;
+import com.nkasenides.athlos.proto.Transmittable;
+import com.raylabz.firestorm.annotation.FirestormObject;
+import com.raylabz.objectis.annotation.ObjectisObject;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.firebase.database.Exclude;
-import com.nkasenides.athlos.proto.Transmittable;
-import com.example.marspioneer.proto.*;
-import com.nkasenides.athlos.model.*;
-import com.raylabz.firestorm.annotation.FirestormObject;
-import com.raylabz.objectis.annotation.ObjectisObject;
 
 @FirestormObject
 @ObjectisObject
@@ -26,11 +26,12 @@ public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World
     private int heightLimit;    
     private long seed;    
     private String name;    
-    private ArrayList<String> chunkIDs = new ArrayList<>();
+    private ArrayList<String> chunkIDs = new ArrayList<>();    
     private String id;    
     private String ownerID;    
     private long createdOn;    
     private long maxCols;    
+    private ArrayList<String> subscribedSessionIDs = new ArrayList<>();    
 
     public long getMaxRows() {    
         return maxRows;        
@@ -47,11 +48,10 @@ public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World
     public String getName() {    
         return name;        
     }    
-
-    @Override
+    
     public List<String> getChunkIDs() {
-        return chunkIDs;
-    }
+        return chunkIDs;        
+    }    
     
     public String getId() {    
         return id;        
@@ -67,6 +67,10 @@ public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World
     
     public long getMaxCols() {    
         return maxCols;        
+    }    
+    
+    public List<String> getSubscribedSessionIDs() {
+        return subscribedSessionIDs;        
     }    
     
 
@@ -87,8 +91,8 @@ public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World
     }    
     
     public void setChunkIDs(ArrayList<String> chunkIDs) {
-        this.chunkIDs = chunkIDs;
-    }
+        this.chunkIDs = chunkIDs;        
+    }    
     
     public void setId(String id) {    
         this.id = id;        
@@ -106,21 +110,26 @@ public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World
         this.maxCols = maxCols;        
     }    
     
+    public void setSubscribedSessionIDs(ArrayList<String> subscribedSessionIDs) {
+        this.subscribedSessionIDs = subscribedSessionIDs;        
+    }    
+    
 
-    @Override
+    @Override    
     public MPWorldProto.Builder toProto() {
         MPWorldProto.Builder protoBuilder = MPWorldProto.newBuilder();
-        protoBuilder.setMaxRows(maxRows);
-        protoBuilder.setHeightLimit(heightLimit);
-        protoBuilder.setSeed(seed);
-        protoBuilder.setName(name);
-        protoBuilder.addAllChunkIDs(chunkIDs);
-        protoBuilder.setId(id);
-        protoBuilder.setOwnerID(ownerID);
-        protoBuilder.setCreatedOn(createdOn);
-        protoBuilder.setMaxCols(maxCols);
-        return protoBuilder;
-    }
+        protoBuilder.setMaxRows(maxRows);        
+        protoBuilder.setHeightLimit(heightLimit);        
+        protoBuilder.setSeed(seed);        
+        protoBuilder.setName(name);        
+        protoBuilder.addAllChunkIDs(chunkIDs);        
+        protoBuilder.setId(id);        
+        protoBuilder.setOwnerID(ownerID);        
+        protoBuilder.setCreatedOn(createdOn);        
+        protoBuilder.setMaxCols(maxCols);        
+        protoBuilder.addAllSubscribedSessionIDs(subscribedSessionIDs);        
+        return protoBuilder;        
+    }    
     
     public final boolean cellIsInBounds(int cellRow, int cellCol) {
 
@@ -193,5 +202,6 @@ public class MPWorld implements Transmittable<MPWorldProto.Builder>, IGrid4World
             this.chunkIDs.add(chunkID);
         }
     }
+
 
 }

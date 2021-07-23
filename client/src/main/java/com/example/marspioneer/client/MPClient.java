@@ -289,6 +289,23 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                         setPlayerResourceSet(getStateResponse.getResourceSet().toObject());
                                         selectedCellPosition = getStateResponse.getPartialState().getWorldSession().getCameraPosition().toObject();
                                         try {
+
+                                            //Subscribe:
+                                            Stubs.subscribeStub().sendAndWait(
+                                                    SubscribeRequest.newBuilder()
+                                                            .setWorldSessionID(worldSessionID)
+                                                            .build(),
+                                                    subscribeResponse -> {
+                                                        if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
+                                                            System.out.println("World session " + worldSessionID + " successfully subscribed to world.");
+                                                        }
+                                                        else {
+                                                            System.err.println(subscribeResponse.getMessage());
+                                                        }
+                                                    }
+                                            );
+
+                                            //Connect to the state update stub:
                                             final UpdateStateStub updateStateStub = Stubs.getUpdateStateStub(this);
                                             Mocha.start(updateStateStub);
                                             //Send a request to be acknowledged as a client:
@@ -303,6 +320,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                     }
                                 }
                         );
+
 
                         //Launch the UI:
                         this.gameCanvas = new MPCanvas(this);

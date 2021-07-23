@@ -11,6 +11,7 @@ import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
+import com.example.marspioneer.state.StateUpdateBuilder;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 
@@ -98,7 +99,7 @@ public class BuildFarmWebSocket {
         }
 
         //+++++++++++++ Terrain-building rules: ++++++++++++++
-        final Map<String, MPTerrainCellProto> terrain = State.forWorld(worldSession.getWorldID(), Cache.getJedis(getRequest())).getTerrain(request.getPosition().toObject(), 10);
+        final Map<String, MPTerrainCellProto> terrain = State.forWorld(worldSession.getWorldID()).getTerrain(request.getPosition().toObject(), 10);
 
         //Cannot build anything on lava:
         final MPTerrainCellProto cell = terrain.get(State.identify(request.getPosition()));
@@ -199,10 +200,9 @@ public class BuildFarmWebSocket {
                 .build());
 
 
-        //TODO - Conversion to appropriate types for UpdateStateWebSocket and WorldContext.......
-        //TODO - Then, implement the new methods in UpdateStateWebSocket and WorldContext in the generator...
-
-        UpdateStateWebSocket.sendUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
+        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building);
+        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
+        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, request.getPosition().toObject(), 20);
 
 
     }

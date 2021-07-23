@@ -15,6 +15,7 @@ com\example\marspioneer\proto\CreateTeamRequestOrBuilder.class
 com\example\marspioneer\proto\ListBuildingTypesRequest.class
 com\example\marspioneer\proto\SellBuildingProto.class
 com\example\marspioneer\proto\GetPlayerResponse$Status.class
+com\example\marspioneer\proto\MPStateUpdateProto$NewEntitiesDefaultEntryHolder.class
 com\example\marspioneer\proto\MPGameSessionProto$Builder.class
 com\example\marspioneer\proto\BuildingTypeProtoOrBuilder.class
 com\example\marspioneer\proto\BuildSandPitRequest$1.class
@@ -24,6 +25,7 @@ com\example\marspioneer\proto\UpdatePlayerResponse.class
 com\example\marspioneer\proto\CreateTeamResponse$Status.class
 com\example\marspioneer\proto\BuildHubProtoOrBuilder.class
 com\example\marspioneer\proto\CreateBuildingTypeRequest$1.class
+com\example\marspioneer\proto\MPStateUpdateProtoOrBuilder.class
 com\example\marspioneer\proto\JoinWorldResponseOrBuilder.class
 com\example\marspioneer\proto\MPActionProto$ActionCase.class
 com\example\marspioneer\proto\UpdateStateResponseOrBuilder.class
@@ -107,11 +109,13 @@ com\example\marspioneer\proto\GetWorldResponse$Status$1.class
 com\example\marspioneer\proto\BuildMineRequestOrBuilder.class
 com\example\marspioneer\proto\Request$2.class
 com\example\marspioneer\proto\ListTeamPlayersResponse$Status.class
+com\example\marspioneer\proto\MPStateUpdateProto$UpdatedEntitiesDefaultEntryHolder.class
 com\example\marspioneer\proto\ListTeamsRequestOrBuilder.class
 com\example\marspioneer\proto\Request$1.class
 com\example\marspioneer\proto\ListTeamsResponseOrBuilder.class
 com\example\marspioneer\proto\UpdateWorldRequestOrBuilder.class
 com\example\marspioneer\proto\ResponseOrBuilder.class
+com\example\marspioneer\proto\MPStateUpdateProto.class
 com\example\marspioneer\proto\BuildFarmRequest$1.class
 com\example\marspioneer\proto\DeleteBuildingTypeResponse$Builder.class
 com\example\marspioneer\proto\LeaveWorldRequestOrBuilder.class
@@ -154,6 +158,7 @@ com\example\marspioneer\proto\GeoPositionProto$1.class
 com\example\marspioneer\proto\ListPlayersResponse$1.class
 com\example\marspioneer\proto\CreateWorldResponse$Status$1.class
 com\example\marspioneer\proto\CreateBuildingTypeRequestOrBuilder.class
+com\example\marspioneer\proto\MPStateUpdateProto$Builder.class
 com\example\marspioneer\proto\SubscribeResponse$1.class
 com\example\marspioneer\proto\CellType$1.class
 com\example\marspioneer\proto\ListTeamsResponse$Builder.class
@@ -212,6 +217,7 @@ com\example\marspioneer\proto\LeaveWorldResponse$Status$1.class
 com\example\marspioneer\proto\AuthenticateRequest$Builder.class
 com\example\marspioneer\proto\ListBuildingTypesResponse$Status.class
 com\example\marspioneer\proto\Response$Builder.class
+com\example\marspioneer\proto\MPStateUpdateProto$UpdatedTerrainCellsDefaultEntryHolder.class
 com\example\marspioneer\proto\BuildWellProtoOrBuilder.class
 com\example\marspioneer\proto\BuildSandPitProtoOrBuilder.class
 com\example\marspioneer\proto\UnsubscribeRequest.class
@@ -333,6 +339,7 @@ com\example\marspioneer\proto\CreateWorldResponse$1.class
 com\example\marspioneer\proto\GetBuildingTypeResponse$Status$1.class
 com\example\marspioneer\proto\MPPartialStateProto$1.class
 com\example\marspioneer\proto\DeleteBuildingTypeResponseOrBuilder.class
+com\example\marspioneer\proto\MPStateUpdateProto$1.class
 com\example\marspioneer\model\MPTeam.class
 com\example\marspioneer\proto\ListPlayersResponse$Status$1.class
 com\example\marspioneer\proto\DeletePlayerRequest.class
@@ -387,6 +394,7 @@ com\example\marspioneer\proto\BuildSandPitProto.class
 com\example\marspioneer\proto\UpdateWorldRequest$Builder.class
 com\example\marspioneer\proto\AuthenticateResponse$Builder.class
 com\example\marspioneer\proto\DeAuthenticateResponse$Status$1.class
+com\example\marspioneer\proto\MPStateUpdateProto$NewTerrainCellsDefaultEntryHolder.class
 com\example\marspioneer\model\MPWorldSession.class
 com\example\marspioneer\proto\ListTeamsResponse$Status.class
 com\example\marspioneer\proto\UpdateWorldResponseOrBuilder.class

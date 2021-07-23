@@ -13,6 +13,8 @@ import com.example.marspioneer.model.MPWorldSession;
 import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
+import com.example.marspioneer.state.State;
+import com.example.marspioneer.state.StateUpdateBuilder;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 
@@ -159,7 +161,9 @@ public class SellBuildingWebSocket {
                 .setMessage("OK")
                 .build());
 
-        UpdateStateWebSocket.sendUpdate(worldSession, building.getPosition(), 20, Cache.getJedis(getRequest()), player);
+        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addRemovedEntity(building.getId());
+        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
+        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, building.getPosition(), 20);
 
     }
 

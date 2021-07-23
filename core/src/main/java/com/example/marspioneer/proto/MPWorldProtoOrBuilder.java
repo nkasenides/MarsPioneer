@@ -97,4 +97,29 @@ public interface MPWorldProtoOrBuilder extends
    * @return The maxCols.
    */
   long getMaxCols();
+
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @return A list containing the subscribedSessionIDs.
+   */
+  java.util.List<String>
+      getSubscribedSessionIDsList();
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @return The count of subscribedSessionIDs.
+   */
+  int getSubscribedSessionIDsCount();
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @param index The index of the element to return.
+   * @return The subscribedSessionIDs at the given index.
+   */
+  String getSubscribedSessionIDs(int index);
+  /**
+   * <code>repeated string subscribedSessionIDs = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the subscribedSessionIDs at the given index.
+   */
+  com.google.protobuf.ByteString
+      getSubscribedSessionIDsBytes(int index);
 }

@@ -23,41 +23,31 @@ public class Unsubscribe implements AthlosService<UnsubscribeRequest, Unsubscrib
     @Override    
     public UnsubscribeResponse serve(UnsubscribeRequest request, Object... additionalParams) {
 
-        try {
-
-            //Verify game session:
-            final MPPlayer callingPlayer = Auth.verifyWorldSessionID(request.getWorldSessionID());
-            if (callingPlayer == null) {
-                return UnsubscribeResponse.newBuilder()
-                        .setStatus(UnsubscribeResponse.Status.NOT_AUTHORIZED)
-                        .setMessage("NOT_AUTHORIZED")
-                        .build();
-            }
-
-            final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
-            if (worldSession == null) {
-                return UnsubscribeResponse.newBuilder()
-                        .setStatus(UnsubscribeResponse.Status.NO_SUCH_WORLD_SESSION)
-                        .setMessage("NO_SUCH_WORLD_SESSION")
-                        .build();
-            }
-
-            State.forWorld(worldSession.getWorldID(), Cache.getJedis((ServletContext) additionalParams[1])).unsubscribe(worldSession.getId());
-
+        //Verify game session:
+        final MPPlayer callingPlayer = Auth.verifyWorldSessionID(request.getWorldSessionID());
+        if (callingPlayer == null) {
             return UnsubscribeResponse.newBuilder()
-                    .setStatus(UnsubscribeResponse.Status.OK)
-                    .setMessage("OK")
-                    .build();
-
-        } catch (SocketException e) {
-            e.printStackTrace();
-            return UnsubscribeResponse.newBuilder()
-                    .setStatus(UnsubscribeResponse.Status.SERVER_ERROR)
-                    .setMessage(e.getMessage())
+                    .setStatus(UnsubscribeResponse.Status.NOT_AUTHORIZED)
+                    .setMessage("NOT_AUTHORIZED")
                     .build();
         }
 
-    }    
+        final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
+        if (worldSession == null) {
+            return UnsubscribeResponse.newBuilder()
+                    .setStatus(UnsubscribeResponse.Status.NO_SUCH_WORLD_SESSION)
+                    .setMessage("NO_SUCH_WORLD_SESSION")
+                    .build();
+        }
+
+        State.forWorld(worldSession.getWorldID()).unsubscribe(worldSession);
+
+        return UnsubscribeResponse.newBuilder()
+                .setStatus(UnsubscribeResponse.Status.OK)
+                .setMessage("OK")
+                .build();
+
+    }
     
 }
 

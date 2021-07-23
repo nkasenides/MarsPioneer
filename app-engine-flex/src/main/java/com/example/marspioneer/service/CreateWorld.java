@@ -57,6 +57,7 @@ public class CreateWorld implements AthlosService<CreateWorldRequest, CreateWorl
         world.setCreatedOn(System.currentTimeMillis());
         world.setChunkIDs(new ArrayList<>());
         world.setOwnerID(player.getId());
+        world.setSubscribedSessionIDs(new ArrayList<>());
 
         //Create the world
         DBManager.world.create(world);

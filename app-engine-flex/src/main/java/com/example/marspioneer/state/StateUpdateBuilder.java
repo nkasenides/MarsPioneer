@@ -3,9 +3,7 @@ package com.example.marspioneer.state;
 import com.example.marspioneer.model.*;
 import com.example.marspioneer.proto.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StateUpdateBuilder {
 
@@ -23,6 +21,14 @@ public class StateUpdateBuilder {
      * Constructs a new StateUpdateBuilder.
      */
     public StateUpdateBuilder() {
+    }
+
+    /**
+     * Retrieves the protocol buffer builder object.
+     * @return Returns StateUpdateProto.Builder.
+     */
+    public MPStateUpdateProto.Builder getStateUpdateProtoBuilder() {
+        return stateUpdateProtoBuilder;
     }
 
     /**
@@ -128,115 +134,51 @@ public class StateUpdateBuilder {
     //TODO --- NOT ADDED TO GENERATOR!! (start from this point)
 
     /**
-     * Sets the created entities attribute of the state update.
-     * @param createdEntities A map of created entities.
+     * Retrieves the map of created entities.
+     * @return Returns a map.
      */
-    public StateUpdateBuilder setCreatedEntitiesProto(Map<String, ? extends MPEntityProto> createdEntities) {
-        stateUpdateProtoBuilder.getNewEntitiesMap().clear();
-        stateUpdateProtoBuilder.getNewEntitiesMap().putAll(createdEntities);
-        return this;
+    public Map<String, MPEntityProto> getCreatedEntities() {
+        return stateUpdateProtoBuilder.getNewEntitiesMap();
     }
 
     /**
-     * Sets the created entities attribute of the state update.
-     * @param createdEntities A map of created entities.
+     * Retrieves the map of updated entities.
+     * @return Returns a map.
      */
-    public StateUpdateBuilder setCreatedEntities(Map<String, ? extends MPEntity> createdEntities) {
-        stateUpdateProtoBuilder.getNewEntitiesMap().clear();
-        for (Map.Entry<String, ? extends MPEntity> entry : createdEntities.entrySet()) {
-            final MPEntityProto entityProto = entry.getValue().toProto().build();
-            stateUpdateProtoBuilder.getNewEntitiesMap().put(entry.getKey(), entityProto);
-        }
-        return this;
+    public Map<String, MPEntityProto> getUpdatedEntities() {
+        return stateUpdateProtoBuilder.getUpdatedEntitiesMap();
     }
 
     /**
-     * Sets the updated entities attribute of the state update.
-     * @param updatedEntities A map of updated entities.
+     * Retrieves the list of removed entities.
+     * @return Returns a map.
      */
-    public StateUpdateBuilder setUpdatedEntitiesProto(Map<String, ? extends MPEntityProto> updatedEntities) {
-        stateUpdateProtoBuilder.getUpdatedEntitiesMap().clear();
-        stateUpdateProtoBuilder.getUpdatedEntitiesMap().putAll(updatedEntities);
-        return this;
+    public List<String> getRemovedEntities() {
+        return stateUpdateProtoBuilder.getRemovedEntitiesList();
     }
 
     /**
-     * Sets the updated entities attribute of the state update.
-     * @param updatedEntities A map of updated entities.
+     * Retrieves the map of created terrain.
+     * @return Returns a map.
      */
-    public StateUpdateBuilder setUpdatedEntities(Map<String, ? extends MPEntity> updatedEntities) {
-        stateUpdateProtoBuilder.getUpdatedEntitiesMap().clear();
-        for (Map.Entry<String, ? extends MPEntity> entry : updatedEntities.entrySet()) {
-            final MPEntityProto entityProto = entry.getValue().toProto().build();
-            stateUpdateProtoBuilder.getUpdatedEntitiesMap().put(entry.getKey(), entityProto);
-        }
-        return this;
+    public Map<String, MPTerrainCellProto> getCreatedTerrain() {
+        return stateUpdateProtoBuilder.getNewTerrainCellsMap();
     }
 
     /**
-     * Sets the removed entities attribute of the state update.
-     * @param removedEntities A list of IDs of removed entities.
+     * Retrieves the map of updated terrain.
+     * @return Returns a map.
      */
-    public StateUpdateBuilder setRemovedEntities(List<String> removedEntities) {
-        stateUpdateProtoBuilder.getRemovedEntitiesList().clear();
-        stateUpdateProtoBuilder.getRemovedEntitiesList().addAll(removedEntities);
-        return this;
+    public Map<String, MPTerrainCellProto> getUpdatedTerrain() {
+        return stateUpdateProtoBuilder.getUpdatedTerrainCellsMap();
     }
 
     /**
-     * Sets the created terrain attribute of the state update.
-     * @param createdTerrain A map of created terrain.
+     * Retrieves the list of removed terrain.
+     * @return Returns a map.
      */
-    public StateUpdateBuilder setCreatedTerrainProto(Map<String, ? extends MPTerrainCellProto> createdTerrain) {
-        stateUpdateProtoBuilder.getNewTerrainCellsMap().clear();
-        stateUpdateProtoBuilder.getNewTerrainCellsMap().putAll(createdTerrain);
-        return this;
-    }
-
-    /**
-     * Sets the created terrain attribute of the state update.
-     * @param createdTerrain A map of created terrain.
-     */
-    public StateUpdateBuilder setCreatedTerrain(Map<String, ? extends MPTerrainCell> createdTerrain) {
-        stateUpdateProtoBuilder.getNewTerrainCellsMap().clear();
-        for (Map.Entry<String, ? extends MPTerrainCell> entry : createdTerrain.entrySet()) {
-            final MPTerrainCellProto terrainProto = entry.getValue().toProto().build();
-            stateUpdateProtoBuilder.getNewTerrainCellsMap().put(entry.getKey(), terrainProto);
-        }
-        return this;
-    }
-
-    /**
-     * Sets the updated terrain attribute of the state update.
-     * @param updatedTerrain A map of updated terrain.
-     */
-    public StateUpdateBuilder setUpdatedTerrainProto(Map<String, ? extends MPTerrainCellProto> updatedTerrain) {
-        stateUpdateProtoBuilder.getUpdatedTerrainCellsMap().clear();
-        stateUpdateProtoBuilder.getUpdatedTerrainCellsMap().putAll(updatedTerrain);
-        return this;
-    }
-
-    /**
-     * Sets the updated terrain attribute of the state update.
-     * @param updatedTerrain A map of updated terrain.
-     */
-    public StateUpdateBuilder setUpdatedTerrain(Map<String, ? extends MPTerrainCell> updatedTerrain) {
-        stateUpdateProtoBuilder.getUpdatedTerrainCellsMap().clear();
-        for (Map.Entry<String, ? extends MPTerrainCell> entry : updatedTerrain.entrySet()) {
-            final MPTerrainCellProto terrainProto = entry.getValue().toProto().build();
-            stateUpdateProtoBuilder.getUpdatedTerrainCellsMap().put(entry.getKey(), terrainProto);
-        }
-        return this;
-    }
-
-    /**
-     * Sets the removed terrain attribute of the state update.
-     * @param removedTerrain A list of IDs of removed terrain cells.
-     */
-    public StateUpdateBuilder setRemovedTerrain(List<String> removedTerrain) {
-        stateUpdateProtoBuilder.getRemovedTerrainCellsList().clear();
-        stateUpdateProtoBuilder.getRemovedTerrainCellsList().addAll(removedTerrain);
-        return this;
+    public List<String> getRemovedTerrain() {
+        return stateUpdateProtoBuilder.getRemovedTerrainCellsList();
     }
 
     //TODO --- UP TO THIS POINT.
