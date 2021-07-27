@@ -146,6 +146,7 @@ public class BuildMineWebSocket {
         final Collection<BuildingEntity> allBuildings = DBManager.buildingEntity.listForWorld(worldSession.getWorldID());
         for (BuildingEntity e : allBuildings) {
             if (e.getPosition().equals(request.getPosition().toObject())) {
+                System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
                 send(BuildResponse.newBuilder()
                         .setStatus(BuildResponse.Status.CANNOT_BUILD)
                         .setMessage("BUILDING_EXISTS")
@@ -197,7 +198,7 @@ public class BuildMineWebSocket {
                 .build());
 
         StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building);
-        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, false, false);
+        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
         UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, request.getPosition().toObject(), 20);
 
     }

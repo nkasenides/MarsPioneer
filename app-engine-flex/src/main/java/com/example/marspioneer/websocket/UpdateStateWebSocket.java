@@ -82,13 +82,41 @@ public class UpdateStateWebSocket {
         for (MPWorldSession session : sessionsToUpdate) {
             final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
             final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
+            final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
             final UpdateStateResponse response = UpdateStateResponse.newBuilder()
+                    .setResourceSet(
+                            ResourceSetProto.newBuilder()
+                                    .setFood(player.getFood())
+                                    .setMetal(player.getMetal())
+                                    .setSand(player.getSand())
+                                    .setWater(player.getWater())
+                                    .build()
+                    )
                     .setStatus(UpdateStateResponse.Status.OK)
                     .setMessage("OK")
                     .setStateUpdate(stateUpdate)
                     .build();
             socket.send(socketSession, response);
         }
+    }
+
+    /**
+     * Runs a <b>lightweight</b> state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
+     * The state sent to the client will contain only what is defined in parameter <i>stateUpdate</i>, as defined by the caller of this method.
+     * Use this method to <b>update</b> the existing states of clients. To refresh the entire client state, use <i>sendRefresh()</i> instead.
+     * @param worldSession The world session initiating the state update.
+     * @throws IOException thrown when the message cannot be sent via the socket.
+     */
+    public static void sendUpdate(final MPWorldSession worldSession, MPStateUpdateProto stateUpdate) throws IOException {
+        final Session socketSession = CONNECTED_SESSIONS.get(worldSession.getId());
+        final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(worldSession.getId());
+        final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
+        final UpdateStateResponse response = UpdateStateResponse.newBuilder()
+                .setStatus(UpdateStateResponse.Status.OK)
+                .setMessage("OK")
+                .setStateUpdate(stateUpdate)
+                .build();
+        socket.send(socketSession, response);
     }
 
     /**

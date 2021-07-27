@@ -44,7 +44,6 @@ com\example\marspioneer\persistence\MPGameSessionDAO$3.class
 com\example\marspioneer\servlet\ListTeamPlayersServlet.class
 com\example\marspioneer\service\DeleteWorld.class
 com\example\marspioneer\servlet\UpdateTeamServlet.class
-com\example\marspioneer\state\StateUpdateType.class
 com\example\marspioneer\servlet\BuildMineServlet.class
 com\example\marspioneer\servlet\SellBuildingServlet.class
 com\example\marspioneer\persistence\MPEntityDAO.class

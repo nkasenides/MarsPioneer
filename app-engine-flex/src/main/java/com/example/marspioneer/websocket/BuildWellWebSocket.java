@@ -146,6 +146,7 @@ public class BuildWellWebSocket {
         final Collection<BuildingEntity> allBuildings = DBManager.buildingEntity.listForWorld(worldSession.getWorldID());
         for (BuildingEntity e : allBuildings) {
             if (e.getPosition().equals(request.getPosition().toObject())) {
+                System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
                 send(BuildResponse.newBuilder()
                         .setStatus(BuildResponse.Status.CANNOT_BUILD)
                         .setMessage("BUILDING_EXISTS")

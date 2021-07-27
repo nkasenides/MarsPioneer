@@ -146,6 +146,7 @@ public class BuildFarmWebSocket {
         final Collection<BuildingEntity> allBuildings = DBManager.buildingEntity.listForWorld(worldSession.getWorldID());
         for (BuildingEntity e : allBuildings) {
             if (e.getPosition().equals(request.getPosition().toObject())) {
+                System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
                 send(BuildResponse.newBuilder()
                         .setStatus(BuildResponse.Status.CANNOT_BUILD)
                         .setMessage("BUILDING_EXISTS")
@@ -173,7 +174,7 @@ public class BuildFarmWebSocket {
             }
         }
 
-        System.out.println("Rules: " + (System.currentTimeMillis() - l));
+//        System.out.println("Rules: " + (System.currentTimeMillis() - l));
 
 
         //Deduct resources:
@@ -193,6 +194,8 @@ public class BuildFarmWebSocket {
 
         DBManager.buildingEntity.create(building);
         DBManager.player.update(player);
+
+        System.out.println("BUILD");
 
         send(BuildResponse.newBuilder()
                 .setStatus(BuildResponse.Status.OK)

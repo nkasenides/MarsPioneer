@@ -6,6 +6,7 @@
 package com.example.marspioneer.client.stubs;
 
 import com.example.marspioneer.client.MPClient;
+import com.example.marspioneer.client.simulation.Bot;
 import com.example.marspioneer.client.websocket.*;
 import com.neovisionaries.ws.client.WebSocketException;
 import java.io.IOException;
@@ -61,6 +62,55 @@ public final class Stubs {
                 buildWellStub = new BuildWellStub(client);
             }
             return buildWellStub;
+        }
+
+        //Simulation:
+        private static BotBuildHubStub botBuildHubStub = null;
+        public static BotBuildHubStub getBotBuildHubStub(Bot bot) throws WebSocketException, IOException {
+            if (botBuildHubStub == null) {
+                botBuildHubStub = new BotBuildHubStub(bot);
+            }
+            return botBuildHubStub;
+        }
+
+        private static BotSellBuildingStub botSellBuildingStub = null;
+        public static BotSellBuildingStub getBotSellBuildingStub(Bot bot) throws WebSocketException, IOException {
+            if (botSellBuildingStub == null) {
+                botSellBuildingStub = new BotSellBuildingStub(bot);
+            }
+            return botSellBuildingStub;
+        }
+
+        private static BotBuildSandPitStub botBuildSandPitStub = null;
+        public static BotBuildSandPitStub getBotBuildSandPitStub(Bot bot) throws WebSocketException, IOException {
+            if (botBuildSandPitStub == null) {
+                botBuildSandPitStub = new BotBuildSandPitStub(bot);
+            }
+            return botBuildSandPitStub;
+        }
+
+        private static BotBuildMineStub botBuildMineStub = null;
+        public static BotBuildMineStub getBotBuildMineStub(Bot bot) throws WebSocketException, IOException {
+            if (botBuildMineStub == null) {
+                botBuildMineStub = new BotBuildMineStub(bot);
+            }
+            return botBuildMineStub;
+        }
+
+        private static BotBuildFarmStub botBuildFarmStub = null;
+        public static BotBuildFarmStub getBotBuildFarmStub(Bot bot) throws WebSocketException, IOException {
+            if (botBuildFarmStub == null) {
+                botBuildFarmStub = new BotBuildFarmStub(bot);
+            }
+            return botBuildFarmStub;
+        }
+
+        private static BotBuildWellStub botBuildWellStub = null;
+        public static BotBuildWellStub getBotBuildWellStub(Bot bot) throws WebSocketException, IOException {
+            if (botBuildWellStub == null) {
+                botBuildWellStub = new BotBuildWellStub(bot);
+            }
+            return botBuildWellStub;
         }
 
     }
@@ -191,6 +241,15 @@ public final class Stubs {
             updateStateStub = new UpdateStateStub(client);
         }
         return updateStateStub;
+    }
+
+    //Simulation:
+    private static BotUpdateStateStub botUpdateStateStub = null;
+    public static BotUpdateStateStub getBotUpdateStateStub(Bot bot) throws WebSocketException, IOException {
+        if (botUpdateStateStub == null) {
+            botUpdateStateStub = new BotUpdateStateStub(bot);
+        }
+        return botUpdateStateStub;
     }
 
 
