@@ -35,7 +35,7 @@ public class BuildSandPitStub extends BinaryWebSocketClient {
     
     public void handleResponse(BuildResponse response) {
         if (response.getStatus() == BuildResponse.Status.OK) {
-            System.out.println("Sand pit built by " + client.getWorldSessionID());
+            System.out.println("Sand pit built by " + client.getWorldSession().getId());
         } else {
             client.getGameCanvas().showMessage(response.getMessage());
             System.err.println(response.getMessage());

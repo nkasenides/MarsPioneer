@@ -18,17 +18,12 @@ import java.io.IOException;
 import java.util.HashMap;
 
 
-public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSession, MPWorldSession, MPPlayer, MPWorld> {
+public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSession, MPWorldSession, MPPlayer, MPWorld, MPEntityProto, MPTerrainCellProto> {
 
     private static String adminGameSessionID;
     private static MPPlayer adminPlayer;
     private static String WORLD_ID;
 
-
-    private MPWorldProto world = null;
-
-    private HashMap<String, MPEntityProto> entities = new HashMap<>();
-    private HashMap<String, MPTerrainCellProto> stateCells = new HashMap<>();
     private HashMap<String, MPTerrainCellProto> generatedCells = new HashMap<>();
     private MatrixPosition cameraPosition;
     private MatrixPosition selectedCellPosition = new MatrixPosition();
@@ -52,22 +47,6 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
         return cameraPosition;
     }
 
-    public HashMap<String, MPEntityProto> getEntities() {
-        return entities;
-    }
-
-    public void setEntities(HashMap<String, MPEntityProto> entities) {
-        this.entities = entities;
-    }
-
-    public HashMap<String, MPTerrainCellProto> getStateCells() {
-        return stateCells;
-    }
-
-    public void setStateCells(HashMap<String, MPTerrainCellProto> stateCells) {
-        this.stateCells = stateCells;
-    }
-
     public HashMap<String, MPTerrainCellProto> getGeneratedCells() {
         return generatedCells;
     }
@@ -82,18 +61,6 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
 
     public void setPlayerResourceSet(ResourceSet playerResourceSet) {
         this.playerResourceSet = playerResourceSet;
-    }
-
-    public String getWorldSessionID() {
-        return worldSessionID;
-    }
-
-    public MPWorldProto getWorld() {
-        return world;
-    }
-
-    public void setWorld(MPWorldProto world) {
-        this.world = world;
     }
 
     public void setCameraPosition(MatrixPosition cameraPosition) {
@@ -202,7 +169,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                 }
         );
 
-        final int NUM_OF_PLAYERS = 1;
+        final int NUM_OF_PLAYERS = 2;
 
         for (int i = 0; i < NUM_OF_PLAYERS; i++) {
             MPClient client = new MPClient("Player-" + (i + 1), WORLD_ID);
@@ -241,10 +208,10 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                     if (authResponse.getStatus() == AuthenticateResponse.Status.OK) {
                         System.out.println("Player '" + playerName + "' created, ID: " + authResponse.getGameSession().getPlayerID());
                         System.out.println("Game session ID: " + authResponse.getGameSession().getId());
-                        gameSessionID = authResponse.getGameSession().getId();
+                        gameSession = authResponse.getGameSession().toObject();
                         Stubs.getPlayerStub().sendAndWait(
                                 GetPlayerRequest.newBuilder()
-                                        .setGameSessionID(gameSessionID)
+                                        .setGameSessionID(gameSession.getId())
                                         .setPlayerID(authResponse.getGameSession().getPlayerID())
                                         .build(),
                                 getPlayerResponse -> {
@@ -266,25 +233,25 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
         Stubs.joinWorldStub().sendAndWait(
                 JoinWorldRequest.newBuilder()
                         .setWorldID(worldID)
-                        .setGameSessionID(gameSessionID)
+                        .setGameSessionID(gameSession.getId())
                         .build(),
                 joinWorldResponse -> {
                     if (joinWorldResponse.getStatus() == JoinWorldResponse.Status.OK) {
                         System.out.println("Player '" + player.getName() + "' joined world '" + joinWorldResponse.getWorld().getId() + "'.");
                         System.out.println("World session ID: " + joinWorldResponse.getWorldSession().getId());
-                        this.worldSessionID = joinWorldResponse.getWorldSession().getId();
-                        this.world = joinWorldResponse.getWorld();
+                        this.worldSession = joinWorldResponse.getWorldSession().toObject();
+                        this.world = joinWorldResponse.getWorld().toObject();
                         this.cameraPosition = joinWorldResponse.getWorldSession().getCameraPosition().toObject();
 
                         //Get the initial state:
                         Stubs.getStateStub().sendAndWait(
                                 GetStateRequest.newBuilder()
-                                        .setWorldSessionID(worldSessionID)
+                                        .setWorldSessionID(worldSession.getId())
                                         .build(),
                                 getStateResponse -> {
                                     if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
                                         System.out.println("Initial state retrieved for player '" + player.getName() + "'.");
-                                        setStateCells(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
+                                        setTerrain(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
                                         setEntities(new HashMap<>(getStateResponse.getPartialState().getEntitiesMap()));
                                         setPlayerResourceSet(getStateResponse.getResourceSet().toObject());
                                         selectedCellPosition = getStateResponse.getPartialState().getWorldSession().getCameraPosition().toObject();
@@ -293,11 +260,11 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                             //Subscribe:
                                             Stubs.subscribeStub().sendAndWait(
                                                     SubscribeRequest.newBuilder()
-                                                            .setWorldSessionID(worldSessionID)
+                                                            .setWorldSessionID(worldSession.getId())
                                                             .build(),
                                                     subscribeResponse -> {
                                                         if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
-                                                            System.out.println("World session " + worldSessionID + " successfully subscribed to world.");
+                                                            System.out.println("World session " + worldSession.getId() + " successfully subscribed to world.");
                                                         }
                                                         else {
                                                             System.err.println(subscribeResponse.getMessage());
@@ -309,7 +276,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                             final UpdateStateStub updateStateStub = Stubs.getUpdateStateStub(this);
                                             Mocha.start(updateStateStub);
                                             //Send a request to be acknowledged as a client:
-                                            final byte[] bytes = UpdateStateRequest.newBuilder().setWorldSessionID(worldSessionID).build().toByteArray();
+                                            final byte[] bytes = UpdateStateRequest.newBuilder().setWorldSessionID(worldSession.getId()).build().toByteArray();
                                             updateStateStub.send(bytes);
                                         } catch (WebSocketException | IOException e) {
                                             e.printStackTrace();

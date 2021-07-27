@@ -7,6 +7,8 @@ package com.example.marspioneer.model;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
+
 import com.nkasenides.athlos.proto.Transmittable;
 import com.example.marspioneer.proto.*;
 import com.nkasenides.athlos.model.*;
@@ -21,9 +23,10 @@ public class MPTerrainChunk implements Transmittable<MPTerrainChunkProto.Builder
     private String id;    
     private MatrixPosition position;    
 
-    public HashMap<String, MPTerrainCell> getCells() {
-        return cells;        
-    }    
+    @Override
+    public Map<String, MPTerrainCell> getCells() {
+        return cells;
+    }
     
     public String getWorldID() {    
         return worldID;        
@@ -31,8 +34,8 @@ public class MPTerrainChunk implements Transmittable<MPTerrainChunkProto.Builder
     
     public String getId() {    
         return id;        
-    }    
-    
+    }
+
     public MatrixPosition getPosition() {    
         return position;        
     }    

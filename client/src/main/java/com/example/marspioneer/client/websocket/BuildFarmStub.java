@@ -35,7 +35,7 @@ public class BuildFarmStub extends BinaryWebSocketClient {
     
     public void handleResponse(BuildResponse response) {
         if (response.getStatus() == BuildResponse.Status.OK) {
-            System.out.println("Farm built by " + client.getWorldSessionID());
+            System.out.println("Farm built by " + client.getWorldSession().getId());
         } else {
             client.getGameCanvas().showMessage(response.getMessage());
             System.err.println(response.getMessage());

@@ -10,7 +10,6 @@ import com.example.marspioneer.model.BuildingEntity;
 import com.example.marspioneer.model.BuildingType;
 import com.example.marspioneer.model.MPPlayer;
 import com.example.marspioneer.model.MPWorldSession;
-import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
@@ -188,9 +187,9 @@ public class BuildHubWebSocket {
                 .setMessage("OK")
                 .build());
 
-        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building);
-        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
-        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, request.getPosition().toObject(), 20);
+//        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building);
+//        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
+//        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, request.getPosition().toObject(), 20);
 
     }
 

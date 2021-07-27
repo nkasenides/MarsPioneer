@@ -44,23 +44,8 @@ public class DAOTest {
         Firestorm.register(MPPlayer.class);
         Firestorm.register(MPTerrainChunk.class);
 
-
-        Objectis.init();
-        Objectis.register(MPWorld.class);
-
-        MPWorld w = new MPWorld();
-        w.setId("abc");
-        w.setOwnerID("aaa");
-        w.setCreatedOn(123123);
-        w.setName("world");
-        w.setChunkIDs(new ArrayList<>());
-        w.setHeightLimit(100);
-        w.setMaxRows(111);
-        w.setSeed(123);
-        w.setMaxCols(111);
-
-        MPWorldDAO dao = new MPWorldDAO();
-        dao.create(w);
+        MPTerrainChunk c = new MPTerrainChunk();
+        Firestorm.create(c);
 
     }
 

@@ -69,10 +69,13 @@ public class State {
     /**
      * Filters the sessions that should be updated based on game-specific criteria.
      * TODO - Change this function based on your game-specific needs for custom filtering of state updates.
-     * @param allSessions All the world sessions of a particular world.
+     * @param areaOfEffect The area of effect of the action.
+     * @param actionPosition The action position.
+     * @param worldID The ID of the world.
      * @return Returns a collection of world sessions.
      */
-    public static Collection<MPWorldSession> filterUpdateSessions(Collection<MPWorldSession> allSessions, MatrixPosition actionPosition, float areaOfEffect) {
+    public static Collection<MPWorldSession> filterUpdateSessions(String worldID, MatrixPosition actionPosition, float areaOfEffect) {
+        ArrayList<MPWorldSession> allSessions = new ArrayList<>(State.forWorld(worldID).getSubscribedSessions());
         ArrayList<MPWorldSession> filteredSessions = new ArrayList<>();
         for (MPWorldSession worldSession : allSessions) {
 

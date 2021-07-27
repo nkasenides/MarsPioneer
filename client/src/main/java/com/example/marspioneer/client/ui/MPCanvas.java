@@ -26,6 +26,7 @@ public class MPCanvas extends Canvas {
     private final Image MINE = Toolkit.getDefaultToolkit().getImage("client/res/mine.fw.png");
     private final Image SANDPIT = Toolkit.getDefaultToolkit().getImage("client/res/sandpit.fw.png");
     private final Image WELL = Toolkit.getDefaultToolkit().getImage("client/res/well.fw.png");
+    private final Image X_MARK = Toolkit.getDefaultToolkit().getImage("client/res/x.png");
 
     private final Image SAND = Toolkit.getDefaultToolkit().getImage("client/res/sand.png");
     private final Image GRAVEL = Toolkit.getDefaultToolkit().getImage("client/res/gravel.png");
@@ -51,7 +52,7 @@ public class MPCanvas extends Canvas {
 
     public MPCanvas(MPClient client) {
         this.client = client;
-        terrainGenerator = new MPTerrainGenerator(client.getWorld().toObject());
+        terrainGenerator = new MPTerrainGenerator(client.getWorld());
         System.out.println("Gen seed: " + terrainGenerator.getWorld().getSeed());
         setBackground(Color.DARK_GRAY);
         setFocusable(true);
@@ -152,7 +153,7 @@ public class MPCanvas extends Canvas {
 
         Graphics2D g2d = (Graphics2D) g;
 
-        for (Map.Entry<String, MPTerrainCellProto> entry : client.getStateCells().entrySet()) {
+        for (Map.Entry<String, MPTerrainCellProto> entry : client.getTerrain().entrySet()) {
 
             final MPTerrainCellProto cell = entry.getValue();
             Image image = null;
@@ -194,24 +195,30 @@ public class MPCanvas extends Canvas {
             final int positionY = (canvasHeight / 2 - client.getCameraPosition().getRow() * cellSize + entry.getValue().getPosition().getRow() * cellSize) - cellSize / 2;
 
             Image image = null;
-            switch (entry.getValue().getBuildingEntity().getBuildingType()) {
-                case HUB_EBuildingType:
-                    image = HUB;
-                    break;
-                case FARM_EBuildingType:
-                    image = FARM;
-                    break;
-                case WELL_EBuildingType:
-                    image = WELL;
-                    break;
-                case MINE_EBuildingType:
-                    image = MINE;
-                    break;
-                case SAND_PIT_EBuildingType:
-                    image = SANDPIT;
-                    break;
-                case UNRECOGNIZED:
-                    break;
+
+            if (!entry.getValue().getPlayerID().equals(client.getPlayer().getId())) {
+                image = X_MARK;
+            }
+            else {
+                switch (entry.getValue().getBuildingEntity().getBuildingType()) {
+                    case HUB_EBuildingType:
+                        image = HUB;
+                        break;
+                    case FARM_EBuildingType:
+                        image = FARM;
+                        break;
+                    case WELL_EBuildingType:
+                        image = WELL;
+                        break;
+                    case MINE_EBuildingType:
+                        image = MINE;
+                        break;
+                    case SAND_PIT_EBuildingType:
+                        image = SANDPIT;
+                        break;
+                    case UNRECOGNIZED:
+                        break;
+                }
             }
 
             if (image != null) {

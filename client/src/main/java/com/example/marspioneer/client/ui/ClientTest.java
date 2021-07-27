@@ -18,7 +18,7 @@ public class ClientTest {
         world.setSeed(1234);
         MPClient client = new MPClient("p1", world.getId());
         client.setCameraPosition(new MatrixPosition(0, 0));
-        client.setWorld(world.toProto().build());
+        client.setWorld(world);
 
         MPCanvas canvas = new MPCanvas(client);
         new MPGameForm(client, canvas);

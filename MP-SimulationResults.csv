@@ -1,8 +1,9 @@
-Simulation results for MP with 1 bots:
+Simulation results for MP with 2 bots:
 
-Start time:,1627376052919
-Finish time:,1627376112919
-Total duration (s):,60
+Start time:,1627395478946
+Finish time:,1627395508946
+Total duration (s):,30
 
 Bot name,Join time,/play latency (ms)
-Bot-1,1005,44,48,33,20,17,13,12,30,15,20,22,31,54,32,16,15,21,32,20,22
+Bot-1,1006,843,60,867,868,216,246,64,64,839,840,114,123,2859,2861,301,301,588,590,898,898,1903,1903,42,62,50,56,20,20,1620,1621
+Bot-2,4001

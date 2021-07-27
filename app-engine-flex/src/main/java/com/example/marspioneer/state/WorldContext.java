@@ -125,6 +125,58 @@ public class WorldContext {
     }
 
     /**
+     * NEW!
+     * Retrieves the terrain cells that are within the area of interest of a list of entities.
+     * @param entities The list of entities.
+     * @return Returns a Map containing the terrain cells.
+     */
+    public Map<String, MPTerrainCellProto> getTerrain(List<MPEntityProto> entities) {
+
+        HashMap<String, MPTerrainCellProto> cells = new HashMap<>();
+
+        HashSet<MatrixPosition> chunksNeeded = new HashSet<>();
+        for (MPEntityProto entity : entities) {
+            int minRow, maxRow, minCol, maxCol;
+            minRow = (int) (entity.getPosition().getRow() - entity.getAreaOfInterest());
+            maxRow = (int) (entity.getPosition().getRow() + entity.getAreaOfInterest());
+            minCol = (int) (entity.getPosition().getCol() - entity.getAreaOfInterest());
+            maxCol = (int) (entity.getPosition().getCol() + entity.getAreaOfInterest());
+
+            final int INCREMENTATION_STEP = (int) Math.min(entity.getAreaOfInterest(), MPTerrainChunk.SIZE);
+
+            for (int cellRow = minRow; cellRow <= maxRow; cellRow += INCREMENTATION_STEP) {
+                for (int cellCol = minCol; cellCol <= maxCol; cellCol += INCREMENTATION_STEP) {
+                    chunksNeeded.add(MPTerrainChunk.getChunkPosition(cellRow, cellCol));
+                }
+            }
+        }
+
+        ArrayList<MPTerrainChunk> chunks = new ArrayList<>();
+        for (MatrixPosition chunkPos : chunksNeeded) {
+            if (world.chunkIsInBounds(chunkPos.getRow(), chunkPos.getCol())) {
+                //Request the entire chunk:
+                long t = System.currentTimeMillis();
+                MPTerrainChunk chunk = requestChunk(chunkPos.getRow(), chunkPos.getCol());
+                chunks.add(chunk);
+            }
+        }
+
+        for (MPEntityProto entity : entities) {
+            for (MPTerrainChunk chunk : chunks) {
+                //Only include cells from this chunk that are within the AoI:
+                for (Map.Entry<String, MPTerrainCell> entry : chunk.getCells().entrySet()) {
+                    final MatrixPosition position = entry.getValue().getPosition();
+                    final double distance = position.distanceTo(entity.getPosition().toObject());
+                    if (distance <= entity.getAreaOfInterest()) {
+                        cells.put(position.toHash(), entry.getValue().toProto().build());
+                    }
+                }
+            }
+        }
+        return cells;
+    }
+
+    /**
      * Retrieves the terrain cells that are within the area of interest of a specific position.
      * @param position The position.
      * @param radius The radius of the area of interest.
@@ -284,7 +336,7 @@ public class WorldContext {
      * @param stateUpdateBuilder The builder, which contains the new entities.
      * @return Returns a StateUpdateBuilder.
      */
-    public StateUpdateBuilder refreshTerrain(Collection<MPEntity> entities, StateUpdateBuilder stateUpdateBuilder) {
+    public StateUpdateBuilder refreshTerrain(List<MPEntityProto> entities, StateUpdateBuilder stateUpdateBuilder) {
         final Map<String, MPTerrainCellProto> terrain = getTerrain(entities);
         for (MPTerrainCellProto terrainCell : terrain.values()) {
             stateUpdateBuilder.addCreatedTerrain(terrainCell);
@@ -308,18 +360,22 @@ public class WorldContext {
 
     /**
      * Refreshes an existing state's terrain ONLY, using existing entities in the stateUpdateBuilder provided.
-     * @param worldSession The world session initiating a state update.
      * @param stateUpdateBuilder An existing state update builder, containing the entities created in the last action.
      * @return Returns a StateUpdateBuilder.
      */
-    public StateUpdateBuilder checkAndRefreshTerrain(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder) {
+    public StateUpdateBuilder checkAndRefreshTerrain(StateUpdateBuilder stateUpdateBuilder) {
         //For each entity, find if the a entity is contained inside it
-        final Collection<MPEntity> entities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
+//        final Collection<MPEntity> entities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
+        final List<MPEntityProto> entities = new ArrayList<>();
+
+        entities.addAll(stateUpdateBuilder.getCreatedEntities().values());
+        entities.addAll(stateUpdateBuilder.getUpdatedEntities().values());
+
         boolean contained = false;
         outterloop:
-        for (MPEntity existingEntity : entities) {
+        for (MPEntityProto existingEntity : entities) {
             for (MPEntityProto createdEntity : stateUpdateBuilder.getCreatedEntities().values()) {
-                double distance = existingEntity.getPosition().distanceTo(createdEntity.getPosition().toObject());
+                double distance = existingEntity.getPosition().distanceTo(createdEntity.getPosition());
                 if (existingEntity.getAreaOfInterest() > (distance + createdEntity.getAreaOfInterest())) {
                     contained = true;
                     break outterloop;
@@ -342,9 +398,10 @@ public class WorldContext {
      * @param stateUpdateBuilder The state update, as provided by the action made.
      * @return Returns a StateUpdateProto
      */
-    public MPStateUpdateProto composeStateUpdate(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder, boolean refreshTerrain, boolean refreshEntities) {
+    public MPStateUpdateProto composeStateUpdate(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder,
+                                                 boolean refreshTerrain, boolean refreshEntities) {
         if (refreshTerrain) {
-            stateUpdateBuilder = checkAndRefreshTerrain(worldSession, stateUpdateBuilder);
+            stateUpdateBuilder = checkAndRefreshTerrain(stateUpdateBuilder);
         }
         if (refreshEntities) {
             stateUpdateBuilder = refreshEntities(worldSession, stateUpdateBuilder);

@@ -39,9 +39,9 @@ public class UpdateStateStub extends BinaryWebSocketClient {
     
     public void handleResponse(UpdateStateResponse response) {
         Benchmarking.actionFinishedTime = System.currentTimeMillis();
-        System.out.println("Action latency: " + (Benchmarking.actionFinishedTime - Benchmarking.actionInitiatedTime) + "ms");
+//        System.out.println("Action latency: " + (Benchmarking.actionFinishedTime - Benchmarking.actionInitiatedTime) + "ms");
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
-            System.out.println("State update received.");
+            System.out.println(client.getPlayer().getName() + ": State update received.");
 
             client.setPlayerResourceSet(response.getResourceSet().toObject());
 
@@ -58,15 +58,15 @@ public class UpdateStateStub extends BinaryWebSocketClient {
             }
 
             for (MPTerrainCellProto value : response.getStateUpdate().getNewTerrainCellsMap().values()) {
-                client.getStateCells().put(value.getPosition().toHash(), value);
+                client.getTerrain().put(value.getPosition().toHash(), value);
             }
 
             for (MPTerrainCellProto value : response.getStateUpdate().getUpdatedTerrainCellsMap().values()) {
-                client.getStateCells().put(value.getPosition().toHash(), value);
+                client.getTerrain().put(value.getPosition().toHash(), value);
             }
 
             for (String entityID : response.getStateUpdate().getRemovedTerrainCellsList()) {
-                client.getStateCells().remove(entityID);
+                client.getTerrain().remove(entityID);
             }
 
             client.getGameCanvas().repaint();

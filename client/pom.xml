@@ -12,12 +12,12 @@
         <dependency>
             <groupId>com.raylabz</groupId>
             <artifactId>athlos-core</artifactId>
-            <version>0.0.26</version>
+            <version>0.0.30</version>
         </dependency>
         <dependency>
             <groupId>com.raylabz</groupId>
             <artifactId>athlos-client</artifactId>
-            <version>0.0.26</version>
+            <version>0.0.32</version>
         </dependency>
         <dependency>
             <groupId>com.raylabz</groupId>

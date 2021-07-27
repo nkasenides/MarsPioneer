@@ -7,7 +7,6 @@ package com.example.marspioneer.websocket;
 
 import com.example.marspioneer.auth.Auth;
 import com.example.marspioneer.model.*;
-import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
@@ -203,11 +202,12 @@ public class BuildFarmWebSocket {
                 .build());
 
 
-        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building);
-        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
-        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, request.getPosition().toObject(), 20);
-
-
+        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building); //DEFINE
+        final Collection<MPWorldSession> worldSessionsToBeUpdated = State.filterUpdateSessions(worldSession.getWorldID(), building.getPosition(), 20); //FILTER
+        for (MPWorldSession updatedWorldSession : worldSessionsToBeUpdated) {
+            final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(updatedWorldSession, stateUpdateBuilder, true, false); //COMPOSE
+            UpdateStateWebSocket.sendUpdate(updatedWorldSession, stateUpdate, building.getPosition(), 20); //SEND
+        }
     }
 
     @OnWebSocketClose

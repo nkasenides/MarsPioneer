@@ -24,7 +24,7 @@ public class MPGameForm extends JFrame {
 
     public MPGameForm(MPClient client, MPCanvas canvas) {
         this.client = client;
-        JFrame frame = new JFrame("Mars Pioneer");
+        JFrame frame = new JFrame("Mars Pioneer - " + client.getPlayer().getName());
         frame.setSize(1024, 768);
         frame.setLocationRelativeTo(null);
         this.gameCanvas = canvas;
@@ -104,11 +104,11 @@ public class MPGameForm extends JFrame {
 
                 if (e.getKeyCode() == KeyEvent.VK_F5) {
                     Stubs.getStateStub().sendAndWait(GetStateRequest.newBuilder()
-                                    .setWorldSessionID(client.getWorldSessionID())
+                                    .setWorldSessionID(client.getWorldSession().getId())
                                     .build(),
                             getStateResponse -> {
                                 if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
-                                    client.setStateCells(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
+                                    client.setTerrain(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
                                     client.setEntities(new HashMap<>(getStateResponse.getPartialState().getEntitiesMap()));
                                     gameCanvas.repaint();
                                     System.out.println("State retrieved");
@@ -129,10 +129,11 @@ public class MPGameForm extends JFrame {
 
                 //Actions:
                 if (e.getKeyCode() == KeyEvent.VK_F) {
+                    System.out.println(client.getWorldSession().getId());
                     Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildFarmRequest request = BuildFarmRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
-                            .setWorldSessionID(client.getWorldSessionID())
+                            .setWorldSessionID(client.getWorldSession().getId())
                             .build();
                     try {
                         Stubs.Actions.getBuildFarmStub(client).send(request.toByteArray());
@@ -144,7 +145,7 @@ public class MPGameForm extends JFrame {
                     Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildMineRequest request = BuildMineRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
-                            .setWorldSessionID(client.getWorldSessionID())
+                            .setWorldSessionID(client.getWorldSession().getId())
                             .build();
                     try {
                         Stubs.Actions.getBuildMineStub(client).send(request.toByteArray());
@@ -156,7 +157,7 @@ public class MPGameForm extends JFrame {
                     Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildWellRequest request = BuildWellRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
-                            .setWorldSessionID(client.getWorldSessionID())
+                            .setWorldSessionID(client.getWorldSession().getId())
                             .build();
                     try {
                         Stubs.Actions.getBuildWellStub(client).send(request.toByteArray());
@@ -168,7 +169,7 @@ public class MPGameForm extends JFrame {
                     Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildSandPitRequest request = BuildSandPitRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
-                            .setWorldSessionID(client.getWorldSessionID())
+                            .setWorldSessionID(client.getWorldSession().getId())
                             .build();
                     try {
                         Stubs.Actions.getBuildSandPitStub(client).send(request.toByteArray());
@@ -180,7 +181,7 @@ public class MPGameForm extends JFrame {
                     Benchmarking.actionInitiatedTime = System.currentTimeMillis();
                     BuildHubRequest request = BuildHubRequest.newBuilder()
                             .setPosition(client.getSelectedCellPosition().toProto())
-                            .setWorldSessionID(client.getWorldSessionID())
+                            .setWorldSessionID(client.getWorldSession().getId())
                             .build();
                     try {
                         Stubs.Actions.getBuildHubStub(client).send(request.toByteArray());
@@ -201,7 +202,7 @@ public class MPGameForm extends JFrame {
                     if (entityToDeleteID != null) {
                         SellBuildingRequest request = SellBuildingRequest.newBuilder()
                                 .setBuildingID(entityToDeleteID)
-                                .setWorldSessionID(client.getWorldSessionID())
+                                .setWorldSessionID(client.getWorldSession().getId())
                                 .build();
                         try {
                             Stubs.Actions.getSellBuildingStub(client).send(request.toByteArray());

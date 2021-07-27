@@ -25,10 +25,7 @@ public class Simulation {
     private static MPPlayer adminPlayer;
     private static String worldID;
 
-    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-
-//        String simulationConfigFile = args[0];
-//        boolean gui = Boolean.parseBoolean(args[1]);
+    public static void main(String[] args) throws FileNotFoundException {
 
         setupSimulation();
 
@@ -63,6 +60,7 @@ public class Simulation {
         }
 
         try {
+            System.out.println("Writing results to file. Please wait...");
             FileWriter fileWriter = new FileWriter("MP-SimulationResults.csv");
             StringBuilder builder = new StringBuilder();
             builder.append("Simulation results for MP with ").append(threads.size()).append(" bots:").append((System.lineSeparator())).append(System.lineSeparator());
@@ -86,18 +84,13 @@ public class Simulation {
 
             fileWriter.write(builder.toString());
             fileWriter.close();
+            System.out.println("Results written to file.");
         }
         catch (IOException e) {
             e.printStackTrace();
         }
 
-
         CleanUp.main(new String[]{});
-
-
-
-
-
     }
 
     private static void setupSimulation() {

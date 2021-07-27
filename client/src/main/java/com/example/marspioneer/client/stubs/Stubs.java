@@ -10,6 +10,7 @@ import com.example.marspioneer.client.simulation.Bot;
 import com.example.marspioneer.client.websocket.*;
 import com.neovisionaries.ws.client.WebSocketException;
 import java.io.IOException;
+import java.util.HashMap;
 
 public final class Stubs {
 
@@ -24,93 +25,93 @@ public final class Stubs {
             return buildHubStub;
         }
 
-        private static SellBuildingStub sellBuildingStub = null;
+        private static HashMap<String, SellBuildingStub> sellBuildingStubs = new HashMap<>();
         public static SellBuildingStub getSellBuildingStub(MPClient client) throws WebSocketException, IOException {
-            if (sellBuildingStub == null) {
-                sellBuildingStub = new SellBuildingStub(client);
+            if (sellBuildingStubs.get(client.getPlayer().getName()) == null) {
+                sellBuildingStubs.put(client.getPlayer().getName(), new SellBuildingStub(client));
             }
-            return sellBuildingStub;
+            return sellBuildingStubs.get(client.getPlayer().getName());
         }
 
-        private static BuildSandPitStub buildSandPitStub = null;
+        private static HashMap<String, BuildSandPitStub> buildSandPitStubs = new HashMap<>();
         public static BuildSandPitStub getBuildSandPitStub(MPClient client) throws WebSocketException, IOException {
-            if (buildSandPitStub == null) {
-                buildSandPitStub = new BuildSandPitStub(client);
+            if (buildSandPitStubs.get(client.getPlayer().getName()) == null) {
+                buildSandPitStubs.put(client.getPlayer().getName(), new BuildSandPitStub(client));
             }
-            return buildSandPitStub;
+            return buildSandPitStubs.get(client.getPlayer().getName());
         }
 
-        private static BuildMineStub buildMineStub = null;
+        private static HashMap<String, BuildMineStub> buildMineStubs = new HashMap<>();
         public static BuildMineStub getBuildMineStub(MPClient client) throws WebSocketException, IOException {
-            if (buildMineStub == null) {
-                buildMineStub = new BuildMineStub(client);
+            if (buildMineStubs.get(client.getPlayer().getName()) == null) {
+                buildMineStubs.put(client.getPlayer().getName(), new BuildMineStub(client));
             }
-            return buildMineStub;
+            return buildMineStubs.get(client.getPlayer().getName());
         }
 
-        private static BuildFarmStub buildFarmStub = null;
+        private static HashMap<String, BuildFarmStub> buildFarmStubs = new HashMap<>();
         public static BuildFarmStub getBuildFarmStub(MPClient client) throws WebSocketException, IOException {
-            if (buildFarmStub == null) {
-                buildFarmStub = new BuildFarmStub(client);
+            if (buildFarmStubs.get(client.getPlayer().getName()) == null) {
+                buildFarmStubs.put(client.getPlayer().getName(), new BuildFarmStub(client));
             }
-            return buildFarmStub;
+            return buildFarmStubs.get(client.getPlayer().getName());
         }
 
-        private static BuildWellStub buildWellStub = null;
+        private static HashMap<String, BuildWellStub> buildWellStubs = new HashMap<>();
         public static BuildWellStub getBuildWellStub(MPClient client) throws WebSocketException, IOException {
-            if (buildWellStub == null) {
-                buildWellStub = new BuildWellStub(client);
+            if (buildWellStubs.get(client.getPlayer().getName()) == null) {
+                buildWellStubs.put(client.getPlayer().getName(), new BuildWellStub(client));
             }
-            return buildWellStub;
+            return buildWellStubs.get(client.getPlayer().getName());
         }
 
         //Simulation:
-        private static BotBuildHubStub botBuildHubStub = null;
+        private final static HashMap<String, BotBuildHubStub> botBuildHubStubMap = new HashMap<>();
         public static BotBuildHubStub getBotBuildHubStub(Bot bot) throws WebSocketException, IOException {
-            if (botBuildHubStub == null) {
-                botBuildHubStub = new BotBuildHubStub(bot);
+            if (botBuildHubStubMap.get(bot.getPlayer().getName()) == null) {
+                botBuildHubStubMap.put(bot.getPlayer().getName(), new BotBuildHubStub(bot));
             }
-            return botBuildHubStub;
+            return botBuildHubStubMap.get(bot.getPlayer().getName());
         }
 
-        private static BotSellBuildingStub botSellBuildingStub = null;
+        private final static HashMap<String, BotSellBuildingStub> botSellBuildingStubMap = new HashMap<>();
         public static BotSellBuildingStub getBotSellBuildingStub(Bot bot) throws WebSocketException, IOException {
-            if (botSellBuildingStub == null) {
-                botSellBuildingStub = new BotSellBuildingStub(bot);
+            if (botSellBuildingStubMap.get(bot.getPlayer().getName()) == null) {
+                botSellBuildingStubMap.put(bot.getPlayer().getName(), new BotSellBuildingStub(bot));
             }
-            return botSellBuildingStub;
+            return botSellBuildingStubMap.get(bot.getPlayer().getName());
         }
 
-        private static BotBuildSandPitStub botBuildSandPitStub = null;
+        private static final HashMap<String, BotBuildSandPitStub> botBuildSandPitStubMap = new HashMap<>();
         public static BotBuildSandPitStub getBotBuildSandPitStub(Bot bot) throws WebSocketException, IOException {
-            if (botBuildSandPitStub == null) {
-                botBuildSandPitStub = new BotBuildSandPitStub(bot);
+            if (botBuildSandPitStubMap.get(bot.getPlayer().getName()) == null) {
+                botBuildSandPitStubMap.put(bot.getPlayer().getName(), new BotBuildSandPitStub(bot));
             }
-            return botBuildSandPitStub;
+            return botBuildSandPitStubMap.get(bot.getPlayer().getName());
         }
 
-        private static BotBuildMineStub botBuildMineStub = null;
+        private static final HashMap<String, BotBuildMineStub> botBuildMineStubMap = new HashMap<>();
         public static BotBuildMineStub getBotBuildMineStub(Bot bot) throws WebSocketException, IOException {
-            if (botBuildMineStub == null) {
-                botBuildMineStub = new BotBuildMineStub(bot);
+            if (botBuildMineStubMap.get(bot.getPlayer().getName()) == null) {
+                botBuildMineStubMap.put(bot.getPlayer().getName(), new BotBuildMineStub(bot));
             }
-            return botBuildMineStub;
+            return botBuildMineStubMap.get(bot.getPlayer().getName());
         }
 
-        private static BotBuildFarmStub botBuildFarmStub = null;
+        private static final HashMap<String, BotBuildFarmStub> botBuildFarmStubMap = new HashMap<>();
         public static BotBuildFarmStub getBotBuildFarmStub(Bot bot) throws WebSocketException, IOException {
-            if (botBuildFarmStub == null) {
-                botBuildFarmStub = new BotBuildFarmStub(bot);
+            if (botBuildFarmStubMap.get(bot.getPlayer().getName()) == null) {
+                botBuildFarmStubMap.put(bot.getPlayer().getName(), new BotBuildFarmStub(bot));
             }
-            return botBuildFarmStub;
+            return botBuildFarmStubMap.get(bot.getPlayer().getName());
         }
 
-        private static BotBuildWellStub botBuildWellStub = null;
+        private static final HashMap<String, BotBuildWellStub> botBuildWellStubMap = new HashMap<>();
         public static BotBuildWellStub getBotBuildWellStub(Bot bot) throws WebSocketException, IOException {
-            if (botBuildWellStub == null) {
-                botBuildWellStub = new BotBuildWellStub(bot);
+            if (botBuildWellStubMap.get(bot.getPlayer().getName()) == null) {
+                botBuildWellStubMap.put(bot.getPlayer().getName(), new BotBuildWellStub(bot));
             }
-            return botBuildWellStub;
+            return botBuildWellStubMap.get(bot.getPlayer().getName());
         }
 
     }
@@ -235,12 +236,16 @@ public final class Stubs {
 
         return new CreateBuildingType();
     }
-    private static UpdateStateStub updateStateStub = null;
+
+//    private static UpdateStateStub updateStateStub = null;
+
+    private static HashMap<String, UpdateStateStub> updateStateStubs = new HashMap<>();
+
     public static UpdateStateStub getUpdateStateStub(MPClient client) throws WebSocketException, IOException {
-        if (updateStateStub == null) {
-            updateStateStub = new UpdateStateStub(client);
+        if (updateStateStubs.get(client.getPlayer().getName()) == null) {
+            updateStateStubs.put(client.getPlayer().getName(), new UpdateStateStub(client));
         }
-        return updateStateStub;
+        return updateStateStubs.get(client.getPlayer().getName());
     }
 
     //Simulation:

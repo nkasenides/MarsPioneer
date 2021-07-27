@@ -8,9 +8,12 @@ import com.example.marspioneer.model.*;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
+import com.example.marspioneer.state.StateUpdateBuilder;
+import com.example.marspioneer.websocket.UpdateStateWebSocket;
 import com.nkasenides.athlos.backend.AthlosService;
 import com.example.marspioneer.auth.*;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class JoinWorld implements AthlosService<JoinWorldRequest, JoinWorldResponse> {
@@ -79,6 +82,17 @@ public class JoinWorld implements AthlosService<JoinWorldRequest, JoinWorldRespo
 
         DBManager.worldSession.create(worldSession);
         DBManager.buildingEntity.create(firstEntity);
+
+        try {
+            StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(firstEntity);
+            final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
+            UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, firstEntity.getPosition(), 20);
+        } catch (IOException e) {
+            return JoinWorldResponse.newBuilder()
+                    .setStatus(JoinWorldResponse.Status.SERVER_ERROR)
+                    .setMessage(e.getMessage())
+                    .build();
+        }
 
         return JoinWorldResponse.newBuilder()
                 .setStatus(JoinWorldResponse.Status.OK)

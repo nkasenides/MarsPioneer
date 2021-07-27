@@ -36,7 +36,7 @@ public class SellBuildingStub extends BinaryWebSocketClient {
     
     public void handleResponse(SellBuildingResponse response) {
         if (response.getStatus() == SellBuildingResponse.Status.OK) {
-            System.out.println("Building sold by " + client.getWorldSessionID());
+            System.out.println("Building sold by " + client.getWorldSession().getId());
         } else {
             client.getGameCanvas().showMessage(response.getMessage());
             System.err.println(response.getMessage());

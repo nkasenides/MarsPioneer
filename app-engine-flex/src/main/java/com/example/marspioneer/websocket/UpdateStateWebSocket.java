@@ -78,8 +78,7 @@ public class UpdateStateWebSocket {
      */
     public static void sendUpdate(final MPWorldSession worldSession, MPStateUpdateProto stateUpdate, final MatrixPosition actionPosition, final float areaOfEffect) throws IOException {
         final Collection<MPWorldSession> allSessions = State.forWorld(worldSession.getWorldID()).getSubscribedSessions();
-        final Collection<MPWorldSession> sessionsToUpdate = State.filterUpdateSessions(allSessions, actionPosition, areaOfEffect);
-        for (MPWorldSession session : sessionsToUpdate) {
+        for (MPWorldSession session : allSessions) {
             final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
             final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
             final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
