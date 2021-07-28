@@ -336,7 +336,7 @@ public class WorldContext {
      * @param stateUpdateBuilder The builder, which contains the new entities.
      * @return Returns a StateUpdateBuilder.
      */
-    public StateUpdateBuilder refreshTerrain(List<MPEntityProto> entities, StateUpdateBuilder stateUpdateBuilder) {
+    public StateUpdateBuilder refreshTerrain(List<MPEntity> entities, StateUpdateBuilder stateUpdateBuilder) {
         final Map<String, MPTerrainCellProto> terrain = getTerrain(entities);
         for (MPTerrainCellProto terrainCell : terrain.values()) {
             stateUpdateBuilder.addCreatedTerrain(terrainCell);
@@ -363,22 +363,27 @@ public class WorldContext {
      * @param stateUpdateBuilder An existing state update builder, containing the entities created in the last action.
      * @return Returns a StateUpdateBuilder.
      */
-    public StateUpdateBuilder checkAndRefreshTerrain(StateUpdateBuilder stateUpdateBuilder) {
+    public StateUpdateBuilder checkAndRefreshTerrain(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder) {
         //For each entity, find if the a entity is contained inside it
-//        final Collection<MPEntity> entities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
-        final List<MPEntityProto> entities = new ArrayList<>();
-
-        entities.addAll(stateUpdateBuilder.getCreatedEntities().values());
-        entities.addAll(stateUpdateBuilder.getUpdatedEntities().values());
+        final List<MPEntity> entities = new ArrayList<>(DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+//        final List<MPEntityProto> entities = new ArrayList<>();
+//
+//        entities.addAll(stateUpdateBuilder.getCreatedEntities().values());
+//        entities.addAll(stateUpdateBuilder.getUpdatedEntities().values());
 
         boolean contained = false;
-        outterloop:
-        for (MPEntityProto existingEntity : entities) {
+        outterLoop:
+        for (MPEntity existingEntity : entities) {
             for (MPEntityProto createdEntity : stateUpdateBuilder.getCreatedEntities().values()) {
-                double distance = existingEntity.getPosition().distanceTo(createdEntity.getPosition());
-                if (existingEntity.getAreaOfInterest() > (distance + createdEntity.getAreaOfInterest())) {
+                if (worldSession.getPlayerID().equals(createdEntity.getPlayerID())) {
                     contained = true;
-                    break outterloop;
+                    break outterLoop;
+                }
+                double distance = existingEntity.getPosition().distanceTo(createdEntity.getPosition().toObject());
+//                if (existingEntity.getAreaOfInterest() > (distance + createdEntity.getAreaOfInterest())) {
+                if (distance - createdEntity.getAreaOfInterest() < existingEntity.getAreaOfInterest()) {
+                    contained = true;
+                    break outterLoop;
                 }
             }
         }
@@ -401,11 +406,12 @@ public class WorldContext {
     public MPStateUpdateProto composeStateUpdate(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder,
                                                  boolean refreshTerrain, boolean refreshEntities) {
         if (refreshTerrain) {
-            stateUpdateBuilder = checkAndRefreshTerrain(stateUpdateBuilder);
+            stateUpdateBuilder = checkAndRefreshTerrain(worldSession, stateUpdateBuilder);
         }
         if (refreshEntities) {
             stateUpdateBuilder = refreshEntities(worldSession, stateUpdateBuilder);
         }
+
         return stateUpdateBuilder.build();
     }
 

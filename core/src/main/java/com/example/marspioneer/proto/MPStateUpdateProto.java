@@ -91,35 +91,9 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              newTerrainCells_ = com.google.protobuf.MapField.newMapField(
-                  NewTerrainCellsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
-            }
-            com.google.protobuf.MapEntry<String, MPTerrainCellProto>
-            newTerrainCells__ = input.readMessage(
-                NewTerrainCellsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            newTerrainCells_.getMutableMap().put(
-                newTerrainCells__.getKey(), newTerrainCells__.getValue());
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-              newEntities_ = com.google.protobuf.MapField.newMapField(
-                  NewEntitiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
-            }
-            com.google.protobuf.MapEntry<String, MPEntityProto>
-            newEntities__ = input.readMessage(
-                NewEntitiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            newEntities_.getMutableMap().put(
-                newEntities__.getKey(), newEntities__.getValue());
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               updatedEntities_ = com.google.protobuf.MapField.newMapField(
                   UpdatedEntitiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000008;
             }
             com.google.protobuf.MapEntry<String, MPEntityProto>
             updatedEntities__ = input.readMessage(
@@ -128,7 +102,7 @@ private static final long serialVersionUID = 0L;
                 updatedEntities__.getKey(), updatedEntities__.getValue());
             break;
           }
-          case 64: {
+          case 48: {
 
             timestamp_ = input.readUInt64();
             break;
@@ -171,10 +145,6 @@ private static final long serialVersionUID = 0L;
       case 2:
         return internalGetUpdatedTerrainCells();
       case 5:
-        return internalGetNewTerrainCells();
-      case 6:
-        return internalGetNewEntities();
-      case 7:
         return internalGetUpdatedEntities();
       default:
         throw new RuntimeException(
@@ -378,169 +348,7 @@ private static final long serialVersionUID = 0L;
     return removedTerrainCells_.getByteString(index);
   }
 
-  public static final int NEWTERRAINCELLS_FIELD_NUMBER = 5;
-  private static final class NewTerrainCellsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        String, MPTerrainCellProto> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<String, MPTerrainCellProto>newDefaultInstance(
-                MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewTerrainCellsEntry_descriptor,
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                MPTerrainCellProto.getDefaultInstance());
-  }
-  private com.google.protobuf.MapField<
-      String, MPTerrainCellProto> newTerrainCells_;
-  private com.google.protobuf.MapField<String, MPTerrainCellProto>
-  internalGetNewTerrainCells() {
-    if (newTerrainCells_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          NewTerrainCellsDefaultEntryHolder.defaultEntry);
-    }
-    return newTerrainCells_;
-  }
-
-  public int getNewTerrainCellsCount() {
-    return internalGetNewTerrainCells().getMap().size();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-   */
-
-  @Override
-  public boolean containsNewTerrainCells(
-      String key) {
-    if (key == null) { throw new NullPointerException(); }
-    return internalGetNewTerrainCells().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getNewTerrainCellsMap()} instead.
-   */
-  @Override
-  @Deprecated
-  public java.util.Map<String, MPTerrainCellProto> getNewTerrainCells() {
-    return getNewTerrainCellsMap();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-   */
-  @Override
-
-  public java.util.Map<String, MPTerrainCellProto> getNewTerrainCellsMap() {
-    return internalGetNewTerrainCells().getMap();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-   */
-  @Override
-
-  public MPTerrainCellProto getNewTerrainCellsOrDefault(
-      String key,
-      MPTerrainCellProto defaultValue) {
-    if (key == null) { throw new NullPointerException(); }
-    java.util.Map<String, MPTerrainCellProto> map =
-        internalGetNewTerrainCells().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-   */
-  @Override
-
-  public MPTerrainCellProto getNewTerrainCellsOrThrow(
-      String key) {
-    if (key == null) { throw new NullPointerException(); }
-    java.util.Map<String, MPTerrainCellProto> map =
-        internalGetNewTerrainCells().getMap();
-    if (!map.containsKey(key)) {
-      throw new IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
-  public static final int NEWENTITIES_FIELD_NUMBER = 6;
-  private static final class NewEntitiesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        String, MPEntityProto> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<String, MPEntityProto>newDefaultInstance(
-                MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewEntitiesEntry_descriptor,
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                MPEntityProto.getDefaultInstance());
-  }
-  private com.google.protobuf.MapField<
-      String, MPEntityProto> newEntities_;
-  private com.google.protobuf.MapField<String, MPEntityProto>
-  internalGetNewEntities() {
-    if (newEntities_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          NewEntitiesDefaultEntryHolder.defaultEntry);
-    }
-    return newEntities_;
-  }
-
-  public int getNewEntitiesCount() {
-    return internalGetNewEntities().getMap().size();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-   */
-
-  @Override
-  public boolean containsNewEntities(
-      String key) {
-    if (key == null) { throw new NullPointerException(); }
-    return internalGetNewEntities().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getNewEntitiesMap()} instead.
-   */
-  @Override
-  @Deprecated
-  public java.util.Map<String, MPEntityProto> getNewEntities() {
-    return getNewEntitiesMap();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-   */
-  @Override
-
-  public java.util.Map<String, MPEntityProto> getNewEntitiesMap() {
-    return internalGetNewEntities().getMap();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-   */
-  @Override
-
-  public MPEntityProto getNewEntitiesOrDefault(
-      String key,
-      MPEntityProto defaultValue) {
-    if (key == null) { throw new NullPointerException(); }
-    java.util.Map<String, MPEntityProto> map =
-        internalGetNewEntities().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-   */
-  @Override
-
-  public MPEntityProto getNewEntitiesOrThrow(
-      String key) {
-    if (key == null) { throw new NullPointerException(); }
-    java.util.Map<String, MPEntityProto> map =
-        internalGetNewEntities().getMap();
-    if (!map.containsKey(key)) {
-      throw new IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
-  public static final int UPDATEDENTITIES_FIELD_NUMBER = 7;
+  public static final int UPDATEDENTITIES_FIELD_NUMBER = 5;
   private static final class UpdatedEntitiesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         String, MPEntityProto> defaultEntry =
@@ -567,7 +375,7 @@ private static final long serialVersionUID = 0L;
     return internalGetUpdatedEntities().getMap().size();
   }
   /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
    */
 
   @Override
@@ -585,7 +393,7 @@ private static final long serialVersionUID = 0L;
     return getUpdatedEntitiesMap();
   }
   /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
    */
   @Override
 
@@ -593,7 +401,7 @@ private static final long serialVersionUID = 0L;
     return internalGetUpdatedEntities().getMap();
   }
   /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
    */
   @Override
 
@@ -606,7 +414,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
    */
   @Override
 
@@ -621,10 +429,10 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int TIMESTAMP_FIELD_NUMBER = 8;
+  public static final int TIMESTAMP_FIELD_NUMBER = 6;
   private long timestamp_;
   /**
-   * <code>uint64 timestamp = 8;</code>
+   * <code>uint64 timestamp = 6;</code>
    * @return The timestamp.
    */
   @Override
@@ -664,23 +472,11 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetNewTerrainCells(),
-        NewTerrainCellsDefaultEntryHolder.defaultEntry,
-        5);
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetNewEntities(),
-        NewEntitiesDefaultEntryHolder.defaultEntry,
-        6);
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
         internalGetUpdatedEntities(),
         UpdatedEntitiesDefaultEntryHolder.defaultEntry,
-        7);
+        5);
     if (timestamp_ != 0L) {
-      output.writeUInt64(8, timestamp_);
+      output.writeUInt64(6, timestamp_);
     }
     unknownFields.writeTo(output);
   }
@@ -720,26 +516,6 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getRemovedTerrainCellsList().size();
     }
-    for (java.util.Map.Entry<String, MPTerrainCellProto> entry
-         : internalGetNewTerrainCells().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<String, MPTerrainCellProto>
-      newTerrainCells__ = NewTerrainCellsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, newTerrainCells__);
-    }
-    for (java.util.Map.Entry<String, MPEntityProto> entry
-         : internalGetNewEntities().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<String, MPEntityProto>
-      newEntities__ = NewEntitiesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, newEntities__);
-    }
     for (java.util.Map.Entry<String, MPEntityProto> entry
          : internalGetUpdatedEntities().getMap().entrySet()) {
       com.google.protobuf.MapEntry<String, MPEntityProto>
@@ -748,11 +524,11 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, updatedEntities__);
+          .computeMessageSize(5, updatedEntities__);
     }
     if (timestamp_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(8, timestamp_);
+        .computeUInt64Size(6, timestamp_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -777,10 +553,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRemovedEntitiesList())) return false;
     if (!getRemovedTerrainCellsList()
         .equals(other.getRemovedTerrainCellsList())) return false;
-    if (!internalGetNewTerrainCells().equals(
-        other.internalGetNewTerrainCells())) return false;
-    if (!internalGetNewEntities().equals(
-        other.internalGetNewEntities())) return false;
     if (!internalGetUpdatedEntities().equals(
         other.internalGetUpdatedEntities())) return false;
     if (getTimestamp()
@@ -809,14 +581,6 @@ private static final long serialVersionUID = 0L;
     if (getRemovedTerrainCellsCount() > 0) {
       hash = (37 * hash) + REMOVEDTERRAINCELLS_FIELD_NUMBER;
       hash = (53 * hash) + getRemovedTerrainCellsList().hashCode();
-    }
-    if (!internalGetNewTerrainCells().getMap().isEmpty()) {
-      hash = (37 * hash) + NEWTERRAINCELLS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetNewTerrainCells().hashCode();
-    }
-    if (!internalGetNewEntities().getMap().isEmpty()) {
-      hash = (37 * hash) + NEWENTITIES_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetNewEntities().hashCode();
     }
     if (!internalGetUpdatedEntities().getMap().isEmpty()) {
       hash = (37 * hash) + UPDATEDENTITIES_FIELD_NUMBER;
@@ -939,10 +703,6 @@ private static final long serialVersionUID = 0L;
         case 2:
           return internalGetUpdatedTerrainCells();
         case 5:
-          return internalGetNewTerrainCells();
-        case 6:
-          return internalGetNewEntities();
-        case 7:
           return internalGetUpdatedEntities();
         default:
           throw new RuntimeException(
@@ -956,10 +716,6 @@ private static final long serialVersionUID = 0L;
         case 2:
           return internalGetMutableUpdatedTerrainCells();
         case 5:
-          return internalGetMutableNewTerrainCells();
-        case 6:
-          return internalGetMutableNewEntities();
-        case 7:
           return internalGetMutableUpdatedEntities();
         default:
           throw new RuntimeException(
@@ -999,8 +755,6 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       removedTerrainCells_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      internalGetMutableNewTerrainCells().clear();
-      internalGetMutableNewEntities().clear();
       internalGetMutableUpdatedEntities().clear();
       timestamp_ = 0L;
 
@@ -1044,10 +798,6 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.removedTerrainCells_ = removedTerrainCells_;
-      result.newTerrainCells_ = internalGetNewTerrainCells();
-      result.newTerrainCells_.makeImmutable();
-      result.newEntities_ = internalGetNewEntities();
-      result.newEntities_.makeImmutable();
       result.updatedEntities_ = internalGetUpdatedEntities();
       result.updatedEntities_.makeImmutable();
       result.timestamp_ = timestamp_;
@@ -1125,10 +875,6 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      internalGetMutableNewTerrainCells().mergeFrom(
-          other.internalGetNewTerrainCells());
-      internalGetMutableNewEntities().mergeFrom(
-          other.internalGetNewEntities());
       internalGetMutableUpdatedEntities().mergeFrom(
           other.internalGetUpdatedEntities());
       if (other.getTimestamp() != 0L) {
@@ -1589,262 +1335,6 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        String, MPTerrainCellProto> newTerrainCells_;
-    private com.google.protobuf.MapField<String, MPTerrainCellProto>
-    internalGetNewTerrainCells() {
-      if (newTerrainCells_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            NewTerrainCellsDefaultEntryHolder.defaultEntry);
-      }
-      return newTerrainCells_;
-    }
-    private com.google.protobuf.MapField<String, MPTerrainCellProto>
-    internalGetMutableNewTerrainCells() {
-      onChanged();;
-      if (newTerrainCells_ == null) {
-        newTerrainCells_ = com.google.protobuf.MapField.newMapField(
-            NewTerrainCellsDefaultEntryHolder.defaultEntry);
-      }
-      if (!newTerrainCells_.isMutable()) {
-        newTerrainCells_ = newTerrainCells_.copy();
-      }
-      return newTerrainCells_;
-    }
-
-    public int getNewTerrainCellsCount() {
-      return internalGetNewTerrainCells().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-
-    @Override
-    public boolean containsNewTerrainCells(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      return internalGetNewTerrainCells().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getNewTerrainCellsMap()} instead.
-     */
-    @Override
-    @Deprecated
-    public java.util.Map<String, MPTerrainCellProto> getNewTerrainCells() {
-      return getNewTerrainCellsMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-    @Override
-
-    public java.util.Map<String, MPTerrainCellProto> getNewTerrainCellsMap() {
-      return internalGetNewTerrainCells().getMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-    @Override
-
-    public MPTerrainCellProto getNewTerrainCellsOrDefault(
-        String key,
-        MPTerrainCellProto defaultValue) {
-      if (key == null) { throw new NullPointerException(); }
-      java.util.Map<String, MPTerrainCellProto> map =
-          internalGetNewTerrainCells().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-    @Override
-
-    public MPTerrainCellProto getNewTerrainCellsOrThrow(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      java.util.Map<String, MPTerrainCellProto> map =
-          internalGetNewTerrainCells().getMap();
-      if (!map.containsKey(key)) {
-        throw new IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearNewTerrainCells() {
-      internalGetMutableNewTerrainCells().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-
-    public Builder removeNewTerrainCells(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      internalGetMutableNewTerrainCells().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @Deprecated
-    public java.util.Map<String, MPTerrainCellProto>
-    getMutableNewTerrainCells() {
-      return internalGetMutableNewTerrainCells().getMutableMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-    public Builder putNewTerrainCells(
-        String key,
-        MPTerrainCellProto value) {
-      if (key == null) { throw new NullPointerException(); }
-      if (value == null) { throw new NullPointerException(); }
-      internalGetMutableNewTerrainCells().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; newTerrainCells = 5;</code>
-     */
-
-    public Builder putAllNewTerrainCells(
-        java.util.Map<String, MPTerrainCellProto> values) {
-      internalGetMutableNewTerrainCells().getMutableMap()
-          .putAll(values);
-      return this;
-    }
-
-    private com.google.protobuf.MapField<
-        String, MPEntityProto> newEntities_;
-    private com.google.protobuf.MapField<String, MPEntityProto>
-    internalGetNewEntities() {
-      if (newEntities_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            NewEntitiesDefaultEntryHolder.defaultEntry);
-      }
-      return newEntities_;
-    }
-    private com.google.protobuf.MapField<String, MPEntityProto>
-    internalGetMutableNewEntities() {
-      onChanged();;
-      if (newEntities_ == null) {
-        newEntities_ = com.google.protobuf.MapField.newMapField(
-            NewEntitiesDefaultEntryHolder.defaultEntry);
-      }
-      if (!newEntities_.isMutable()) {
-        newEntities_ = newEntities_.copy();
-      }
-      return newEntities_;
-    }
-
-    public int getNewEntitiesCount() {
-      return internalGetNewEntities().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-
-    @Override
-    public boolean containsNewEntities(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      return internalGetNewEntities().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getNewEntitiesMap()} instead.
-     */
-    @Override
-    @Deprecated
-    public java.util.Map<String, MPEntityProto> getNewEntities() {
-      return getNewEntitiesMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-    @Override
-
-    public java.util.Map<String, MPEntityProto> getNewEntitiesMap() {
-      return internalGetNewEntities().getMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-    @Override
-
-    public MPEntityProto getNewEntitiesOrDefault(
-        String key,
-        MPEntityProto defaultValue) {
-      if (key == null) { throw new NullPointerException(); }
-      java.util.Map<String, MPEntityProto> map =
-          internalGetNewEntities().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-    @Override
-
-    public MPEntityProto getNewEntitiesOrThrow(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      java.util.Map<String, MPEntityProto> map =
-          internalGetNewEntities().getMap();
-      if (!map.containsKey(key)) {
-        throw new IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearNewEntities() {
-      internalGetMutableNewEntities().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-
-    public Builder removeNewEntities(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      internalGetMutableNewEntities().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @Deprecated
-    public java.util.Map<String, MPEntityProto>
-    getMutableNewEntities() {
-      return internalGetMutableNewEntities().getMutableMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-    public Builder putNewEntities(
-        String key,
-        MPEntityProto value) {
-      if (key == null) { throw new NullPointerException(); }
-      if (value == null) { throw new NullPointerException(); }
-      internalGetMutableNewEntities().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; newEntities = 6;</code>
-     */
-
-    public Builder putAllNewEntities(
-        java.util.Map<String, MPEntityProto> values) {
-      internalGetMutableNewEntities().getMutableMap()
-          .putAll(values);
-      return this;
-    }
-
-    private com.google.protobuf.MapField<
         String, MPEntityProto> updatedEntities_;
     private com.google.protobuf.MapField<String, MPEntityProto>
     internalGetUpdatedEntities() {
@@ -1871,7 +1361,7 @@ private static final long serialVersionUID = 0L;
       return internalGetUpdatedEntities().getMap().size();
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
 
     @Override
@@ -1889,7 +1379,7 @@ private static final long serialVersionUID = 0L;
       return getUpdatedEntitiesMap();
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
     @Override
 
@@ -1897,7 +1387,7 @@ private static final long serialVersionUID = 0L;
       return internalGetUpdatedEntities().getMap();
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
     @Override
 
@@ -1910,7 +1400,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
     @Override
 
@@ -1931,7 +1421,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
 
     public Builder removeUpdatedEntities(
@@ -1950,7 +1440,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableUpdatedEntities().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
     public Builder putUpdatedEntities(
         String key,
@@ -1962,7 +1452,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 7;</code>
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
      */
 
     public Builder putAllUpdatedEntities(
@@ -1974,7 +1464,7 @@ private static final long serialVersionUID = 0L;
 
     private long timestamp_ ;
     /**
-     * <code>uint64 timestamp = 8;</code>
+     * <code>uint64 timestamp = 6;</code>
      * @return The timestamp.
      */
     @Override
@@ -1982,7 +1472,7 @@ private static final long serialVersionUID = 0L;
       return timestamp_;
     }
     /**
-     * <code>uint64 timestamp = 8;</code>
+     * <code>uint64 timestamp = 6;</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -1993,7 +1483,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint64 timestamp = 8;</code>
+     * <code>uint64 timestamp = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
