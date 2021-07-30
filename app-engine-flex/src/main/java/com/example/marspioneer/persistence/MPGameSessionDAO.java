@@ -19,7 +19,6 @@ import java.util.*;
 
 public class MPGameSessionDAO implements MultiDAO<MPGameSession> {
 
-
     @Override
     public boolean create(MPGameSession object) {
         String uuid = UUID.randomUUID().toString();

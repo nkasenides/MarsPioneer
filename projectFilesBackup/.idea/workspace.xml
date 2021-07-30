@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="app-engine-flex:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b75b79c-2c01-4621-bd7d-524899a30bdd" name="Default Changelist" comment="Updates to state update builder, etc.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_raylabz_objectis_0_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/persistence/persistence-firestore only.rar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/app_engine_flex_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/app_engine_flex_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MP-SimulationResults.csv" beforeDir="false" afterPath="$PROJECT_DIR$/MP-SimulationResults.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/app-engine-flex.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/app-engine-flex.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/service/JoinWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/service/JoinWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/StateUpdateBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/StateUpdateBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/WorldContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/WorldContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/websocket/BuildFarmWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/websocket/BuildFarmWebSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/websocket/UpdateStateWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/websocket/UpdateStateWebSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1.war" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/service/JoinWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/service/JoinWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/state/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/state/WorldContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/state/WorldContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/websocket/BuildFarmWebSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/websocket/BuildFarmWebSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/websocket/UpdateStateWebSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/classes/com/example/marspioneer/websocket/UpdateStateWebSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/lib/core-1.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/app-engine-flex-1/WEB-INF/lib/core-1.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-engine-flex/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app-engine-flex/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/simulation/SimulationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/simulation/SimulationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/ui/MPCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/ui/MPCanvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/websocket/BotUpdateStateStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/websocket/BotUpdateStateStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/websocket/UpdateStateStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/websocket/UpdateStateStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/com/example/marspioneer/client/ui/MPCanvas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/example/marspioneer/client/ui/MPCanvas$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/com/example/marspioneer/client/ui/MPCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/example/marspioneer/client/ui/MPCanvas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/com/example/marspioneer/client/websocket/UpdateStateStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/example/marspioneer/client/websocket/UpdateStateStub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/core-1.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-1.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simConfig.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/simConfig.cfg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/MPClient.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app-engine-flex/src/main/java/com/example/marspioneer/state/WorldContext.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.3.0/jedis-3.3.0-sources.jar!/redis/clients/jedis/JedisPool.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/ui/MPGameForm.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/websocket/MPUpdateStateWebSocketClient.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1o9FUM0S4MgzC1KzztDBptfHfMn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ACTIVE_CLOUD_PROJECT_ACCOUNT" value="thunderflier@gmail.com" />
+    <property name="ACTIVE_CLOUD_PROJECT_ID" value="mars-pioneer" />
+    <property name="ACTIVE_CLOUD_PROJECT_NAME" value="Mars Pioneer" />
+    <property name="ACTIVE_CLOUD_PROJECT_NUMBER" value="1067106385077" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210728_0009" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/src/main/java/com/example/marspioneer/proto" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.16699219" />
+    <property name="project.structure.side.proportion" value="0.37716264" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto" />
+      <recent name="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\client\res" />
+      <recent name="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\client\src\main\java\com\example\marspioneer\client\simulation" />
+      <recent name="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\model" />
+      <recent name="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\proto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\client\res" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.marspioneer.client.websocket" />
+      <recent name="com.example.marspioneer.client.simulation" />
+      <recent name="com.example.marspioneer.cron" />
+      <recent name="com.example.marspioneer.proto" />
+      <recent name="com.example.marspioneer.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Simulation">
+    <configuration name="Clean up" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="CleanUp" />
+      <module name="cleaner" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DAOTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DAOTest" />
+      <module name="app-engine-flex" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MPClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.marspioneer.client.MPClient" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.marspioneer.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.marspioneer.client.simulation.Simulation" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.marspioneer.client.simulation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimulationConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.marspioneer.client.simulation.SimulationConfig" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.marspioneer.client.simulation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build core" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/core" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Run server" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="jetty:run-exploded" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/app-engine-flex" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Google App Engine Deployment" type="gcp-app-engine-deploy" factoryName="Google App Engine Deployment" server-name="Google App Engine">
+      <deployment type="appengine-artifact-source" name="app-engine-flex:war" project="mars-pioneer" version="auto">
+        <settings cloudProjectName="mars-pioneer" environment="APP_ENGINE_FLEX" googleUsername="thunderflier@gmail.com" moduleName="app-engine-flex" promote="true" stagedArtifactName="" stopPreviousVersion="true" userSpecifiedArtifactPath="" version="" />
+      </deployment>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="app-engine-flex:war" />
+        </option>
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/app-engine-flex/pom.xml" goal="package" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Clean up" />
+      <item itemvalue="Application.SimulationConfig" />
+      <item itemvalue="Application.Simulation" />
+      <item itemvalue="Application.MPClient" />
+      <item itemvalue="Application.DAOTest" />
+      <item itemvalue="Google App Engine Deployment.Google App Engine Deployment" />
+      <item itemvalue="Maven.Run server" />
+      <item itemvalue="Maven.Build core" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Simulation" />
+        <item itemvalue="Application.Clean up" />
+        <item itemvalue="Application.MPClient" />
+        <item itemvalue="Application.SimulationConfig" />
+        <item itemvalue="Application.DAOTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b75b79c-2c01-4621-bd7d-524899a30bdd" name="Default Changelist" comment="" />
+      <created>1612690916690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612690916690</updated>
+      <workItem from="1612690918061" duration="428000" />
+      <workItem from="1613382664815" duration="2412000" />
+      <workItem from="1613489124031" duration="1539000" />
+      <workItem from="1623272398897" duration="54973000" />
+      <workItem from="1623846788059" duration="133000" />
+      <workItem from="1623996900025" duration="4003000" />
+      <workItem from="1624001013138" duration="65741000" />
+      <workItem from="1624610922232" duration="18352000" />
+      <workItem from="1626239390302" duration="12388000" />
+      <workItem from="1626428767176" duration="4475000" />
+      <workItem from="1626504667098" duration="1638000" />
+      <workItem from="1626506389977" duration="21191000" />
+      <workItem from="1626725518532" duration="2427000" />
+      <workItem from="1626789650441" duration="4558000" />
+      <workItem from="1626794273432" duration="12898000" />
+      <workItem from="1626859643768" duration="40167000" />
+      <workItem from="1627285081585" duration="42772000" />
+      <workItem from="1627463202935" duration="17111000" />
+    </task>
+    <task id="LOCAL-00001" summary="project init">
+      <created>1626241721003</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626241721003</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added more key bindings">
+      <created>1626243216889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626243216889</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fog of war in canvas.">
+      <created>1626243765474</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626243765474</updated>
+    </task>
+    <task id="LOCAL-00004" summary="UI improvements">
+      <created>1626245205920</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1626245205920</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Various fixes for simulation etc.">
+      <created>1626251861789</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1626251861789</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Serializability">
+      <created>1626429883324</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1626429883324</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Working version with Objectis">
+      <created>1626511166331</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1626511166331</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Resource set update">
+      <created>1626514428503</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1626514428503</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Working version with Redis cache and Firestore backups">
+      <created>1626598297787</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1626598297787</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Upgrade to latest Athlos version">
+      <created>1626847400528</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1626847400528</updated>
+    </task>
+    <task id="LOCAL-00011" summary="TerrainIdentifiers (abstract this!), changes to the chunk request algorithm">
+      <created>1626862457212</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1626862457212</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated getTerrain with pos, rad">
+      <created>1626872311545</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1626872311545</updated>
+    </task>
+    <task id="LOCAL-00013" summary="UpdateStateWebSocket - new methods">
+      <created>1626964893945</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1626964893945</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Major updates to framework completed.">
+      <created>1627036676588</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1627036676588</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Simulation stuff">
+      <created>1627376236791</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1627376236791</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Improvements to state update mechanism">
+      <created>1627400626818</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1627400626818</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updates to state update builder, etc.">
+      <created>1627462660873</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1627462660873</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="project init" />
+    <MESSAGE value="Added more key bindings" />
+    <MESSAGE value="Fog of war in canvas." />
+    <MESSAGE value="UI improvements" />
+    <MESSAGE value="Various fixes for simulation etc." />
+    <MESSAGE value="Serializability" />
+    <MESSAGE value="Working version with Objectis" />
+    <MESSAGE value="Resource set update" />
+    <MESSAGE value="Working version with Redis cache and Firestore backups" />
+    <MESSAGE value="Upgrade to latest Athlos version" />
+    <MESSAGE value="TerrainIdentifiers (abstract this!), changes to the chunk request algorithm" />
+    <MESSAGE value="Updated getTerrain with pos, rad" />
+    <MESSAGE value="UpdateStateWebSocket - new methods" />
+    <MESSAGE value="Major updates to framework completed." />
+    <MESSAGE value="Simulation stuff" />
+    <MESSAGE value="Improvements to state update mechanism" />
+    <MESSAGE value="Updates to state update builder, etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates to state update builder, etc." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/simulation/Bot.java</url>
+          <line>441</line>
+          <properties class="com.example.marspioneer.client.simulation.Bot" method="findFarmPosition">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/simulation/Bot.java</url>
+          <line>462</line>
+          <properties class="com.example.marspioneer.client.simulation.Bot" method="findMinePosition">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/simulation/Bot.java</url>
+          <line>483</line>
+          <properties class="com.example.marspioneer.client.simulation.Bot" method="findSandPitPosition">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/com/example/marspioneer/client/simulation/Bot.java</url>
+          <line>504</line>
+          <properties class="com.example.marspioneer.client.simulation.Bot" method="findWellPosition">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

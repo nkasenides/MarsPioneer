@@ -9,6 +9,8 @@ import com.example.marspioneer.client.MPClient;
 import com.example.marspioneer.client.simulation.Bot;
 import com.example.marspioneer.client.websocket.*;
 import com.neovisionaries.ws.client.WebSocketException;
+import com.raylabz.mocha.Mocha;
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -52,7 +54,9 @@ public final class Stubs {
         private static HashMap<String, BuildFarmStub> buildFarmStubs = new HashMap<>();
         public static BuildFarmStub getBuildFarmStub(MPClient client) throws WebSocketException, IOException {
             if (buildFarmStubs.get(client.getPlayer().getName()) == null) {
-                buildFarmStubs.put(client.getPlayer().getName(), new BuildFarmStub(client));
+                final BuildFarmStub stub = new BuildFarmStub(client);
+                Mocha.start(stub);
+                buildFarmStubs.put(client.getPlayer().getName(), stub);
             }
             return buildFarmStubs.get(client.getPlayer().getName());
         }
@@ -243,18 +247,20 @@ public final class Stubs {
 
     public static UpdateStateStub getUpdateStateStub(MPClient client) throws WebSocketException, IOException {
         if (updateStateStubs.get(client.getPlayer().getName()) == null) {
-            updateStateStubs.put(client.getPlayer().getName(), new UpdateStateStub(client));
+            final UpdateStateStub stub = new UpdateStateStub(client);
+            Mocha.start(stub);
+            updateStateStubs.put(client.getPlayer().getName(), stub);
         }
         return updateStateStubs.get(client.getPlayer().getName());
     }
 
     //Simulation:
-    private static BotUpdateStateStub botUpdateStateStub = null;
+    private static HashMap<String, BotUpdateStateStub> botUpdateStateStubs = new HashMap<>();
     public static BotUpdateStateStub getBotUpdateStateStub(Bot bot) throws WebSocketException, IOException {
-        if (botUpdateStateStub == null) {
-            botUpdateStateStub = new BotUpdateStateStub(bot);
+        if (botUpdateStateStubs.get(bot.getPlayer().getName()) == null) {
+            botUpdateStateStubs.put(bot.getPlayer().getName(), new BotUpdateStateStub(bot));
         }
-        return botUpdateStateStub;
+        return botUpdateStateStubs.get(bot.getPlayer().getName());
     }
 
 

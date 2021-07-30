@@ -8,7 +8,7 @@ import com.example.marspioneer.model.BuildingEntity;
 import com.example.marspioneer.model.MPEntity;
 import com.example.marspioneer.model.MPPlayer;
 import com.example.marspioneer.model.MPWorldSession;
-import com.example.marspioneer.persistence.Cache;
+
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
@@ -42,7 +42,7 @@ public class GetState implements AthlosService<GetStateRequest, GetStateResponse
             t = System.currentTimeMillis();
             //Get the state:
             final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
-            final MPPartialStateProto mpPartialStateProto = State.forWorld(worldSession.getWorldID()).composeState(worldSession);
+            final MPPartialStateProto mpPartialStateProto = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, worldSession.getCameraPosition(), 20);
 //            System.out.println("Retrieve the state: " + (System.currentTimeMillis() - t) + "ms");
 
             //Response:

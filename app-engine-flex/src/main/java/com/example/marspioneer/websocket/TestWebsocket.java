@@ -4,16 +4,6 @@
 -------------------------------------------------------------------------------- */
 
 package com.example.marspioneer.websocket;
-
-import com.example.marspioneer.auth.Auth;
-import com.example.marspioneer.model.BuildingEntity;
-import com.example.marspioneer.model.BuildingType;
-import com.example.marspioneer.model.MPPlayer;
-import com.example.marspioneer.model.MPWorldSession;
-import com.example.marspioneer.persistence.Cache;
-import com.example.marspioneer.persistence.DBManager;
-import com.example.marspioneer.proto.*;
-import com.example.marspioneer.state.State;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 

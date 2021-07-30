@@ -108,7 +108,7 @@ public class MPGameForm extends JFrame {
                                     .build(),
                             getStateResponse -> {
                                 if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
-                                    client.setTerrain(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
+                                    client.setTerrain(new HashMap<>(getStateResponse.getPartialState().getTerrainMap()));
                                     client.setEntities(new HashMap<>(getStateResponse.getPartialState().getEntitiesMap()));
                                     gameCanvas.repaint();
                                     System.out.println("State retrieved");
@@ -137,6 +137,7 @@ public class MPGameForm extends JFrame {
                             .build();
                     try {
                         Stubs.Actions.getBuildFarmStub(client).send(request.toByteArray());
+                        System.out.println("request sent!");
                     } catch (WebSocketException | IOException webSocketException) {
                         webSocketException.printStackTrace();
                     }

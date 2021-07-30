@@ -8,19 +8,23 @@ package com.example.marspioneer.state;
 
 import com.example.marspioneer.model.*;
 import com.example.marspioneer.persistence.DBManager;
-import com.example.marspioneer.proto.GeoPositionProto;
-import com.example.marspioneer.proto.MPPartialStateProto;
-import com.example.marspioneer.proto.MPTerrainChunkProto;
-import com.example.marspioneer.proto.MatrixPositionProto;
+import com.example.marspioneer.proto.*;
+import com.example.marspioneer.websocket.UpdateStateWebSocket;
+import com.nkasenides.athlos.model.ITerrainCell;
+import com.nkasenides.athlos.proto.Modifiable;
 import com.raylabz.jsec.HashType;
 import com.raylabz.jsec.Hashing;
 import redis.clients.jedis.Jedis;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
 
 public class State {
 
+    private static final double cameraRange = 50; //TODO - Modify this value to adjust the camera's range based on your game.
     private static WorldContext currentContext;
 
     public static WorldContext forWorld(String worldID) {
@@ -74,35 +78,340 @@ public class State {
      * @param worldID The ID of the world.
      * @return Returns a collection of world sessions.
      */
-    public static Collection<MPWorldSession> filterUpdateSessions(String worldID, MatrixPosition actionPosition, float areaOfEffect) {
+    public static HashMap<MPWorldSession, ArrayList<MPEntity>> filterUpdateSessions(MPWorldSession initiatingSession, String worldID, MatrixPosition actionPosition, float areaOfEffect) {
         ArrayList<MPWorldSession> allSessions = new ArrayList<>(State.forWorld(worldID).getSubscribedSessions());
-        ArrayList<MPWorldSession> filteredSessions = new ArrayList<>();
+        HashMap<MPWorldSession, ArrayList<MPEntity>> filteredSessions = new HashMap<>();
         for (MPWorldSession worldSession : allSessions) {
 
-            //Check entity area of interest vs action area of effect:
             boolean hasEntitiesInAOI = false;
-            final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
-            playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+            final ArrayList<MPEntity> playerEntities = new ArrayList<>(DBManager.entity.listForPlayerAndWorld(worldSession.getPlayerID(), worldSession.getWorldID()));
 
-            for (MPEntity entity : playerEntities) {
-                if (entity.getAreaOfInterest() > 0) {
-                    boolean intersects = Math.hypot(actionPosition.getCol() - entity.getPosition().getCol(), actionPosition.getRow() - entity.getPosition().getRow()) <= (areaOfEffect + entity.getAreaOfInterest());
-                    if (intersects) {
-                        hasEntitiesInAOI = true;
-                        break;
-                    }
-                }
+            //If this is the owner of the update, send the update.
+            if (initiatingSession.getId().equals(worldSession.getId())) {
+                filteredSessions.put(worldSession, playerEntities);
             }
 
-            //Check camera positioning:
-            boolean cameraIsInRange = worldSession.getCameraPosition().distanceTo(actionPosition) <= areaOfEffect;
+            //If this is not the owner, check distance of entities and camera to action.
+            else {
 
-            if (hasEntitiesInAOI && cameraIsInRange) {
-                filteredSessions.add(worldSession);
+                //Check entity area of interest vs action area of effect:
+                for (MPEntity entity : playerEntities) {
+                    if (entity.getAreaOfInterest() > 0) {
+                        double distance = entity.getPosition().distanceTo(actionPosition);
+                        if (distance - areaOfEffect < entity.getAreaOfInterest()) {
+                            hasEntitiesInAOI = true;
+                            break;
+                        }
+                    }
+                }
+
+                //Check camera positioning:
+                boolean cameraIsInRange = worldSession.getCameraPosition().distanceTo(actionPosition) - cameraRange <= areaOfEffect;
+
+                if (hasEntitiesInAOI && cameraIsInRange) {
+                    filteredSessions.put(worldSession, playerEntities);
+                }
             }
 
         }
         return filteredSessions;
+    }
+
+    /**
+     * Provides utility methods for accessing the terrain of a state.
+     */
+    public static class Terrain {
+        /**
+         * Observes a cell from a partial state without modifying it.
+         * @param partialStateProto The partial state.
+         * @param cellRow The cell's row.
+         * @param cellCol The cell's column
+         * @return Returns a TerrainCellProto.
+         */
+        public static MPTerrainCellProto observe(MPPartialStateProto partialStateProto, int cellRow, int cellCol) {
+            return partialStateProto.getTerrainMap().get(new MatrixPosition(cellRow, cellCol).toHash());
+        }
+
+        /**
+         * Observes a cell from a partial state without modifying it.
+         * @param partialStateProto The partial state.
+         * @param cellPosition The cell's position.
+         * @return Returns a TerrainCellProto.
+         */
+        public static MPTerrainCellProto observe(MPPartialStateProto partialStateProto, MatrixPosition cellPosition) {
+            return partialStateProto.getTerrainMap().get(cellPosition.toHash());
+        }
+
+        /**
+         * Observes a cell from a partial state without modifying it.
+         * @param partialStateProto The partial state.
+         * @param cellPosition The cell's position.
+         * @return Returns a TerrainCellProto.
+         */
+        public static MPTerrainCellProto observe(MPPartialStateProto partialStateProto, MatrixPositionProto cellPosition) {
+            return partialStateProto.getTerrainMap().get(cellPosition.toHash());
+        }
+
+        /**
+         * Modifies a cell in a partial state.
+         * @param partialState The partial state.
+         * @param cellRow The cell's row.
+         * @param cellCol The cell's column.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modify(MPPartialStateProto partialState, int cellRow, int cellCol, Modifiable<MPTerrainCellProto.Builder> modifiable) {
+            final MPTerrainCellProto.Builder builder = partialState.getTerrainMap().get(new MatrixPosition(cellRow, cellCol).toHash()).toBuilder();
+            modifiable.modify(builder);
+            partialState.toBuilder().putTerrain(builder.getPosition().toHash(), builder.build());
+        }
+
+        /**
+         * Modifies a cell in a partial state.
+         * @param partialState The partial state.
+         * @param cellPosition The cell's position.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modify(MPPartialStateProto partialState, MatrixPosition cellPosition, Modifiable<MPTerrainCellProto.Builder> modifiable) {
+            final MPTerrainCellProto.Builder builder = partialState.getTerrainMap().get(cellPosition.toHash()).toBuilder();
+            modifiable.modify(builder);
+            partialState.toBuilder().putTerrain(builder.getPosition().toHash(), builder.build());
+        }
+
+        /**
+         * Modifies a cell in a partial state.
+         * @param partialState The partial state.
+         * @param cellPosition The cell's position.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modify(MPPartialStateProto partialState, MatrixPositionProto cellPosition, Modifiable<MPTerrainCellProto.Builder> modifiable) {
+            final MPTerrainCellProto.Builder builder = partialState.getTerrainMap().get(cellPosition.toHash()).toBuilder();
+            modifiable.modify(builder);
+            partialState.toBuilder().putTerrain(builder.getPosition().toHash(), builder.build());
+        }
+
+        /**
+         * Modifies all cells in the partial state.
+         * @param partialState The partial state.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modifyAll(MPPartialStateProto partialState, Modifiable<MPTerrainCellProto.Builder> modifiable) {
+            for (MPTerrainCellProto cell : partialState.getTerrainMap().values()) {
+                final MPTerrainCellProto.Builder builder = cell.toBuilder();
+                modifiable.modify(builder);
+                partialState.toBuilder().putTerrain(cell.getPosition().toHash(), builder.build());
+            }
+        }
+
+        /**
+         * Modifies all cells in a specified range of a position.
+         * @param partialState The partial state.
+         * @param position The position.
+         * @param range The range.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modifyAllInRange(MPPartialStateProto partialState, MatrixPosition position, float range, Modifiable<MPTerrainCellProto.Builder> modifiable) {
+            for (MPTerrainCellProto cell : partialState.getTerrainMap().values()) {
+                if (cell.getPosition().toObject().distanceTo(position) <= range) {
+                    final MPTerrainCellProto.Builder builder = cell.toBuilder();
+                    modifiable.modify(builder);
+                    partialState.toBuilder().putTerrain(cell.getPosition().toHash(), builder.build());
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Provides utility methods for accessing entities.
+     */
+    public static class Entities {
+
+        /**
+         * Observes an entity from a partial state without modifying it.
+         * @param partialStateProto The partial state.
+         * @param entityID The entity's ID.
+         * @return Returns a TerrainCellProto.
+         */
+        public static MPEntityProto observe(MPPartialStateProto partialStateProto, String entityID) {
+            return partialStateProto.getEntitiesMap().get(entityID);
+        }
+
+        /**
+         * Observes entities at a specific position.
+         * @param partialStateProto The partial state.
+         * @param cellRow The cell's row.
+         * @param cellCol The cell's column.
+         * @return Returns a list of entities located at this position.
+         */
+        public static List<MPEntityProto> observeAt(MPPartialStateProto partialStateProto, int cellRow, int cellCol) {
+            ArrayList<MPEntityProto> entities = new ArrayList<>();
+            for (MPEntityProto entity : partialStateProto.getEntitiesMap().values()) {
+                if (entity.getPosition().toObject().equals(new MatrixPosition(cellRow, cellCol))) {
+                    entities.add(entity);
+                }
+            }
+            return entities;
+        }
+
+        /**
+         * Observes entities at a specific position.
+         * @param partialStateProto The partial state.
+         * @param position The position.
+         * @return Returns a list of entities located at this position.
+         */
+        public static List<MPEntityProto> observeAt(MPPartialStateProto partialStateProto, MatrixPosition position) {
+            ArrayList<MPEntityProto> entities = new ArrayList<>();
+            for (MPEntityProto entity : partialStateProto.getEntitiesMap().values()) {
+                if (entity.getPosition().toObject().equals(position)) {
+                    entities.add(entity);
+                }
+            }
+            return entities;
+        }
+
+        /**
+         * Observes entities at a specific position.
+         * @param partialStateProto The partial state.
+         * @param position The position.
+         * @return Returns a list of entities located at this position.
+         */
+        public static List<MPEntityProto> observeAt(MPPartialStateProto partialStateProto, MatrixPositionProto position) {
+            ArrayList<MPEntityProto> entities = new ArrayList<>();
+            for (MPEntityProto entity : partialStateProto.getEntitiesMap().values()) {
+                if (entity.getPosition().equals(position)) {
+                    entities.add(entity);
+                }
+            }
+            return entities;
+        }
+
+        /**
+         * Modifies an entity in a partial state.
+         * @param partialState The partial state.
+         * @param entityID The entity's ID.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modify(MPPartialStateProto partialState, String entityID, Modifiable<MPEntityProto.Builder> modifiable) {
+            final MPEntityProto.Builder builder = partialState.getEntitiesMap().get(entityID).toBuilder();
+            modifiable.modify(builder);
+            partialState.toBuilder().putEntities(entityID, builder.build());
+        }
+
+        /**
+         * Modifies all entities in the partial state.
+         * @param partialState The partial state.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modifyAll(MPPartialStateProto partialState, Modifiable<MPEntityProto.Builder> modifiable) {
+            for (MPEntityProto entity : partialState.getEntitiesMap().values()) {
+                final MPEntityProto.Builder builder = entity.toBuilder();
+                modifiable.modify(builder);
+                partialState.toBuilder().putEntities(entity.getId(), builder.build());
+            }
+        }
+
+        /**
+         * Modifies all entities at the given position.
+         * @param partialState The partial state.
+         * @param cellRow The cell row.
+         * @param cellCol The cell column.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modifyAllAt(MPPartialStateProto partialState, int cellRow, int cellCol, Modifiable<MPEntityProto.Builder> modifiable) {
+            for (MPEntityProto entity : partialState.getEntitiesMap().values()) {
+                if (entity.getPosition().toObject().equals(new MatrixPosition(cellRow, cellCol))) {
+                    final MPEntityProto.Builder builder = entity.toBuilder();
+                    modifiable.modify(builder);
+                    partialState.toBuilder().putEntities(entity.getId(), builder.build());
+                }
+            }
+        }
+
+        /**
+         * Modifies all entities at the given position.
+         * @param partialState The partial state.
+         * @param position The position.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modifyAllAt(MPPartialStateProto partialState, MatrixPosition position, Modifiable<MPEntityProto.Builder> modifiable) {
+            for (MPEntityProto entity : partialState.getEntitiesMap().values()) {
+                if (entity.getPosition().toObject().equals(position)) {
+                    final MPEntityProto.Builder builder = entity.toBuilder();
+                    modifiable.modify(builder);
+                    partialState.toBuilder().putEntities(entity.getId(), builder.build());
+                }
+            }
+        }
+
+        /**
+         * Modifies all entities at the given position.
+         * @param partialState The partial state.
+         * @param position The position.
+         * @param modifiable A modifiable, which defines how the item will be modified.
+         */
+        public static void modifyAllAt(MPPartialStateProto partialState, MatrixPositionProto position, Modifiable<MPEntityProto.Builder> modifiable) {
+            for (MPEntityProto entity : partialState.getEntitiesMap().values()) {
+                if (entity.getPosition().equals(position)) {
+                    final MPEntityProto.Builder builder = entity.toBuilder();
+                    modifiable.modify(builder);
+                    partialState.toBuilder().putEntities(entity.getId(), builder.build());
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Sends a state update to sessions that should receive it based on the result of <i>filterUpdateSessions()</i>.
+     * @param initiatingSession The session initiating the update.
+     * @param stateUpdateBuilder The state update builder containing the update.
+     * @param worldID The world ID.
+     * @param actionPosition The action position.
+     * @param areaOfEffect The area of effect.
+     * @param refreshTerrain Refresh the terrain in this update.
+     * @param refreshEntities Refresh the entities in this update.
+     * @throws IOException thrown when the update cannot be sent.
+     */
+    public static void sendUpdate(MPWorldSession initiatingSession, StateUpdateBuilder stateUpdateBuilder, String worldID, MatrixPosition actionPosition, float areaOfEffect, boolean refreshTerrain, boolean refreshEntities) throws IOException {
+        final HashMap<MPWorldSession, ArrayList<MPEntity>> worldSessionsToBeUpdated = State.filterUpdateSessions(initiatingSession, worldID, actionPosition, areaOfEffect); //Filter
+        final HashMap<MPWorldSession, UpdateStateResponse> responses = State.forWorld(worldID).composeStateUpdate(worldSessionsToBeUpdated, stateUpdateBuilder, refreshTerrain, refreshEntities); //Compose
+        UpdateStateWebSocket.sendUpdate(responses); //SEND
+    }
+
+    /**
+     * Multicasts an update to a given list of world sessions.
+     * @param stateUpdateBuilder The update builder.
+     * @param worldID The world ID.
+     * @param worldSessions A list of world sessions.
+     * @throws IOException thrown when the update cannot be sent.
+     */
+    public static void multicastUpdate(StateUpdateBuilder stateUpdateBuilder, String worldID, List<MPWorldSession> worldSessions) throws IOException {
+        UpdateStateWebSocket.multicastUpdate(
+                worldID,
+                UpdateStateResponse.newBuilder()
+                        .setStatus(UpdateStateResponse.Status.OK)
+                        .setMessage("OK")
+                        .setStateUpdate(stateUpdateBuilder.build())
+                        .build(),
+                worldSessions
+        );
+    }
+
+    /**
+     * Broadcasts an update to a given list of world sessions.
+     * @param stateUpdateBuilder The update builder.
+     * @param worldID The world ID.
+     * @throws IOException thrown when the update cannot be sent.
+     */
+    public static void broadcastUpdate(StateUpdateBuilder stateUpdateBuilder, String worldID) throws IOException {
+        UpdateStateWebSocket.broadcastUpdate(
+                worldID,
+                UpdateStateResponse.newBuilder()
+                        .setStatus(UpdateStateResponse.Status.OK)
+                        .setMessage("OK")
+                        .setStateUpdate(stateUpdateBuilder.build())
+                        .build()
+        );
     }
 
 }

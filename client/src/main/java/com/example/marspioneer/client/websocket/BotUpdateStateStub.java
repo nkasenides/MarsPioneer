@@ -40,15 +40,11 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
         long latency = System.currentTimeMillis() - bot.getLastSendTime();
         bot.getStateUpdateLatencies().add(latency);
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
-//            System.out.println("State update received.");
+            System.out.println("[" + bot.getBotName() + "] State update received.");
 
-            bot.setResourceSet(response.getResourceSet().toObject());
+            bot.setResourceSet(response.getStateUpdate().getPartialState().getResourceSet().toObject());
 
-            for (MPEntityProto value : response.getStateUpdate().getNewEntitiesMap().values()) {
-                bot.getEntities().put(value.getId(), value);
-            }
-
-            for (MPEntityProto value : response.getStateUpdate().getUpdatedEntitiesMap().values()) {
+            for (MPEntityProto value : response.getStateUpdate().getPartialState().getEntitiesMap().values()) {
                 bot.getEntities().put(value.getId(), value);
             }
 
@@ -56,15 +52,11 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
                 bot.getEntities().remove(entityID);
             }
 
-            for (MPTerrainCellProto value : response.getStateUpdate().getNewTerrainCellsMap().values()) {
+            for (MPTerrainCellProto value : response.getStateUpdate().getPartialState().getTerrainMap().values()) {
                 bot.getTerrain().put(value.getPosition().toHash(), value);
             }
 
-            for (MPTerrainCellProto value : response.getStateUpdate().getUpdatedTerrainCellsMap().values()) {
-                bot.getTerrain().put(value.getPosition().toHash(), value);
-            }
-
-            for (String terrainHash : response.getStateUpdate().getRemovedTerrainCellsList()) {
+            for (String terrainHash : response.getStateUpdate().getRemovedTerrainList()) {
                 bot.getTerrain().remove(terrainHash);
             }
 

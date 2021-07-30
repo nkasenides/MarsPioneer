@@ -8,53 +8,34 @@ public interface MPPartialStateProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   * @return Whether the resourceSet field is set.
+   */
+  boolean hasResourceSet();
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   * @return The resourceSet.
+   */
+  ResourceSetProto getResourceSet();
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   */
+  ResourceSetProtoOrBuilder getResourceSetOrBuilder();
+
+  /**
+   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
    * @return Whether the worldSession field is set.
    */
   boolean hasWorldSession();
   /**
-   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
    * @return The worldSession.
    */
   MPWorldSessionProto getWorldSession();
   /**
-   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
    */
   MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
-
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-  int getCellsCount();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-  boolean containsCells(
-      String key);
-  /**
-   * Use {@link #getCellsMap()} instead.
-   */
-  @Deprecated
-  java.util.Map<String, MPTerrainCellProto>
-  getCells();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-  java.util.Map<String, MPTerrainCellProto>
-  getCellsMap();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-
-  MPTerrainCellProto getCellsOrDefault(
-      String key,
-      MPTerrainCellProto defaultValue);
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-
-  MPTerrainCellProto getCellsOrThrow(
-      String key);
 
   /**
    * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; entities = 3;</code>
@@ -89,4 +70,44 @@ public interface MPPartialStateProtoOrBuilder extends
 
   MPEntityProto getEntitiesOrThrow(
       String key);
+
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+  int getTerrainCount();
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+  boolean containsTerrain(
+      String key);
+  /**
+   * Use {@link #getTerrainMap()} instead.
+   */
+  @Deprecated
+  java.util.Map<String, MPTerrainCellProto>
+  getTerrain();
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+  java.util.Map<String, MPTerrainCellProto>
+  getTerrainMap();
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+
+  MPTerrainCellProto getTerrainOrDefault(
+      String key,
+      MPTerrainCellProto defaultValue);
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+
+  MPTerrainCellProto getTerrainOrThrow(
+      String key);
+
+  /**
+   * <code>uint64 timestamp = 5;</code>
+   * @return The timestamp.
+   */
+  long getTimestamp();
 }

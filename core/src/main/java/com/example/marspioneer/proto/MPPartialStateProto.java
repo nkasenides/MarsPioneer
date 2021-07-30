@@ -7,7 +7,7 @@ package com.example.marspioneer.proto;
  * Protobuf type {@code com.example.marspioneer.proto.MPPartialStateProto}
  */
 public final class MPPartialStateProto extends
-    com.google.protobuf.GeneratedMessageV3 implements com.nkasenides.athlos.model.IPartialState, 
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:com.example.marspioneer.proto.MPPartialStateProto)
     MPPartialStateProtoOrBuilder {
 private static final long serialVersionUID = 0L;
@@ -50,6 +50,19 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            ResourceSetProto.Builder subBuilder = null;
+            if (resourceSet_ != null) {
+              subBuilder = resourceSet_.toBuilder();
+            }
+            resourceSet_ = input.readMessage(ResourceSetProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(resourceSet_);
+              resourceSet_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
             MPWorldSessionProto.Builder subBuilder = null;
             if (worldSession_ != null) {
               subBuilder = worldSession_.toBuilder();
@@ -62,30 +75,35 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              cells_ = com.google.protobuf.MapField.newMapField(
-                  CellsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<String, MPTerrainCellProto>
-            cells__ = input.readMessage(
-                CellsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            cells_.getMutableMap().put(
-                cells__.getKey(), cells__.getValue());
-            break;
-          }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               entities_ = com.google.protobuf.MapField.newMapField(
                   EntitiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<String, MPEntityProto>
             entities__ = input.readMessage(
                 EntitiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             entities_.getMutableMap().put(
                 entities__.getKey(), entities__.getValue());
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              terrain_ = com.google.protobuf.MapField.newMapField(
+                  TerrainDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000002;
+            }
+            com.google.protobuf.MapEntry<String, MPTerrainCellProto>
+            terrain__ = input.readMessage(
+                TerrainDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            terrain_.getMutableMap().put(
+                terrain__.getKey(), terrain__.getValue());
+            break;
+          }
+          case 40: {
+
+            timestamp_ = input.readUInt64();
             break;
           }
           default: {
@@ -117,10 +135,10 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 2:
-        return internalGetCells();
       case 3:
         return internalGetEntities();
+      case 4:
+        return internalGetTerrain();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -134,10 +152,36 @@ private static final long serialVersionUID = 0L;
             MPPartialStateProto.class, Builder.class);
   }
 
-  public static final int WORLDSESSION_FIELD_NUMBER = 1;
+  public static final int RESOURCESET_FIELD_NUMBER = 1;
+  private ResourceSetProto resourceSet_;
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   * @return Whether the resourceSet field is set.
+   */
+  @Override
+  public boolean hasResourceSet() {
+    return resourceSet_ != null;
+  }
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   * @return The resourceSet.
+   */
+  @Override
+  public ResourceSetProto getResourceSet() {
+    return resourceSet_ == null ? ResourceSetProto.getDefaultInstance() : resourceSet_;
+  }
+  /**
+   * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+   */
+  @Override
+  public ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
+    return getResourceSet();
+  }
+
+  public static final int WORLDSESSION_FIELD_NUMBER = 2;
   private MPWorldSessionProto worldSession_;
   /**
-   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
    * @return Whether the worldSession field is set.
    */
   @Override
@@ -145,7 +189,7 @@ private static final long serialVersionUID = 0L;
     return worldSession_ != null;
   }
   /**
-   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
    * @return The worldSession.
    */
   @Override
@@ -153,92 +197,11 @@ private static final long serialVersionUID = 0L;
     return worldSession_ == null ? MPWorldSessionProto.getDefaultInstance() : worldSession_;
   }
   /**
-   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+   * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
    */
   @Override
   public MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
     return getWorldSession();
-  }
-
-  public static final int CELLS_FIELD_NUMBER = 2;
-  private static final class CellsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        String, MPTerrainCellProto> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<String, MPTerrainCellProto>newDefaultInstance(
-                MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_descriptor,
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                MPTerrainCellProto.getDefaultInstance());
-  }
-  private com.google.protobuf.MapField<
-      String, MPTerrainCellProto> cells_;
-  private com.google.protobuf.MapField<String, MPTerrainCellProto>
-  internalGetCells() {
-    if (cells_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          CellsDefaultEntryHolder.defaultEntry);
-    }
-    return cells_;
-  }
-
-  public int getCellsCount() {
-    return internalGetCells().getMap().size();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-
-  @Override
-  public boolean containsCells(
-      String key) {
-    if (key == null) { throw new NullPointerException(); }
-    return internalGetCells().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getCellsMap()} instead.
-   */
-  @Override
-  @Deprecated
-  public java.util.Map<String, MPTerrainCellProto> getCells() {
-    return getCellsMap();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-  @Override
-
-  public java.util.Map<String, MPTerrainCellProto> getCellsMap() {
-    return internalGetCells().getMap();
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-  @Override
-
-  public MPTerrainCellProto getCellsOrDefault(
-      String key,
-      MPTerrainCellProto defaultValue) {
-    if (key == null) { throw new NullPointerException(); }
-    java.util.Map<String, MPTerrainCellProto> map =
-        internalGetCells().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-   */
-  @Override
-
-  public MPTerrainCellProto getCellsOrThrow(
-      String key) {
-    if (key == null) { throw new NullPointerException(); }
-    java.util.Map<String, MPTerrainCellProto> map =
-        internalGetCells().getMap();
-    if (!map.containsKey(key)) {
-      throw new IllegalArgumentException();
-    }
-    return map.get(key);
   }
 
   public static final int ENTITIES_FIELD_NUMBER = 3;
@@ -322,6 +285,98 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int TERRAIN_FIELD_NUMBER = 4;
+  private static final class TerrainDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        String, MPTerrainCellProto> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<String, MPTerrainCellProto>newDefaultInstance(
+                MarsPioneerProto.internal_static_com_example_marspioneer_proto_MPPartialStateProto_TerrainEntry_descriptor,
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                MPTerrainCellProto.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      String, MPTerrainCellProto> terrain_;
+  private com.google.protobuf.MapField<String, MPTerrainCellProto>
+  internalGetTerrain() {
+    if (terrain_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          TerrainDefaultEntryHolder.defaultEntry);
+    }
+    return terrain_;
+  }
+
+  public int getTerrainCount() {
+    return internalGetTerrain().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+
+  @Override
+  public boolean containsTerrain(
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
+    return internalGetTerrain().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getTerrainMap()} instead.
+   */
+  @Override
+  @Deprecated
+  public java.util.Map<String, MPTerrainCellProto> getTerrain() {
+    return getTerrainMap();
+  }
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+  @Override
+
+  public java.util.Map<String, MPTerrainCellProto> getTerrainMap() {
+    return internalGetTerrain().getMap();
+  }
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+  @Override
+
+  public MPTerrainCellProto getTerrainOrDefault(
+      String key,
+      MPTerrainCellProto defaultValue) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MPTerrainCellProto> map =
+        internalGetTerrain().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+   */
+  @Override
+
+  public MPTerrainCellProto getTerrainOrThrow(
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MPTerrainCellProto> map =
+        internalGetTerrain().getMap();
+    if (!map.containsKey(key)) {
+      throw new IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int TIMESTAMP_FIELD_NUMBER = 5;
+  private long timestamp_;
+  /**
+   * <code>uint64 timestamp = 5;</code>
+   * @return The timestamp.
+   */
+  @Override
+  public long getTimestamp() {
+    return timestamp_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @Override
   public final boolean isInitialized() {
@@ -336,21 +391,27 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (worldSession_ != null) {
-      output.writeMessage(1, getWorldSession());
+    if (resourceSet_ != null) {
+      output.writeMessage(1, getResourceSet());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetCells(),
-        CellsDefaultEntryHolder.defaultEntry,
-        2);
+    if (worldSession_ != null) {
+      output.writeMessage(2, getWorldSession());
+    }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetEntities(),
         EntitiesDefaultEntryHolder.defaultEntry,
         3);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetTerrain(),
+        TerrainDefaultEntryHolder.defaultEntry,
+        4);
+    if (timestamp_ != 0L) {
+      output.writeUInt64(5, timestamp_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -360,19 +421,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (resourceSet_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getResourceSet());
+    }
     if (worldSession_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getWorldSession());
-    }
-    for (java.util.Map.Entry<String, MPTerrainCellProto> entry
-         : internalGetCells().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<String, MPTerrainCellProto>
-      cells__ = CellsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, cells__);
+        .computeMessageSize(2, getWorldSession());
     }
     for (java.util.Map.Entry<String, MPEntityProto> entry
          : internalGetEntities().getMap().entrySet()) {
@@ -383,6 +438,20 @@ private static final long serialVersionUID = 0L;
           .build();
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, entities__);
+    }
+    for (java.util.Map.Entry<String, MPTerrainCellProto> entry
+         : internalGetTerrain().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<String, MPTerrainCellProto>
+      terrain__ = TerrainDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, terrain__);
+    }
+    if (timestamp_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(5, timestamp_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -399,15 +468,22 @@ private static final long serialVersionUID = 0L;
     }
     MPPartialStateProto other = (MPPartialStateProto) obj;
 
+    if (hasResourceSet() != other.hasResourceSet()) return false;
+    if (hasResourceSet()) {
+      if (!getResourceSet()
+          .equals(other.getResourceSet())) return false;
+    }
     if (hasWorldSession() != other.hasWorldSession()) return false;
     if (hasWorldSession()) {
       if (!getWorldSession()
           .equals(other.getWorldSession())) return false;
     }
-    if (!internalGetCells().equals(
-        other.internalGetCells())) return false;
     if (!internalGetEntities().equals(
         other.internalGetEntities())) return false;
+    if (!internalGetTerrain().equals(
+        other.internalGetTerrain())) return false;
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -419,18 +495,25 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasResourceSet()) {
+      hash = (37 * hash) + RESOURCESET_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceSet().hashCode();
+    }
     if (hasWorldSession()) {
       hash = (37 * hash) + WORLDSESSION_FIELD_NUMBER;
       hash = (53 * hash) + getWorldSession().hashCode();
-    }
-    if (!internalGetCells().getMap().isEmpty()) {
-      hash = (37 * hash) + CELLS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetCells().hashCode();
     }
     if (!internalGetEntities().getMap().isEmpty()) {
       hash = (37 * hash) + ENTITIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEntities().hashCode();
     }
+    if (!internalGetTerrain().getMap().isEmpty()) {
+      hash = (37 * hash) + TERRAIN_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTerrain().hashCode();
+    }
+    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTimestamp());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -530,7 +613,7 @@ private static final long serialVersionUID = 0L;
    * Protobuf type {@code com.example.marspioneer.proto.MPPartialStateProto}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements com.nkasenides.athlos.model.IPartialState, 
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.example.marspioneer.proto.MPPartialStateProto)
       MPPartialStateProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -542,10 +625,10 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 2:
-          return internalGetCells();
         case 3:
           return internalGetEntities();
+        case 4:
+          return internalGetTerrain();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -555,10 +638,10 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 2:
-          return internalGetMutableCells();
         case 3:
           return internalGetMutableEntities();
+        case 4:
+          return internalGetMutableTerrain();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -590,14 +673,22 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
+      if (resourceSetBuilder_ == null) {
+        resourceSet_ = null;
+      } else {
+        resourceSet_ = null;
+        resourceSetBuilder_ = null;
+      }
       if (worldSessionBuilder_ == null) {
         worldSession_ = null;
       } else {
         worldSession_ = null;
         worldSessionBuilder_ = null;
       }
-      internalGetMutableCells().clear();
       internalGetMutableEntities().clear();
+      internalGetMutableTerrain().clear();
+      timestamp_ = 0L;
+
       return this;
     }
 
@@ -625,15 +716,21 @@ private static final long serialVersionUID = 0L;
     public MPPartialStateProto buildPartial() {
       MPPartialStateProto result = new MPPartialStateProto(this);
       int from_bitField0_ = bitField0_;
+      if (resourceSetBuilder_ == null) {
+        result.resourceSet_ = resourceSet_;
+      } else {
+        result.resourceSet_ = resourceSetBuilder_.build();
+      }
       if (worldSessionBuilder_ == null) {
         result.worldSession_ = worldSession_;
       } else {
         result.worldSession_ = worldSessionBuilder_.build();
       }
-      result.cells_ = internalGetCells();
-      result.cells_.makeImmutable();
       result.entities_ = internalGetEntities();
       result.entities_.makeImmutable();
+      result.terrain_ = internalGetTerrain();
+      result.terrain_.makeImmutable();
+      result.timestamp_ = timestamp_;
       onBuilt();
       return result;
     }
@@ -682,13 +779,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(MPPartialStateProto other) {
       if (other == MPPartialStateProto.getDefaultInstance()) return this;
+      if (other.hasResourceSet()) {
+        mergeResourceSet(other.getResourceSet());
+      }
       if (other.hasWorldSession()) {
         mergeWorldSession(other.getWorldSession());
       }
-      internalGetMutableCells().mergeFrom(
-          other.internalGetCells());
       internalGetMutableEntities().mergeFrom(
           other.internalGetEntities());
+      internalGetMutableTerrain().mergeFrom(
+          other.internalGetTerrain());
+      if (other.getTimestamp() != 0L) {
+        setTimestamp(other.getTimestamp());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -719,18 +822,137 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private ResourceSetProto resourceSet_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder> resourceSetBuilder_;
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     * @return Whether the resourceSet field is set.
+     */
+    public boolean hasResourceSet() {
+      return resourceSetBuilder_ != null || resourceSet_ != null;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     * @return The resourceSet.
+     */
+    public ResourceSetProto getResourceSet() {
+      if (resourceSetBuilder_ == null) {
+        return resourceSet_ == null ? ResourceSetProto.getDefaultInstance() : resourceSet_;
+      } else {
+        return resourceSetBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    public Builder setResourceSet(ResourceSetProto value) {
+      if (resourceSetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceSet_ = value;
+        onChanged();
+      } else {
+        resourceSetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    public Builder setResourceSet(
+        ResourceSetProto.Builder builderForValue) {
+      if (resourceSetBuilder_ == null) {
+        resourceSet_ = builderForValue.build();
+        onChanged();
+      } else {
+        resourceSetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    public Builder mergeResourceSet(ResourceSetProto value) {
+      if (resourceSetBuilder_ == null) {
+        if (resourceSet_ != null) {
+          resourceSet_ =
+            ResourceSetProto.newBuilder(resourceSet_).mergeFrom(value).buildPartial();
+        } else {
+          resourceSet_ = value;
+        }
+        onChanged();
+      } else {
+        resourceSetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    public Builder clearResourceSet() {
+      if (resourceSetBuilder_ == null) {
+        resourceSet_ = null;
+        onChanged();
+      } else {
+        resourceSet_ = null;
+        resourceSetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    public ResourceSetProto.Builder getResourceSetBuilder() {
+      
+      onChanged();
+      return getResourceSetFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    public ResourceSetProtoOrBuilder getResourceSetOrBuilder() {
+      if (resourceSetBuilder_ != null) {
+        return resourceSetBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceSet_ == null ?
+            ResourceSetProto.getDefaultInstance() : resourceSet_;
+      }
+    }
+    /**
+     * <code>.com.example.marspioneer.proto.ResourceSetProto resourceSet = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder>
+        getResourceSetFieldBuilder() {
+      if (resourceSetBuilder_ == null) {
+        resourceSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ResourceSetProto, ResourceSetProto.Builder, ResourceSetProtoOrBuilder>(
+                getResourceSet(),
+                getParentForChildren(),
+                isClean());
+        resourceSet_ = null;
+      }
+      return resourceSetBuilder_;
+    }
+
     private MPWorldSessionProto worldSession_;
     private com.google.protobuf.SingleFieldBuilderV3<
         MPWorldSessionProto, MPWorldSessionProto.Builder, MPWorldSessionProtoOrBuilder> worldSessionBuilder_;
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      * @return Whether the worldSession field is set.
      */
     public boolean hasWorldSession() {
       return worldSessionBuilder_ != null || worldSession_ != null;
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      * @return The worldSession.
      */
     public MPWorldSessionProto getWorldSession() {
@@ -741,7 +963,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     public Builder setWorldSession(MPWorldSessionProto value) {
       if (worldSessionBuilder_ == null) {
@@ -757,7 +979,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     public Builder setWorldSession(
         MPWorldSessionProto.Builder builderForValue) {
@@ -771,7 +993,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     public Builder mergeWorldSession(MPWorldSessionProto value) {
       if (worldSessionBuilder_ == null) {
@@ -789,7 +1011,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     public Builder clearWorldSession() {
       if (worldSessionBuilder_ == null) {
@@ -803,7 +1025,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     public MPWorldSessionProto.Builder getWorldSessionBuilder() {
       
@@ -811,7 +1033,7 @@ private static final long serialVersionUID = 0L;
       return getWorldSessionFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     public MPWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
       if (worldSessionBuilder_ != null) {
@@ -822,7 +1044,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 1;</code>
+     * <code>.com.example.marspioneer.proto.MPWorldSessionProto worldSession = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         MPWorldSessionProto, MPWorldSessionProto.Builder, MPWorldSessionProtoOrBuilder>
@@ -836,134 +1058,6 @@ private static final long serialVersionUID = 0L;
         worldSession_ = null;
       }
       return worldSessionBuilder_;
-    }
-
-    private com.google.protobuf.MapField<
-        String, MPTerrainCellProto> cells_;
-    private com.google.protobuf.MapField<String, MPTerrainCellProto>
-    internalGetCells() {
-      if (cells_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            CellsDefaultEntryHolder.defaultEntry);
-      }
-      return cells_;
-    }
-    private com.google.protobuf.MapField<String, MPTerrainCellProto>
-    internalGetMutableCells() {
-      onChanged();;
-      if (cells_ == null) {
-        cells_ = com.google.protobuf.MapField.newMapField(
-            CellsDefaultEntryHolder.defaultEntry);
-      }
-      if (!cells_.isMutable()) {
-        cells_ = cells_.copy();
-      }
-      return cells_;
-    }
-
-    public int getCellsCount() {
-      return internalGetCells().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-
-    @Override
-    public boolean containsCells(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      return internalGetCells().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getCellsMap()} instead.
-     */
-    @Override
-    @Deprecated
-    public java.util.Map<String, MPTerrainCellProto> getCells() {
-      return getCellsMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-    @Override
-
-    public java.util.Map<String, MPTerrainCellProto> getCellsMap() {
-      return internalGetCells().getMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-    @Override
-
-    public MPTerrainCellProto getCellsOrDefault(
-        String key,
-        MPTerrainCellProto defaultValue) {
-      if (key == null) { throw new NullPointerException(); }
-      java.util.Map<String, MPTerrainCellProto> map =
-          internalGetCells().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-    @Override
-
-    public MPTerrainCellProto getCellsOrThrow(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      java.util.Map<String, MPTerrainCellProto> map =
-          internalGetCells().getMap();
-      if (!map.containsKey(key)) {
-        throw new IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearCells() {
-      internalGetMutableCells().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-
-    public Builder removeCells(
-        String key) {
-      if (key == null) { throw new NullPointerException(); }
-      internalGetMutableCells().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @Deprecated
-    public java.util.Map<String, MPTerrainCellProto>
-    getMutableCells() {
-      return internalGetMutableCells().getMutableMap();
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-    public Builder putCells(
-        String key,
-        MPTerrainCellProto value) {
-      if (key == null) { throw new NullPointerException(); }
-      if (value == null) { throw new NullPointerException(); }
-      internalGetMutableCells().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; cells = 2;</code>
-     */
-
-    public Builder putAllCells(
-        java.util.Map<String, MPTerrainCellProto> values) {
-      internalGetMutableCells().getMutableMap()
-          .putAll(values);
-      return this;
     }
 
     private com.google.protobuf.MapField<
@@ -1091,6 +1185,165 @@ private static final long serialVersionUID = 0L;
         java.util.Map<String, MPEntityProto> values) {
       internalGetMutableEntities().getMutableMap()
           .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        String, MPTerrainCellProto> terrain_;
+    private com.google.protobuf.MapField<String, MPTerrainCellProto>
+    internalGetTerrain() {
+      if (terrain_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            TerrainDefaultEntryHolder.defaultEntry);
+      }
+      return terrain_;
+    }
+    private com.google.protobuf.MapField<String, MPTerrainCellProto>
+    internalGetMutableTerrain() {
+      onChanged();;
+      if (terrain_ == null) {
+        terrain_ = com.google.protobuf.MapField.newMapField(
+            TerrainDefaultEntryHolder.defaultEntry);
+      }
+      if (!terrain_.isMutable()) {
+        terrain_ = terrain_.copy();
+      }
+      return terrain_;
+    }
+
+    public int getTerrainCount() {
+      return internalGetTerrain().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+
+    @Override
+    public boolean containsTerrain(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      return internalGetTerrain().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getTerrainMap()} instead.
+     */
+    @Override
+    @Deprecated
+    public java.util.Map<String, MPTerrainCellProto> getTerrain() {
+      return getTerrainMap();
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+    @Override
+
+    public java.util.Map<String, MPTerrainCellProto> getTerrainMap() {
+      return internalGetTerrain().getMap();
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+    @Override
+
+    public MPTerrainCellProto getTerrainOrDefault(
+        String key,
+        MPTerrainCellProto defaultValue) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MPTerrainCellProto> map =
+          internalGetTerrain().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+    @Override
+
+    public MPTerrainCellProto getTerrainOrThrow(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MPTerrainCellProto> map =
+          internalGetTerrain().getMap();
+      if (!map.containsKey(key)) {
+        throw new IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTerrain() {
+      internalGetMutableTerrain().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+
+    public Builder removeTerrain(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      internalGetMutableTerrain().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @Deprecated
+    public java.util.Map<String, MPTerrainCellProto>
+    getMutableTerrain() {
+      return internalGetMutableTerrain().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+    public Builder putTerrain(
+        String key,
+        MPTerrainCellProto value) {
+      if (key == null) { throw new NullPointerException(); }
+      if (value == null) { throw new NullPointerException(); }
+      internalGetMutableTerrain().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; terrain = 4;</code>
+     */
+
+    public Builder putAllTerrain(
+        java.util.Map<String, MPTerrainCellProto> values) {
+      internalGetMutableTerrain().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private long timestamp_ ;
+    /**
+     * <code>uint64 timestamp = 5;</code>
+     * @return The timestamp.
+     */
+    @Override
+    public long getTimestamp() {
+      return timestamp_;
+    }
+    /**
+     * <code>uint64 timestamp = 5;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimestamp(long value) {
+      
+      timestamp_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 timestamp = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimestamp() {
+      
+      timestamp_ = 0L;
+      onChanged();
       return this;
     }
     @Override

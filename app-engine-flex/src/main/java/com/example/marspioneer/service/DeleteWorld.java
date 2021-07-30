@@ -5,7 +5,6 @@
 
 package com.example.marspioneer.service;
 import com.example.marspioneer.model.*;
-import com.example.marspioneer.persistence.Cache;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.DeleteTeamResponse;
 import com.nkasenides.athlos.backend.AthlosService;

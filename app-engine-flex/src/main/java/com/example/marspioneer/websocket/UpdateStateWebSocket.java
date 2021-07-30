@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 
@@ -68,94 +71,66 @@ public class UpdateStateWebSocket {
     }
 
     /**
-     * Runs a <b>lightweight</b> state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
-     * The state sent to the client will contain only what is defined in parameter <i>stateUpdate</i>, as defined by the caller of this method.
-     * Use this method to <b>update</b> the existing states of clients. To refresh the entire client state, use <i>sendRefresh()</i> instead.
+     * Sends a state update to a particular world session.
      * @param worldSession The world session initiating the state update.
-     * @param actionPosition The position of the action that initiated the state update.
-     * @param areaOfEffect The area of effect (AoE) of the action that initiated the state update.
+     * @param response The response to send.
      * @throws IOException thrown when the message cannot be sent via the socket.
      */
-    public static void sendUpdate(final MPWorldSession worldSession, MPStateUpdateProto stateUpdate, final MatrixPosition actionPosition, final float areaOfEffect) throws IOException {
-        final Collection<MPWorldSession> allSessions = State.forWorld(worldSession.getWorldID()).getSubscribedSessions();
-        for (MPWorldSession session : allSessions) {
-            final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
-            final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
-            final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
-            final UpdateStateResponse response = UpdateStateResponse.newBuilder()
-                    .setResourceSet(
-                            ResourceSetProto.newBuilder()
-                                    .setFood(player.getFood())
-                                    .setMetal(player.getMetal())
-                                    .setSand(player.getSand())
-                                    .setWater(player.getWater())
-                                    .build()
-                    )
-                    .setStatus(UpdateStateResponse.Status.OK)
-                    .setMessage("OK")
-                    .setStateUpdate(stateUpdate)
-                    .build();
-            socket.send(socketSession, response);
-        }
-    }
-
-    /**
-     * Runs a <b>lightweight</b> state update across sessions that should be receiving this update, based on the filtering function defined in State.filterUpdateSessions().
-     * The state sent to the client will contain only what is defined in parameter <i>stateUpdate</i>, as defined by the caller of this method.
-     * Use this method to <b>update</b> the existing states of clients. To refresh the entire client state, use <i>sendRefresh()</i> instead.
-     * @param worldSession The world session initiating the state update.
-     * @throws IOException thrown when the message cannot be sent via the socket.
-     */
-    public static void sendUpdate(final MPWorldSession worldSession, MPStateUpdateProto stateUpdate) throws IOException {
+    public static void sendUpdate(final MPWorldSession worldSession, UpdateStateResponse response) throws IOException {
+        System.out.println("sendUpdate()");
         final Session socketSession = CONNECTED_SESSIONS.get(worldSession.getId());
         final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(worldSession.getId());
-        final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
-        final UpdateStateResponse response = UpdateStateResponse.newBuilder()
-                .setStatus(UpdateStateResponse.Status.OK)
-                .setMessage("OK")
-                .setStateUpdate(stateUpdate)
-                .build();
-        socket.send(socketSession, response);
-    }
-
-    /**
-     * Broadcasts a state update to all subscribed sessions.
-     * @param worldSession The world session initiating the state update.
-     * @param stateUpdate The state update.
-     * @throws IOException thrown when the message cannot be sent via the socket.
-     */
-    public static void broadcastUpdate(final MPWorldSession worldSession, final MPStateUpdateProto stateUpdate) throws IOException {
-        final Collection<MPWorldSession> allSessions = State.forWorld(worldSession.getWorldID()).getSubscribedSessions();
-        for (MPWorldSession session : allSessions) {
-            final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
-            final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
-            final UpdateStateResponse response = UpdateStateResponse.newBuilder()
-                    .setStatus(UpdateStateResponse.Status.OK)
-                    .setMessage("OK")
-                    .setStateUpdate(stateUpdate)
-                    .build();
+        if (socketSession != null && socket != null && socketSession.isOpen()) {
             socket.send(socketSession, response);
         }
     }
 
     /**
-     * Multicasts a state update to the provided sessions.
-     * @param worldSession The world session initiating the state update.
-     * @param stateUpdate The state update.
-     * @param worldSessionIDs The IDs of the sessions to receive the state updates.
+     * Sends a state update to a set of world sessions. Each session receives the own update.
+     * @param responses A map of world sessions and their corresponding responses.
      * @throws IOException thrown when the message cannot be sent via the socket.
      */
-    public static void multicastUpdate(final MPWorldSession worldSession, final MPStateUpdateProto stateUpdate, Collection<String> worldSessionIDs) throws IOException {
-        final Collection<MPWorldSession> allSessions = State.forWorld(worldSession.getWorldID()).getSubscribedSessions();
+    public static void sendUpdate(HashMap<MPWorldSession, UpdateStateResponse> responses) throws IOException {
+        for (Map.Entry<MPWorldSession, UpdateStateResponse> entry : responses.entrySet()) {
+            sendUpdate(entry.getKey(), entry.getValue());
+        }
+    }
+
+    /**
+     * Broadcasts the same state update to all subscribed sessions.
+     * @param worldID The world ID of the world the broadcasted update belongs to.
+     * @param response The response to send.
+     * @throws IOException thrown when the message cannot be sent via the socket.
+     */
+    public static void broadcastUpdate(final String worldID, UpdateStateResponse response) throws IOException {
+        final Collection<MPWorldSession> allSessions = State.forWorld(worldID).getSubscribedSessions();
         for (MPWorldSession session : allSessions) {
-            if (worldSessionIDs.contains(session.getId())) {
+            final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
+            final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
+            socket.send(socketSession, response);
+        }
+    }
+
+    /**
+     * Multicasts the same state update to the provided sessions.
+     * @param worldID The ID of the world the update belongs to.
+     * @param response The response to send.
+     * @param worldSessions The sessions to receive the state updates.
+     * @throws IOException thrown when the message cannot be sent via the socket.
+     */
+    public static void multicastUpdate(final String worldID, UpdateStateResponse  response, List<MPWorldSession> worldSessions) throws IOException {
+        final Collection<MPWorldSession> allSessions = State.forWorld(worldID).getSubscribedSessions();
+        for (MPWorldSession session : allSessions) {
+            boolean contains = false;
+            for (MPWorldSession worldSession : worldSessions) {
+                if (worldSession.getId().equals(session.getId())) {
+                    contains = true;
+                    break;
+                }
+            }
+            if (contains) {
                 final Session socketSession = CONNECTED_SESSIONS.get(session.getId());
                 final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(session.getId());
-                final UpdateStateResponse response = UpdateStateResponse.newBuilder()
-                        .setStatus(UpdateStateResponse.Status.OK)
-                        .setMessage("OK")
-                        .setStateUpdate(stateUpdate)
-                        .build();
                 socket.send(socketSession, response);
             }
         }
@@ -169,9 +144,10 @@ public class UpdateStateWebSocket {
 
     @OnWebSocketError
     public void onError(Throwable cause) {
-        //TODO - Handle the error
         System.err.println("WebSocket error -> " + cause);
         cause.printStackTrace();
+        CONNECTED_SESSIONS.remove(worldSessionID);
+        SOCKET_INSTANCES.remove(worldSessionID);
     }
 
     /**

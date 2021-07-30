@@ -8,50 +8,31 @@ public interface MPStateUpdateProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string worldSessionID = 1;</code>
+   * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
+   * @return Whether the partialState field is set.
+   */
+  boolean hasPartialState();
+  /**
+   * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
+   * @return The partialState.
+   */
+  MPPartialStateProto getPartialState();
+  /**
+   * <code>.com.example.marspioneer.proto.MPPartialStateProto partialState = 1;</code>
+   */
+  MPPartialStateProtoOrBuilder getPartialStateOrBuilder();
+
+  /**
+   * <code>string worldSessionID = 2;</code>
    * @return The worldSessionID.
    */
   String getWorldSessionID();
   /**
-   * <code>string worldSessionID = 1;</code>
+   * <code>string worldSessionID = 2;</code>
    * @return The bytes for worldSessionID.
    */
   com.google.protobuf.ByteString
       getWorldSessionIDBytes();
-
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; updatedTerrainCells = 2;</code>
-   */
-  int getUpdatedTerrainCellsCount();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; updatedTerrainCells = 2;</code>
-   */
-  boolean containsUpdatedTerrainCells(
-      String key);
-  /**
-   * Use {@link #getUpdatedTerrainCellsMap()} instead.
-   */
-  @Deprecated
-  java.util.Map<String, MPTerrainCellProto>
-  getUpdatedTerrainCells();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; updatedTerrainCells = 2;</code>
-   */
-  java.util.Map<String, MPTerrainCellProto>
-  getUpdatedTerrainCellsMap();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; updatedTerrainCells = 2;</code>
-   */
-
-  MPTerrainCellProto getUpdatedTerrainCellsOrDefault(
-      String key,
-      MPTerrainCellProto defaultValue);
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPTerrainCellProto&gt; updatedTerrainCells = 2;</code>
-   */
-
-  MPTerrainCellProto getUpdatedTerrainCellsOrThrow(
-      String key);
 
   /**
    * <code>repeated string removedEntities = 3;</code>
@@ -79,66 +60,32 @@ public interface MPStateUpdateProtoOrBuilder extends
       getRemovedEntitiesBytes(int index);
 
   /**
-   * <code>repeated string removedTerrainCells = 4;</code>
-   * @return A list containing the removedTerrainCells.
+   * <code>repeated string removedTerrain = 4;</code>
+   * @return A list containing the removedTerrain.
    */
   java.util.List<String>
-      getRemovedTerrainCellsList();
+      getRemovedTerrainList();
   /**
-   * <code>repeated string removedTerrainCells = 4;</code>
-   * @return The count of removedTerrainCells.
+   * <code>repeated string removedTerrain = 4;</code>
+   * @return The count of removedTerrain.
    */
-  int getRemovedTerrainCellsCount();
+  int getRemovedTerrainCount();
   /**
-   * <code>repeated string removedTerrainCells = 4;</code>
+   * <code>repeated string removedTerrain = 4;</code>
    * @param index The index of the element to return.
-   * @return The removedTerrainCells at the given index.
+   * @return The removedTerrain at the given index.
    */
-  String getRemovedTerrainCells(int index);
+  String getRemovedTerrain(int index);
   /**
-   * <code>repeated string removedTerrainCells = 4;</code>
+   * <code>repeated string removedTerrain = 4;</code>
    * @param index The index of the value to return.
-   * @return The bytes of the removedTerrainCells at the given index.
+   * @return The bytes of the removedTerrain at the given index.
    */
   com.google.protobuf.ByteString
-      getRemovedTerrainCellsBytes(int index);
+      getRemovedTerrainBytes(int index);
 
   /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
-   */
-  int getUpdatedEntitiesCount();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
-   */
-  boolean containsUpdatedEntities(
-      String key);
-  /**
-   * Use {@link #getUpdatedEntitiesMap()} instead.
-   */
-  @Deprecated
-  java.util.Map<String, MPEntityProto>
-  getUpdatedEntities();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
-   */
-  java.util.Map<String, MPEntityProto>
-  getUpdatedEntitiesMap();
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
-   */
-
-  MPEntityProto getUpdatedEntitiesOrDefault(
-      String key,
-      MPEntityProto defaultValue);
-  /**
-   * <code>map&lt;string, .com.example.marspioneer.proto.MPEntityProto&gt; updatedEntities = 5;</code>
-   */
-
-  MPEntityProto getUpdatedEntitiesOrThrow(
-      String key);
-
-  /**
-   * <code>uint64 timestamp = 6;</code>
+   * <code>uint64 timestamp = 5;</code>
    * @return The timestamp.
    */
   long getTimestamp();

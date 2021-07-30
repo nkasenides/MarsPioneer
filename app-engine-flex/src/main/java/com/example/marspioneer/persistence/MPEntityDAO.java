@@ -8,6 +8,7 @@ package com.example.marspioneer.persistence;
 
 import com.example.marspioneer.model.BuildingEntity;
 import com.example.marspioneer.model.MPEntity;
+import com.example.marspioneer.proto.MPEntityProto;
 import com.nkasenides.athlos.persistence.WorldBasedDAO;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.objectis.Objectis;
@@ -60,7 +61,7 @@ public class MPEntityDAO implements WorldBasedDAO<MPEntity> {
      * @param playerID The player.
      * @return Returns a collection of entities.
      */
-    public Collection<MPEntity> listForPlayerAndWorld(String worldID, String playerID) {
+    public Collection<MPEntity> listForPlayerAndWorld(String playerID, String worldID) {
         final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)

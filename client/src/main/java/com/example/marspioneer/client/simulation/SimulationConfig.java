@@ -39,10 +39,10 @@ public class SimulationConfig {
     }
 
     public static void main(String[] args) {
-        final SimulationConfig simulationConfig = new SimulationConfig(30, 1000);
+        final SimulationConfig simulationConfig = new SimulationConfig(120, 4000);
 //        for (int i = 1000; i <= 1000; i+= 1000) {
-        simulationConfig.addEvent(new SimulationEvent(1000, SimulationEventType.PLAYER_JOIN, 20000));
-        simulationConfig.addEvent(new SimulationEvent(4000, SimulationEventType.PLAYER_JOIN, 20000));
+        simulationConfig.addEvent(new SimulationEvent(1000, SimulationEventType.PLAYER_JOIN, 110000));
+        simulationConfig.addEvent(new SimulationEvent(5000, SimulationEventType.PLAYER_JOIN, 110000));
 //        }
 
         final String jsonString = new Gson().toJson(simulationConfig);

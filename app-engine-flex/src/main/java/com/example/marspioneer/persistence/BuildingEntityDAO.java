@@ -65,7 +65,6 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
     public Collection<BuildingEntity> listForWorld(String worldID) {
         return Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
-                .limit(1)
                 .fetch().getItems();
     }
 
@@ -75,7 +74,7 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @param playerID The player.
      * @return Returns a collection of entities.
      */
-    public Collection<BuildingEntity> listForPlayerAndWorld(String worldID, String playerID) {
+    public Collection<BuildingEntity> listForPlayerAndWorld(String playerID, String worldID) {
         final List<BuildingEntity> fetch = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)

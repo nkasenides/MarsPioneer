@@ -1,5 +1,6 @@
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPTeamProto.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\BuildFarmProtoOrBuilder.java
+D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPTerrainIdentifierProto.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\ResourceSetProto.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\BuildWellRequestOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\BuildMineRequest.java
@@ -153,6 +154,7 @@ D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\model\MatrixPosition.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPWorldProto.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\CellType.java
+D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\MPTerrainIdentifierProtoOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\BuildingTypeProtoOrBuilder.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\model\MPTerrainChunk.java
 D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\core\src\main\java\com\example\marspioneer\proto\SellBuildingRequest.java

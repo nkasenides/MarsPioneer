@@ -232,7 +232,7 @@ public class Bot extends Thread {
                         getInitialStateLatency = System.currentTimeMillis() - getStateTimer;
                         success[0] = true;
                         System.out.println("Initial state retrieved for player '" + player.getName() + "'.");
-                        terrain = new ConcurrentHashMap<>(getStateResponse.getPartialState().getCellsMap());
+                        terrain = new ConcurrentHashMap<>(getStateResponse.getPartialState().getTerrainMap());
                         entities = new ConcurrentHashMap<>(getStateResponse.getPartialState().getEntitiesMap());
                         resourceSet = getStateResponse.getResourceSet().toObject();
                     } else {

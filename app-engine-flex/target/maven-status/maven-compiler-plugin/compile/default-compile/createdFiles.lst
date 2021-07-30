@@ -20,6 +20,7 @@ com\example\marspioneer\servlet\RemovePlayerFromTeamServlet.class
 com\example\marspioneer\servlet\BuildHubServlet.class
 com\example\marspioneer\persistence\MPTeamDAO$3.class
 com\example\marspioneer\service\RemovePlayerFromTeam.class
+com\example\marspioneer\state\State$Terrain.class
 com\example\marspioneer\service\ListPlayers.class
 com\example\marspioneer\servlet\DeletePlayerServlet.class
 com\example\marspioneer\service\CreatePlayer.class
@@ -44,6 +45,7 @@ com\example\marspioneer\persistence\MPGameSessionDAO$3.class
 com\example\marspioneer\servlet\ListTeamPlayersServlet.class
 com\example\marspioneer\service\DeleteWorld.class
 com\example\marspioneer\servlet\UpdateTeamServlet.class
+com\example\marspioneer\contextlistener\RedisContextListener.class
 com\example\marspioneer\servlet\BuildMineServlet.class
 com\example\marspioneer\servlet\SellBuildingServlet.class
 com\example\marspioneer\persistence\MPEntityDAO.class
@@ -63,6 +65,7 @@ com\example\marspioneer\servlet\ListPlayersServlet.class
 com\example\marspioneer\persistence\DBManager.class
 com\example\marspioneer\service\CreateWorld.class
 com\example\marspioneer\service\GetState.class
+com\example\marspioneer\state\State$Entities.class
 com\example\marspioneer\websocket\BuildHubWebSocket.class
 com\example\marspioneer\auth\Auth.class
 com\example\marspioneer\persistence\MPTerrainIdentifierDAO.class

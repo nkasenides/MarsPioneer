@@ -39,7 +39,7 @@ public class StateUpdateBuilder {
      * @param entity The entity to add.
      * @return Returns a StateUpdateBuilder
      */    public StateUpdateBuilder addUpdatedEntity(MPEntity entity) {
-        stateUpdateProtoBuilder.putUpdatedEntities(entity.getId(), entity.toProto().build());
+        stateUpdateProtoBuilder.getPartialStateBuilder().putEntities(entity.getId(), entity.toProto().build());
         return this;
     }
 
@@ -47,8 +47,9 @@ public class StateUpdateBuilder {
      * Adds an updated entity to the builder.
      * @param entity The entity to add.
      * @return Returns a StateUpdateBuilder
-     */    public StateUpdateBuilder addUpdatedEntity(MPEntityProto entity) {
-        stateUpdateProtoBuilder.putUpdatedEntities(entity.getId(), entity);
+     */
+    public StateUpdateBuilder addUpdatedEntity(MPEntityProto entity) {
+        stateUpdateProtoBuilder.getPartialStateBuilder().putEntities(entity.getId(), entity);
         return this;
     }
 
@@ -67,7 +68,7 @@ public class StateUpdateBuilder {
      * @param terrainCell The terrain cell to add.
      * @return Returns a StateUpdateBuilder.
      */    public StateUpdateBuilder addUpdatedTerrain(MPTerrainCell terrainCell) {
-        stateUpdateProtoBuilder.putUpdatedTerrainCells(terrainCell.getPosition().toHash(), terrainCell.toProto().build());
+        stateUpdateProtoBuilder.getPartialStateBuilder().putTerrain(terrainCell.getPosition().toHash(), terrainCell.toProto().build());
         return this;
     }
 
@@ -76,7 +77,7 @@ public class StateUpdateBuilder {
      * @param terrainCell The terrain cell to add.
      * @return Returns a StateUpdateBuilder.
      */    public StateUpdateBuilder addUpdatedTerrain(MPTerrainCellProto terrainCell) {
-        stateUpdateProtoBuilder.putUpdatedTerrainCells(terrainCell.getPosition().toHash(), terrainCell);
+        stateUpdateProtoBuilder.getPartialStateBuilder().putTerrain(terrainCell.getPosition().toHash(), terrainCell);
         return this;
     }
 
@@ -85,7 +86,7 @@ public class StateUpdateBuilder {
      * @param terrainCellHash The hash of the terrain cell removed.
      * @return Returns a StateUpdateBuilder.
      */    public StateUpdateBuilder addRemovedTerrain(String terrainCellHash) {
-        stateUpdateProtoBuilder.addRemovedTerrainCells(terrainCellHash);
+        stateUpdateProtoBuilder.addRemovedTerrain(terrainCellHash);
         return this;
     }
 
@@ -94,7 +95,7 @@ public class StateUpdateBuilder {
      * @return Returns a map.
      */
     public Map<String, MPEntityProto> getUpdatedEntities() {
-        return stateUpdateProtoBuilder.getUpdatedEntitiesMap();
+        return stateUpdateProtoBuilder.getPartialStateBuilder().getEntitiesMap();
     }
 
     /**
@@ -110,7 +111,7 @@ public class StateUpdateBuilder {
      * @return Returns a map.
      */
     public Map<String, MPTerrainCellProto> getUpdatedTerrain() {
-        return stateUpdateProtoBuilder.getUpdatedTerrainCellsMap();
+        return stateUpdateProtoBuilder.getPartialState().getTerrainMap();
     }
 
     /**
@@ -118,7 +119,7 @@ public class StateUpdateBuilder {
      * @return Returns a map.
      */
     public List<String> getRemovedTerrain() {
-        return stateUpdateProtoBuilder.getRemovedTerrainCellsList();
+        return stateUpdateProtoBuilder.getRemovedTerrainList();
     }
     /**
      * Builds the state update.
@@ -128,5 +129,35 @@ public class StateUpdateBuilder {
         return stateUpdateProtoBuilder.build();
     }
 
+    /**
+     * Clones the current builder.
+     * @return Returns a copied StateUpdateBuilder
+     */
+    public StateUpdateBuilder clone() {
+        StateUpdateBuilder builder = new StateUpdateBuilder();
+        for (MPEntityProto entity : getUpdatedEntities().values()) {
+            builder.addUpdatedEntity(entity);
+        }
+        for (String id : getRemovedEntities()) {
+            builder.addRemovedEntity(id);
+        }
+        for (MPTerrainCellProto terrain : getUpdatedTerrain().values()) {
+            builder.addUpdatedTerrain(terrain);
+        }
+        for (String id : getRemovedTerrain()) {
+            builder.addRemovedTerrain(id);
+        }
+        //TODO - Copy any additional state update attributes.
+        return builder;
+    }
+
+    /**
+     * Checks if the builder is empty (contains no updates).
+     * TODO - Check any custom state update attributes to make sure your state is empty.
+     * @return Returns true if the builder is empty, false otherwise.
+     */
+    public boolean isEmpty() {
+        return getUpdatedEntities().isEmpty() && getUpdatedTerrain().isEmpty() && getRemovedEntities().isEmpty() && getRemovedTerrain().isEmpty();
+    }
 
 }

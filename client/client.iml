@@ -11,14 +11,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="com.raylabz:mocha:1.0.2" level="project" />
     <orderEntry type="library" name="com.raylabz:opensimplex:1.0.3" level="project" />
     <orderEntry type="library" name="com.raylabz:firestorm:1.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.raylabz:athlos-core:0.0.30" level="project" />
+    <orderEntry type="library" name="Maven: com.raylabz:athlos-core:0.0.31" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.12.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
     <orderEntry type="library" name="Maven: com.raylabz:jsec:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.raylabz:athlos-client:0.0.32" level="project" />
+    <orderEntry type="library" name="Maven: com.raylabz:athlos-client:0.0.34" level="project" />
     <orderEntry type="library" name="Maven: com.raylabz:java-http:2.0.1" level="project" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="library" name="Maven: com.raylabz:firestorm:1.1.0" level="project" />
@@ -93,7 +92,7 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.30" level="project" />
-    <orderEntry type="library" name="Maven: com.raylabz:mocha:1.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.raylabz:mocha:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.neovisionaries:nv-websocket-client:2.9" level="project" />
   </component>
 </module>

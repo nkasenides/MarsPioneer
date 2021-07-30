@@ -83,16 +83,14 @@ public class JoinWorld implements AthlosService<JoinWorldRequest, JoinWorldRespo
         DBManager.worldSession.create(worldSession);
         DBManager.buildingEntity.create(firstEntity);
 
+        //Define and send the state update:
+        final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(firstEntity);
         try {
-            StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(firstEntity);
-            final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
-            UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, firstEntity.getPosition(), 20);
+            State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), firstEntity.getPosition(), 20, false, false);
         } catch (IOException e) {
-            return JoinWorldResponse.newBuilder()
-                    .setStatus(JoinWorldResponse.Status.SERVER_ERROR)
-                    .setMessage(e.getMessage())
-                    .build();
+            e.printStackTrace();
         }
+
 
         return JoinWorldResponse.newBuilder()
                 .setStatus(JoinWorldResponse.Status.OK)

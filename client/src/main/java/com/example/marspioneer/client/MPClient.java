@@ -169,7 +169,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                 }
         );
 
-        final int NUM_OF_PLAYERS = 2;
+        final int NUM_OF_PLAYERS = 5;
 
         for (int i = 0; i < NUM_OF_PLAYERS; i++) {
             MPClient client = new MPClient("Player-" + (i + 1), WORLD_ID);
@@ -251,7 +251,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                                 getStateResponse -> {
                                     if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
                                         System.out.println("Initial state retrieved for player '" + player.getName() + "'.");
-                                        setTerrain(new HashMap<>(getStateResponse.getPartialState().getCellsMap()));
+                                        setTerrain(new HashMap<>(getStateResponse.getPartialState().getTerrainMap()));
                                         setEntities(new HashMap<>(getStateResponse.getPartialState().getEntitiesMap()));
                                         setPlayerResourceSet(getStateResponse.getResourceSet().toObject());
                                         selectedCellPosition = getStateResponse.getPartialState().getWorldSession().getCameraPosition().toObject();
@@ -274,10 +274,12 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
 
                                             //Connect to the state update stub:
                                             final UpdateStateStub updateStateStub = Stubs.getUpdateStateStub(this);
-                                            Mocha.start(updateStateStub);
                                             //Send a request to be acknowledged as a client:
                                             final byte[] bytes = UpdateStateRequest.newBuilder().setWorldSessionID(worldSession.getId()).build().toByteArray();
                                             updateStateStub.send(bytes);
+
+
+
                                         } catch (WebSocketException | IOException e) {
                                             e.printStackTrace();
                                         }

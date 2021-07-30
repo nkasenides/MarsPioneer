@@ -110,26 +110,6 @@ public final class MarsPioneerProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_example_marspioneer_proto_MPStateUpdateProto_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedTerrainCellsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedTerrainCellsEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewTerrainCellsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewTerrainCellsEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewEntitiesEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewEntitiesEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedEntitiesEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedEntitiesEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_example_marspioneer_proto_MPTerrainChunkProto_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -150,15 +130,15 @@ public final class MarsPioneerProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_example_marspioneer_proto_MPPartialStateProto_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_example_marspioneer_proto_MPPartialStateProto_TerrainEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_example_marspioneer_proto_MPPartialStateProto_TerrainEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_example_marspioneer_proto_MPWorldProto_descriptor;
   static final 
@@ -606,539 +586,520 @@ public final class MarsPioneerProto {
       "lProto\022D\n\010position\030\001 \001(\01322.com.example.m" +
       "arspioneer.proto.MatrixPositionProto\0225\n\004" +
       "type\030\002 \001(\0162\'.com.example.marspioneer.pro" +
-      "to.CellType\022\016\n\006height\030\003 \001(\005\"\233\007\n\022MPStateU" +
-      "pdateProto\022\026\n\016worldSessionID\030\001 \001(\t\022g\n\023up" +
-      "datedTerrainCells\030\002 \003(\0132J.com.example.ma" +
-      "rspioneer.proto.MPStateUpdateProto.Updat" +
-      "edTerrainCellsEntry\022\027\n\017removedEntities\030\003" +
-      " \003(\t\022\033\n\023removedTerrainCells\030\004 \003(\t\022_\n\017new" +
-      "TerrainCells\030\005 \003(\0132F.com.example.marspio" +
-      "neer.proto.MPStateUpdateProto.NewTerrain" +
-      "CellsEntry\022W\n\013newEntities\030\006 \003(\0132B.com.ex" +
-      "ample.marspioneer.proto.MPStateUpdatePro" +
-      "to.NewEntitiesEntry\022_\n\017updatedEntities\030\007" +
-      " \003(\0132F.com.example.marspioneer.proto.MPS" +
-      "tateUpdateProto.UpdatedEntitiesEntry\022\021\n\t" +
-      "timestamp\030\010 \001(\004\032m\n\030UpdatedTerrainCellsEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022@\n\005value\030\002 \001(\01321.com.ex" +
-      "ample.marspioneer.proto.MPTerrainCellPro" +
-      "to:\0028\001\032i\n\024NewTerrainCellsEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022@\n\005value\030\002 \001(\01321.com.example.marspio" +
-      "neer.proto.MPTerrainCellProto:\0028\001\032`\n\020New" +
-      "EntitiesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(" +
-      "\0132,.com.example.marspioneer.proto.MPEnti" +
-      "tyProto:\0028\001\032d\n\024UpdatedEntitiesEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.com.example.ma" +
-      "rspioneer.proto.MPEntityProto:\0028\001\"\247\002\n\023MP" +
-      "TerrainChunkProto\022\n\n\002id\030\001 \001(\t\022\017\n\007worldID" +
-      "\030\002 \001(\t\022D\n\010position\030\003 \001(\01322.com.example.m" +
-      "arspioneer.proto.MatrixPositionProto\022L\n\005" +
-      "cells\030\004 \003(\0132=.com.example.marspioneer.pr" +
-      "oto.MPTerrainChunkProto.CellsEntry\032_\n\nCe" +
-      "llsEntry\022\013\n\003key\030\001 \001(\t\022@\n\005value\030\002 \001(\01321.c" +
-      "om.example.marspioneer.proto.MPTerrainCe" +
-      "llProto:\0028\001\"\223\001\n\030MPTerrainIdentifierProto" +
-      "\022\n\n\002id\030\001 \001(\t\022\017\n\007chunkID\030\002 \001(\t\022\017\n\007worldID" +
-      "\030\003 \001(\t\022I\n\rchunkPosition\030\004 \001(\01322.com.exam" +
-      "ple.marspioneer.proto.MatrixPositionProt" +
-      "o\"\301\003\n\023MPPartialStateProto\022H\n\014worldSessio" +
-      "n\030\001 \001(\01322.com.example.marspioneer.proto." +
-      "MPWorldSessionProto\022L\n\005cells\030\002 \003(\0132=.com" +
-      ".example.marspioneer.proto.MPPartialStat" +
-      "eProto.CellsEntry\022R\n\010entities\030\003 \003(\0132@.co" +
-      "m.example.marspioneer.proto.MPPartialSta" +
-      "teProto.EntitiesEntry\032_\n\nCellsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022@\n\005value\030\002 \001(\01321.com.example.ma" +
-      "rspioneer.proto.MPTerrainCellProto:\0028\001\032]" +
-      "\n\rEntitiesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 " +
-      "\001(\0132,.com.example.marspioneer.proto.MPEn" +
-      "tityProto:\0028\001\"\301\001\n\014MPWorldProto\022\017\n\007maxRow" +
-      "s\030\001 \001(\022\022\023\n\013heightLimit\030\002 \001(\r\022\014\n\004seed\030\003 \001" +
-      "(\022\022\014\n\004name\030\004 \001(\t\022\020\n\010chunkIDs\030\005 \003(\t\022\n\n\002id" +
-      "\030\006 \001(\t\022\017\n\007ownerID\030\007 \001(\t\022\021\n\tcreatedOn\030\010 \001" +
-      "(\004\022\017\n\007maxCols\030\t \001(\022\022\034\n\024subscribedSession" +
-      "IDs\030\n \003(\t\"\373\027\n\007Request\022Q\n\023updatePlayerReq" +
-      "uest\030\001 \001(\01322.com.example.marspioneer.pro" +
-      "to.UpdatePlayerRequestH\000\022]\n\031updateBuildi" +
-      "ngTypeRequest\030\002 \001(\01328.com.example.marspi" +
-      "oneer.proto.UpdateBuildingTypeRequestH\000\022" +
-      "K\n\020buildFarmRequest\030\003 \001(\0132/.com.example." +
-      "marspioneer.proto.BuildFarmRequestH\000\022]\n\031" +
-      "deleteBuildingTypeRequest\030\004 \001(\01328.com.ex" +
-      "ample.marspioneer.proto.DeleteBuildingTy" +
-      "peRequestH\000\022K\n\020getPlayerRequest\030\005 \001(\0132/." +
-      "com.example.marspioneer.proto.GetPlayerR" +
-      "equestH\000\022M\n\021updateTeamRequest\030\006 \001(\01320.co" +
-      "m.example.marspioneer.proto.UpdateTeamRe" +
-      "questH\000\022M\n\021listWorldsRequest\030\007 \001(\01320.com" +
-      ".example.marspioneer.proto.ListWorldsReq" +
-      "uestH\000\022O\n\022updateWorldRequest\030\010 \001(\01321.com" +
-      ".example.marspioneer.proto.UpdateWorldRe" +
-      "questH\000\022G\n\016getTeamRequest\030\t \001(\0132-.com.ex" +
-      "ample.marspioneer.proto.GetTeamRequestH\000" +
-      "\022W\n\026listTeamPlayersRequest\030\n \001(\01325.com.e" +
-      "xample.marspioneer.proto.ListTeamPlayers" +
-      "RequestH\000\022Q\n\023buildSandPitRequest\030\013 \001(\01322" +
-      ".com.example.marspioneer.proto.BuildSand" +
-      "PitRequestH\000\022O\n\022createWorldRequest\030\014 \001(\013" +
-      "21.com.example.marspioneer.proto.CreateW" +
-      "orldRequestH\000\022K\n\020subscribeRequest\030\r \001(\0132" +
-      "/.com.example.marspioneer.proto.Subscrib" +
-      "eRequestH\000\022I\n\017buildHubRequest\030\016 \001(\0132..co" +
-      "m.example.marspioneer.proto.BuildHubRequ" +
-      "estH\000\022O\n\022listPlayersRequest\030\017 \001(\01321.com." +
-      "example.marspioneer.proto.ListPlayersReq" +
-      "uestH\000\022W\n\026getBuildingTypeRequest\030\020 \001(\01325" +
-      ".com.example.marspioneer.proto.GetBuildi" +
-      "ngTypeRequestH\000\022K\n\020listTeamsRequest\030\021 \001(" +
-      "\0132/.com.example.marspioneer.proto.ListTe" +
-      "amsRequestH\000\022Q\n\023createPlayerRequest\030\022 \001(" +
-      "\01322.com.example.marspioneer.proto.Create" +
-      "PlayerRequestH\000\022Q\n\023deletePlayerRequest\030\023" +
-      " \001(\01322.com.example.marspioneer.proto.Del" +
-      "etePlayerRequestH\000\022O\n\022deleteWorldRequest" +
-      "\030\024 \001(\01321.com.example.marspioneer.proto.D" +
-      "eleteWorldRequestH\000\022I\n\017getWorldRequest\030\025" +
-      " \001(\0132..com.example.marspioneer.proto.Get" +
-      "WorldRequestH\000\022M\n\021createTeamRequest\030\026 \001(" +
-      "\01320.com.example.marspioneer.proto.Create" +
-      "TeamRequestH\000\022O\n\022unsubscribeRequest\030\027 \001(" +
-      "\01321.com.example.marspioneer.proto.Unsubs" +
-      "cribeRequestH\000\022]\n\031createBuildingTypeRequ" +
-      "est\030\030 \001(\01328.com.example.marspioneer.prot" +
-      "o.CreateBuildingTypeRequestH\000\022M\n\021deleteT" +
-      "eamRequest\030\031 \001(\01320.com.example.marspione" +
-      "er.proto.DeleteTeamRequestH\000\022W\n\026addPlaye" +
-      "rToTeamRequest\030\032 \001(\01325.com.example.marsp" +
-      "ioneer.proto.AddPlayerToTeamRequestH\000\022K\n" +
-      "\020joinWorldRequest\030\033 \001(\0132/.com.example.ma" +
-      "rspioneer.proto.JoinWorldRequestH\000\022K\n\020bu" +
-      "ildWellRequest\030\034 \001(\0132/.com.example.marsp" +
-      "ioneer.proto.BuildWellRequestH\000\022a\n\033remov" +
-      "ePlayerFromTeamRequest\030\035 \001(\0132:.com.examp" +
-      "le.marspioneer.proto.RemovePlayerFromTea" +
-      "mRequestH\000\022Q\n\023authenticateRequest\030\036 \001(\0132" +
-      "2.com.example.marspioneer.proto.Authenti" +
-      "cateRequestH\000\022I\n\017getStateRequest\030\037 \001(\0132." +
-      ".com.example.marspioneer.proto.GetStateR" +
-      "equestH\000\022Q\n\023sellBuildingRequest\030  \001(\01322." +
-      "com.example.marspioneer.proto.SellBuildi" +
-      "ngRequestH\000\022M\n\021leaveWorldRequest\030! \001(\01320" +
-      ".com.example.marspioneer.proto.LeaveWorl" +
-      "dRequestH\000\022O\n\022updateStateRequest\030\" \001(\01321" +
-      ".com.example.marspioneer.proto.UpdateSta" +
-      "teRequestH\000\022U\n\025deAuthenticateRequest\030# \001" +
-      "(\01324.com.example.marspioneer.proto.DeAut" +
-      "henticateRequestH\000\022K\n\020buildMineRequest\030$" +
-      " \001(\0132/.com.example.marspioneer.proto.Bui" +
-      "ldMineRequestH\000\022[\n\030listBuildingTypesRequ" +
-      "est\030% \001(\01327.com.example.marspioneer.prot" +
-      "o.ListBuildingTypesRequestH\000B\t\n\007request\"" +
-      "j\n\023UpdatePlayerRequest\022\025\n\rgameSessionID\030" +
-      "\001 \001(\t\022<\n\006player\030\002 \001(\0132,.com.example.mars" +
-      "pioneer.proto.MPPlayerProto\"\255\001\n\031UpdateBu" +
-      "ildingTypeRequest\022H\n\rgameSessionID\030\001 \001(\013" +
-      "21.com.example.marspioneer.proto.MPGameS" +
-      "essionProto\022F\n\014buildingType\030\002 \001(\01320.com." +
-      "example.marspioneer.proto.BuildingTypePr" +
-      "oto\"p\n\020BuildFarmRequest\022\026\n\016worldSessionI" +
-      "D\030\001 \001(\t\022D\n\010position\030\002 \001(\01322.com.example." +
-      "marspioneer.proto.MatrixPositionProto\"}\n" +
-      "\031DeleteBuildingTypeRequest\022H\n\rgameSessio" +
-      "nID\030\001 \001(\01321.com.example.marspioneer.prot" +
-      "o.MPGameSessionProto\022\026\n\016buildingTypeID\030\002" +
-      " \001(\t\";\n\020GetPlayerRequest\022\025\n\rgameSessionI" +
-      "D\030\001 \001(\t\022\020\n\010playerID\030\002 \001(\t\"d\n\021UpdateTeamR" +
-      "equest\022\025\n\rgameSessionID\030\001 \001(\t\0228\n\004team\030\002 " +
-      "\001(\0132*.com.example.marspioneer.proto.MPTe" +
-      "amProto\"*\n\021ListWorldsRequest\022\025\n\rgameSess" +
-      "ionID\030\001 \001(\t\"g\n\022UpdateWorldRequest\022\025\n\rgam" +
-      "eSessionID\030\001 \001(\t\022:\n\005world\030\002 \001(\0132+.com.ex" +
-      "ample.marspioneer.proto.MPWorldProto\"7\n\016" +
-      "GetTeamRequest\022\025\n\rgameSessionID\030\001 \001(\t\022\016\n" +
-      "\006teamID\030\002 \001(\t\"?\n\026ListTeamPlayersRequest\022" +
-      "\025\n\rgameSessionID\030\001 \001(\t\022\016\n\006teamID\030\002 \001(\t\"s" +
-      "\n\023BuildSandPitRequest\022\026\n\016worldSessionID\030" +
-      "\001 \001(\t\022D\n\010position\030\002 \001(\01322.com.example.ma" +
-      "rspioneer.proto.MatrixPositionProto\"g\n\022C" +
-      "reateWorldRequest\022\025\n\rgameSessionID\030\001 \001(\t" +
-      "\022:\n\005world\030\002 \001(\0132+.com.example.marspionee" +
-      "r.proto.MPWorldProto\"*\n\020SubscribeRequest" +
-      "\022\026\n\016worldSessionID\030\001 \001(\t\"o\n\017BuildHubRequ" +
-      "est\022\026\n\016worldSessionID\030\001 \001(\t\022D\n\010position\030" +
-      "\002 \001(\01322.com.example.marspioneer.proto.Ma" +
-      "trixPositionProto\"+\n\022ListPlayersRequest\022" +
-      "\025\n\rgameSessionID\030\001 \001(\t\"z\n\026GetBuildingTyp" +
-      "eRequest\022H\n\rgameSessionID\030\001 \001(\01321.com.ex" +
-      "ample.marspioneer.proto.MPGameSessionPro" +
-      "to\022\026\n\016buildingTypeID\030\002 \001(\t\")\n\020ListTeamsR" +
-      "equest\022\025\n\rgameSessionID\030\001 \001(\t\"S\n\023CreateP" +
-      "layerRequest\022<\n\006player\030\001 \001(\0132,.com.examp" +
-      "le.marspioneer.proto.MPPlayerProto\">\n\023De" +
-      "letePlayerRequest\022\025\n\rgameSessionID\030\001 \001(\t" +
-      "\022\020\n\010playerID\030\002 \001(\t\"<\n\022DeleteWorldRequest" +
-      "\022\025\n\rgameSessionID\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t" +
-      "\"9\n\017GetWorldRequest\022\025\n\rgameSessionID\030\001 \001" +
-      "(\t\022\017\n\007worldID\030\002 \001(\t\"d\n\021CreateTeamRequest" +
-      "\022\025\n\rgameSessionID\030\001 \001(\t\0228\n\004team\030\002 \001(\0132*." +
-      "com.example.marspioneer.proto.MPTeamProt" +
-      "o\",\n\022UnsubscribeRequest\022\026\n\016worldSessionI" +
-      "D\030\001 \001(\t\"\255\001\n\031CreateBuildingTypeRequest\022H\n" +
-      "\rgameSessionID\030\001 \001(\01321.com.example.marsp" +
-      "ioneer.proto.MPGameSessionProto\022F\n\014build" +
-      "ingType\030\002 \001(\01320.com.example.marspioneer." +
-      "proto.BuildingTypeProto\":\n\021DeleteTeamReq" +
-      "uest\022\025\n\rgameSessionID\030\001 \001(\t\022\016\n\006teamID\030\002 " +
-      "\001(\t\"Q\n\026AddPlayerToTeamRequest\022\025\n\rgameSes" +
-      "sionID\030\001 \001(\t\022\016\n\006teamID\030\002 \001(\t\022\020\n\010playerID" +
-      "\030\003 \001(\t\":\n\020JoinWorldRequest\022\025\n\rgameSessio" +
-      "nID\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t\"p\n\020BuildWellR" +
-      "equest\022\026\n\016worldSessionID\030\001 \001(\t\022D\n\010positi" +
-      "on\030\002 \001(\01322.com.example.marspioneer.proto" +
-      ".MatrixPositionProto\"V\n\033RemovePlayerFrom" +
-      "TeamRequest\022\025\n\rgameSessionID\030\001 \001(\t\022\016\n\006te" +
-      "amID\030\002 \001(\t\022\020\n\010playerID\030\003 \001(\t\";\n\023Authenti" +
-      "cateRequest\022\020\n\010password\030\001 \001(\t\022\022\n\nplayerN" +
-      "ame\030\002 \001(\t\")\n\017GetStateRequest\022\026\n\016worldSes" +
-      "sionID\030\001 \001(\t\"A\n\023SellBuildingRequest\022\026\n\016w" +
-      "orldSessionID\030\001 \001(\t\022\022\n\nbuildingID\030\002 \001(\t\"" +
-      "+\n\021LeaveWorldRequest\022\026\n\016worldSessionID\030\001" +
-      " \001(\t\"\264\001\n\022UpdateStateRequest\022H\n\014partialSt" +
-      "ate\030\001 \001(\01322.com.example.marspioneer.prot" +
-      "o.MPPartialStateProto\022\026\n\016worldSessionID\030" +
-      "\002 \001(\t\022<\n\006action\030\003 \001(\0132,.com.example.mars" +
-      "pioneer.proto.MPActionProto\".\n\025DeAuthent" +
-      "icateRequest\022\025\n\rgameSessionID\030\001 \001(\t\"p\n\020B" +
-      "uildMineRequest\022\026\n\016worldSessionID\030\001 \001(\t\022" +
-      "D\n\010position\030\002 \001(\01322.com.example.marspion" +
-      "eer.proto.MatrixPositionProto\"d\n\030ListBui" +
-      "ldingTypesRequest\022H\n\rgameSessionID\030\001 \001(\013" +
-      "21.com.example.marspioneer.proto.MPGameS" +
-      "essionProto\"\377\025\n\010Response\022S\n\024authenticate" +
-      "Response\030\001 \001(\01323.com.example.marspioneer" +
-      ".proto.AuthenticateResponseH\000\022W\n\026deAuthe" +
-      "nticateResponse\030\002 \001(\01325.com.example.mars" +
-      "pioneer.proto.DeAuthenticateResponseH\000\022]" +
-      "\n\031listBuildingTypesResponse\030\003 \001(\01328.com." +
-      "example.marspioneer.proto.ListBuildingTy" +
-      "pesResponseH\000\022Y\n\027addPlayerToTeamResponse" +
-      "\030\004 \001(\01326.com.example.marspioneer.proto.A" +
-      "ddPlayerToTeamResponseH\000\022Q\n\023createWorldR" +
-      "esponse\030\005 \001(\01322.com.example.marspioneer." +
-      "proto.CreateWorldResponseH\000\022S\n\024sellBuild" +
-      "ingResponse\030\006 \001(\01323.com.example.marspion" +
-      "eer.proto.SellBuildingResponseH\000\022_\n\032dele" +
-      "teBuildingTypeResponse\030\007 \001(\01329.com.examp" +
-      "le.marspioneer.proto.DeleteBuildingTypeR" +
-      "esponseH\000\022S\n\024updatePlayerResponse\030\010 \001(\0132" +
-      "3.com.example.marspioneer.proto.UpdatePl" +
-      "ayerResponseH\000\022Q\n\023deleteWorldResponse\030\t " +
-      "\001(\01322.com.example.marspioneer.proto.Dele" +
-      "teWorldResponseH\000\022_\n\032createBuildingTypeR" +
-      "esponse\030\n \001(\01329.com.example.marspioneer." +
-      "proto.CreateBuildingTypeResponseH\000\022Q\n\023un" +
-      "subscribeResponse\030\013 \001(\01322.com.example.ma" +
-      "rspioneer.proto.UnsubscribeResponseH\000\022M\n" +
-      "\021getPlayerResponse\030\014 \001(\01320.com.example.m" +
-      "arspioneer.proto.GetPlayerResponseH\000\022Y\n\027" +
-      "listTeamPlayersResponse\030\r \001(\01326.com.exam" +
-      "ple.marspioneer.proto.ListTeamPlayersRes" +
-      "ponseH\000\022I\n\017getTeamResponse\030\016 \001(\0132..com.e" +
-      "xample.marspioneer.proto.GetTeamResponse" +
-      "H\000\022O\n\022listWorldsResponse\030\017 \001(\01321.com.exa" +
-      "mple.marspioneer.proto.ListWorldsRespons" +
-      "eH\000\022Q\n\023updateWorldResponse\030\020 \001(\01322.com.e" +
-      "xample.marspioneer.proto.UpdateWorldResp" +
-      "onseH\000\022O\n\022updateTeamResponse\030\021 \001(\01321.com" +
-      ".example.marspioneer.proto.UpdateTeamRes" +
-      "ponseH\000\022M\n\021listTeamsResponse\030\022 \001(\01320.com" +
-      ".example.marspioneer.proto.ListTeamsResp" +
-      "onseH\000\022M\n\021joinWorldResponse\030\023 \001(\01320.com." +
-      "example.marspioneer.proto.JoinWorldRespo" +
-      "nseH\000\022S\n\024deletePlayerResponse\030\024 \001(\01323.co" +
-      "m.example.marspioneer.proto.DeletePlayer" +
-      "ResponseH\000\022c\n\034removePlayerFromTeamRespon" +
-      "se\030\025 \001(\0132;.com.example.marspioneer.proto" +
-      ".RemovePlayerFromTeamResponseH\000\022E\n\rbuild" +
-      "Response\030\026 \001(\0132,.com.example.marspioneer" +
-      ".proto.BuildResponseH\000\022K\n\020getStateRespon" +
-      "se\030\027 \001(\0132/.com.example.marspioneer.proto" +
-      ".GetStateResponseH\000\022Q\n\023updateStateRespon" +
-      "se\030\030 \001(\01322.com.example.marspioneer.proto" +
-      ".UpdateStateResponseH\000\022M\n\021subscribeRespo" +
-      "nse\030\031 \001(\01320.com.example.marspioneer.prot" +
-      "o.SubscribeResponseH\000\022S\n\024createPlayerRes" +
-      "ponse\030\032 \001(\01323.com.example.marspioneer.pr" +
-      "oto.CreatePlayerResponseH\000\022K\n\020getWorldRe" +
-      "sponse\030\033 \001(\0132/.com.example.marspioneer.p" +
-      "roto.GetWorldResponseH\000\022_\n\032updateBuildin" +
-      "gTypeResponse\030\034 \001(\01329.com.example.marspi" +
-      "oneer.proto.UpdateBuildingTypeResponseH\000" +
-      "\022O\n\022deleteTeamResponse\030\035 \001(\01321.com.examp" +
-      "le.marspioneer.proto.DeleteTeamResponseH" +
-      "\000\022O\n\022leaveWorldResponse\030\036 \001(\01321.com.exam" +
-      "ple.marspioneer.proto.LeaveWorldResponse" +
-      "H\000\022Y\n\027getBuildingTypeResponse\030\037 \001(\01326.co" +
-      "m.example.marspioneer.proto.GetBuildingT" +
-      "ypeResponseH\000\022Q\n\023listPlayersResponse\030  \001" +
-      "(\01322.com.example.marspioneer.proto.ListP" +
-      "layersResponseH\000\022O\n\022createTeamResponse\030!" +
-      " \001(\01321.com.example.marspioneer.proto.Cre" +
-      "ateTeamResponseH\000B\n\n\010response\"\255\002\n\024Authen" +
-      "ticateResponse\022\017\n\007message\030\001 \001(\t\022F\n\013gameS" +
-      "ession\030\002 \001(\01321.com.example.marspioneer.p" +
-      "roto.MPGameSessionProto\022J\n\006status\030\003 \001(\0162" +
-      ":.com.example.marspioneer.proto.Authenti" +
-      "cateResponse.Status\"p\n\006Status\022\020\n\014SERVER_" +
-      "ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\023\n\017BAD_CREDENT" +
-      "IALS\020\002\022\006\n\002OK\020\003\022\022\n\016NO_SUCH_PLAYER\020\004\022\021\n\rPL" +
-      "AYER_BANNED\020\005\"\307\001\n\026DeAuthenticateResponse" +
-      "\022\017\n\007message\030\001 \001(\t\022L\n\006status\030\002 \001(\0162<.com." +
-      "example.marspioneer.proto.DeAuthenticate" +
-      "Response.Status\"N\n\006Status\022\020\n\014SERVER_ERRO" +
-      "R\020\000\022\020\n\014INVALID_DATA\020\001\022\006\n\002OK\020\002\022\030\n\024NO_SUCH" +
-      "_GAME_SESSION\020\003\"\233\002\n\031ListBuildingTypesRes" +
-      "ponse\022G\n\rbuildingTypes\030\001 \003(\01320.com.examp" +
-      "le.marspioneer.proto.BuildingTypeProto\022\017" +
-      "\n\007message\030\002 \001(\t\022O\n\006status\030\003 \001(\0162?.com.ex" +
-      "ample.marspioneer.proto.ListBuildingType" +
-      "sResponse.Status\"S\n\006Status\022\006\n\002OK\020\000\022\030\n\024NO" +
-      "_SUCH_GAME_SESSION\020\001\022\024\n\020NO_BUILDINGTYPES" +
-      "\020\002\022\021\n\rUNKNOWN_ERROR\020\003\"\225\002\n\027AddPlayerToTea" +
-      "mResponse\022\017\n\007message\030\001 \001(\t\022M\n\006status\030\002 \001" +
-      "(\0162=.com.example.marspioneer.proto.AddPl" +
-      "ayerToTeamResponse.Status\"\231\001\n\006Status\022\020\n\014" +
-      "SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_" +
-      "AUTHORIZED\020\002\022\032\n\026PLAYER_ALREADY_IN_TEAM\020\003" +
-      "\022\r\n\tTEAM_FULL\020\004\022\006\n\002OK\020\005\022\022\n\016NO_SUCH_PLAYE" +
-      "R\020\006\022\020\n\014NO_SUCH_TEAM\020\007\"\211\002\n\023CreateWorldRes" +
-      "ponse\022:\n\005world\030\001 \001(\0132+.com.example.marsp" +
-      "ioneer.proto.MPWorldProto\022\017\n\007message\030\002 \001" +
-      "(\t\022I\n\006status\030\003 \001(\01629.com.example.marspio" +
-      "neer.proto.CreateWorldResponse.Status\"Z\n" +
-      "\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DAT" +
-      "A\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\020\n\014WORLD_EXISTS\020" +
-      "\003\022\006\n\002OK\020\004\"\226\001\n\024SellBuildingResponse\022\017\n\007me" +
-      "ssage\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.com.exampl" +
-      "e.marspioneer.proto.SellBuildingResponse" +
-      ".Status\"!\n\006Status\022\017\n\013CANNOT_SELL\020\000\022\006\n\002OK" +
-      "\020\001\"\222\002\n\032DeleteBuildingTypeResponse\022\017\n\007mes" +
-      "sage\030\001 \001(\t\022P\n\006status\030\002 \001(\0162@.com.example" +
-      ".marspioneer.proto.DeleteBuildingTypeRes" +
-      "ponse.Status\"\220\001\n\006Status\022\036\n\032CANNOT_DELETE" +
-      "_BUILDINGTYPE\020\000\022\006\n\002OK\020\001\022\030\n\024NO_SUCH_GAME_" +
-      "SESSION\020\002\022\030\n\024NO_SUCH_BUILDINGTYPE\020\003\022\027\n\023B" +
-      "UILDINGTYPE_EXISTS\020\004\022\021\n\rUNKNOWN_ERROR\020\005\"" +
-      "\353\001\n\024UpdatePlayerResponse\022\017\n\007message\030\001 \001(" +
-      "\t\022J\n\006status\030\002 \001(\0162:.com.example.marspion" +
-      "eer.proto.UpdatePlayerResponse.Status\"v\n" +
-      "\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DAT",
-      "A\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\030\n\024CANNOT_UPDATE" +
-      "_PLAYER\020\003\022\006\n\002OK\020\004\022\022\n\016NO_SUCH_PLAYER\020\005\"\347\001" +
-      "\n\023DeleteWorldResponse\022\017\n\007message\030\001 \001(\t\022I" +
-      "\n\006status\030\002 \001(\01629.com.example.marspioneer" +
-      ".proto.DeleteWorldResponse.Status\"t\n\006Sta" +
-      "tus\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022" +
-      "\022\n\016NOT_AUTHORIZED\020\002\022\021\n\rNO_SUCH_WORLD\020\003\022\027" +
-      "\n\023CANNOT_DELETE_WORLD\020\004\022\006\n\002OK\020\005\"\261\002\n\032Crea" +
-      "teBuildingTypeResponse\022\017\n\007message\030\001 \001(\t\022" +
+      "to.CellType\022\016\n\006height\030\003 \001(\005\"\272\001\n\022MPStateU" +
+      "pdateProto\022H\n\014partialState\030\001 \001(\01322.com.e" +
+      "xample.marspioneer.proto.MPPartialStateP" +
+      "roto\022\026\n\016worldSessionID\030\002 \001(\t\022\027\n\017removedE" +
+      "ntities\030\003 \003(\t\022\026\n\016removedTerrain\030\004 \003(\t\022\021\n" +
+      "\ttimestamp\030\005 \001(\004\"\247\002\n\023MPTerrainChunkProto" +
+      "\022\n\n\002id\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t\022D\n\010positio" +
+      "n\030\003 \001(\01322.com.example.marspioneer.proto." +
+      "MatrixPositionProto\022L\n\005cells\030\004 \003(\0132=.com" +
+      ".example.marspioneer.proto.MPTerrainChun" +
+      "kProto.CellsEntry\032_\n\nCellsEntry\022\013\n\003key\030\001" +
+      " \001(\t\022@\n\005value\030\002 \001(\01321.com.example.marspi" +
+      "oneer.proto.MPTerrainCellProto:\0028\001\"\223\001\n\030M" +
+      "PTerrainIdentifierProto\022\n\n\002id\030\001 \001(\t\022\017\n\007c" +
+      "hunkID\030\002 \001(\t\022\017\n\007worldID\030\003 \001(\t\022I\n\rchunkPo" +
+      "sition\030\004 \001(\01322.com.example.marspioneer.p" +
+      "roto.MatrixPositionProto\"\332\003\n\023MPPartialSt" +
+      "ateProto\022R\n\010entities\030\001 \003(\0132@.com.example" +
+      ".marspioneer.proto.MPPartialStateProto.E" +
+      "ntitiesEntry\022H\n\014worldSession\030\002 \001(\01322.com" +
+      ".example.marspioneer.proto.MPWorldSessio" +
+      "nProto\022P\n\007terrain\030\003 \003(\0132?.com.example.ma" +
+      "rspioneer.proto.MPPartialStateProto.Terr" +
+      "ainEntry\022\021\n\ttimestamp\030\004 \001(\004\032]\n\rEntitiesE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.com.e" +
+      "xample.marspioneer.proto.MPEntityProto:\002" +
+      "8\001\032a\n\014TerrainEntry\022\013\n\003key\030\001 \001(\t\022@\n\005value" +
+      "\030\002 \001(\01321.com.example.marspioneer.proto.M" +
+      "PTerrainCellProto:\0028\001\"\301\001\n\014MPWorldProto\022\017" +
+      "\n\007maxRows\030\001 \001(\022\022\023\n\013heightLimit\030\002 \001(\r\022\014\n\004" +
+      "seed\030\003 \001(\022\022\014\n\004name\030\004 \001(\t\022\020\n\010chunkIDs\030\005 \003" +
+      "(\t\022\n\n\002id\030\006 \001(\t\022\017\n\007ownerID\030\007 \001(\t\022\021\n\tcreat" +
+      "edOn\030\010 \001(\004\022\017\n\007maxCols\030\t \001(\022\022\034\n\024subscribe" +
+      "dSessionIDs\030\n \003(\t\"\373\027\n\007Request\022Q\n\023updateP" +
+      "layerRequest\030\001 \001(\01322.com.example.marspio" +
+      "neer.proto.UpdatePlayerRequestH\000\022]\n\031upda" +
+      "teBuildingTypeRequest\030\002 \001(\01328.com.exampl" +
+      "e.marspioneer.proto.UpdateBuildingTypeRe" +
+      "questH\000\022K\n\020buildFarmRequest\030\003 \001(\0132/.com." +
+      "example.marspioneer.proto.BuildFarmReque" +
+      "stH\000\022]\n\031deleteBuildingTypeRequest\030\004 \001(\0132" +
+      "8.com.example.marspioneer.proto.DeleteBu" +
+      "ildingTypeRequestH\000\022K\n\020getPlayerRequest\030" +
+      "\005 \001(\0132/.com.example.marspioneer.proto.Ge" +
+      "tPlayerRequestH\000\022M\n\021updateTeamRequest\030\006 " +
+      "\001(\01320.com.example.marspioneer.proto.Upda" +
+      "teTeamRequestH\000\022M\n\021listWorldsRequest\030\007 \001" +
+      "(\01320.com.example.marspioneer.proto.ListW" +
+      "orldsRequestH\000\022O\n\022updateWorldRequest\030\010 \001" +
+      "(\01321.com.example.marspioneer.proto.Updat" +
+      "eWorldRequestH\000\022G\n\016getTeamRequest\030\t \001(\0132" +
+      "-.com.example.marspioneer.proto.GetTeamR" +
+      "equestH\000\022W\n\026listTeamPlayersRequest\030\n \001(\013" +
+      "25.com.example.marspioneer.proto.ListTea" +
+      "mPlayersRequestH\000\022Q\n\023buildSandPitRequest" +
+      "\030\013 \001(\01322.com.example.marspioneer.proto.B" +
+      "uildSandPitRequestH\000\022O\n\022createWorldReque" +
+      "st\030\014 \001(\01321.com.example.marspioneer.proto" +
+      ".CreateWorldRequestH\000\022K\n\020subscribeReques" +
+      "t\030\r \001(\0132/.com.example.marspioneer.proto." +
+      "SubscribeRequestH\000\022I\n\017buildHubRequest\030\016 " +
+      "\001(\0132..com.example.marspioneer.proto.Buil" +
+      "dHubRequestH\000\022O\n\022listPlayersRequest\030\017 \001(" +
+      "\01321.com.example.marspioneer.proto.ListPl" +
+      "ayersRequestH\000\022W\n\026getBuildingTypeRequest" +
+      "\030\020 \001(\01325.com.example.marspioneer.proto.G" +
+      "etBuildingTypeRequestH\000\022K\n\020listTeamsRequ" +
+      "est\030\021 \001(\0132/.com.example.marspioneer.prot" +
+      "o.ListTeamsRequestH\000\022Q\n\023createPlayerRequ" +
+      "est\030\022 \001(\01322.com.example.marspioneer.prot" +
+      "o.CreatePlayerRequestH\000\022Q\n\023deletePlayerR" +
+      "equest\030\023 \001(\01322.com.example.marspioneer.p" +
+      "roto.DeletePlayerRequestH\000\022O\n\022deleteWorl" +
+      "dRequest\030\024 \001(\01321.com.example.marspioneer" +
+      ".proto.DeleteWorldRequestH\000\022I\n\017getWorldR" +
+      "equest\030\025 \001(\0132..com.example.marspioneer.p" +
+      "roto.GetWorldRequestH\000\022M\n\021createTeamRequ" +
+      "est\030\026 \001(\01320.com.example.marspioneer.prot" +
+      "o.CreateTeamRequestH\000\022O\n\022unsubscribeRequ" +
+      "est\030\027 \001(\01321.com.example.marspioneer.prot" +
+      "o.UnsubscribeRequestH\000\022]\n\031createBuilding" +
+      "TypeRequest\030\030 \001(\01328.com.example.marspion" +
+      "eer.proto.CreateBuildingTypeRequestH\000\022M\n" +
+      "\021deleteTeamRequest\030\031 \001(\01320.com.example.m" +
+      "arspioneer.proto.DeleteTeamRequestH\000\022W\n\026" +
+      "addPlayerToTeamRequest\030\032 \001(\01325.com.examp" +
+      "le.marspioneer.proto.AddPlayerToTeamRequ" +
+      "estH\000\022K\n\020joinWorldRequest\030\033 \001(\0132/.com.ex" +
+      "ample.marspioneer.proto.JoinWorldRequest" +
+      "H\000\022K\n\020buildWellRequest\030\034 \001(\0132/.com.examp" +
+      "le.marspioneer.proto.BuildWellRequestH\000\022" +
+      "a\n\033removePlayerFromTeamRequest\030\035 \001(\0132:.c" +
+      "om.example.marspioneer.proto.RemovePlaye" +
+      "rFromTeamRequestH\000\022Q\n\023authenticateReques" +
+      "t\030\036 \001(\01322.com.example.marspioneer.proto." +
+      "AuthenticateRequestH\000\022I\n\017getStateRequest" +
+      "\030\037 \001(\0132..com.example.marspioneer.proto.G" +
+      "etStateRequestH\000\022Q\n\023sellBuildingRequest\030" +
+      "  \001(\01322.com.example.marspioneer.proto.Se" +
+      "llBuildingRequestH\000\022M\n\021leaveWorldRequest" +
+      "\030! \001(\01320.com.example.marspioneer.proto.L" +
+      "eaveWorldRequestH\000\022O\n\022updateStateRequest" +
+      "\030\" \001(\01321.com.example.marspioneer.proto.U" +
+      "pdateStateRequestH\000\022U\n\025deAuthenticateReq" +
+      "uest\030# \001(\01324.com.example.marspioneer.pro" +
+      "to.DeAuthenticateRequestH\000\022K\n\020buildMineR" +
+      "equest\030$ \001(\0132/.com.example.marspioneer.p" +
+      "roto.BuildMineRequestH\000\022[\n\030listBuildingT" +
+      "ypesRequest\030% \001(\01327.com.example.marspion" +
+      "eer.proto.ListBuildingTypesRequestH\000B\t\n\007" +
+      "request\"j\n\023UpdatePlayerRequest\022\025\n\rgameSe" +
+      "ssionID\030\001 \001(\t\022<\n\006player\030\002 \001(\0132,.com.exam" +
+      "ple.marspioneer.proto.MPPlayerProto\"\255\001\n\031" +
+      "UpdateBuildingTypeRequest\022H\n\rgameSession" +
+      "ID\030\001 \001(\01321.com.example.marspioneer.proto" +
+      ".MPGameSessionProto\022F\n\014buildingType\030\002 \001(" +
+      "\01320.com.example.marspioneer.proto.Buildi" +
+      "ngTypeProto\"p\n\020BuildFarmRequest\022\026\n\016world" +
+      "SessionID\030\001 \001(\t\022D\n\010position\030\002 \001(\01322.com." +
+      "example.marspioneer.proto.MatrixPosition" +
+      "Proto\"}\n\031DeleteBuildingTypeRequest\022H\n\rga" +
+      "meSessionID\030\001 \001(\01321.com.example.marspion" +
+      "eer.proto.MPGameSessionProto\022\026\n\016building" +
+      "TypeID\030\002 \001(\t\";\n\020GetPlayerRequest\022\025\n\rgame" +
+      "SessionID\030\001 \001(\t\022\020\n\010playerID\030\002 \001(\t\"d\n\021Upd" +
+      "ateTeamRequest\022\025\n\rgameSessionID\030\001 \001(\t\0228\n" +
+      "\004team\030\002 \001(\0132*.com.example.marspioneer.pr" +
+      "oto.MPTeamProto\"*\n\021ListWorldsRequest\022\025\n\r" +
+      "gameSessionID\030\001 \001(\t\"g\n\022UpdateWorldReques" +
+      "t\022\025\n\rgameSessionID\030\001 \001(\t\022:\n\005world\030\002 \001(\0132" +
+      "+.com.example.marspioneer.proto.MPWorldP" +
+      "roto\"7\n\016GetTeamRequest\022\025\n\rgameSessionID\030" +
+      "\001 \001(\t\022\016\n\006teamID\030\002 \001(\t\"?\n\026ListTeamPlayers" +
+      "Request\022\025\n\rgameSessionID\030\001 \001(\t\022\016\n\006teamID" +
+      "\030\002 \001(\t\"s\n\023BuildSandPitRequest\022\026\n\016worldSe" +
+      "ssionID\030\001 \001(\t\022D\n\010position\030\002 \001(\01322.com.ex" +
+      "ample.marspioneer.proto.MatrixPositionPr" +
+      "oto\"g\n\022CreateWorldRequest\022\025\n\rgameSession" +
+      "ID\030\001 \001(\t\022:\n\005world\030\002 \001(\0132+.com.example.ma" +
+      "rspioneer.proto.MPWorldProto\"*\n\020Subscrib" +
+      "eRequest\022\026\n\016worldSessionID\030\001 \001(\t\"o\n\017Buil" +
+      "dHubRequest\022\026\n\016worldSessionID\030\001 \001(\t\022D\n\010p" +
+      "osition\030\002 \001(\01322.com.example.marspioneer." +
+      "proto.MatrixPositionProto\"+\n\022ListPlayers" +
+      "Request\022\025\n\rgameSessionID\030\001 \001(\t\"z\n\026GetBui" +
+      "ldingTypeRequest\022H\n\rgameSessionID\030\001 \001(\0132" +
+      "1.com.example.marspioneer.proto.MPGameSe" +
+      "ssionProto\022\026\n\016buildingTypeID\030\002 \001(\t\")\n\020Li" +
+      "stTeamsRequest\022\025\n\rgameSessionID\030\001 \001(\t\"S\n" +
+      "\023CreatePlayerRequest\022<\n\006player\030\001 \001(\0132,.c" +
+      "om.example.marspioneer.proto.MPPlayerPro" +
+      "to\">\n\023DeletePlayerRequest\022\025\n\rgameSession" +
+      "ID\030\001 \001(\t\022\020\n\010playerID\030\002 \001(\t\"<\n\022DeleteWorl" +
+      "dRequest\022\025\n\rgameSessionID\030\001 \001(\t\022\017\n\007world" +
+      "ID\030\002 \001(\t\"9\n\017GetWorldRequest\022\025\n\rgameSessi" +
+      "onID\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t\"d\n\021CreateTea" +
+      "mRequest\022\025\n\rgameSessionID\030\001 \001(\t\0228\n\004team\030" +
+      "\002 \001(\0132*.com.example.marspioneer.proto.MP" +
+      "TeamProto\",\n\022UnsubscribeRequest\022\026\n\016world" +
+      "SessionID\030\001 \001(\t\"\255\001\n\031CreateBuildingTypeRe" +
+      "quest\022H\n\rgameSessionID\030\001 \001(\01321.com.examp" +
+      "le.marspioneer.proto.MPGameSessionProto\022" +
       "F\n\014buildingType\030\002 \001(\01320.com.example.mars" +
-      "pioneer.proto.BuildingTypeProto\022P\n\006statu" +
-      "s\030\003 \001(\0162@.com.example.marspioneer.proto." +
-      "CreateBuildingTypeResponse.Status\"h\n\006Sta" +
-      "tus\022\020\n\014INVALID_DATA\020\000\022\006\n\002OK\020\001\022\030\n\024NO_SUCH" +
-      "_GAME_SESSION\020\002\022\027\n\023BUILDINGTYPE_EXISTS\020\003" +
-      "\022\021\n\rUNKNOWN_ERROR\020\004\"\326\001\n\023UnsubscribeRespo" +
-      "nse\022\017\n\007message\030\001 \001(\t\022I\n\006status\030\002 \001(\01629.c" +
-      "om.example.marspioneer.proto.Unsubscribe" +
-      "Response.Status\"c\n\006Status\022\020\n\014SERVER_ERRO" +
-      "R\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020\n\014INVALI" +
-      "D_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\006\n\002OK\020\004\"\211\002\n" +
-      "\021GetPlayerResponse\022\017\n\007message\030\001 \001(\t\022<\n\006p" +
-      "layer\030\002 \001(\0132,.com.example.marspioneer.pr" +
-      "oto.MPPlayerProto\022G\n\006status\030\003 \001(\01627.com." +
-      "example.marspioneer.proto.GetPlayerRespo" +
-      "nse.Status\"\\\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020" +
-      "\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\006\n\002" +
-      "OK\020\003\022\022\n\016NO_SUCH_PLAYER\020\004\"\244\002\n\027ListTeamPla" +
-      "yersResponse\022=\n\007players\030\001 \003(\0132,.com.exam" +
-      "ple.marspioneer.proto.MPPlayerProto\022\017\n\007m" +
-      "essage\030\002 \001(\t\022M\n\006status\030\003 \001(\0162=.com.examp" +
-      "le.marspioneer.proto.ListTeamPlayersResp" +
-      "onse.Status\"j\n\006Status\022\020\n\014SERVER_ERROR\020\000\022" +
-      "\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\016\n" +
-      "\nNO_PLAYERS\020\003\022\006\n\002OK\020\004\022\020\n\014NO_SUCH_TEAM\020\005\"" +
-      "\377\001\n\017GetTeamResponse\0228\n\004team\030\001 \001(\0132*.com." +
-      "example.marspioneer.proto.MPTeamProto\022\017\n" +
-      "\007message\030\002 \001(\t\022E\n\006status\030\003 \001(\01625.com.exa" +
-      "mple.marspioneer.proto.GetTeamResponse.S" +
+      "pioneer.proto.BuildingTypeProto\":\n\021Delet" +
+      "eTeamRequest\022\025\n\rgameSessionID\030\001 \001(\t\022\016\n\006t" +
+      "eamID\030\002 \001(\t\"Q\n\026AddPlayerToTeamRequest\022\025\n" +
+      "\rgameSessionID\030\001 \001(\t\022\016\n\006teamID\030\002 \001(\t\022\020\n\010" +
+      "playerID\030\003 \001(\t\":\n\020JoinWorldRequest\022\025\n\rga" +
+      "meSessionID\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t\"p\n\020Bu" +
+      "ildWellRequest\022\026\n\016worldSessionID\030\001 \001(\t\022D" +
+      "\n\010position\030\002 \001(\01322.com.example.marspione" +
+      "er.proto.MatrixPositionProto\"V\n\033RemovePl" +
+      "ayerFromTeamRequest\022\025\n\rgameSessionID\030\001 \001" +
+      "(\t\022\016\n\006teamID\030\002 \001(\t\022\020\n\010playerID\030\003 \001(\t\";\n\023" +
+      "AuthenticateRequest\022\020\n\010password\030\001 \001(\t\022\022\n" +
+      "\nplayerName\030\002 \001(\t\")\n\017GetStateRequest\022\026\n\016" +
+      "worldSessionID\030\001 \001(\t\"A\n\023SellBuildingRequ" +
+      "est\022\026\n\016worldSessionID\030\001 \001(\t\022\022\n\nbuildingI" +
+      "D\030\002 \001(\t\"+\n\021LeaveWorldRequest\022\026\n\016worldSes" +
+      "sionID\030\001 \001(\t\"\264\001\n\022UpdateStateRequest\022H\n\014p" +
+      "artialState\030\001 \001(\01322.com.example.marspion" +
+      "eer.proto.MPPartialStateProto\022\026\n\016worldSe" +
+      "ssionID\030\002 \001(\t\022<\n\006action\030\003 \001(\0132,.com.exam" +
+      "ple.marspioneer.proto.MPActionProto\".\n\025D" +
+      "eAuthenticateRequest\022\025\n\rgameSessionID\030\001 " +
+      "\001(\t\"p\n\020BuildMineRequest\022\026\n\016worldSessionI" +
+      "D\030\001 \001(\t\022D\n\010position\030\002 \001(\01322.com.example." +
+      "marspioneer.proto.MatrixPositionProto\"d\n" +
+      "\030ListBuildingTypesRequest\022H\n\rgameSession" +
+      "ID\030\001 \001(\01321.com.example.marspioneer.proto" +
+      ".MPGameSessionProto\"\377\025\n\010Response\022S\n\024auth" +
+      "enticateResponse\030\001 \001(\01323.com.example.mar" +
+      "spioneer.proto.AuthenticateResponseH\000\022W\n" +
+      "\026deAuthenticateResponse\030\002 \001(\01325.com.exam" +
+      "ple.marspioneer.proto.DeAuthenticateResp" +
+      "onseH\000\022]\n\031listBuildingTypesResponse\030\003 \001(" +
+      "\01328.com.example.marspioneer.proto.ListBu" +
+      "ildingTypesResponseH\000\022Y\n\027addPlayerToTeam" +
+      "Response\030\004 \001(\01326.com.example.marspioneer" +
+      ".proto.AddPlayerToTeamResponseH\000\022Q\n\023crea" +
+      "teWorldResponse\030\005 \001(\01322.com.example.mars" +
+      "pioneer.proto.CreateWorldResponseH\000\022S\n\024s" +
+      "ellBuildingResponse\030\006 \001(\01323.com.example." +
+      "marspioneer.proto.SellBuildingResponseH\000" +
+      "\022_\n\032deleteBuildingTypeResponse\030\007 \001(\01329.c" +
+      "om.example.marspioneer.proto.DeleteBuild" +
+      "ingTypeResponseH\000\022S\n\024updatePlayerRespons" +
+      "e\030\010 \001(\01323.com.example.marspioneer.proto." +
+      "UpdatePlayerResponseH\000\022Q\n\023deleteWorldRes" +
+      "ponse\030\t \001(\01322.com.example.marspioneer.pr" +
+      "oto.DeleteWorldResponseH\000\022_\n\032createBuild" +
+      "ingTypeResponse\030\n \001(\01329.com.example.mars" +
+      "pioneer.proto.CreateBuildingTypeResponse" +
+      "H\000\022Q\n\023unsubscribeResponse\030\013 \001(\01322.com.ex" +
+      "ample.marspioneer.proto.UnsubscribeRespo" +
+      "nseH\000\022M\n\021getPlayerResponse\030\014 \001(\01320.com.e" +
+      "xample.marspioneer.proto.GetPlayerRespon" +
+      "seH\000\022Y\n\027listTeamPlayersResponse\030\r \001(\01326." +
+      "com.example.marspioneer.proto.ListTeamPl" +
+      "ayersResponseH\000\022I\n\017getTeamResponse\030\016 \001(\013" +
+      "2..com.example.marspioneer.proto.GetTeam" +
+      "ResponseH\000\022O\n\022listWorldsResponse\030\017 \001(\01321" +
+      ".com.example.marspioneer.proto.ListWorld" +
+      "sResponseH\000\022Q\n\023updateWorldResponse\030\020 \001(\013" +
+      "22.com.example.marspioneer.proto.UpdateW" +
+      "orldResponseH\000\022O\n\022updateTeamResponse\030\021 \001" +
+      "(\01321.com.example.marspioneer.proto.Updat" +
+      "eTeamResponseH\000\022M\n\021listTeamsResponse\030\022 \001" +
+      "(\01320.com.example.marspioneer.proto.ListT" +
+      "eamsResponseH\000\022M\n\021joinWorldResponse\030\023 \001(" +
+      "\01320.com.example.marspioneer.proto.JoinWo" +
+      "rldResponseH\000\022S\n\024deletePlayerResponse\030\024 " +
+      "\001(\01323.com.example.marspioneer.proto.Dele" +
+      "tePlayerResponseH\000\022c\n\034removePlayerFromTe" +
+      "amResponse\030\025 \001(\0132;.com.example.marspione" +
+      "er.proto.RemovePlayerFromTeamResponseH\000\022" +
+      "E\n\rbuildResponse\030\026 \001(\0132,.com.example.mar" +
+      "spioneer.proto.BuildResponseH\000\022K\n\020getSta" +
+      "teResponse\030\027 \001(\0132/.com.example.marspione" +
+      "er.proto.GetStateResponseH\000\022Q\n\023updateSta" +
+      "teResponse\030\030 \001(\01322.com.example.marspione" +
+      "er.proto.UpdateStateResponseH\000\022M\n\021subscr" +
+      "ibeResponse\030\031 \001(\01320.com.example.marspion" +
+      "eer.proto.SubscribeResponseH\000\022S\n\024createP" +
+      "layerResponse\030\032 \001(\01323.com.example.marspi" +
+      "oneer.proto.CreatePlayerResponseH\000\022K\n\020ge" +
+      "tWorldResponse\030\033 \001(\0132/.com.example.marsp" +
+      "ioneer.proto.GetWorldResponseH\000\022_\n\032updat" +
+      "eBuildingTypeResponse\030\034 \001(\01329.com.exampl" +
+      "e.marspioneer.proto.UpdateBuildingTypeRe" +
+      "sponseH\000\022O\n\022deleteTeamResponse\030\035 \001(\01321.c" +
+      "om.example.marspioneer.proto.DeleteTeamR" +
+      "esponseH\000\022O\n\022leaveWorldResponse\030\036 \001(\01321." +
+      "com.example.marspioneer.proto.LeaveWorld" +
+      "ResponseH\000\022Y\n\027getBuildingTypeResponse\030\037 " +
+      "\001(\01326.com.example.marspioneer.proto.GetB" +
+      "uildingTypeResponseH\000\022Q\n\023listPlayersResp" +
+      "onse\030  \001(\01322.com.example.marspioneer.pro" +
+      "to.ListPlayersResponseH\000\022O\n\022createTeamRe" +
+      "sponse\030! \001(\01321.com.example.marspioneer.p" +
+      "roto.CreateTeamResponseH\000B\n\n\010response\"\255\002" +
+      "\n\024AuthenticateResponse\022\017\n\007message\030\001 \001(\t\022" +
+      "F\n\013gameSession\030\002 \001(\01321.com.example.marsp" +
+      "ioneer.proto.MPGameSessionProto\022J\n\006statu" +
+      "s\030\003 \001(\0162:.com.example.marspioneer.proto." +
+      "AuthenticateResponse.Status\"p\n\006Status\022\020\n" +
+      "\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\023\n\017BAD" +
+      "_CREDENTIALS\020\002\022\006\n\002OK\020\003\022\022\n\016NO_SUCH_PLAYER" +
+      "\020\004\022\021\n\rPLAYER_BANNED\020\005\"\307\001\n\026DeAuthenticate" +
+      "Response\022\017\n\007message\030\001 \001(\t\022L\n\006status\030\002 \001(" +
+      "\0162<.com.example.marspioneer.proto.DeAuth" +
+      "enticateResponse.Status\"N\n\006Status\022\020\n\014SER" +
+      "VER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\006\n\002OK\020\002\022\030\n" +
+      "\024NO_SUCH_GAME_SESSION\020\003\"\233\002\n\031ListBuilding" +
+      "TypesResponse\022G\n\rbuildingTypes\030\001 \003(\01320.c" +
+      "om.example.marspioneer.proto.BuildingTyp" +
+      "eProto\022\017\n\007message\030\002 \001(\t\022O\n\006status\030\003 \001(\0162" +
+      "?.com.example.marspioneer.proto.ListBuil" +
+      "dingTypesResponse.Status\"S\n\006Status\022\006\n\002OK" +
+      "\020\000\022\030\n\024NO_SUCH_GAME_SESSION\020\001\022\024\n\020NO_BUILD" +
+      "INGTYPES\020\002\022\021\n\rUNKNOWN_ERROR\020\003\"\225\002\n\027AddPla" +
+      "yerToTeamResponse\022\017\n\007message\030\001 \001(\t\022M\n\006st" +
+      "atus\030\002 \001(\0162=.com.example.marspioneer.pro" +
+      "to.AddPlayerToTeamResponse.Status\"\231\001\n\006St" +
+      "atus\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001" +
+      "\022\022\n\016NOT_AUTHORIZED\020\002\022\032\n\026PLAYER_ALREADY_I" +
+      "N_TEAM\020\003\022\r\n\tTEAM_FULL\020\004\022\006\n\002OK\020\005\022\022\n\016NO_SU" +
+      "CH_PLAYER\020\006\022\020\n\014NO_SUCH_TEAM\020\007\"\211\002\n\023Create" +
+      "WorldResponse\022:\n\005world\030\001 \001(\0132+.com.examp" +
+      "le.marspioneer.proto.MPWorldProto\022\017\n\007mes" +
+      "sage\030\002 \001(\t\022I\n\006status\030\003 \001(\01629.com.example" +
+      ".marspioneer.proto.CreateWorldResponse.S" +
       "tatus\"Z\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INV" +
-      "ALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\006\n\002OK\020\003\022" +
-      "\020\n\014NO_SUCH_TEAM\020\004\"\205\002\n\022ListWorldsResponse" +
-      "\022;\n\006worlds\030\001 \003(\0132+.com.example.marspione" +
-      "er.proto.MPWorldProto\022\017\n\007message\030\002 \001(\t\022H" +
-      "\n\006status\030\003 \001(\01628.com.example.marspioneer" +
-      ".proto.ListWorldsResponse.Status\"W\n\006Stat" +
-      "us\022\020\n\014SERVER_ERROR\020\000\022\r\n\tNO_WORLDS\020\001\022\020\n\014I" +
-      "NVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\006\n\002OK\020" +
-      "\004\"\347\001\n\023UpdateWorldResponse\022\017\n\007message\030\001 \001" +
-      "(\t\022I\n\006status\030\002 \001(\01629.com.example.marspio" +
-      "neer.proto.UpdateWorldResponse.Status\"t\n" +
-      "\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DAT" +
-      "A\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\021\n\rNO_SUCH_WORLD" +
-      "\020\003\022\027\n\023CANNOT_UPDATE_WORLD\020\004\022\006\n\002OK\020\005\"\343\001\n\022" +
-      "UpdateTeamResponse\022\017\n\007message\030\001 \001(\t\022H\n\006s" +
-      "tatus\030\002 \001(\01628.com.example.marspioneer.pr" +
-      "oto.UpdateTeamResponse.Status\"r\n\006Status\022" +
-      "\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016N" +
-      "OT_AUTHORIZED\020\002\022\026\n\022CANNOT_UPDATE_TEAM\020\003\022" +
-      "\006\n\002OK\020\004\022\020\n\014NO_SUCH_TEAM\020\005\"\200\002\n\021ListTeamsR" +
-      "esponse\0229\n\005teams\030\001 \003(\0132*.com.example.mar" +
-      "spioneer.proto.MPTeamProto\022\017\n\007message\030\002 " +
-      "\001(\t\022G\n\006status\030\003 \001(\01627.com.example.marspi" +
-      "oneer.proto.ListTeamsResponse.Status\"V\n\006" +
-      "Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA" +
-      "\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\006\n\002OK\020\003\022\014\n\010NO_TEA" +
-      "MS\020\004\"\330\003\n\021JoinWorldResponse\022H\n\014partialSta" +
-      "te\030\001 \001(\01322.com.example.marspioneer.proto" +
-      ".MPPartialStateProto\022:\n\005world\030\002 \001(\0132+.co" +
-      "m.example.marspioneer.proto.MPWorldProto" +
-      "\022H\n\014worldSession\030\003 \001(\01322.com.example.mar" +
-      "spioneer.proto.MPWorldSessionProto\022\017\n\007me" +
-      "ssage\030\004 \001(\t\022G\n\006status\030\005 \001(\01627.com.exampl" +
-      "e.marspioneer.proto.JoinWorldResponse.St" +
-      "atus\"\230\001\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INV" +
+      "ALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\020\n\014WORLD" +
+      "_EXISTS\020\003\022\006\n\002OK\020\004\"\226\001\n\024SellBuildingRespon" +
+      "se\022\017\n\007message\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.co" +
+      "m.example.marspioneer.proto.SellBuilding" +
+      "Response.Status\"!\n\006Status\022\017\n\013CANNOT_SELL" +
+      "\020\000\022\006\n\002OK\020\001\"\222\002\n\032DeleteBuildingTypeRespons" +
+      "e\022\017\n\007message\030\001 \001(\t\022P\n\006status\030\002 \001(\0162@.com" +
+      ".example.marspioneer.proto.DeleteBuildin" +
+      "gTypeResponse.Status\"\220\001\n\006Status\022\036\n\032CANNO" +
+      "T_DELETE_BUILDINGTYPE\020\000\022\006\n\002OK\020\001\022\030\n\024NO_SU" +
+      "CH_GAME_SESSION\020\002\022\030\n\024NO_SUCH_BUILDINGTYP" +
+      "E\020\003\022\027\n\023BUILDINGTYPE_EXISTS\020\004\022\021\n\rUNKNOWN_" +
+      "ERROR\020\005\"\353\001\n\024UpdatePlayerResponse\022\017\n\007mess" +
+      "age\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.com.example." +
+      "marspioneer.proto.UpdatePlayerResponse.S" +
+      "tatus\"v\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INV" +
+      "ALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\030\n\024CANNO" +
+      "T_UPDATE_PLAYER\020\003\022\006\n\002OK\020\004\022\022\n\016NO_SUCH_PLA" +
+      "YER\020\005\"\347\001\n\023DeleteWorldResponse\022\017\n\007message" +
+      "\030\001 \001(\t\022I\n\006status\030\002 \001(\01629.com.example.mar" +
+      "spioneer.proto.DeleteWorldResponse.Statu" +
+      "s\"t\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID" +
+      "_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\021\n\rNO_SUCH_W" +
+      "ORLD\020\003\022\027\n\023CANNOT_DELETE_WORLD\020\004\022\006\n\002OK\020\005\"" +
+      "\261\002\n\032CreateBuildingTypeResponse\022\017\n\007messag" +
+      "e\030\001 \001(\t\022F\n\014buildingType\030\002 \001(\01320.com.exam" +
+      "ple.marspioneer.proto.BuildingTypeProto\022" +
+      "P\n\006status\030\003 \001(\0162@.com.example.marspionee" +
+      "r.proto.CreateBuildingTypeResponse.Statu" +
+      "s\"h\n\006Status\022\020\n\014INVALID_DATA\020\000\022\006\n\002OK\020\001\022\030\n" +
+      "\024NO_SUCH_GAME_SESSION\020\002\022\027\n\023BUILDINGTYPE_" +
+      "EXISTS\020\003\022\021\n\rUNKNOWN_ERROR\020\004\"\326\001\n\023Unsubscr" +
+      "ibeResponse\022\017\n\007message\030\001 \001(\t\022I\n\006status\030\002" +
+      " \001(\01629.com.example.marspioneer.proto.Uns",
+      "ubscribeResponse.Status\"c\n\006Status\022\020\n\014SER" +
+      "VER_ERROR\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020" +
+      "\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\006\n\002" +
+      "OK\020\004\"\211\002\n\021GetPlayerResponse\022\017\n\007message\030\001 " +
+      "\001(\t\022<\n\006player\030\002 \001(\0132,.com.example.marspi" +
+      "oneer.proto.MPPlayerProto\022G\n\006status\030\003 \001(" +
+      "\01627.com.example.marspioneer.proto.GetPla" +
+      "yerResponse.Status\"\\\n\006Status\022\020\n\014SERVER_E" +
+      "RROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZ" +
+      "ED\020\002\022\006\n\002OK\020\003\022\022\n\016NO_SUCH_PLAYER\020\004\"\244\002\n\027Lis" +
+      "tTeamPlayersResponse\022=\n\007players\030\001 \003(\0132,." +
+      "com.example.marspioneer.proto.MPPlayerPr" +
+      "oto\022\017\n\007message\030\002 \001(\t\022M\n\006status\030\003 \001(\0162=.c" +
+      "om.example.marspioneer.proto.ListTeamPla" +
+      "yersResponse.Status\"j\n\006Status\022\020\n\014SERVER_" +
+      "ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORI" +
+      "ZED\020\002\022\016\n\nNO_PLAYERS\020\003\022\006\n\002OK\020\004\022\020\n\014NO_SUCH" +
+      "_TEAM\020\005\"\377\001\n\017GetTeamResponse\0228\n\004team\030\001 \001(" +
+      "\0132*.com.example.marspioneer.proto.MPTeam" +
+      "Proto\022\017\n\007message\030\002 \001(\t\022E\n\006status\030\003 \001(\01625" +
+      ".com.example.marspioneer.proto.GetTeamRe" +
+      "sponse.Status\"Z\n\006Status\022\020\n\014SERVER_ERROR\020" +
+      "\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022" +
+      "\006\n\002OK\020\003\022\020\n\014NO_SUCH_TEAM\020\004\"\205\002\n\022ListWorlds" +
+      "Response\022;\n\006worlds\030\001 \003(\0132+.com.example.m" +
+      "arspioneer.proto.MPWorldProto\022\017\n\007message" +
+      "\030\002 \001(\t\022H\n\006status\030\003 \001(\01628.com.example.mar" +
+      "spioneer.proto.ListWorldsResponse.Status" +
+      "\"W\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\r\n\tNO_WORLD" +
+      "S\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020" +
+      "\003\022\006\n\002OK\020\004\"\347\001\n\023UpdateWorldResponse\022\017\n\007mes" +
+      "sage\030\001 \001(\t\022I\n\006status\030\002 \001(\01629.com.example" +
+      ".marspioneer.proto.UpdateWorldResponse.S" +
+      "tatus\"t\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INV" +
       "ALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\021\n\rNO_SU" +
-      "CH_WORLD\020\003\022\030\n\024CANNOT_COMPOSE_STATE\020\004\022\006\n\002" +
-      "OK\020\005\022\016\n\nWORLD_FULL\020\006\022\021\n\rPLAYER_BANNED\020\007\"" +
-      "\353\001\n\024DeletePlayerResponse\022\017\n\007message\030\001 \001(" +
-      "\t\022J\n\006status\030\002 \001(\0162:.com.example.marspion" +
-      "eer.proto.DeletePlayerResponse.Status\"v\n" +
-      "\006Status\022\030\n\024CANNOT_DELETE_PLAYER\020\000\022\020\n\014SER" +
-      "VER_ERROR\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUT" +
-      "HORIZED\020\003\022\006\n\002OK\020\004\022\022\n\016NO_SUCH_PLAYER\020\005\"\214\002" +
-      "\n\034RemovePlayerFromTeamResponse\022\017\n\007messag" +
-      "e\030\001 \001(\t\022R\n\006status\030\002 \001(\0162B.com.example.ma" +
-      "rspioneer.proto.RemovePlayerFromTeamResp" +
-      "onse.Status\"\206\001\n\006Status\022\020\n\014SERVER_ERROR\020\000" +
-      "\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\006" +
-      "\n\002OK\020\003\022\022\n\016NO_SUCH_PLAYER\020\004\022\026\n\022PLAYER_NOT" +
-      "_IN_TEAM\020\005\022\020\n\014NO_SUCH_TEAM\020\006\"\322\001\n\rBuildRe" +
-      "sponse\022\017\n\007message\030\001 \001(\t\022C\n\006status\030\002 \001(\0162" +
-      "3.com.example.marspioneer.proto.BuildRes" +
-      "ponse.Status\"k\n\006Status\022\031\n\025INVALID_WORLD_" +
-      "SESSION\020\000\022\024\n\020INVALID_LOCATION\020\001\022\026\n\022INSUF" +
-      "FICIENT_FUNDS\020\002\022\020\n\014CANNOT_BUILD\020\003\022\006\n\002OK\020" +
-      "\004\"\372\002\n\020GetStateResponse\022H\n\014partialState\030\001" +
-      " \001(\01322.com.example.marspioneer.proto.MPP" +
-      "artialStateProto\022D\n\013resourceSet\030\002 \001(\0132/." +
-      "com.example.marspioneer.proto.ResourceSe" +
-      "tProto\022\017\n\007message\030\003 \001(\t\022F\n\006status\030\004 \001(\0162" +
-      "6.com.example.marspioneer.proto.GetState" +
-      "Response.Status\"}\n\006Status\022\020\n\014SERVER_ERRO" +
-      "R\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020\n\014INVALI" +
-      "D_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\030\n\024CANNOT_C" +
-      "OMPOSE_STATE\020\004\022\006\n\002OK\020\005\"\376\002\n\023UpdateStateRe" +
-      "sponse\022D\n\013resourceSet\030\001 \001(\0132/.com.exampl" +
-      "e.marspioneer.proto.ResourceSetProto\022\017\n\007" +
-      "message\030\002 \001(\t\022F\n\013stateUpdate\030\003 \001(\01321.com" +
-      ".example.marspioneer.proto.MPStateUpdate" +
-      "Proto\022I\n\006status\030\004 \001(\01629.com.example.mars" +
-      "pioneer.proto.UpdateStateResponse.Status" +
-      "\"}\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\031\n\025NO_SUCH_" +
-      "WORLD_SESSION\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT" +
-      "_AUTHORIZED\020\003\022\030\n\024CANNOT_COMPOSE_STATE\020\004\022" +
-      "\006\n\002OK\020\005\"\266\002\n\021SubscribeResponse\022H\n\014partial" +
-      "State\030\001 \001(\01322.com.example.marspioneer.pr" +
-      "oto.MPPartialStateProto\022\017\n\007message\030\002 \001(\t" +
-      "\022G\n\006status\030\003 \001(\01627.com.example.marspione" +
-      "er.proto.SubscribeResponse.Status\"}\n\006Sta" +
-      "tus\022\020\n\014SERVER_ERROR\020\000\022\031\n\025NO_SUCH_WORLD_S" +
-      "ESSION\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUTHOR" +
-      "IZED\020\003\022\030\n\024CANNOT_COMPOSE_STATE\020\004\022\006\n\002OK\020\005" +
-      "\"\372\001\n\024CreatePlayerResponse\022\017\n\007message\030\001 \001" +
-      "(\t\022<\n\006player\030\002 \001(\0132,.com.example.marspio" +
-      "neer.proto.MPPlayerProto\022J\n\006status\030\003 \001(\016" +
-      "2:.com.example.marspioneer.proto.CreateP" +
-      "layerResponse.Status\"G\n\006Status\022\020\n\014SERVER" +
-      "_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\006\n\002OK\020\002\022\021\n\rPL" +
-      "AYER_EXISTS\020\003\"\204\002\n\020GetWorldResponse\022:\n\005wo" +
-      "rld\030\001 \001(\0132+.com.example.marspioneer.prot" +
-      "o.MPWorldProto\022\017\n\007message\030\002 \001(\t\022F\n\006statu" +
-      "s\030\003 \001(\01626.com.example.marspioneer.proto." +
-      "GetWorldResponse.Status\"[\n\006Status\022\020\n\014SER" +
-      "VER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUT" +
-      "HORIZED\020\002\022\021\n\rNO_SUCH_WORLD\020\003\022\006\n\002OK\020\004\"\370\001\n" +
-      "\032UpdateBuildingTypeResponse\022\017\n\007message\030\001" +
-      " \001(\t\022P\n\006status\030\002 \001(\0162@.com.example.marsp" +
-      "ioneer.proto.UpdateBuildingTypeResponse." +
-      "Status\"w\n\006Status\022\006\n\002OK\020\000\022\030\n\024NO_SUCH_GAME" +
-      "_SESSION\020\001\022\030\n\024NO_SUCH_BUILDINGTYPE\020\002\022\036\n\032" +
-      "CANNOT_UPDATE_BUILDINGTYPE\020\003\022\021\n\rUNKNOWN_" +
-      "ERROR\020\004\"\343\001\n\022DeleteTeamResponse\022\017\n\007messag" +
-      "e\030\001 \001(\t\022H\n\006status\030\002 \001(\01628.com.example.ma" +
-      "rspioneer.proto.DeleteTeamResponse.Statu" +
-      "s\"r\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\026\n\022CANNOT_" +
-      "DELETE_TEAM\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_A" +
-      "UTHORIZED\020\003\022\006\n\002OK\020\004\022\020\n\014NO_SUCH_TEAM\020\005\"\271\001" +
-      "\n\022LeaveWorldResponse\022\017\n\007message\030\001 \001(\t\022H\n" +
-      "\006status\030\002 \001(\01628.com.example.marspioneer." +
-      "proto.LeaveWorldResponse.Status\"H\n\006Statu" +
-      "s\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n" +
-      "\016NOT_AUTHORIZED\020\002\022\006\n\002OK\020\003\"\232\002\n\027GetBuildin" +
-      "gTypeResponse\022\017\n\007message\030\001 \001(\t\022F\n\014buildi" +
-      "ngType\030\002 \001(\01320.com.example.marspioneer.p" +
-      "roto.BuildingTypeProto\022M\n\006status\030\003 \001(\0162=" +
-      ".com.example.marspioneer.proto.GetBuildi" +
-      "ngTypeResponse.Status\"W\n\006Status\022\006\n\002OK\020\000\022" +
-      "\030\n\024NO_SUCH_GAME_SESSION\020\001\022\030\n\024NO_SUCH_BUI" +
-      "LDINGTYPE\020\002\022\021\n\rUNKNOWN_ERROR\020\003\"\212\002\n\023ListP" +
-      "layersResponse\022=\n\007players\030\001 \003(\0132,.com.ex" +
-      "ample.marspioneer.proto.MPPlayerProto\022\017\n" +
-      "\007message\030\002 \001(\t\022I\n\006status\030\003 \001(\01629.com.exa" +
-      "mple.marspioneer.proto.ListPlayersRespon" +
-      "se.Status\"X\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n" +
-      "\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\016\n\nN" +
-      "O_PLAYERS\020\003\022\006\n\002OK\020\004\"\204\002\n\022CreateTeamRespon" +
-      "se\0228\n\004team\030\001 \001(\0132*.com.example.marspione" +
-      "er.proto.MPTeamProto\022\017\n\007message\030\002 \001(\t\022H\n" +
-      "\006status\030\003 \001(\01628.com.example.marspioneer." +
-      "proto.CreateTeamResponse.Status\"Y\n\006Statu" +
-      "s\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n" +
-      "\016NOT_AUTHORIZED\020\002\022\017\n\013TEAM_EXISTS\020\003\022\006\n\002OK" +
-      "\020\004*p\n\021FarmResearchLevel\022\035\n\031LEVEL_1_FarmR" +
-      "esearchLevel\020\000\022\035\n\031LEVEL_2_FarmResearchLe" +
-      "vel\020\001\022\035\n\031LEVEL_3_FarmResearchLevel\020\002*j\n\010" +
-      "CellType\022\021\n\rSAND_CellType\020\000\022\021\n\rROCK_Cell" +
-      "Type\020\001\022\021\n\rLAVA_CellType\020\002\022\020\n\014ICE_CellTyp" +
-      "e\020\003\022\023\n\017GRAVEL_CellType\020\004*G\n\tTeamColor\022\021\n" +
-      "\rRED_TeamColor\020\000\022\022\n\016BLUE_TeamColor\020\001\022\023\n\017" +
-      "GREEN_TeamColor\020\002*p\n\021WellResearchLevel\022\035" +
-      "\n\031LEVEL_1_WellResearchLevel\020\000\022\035\n\031LEVEL_2" +
-      "_WellResearchLevel\020\001\022\035\n\031LEVEL_3_WellRese" +
-      "archLevel\020\002*p\n\021MineResearchLevel\022\035\n\031LEVE" +
-      "L_1_MineResearchLevel\020\000\022\035\n\031LEVEL_2_MineR" +
-      "esearchLevel\020\001\022\035\n\031LEVEL_3_MineResearchLe" +
-      "vel\020\002*\212\001\n\rEBuildingType\022\025\n\021HUB_EBuilding" +
-      "Type\020\000\022\026\n\022FARM_EBuildingType\020\001\022\026\n\022WELL_E" +
-      "BuildingType\020\002\022\026\n\022MINE_EBuildingType\020\003\022\032" +
-      "\n\026SAND_PIT_EBuildingType\020\004*|\n\024SandPitRes" +
-      "earchLevel\022 \n\034LEVEL_1_SandPitResearchLev" +
-      "el\020\000\022 \n\034LEVEL_2_SandPitResearchLevel\020\001\022 " +
-      "\n\034LEVEL_3_SandPitResearchLevel\020\002*6\n\nDire" +
-      "ction4\022\t\n\005NORTH\020\000\022\010\n\004EAST\020\001\022\t\n\005SOUTH\020\002\022\010" +
-      "\n\004WEST\020\003*d\n\nDirection6\022\n\n\006NORTH6\020\000\022\016\n\nNO" +
-      "RTH_EAST\020\001\022\016\n\nSOUTH_EAST\020\002\022\n\n\006SOUTH6\020\003\022\016" +
-      "\n\nSOUTH_WEST\020\004\022\016\n\nNORTH_WEST\020\005*0\n\010Rotati" +
-      "on\022\r\n\tCLOCKWISE\020\000\022\025\n\021COUNTER_CLOCKWISE\020\001" +
-      "*C\n\tMovement4\022\013\n\007FORWARD\020\000\022\014\n\010BACKWARD\020\001" +
-      "\022\014\n\010LEFTWARD\020\002\022\r\n\tRIGHTWARD\020\003*t\n\tMovemen" +
-      "t6\022\014\n\010FORWARD6\020\000\022\021\n\rFORWARD_RIGHT\020\001\022\022\n\016B" +
-      "ACKWARD_RIGHT\020\002\022\r\n\tBACKWARD6\020\003\022\021\n\rBACKWA" +
-      "RD_LEFT\020\004\022\020\n\014FORWARD_LEFT\020\005*7\n\tWorldType" +
-      "\022\013\n\007UNIFORM\020\000\022\017\n\013TILE_SQUARE\020\001\022\014\n\010TILE_H" +
-      "EX\020\002B3\n\035com.example.marspioneer.protoB\020M" +
-      "arsPioneerProtoP\001b\006proto3"
+      "CH_WORLD\020\003\022\027\n\023CANNOT_UPDATE_WORLD\020\004\022\006\n\002O" +
+      "K\020\005\"\343\001\n\022UpdateTeamResponse\022\017\n\007message\030\001 " +
+      "\001(\t\022H\n\006status\030\002 \001(\01628.com.example.marspi" +
+      "oneer.proto.UpdateTeamResponse.Status\"r\n" +
+      "\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DAT" +
+      "A\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\026\n\022CANNOT_UPDATE" +
+      "_TEAM\020\003\022\006\n\002OK\020\004\022\020\n\014NO_SUCH_TEAM\020\005\"\200\002\n\021Li" +
+      "stTeamsResponse\0229\n\005teams\030\001 \003(\0132*.com.exa" +
+      "mple.marspioneer.proto.MPTeamProto\022\017\n\007me" +
+      "ssage\030\002 \001(\t\022G\n\006status\030\003 \001(\01627.com.exampl" +
+      "e.marspioneer.proto.ListTeamsResponse.St" +
+      "atus\"V\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVA" +
+      "LID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\006\n\002OK\020\003\022\014" +
+      "\n\010NO_TEAMS\020\004\"\330\003\n\021JoinWorldResponse\022H\n\014pa" +
+      "rtialState\030\001 \001(\01322.com.example.marspione" +
+      "er.proto.MPPartialStateProto\022:\n\005world\030\002 " +
+      "\001(\0132+.com.example.marspioneer.proto.MPWo" +
+      "rldProto\022H\n\014worldSession\030\003 \001(\01322.com.exa" +
+      "mple.marspioneer.proto.MPWorldSessionPro" +
+      "to\022\017\n\007message\030\004 \001(\t\022G\n\006status\030\005 \001(\01627.co" +
+      "m.example.marspioneer.proto.JoinWorldRes" +
+      "ponse.Status\"\230\001\n\006Status\022\020\n\014SERVER_ERROR\020" +
+      "\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022" +
+      "\021\n\rNO_SUCH_WORLD\020\003\022\030\n\024CANNOT_COMPOSE_STA" +
+      "TE\020\004\022\006\n\002OK\020\005\022\016\n\nWORLD_FULL\020\006\022\021\n\rPLAYER_B" +
+      "ANNED\020\007\"\353\001\n\024DeletePlayerResponse\022\017\n\007mess" +
+      "age\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.com.example." +
+      "marspioneer.proto.DeletePlayerResponse.S" +
+      "tatus\"v\n\006Status\022\030\n\024CANNOT_DELETE_PLAYER\020" +
+      "\000\022\020\n\014SERVER_ERROR\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n" +
+      "\016NOT_AUTHORIZED\020\003\022\006\n\002OK\020\004\022\022\n\016NO_SUCH_PLA" +
+      "YER\020\005\"\214\002\n\034RemovePlayerFromTeamResponse\022\017" +
+      "\n\007message\030\001 \001(\t\022R\n\006status\030\002 \001(\0162B.com.ex" +
+      "ample.marspioneer.proto.RemovePlayerFrom" +
+      "TeamResponse.Status\"\206\001\n\006Status\022\020\n\014SERVER" +
+      "_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHOR" +
+      "IZED\020\002\022\006\n\002OK\020\003\022\022\n\016NO_SUCH_PLAYER\020\004\022\026\n\022PL" +
+      "AYER_NOT_IN_TEAM\020\005\022\020\n\014NO_SUCH_TEAM\020\006\"\322\001\n" +
+      "\rBuildResponse\022\017\n\007message\030\001 \001(\t\022C\n\006statu" +
+      "s\030\002 \001(\01623.com.example.marspioneer.proto." +
+      "BuildResponse.Status\"k\n\006Status\022\031\n\025INVALI" +
+      "D_WORLD_SESSION\020\000\022\024\n\020INVALID_LOCATION\020\001\022" +
+      "\026\n\022INSUFFICIENT_FUNDS\020\002\022\020\n\014CANNOT_BUILD\020" +
+      "\003\022\006\n\002OK\020\004\"\372\002\n\020GetStateResponse\022H\n\014partia" +
+      "lState\030\001 \001(\01322.com.example.marspioneer.p" +
+      "roto.MPPartialStateProto\022D\n\013resourceSet\030" +
+      "\002 \001(\0132/.com.example.marspioneer.proto.Re" +
+      "sourceSetProto\022\017\n\007message\030\003 \001(\t\022F\n\006statu" +
+      "s\030\004 \001(\01626.com.example.marspioneer.proto." +
+      "GetStateResponse.Status\"}\n\006Status\022\020\n\014SER" +
+      "VER_ERROR\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020" +
+      "\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\030\n\024" +
+      "CANNOT_COMPOSE_STATE\020\004\022\006\n\002OK\020\005\"\270\002\n\023Updat" +
+      "eStateResponse\022\017\n\007message\030\001 \001(\t\022F\n\013state" +
+      "Update\030\002 \001(\01321.com.example.marspioneer.p" +
+      "roto.MPStateUpdateProto\022I\n\006status\030\003 \001(\0162" +
+      "9.com.example.marspioneer.proto.UpdateSt" +
+      "ateResponse.Status\"}\n\006Status\022\020\n\014SERVER_E" +
+      "RROR\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020\n\014INV" +
+      "ALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\030\n\024CANNO" +
+      "T_COMPOSE_STATE\020\004\022\006\n\002OK\020\005\"\266\002\n\021SubscribeR" +
+      "esponse\022H\n\014partialState\030\001 \001(\01322.com.exam" +
+      "ple.marspioneer.proto.MPPartialStateProt" +
+      "o\022\017\n\007message\030\002 \001(\t\022G\n\006status\030\003 \001(\01627.com" +
+      ".example.marspioneer.proto.SubscribeResp" +
+      "onse.Status\"}\n\006Status\022\020\n\014SERVER_ERROR\020\000\022" +
+      "\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020\n\014INVALID_DA" +
+      "TA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\030\n\024CANNOT_COMPO" +
+      "SE_STATE\020\004\022\006\n\002OK\020\005\"\372\001\n\024CreatePlayerRespo" +
+      "nse\022\017\n\007message\030\001 \001(\t\022<\n\006player\030\002 \001(\0132,.c" +
+      "om.example.marspioneer.proto.MPPlayerPro" +
+      "to\022J\n\006status\030\003 \001(\0162:.com.example.marspio" +
+      "neer.proto.CreatePlayerResponse.Status\"G" +
+      "\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID_DA" +
+      "TA\020\001\022\006\n\002OK\020\002\022\021\n\rPLAYER_EXISTS\020\003\"\204\002\n\020GetW" +
+      "orldResponse\022:\n\005world\030\001 \001(\0132+.com.exampl" +
+      "e.marspioneer.proto.MPWorldProto\022\017\n\007mess" +
+      "age\030\002 \001(\t\022F\n\006status\030\003 \001(\01626.com.example." +
+      "marspioneer.proto.GetWorldResponse.Statu" +
+      "s\"[\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n\014INVALID" +
+      "_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\021\n\rNO_SUCH_W" +
+      "ORLD\020\003\022\006\n\002OK\020\004\"\370\001\n\032UpdateBuildingTypeRes" +
+      "ponse\022\017\n\007message\030\001 \001(\t\022P\n\006status\030\002 \001(\0162@" +
+      ".com.example.marspioneer.proto.UpdateBui" +
+      "ldingTypeResponse.Status\"w\n\006Status\022\006\n\002OK" +
+      "\020\000\022\030\n\024NO_SUCH_GAME_SESSION\020\001\022\030\n\024NO_SUCH_" +
+      "BUILDINGTYPE\020\002\022\036\n\032CANNOT_UPDATE_BUILDING" +
+      "TYPE\020\003\022\021\n\rUNKNOWN_ERROR\020\004\"\343\001\n\022DeleteTeam" +
+      "Response\022\017\n\007message\030\001 \001(\t\022H\n\006status\030\002 \001(" +
+      "\01628.com.example.marspioneer.proto.Delete" +
+      "TeamResponse.Status\"r\n\006Status\022\020\n\014SERVER_" +
+      "ERROR\020\000\022\026\n\022CANNOT_DELETE_TEAM\020\001\022\020\n\014INVAL" +
+      "ID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\006\n\002OK\020\004\022\020\n" +
+      "\014NO_SUCH_TEAM\020\005\"\271\001\n\022LeaveWorldResponse\022\017" +
+      "\n\007message\030\001 \001(\t\022H\n\006status\030\002 \001(\01628.com.ex" +
+      "ample.marspioneer.proto.LeaveWorldRespon" +
+      "se.Status\"H\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n" +
+      "\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\006\n\002O" +
+      "K\020\003\"\232\002\n\027GetBuildingTypeResponse\022\017\n\007messa" +
+      "ge\030\001 \001(\t\022F\n\014buildingType\030\002 \001(\01320.com.exa" +
+      "mple.marspioneer.proto.BuildingTypeProto" +
+      "\022M\n\006status\030\003 \001(\0162=.com.example.marspione" +
+      "er.proto.GetBuildingTypeResponse.Status\"" +
+      "W\n\006Status\022\006\n\002OK\020\000\022\030\n\024NO_SUCH_GAME_SESSIO" +
+      "N\020\001\022\030\n\024NO_SUCH_BUILDINGTYPE\020\002\022\021\n\rUNKNOWN" +
+      "_ERROR\020\003\"\212\002\n\023ListPlayersResponse\022=\n\007play" +
+      "ers\030\001 \003(\0132,.com.example.marspioneer.prot" +
+      "o.MPPlayerProto\022\017\n\007message\030\002 \001(\t\022I\n\006stat" +
+      "us\030\003 \001(\01629.com.example.marspioneer.proto" +
+      ".ListPlayersResponse.Status\"X\n\006Status\022\020\n" +
+      "\014SERVER_ERROR\020\000\022\020\n\014INVALID_DATA\020\001\022\022\n\016NOT" +
+      "_AUTHORIZED\020\002\022\016\n\nNO_PLAYERS\020\003\022\006\n\002OK\020\004\"\204\002" +
+      "\n\022CreateTeamResponse\0228\n\004team\030\001 \001(\0132*.com" +
+      ".example.marspioneer.proto.MPTeamProto\022\017" +
+      "\n\007message\030\002 \001(\t\022H\n\006status\030\003 \001(\01628.com.ex" +
+      "ample.marspioneer.proto.CreateTeamRespon" +
+      "se.Status\"Y\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\020\n" +
+      "\014INVALID_DATA\020\001\022\022\n\016NOT_AUTHORIZED\020\002\022\017\n\013T" +
+      "EAM_EXISTS\020\003\022\006\n\002OK\020\004*p\n\021FarmResearchLeve" +
+      "l\022\035\n\031LEVEL_1_FarmResearchLevel\020\000\022\035\n\031LEVE" +
+      "L_2_FarmResearchLevel\020\001\022\035\n\031LEVEL_3_FarmR" +
+      "esearchLevel\020\002*j\n\010CellType\022\021\n\rSAND_CellT" +
+      "ype\020\000\022\021\n\rROCK_CellType\020\001\022\021\n\rLAVA_CellTyp" +
+      "e\020\002\022\020\n\014ICE_CellType\020\003\022\023\n\017GRAVEL_CellType" +
+      "\020\004*G\n\tTeamColor\022\021\n\rRED_TeamColor\020\000\022\022\n\016BL" +
+      "UE_TeamColor\020\001\022\023\n\017GREEN_TeamColor\020\002*p\n\021W" +
+      "ellResearchLevel\022\035\n\031LEVEL_1_WellResearch" +
+      "Level\020\000\022\035\n\031LEVEL_2_WellResearchLevel\020\001\022\035" +
+      "\n\031LEVEL_3_WellResearchLevel\020\002*p\n\021MineRes" +
+      "earchLevel\022\035\n\031LEVEL_1_MineResearchLevel\020" +
+      "\000\022\035\n\031LEVEL_2_MineResearchLevel\020\001\022\035\n\031LEVE" +
+      "L_3_MineResearchLevel\020\002*\212\001\n\rEBuildingTyp" +
+      "e\022\025\n\021HUB_EBuildingType\020\000\022\026\n\022FARM_EBuildi" +
+      "ngType\020\001\022\026\n\022WELL_EBuildingType\020\002\022\026\n\022MINE" +
+      "_EBuildingType\020\003\022\032\n\026SAND_PIT_EBuildingTy" +
+      "pe\020\004*|\n\024SandPitResearchLevel\022 \n\034LEVEL_1_" +
+      "SandPitResearchLevel\020\000\022 \n\034LEVEL_2_SandPi" +
+      "tResearchLevel\020\001\022 \n\034LEVEL_3_SandPitResea" +
+      "rchLevel\020\002*6\n\nDirection4\022\t\n\005NORTH\020\000\022\010\n\004E" +
+      "AST\020\001\022\t\n\005SOUTH\020\002\022\010\n\004WEST\020\003*d\n\nDirection6" +
+      "\022\n\n\006NORTH6\020\000\022\016\n\nNORTH_EAST\020\001\022\016\n\nSOUTH_EA" +
+      "ST\020\002\022\n\n\006SOUTH6\020\003\022\016\n\nSOUTH_WEST\020\004\022\016\n\nNORT" +
+      "H_WEST\020\005*0\n\010Rotation\022\r\n\tCLOCKWISE\020\000\022\025\n\021C" +
+      "OUNTER_CLOCKWISE\020\001*C\n\tMovement4\022\013\n\007FORWA" +
+      "RD\020\000\022\014\n\010BACKWARD\020\001\022\014\n\010LEFTWARD\020\002\022\r\n\tRIGH" +
+      "TWARD\020\003*t\n\tMovement6\022\014\n\010FORWARD6\020\000\022\021\n\rFO" +
+      "RWARD_RIGHT\020\001\022\022\n\016BACKWARD_RIGHT\020\002\022\r\n\tBAC" +
+      "KWARD6\020\003\022\021\n\rBACKWARD_LEFT\020\004\022\020\n\014FORWARD_L" +
+      "EFT\020\005*7\n\tWorldType\022\013\n\007UNIFORM\020\000\022\017\n\013TILE_" +
+      "SQUARE\020\001\022\014\n\010TILE_HEX\020\002B3\n\035com.example.ma" +
+      "rspioneer.protoB\020MarsPioneerProtoP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1257,31 +1218,7 @@ public final class MarsPioneerProto {
     internal_static_com_example_marspioneer_proto_MPStateUpdateProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_marspioneer_proto_MPStateUpdateProto_descriptor,
-        new String[] { "WorldSessionID", "UpdatedTerrainCells", "RemovedEntities", "RemovedTerrainCells", "NewTerrainCells", "NewEntities", "UpdatedEntities", "Timestamp", });
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedTerrainCellsEntry_descriptor =
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_descriptor.getNestedTypes().get(0);
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedTerrainCellsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedTerrainCellsEntry_descriptor,
-        new String[] { "Key", "Value", });
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewTerrainCellsEntry_descriptor =
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_descriptor.getNestedTypes().get(1);
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewTerrainCellsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewTerrainCellsEntry_descriptor,
-        new String[] { "Key", "Value", });
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewEntitiesEntry_descriptor =
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_descriptor.getNestedTypes().get(2);
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewEntitiesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_marspioneer_proto_MPStateUpdateProto_NewEntitiesEntry_descriptor,
-        new String[] { "Key", "Value", });
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedEntitiesEntry_descriptor =
-      internal_static_com_example_marspioneer_proto_MPStateUpdateProto_descriptor.getNestedTypes().get(3);
-    internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedEntitiesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_marspioneer_proto_MPStateUpdateProto_UpdatedEntitiesEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new String[] { "PartialState", "WorldSessionID", "RemovedEntities", "RemovedTerrain", "Timestamp", });
     internal_static_com_example_marspioneer_proto_MPTerrainChunkProto_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_com_example_marspioneer_proto_MPTerrainChunkProto_fieldAccessorTable = new
@@ -1305,18 +1242,18 @@ public final class MarsPioneerProto {
     internal_static_com_example_marspioneer_proto_MPPartialStateProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor,
-        new String[] { "WorldSession", "Cells", "Entities", });
-    internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_descriptor =
-      internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor.getNestedTypes().get(0);
-    internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_marspioneer_proto_MPPartialStateProto_CellsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new String[] { "Entities", "WorldSession", "Terrain", "Timestamp", });
     internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_descriptor =
-      internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor.getNestedTypes().get(1);
+      internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor.getNestedTypes().get(0);
     internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_marspioneer_proto_MPPartialStateProto_EntitiesEntry_descriptor,
+        new String[] { "Key", "Value", });
+    internal_static_com_example_marspioneer_proto_MPPartialStateProto_TerrainEntry_descriptor =
+      internal_static_com_example_marspioneer_proto_MPPartialStateProto_descriptor.getNestedTypes().get(1);
+    internal_static_com_example_marspioneer_proto_MPPartialStateProto_TerrainEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_example_marspioneer_proto_MPPartialStateProto_TerrainEntry_descriptor,
         new String[] { "Key", "Value", });
     internal_static_com_example_marspioneer_proto_MPWorldProto_descriptor =
       getDescriptor().getMessageTypes().get(22);
@@ -1701,7 +1638,7 @@ public final class MarsPioneerProto {
     internal_static_com_example_marspioneer_proto_UpdateStateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_marspioneer_proto_UpdateStateResponse_descriptor,
-        new String[] { "ResourceSet", "Message", "StateUpdate", "Status", });
+        new String[] { "Message", "StateUpdate", "Status", });
     internal_static_com_example_marspioneer_proto_SubscribeResponse_descriptor =
       getDescriptor().getMessageTypes().get(86);
     internal_static_com_example_marspioneer_proto_SubscribeResponse_fieldAccessorTable = new

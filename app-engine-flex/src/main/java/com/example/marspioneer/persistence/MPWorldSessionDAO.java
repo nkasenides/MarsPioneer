@@ -50,6 +50,10 @@ public class MPWorldSessionDAO implements WorldBasedDAO<MPWorldSession> {
         return Objectis.get(MPWorldSession.class, s);
     }
 
+    public List<MPWorldSession> getMany(List<String> ids) {
+        return Objectis.getMany(MPWorldSession.class, ids);
+    }
+
     @Override
     public MPWorldSession getForWorld(String worldID, String itemID) {
         final List<MPWorldSession> items = Objectis.filter(MPWorldSession.class)

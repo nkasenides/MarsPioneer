@@ -88,8 +88,6 @@ public class MPCanvas extends Canvas {
         printViewportData(g);
 
         addMouseListener(new MouseAdapter() {
-
-
             @Override
             public void mouseReleased(MouseEvent e) {
                 int x = e.getX();

@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Future;
 
@@ -60,6 +61,9 @@ public class BuildFarmWebSocket {
      */
     public void handleMessage(BuildFarmRequest request) throws IOException {
 
+        long t = System.currentTimeMillis();
+        System.out.println("Got message");
+
         //Retrieve the session:
         final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
 
@@ -82,7 +86,16 @@ public class BuildFarmWebSocket {
             return;
         }
 
-        long l = System.currentTimeMillis();
+        System.out.println("Session validation: " + (System.currentTimeMillis() - t));
+        t = System.currentTimeMillis();
+
+        final MatrixPosition actionPosition = request.getPosition().toObject();
+
+        //Get state:
+        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 20);
+
+        System.out.println("Retrieve state: " + (System.currentTimeMillis() - t));
+        t = System.currentTimeMillis();
 
         //+++++++++++++ Resource rules ++++++++++++++
         //Check resources:
@@ -98,10 +111,9 @@ public class BuildFarmWebSocket {
         }
 
         //+++++++++++++ Terrain-building rules: ++++++++++++++
-        final Map<String, MPTerrainCellProto> terrain = State.forWorld(worldSession.getWorldID()).getTerrain(request.getPosition().toObject(), 10);
 
         //Cannot build anything on lava:
-        final MPTerrainCellProto cell = terrain.get(State.identify(request.getPosition()));
+        final MPTerrainCellProto cell = State.Terrain.observe(partialState, actionPosition);
         if (cell.getType() == CellType.LAVA_CellType) {
             send(BuildResponse.newBuilder()
                     .setStatus(BuildResponse.Status.CANNOT_BUILD)
@@ -120,18 +132,21 @@ public class BuildFarmWebSocket {
         }
 
         //Cannot build too far away from a hub:
-        final Collection<BuildingEntity> playerBuildings = DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), player.getId());
+//        final Collection<BuildingEntity> playerBuildings = DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), player.getId());
 //        System.out.println("playerBuildings.size=" + playerBuildings.size());
         boolean hubWithinDistance = false;
-        for (BuildingEntity e : playerBuildings) {
-            if (e.getBuildingType() == EBuildingType.HUB_EBuildingType) {
-                double distance = e.getPosition().distanceTo(request.getPosition().toObject());
-//                System.out.println("distance = " + distance);
-                if (distance <= 20) {
-                    hubWithinDistance = true;
+        for (MPEntityProto e : partialState.getEntitiesMap().values()) {
+            if (e.hasBuildingEntity()) {
+                if (e.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType && e.getPlayerID().equals(player.getId())) {
+                    double distance = e.getPosition().toObject().distanceTo(actionPosition);
+                    System.out.println("Checking " + e.getBuildingEntity().getBuildingType() + " distance: " + distance);
+                    if (distance <= 20) {
+                        hubWithinDistance = true;
+                    }
                 }
             }
         }
+        System.out.println("hubWithinDistance = " + hubWithinDistance);
 
         if (!hubWithinDistance) {
             send(BuildResponse.newBuilder()
@@ -142,15 +157,17 @@ public class BuildFarmWebSocket {
         }
 
         //Cannot build on a cell that already has a building:
-        final Collection<BuildingEntity> allBuildings = DBManager.buildingEntity.listForWorld(worldSession.getWorldID());
-        for (BuildingEntity e : allBuildings) {
-            if (e.getPosition().equals(request.getPosition().toObject())) {
-                System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
-                send(BuildResponse.newBuilder()
-                        .setStatus(BuildResponse.Status.CANNOT_BUILD)
-                        .setMessage("BUILDING_EXISTS")
-                        .build());
-                return;
+//        final Collection<BuildingEntity> allBuildings = DBManager.buildingEntity.listForWorld(worldSession.getWorldID());
+        for (MPEntityProto e : partialState.getEntitiesMap().values()) {
+            if (e.hasBuildingEntity()) {
+                if (e.getPosition().toObject().equals(actionPosition)) {
+                    System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
+                    send(BuildResponse.newBuilder()
+                            .setStatus(BuildResponse.Status.CANNOT_BUILD)
+                            .setMessage("BUILDING_EXISTS")
+                            .build());
+                    return;
+                }
             }
         }
 
@@ -158,10 +175,12 @@ public class BuildFarmWebSocket {
         final ArrayList<EBuildingType> prerequisites = BuildingType.FARM.getPrerequisites();
         for (EBuildingType prerequisiteType : prerequisites) {
             boolean owned = false;
-            for (BuildingEntity e : playerBuildings) {
-                if (e.getBuildingType() == prerequisiteType) {
-                    owned = true;
-                    break;
+            for (MPEntityProto e : partialState.getEntitiesMap().values()) {
+                if (e.hasBuildingEntity()) {
+                    if (e.getBuildingEntity().getBuildingType() == prerequisiteType) {
+                        owned = true;
+                        break;
+                    }
                 }
             }
             if (!owned) {
@@ -173,8 +192,10 @@ public class BuildFarmWebSocket {
             }
         }
 
-//        System.out.println("Rules: " + (System.currentTimeMillis() - l));
+        System.out.println("Rule processing: " + (System.currentTimeMillis() - t));
+        t = System.currentTimeMillis();
 
+        //----------------------------------------END OF RULE CHECKING-------------------------------------------------
 
         //Deduct resources:
         player.setFood(player.getFood() - BuildingType.FARM.getFoodCost());
@@ -194,20 +215,21 @@ public class BuildFarmWebSocket {
         DBManager.buildingEntity.create(building);
         DBManager.player.update(player);
 
-        System.out.println("BUILD");
-
         send(BuildResponse.newBuilder()
                 .setStatus(BuildResponse.Status.OK)
                 .setMessage("OK")
                 .build());
 
+        System.out.println("State modification: " + (System.currentTimeMillis() - t));
+        t = System.currentTimeMillis();
 
-        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building); //DEFINE
-        final Collection<MPWorldSession> worldSessionsToBeUpdated = State.filterUpdateSessions(worldSession.getWorldID(), building.getPosition(), 20); //FILTER
-        for (MPWorldSession updatedWorldSession : worldSessionsToBeUpdated) {
-            final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(updatedWorldSession, stateUpdateBuilder, true, false); //COMPOSE
-            UpdateStateWebSocket.sendUpdate(updatedWorldSession, stateUpdate, building.getPosition(), 20); //SEND
-        }
+        //Define and send the state update:
+        final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(building);
+        State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), actionPosition, 20, false, false);
+
+        System.out.println("Send state: " + (System.currentTimeMillis() - t));
+
+
     }
 
     @OnWebSocketClose
