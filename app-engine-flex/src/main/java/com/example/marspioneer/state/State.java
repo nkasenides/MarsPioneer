@@ -359,6 +359,98 @@ public class State {
             }
         }
 
+        /**
+         * Checks if a position is within the AOI of an entity.
+         * @param position The position.
+         * @param entity The entity.
+         * @return Returns true if the position within the AOI, false otherwise.
+         */
+        public static boolean isInAOI(MatrixPosition position, MPEntity entity) {
+            return (position.distanceTo(entity.getPosition()) <= entity.getAreaOfInterest());
+        }
+
+        /**
+         * Checks if a position is within the AOI of an entity.
+         * @param position The position.
+         * @param entity The entity.
+         * @return Returns true if the position within the AOI, false otherwise.
+         */
+        public static boolean isInAOI(MatrixPosition position, MPEntityProto entity) {
+            return (position.distanceTo(entity.getPosition().toObject()) <= entity.getAreaOfInterest());
+        }
+
+        /**
+         * Check if an entity's AOI fully lies within another entity's AOI.
+         * @param newEntity The current/new entity.
+         * @param oldEntity The old/other entity.
+         * @return Returns true if the newEntity AOI lies within the oldEntityAOI, false otherwise.
+         */
+        public static boolean aoiIsInAOI(MPEntity newEntity, MPEntity oldEntity) {
+            double distance = Math.sqrt(
+                    (newEntity.getPosition().getRow() - oldEntity.getPosition().getRow()) * (newEntity.getPosition().getRow() - oldEntity.getPosition().getRow())
+                    +
+                    ((newEntity.getPosition().getCol() - oldEntity.getPosition().getCol()) * (newEntity.getPosition().getCol() - oldEntity.getPosition().getCol()))
+            );
+            return oldEntity.getAreaOfInterest() > (distance + newEntity.getAreaOfInterest());
+        }
+
+        /**
+         * Check if an entity's AOI fully lies within another entity's AOI.
+         * @param newEntity The current/new entity.
+         * @param oldEntity The old/other entity.
+         * @return Returns true if the newEntity AOI lies within the oldEntityAOI, false otherwise.
+         */
+        public static boolean aoiIsInAOI(MPEntityProto newEntity, MPEntityProto oldEntity) {
+            double distance = Math.sqrt(
+                    (newEntity.getPosition().getRow() - oldEntity.getPosition().getRow()) * (newEntity.getPosition().getRow() - oldEntity.getPosition().getRow())
+                            +
+                            ((newEntity.getPosition().getCol() - oldEntity.getPosition().getCol()) * (newEntity.getPosition().getCol() - oldEntity.getPosition().getCol()))
+            );
+            return oldEntity.getAreaOfInterest() > (distance + newEntity.getAreaOfInterest());
+        }
+
+        /**
+         * Check if an entity's AOI overlaps with another's.
+         * @param newEntity The current/new entity.
+         * @param oldEntity The old/other entity.
+         * @return Returns true if the newEntity AOI overlaps oldEntityAOI, false otherwise.
+         */
+        public static boolean aoisOverlap(MPEntity newEntity, MPEntity oldEntity) {
+            double distance = Math.sqrt(Math.pow(oldEntity.getPosition().getRow() - newEntity.getPosition().getRow(), 2) + (Math.pow(oldEntity.getPosition().getCol() - newEntity.getPosition().getCol(), 2)));
+            return distance <= (newEntity.getAreaOfInterest() + oldEntity.getAreaOfInterest()) && distance >= Math.abs(newEntity.getAreaOfInterest() - oldEntity.getAreaOfInterest());
+        }
+
+        /**
+         * Checks if an entity's AOI fully lies outside another entity's AOI.
+         * @param newEntity The current/new entity.
+         * @param oldEntity The old/other entity.
+         * @return Returns true if the newEntity AOI lies outside the oldEntityAOI, false otherwise.
+         */
+        public static boolean isOutOfAOI(MPEntity newEntity, MPEntity oldEntity) {
+            return !aoisOverlap(newEntity, oldEntity);
+        }
+
+        /**
+         * Check if an entity's AOI overlaps with another's.
+         * @param newEntity The current/new entity.
+         * @param oldEntity The old/other entity.
+         * @return Returns true if the newEntity AOI overlaps oldEntityAOI, false otherwise.
+         */
+        public static boolean aoisOverlap(MPEntityProto newEntity, MPEntityProto oldEntity) {
+            double distance = Math.sqrt(Math.pow(oldEntity.getPosition().getRow() - newEntity.getPosition().getRow(), 2) + (Math.pow(oldEntity.getPosition().getCol() - newEntity.getPosition().getCol(), 2)));
+            return distance <= (newEntity.getAreaOfInterest() + oldEntity.getAreaOfInterest()) && distance >= Math.abs(newEntity.getAreaOfInterest() - oldEntity.getAreaOfInterest());
+        }
+
+        /**
+         * Checks if an entity's AOI fully lies outside another entity's AOI.
+         * @param newEntity The current/new entity.
+         * @param oldEntity The old/other entity.
+         * @return Returns true if the newEntity AOI lies outside the oldEntityAOI, false otherwise.
+         */
+        public static boolean isOutOfAOI(MPEntityProto newEntity, MPEntityProto oldEntity) {
+            return !aoisOverlap(newEntity, oldEntity);
+        }
+
     }
 
     /**

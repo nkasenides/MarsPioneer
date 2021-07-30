@@ -503,6 +503,22 @@ public class WorldContext {
                             .setWater(player.getWater())
                             .build()
             );
+
+            //If any of the new entities belonging to the player are not within the current AOI of the player's entities, get the terrain around their AOI:
+            final Collection<MPEntity> currentPlayerEntities = DBManager.entity.listForPlayerAndWorld(player.getId(), entry.getKey().getWorldID());
+            for (MPEntityProto updatedEntity : individualStateUpdateBuilder.getUpdatedEntities().values()) {
+                if (updatedEntity.getPlayerID().equals(entry.getKey().getPlayerID())) {
+                    for (MPEntity playerEntity : currentPlayerEntities) {
+                        if (State.Entities.isOutOfAOI(updatedEntity, playerEntity.toProto().build())) {
+                            final Map<String, MPTerrainCellProto> newTerrain = getTerrain(updatedEntity.getPosition().toObject(), updatedEntity.getAreaOfInterest());
+                            for (Map.Entry<String, MPTerrainCellProto> tEntry : newTerrain.entrySet()) {
+                                individualStateUpdateBuilder.addUpdatedTerrain(tEntry.getValue());
+                            }
+                        }
+                    }
+                }
+            }
+
             final UpdateStateResponse response = UpdateStateResponse.newBuilder()
                     .setStatus(UpdateStateResponse.Status.OK)
                     .setMessage("OK")
