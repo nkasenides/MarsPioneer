@@ -138,7 +138,7 @@ public class BuildFarmWebSocket {
         boolean hubWithinDistance = false;
         for (MPEntityProto e : partialState.getEntitiesMap().values()) {
             if (e.hasBuildingEntity()) {
-                System.out.println("Checking " + e.getBuildingEntity().getBuildingType());
+//                System.out.println("Checking " + e.getBuildingEntity().getBuildingType());
                 if (e.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType && e.getPlayerID().equals(player.getId())) {
                     double distance = e.getPosition().toObject().distanceTo(actionPosition);
                     if (distance <= 20) {

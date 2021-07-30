@@ -16,6 +16,7 @@ import com.neovisionaries.ws.client.WebSocketException;
 import com.raylabz.mocha.binary.client.BinaryWebSocketClient;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class BotUpdateStateStub extends BinaryWebSocketClient {
 
@@ -41,6 +42,14 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
         bot.getStateUpdateLatencies().add(latency);
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
             System.out.println("[" + bot.getBotName() + "] State update received.");
+
+            for (Map.Entry<String, MPTerrainCellProto> entry : response.getStateUpdate().getPartialState().getTerrainMap().entrySet()) {
+                bot.getTerrain().put(entry.getKey(), entry.getValue());
+            }
+
+            for (Map.Entry<String, MPEntityProto> entry : response.getStateUpdate().getPartialState().getEntitiesMap().entrySet()) {
+                bot.getEntities().put(entry.getKey(), entry.getValue());
+            }
 
             bot.setResourceSet(response.getStateUpdate().getPartialState().getResourceSet().toObject());
 

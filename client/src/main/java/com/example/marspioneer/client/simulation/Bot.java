@@ -50,6 +50,10 @@ public class Bot extends Thread {
         this.exitTime = exitTime;
     }
 
+    public long getExitTime() {
+        return exitTime;
+    }
+
     public String getBotName() {
         return botName;
     }
@@ -266,7 +270,6 @@ public class Bot extends Thread {
                         //Connect to the state update stub:
                         try {
                             final BotUpdateStateStub updateStateStub = Stubs.getBotUpdateStateStub(this);
-                            Mocha.start(updateStateStub);
                             //Send a request to be acknowledged as a client:
                             final byte[] bytes = UpdateStateRequest.newBuilder().setWorldSessionID(worldSession.getId()).build().toByteArray();
                             updateStateStub.send(bytes);
@@ -406,23 +409,42 @@ public class Bot extends Thread {
                         }
                         break;
                     case 4:
-                        if (!entities.isEmpty()) {
-                            ArrayList<MPEntityProto> entitiesList = new ArrayList<>(entities.values());
-                            final int randomEntityIndex = random.nextInt(entitiesList.size());
-                            Collections.shuffle(entitiesList);
-                            MPEntityProto selectedEntity = entitiesList.get(randomEntityIndex);
-                            SellBuildingRequest sellRequest = SellBuildingRequest.newBuilder()
-                                    .setBuildingID(selectedEntity.getId())
+                        //Find position for a well:
+                        MatrixPosition hubPos = findHubPosition();
+
+                        if (hubPos != null) {
+                            System.out.println("Player '" + botName + "' decided to build a Hub at" + hubPos.getRow() + "," + hubPos.getCol());
+                            BuildHubRequest hubRequestB = BuildHubRequest.newBuilder()
+                                    .setPosition(hubPos.toProto())
                                     .setWorldSessionID(worldSession.getId())
                                     .build();
                             try {
                                 lastSendTime = System.currentTimeMillis();
-                                Stubs.Actions.getBotSellBuildingStub(this).send(sellRequest.toByteArray());
+                                Stubs.Actions.getBotBuildHubStub(this).send(hubRequestB.toByteArray());
                             } catch (WebSocketException | IOException webSocketException) {
                                 webSocketException.printStackTrace();
                             }
                         }
                         break;
+
+
+//                        if (!entities.isEmpty()) {
+//                            ArrayList<MPEntityProto> entitiesList = new ArrayList<>(entities.values());
+//                            final int randomEntityIndex = random.nextInt(entitiesList.size());
+//                            Collections.shuffle(entitiesList);
+//                            MPEntityProto selectedEntity = entitiesList.get(randomEntityIndex);
+//                            SellBuildingRequest sellRequest = SellBuildingRequest.newBuilder()
+//                                    .setBuildingID(selectedEntity.getId())
+//                                    .setWorldSessionID(worldSession.getId())
+//                                    .build();
+//                            try {
+//                                lastSendTime = System.currentTimeMillis();
+//                                Stubs.Actions.getBotSellBuildingStub(this).send(sellRequest.toByteArray());
+//                            } catch (WebSocketException | IOException webSocketException) {
+//                                webSocketException.printStackTrace();
+//                            }
+//                        }
+//                        break;
                 }
             }
 
@@ -452,7 +474,21 @@ public class Bot extends Thread {
                     }
                 }
 
-                if (!entityWithSamePos) {
+                //Find if a hub is nearby:
+                boolean hubIsNearby = false;
+                for (MPEntityProto entity : entities.values()) {
+                    if (entity.hasBuildingEntity()) {
+                        if (entity.getBuildingEntity().getPlayerID().equals(player.getId()) && entity.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+                            if (entity.getPosition().distanceTo(cell.getPosition()) <= 20) {
+                                hubIsNearby = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+                if (!entityWithSamePos && hubIsNearby) {
                     return cell.getPosition().toObject();
                 }
             }
@@ -473,7 +509,21 @@ public class Bot extends Thread {
                     }
                 }
 
-                if (!entityWithSamePos) {
+                //Find if a hub is nearby:
+                boolean hubIsNearby = false;
+                for (MPEntityProto entity : entities.values()) {
+                    if (entity.hasBuildingEntity()) {
+                        if (entity.getBuildingEntity().getPlayerID().equals(player.getId()) && entity.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+                            if (entity.getPosition().distanceTo(cell.getPosition()) <= 20) {
+                                hubIsNearby = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+                if (!entityWithSamePos && hubIsNearby) {
                     return cell.getPosition().toObject();
                 }
             }
@@ -494,7 +544,56 @@ public class Bot extends Thread {
                     }
                 }
 
-                if (!entityWithSamePos) {
+                //Find if a hub is nearby:
+                boolean hubIsNearby = false;
+                for (MPEntityProto entity : entities.values()) {
+                    if (entity.hasBuildingEntity()) {
+                        if (entity.getBuildingEntity().getPlayerID().equals(player.getId()) && entity.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+                            if (entity.getPosition().distanceTo(cell.getPosition()) <= 20) {
+                                hubIsNearby = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+                if (!entityWithSamePos && hubIsNearby) {
+                    return cell.getPosition().toObject();
+                }
+            }
+        }
+        return null;
+    }
+
+    private MatrixPosition findHubPosition() {
+        for (MPTerrainCellProto cell : terrain.values()) {
+            if (cell.getType() != CellType.LAVA_CellType) {
+
+                //Find if ANY entity has the same position
+                boolean entityWithSamePos = false;
+                for (MPEntityProto entity : entities.values()) {
+                    if (entity.getPosition().toObject().equals(cell.getPosition().toObject())) {
+                        entityWithSamePos = true;
+                        break;
+                    }
+                }
+
+                //Find if a hub is nearby:
+                boolean hubIsFar = false;
+                for (MPEntityProto entity : entities.values()) {
+                    if (entity.hasBuildingEntity()) {
+                        if (entity.getBuildingEntity().getPlayerID().equals(player.getId()) && entity.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+                            if (entity.getPosition().distanceTo(cell.getPosition()) > 20) {
+                                hubIsFar = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+                if (!entityWithSamePos && hubIsFar) {
                     return cell.getPosition().toObject();
                 }
             }
@@ -515,7 +614,21 @@ public class Bot extends Thread {
                     }
                 }
 
-                if (!entityWithSamePos) {
+                //Find if a hub is nearby:
+                boolean hubIsNearby = false;
+                for (MPEntityProto entity : entities.values()) {
+                    if (entity.hasBuildingEntity()) {
+                        if (entity.getBuildingEntity().getPlayerID().equals(player.getId()) && entity.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+                            if (entity.getPosition().distanceTo(cell.getPosition()) <= 20) {
+                                hubIsNearby = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+                if (!entityWithSamePos && hubIsNearby) {
                     return cell.getPosition().toObject();
                 }
             }

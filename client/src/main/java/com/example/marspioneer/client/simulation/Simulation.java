@@ -60,27 +60,59 @@ public class Simulation {
         }
 
         try {
+
+            for (Bot bot : threads) {
+                bot.stopRunning();
+            }
+
             System.out.println("Writing results to file. Please wait...");
             FileWriter fileWriter = new FileWriter("MP-SimulationResults.csv");
             StringBuilder builder = new StringBuilder();
             builder.append("Simulation results for MP with ").append(threads.size()).append(" bots:").append((System.lineSeparator())).append(System.lineSeparator());
 
-            builder.append("Start time:,").append(startTime).append(System.lineSeparator());
-            builder.append("Finish time:,").append(finishTime).append(System.lineSeparator());
-            builder.append("Total duration (s):,").append((finishTime - startTime) / 1000).append(System.lineSeparator()).append(System.lineSeparator());
+            builder.append("Start time,").append(startTime).append(System.lineSeparator());
+            builder.append("Finish time,").append(finishTime).append(System.lineSeparator());
+            builder.append("Total duration (s),").append((finishTime - startTime) / 1000).append(System.lineSeparator()).append(System.lineSeparator());
 
-            builder.append("Bot name,Join time,/play latency (ms)").append(System.lineSeparator());
+            builder.append("Bot name,Join time,Exit time,CreatePlayer,Authenticate,GetPlayer,ListWorlds,JoinWorld,GetState,Subscribe").append(System.lineSeparator());
+            for (Bot bot : threads) {
+                builder.append(bot.getBotName()).append(",")
+                        .append(bot.getJoinTime()).append(",")
+                        .append(bot.getExitTime()).append(",")
+                        .append(bot.getCreatePlayerLatency()).append(",")
+                        .append(bot.getAuthenticateLatency()).append(",")
+                        .append(bot.getGetPlayerLatency()).append(",")
+                        .append(bot.getListWorldsLatency()).append(",")
+                        .append(bot.getJoinWorldLatency()).append(",")
+                        .append(bot.getGetInitialStateLatency()).append(",")
+                        .append(bot.getSubscribeLatency()).append(",")
+                        .append(System.lineSeparator());
+            }
 
-            for (Bot t : threads) {
-                t.stopRunning();
-
-                builder.append(t.getBotName()).append(",").append(t.getJoinTime() - startTime).append(",");
-                for (long l : t.getStateUpdateLatencies()) {
-                    builder.append(l).append(",");
+            builder.append("State update latencies").append(System.lineSeparator());
+            for (Bot bot : threads) {
+                builder.append(bot.getBotName()).append(",");
+                for (Long latency : bot.getStateUpdateLatencies()) {
+                    builder.append(latency).append(",");
                 }
-                builder.delete(builder.length() - 1, builder.length());
                 builder.append(System.lineSeparator());
             }
+            builder.append(System.lineSeparator());
+
+
+
+//            builder.append("Bot name,Join time,/play latency (ms)").append(System.lineSeparator());
+//
+//            for (Bot t : threads) {
+//                t.stopRunning();
+//
+//                builder.append(t.getBotName()).append(",").append(t.getJoinTime() - startTime).append(",");
+//                for (long l : t.getStateUpdateLatencies()) {
+//                    builder.append(l).append(",");
+//                }
+//                builder.delete(builder.length() - 1, builder.length());
+//                builder.append(System.lineSeparator());
+//            }
 
             fileWriter.write(builder.toString());
             fileWriter.close();

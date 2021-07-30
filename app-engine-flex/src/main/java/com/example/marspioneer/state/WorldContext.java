@@ -432,7 +432,7 @@ public class WorldContext {
      * @return Returns a StateUpdateBuilder.
      */
     public StateUpdateBuilder refreshEntities(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder) {
-        final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
+        final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getPlayerID(), worldSession.getWorldID());
         final Map<String, MPEntityProto> aoiEntities = getEntities(playerEntities);
         for (MPEntityProto value : aoiEntities.values()) {
             stateUpdateBuilder.addUpdatedEntity(value);
@@ -447,7 +447,7 @@ public class WorldContext {
      */
     public StateUpdateBuilder checkAndRefreshTerrain(MPWorldSession worldSession, StateUpdateBuilder stateUpdateBuilder) {
         //For each entity, find if the a entity is contained inside it
-        final List<MPEntity> entities = new ArrayList<>(DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
+        final List<MPEntity> entities = new ArrayList<>(DBManager.entity.listForPlayerAndWorld(worldSession.getPlayerID(), worldSession.getWorldID()));
 
         boolean contained = false;
         outterLoop:

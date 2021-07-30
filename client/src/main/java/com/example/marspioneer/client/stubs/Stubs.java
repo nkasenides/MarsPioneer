@@ -258,7 +258,9 @@ public final class Stubs {
     private static HashMap<String, BotUpdateStateStub> botUpdateStateStubs = new HashMap<>();
     public static BotUpdateStateStub getBotUpdateStateStub(Bot bot) throws WebSocketException, IOException {
         if (botUpdateStateStubs.get(bot.getPlayer().getName()) == null) {
-            botUpdateStateStubs.put(bot.getPlayer().getName(), new BotUpdateStateStub(bot));
+            final BotUpdateStateStub stub = new BotUpdateStateStub(bot);
+            Mocha.start(stub);
+            botUpdateStateStubs.put(bot.getPlayer().getName(), stub);
         }
         return botUpdateStateStubs.get(bot.getPlayer().getName());
     }
