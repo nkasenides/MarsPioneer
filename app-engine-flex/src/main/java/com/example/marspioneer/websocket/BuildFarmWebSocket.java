@@ -92,7 +92,8 @@ public class BuildFarmWebSocket {
         final MatrixPosition actionPosition = request.getPosition().toObject();
 
         //Get state:
-        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 10);
+        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 20);
+
 
 //        System.out.println("Retrieve state: " + (System.currentTimeMillis() - t));
 //        t = System.currentTimeMillis();
@@ -137,9 +138,9 @@ public class BuildFarmWebSocket {
         boolean hubWithinDistance = false;
         for (MPEntityProto e : partialState.getEntitiesMap().values()) {
             if (e.hasBuildingEntity()) {
+                System.out.println("Checking " + e.getBuildingEntity().getBuildingType());
                 if (e.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType && e.getPlayerID().equals(player.getId())) {
                     double distance = e.getPosition().toObject().distanceTo(actionPosition);
-//                    System.out.println("Checking " + e.getBuildingEntity().getBuildingType() + " distance: " + distance);
                     if (distance <= 20) {
                         hubWithinDistance = true;
                     }

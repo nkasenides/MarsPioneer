@@ -147,13 +147,13 @@ public class StateUpdateBuilder {
         for (String id : getRemovedTerrain()) {
             builder.addRemovedTerrain(id);
         }
-        //TODO - Copy any additional state update attributes.
+        final ResourceSetProto.Builder resSetBuilder = getStateUpdateProtoBuilder().getPartialState().getResourceSet().toBuilder();
+        builder.getStateUpdateProtoBuilder().getPartialStateBuilder().setResourceSet(resSetBuilder.build());
         return builder;
     }
 
     /**
      * Checks if the builder is empty (contains no updates).
-     * TODO - Check any custom state update attributes to make sure your state is empty.
      * @return Returns true if the builder is empty, false otherwise.
      */
     public boolean isEmpty() {

@@ -86,7 +86,7 @@ public class BuildMineWebSocket {
         final MatrixPosition actionPosition = request.getPosition().toObject();
 
         //Get state:
-        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 10);
+        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 20);
 
         //+++++++++++++ Resource rules ++++++++++++++
         //Check resources:

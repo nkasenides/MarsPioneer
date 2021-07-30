@@ -50,7 +50,6 @@ public class MPEntityDAO implements WorldBasedDAO<MPEntity> {
     public Collection<MPEntity> listForWorld(String worldID) {
         final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
                 .whereEqualTo("worldID", worldID)
-                .limit(1)
                 .fetch().getItems();
         return new ArrayList<>(items);
     }

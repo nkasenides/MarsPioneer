@@ -268,12 +268,20 @@ public class WorldContext {
      */
     public MPPartialStateProto getPartialStateSnapshot(MPWorldSession worldSession) {
         final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getPlayerID(), worldSession.getWorldID());
+        final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
         return MPPartialStateProto.newBuilder()
                 .putAllEntities(getEntities(playerEntities))
                 .putAllTerrain(getTerrain(playerEntities))
                 .setTimestamp(System.currentTimeMillis())
                 .setWorldSession(worldSession.toProto())
-                //TODO - Set custom partial state attributes here.
+                .setResourceSet(
+                        ResourceSetProto.newBuilder()
+                                .setFood(player.getFood())
+                                .setMetal(player.getMetal())
+                                .setSand(player.getSand())
+                                .setWater(player.getWater())
+                                .build()
+                )
                 .build();
     }
 
@@ -285,12 +293,20 @@ public class WorldContext {
      * @return Returns a PartialStateProto.
      */
     public MPPartialStateProto getPartialStateSnapshot(MPWorldSession worldSession, MatrixPosition position, float radius) {
+        final MPPlayer player = DBManager.player.get(worldSession.getPlayerID());
         return MPPartialStateProto.newBuilder()
                 .putAllEntities(getEntities(position, radius))
                 .putAllTerrain(getTerrain(position, radius))
                 .setTimestamp(System.currentTimeMillis())
                 .setWorldSession(worldSession.toProto())
-                //TODO - Set custom partial state attributes here.
+                .setResourceSet(
+                        ResourceSetProto.newBuilder()
+                                .setFood(player.getFood())
+                                .setMetal(player.getMetal())
+                                .setSand(player.getSand())
+                                .setWater(player.getWater())
+                                .build()
+                )
                 .build();
     }
 
@@ -396,70 +412,6 @@ public class WorldContext {
         }
     }
 
-//    /**
-//     * Composes the partial state for a given world session and set of entities.
-//     * @param worldSession The world session to compose the state for.
-//     * @return Returns a PartialStateProto.
-//     */
-//    public MPPartialStateProto composeState(MPWorldSession worldSession) {
-//        //Retrieve the player's own entities:
-//        final Collection<MPEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID());
-//        playerEntities.addAll(DBManager.buildingEntity.listForPlayerAndWorld(worldSession.getWorldID(), worldSession.getPlayerID()));
-//
-//        //Retrieve foreign entities that are within the area of interest of the player's entities:
-//        final HashMap<String, MPEntityProto> entitiesInAOI = new HashMap<>(getEntities(playerEntities));
-//
-//        //Retrieve the terrain:
-//        final HashMap<String, MPTerrainCellProto> terrainInAOI = new HashMap<>(getTerrain(playerEntities));
-//        return MPPartialStateProto.newBuilder()
-//                .setWorldSession(worldSession.toProto())
-//                .putAllEntities(entitiesInAOI)
-//                .putAllCells(terrainInAOI)
-//                .build();
-//    }
-//
-//    /**
-//     * Composes the partial state based on a given position and area of interest.
-//     * @param worldSession The world session to compose the state for.
-//     * @return Returns a PartialStateProto.
-//     */
-//    public MPPartialStateProto composeState(MPWorldSession worldSession, MatrixPosition position, float areaOfInterest) {
-//        //Retrieve entities that are within the area of interest:
-//        final HashMap<String, MPEntityProto> entitiesInAOI = new HashMap<>(getEntities(position, areaOfInterest));
-//
-//        //Retrieve the terrain:
-//        final HashMap<String, MPTerrainCellProto> terrainInAOI = new HashMap<>(getTerrain(position, areaOfInterest));
-//        return MPPartialStateProto.newBuilder()
-//                .setWorldSession(worldSession.toProto())
-//                .putAllEntities(entitiesInAOI)
-//                .putAllCells(terrainInAOI)
-//                .build();
-//    }
-//
-//    /**
-//     * Composes a state refresh - similar to composeState(), but returns a StateUpdate.
-//     * @return Returns a StateUpdateProto.
-//     */
-//    private MPStateUpdateProto composeStateRefresh(MatrixPosition position, float areaOfEffect) {
-//        //Retrieve foreign entities that are within the area of interest:
-//        final HashMap<String, MPEntityProto> entitiesInAOI = new HashMap<>(getEntities(position, areaOfEffect));
-//
-//        //Retrieve the terrain:
-//        final HashMap<String, MPTerrainCellProto> terrainInAOI = new HashMap<>(getTerrain(position, areaOfEffect));
-//
-//        final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create();
-//
-//        for (MPTerrainCellProto terrainCell : terrainInAOI.values()) {
-//            stateUpdateBuilder.addUpdatedTerrain(terrainCell);
-//        }
-//
-//        for (MPEntityProto entity : entitiesInAOI.values()) {
-//            stateUpdateBuilder.addUpdatedEntity(entity);
-//        }
-//
-//        return stateUpdateBuilder.build();
-//    }
-//
     /**
      * Refreshes the terrain of a particular StateUpdateBuilder using the new entities' AoI.
      * @param entities The old (existing) entities.
@@ -541,39 +493,25 @@ public class WorldContext {
             if (refreshEntities) {
                 globalStateUpdateBuilder = refreshEntities(entry.getKey(), globalStateUpdateBuilder);
             }
+            StateUpdateBuilder individualStateUpdateBuilder = globalStateUpdateBuilder.clone();
+            final MPPlayer player = DBManager.player.get(entry.getKey().getPlayerID());
+            individualStateUpdateBuilder.getStateUpdateProtoBuilder().getPartialStateBuilder().setResourceSet(
+                    ResourceSetProto.newBuilder()
+                            .setFood(player.getFood())
+                            .setMetal(player.getMetal())
+                            .setSand(player.getSand())
+                            .setWater(player.getWater())
+                            .build()
+            );
             final UpdateStateResponse response = UpdateStateResponse.newBuilder()
                     .setStatus(UpdateStateResponse.Status.OK)
                     .setMessage("OK")
-                    .setStateUpdate(globalStateUpdateBuilder.build())
+                    .setStateUpdate(individualStateUpdateBuilder.build())
                     .build();
             stateUpdateMap.put(entry.getKey(), response);
         }
         return stateUpdateMap;
     }
-//
-//    /**
-//     * Creates the state update response and allows you to customize the response sent back to the client.
-//     * @param builder The state update builder.
-//     * @return Returns an UpdateStateResponse.
-//     */
-//    public UpdateStateResponse createStateUpdateResponse(MPWorldSession worldSession, StateUpdateBuilder builder) {
-//        final MPStateUpdateProto stateUpdate = builder.build();
-//        final MPPlayer player = DBManager.player.get(worldSession.getPlayerID()); //FIXME not in framework
-//        return UpdateStateResponse.newBuilder()
-//                .setStatus(UpdateStateResponse.Status.OK)
-//                .setMessage("OK")
-//                .setStateUpdate(stateUpdate)
-//                //TODO - Customize your update attributes here, adding additional attributes to the state update as needed by your game.
-//                .setResourceSet( //FIXME not in framework
-//                        ResourceSetProto.newBuilder()
-//                                .setFood(player.getFood())
-//                                .setMetal(player.getMetal())
-//                                .setSand(player.getSand())
-//                                .setWater(player.getWater())
-//                                .build()
-//                )
-//                .build();
-//    }
 
     /**
      * Returns the active sessions for this world.
