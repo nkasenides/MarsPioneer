@@ -61,8 +61,8 @@ public class BuildFarmWebSocket {
      */
     public void handleMessage(BuildFarmRequest request) throws IOException {
 
-        long t = System.currentTimeMillis();
-        System.out.println("Got message");
+//        long t = System.currentTimeMillis();
+//        System.out.println("Got message");
 
         //Retrieve the session:
         final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
@@ -86,16 +86,16 @@ public class BuildFarmWebSocket {
             return;
         }
 
-        System.out.println("Session validation: " + (System.currentTimeMillis() - t));
-        t = System.currentTimeMillis();
+//        System.out.println("Session validation: " + (System.currentTimeMillis() - t));
+//        t = System.currentTimeMillis();
 
         final MatrixPosition actionPosition = request.getPosition().toObject();
 
         //Get state:
-        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 20);
+        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 10);
 
-        System.out.println("Retrieve state: " + (System.currentTimeMillis() - t));
-        t = System.currentTimeMillis();
+//        System.out.println("Retrieve state: " + (System.currentTimeMillis() - t));
+//        t = System.currentTimeMillis();
 
         //+++++++++++++ Resource rules ++++++++++++++
         //Check resources:
@@ -139,14 +139,14 @@ public class BuildFarmWebSocket {
             if (e.hasBuildingEntity()) {
                 if (e.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType && e.getPlayerID().equals(player.getId())) {
                     double distance = e.getPosition().toObject().distanceTo(actionPosition);
-                    System.out.println("Checking " + e.getBuildingEntity().getBuildingType() + " distance: " + distance);
+//                    System.out.println("Checking " + e.getBuildingEntity().getBuildingType() + " distance: " + distance);
                     if (distance <= 20) {
                         hubWithinDistance = true;
                     }
                 }
             }
         }
-        System.out.println("hubWithinDistance = " + hubWithinDistance);
+//        System.out.println("hubWithinDistance = " + hubWithinDistance);
 
         if (!hubWithinDistance) {
             send(BuildResponse.newBuilder()
@@ -161,7 +161,7 @@ public class BuildFarmWebSocket {
         for (MPEntityProto e : partialState.getEntitiesMap().values()) {
             if (e.hasBuildingEntity()) {
                 if (e.getPosition().toObject().equals(actionPosition)) {
-                    System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
+//                    System.out.println("Found existing building at position " + e.getPosition().getRow() + "," + e.getPosition().getCol());
                     send(BuildResponse.newBuilder()
                             .setStatus(BuildResponse.Status.CANNOT_BUILD)
                             .setMessage("BUILDING_EXISTS")
@@ -192,8 +192,8 @@ public class BuildFarmWebSocket {
             }
         }
 
-        System.out.println("Rule processing: " + (System.currentTimeMillis() - t));
-        t = System.currentTimeMillis();
+//        System.out.println("Rule processing: " + (System.currentTimeMillis() - t));
+//        t = System.currentTimeMillis();
 
         //----------------------------------------END OF RULE CHECKING-------------------------------------------------
 
@@ -220,14 +220,14 @@ public class BuildFarmWebSocket {
                 .setMessage("OK")
                 .build());
 
-        System.out.println("State modification: " + (System.currentTimeMillis() - t));
-        t = System.currentTimeMillis();
+//        System.out.println("State modification: " + (System.currentTimeMillis() - t));
+//        t = System.currentTimeMillis();
 
         //Define and send the state update:
         final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(building);
-        State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), actionPosition, 20, false, false);
+        State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), actionPosition, 10, false, false);
 
-        System.out.println("Send state: " + (System.currentTimeMillis() - t));
+//        System.out.println("Send state: " + (System.currentTimeMillis() - t));
 
 
     }

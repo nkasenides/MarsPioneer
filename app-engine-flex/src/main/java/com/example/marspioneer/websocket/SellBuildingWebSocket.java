@@ -85,9 +85,9 @@ public class SellBuildingWebSocket {
             return;
         }
 
+
         //Retrieve the building:
         final BuildingEntity building = DBManager.buildingEntity.get(request.getBuildingID());
-
         if (building == null) {
             send(SellBuildingResponse.newBuilder()
                     .setStatus(SellBuildingResponse.Status.CANNOT_SELL)
@@ -160,9 +160,9 @@ public class SellBuildingWebSocket {
                 .setMessage("OK")
                 .build());
 
-//        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addRemovedEntity(building.getId());
-//        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
-//        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, building.getPosition(), 20);
+        //Define and send the state update:
+        final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(building);
+        State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), building.getPosition(), 10, false, false);
 
     }
 

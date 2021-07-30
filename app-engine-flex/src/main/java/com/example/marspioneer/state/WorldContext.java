@@ -601,7 +601,6 @@ public class WorldContext {
         if (!world.getSubscribedSessionIDs().contains(worldSession.getId())) {
             world.getSubscribedSessionIDs().add(worldSession.getId());
             DBManager.world.update(world);
-            System.out.println("subbed -> " + world.getSubscribedSessionIDs());
         }
     }
 

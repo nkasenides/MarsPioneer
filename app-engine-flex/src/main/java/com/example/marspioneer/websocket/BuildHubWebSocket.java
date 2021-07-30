@@ -6,10 +6,7 @@
 package com.example.marspioneer.websocket;
 
 import com.example.marspioneer.auth.Auth;
-import com.example.marspioneer.model.BuildingEntity;
-import com.example.marspioneer.model.BuildingType;
-import com.example.marspioneer.model.MPPlayer;
-import com.example.marspioneer.model.MPWorldSession;
+import com.example.marspioneer.model.*;
 import com.example.marspioneer.persistence.DBManager;
 import com.example.marspioneer.proto.*;
 import com.example.marspioneer.state.State;
@@ -87,6 +84,11 @@ public class BuildHubWebSocket {
             return;
         }
 
+        final MatrixPosition actionPosition = request.getPosition().toObject();
+
+        //Get state:
+        final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 10);
+
         //+++++++++++++ Resource rules ++++++++++++++
         //Check resources:
         if (player.getSand() < BuildingType.HUB.getSandCost() ||
@@ -101,10 +103,9 @@ public class BuildHubWebSocket {
         }
 
         //+++++++++++++ Terrain-building rules: ++++++++++++++
-        final Map<String, MPTerrainCellProto> terrain = State.forWorld(worldSession.getWorldID()).getTerrain(request.getPosition().toObject(), 10);
+        final MPTerrainCellProto cell = State.Terrain.observe(partialState, actionPosition);
 
         //Cannot build anything on lava:
-        final MPTerrainCellProto cell = terrain.get(State.identify(request.getPosition()));
         if (cell.getType() == CellType.LAVA_CellType) {
             send(BuildResponse.newBuilder()
                     .setStatus(BuildResponse.Status.CANNOT_BUILD)
@@ -114,13 +115,14 @@ public class BuildHubWebSocket {
         }
 
         //A hub needs to be a certain distance away from another hub:
-        final Collection<BuildingEntity> playerBuildings = DBManager.buildingEntity.listForPlayerAndWorld(player.getTeamID(), worldSession.getWorldID());
         boolean hubWithinDistance = false;
-        for (BuildingEntity e : playerBuildings) {
-            if (e.getBuildingType() == EBuildingType.HUB_EBuildingType) {
-                double distance = e.getPosition().distanceTo(request.getPosition().toObject());
-                if (distance <= 10) {
-                    hubWithinDistance = true;
+        for (MPEntityProto e : partialState.getEntitiesMap().values()) {
+            if (e.hasBuildingEntity()) {
+                if (e.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+                    double distance = e.getPosition().toObject().distanceTo(request.getPosition().toObject());
+                    if (distance <= 10) {
+                        hubWithinDistance = true;
+                    }
                 }
             }
         }
@@ -134,25 +136,27 @@ public class BuildHubWebSocket {
         }
 
         //Cannot build on a cell that already has a building:
-        final Collection<BuildingEntity> allBuildings = DBManager.buildingEntity.listForWorld(worldSession.getWorldID());
-        for (BuildingEntity e : allBuildings) {
-            if (e.getPosition().equals(request.getPosition().toObject())) {
-                send(BuildResponse.newBuilder()
-                        .setStatus(BuildResponse.Status.CANNOT_BUILD)
-                        .setMessage("BUILDING_EXISTS")
-                        .build());
-                return;
-            }
+        for (MPEntityProto e : partialState.getEntitiesMap().values()) {
+                if (e.getPosition().toObject().equals(request.getPosition().toObject())) {
+                    send(BuildResponse.newBuilder()
+                            .setStatus(BuildResponse.Status.CANNOT_BUILD)
+                            .setMessage("BUILDING_EXISTS")
+                            .build());
+                    return;
+                }
         }
 
         //Cannot build if prerequisite buildings are not owned:
+//Cannot build if prerequisite buildings are not owned:
         final ArrayList<EBuildingType> prerequisites = BuildingType.HUB.getPrerequisites();
         for (EBuildingType prerequisiteType : prerequisites) {
             boolean owned = false;
-            for (BuildingEntity e : playerBuildings) {
-                if (e.getBuildingType() == prerequisiteType) {
-                    owned = true;
-                    break;
+            for (MPEntityProto e : partialState.getEntitiesMap().values()) {
+                if (e.hasBuildingEntity()) {
+                    if (e.getBuildingEntity().getBuildingType() == prerequisiteType) {
+                        owned = true;
+                        break;
+                    }
                 }
             }
             if (!owned) {
@@ -187,9 +191,9 @@ public class BuildHubWebSocket {
                 .setMessage("OK")
                 .build());
 
-//        StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addCreatedEntity(building);
-//        final MPStateUpdateProto stateUpdate = State.forWorld(worldSession.getWorldID()).composeStateUpdate(worldSession, stateUpdateBuilder, true, false);
-//        UpdateStateWebSocket.sendUpdate(worldSession, stateUpdate, request.getPosition().toObject(), 20);
+        //Define and send the state update:
+        final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(building);
+        State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), actionPosition, 10, false, false);
 
     }
 

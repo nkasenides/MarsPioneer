@@ -77,7 +77,6 @@ public class UpdateStateWebSocket {
      * @throws IOException thrown when the message cannot be sent via the socket.
      */
     public static void sendUpdate(final MPWorldSession worldSession, UpdateStateResponse response) throws IOException {
-        System.out.println("sendUpdate()");
         final Session socketSession = CONNECTED_SESSIONS.get(worldSession.getId());
         final UpdateStateWebSocket socket = SOCKET_INSTANCES.get(worldSession.getId());
         if (socketSession != null && socket != null && socketSession.isOpen()) {

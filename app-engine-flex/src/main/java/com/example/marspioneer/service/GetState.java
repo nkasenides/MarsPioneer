@@ -42,7 +42,7 @@ public class GetState implements AthlosService<GetStateRequest, GetStateResponse
             t = System.currentTimeMillis();
             //Get the state:
             final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
-            final MPPartialStateProto mpPartialStateProto = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, worldSession.getCameraPosition(), 20);
+            final MPPartialStateProto mpPartialStateProto = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, worldSession.getCameraPosition(), 10);
 //            System.out.println("Retrieve the state: " + (System.currentTimeMillis() - t) + "ms");
 
             //Response:

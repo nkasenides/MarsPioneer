@@ -86,7 +86,7 @@ public class JoinWorld implements AthlosService<JoinWorldRequest, JoinWorldRespo
         //Define and send the state update:
         final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(firstEntity);
         try {
-            State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), firstEntity.getPosition(), 20, false, false);
+            State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), firstEntity.getPosition(), 10, false, false);
         } catch (IOException e) {
             e.printStackTrace();
         }
