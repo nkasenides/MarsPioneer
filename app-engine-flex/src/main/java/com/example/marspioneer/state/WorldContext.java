@@ -46,7 +46,7 @@ public class WorldContext {
      * @param chunkCol The column of the chunk to load.
      * @return Returns a TerrainChunk.
      */
-    private MPTerrainChunk requestChunk(int chunkRow, int chunkCol) {
+    public MPTerrainChunk requestChunk(int chunkRow, int chunkCol) { //TODO MAKE PRIVATE
         final String chunkHash = Hashing.hash(HashType.MD5, chunkRow + "," + chunkCol);
 
         //Find the chunk using the identifier:
