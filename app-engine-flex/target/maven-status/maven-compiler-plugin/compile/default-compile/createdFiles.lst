@@ -66,6 +66,7 @@ com\example\marspioneer\persistence\DBManager.class
 com\example\marspioneer\service\CreateWorld.class
 com\example\marspioneer\service\GetState.class
 com\example\marspioneer\state\State$Entities.class
+com\example\marspioneer\servlet\GetResultsServlet.class
 com\example\marspioneer\websocket\BuildHubWebSocket.class
 com\example\marspioneer\auth\Auth.class
 com\example\marspioneer\persistence\MPTerrainIdentifierDAO.class

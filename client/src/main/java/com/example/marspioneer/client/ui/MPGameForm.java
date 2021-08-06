@@ -137,7 +137,6 @@ public class MPGameForm extends JFrame {
                             .build();
                     try {
                         Stubs.Actions.getBuildFarmStub(client).send(request.toByteArray());
-                        System.out.println("request sent!");
                     } catch (WebSocketException | IOException webSocketException) {
                         webSocketException.printStackTrace();
                     }

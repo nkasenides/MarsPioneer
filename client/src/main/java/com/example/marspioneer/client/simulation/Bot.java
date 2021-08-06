@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Bot extends Thread {
 
     private boolean running = true;
-    private BotCanvas canvas;
+//    private BotCanvas canvas;
 
 
     private final String botName;
@@ -45,7 +45,8 @@ public class Bot extends Thread {
 
     public Bot(String botName, long delay, long joinTime, long exitTime) {
         this.botName = botName;
-        this.delay = delay;
+        Random random = new Random();
+        this.delay = random.nextInt(1000) + 1000;
         this.joinTime = joinTime;
         this.exitTime = exitTime;
     }
@@ -69,6 +70,7 @@ public class Bot extends Thread {
     @Override
     public void run() {
 
+        System.out.println("Player '" + botName + "' started.");
         final boolean[] success = new boolean[1];
 
         //Create the player:
@@ -86,18 +88,18 @@ public class Bot extends Thread {
                     if (createPlayerResponse.getStatus() == CreatePlayerResponse.Status.OK) {
                         createPlayerLatency = System.currentTimeMillis() - createPlayerTimer;
                         success[0] = true;
-                        System.out.println("Player '" + createPlayerResponse.getPlayer().getName() + "' created, ID: " + createPlayerResponse.getPlayer().getId());
+//                        System.out.println("Player '" + createPlayerResponse.getPlayer().getName() + "' created, ID: " + createPlayerResponse.getPlayer().getId());
                         player = createPlayerResponse.getPlayer().toObject();
                     } else {
                         createPlayerLatency = System.currentTimeMillis() - createPlayerTimer;
                         success[0] = false;
-                        System.err.println(createPlayerResponse.getMessage());
+//                        System.err.println(createPlayerResponse.getMessage());
                     }
                 }
         );
 
         if (!success[0]) {
-            System.err.println("[" + botName + "] - Failed to create player.");
+//            System.err.println("[" + botName + "] - Failed to create player.");
             return;
         }
 
@@ -114,19 +116,19 @@ public class Bot extends Thread {
                     if (authResponse.getStatus() == AuthenticateResponse.Status.OK) {
                         authenticateLatency = System.currentTimeMillis() - authenticateTimer;
                         success[0] = true;
-                        System.out.println("Player '" + player.getName() + "' created, ID: " + authResponse.getGameSession().getPlayerID());
-                        System.out.println("Game session ID: " + authResponse.getGameSession().getId());
+//                        System.out.println("Player '" + player.getName() + "' created, ID: " + authResponse.getGameSession().getPlayerID());
+//                        System.out.println("Game session ID: " + authResponse.getGameSession().getId());
                         gameSession = authResponse.getGameSession().toObject();
                     } else {
                         authenticateLatency = System.currentTimeMillis() - authenticateTimer;
                         success[0] = false;
-                        System.err.println(authResponse.getMessage());
+//                        System.err.println(authResponse.getMessage());
                     }
                 }
         );
 
         if (!success[0]) {
-            System.err.println("[" + botName + "] - Failed to authenticate player.");
+//            System.err.println("[" + botName + "] - Failed to authenticate player.");
             return;
         }
 
@@ -144,18 +146,18 @@ public class Bot extends Thread {
                     if (getPlayerResponse.getStatus() == GetPlayerResponse.Status.OK) {
                         getPlayerLatency = System.currentTimeMillis() - getPlayerTimer;
                         success[0] = true;
-                        System.out.println("Player with ID '" + getPlayerResponse.getPlayer().getName() + "' retrieved.");
+//                        System.out.println("Player with ID '" + getPlayerResponse.getPlayer().getName() + "' retrieved.");
                         player = getPlayerResponse.getPlayer().toObject();
                     } else {
                         getPlayerLatency = System.currentTimeMillis() - getPlayerTimer;
                         success[0] = false;
-                        System.err.println("Failed to get player with ID " + getPlayerRequest.getPlayerID());
+//                        System.err.println("Failed to get player with ID " + getPlayerRequest.getPlayerID());
                     }
                 }
         );
 
         if (!success[0]) {
-            System.err.println("[" + botName + "] - Failed to retrieve player data.");
+//            System.err.println("[" + botName + "] - Failed to retrieve player data.");
             return;
         }
 
@@ -173,24 +175,24 @@ public class Bot extends Thread {
                     if (listWorldsResponse.getStatus() == ListWorldsResponse.Status.OK) {
                         listWorldsLatency = System.currentTimeMillis() - listWorldsTimer;
                         success[0] = true;
-                        System.out.println("Listed worlds");
+//                        System.out.println("Listed worlds");
                         worldsList[0] = new ArrayList<>(listWorldsResponse.getWorldsList());
                     } else {
                         listWorldsLatency = System.currentTimeMillis() - listWorldsTimer;
                         success[0] = false;
-                        System.err.println("Failed to list worlds.");
+//                        System.err.println("Failed to list worlds.");
                     }
                 }
         );
 
         if (!success[0]) {
-            System.err.println("[" + botName + "] - Failed to list worlds.");
+//            System.err.println("[" + botName + "] - Failed to list worlds.");
             return;
         }
 
         //Join world:
         if (worldsList[0].isEmpty()) {
-            System.err.println("[" + botName + "] - No world to join.");
+//            System.err.println("[" + botName + "] - No world to join.");
             return;
         }
 
@@ -206,20 +208,20 @@ public class Bot extends Thread {
                     if (joinWorldResponse.getStatus() == JoinWorldResponse.Status.OK) {
                         joinWorldLatency = System.currentTimeMillis() - joinWorldTimer;
                         success[0] = true;
-                        System.out.println("Player '" + player.getName() + "' joined world '" + joinWorldResponse.getWorld().getId() + "'.");
-                        System.out.println("World session ID: " + joinWorldResponse.getWorldSession().getId());
+//                        System.out.println("Player '" + player.getName() + "' joined world '" + joinWorldResponse.getWorld().getId() + "'.");
+//                        System.out.println("World session ID: " + joinWorldResponse.getWorldSession().getId());
                         this.worldSession = joinWorldResponse.getWorldSession().toObject();
                         this.world = joinWorldResponse.getWorld().toObject();
                     } else {
                         joinWorldLatency = System.currentTimeMillis() - joinWorldTimer;
                         success[0] = false;
-                        System.err.println("Could not join world with ID '" + worldsList[0].get(0).getId() + "'");
+//                        System.err.println("Could not join world with ID '" + worldsList[0].get(0).getId() + "'");
                     }
                 }
         );
 
         if (!success[0]) {
-            System.err.println("[" + botName + "] - Failed to join world.");
+//            System.err.println("[" + botName + "] - Failed to join world.");
             return;
         }
 
@@ -235,20 +237,20 @@ public class Bot extends Thread {
                     if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
                         getInitialStateLatency = System.currentTimeMillis() - getStateTimer;
                         success[0] = true;
-                        System.out.println("Initial state retrieved for player '" + player.getName() + "'.");
+//                        System.out.println("Initial state retrieved for player '" + player.getName() + "'.");
                         terrain = new ConcurrentHashMap<>(getStateResponse.getPartialState().getTerrainMap());
                         entities = new ConcurrentHashMap<>(getStateResponse.getPartialState().getEntitiesMap());
                         resourceSet = getStateResponse.getResourceSet().toObject();
                     } else {
                         getInitialStateLatency = System.currentTimeMillis() - getStateTimer;
                         success[0] = false;
-                        System.err.println("Failed to retrieve state for player '" + player.getName() + "'");
+//                        System.err.println("Failed to retrieve state for player '" + player.getName() + "'");
                     }
                 }
         );
 
         if (!success[0]) {
-            System.err.println("[" + botName + "] - Failed to retrieve initial state.");
+//            System.err.println("[" + botName + "] - Failed to retrieve initial state.");
             return;
         }
 
@@ -265,7 +267,7 @@ public class Bot extends Thread {
                     if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
                         subscribeLatency = System.currentTimeMillis() - subscribeTimer;
                         success[0] = true;
-                        System.out.println("Successfully subscribed to world.");
+//                        System.out.println("Successfully subscribed to world.");
 
                         //Connect to the state update stub:
                         try {
@@ -281,20 +283,20 @@ public class Bot extends Thread {
                     } else {
                         subscribeLatency = System.currentTimeMillis() - subscribeTimer;
                         success[0] = false;
-                        System.err.println(subscribeResponse.getMessage());
+//                        System.err.println(subscribeResponse.getMessage());
                     }
                 }
         );
 
 
         if (!success[0]) {
-            System.err.println("Failed to subscribe to world.");
+//            System.err.println("Failed to subscribe to world.");
             return;
         }
 
         //Launch the UI:
-        this.canvas = new BotCanvas(this);
-        new BotForm(this, canvas);
+//        this.canvas = new BotCanvas(this);
+//        new BotForm(this, canvas);
 
         Random random = new Random();
 
@@ -319,7 +321,7 @@ public class Bot extends Thread {
                 }
 
                 if (hubPos != null) {
-                    System.out.println("Player '" + botName + "' decided to build a Hub.");
+//                    System.out.println("Player '" + botName + "' decided to build a Hub.");
                     final BuildHubRequest buildRequest = BuildHubRequest.newBuilder()
                             .setPosition(hubPos.toProto())
                             .setWorldSessionID(worldSession.getId())
@@ -332,7 +334,8 @@ public class Bot extends Thread {
                     }
                 }
             } else {
-                final int randomMove = random.nextInt(4);
+//                final int randomMove = random.nextInt(4);
+                final int randomMove = 0;
                 switch (randomMove) {
                     case 0:
 
@@ -340,7 +343,7 @@ public class Bot extends Thread {
                         MatrixPosition farmPos = findFarmPosition();
 
                         if (farmPos != null) {
-                            System.out.println("Player '" + botName + "' decided to build a Farm at " + farmPos.getRow() + "," + farmPos.getCol());
+//                            System.out.println("Player '" + botName + "' decided to build a Farm at " + farmPos.getRow() + "," + farmPos.getCol());
                             BuildFarmRequest farmRequest = BuildFarmRequest.newBuilder()
                                     .setPosition(farmPos.toProto())
                                     .setWorldSessionID(worldSession.getId())
@@ -359,7 +362,7 @@ public class Bot extends Thread {
                         MatrixPosition minePos = findMinePosition();
 
                         if (minePos != null) {
-                            System.out.println("Player '" + botName + "' decided to build a Mine at " + minePos.getRow() + "," + minePos.getCol());
+//                            System.out.println("Player '" + botName + "' decided to build a Mine at " + minePos.getRow() + "," + minePos.getCol());
                             BuildMineRequest mineRequest = BuildMineRequest.newBuilder()
                                     .setPosition(minePos.toProto())
                                     .setWorldSessionID(worldSession.getId())
@@ -377,7 +380,7 @@ public class Bot extends Thread {
                         MatrixPosition sandPos = findSandPitPosition();
 
                         if (sandPos != null) {
-                            System.out.println("Player '" + botName + "' decided to build a Sand pit at" + sandPos.getRow() + "," + sandPos.getCol());
+//                            System.out.println("Player '" + botName + "' decided to build a Sand pit at" + sandPos.getRow() + "," + sandPos.getCol());
                             BuildSandPitRequest sandPitRequest = BuildSandPitRequest.newBuilder()
                                     .setPosition(sandPos.toProto())
                                     .setWorldSessionID(worldSession.getId())
@@ -395,7 +398,7 @@ public class Bot extends Thread {
                         MatrixPosition wellPos = findWellPosition();
 
                         if (wellPos != null) {
-                            System.out.println("Player '" + botName + "' decided to build a Well at" + wellPos.getRow() + "," + wellPos.getCol());
+//                            System.out.println("Player '" + botName + "' decided to build a Well at" + wellPos.getRow() + "," + wellPos.getCol());
                             BuildWellRequest wellRequest = BuildWellRequest.newBuilder()
                                     .setPosition(wellPos.toProto())
                                     .setWorldSessionID(worldSession.getId())
@@ -413,7 +416,7 @@ public class Bot extends Thread {
                         MatrixPosition hubPos = findHubPosition();
 
                         if (hubPos != null) {
-                            System.out.println("Player '" + botName + "' decided to build a Hub at" + hubPos.getRow() + "," + hubPos.getCol());
+//                            System.out.println("Player '" + botName + "' decided to build a Hub at" + hubPos.getRow() + "," + hubPos.getCol());
                             BuildHubRequest hubRequestB = BuildHubRequest.newBuilder()
                                     .setPosition(hubPos.toProto())
                                     .setWorldSessionID(worldSession.getId())
@@ -788,7 +791,7 @@ public class Bot extends Thread {
         this.subscribeLatency = subscribeLatency;
     }
 
-    public BotCanvas getCanvas() {
-        return canvas;
-    }
+//    public BotCanvas getCanvas() {
+//        return canvas;
+//    }
 }

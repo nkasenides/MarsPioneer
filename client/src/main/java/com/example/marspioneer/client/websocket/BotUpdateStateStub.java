@@ -41,7 +41,7 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
         long latency = System.currentTimeMillis() - bot.getLastSendTime();
         bot.getStateUpdateLatencies().add(latency);
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
-            System.out.println("[" + bot.getBotName() + "] State update received.");
+//            System.out.println("[" + bot.getBotName() + "] State update received.");
 
             for (Map.Entry<String, MPTerrainCellProto> entry : response.getStateUpdate().getPartialState().getTerrainMap().entrySet()) {
                 bot.getTerrain().put(entry.getKey(), entry.getValue());
@@ -69,10 +69,10 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
                 bot.getTerrain().remove(terrainHash);
             }
 
-            bot.getCanvas().repaint();
+//            bot.getCanvas().repaint();
 
         } else {
-            System.err.println(response.getMessage());
+//            System.err.println(response.getMessage());
         }
     }
 

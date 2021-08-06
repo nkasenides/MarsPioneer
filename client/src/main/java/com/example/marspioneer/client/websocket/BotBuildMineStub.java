@@ -30,16 +30,16 @@ public class BotBuildMineStub extends BinaryWebSocketClient {
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-            bot.getCanvas().showMessage(e.getMessage());
+//            bot.getCanvas().showMessage(e.getMessage());
         }
     }
     
     public void handleResponse(BuildResponse response) {
         if (response.getStatus() == BuildResponse.Status.OK) {
-            System.out.println("Mine built by " + bot.getWorldSession().getId());
+//            System.out.println("Mine built by " + bot.getWorldSession().getId());
         } else {
-            bot.getCanvas().showMessage(response.getMessage());
-            System.err.println(response.getMessage());
+//            bot.getCanvas().showMessage(response.getMessage());
+//            System.err.println(response.getMessage());
         }
     }
 

@@ -17,14 +17,18 @@ import org.eclipse.jetty.websocket.api.annotations.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Future;
 
 @WebSocket(maxIdleTime = -1)
 public class BuildFarmWebSocket {
+
+    public static final Vector<Long> sessionValidation = new Vector<>();
+    public static final Vector<Long> stateRetrieval = new Vector<>();
+    public static final Vector<Long> ruleProcessing = new Vector<>();
+    public static final Vector<Long> stateModification = new Vector<>();
+    public static final Vector<Long> stateSend = new Vector<>();
+    public static final Vector<Long> total = new Vector<>();
 
     private Session session;
     private String worldSessionID;
@@ -61,7 +65,8 @@ public class BuildFarmWebSocket {
      */
     public void handleMessage(BuildFarmRequest request) throws IOException {
 
-//        long t = System.currentTimeMillis();
+        long t = System.currentTimeMillis();
+        long start = t;
 //        System.out.println("Got message");
 
         //Retrieve the session:
@@ -86,8 +91,9 @@ public class BuildFarmWebSocket {
             return;
         }
 
-//        System.out.println("Session validation: " + (System.currentTimeMillis() - t));
-//        t = System.currentTimeMillis();
+//        System.out.print("\t" + (System.currentTimeMillis() - t));
+        sessionValidation.add(System.currentTimeMillis() - t);
+        t = System.currentTimeMillis();
 
         final MatrixPosition actionPosition = request.getPosition().toObject();
 
@@ -95,8 +101,9 @@ public class BuildFarmWebSocket {
         final MPPartialStateProto partialState = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, actionPosition, 20);
 
 
-//        System.out.println("Retrieve state: " + (System.currentTimeMillis() - t));
-//        t = System.currentTimeMillis();
+//        System.out.print("\t\t" + (System.currentTimeMillis() - t));
+        stateRetrieval.add(System.currentTimeMillis() - t);
+        t = System.currentTimeMillis();
 
         //+++++++++++++ Resource rules ++++++++++++++
         //Check resources:
@@ -193,8 +200,9 @@ public class BuildFarmWebSocket {
             }
         }
 
-//        System.out.println("Rule processing: " + (System.currentTimeMillis() - t));
-//        t = System.currentTimeMillis();
+//        System.out.print("\t\t\t" + (System.currentTimeMillis() - t));
+        ruleProcessing.add(System.currentTimeMillis() - t);
+        t = System.currentTimeMillis();
 
         //----------------------------------------END OF RULE CHECKING-------------------------------------------------
 
@@ -221,14 +229,18 @@ public class BuildFarmWebSocket {
                 .setMessage("OK")
                 .build());
 
-//        System.out.println("State modification: " + (System.currentTimeMillis() - t));
-//        t = System.currentTimeMillis();
+//        System.out.print("\t\t\t\t" + (System.currentTimeMillis() - t));
+        stateModification.add(System.currentTimeMillis() - t);
+        t = System.currentTimeMillis();
 
         //Define and send the state update:
         final StateUpdateBuilder stateUpdateBuilder = StateUpdateBuilder.create().addUpdatedEntity(building);
         State.sendUpdate(worldSession, stateUpdateBuilder, worldSession.getWorldID(), actionPosition, 10, false, false);
 
-//        System.out.println("Send state: " + (System.currentTimeMillis() - t));
+//        System.out.print("\t\t\t\t\t" + (System.currentTimeMillis() - t));
+        stateSend.add(System.currentTimeMillis() - t);
+        total.add(System.currentTimeMillis() - start);
+//        System.out.println("\t\t\t\t\t\t" + (System.currentTimeMillis() - start));
 
 
     }

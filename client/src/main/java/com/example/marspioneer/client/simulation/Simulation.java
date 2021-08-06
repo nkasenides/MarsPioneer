@@ -36,6 +36,9 @@ public class Simulation {
         int playerNameCounter = 0;
         Vector<Bot> threads = new Vector<>();
 
+        System.out.println("Press any key to start...");
+        new Scanner(System.in).nextLine();
+
         long startTime = System.currentTimeMillis();
         long finishTime = startTime + config.getTimeLimit();
         while (System.currentTimeMillis() < finishTime || config.getTimeLimit() <= 0) {

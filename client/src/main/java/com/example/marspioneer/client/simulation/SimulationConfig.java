@@ -40,13 +40,15 @@ public class SimulationConfig {
 
     public static void main(String[] args) {
         final SimulationConfig simulationConfig = new SimulationConfig(60, 1000);
-//        for (int i = 1000; i <= 1000; i+= 1000) {
-//        simulationConfig.addEvent(new SimulationEvent(2000, SimulationEventType.PLAYER_JOIN, 50000));
-//        }
 
-        for (int i = 0; i < 64; i++) {
-            simulationConfig.addEvent(new SimulationEvent(1000, SimulationEventType.PLAYER_JOIN, 50000));
+        for (int i = 0; i < 40; i++) {
+            simulationConfig.addEvent(new SimulationEvent(1000, SimulationEventType.PLAYER_JOIN, 59000));
         }
+
+
+//        for (int i = 0; i <= 2000; i+= 1000) {
+//            simulationConfig.addEvent(new SimulationEvent(i, SimulationEventType.PLAYER_JOIN, 60000));
+//        }
 
         final String jsonString = new Gson().toJson(simulationConfig);
         try {

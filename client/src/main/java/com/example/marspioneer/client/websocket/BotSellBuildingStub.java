@@ -30,16 +30,16 @@ public class BotSellBuildingStub extends BinaryWebSocketClient {
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-            bot.getCanvas().showMessage(e.getMessage());
+//            bot.getCanvas().showMessage(e.getMessage());
         }
     }
     
     public void handleResponse(SellBuildingResponse response) {
         if (response.getStatus() == SellBuildingResponse.Status.OK) {
-            System.out.println("Building sold by " + bot.getWorldSession().getId());
+//            System.out.println("Building sold by " + bot.getWorldSession().getId());
         } else {
-            bot.getCanvas().showMessage(response.getMessage());
-            System.err.println(response.getMessage());
+//            bot.getCanvas().showMessage(response.getMessage());
+//            System.err.println(response.getMessage());
         }
     }
 
