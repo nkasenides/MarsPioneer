@@ -24,7 +24,7 @@ public class ResultReader {
                         }
                         System.out.println();
                         double averageSessionValidation = sumSessionValidation / (double) result.getSessionValidation().size();
-                        System.out.println("Average session validation: " + averageSessionValidation);
+                        System.out.println("Average session validation\t" + averageSessionValidation);
 
 
 
@@ -35,7 +35,7 @@ public class ResultReader {
                         }
                         System.out.println();
                         double averageStateRetrieval = sumStateRetrieval / (double) result.getStateRetrieval().size();
-                        System.out.println("Average state retrieval: " + averageStateRetrieval);
+                        System.out.println("Average state retrieval\t" + averageStateRetrieval);
 
 
 
@@ -47,7 +47,7 @@ public class ResultReader {
                         }
                         System.out.println();
                         double averageRuleProcessing = sumRuleProcessing / (double) result.getRuleProcessing().size();
-                        System.out.println("Average rule processing: " + averageRuleProcessing);
+                        System.out.println("Average rule processing\t" + averageRuleProcessing);
 
 
 
@@ -59,7 +59,7 @@ public class ResultReader {
                         }
                         System.out.println();
                         double averageStateModification = sumStateModification / (double) result.getStateModification().size();
-                        System.out.println("Average state modification: " + averageStateModification);
+                        System.out.println("Average state modification\t" + averageStateModification);
 
 
 
@@ -71,7 +71,7 @@ public class ResultReader {
                         }
                         System.out.println();
                         double averageStateSend = sumStateSend / (double) result.getStateSend().size();
-                        System.out.println("Average state send: " + averageStateSend);
+                        System.out.println("Average state send\t" + averageStateSend);
 
 
 
@@ -84,7 +84,7 @@ public class ResultReader {
                         }
                         System.out.println();
                         double averageTotal = sumTotal / (double) result.getTotal().size();
-                        System.out.println("Average total: " + averageTotal);
+                        System.out.println("Average total\t" + averageTotal);
 
 
 

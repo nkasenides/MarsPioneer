@@ -169,7 +169,7 @@ public class MPClient extends ServerlessGameClient<MPPartialStateProto, MPGameSe
                 }
         );
 
-        final int NUM_OF_PLAYERS = 20;
+        final int NUM_OF_PLAYERS = 2;
 
         for (int i = 0; i < NUM_OF_PLAYERS; i++) {
             MPClient client = new MPClient("Player-" + (i + 1), WORLD_ID);

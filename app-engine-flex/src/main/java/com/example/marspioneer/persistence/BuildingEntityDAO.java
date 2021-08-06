@@ -10,6 +10,7 @@ import com.nkasenides.athlos.persistence.*;
 import com.example.marspioneer.model.*;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.objectis.Objectis;
+import com.raylabz.objectis.query.ObjectisQueryResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,9 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
         String uuid = UUID.randomUUID().toString();
         object.setId(uuid);
         Objectis.create(object, uuid);
+        Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID()).add(object); //Add to player entity collection
+        Objectis.collection(BuildingEntity.class, "entity_" + object.getWorldID()).add(object); //Add to world entity collection
+        Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID() + "_" + object.getWorldID()).add(object); //Add to world and player entity collection
         new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
@@ -38,6 +42,9 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
 
     @Override
     public boolean delete(BuildingEntity object) {
+        Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID()).delete(object); //Add to player entity collection
+        Objectis.collection(BuildingEntity.class, "entity_" + object.getWorldID()).delete(object); //Add to world entity collection
+        Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID() + "_" + object.getWorldID()).delete(object); //Add to world and player entity collection
         Objectis.delete(object);
         new Thread(() -> Firestorm.delete(object)).start();
         return true;
@@ -50,22 +57,20 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
 
     @Override
     public BuildingEntity getForWorld(String worldID, String itemID) {
-        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
+        final ObjectisQueryResult<BuildingEntity> result = Objectis.collection(BuildingEntity.class, "entity_" + worldID)
+                .filter()
                 .whereEqualTo("id", itemID)
                 .limit(1)
-                .fetch().getItems();
-        if (items.size() == 0) {
-            return null;
+                .fetch();
+        if (result.hasItems()) {
+            return result.getItems().get(0);
         }
-        return items.get(0);
+        return null;
     }
 
     @Override
     public Collection<BuildingEntity> listForWorld(String worldID) {
-        return Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
-                .fetch().getItems();
+        return new ArrayList<>(Objectis.collection(BuildingEntity.class, "entity_" + worldID).list());
     }
 
 /**
@@ -75,42 +80,37 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForPlayerAndWorld(String playerID, String worldID) {
-        final List<BuildingEntity> fetch = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
-                .whereEqualTo("playerID", playerID)
-                .fetch().getItems();
-        return fetch;
+        return new ArrayList<>(Objectis.collection(BuildingEntity.class, "entity_" + playerID + "_" + worldID).list());
     }
+
     /**
      * Retrieves a player's entities.
      * @param playerID The player.
      * @return Returns a collection of entities.
      */
     public Collection<BuildingEntity> listForPlayer(String playerID) {
-        return Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("playerID", playerID)
-                .fetch().getItems();
+        return new ArrayList<>(Objectis.collection(BuildingEntity.class, "entity_" + playerID).list());
     }
 
-    /**
-     * Retrieves the entities in a world which are not belonging to a particular player.
-     * @param worldID The world ID
-     * @param excludedPlayerID The excluded player ID.
-     * @return Returns a collection of entities.
-     */
-    public Collection<BuildingEntity> listForWorldExcludingPlayer(String worldID, String excludedPlayerID) {
-        final List<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
-                .fetch().getItems();
-
-        final ArrayList<BuildingEntity> oEntities = new ArrayList<>();
-        for (BuildingEntity entity : entities) {
-            if (!entity.getPlayerID().equals(excludedPlayerID)) {
-                oEntities.add(entity);
-            }
-        }
-        return oEntities;
-    }
+//    /**
+//     * Retrieves the entities in a world which are not belonging to a particular player.
+//     * @param worldID The world ID
+//     * @param excludedPlayerID The excluded player ID.
+//     * @return Returns a collection of entities.
+//     */
+//    public Collection<BuildingEntity> listForWorldExcludingPlayer(String worldID, String excludedPlayerID) {
+//        final List<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
+//                .whereEqualTo("worldID", worldID)
+//                .fetch().getItems();
+//
+//        final ArrayList<BuildingEntity> oEntities = new ArrayList<>();
+//        for (BuildingEntity entity : entities) {
+//            if (!entity.getPlayerID().equals(excludedPlayerID)) {
+//                oEntities.add(entity);
+//            }
+//        }
+//        return oEntities;
+//    }
 
 }
 

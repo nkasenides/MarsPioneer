@@ -48,10 +48,13 @@ public class MPEntityDAO implements WorldBasedDAO<MPEntity> {
 
     @Override
     public Collection<MPEntity> listForWorld(String worldID) {
-        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
-                .fetch().getItems();
-        return new ArrayList<>(items);
+        return new ArrayList<>(Objectis.collection(BuildingEntity.class, "entity_" + worldID).list());
+//
+//
+//        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
+//                .whereEqualTo("worldID", worldID)
+//                .fetch().getItems();
+//        return new ArrayList<>(items);
     }
 
     /**
@@ -61,11 +64,14 @@ public class MPEntityDAO implements WorldBasedDAO<MPEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<MPEntity> listForPlayerAndWorld(String playerID, String worldID) {
-        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
-                .whereEqualTo("playerID", playerID)
-                .fetch().getItems();
-        return new ArrayList<>(items);
+
+        return new ArrayList<>(Objectis.collection(BuildingEntity.class, "entity_" + playerID + "_" + worldID).list());
+
+//        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
+//                .whereEqualTo("worldID", worldID)
+//                .whereEqualTo("playerID", playerID)
+//                .fetch().getItems();
+//        return new ArrayList<>(items);
     }
 
     /**
@@ -74,31 +80,34 @@ public class MPEntityDAO implements WorldBasedDAO<MPEntity> {
      * @return Returns a collection of entities.
      */
     public Collection<MPEntity> listForPlayer(String playerID) {
-        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("playerID", playerID)
-                .fetch().getItems();
-        return new ArrayList<>(items);
+
+        return new ArrayList<>(Objectis.collection(BuildingEntity.class, "entity_" + playerID).list());
+
+//        final List<BuildingEntity> items = Objectis.filter(BuildingEntity.class)
+//                .whereEqualTo("playerID", playerID)
+//                .fetch().getItems();
+//        return new ArrayList<>(items);
     }
 
-    /**
-     * Retrieves the entities in a world which are not belonging to a particular player.
-     * @param worldID The world ID
-     * @param excludedPlayerID The excluded player ID.
-     * @return Returns a collection of entities.
-     */
-    public Collection<MPEntity> listForWorldExcludingPlayer(String worldID, String excludedPlayerID) {
-        final List<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
-                .whereEqualTo("worldID", worldID)
-                .fetch().getItems();
-
-        final ArrayList<BuildingEntity> oEntities = new ArrayList<>();
-        for (BuildingEntity entity : entities) {
-            if (!entity.getPlayerID().equals(excludedPlayerID)) {
-                oEntities.add(entity);
-            }
-        }
-        return new ArrayList<>(oEntities);
-    }
+//    /**
+//     * Retrieves the entities in a world which are not belonging to a particular player.
+//     * @param worldID The world ID
+//     * @param excludedPlayerID The excluded player ID.
+//     * @return Returns a collection of entities.
+//     */
+//    public Collection<MPEntity> listForWorldExcludingPlayer(String worldID, String excludedPlayerID) {
+//        final List<BuildingEntity> entities = Objectis.filter(BuildingEntity.class)
+//                .whereEqualTo("worldID", worldID)
+//                .fetch().getItems();
+//
+//        final ArrayList<BuildingEntity> oEntities = new ArrayList<>();
+//        for (BuildingEntity entity : entities) {
+//            if (!entity.getPlayerID().equals(excludedPlayerID)) {
+//                oEntities.add(entity);
+//            }
+//        }
+//        return new ArrayList<>(oEntities);
+//    }
 
 }
 
