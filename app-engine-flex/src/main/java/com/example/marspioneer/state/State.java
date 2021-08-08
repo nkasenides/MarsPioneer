@@ -79,6 +79,7 @@ public class State {
      * @return Returns a collection of world sessions.
      */
     public static HashMap<MPWorldSession, ArrayList<MPEntity>> filterUpdateSessions(MPWorldSession initiatingSession, String worldID, MatrixPosition actionPosition, float areaOfEffect) {
+        final long l = System.currentTimeMillis();
         ArrayList<MPWorldSession> allSessions = new ArrayList<>(State.forWorld(worldID).getSubscribedSessions());
         HashMap<MPWorldSession, ArrayList<MPEntity>> filteredSessions = new HashMap<>();
         for (MPWorldSession worldSession : allSessions) {
@@ -114,6 +115,7 @@ public class State {
             }
 
         }
+        System.out.println("\t" + (System.currentTimeMillis() - l));
         return filteredSessions;
     }
 

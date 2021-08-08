@@ -41,7 +41,7 @@ public class SimulationConfig {
     public static void main(String[] args) {
         final SimulationConfig simulationConfig = new SimulationConfig(60, 1000);
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 5; i++) {
             simulationConfig.addEvent(new SimulationEvent(1000, SimulationEventType.PLAYER_JOIN, 59000));
         }
 

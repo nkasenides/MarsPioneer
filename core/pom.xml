@@ -28,11 +28,6 @@
         <dependency>
             <groupId>com.raylabz</groupId>
             <artifactId>objectis</artifactId>
-            <version>0.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.raylabz</groupId>
-            <artifactId>objectis</artifactId>
             <version>0.1.7</version>
             <scope>compile</scope>
         </dependency>

@@ -14,6 +14,9 @@ public class ResultReader {
                 .onSuccess(new OnSuccessListener<BasicHTTPResponse>() {
                     @Override
                     public void onSuccess(BasicHTTPResponse response) throws Exception {
+
+                        System.out.println(response.getContent());
+
                         Gson gson = new Gson();
                         final ResultType result = gson.fromJson(response.getContent(), ResultType.class);
 

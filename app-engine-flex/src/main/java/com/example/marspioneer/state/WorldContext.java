@@ -485,6 +485,7 @@ public class WorldContext {
      */
     public HashMap<MPWorldSession, UpdateStateResponse> composeStateUpdate(HashMap<MPWorldSession, ArrayList<MPEntity>> worldSessionsMap, StateUpdateBuilder globalStateUpdateBuilder,
                                                  boolean refreshTerrain, boolean refreshEntities) {
+        final long l = System.currentTimeMillis();
         final HashMap<MPWorldSession, UpdateStateResponse> stateUpdateMap = new HashMap<>();
         for (Map.Entry<MPWorldSession, ArrayList<MPEntity>> entry : worldSessionsMap.entrySet()) {
             if (refreshTerrain) {
@@ -526,6 +527,7 @@ public class WorldContext {
                     .build();
             stateUpdateMap.put(entry.getKey(), response);
         }
+        System.out.println("\t\t\t" + (System.currentTimeMillis() - l));
         return stateUpdateMap;
     }
 

@@ -3,5 +3,16 @@ env: flex
 handlers:
   - url: /.*
     script: this field is required, but ignored
+resources:
+  cpu: 1
+  memory_gb: 1
+  disk_size_gb: 10
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 8
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.9
+  target_concurrent_requests: 50
 env_variables:
   JETTY_MODULES_ENABLE: websocket

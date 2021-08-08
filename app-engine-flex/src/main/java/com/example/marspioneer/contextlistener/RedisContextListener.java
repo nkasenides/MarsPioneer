@@ -1,5 +1,6 @@
 package com.example.marspioneer.contextlistener;
 
+import com.example.marspioneer.benchmarking.*;
 import com.example.marspioneer.model.*;
 import com.raylabz.firestorm.Firestorm;
 import com.raylabz.objectis.Objectis;
@@ -54,7 +55,7 @@ public class RedisContextListener implements ServletContextListener {
                 System.out.println("Redis context init");
                 jedisPool = createJedisPool();
 
-                Objectis.init(jedisPool.getResource());
+                Objectis.init(jedisPool);
                 Objectis.register(BuildingEntity.class);
                 Objectis.register(MPGameSession.class);
                 Objectis.register(MPWorld.class);
@@ -63,6 +64,12 @@ public class RedisContextListener implements ServletContextListener {
                 Objectis.register(MPPlayer.class);
                 Objectis.register(MPTerrainChunk.class);
                 Objectis.register(MPTerrainIdentifier.class);
+                Objectis.register(RuleProcessingResult.class);
+                Objectis.register(SessionValidationResult.class);
+                Objectis.register(StateModificationResult.class);
+                Objectis.register(StateRetrievalResult.class);
+                Objectis.register(StateSendResult.class);
+                Objectis.register(TotalResult.class);
 
                 event.getServletContext().setAttribute("jedisPool", jedisPool);
             } catch (IOException | ClassRegistrationException e) {

@@ -5,6 +5,7 @@
 
 package com.example.marspioneer.servlet;
 
+import com.example.marspioneer.benchmarking.*;
 import com.example.marspioneer.proto.BuildFarmRequest;
 import com.example.marspioneer.service.Services;
 import com.example.marspioneer.websocket.BuildFarmWebSocket;
@@ -12,6 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.nkasenides.athlos.exception.ServiceNotFoundException;
 import com.nkasenides.athlos.serverless.servlet.AthlosServlet;
+import com.raylabz.firestorm.Firestorm;
+import com.raylabz.objectis.Objectis;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "GetResultsServlet", urlPatterns = {"/results/get"})
 public class GetResultsServlet extends HttpServlet {
@@ -28,16 +33,60 @@ public class GetResultsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Gson gson = new Gson();
-        JsonObject reply = new JsonObject();
-        reply.add("sessionValidation", gson.toJsonTree(BuildFarmWebSocket.sessionValidation));
-        reply.add("stateRetrieval", gson.toJsonTree(BuildFarmWebSocket.stateRetrieval));
-        reply.add("ruleProcessing", gson.toJsonTree(BuildFarmWebSocket.ruleProcessing));
-        reply.add("stateModification", gson.toJsonTree(BuildFarmWebSocket.stateModification));
-        reply.add("stateSend", gson.toJsonTree(BuildFarmWebSocket.stateSend));
-        reply.add("total", gson.toJsonTree(BuildFarmWebSocket.total));
+        try {
 
-        resp.getWriter().println(gson.toJson(reply));
+            final List<SessionValidationResult> sessionValidationResults = Objectis.list(SessionValidationResult.class);
+            final List<StateRetrievalResult> stateRetrievalResults = Objectis.list(StateRetrievalResult.class);
+            final List<RuleProcessingResult> ruleProcessingResults = Objectis.list(RuleProcessingResult.class);
+            final List<StateModificationResult> stateModificationResults = Objectis.list(StateModificationResult.class);
+            final List<StateSendResult> stateSendResults = Objectis.list(StateSendResult.class);
+            final List<TotalResult> totalResults = Objectis.list(TotalResult.class);
+
+            ArrayList<Long> sessionValidation = new ArrayList<>();
+            ArrayList<Long> stateRetrieval = new ArrayList<>();
+            ArrayList<Long> ruleProcessing = new ArrayList<>();
+            ArrayList<Long> stateModification = new ArrayList<>();
+            ArrayList<Long> stateSend = new ArrayList<>();
+            ArrayList<Long> total = new ArrayList<>();
+
+            for (SessionValidationResult sessionValidationResult : sessionValidationResults) {
+                sessionValidation.add(sessionValidationResult.getValue());
+            }
+
+            for (StateRetrievalResult stateRetrievalResult : stateRetrievalResults) {
+                stateRetrieval.add(stateRetrievalResult.getValue());
+            }
+
+            for (RuleProcessingResult ruleProcessingResult : ruleProcessingResults) {
+                ruleProcessing.add(ruleProcessingResult.getValue());
+            }
+
+            for (StateModificationResult stateModificationResult : stateModificationResults) {
+                stateModification.add(stateModificationResult.getValue());
+            }
+
+            for (StateSendResult stateSendResult : stateSendResults) {
+                stateSend.add(stateSendResult.getValue());
+            }
+
+            for (TotalResult totalResult : totalResults) {
+                total.add(totalResult.getValue());
+            }
+
+
+            Gson gson = new Gson();
+            JsonObject reply = new JsonObject();
+            reply.add("sessionValidation", gson.toJsonTree(sessionValidation));
+            reply.add("stateRetrieval", gson.toJsonTree(stateRetrieval));
+            reply.add("ruleProcessing", gson.toJsonTree(ruleProcessing));
+            reply.add("stateModification", gson.toJsonTree(stateModification));
+            reply.add("stateSend", gson.toJsonTree(stateSend));
+            reply.add("total", gson.toJsonTree(total));
+
+            resp.getWriter().println(gson.toJson(reply));
+        } catch (IOException e) {
+            resp.getWriter().println(e.getMessage());
+        }
 
     }
 
