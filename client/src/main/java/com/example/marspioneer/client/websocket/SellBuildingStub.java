@@ -19,7 +19,7 @@ public class SellBuildingStub extends BinaryWebSocketClient {
     private MPClient client;
 
     public SellBuildingStub(MPClient client) throws IOException, WebSocketException {
-        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/action/sellBuilding");
+        super("ws://localhost:8080/api/action/sellBuilding");
         this.client = client;
     }
 

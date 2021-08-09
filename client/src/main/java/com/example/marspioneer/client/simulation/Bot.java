@@ -46,7 +46,7 @@ public class Bot extends Thread {
     public Bot(String botName, long delay, long joinTime, long exitTime) {
         this.botName = botName;
         Random random = new Random();
-        this.delay = random.nextInt(1000) + 1000;
+        this.delay = random.nextInt((int) delay) + 1000;
         this.joinTime = joinTime;
         this.exitTime = exitTime;
     }

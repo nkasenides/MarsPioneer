@@ -10,7 +10,7 @@ public class ResultReader {
 
     public static void main(String[] args) {
 
-        BasicHTTPRequest.create("http://mars-pioneer-322210.oa.r.appspot.com/results/get", RequestMethod.GET)
+        BasicHTTPRequest.create("http://localhost:8080/results/get", RequestMethod.GET)
                 .onSuccess(new OnSuccessListener<BasicHTTPResponse>() {
                     @Override
                     public void onSuccess(BasicHTTPResponse response) throws Exception {

@@ -18,7 +18,7 @@ public class BuildMineStub extends BinaryWebSocketClient {
     private MPClient client;
 
     public BuildMineStub(MPClient client) throws IOException, WebSocketException {
-        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/action/buildMine");
+        super("ws://localhost:8080/api/action/buildMine");
         this.client = client;
     }
 

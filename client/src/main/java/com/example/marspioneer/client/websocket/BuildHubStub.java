@@ -18,7 +18,7 @@ public class BuildHubStub extends BinaryWebSocketClient {
     private MPClient client;
 
     public BuildHubStub(MPClient client) throws IOException, WebSocketException {
-        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/action/buildHub");
+        super("ws://localhost:8080/api/action/buildHub");
         this.client = client;
     }
 

@@ -19,7 +19,7 @@ public class BotBuildFarmStub extends BinaryWebSocketClient {
     private Bot bot;
 
     public BotBuildFarmStub(Bot bot) throws IOException, WebSocketException {
-        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/action/buildFarm");
+        super("ws://localhost:8080/api/action/buildFarm");
         this.bot = bot;
     }
 
@@ -39,7 +39,7 @@ public class BotBuildFarmStub extends BinaryWebSocketClient {
 //            System.out.println("Farm built by " + bot.getWorldSession().getId());
         } else {
 //            bot.getCanvas().showMessage(response.getMessage());
-//            System.err.println(response.getMessage());
+            System.err.println(response.getMessage());
         }
     }
 

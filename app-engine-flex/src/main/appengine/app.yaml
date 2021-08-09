@@ -9,10 +9,10 @@ resources:
   disk_size_gb: 10
 automatic_scaling:
   min_num_instances: 1
-  max_num_instances: 5
+  max_num_instances: 4
   cool_down_period_sec: 180
   cpu_utilization:
     target_utilization: 0.5
-  target_concurrent_requests: 50
+  target_concurrent_requests: 30
 env_variables:
   JETTY_MODULES_ENABLE: websocket

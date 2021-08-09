@@ -23,7 +23,7 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
     private Bot bot;
 
     public BotUpdateStateStub(Bot bot) throws IOException, WebSocketException {
-        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/state/update");
+        super("ws://localhost:8080/api/state/update");
         this.bot = bot;
     }
 

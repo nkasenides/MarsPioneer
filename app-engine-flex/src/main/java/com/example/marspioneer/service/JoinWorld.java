@@ -71,8 +71,8 @@ public class JoinWorld implements AthlosService<JoinWorldRequest, JoinWorldRespo
         firstEntity.setWorldID(world.getId());
         firstEntity.setPlayerID(player.getId());
         Random random = new Random();
-        final int row = random.nextInt(100);
-        final int col = random.nextInt(100);
+        final int row = random.nextInt(2000);
+        final int col = random.nextInt(2000);
         firstEntity.setPosition(new MatrixPosition(row, col));
         firstEntity.setBuildingType(EBuildingType.HUB_EBuildingType);
         firstEntity.setAreaOfInterest(10);

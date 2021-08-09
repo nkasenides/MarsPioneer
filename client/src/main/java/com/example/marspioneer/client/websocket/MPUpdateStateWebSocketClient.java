@@ -14,7 +14,7 @@
 //    MPClient client;
 //
 //    public MPUpdateStateWebSocketClient(MPClient client) throws IOException, WebSocketException {
-//        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/state/update");
+//        super("ws://localhost:8080/api/state/update");
 //        this.client = client;
 //    }
 //
