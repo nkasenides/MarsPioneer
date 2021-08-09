@@ -18,7 +18,7 @@ public class BuildFarmStub extends BinaryWebSocketClient {
     private MPClient client;
 
     public BuildFarmStub(MPClient client) throws IOException, WebSocketException {
-        super("ws://localhost:8080/api/action/buildFarm");
+        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/action/buildFarm");
         this.client = client;
     }
 

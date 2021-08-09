@@ -24,7 +24,7 @@ public class UpdateStateStub extends BinaryWebSocketClient {
     private MPClient client;
 
     public UpdateStateStub(MPClient client) throws IOException, WebSocketException {
-        super("ws://localhost:8080/api/state/update");
+        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/state/update");
         this.client = client;
     }
 

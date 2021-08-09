@@ -19,7 +19,7 @@ public class BotBuildMineStub extends BinaryWebSocketClient {
     private Bot bot;
 
     public BotBuildMineStub(Bot bot) throws IOException, WebSocketException {
-        super("ws://localhost:8080/api/action/buildMine");
+        super("ws://mars-pioneer-322210.oa.r.appspot.com/api/action/buildMine");
         this.bot = bot;
     }
 

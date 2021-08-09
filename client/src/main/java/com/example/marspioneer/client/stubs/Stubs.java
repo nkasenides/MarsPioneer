@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public final class Stubs {
 
-    public static final String BASE_URL = "http://localhost:8080";
+    public static final String BASE_URL = "http://mars-pioneer-322210.oa.r.appspot.com";
 
     public static class Actions {
         private static BuildHubStub buildHubStub = null;
