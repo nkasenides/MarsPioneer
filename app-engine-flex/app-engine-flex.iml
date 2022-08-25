@@ -14,7 +14,7 @@
     </facet>
     <facet type="app-engine-flexible" name="Google App Engine Flexible">
       <configuration>
-        <option name="appYamlPath" value="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\app-engine-flex\src\main\appengine\app.yaml" />
+        <option name="appYamlPath" value="C:\Users\hfnov\Desktop\athlos\Athlos projects\MarsPioneer\MarsPioneer_0_0_35\MP\app-engine-flex\src\main\appengine\app.yaml" />
         <option name="dockerDirectory" value="D:\Users\hfnov\Desktop\MarsPioneer\MarsPioneer_0_0_35\MP\app-engine-flex\src\main\docker" />
       </configuration>
     </facet>

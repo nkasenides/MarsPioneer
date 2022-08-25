@@ -264,9 +264,11 @@ public class Services {
     }    
     
     public static GetStateResponse getState(byte[] data, Object[] optionalParams) throws ServiceNotFoundException {    
-        try {        
-            GetStateRequest request = GetStateRequest.parseFrom(data);            
-            return new GetState().serve(request, optionalParams);            
+        try {
+            long t = System.currentTimeMillis();
+            GetStateRequest request = GetStateRequest.parseFrom(data);
+            System.out.println("~~ REQUEST DESERIALIZATION: " + (System.currentTimeMillis() - t));
+            return new GetState().serve(request, optionalParams);
         } catch (InvalidProtocolBufferException e) {        
             throw new ServiceNotFoundException("Your request data did not match the expected service request type (GetStateRequest).", e);            
         }        

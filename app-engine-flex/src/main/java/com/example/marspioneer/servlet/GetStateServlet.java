@@ -5,6 +5,7 @@
 
 package com.example.marspioneer.servlet;
 
+import com.example.marspioneer.proto.GetStateResponse;
 import com.example.marspioneer.service.Services;
 import com.nkasenides.athlos.exception.ServiceNotFoundException;
 import com.nkasenides.athlos.serverless.servlet.AthlosServlet;
@@ -20,6 +21,7 @@ public class GetStateServlet extends AthlosServlet {
 
     @Override
     protected byte[] callProcessMethod(HttpServletRequest servletRequest, HttpServletResponse servletResponse, DataInputStream inputStream) throws ServiceNotFoundException, IOException {
+        System.out.println("~~ Server received request at: " + System.currentTimeMillis());
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         int nRead;
         byte[] data = new byte[16384];
@@ -30,7 +32,15 @@ public class GetStateServlet extends AthlosServlet {
               servletRequest.getRemoteAddr(),
 //                servletRequest,
         };
-        return Services.getState(buffer.toByteArray(), additionalParameters).toByteArray();
+        GetStateResponse state = Services.getState(buffer.toByteArray(), additionalParameters);
+
+        long t = System.currentTimeMillis();
+        byte[] bytes = state.toByteArray();
+        System.out.println("~~ RESPONSE SERIALIZATION: " + (System.currentTimeMillis() - t));
+
+        System.out.println("~~ Server sent response at: " + System.currentTimeMillis());
+        return bytes;
+
     }
 
 }

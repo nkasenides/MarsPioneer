@@ -29,14 +29,14 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
         Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID()).add(object); //Add to player entity collection
         Objectis.collection(BuildingEntity.class, "entity_" + object.getWorldID()).add(object); //Add to world entity collection
         Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID() + "_" + object.getWorldID()).add(object); //Add to world and player entity collection
-        new Thread(() -> Firestorm.create(object, uuid)).start();
+//        new Thread(() -> Firestorm.create(object, uuid)).start();
         return true;
     }
 
     @Override
     public boolean update(BuildingEntity object) {
         Objectis.update(object);
-        new Thread(() -> Firestorm.update(object)).start();
+//        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
@@ -46,7 +46,7 @@ public class BuildingEntityDAO implements WorldBasedDAO<BuildingEntity> {
         Objectis.collection(BuildingEntity.class, "entity_" + object.getWorldID()).delete(object); //Add to world entity collection
         Objectis.collection(BuildingEntity.class, "entity_" + object.getPlayerID() + "_" + object.getWorldID()).delete(object); //Add to world and player entity collection
         Objectis.delete(object);
-        new Thread(() -> Firestorm.delete(object)).start();
+//        new Thread(() -> Firestorm.delete(object)).start();
         return true;
     }
 

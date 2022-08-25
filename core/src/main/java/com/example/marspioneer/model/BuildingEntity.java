@@ -31,7 +31,8 @@ public class BuildingEntity implements MPEntity {
     public float getAreaOfInterest() {    
         return areaOfInterest;        
     }    
-    
+
+    @Override
     public String getId() {    
         return id;        
     }    

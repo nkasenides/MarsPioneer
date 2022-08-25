@@ -226,9 +226,11 @@ public class Bot extends Thread {
         }
 
         //Get initial state:
+        long t = System.currentTimeMillis();
         final GetStateRequest getStateRequest = GetStateRequest.newBuilder()
                 .setWorldSessionID(worldSession.getId())
                 .build();
+        System.out.println("~~ REQUEST FORMATION: " + (System.currentTimeMillis() - t));
 
         long getStateTimer = System.currentTimeMillis();
         Stubs.getStateStub().sendAndWait(
@@ -255,209 +257,209 @@ public class Bot extends Thread {
         }
 
 
-        //Subscribe to world updates:
-        final SubscribeRequest subscribeRequest = SubscribeRequest.newBuilder()
-                .setWorldSessionID(worldSession.getId())
-                .build();
-
-        long subscribeTimer = System.currentTimeMillis();
-        Stubs.subscribeStub().sendAndWait(
-                subscribeRequest,
-                subscribeResponse -> {
-                    if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
-                        subscribeLatency = System.currentTimeMillis() - subscribeTimer;
-                        success[0] = true;
-//                        System.out.println("Successfully subscribed to world.");
-
-                        //Connect to the state update stub:
-                        try {
-                            final BotUpdateStateStub updateStateStub = Stubs.getBotUpdateStateStub(this);
-                            //Send a request to be acknowledged as a client:
-                            final byte[] bytes = UpdateStateRequest.newBuilder().setWorldSessionID(worldSession.getId()).build().toByteArray();
-                            updateStateStub.send(bytes);
-                        } catch (WebSocketException | IOException e) {
-                            e.printStackTrace();
-                            success[0] = false;
-                        }
-
-                    } else {
-                        subscribeLatency = System.currentTimeMillis() - subscribeTimer;
-                        success[0] = false;
-//                        System.err.println(subscribeResponse.getMessage());
-                    }
-                }
-        );
-
-
-        if (!success[0]) {
-//            System.err.println("Failed to subscribe to world.");
-            return;
-        }
-
-        //Launch the UI:
-//        this.canvas = new BotCanvas(this);
-//        new BotForm(this, canvas);
-
-        Random random = new Random();
-
-        while (exitTime > System.currentTimeMillis() && running) {
-
-            boolean hasHub = false;
-            for (MPEntityProto value : entities.values()) {
-                if (value.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
-                    hasHub = true;
-                    break;
-                }
-            }
-
-            if (!hasHub) {
-                //Find position for a hub:
-                MatrixPosition hubPos = null;
-                for (MPTerrainCellProto value : terrain.values()) {
-                    if (value.getType() == CellType.SAND_CellType || value.getType() == CellType.ROCK_CellType || value.getType() == CellType.GRAVEL_CellType) {
-                        hubPos = value.getPosition().toObject();
-                        break;
-                    }
-                }
-
-                if (hubPos != null) {
-//                    System.out.println("Player '" + botName + "' decided to build a Hub.");
-                    final BuildHubRequest buildRequest = BuildHubRequest.newBuilder()
-                            .setPosition(hubPos.toProto())
-                            .setWorldSessionID(worldSession.getId())
-                            .build();
-                    lastSendTime = System.currentTimeMillis();
-                    try {
-                        Stubs.Actions.getBotBuildHubStub(this).send(buildRequest.toByteArray());
-                    } catch (WebSocketException | IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            } else {
-//                final int randomMove = random.nextInt(4);
-                final int randomMove = 0;
-                switch (randomMove) {
-                    case 0:
-
-                        //Find position for a farm:
-                        MatrixPosition farmPos = findFarmPosition();
-
-                        if (farmPos != null) {
-//                            System.out.println("Player '" + botName + "' decided to build a Farm at " + farmPos.getRow() + "," + farmPos.getCol());
-                            BuildFarmRequest farmRequest = BuildFarmRequest.newBuilder()
-                                    .setPosition(farmPos.toProto())
-                                    .setWorldSessionID(worldSession.getId())
-                                    .build();
-                            try {
-                                lastSendTime = System.currentTimeMillis();
-                                Stubs.Actions.getBotBuildFarmStub(this).send(farmRequest.toByteArray());
-                            } catch (WebSocketException | IOException webSocketException) {
-                                webSocketException.printStackTrace();
-                            }
-                        }
-                        break;
-                    case 1:
-
-                        //Find position for a mine:
-                        MatrixPosition minePos = findMinePosition();
-
-                        if (minePos != null) {
-//                            System.out.println("Player '" + botName + "' decided to build a Mine at " + minePos.getRow() + "," + minePos.getCol());
-                            BuildMineRequest mineRequest = BuildMineRequest.newBuilder()
-                                    .setPosition(minePos.toProto())
-                                    .setWorldSessionID(worldSession.getId())
-                                    .build();
-                            try {
-                                lastSendTime = System.currentTimeMillis();
-                                Stubs.Actions.getBotBuildMineStub(this).send(mineRequest.toByteArray());
-                            } catch (WebSocketException | IOException webSocketException) {
-                                webSocketException.printStackTrace();
-                            }
-                        }
-                        break;
-                    case 2:
-                        //Find position for a sand pit:
-                        MatrixPosition sandPos = findSandPitPosition();
-
-                        if (sandPos != null) {
-//                            System.out.println("Player '" + botName + "' decided to build a Sand pit at" + sandPos.getRow() + "," + sandPos.getCol());
-                            BuildSandPitRequest sandPitRequest = BuildSandPitRequest.newBuilder()
-                                    .setPosition(sandPos.toProto())
-                                    .setWorldSessionID(worldSession.getId())
-                                    .build();
-                            try {
-                                lastSendTime = System.currentTimeMillis();
-                                Stubs.Actions.getBotBuildSandPitStub(this).send(sandPitRequest.toByteArray());
-                            } catch (WebSocketException | IOException webSocketException) {
-                                webSocketException.printStackTrace();
-                            }
-                        }
-                        break;
-                    case 3:
-                        //Find position for a well:
-                        MatrixPosition wellPos = findWellPosition();
-
-                        if (wellPos != null) {
-//                            System.out.println("Player '" + botName + "' decided to build a Well at" + wellPos.getRow() + "," + wellPos.getCol());
-                            BuildWellRequest wellRequest = BuildWellRequest.newBuilder()
-                                    .setPosition(wellPos.toProto())
-                                    .setWorldSessionID(worldSession.getId())
-                                    .build();
-                            try {
-                                lastSendTime = System.currentTimeMillis();
-                                Stubs.Actions.getBotBuildWellStub(this).send(wellRequest.toByteArray());
-                            } catch (WebSocketException | IOException webSocketException) {
-                                webSocketException.printStackTrace();
-                            }
-                        }
-                        break;
-                    case 4:
-                        //Find position for a well:
-                        MatrixPosition hubPos = findHubPosition();
-
-                        if (hubPos != null) {
-//                            System.out.println("Player '" + botName + "' decided to build a Hub at" + hubPos.getRow() + "," + hubPos.getCol());
-                            BuildHubRequest hubRequestB = BuildHubRequest.newBuilder()
-                                    .setPosition(hubPos.toProto())
-                                    .setWorldSessionID(worldSession.getId())
-                                    .build();
-                            try {
-                                lastSendTime = System.currentTimeMillis();
-                                Stubs.Actions.getBotBuildHubStub(this).send(hubRequestB.toByteArray());
-                            } catch (WebSocketException | IOException webSocketException) {
-                                webSocketException.printStackTrace();
-                            }
-                        }
-                        break;
-
-
-//                        if (!entities.isEmpty()) {
-//                            ArrayList<MPEntityProto> entitiesList = new ArrayList<>(entities.values());
-//                            final int randomEntityIndex = random.nextInt(entitiesList.size());
-//                            Collections.shuffle(entitiesList);
-//                            MPEntityProto selectedEntity = entitiesList.get(randomEntityIndex);
-//                            SellBuildingRequest sellRequest = SellBuildingRequest.newBuilder()
-//                                    .setBuildingID(selectedEntity.getId())
+//        //Subscribe to world updates:
+//        final SubscribeRequest subscribeRequest = SubscribeRequest.newBuilder()
+//                .setWorldSessionID(worldSession.getId())
+//                .build();
+//
+//        long subscribeTimer = System.currentTimeMillis();
+//        Stubs.subscribeStub().sendAndWait(
+//                subscribeRequest,
+//                subscribeResponse -> {
+//                    if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
+//                        subscribeLatency = System.currentTimeMillis() - subscribeTimer;
+//                        success[0] = true;
+////                        System.out.println("Successfully subscribed to world.");
+//
+//                        //Connect to the state update stub:
+//                        try {
+//                            final BotUpdateStateStub updateStateStub = Stubs.getBotUpdateStateStub(this);
+//                            //Send a request to be acknowledged as a client:
+//                            final byte[] bytes = UpdateStateRequest.newBuilder().setWorldSessionID(worldSession.getId()).build().toByteArray();
+//                            updateStateStub.send(bytes);
+//                        } catch (WebSocketException | IOException e) {
+//                            e.printStackTrace();
+//                            success[0] = false;
+//                        }
+//
+//                    } else {
+//                        subscribeLatency = System.currentTimeMillis() - subscribeTimer;
+//                        success[0] = false;
+////                        System.err.println(subscribeResponse.getMessage());
+//                    }
+//                }
+//        );
+//
+//
+//        if (!success[0]) {
+////            System.err.println("Failed to subscribe to world.");
+//            return;
+//        }
+//
+//        //Launch the UI:
+////        this.canvas = new BotCanvas(this);
+////        new BotForm(this, canvas);
+//
+//        Random random = new Random();
+//
+//        while (exitTime > System.currentTimeMillis() && running) {
+//
+//            boolean hasHub = false;
+//            for (MPEntityProto value : entities.values()) {
+//                if (value.getBuildingEntity().getBuildingType() == EBuildingType.HUB_EBuildingType) {
+//                    hasHub = true;
+//                    break;
+//                }
+//            }
+//
+//            if (!hasHub) {
+//                //Find position for a hub:
+//                MatrixPosition hubPos = null;
+//                for (MPTerrainCellProto value : terrain.values()) {
+//                    if (value.getType() == CellType.SAND_CellType || value.getType() == CellType.ROCK_CellType || value.getType() == CellType.GRAVEL_CellType) {
+//                        hubPos = value.getPosition().toObject();
+//                        break;
+//                    }
+//                }
+//
+//                if (hubPos != null) {
+////                    System.out.println("Player '" + botName + "' decided to build a Hub.");
+//                    final BuildHubRequest buildRequest = BuildHubRequest.newBuilder()
+//                            .setPosition(hubPos.toProto())
+//                            .setWorldSessionID(worldSession.getId())
+//                            .build();
+//                    lastSendTime = System.currentTimeMillis();
+//                    try {
+//                        Stubs.Actions.getBotBuildHubStub(this).send(buildRequest.toByteArray());
+//                    } catch (WebSocketException | IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            } else {
+////                final int randomMove = random.nextInt(4);
+//                final int randomMove = 0;
+//                switch (randomMove) {
+//                    case 0:
+//
+//                        //Find position for a farm:
+//                        MatrixPosition farmPos = findFarmPosition();
+//
+//                        if (farmPos != null) {
+////                            System.out.println("Player '" + botName + "' decided to build a Farm at " + farmPos.getRow() + "," + farmPos.getCol());
+//                            BuildFarmRequest farmRequest = BuildFarmRequest.newBuilder()
+//                                    .setPosition(farmPos.toProto())
 //                                    .setWorldSessionID(worldSession.getId())
 //                                    .build();
 //                            try {
 //                                lastSendTime = System.currentTimeMillis();
-//                                Stubs.Actions.getBotSellBuildingStub(this).send(sellRequest.toByteArray());
+//                                Stubs.Actions.getBotBuildFarmStub(this).send(farmRequest.toByteArray());
 //                            } catch (WebSocketException | IOException webSocketException) {
 //                                webSocketException.printStackTrace();
 //                            }
 //                        }
 //                        break;
-                }
-            }
+//                    case 1:
+//
+//                        //Find position for a mine:
+//                        MatrixPosition minePos = findMinePosition();
+//
+//                        if (minePos != null) {
+////                            System.out.println("Player '" + botName + "' decided to build a Mine at " + minePos.getRow() + "," + minePos.getCol());
+//                            BuildMineRequest mineRequest = BuildMineRequest.newBuilder()
+//                                    .setPosition(minePos.toProto())
+//                                    .setWorldSessionID(worldSession.getId())
+//                                    .build();
+//                            try {
+//                                lastSendTime = System.currentTimeMillis();
+//                                Stubs.Actions.getBotBuildMineStub(this).send(mineRequest.toByteArray());
+//                            } catch (WebSocketException | IOException webSocketException) {
+//                                webSocketException.printStackTrace();
+//                            }
+//                        }
+//                        break;
+//                    case 2:
+//                        //Find position for a sand pit:
+//                        MatrixPosition sandPos = findSandPitPosition();
+//
+//                        if (sandPos != null) {
+////                            System.out.println("Player '" + botName + "' decided to build a Sand pit at" + sandPos.getRow() + "," + sandPos.getCol());
+//                            BuildSandPitRequest sandPitRequest = BuildSandPitRequest.newBuilder()
+//                                    .setPosition(sandPos.toProto())
+//                                    .setWorldSessionID(worldSession.getId())
+//                                    .build();
+//                            try {
+//                                lastSendTime = System.currentTimeMillis();
+//                                Stubs.Actions.getBotBuildSandPitStub(this).send(sandPitRequest.toByteArray());
+//                            } catch (WebSocketException | IOException webSocketException) {
+//                                webSocketException.printStackTrace();
+//                            }
+//                        }
+//                        break;
+//                    case 3:
+//                        //Find position for a well:
+//                        MatrixPosition wellPos = findWellPosition();
+//
+//                        if (wellPos != null) {
+////                            System.out.println("Player '" + botName + "' decided to build a Well at" + wellPos.getRow() + "," + wellPos.getCol());
+//                            BuildWellRequest wellRequest = BuildWellRequest.newBuilder()
+//                                    .setPosition(wellPos.toProto())
+//                                    .setWorldSessionID(worldSession.getId())
+//                                    .build();
+//                            try {
+//                                lastSendTime = System.currentTimeMillis();
+//                                Stubs.Actions.getBotBuildWellStub(this).send(wellRequest.toByteArray());
+//                            } catch (WebSocketException | IOException webSocketException) {
+//                                webSocketException.printStackTrace();
+//                            }
+//                        }
+//                        break;
+//                    case 4:
+//                        //Find position for a well:
+//                        MatrixPosition hubPos = findHubPosition();
+//
+//                        if (hubPos != null) {
+////                            System.out.println("Player '" + botName + "' decided to build a Hub at" + hubPos.getRow() + "," + hubPos.getCol());
+//                            BuildHubRequest hubRequestB = BuildHubRequest.newBuilder()
+//                                    .setPosition(hubPos.toProto())
+//                                    .setWorldSessionID(worldSession.getId())
+//                                    .build();
+//                            try {
+//                                lastSendTime = System.currentTimeMillis();
+//                                Stubs.Actions.getBotBuildHubStub(this).send(hubRequestB.toByteArray());
+//                            } catch (WebSocketException | IOException webSocketException) {
+//                                webSocketException.printStackTrace();
+//                            }
+//                        }
+//                        break;
+//
+//
+////                        if (!entities.isEmpty()) {
+////                            ArrayList<MPEntityProto> entitiesList = new ArrayList<>(entities.values());
+////                            final int randomEntityIndex = random.nextInt(entitiesList.size());
+////                            Collections.shuffle(entitiesList);
+////                            MPEntityProto selectedEntity = entitiesList.get(randomEntityIndex);
+////                            SellBuildingRequest sellRequest = SellBuildingRequest.newBuilder()
+////                                    .setBuildingID(selectedEntity.getId())
+////                                    .setWorldSessionID(worldSession.getId())
+////                                    .build();
+////                            try {
+////                                lastSendTime = System.currentTimeMillis();
+////                                Stubs.Actions.getBotSellBuildingStub(this).send(sellRequest.toByteArray());
+////                            } catch (WebSocketException | IOException webSocketException) {
+////                                webSocketException.printStackTrace();
+////                            }
+////                        }
+////                        break;
+//                }
+//            }
+//
+//            try {
+//                Thread.sleep(delay);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 
-            try {
-                Thread.sleep(delay);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-        }
+//        }
 
         System.out.println("Player '" + botName + "' stopped");
 

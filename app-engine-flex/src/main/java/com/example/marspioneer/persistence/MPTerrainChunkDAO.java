@@ -37,19 +37,19 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
         identifier.setWorldID(object.getWorldID());
         DBManager.terrainIdentifier.create(identifier);
 
-        new Thread(() -> {
-            Firestorm.create(object, uuid);
+//        new Thread(() -> {
+//            Firestorm.create(object, uuid);
 //            final MPWorld mpWorld = Objectis.get(MPWorld.class, object.getWorldID());
 //            mpWorld.addChunk(object.getId());
 //            Objectis.update(mpWorld);
-        }).start();
+//        }).start();
         return true;
     }
 
     @Override
     public boolean update(MPTerrainChunk object) {
         Objectis.update(object);
-        new Thread(() -> Firestorm.update(object)).start();
+//        new Thread(() -> Firestorm.update(object)).start();
         return true;
     }
 
@@ -57,12 +57,12 @@ public class MPTerrainChunkDAO implements WorldBasedDAO<MPTerrainChunk> {
     public boolean delete(MPTerrainChunk object) {
         Objectis.delete(object);
         //TODO - Use object.getIdentifier() to obtain identifier and delete it.
-        new Thread(() -> {
-            Firestorm.delete(object);
+//        new Thread(() -> {
+//            Firestorm.delete(object);
 //            final MPWorld mpWorld = Objectis.get(MPWorld.class, object.getWorldID());
 //            mpWorld.getChunkIDs().remove(object.getId());
 //            Objectis.update(mpWorld);
-        }).start();
+//        }).start();
         return true;
     }
 

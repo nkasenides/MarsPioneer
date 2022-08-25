@@ -40,16 +40,27 @@ public class GetState {
                 .send();
     }
 
+    static long ingressT;
+
     public void sendAndWait(GetStateRequest request, OnRequestSuccessListener<GetStateResponse> successListener) {
-        BinaryHTTPRequest.create(url)
+        long t = System.currentTimeMillis();
+        BinaryHTTPRequest build = BinaryHTTPRequest.create(url)
                 .onSuccess(response -> {
+                    System.out.println("~~ Client received response at: " + System.currentTimeMillis());
                     final byte[] content = response.getContent();
+
+                    long u = System.currentTimeMillis();
                     final GetStateResponse protoResponse = GetStateResponse.parseFrom(content);
+                    System.out.println("~~ RESPONSE DESERIALIZATION: " + (System.currentTimeMillis() - u));
+
                     successListener.onSuccess(protoResponse);
                 })
                 .putBytes(request.toByteArray())
-                .build()
-                .sendAndWait();
+                .build();
+        System.out.println("~~ REQUEST SERIALIZATION: " + (System.currentTimeMillis() - t));
+        ingressT = System.currentTimeMillis();
+        build.send();
+        System.out.println("~~ Client sent request at: " + System.currentTimeMillis());
     }
 
     public void send(GetStateRequest request, OnRequestSuccessListener<GetStateResponse> successListener) {

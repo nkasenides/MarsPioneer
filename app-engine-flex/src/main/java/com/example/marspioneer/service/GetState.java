@@ -39,14 +39,16 @@ public class GetState implements AthlosService<GetStateRequest, GetStateResponse
             }
 //            System.out.println("Verify world session: " + (System.currentTimeMillis() - t) + "ms");
 
-            t = System.currentTimeMillis();
             //Get the state:
             final MPWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
             final MPPartialStateProto mpPartialStateProto = State.forWorld(worldSession.getWorldID()).getPartialStateSnapshot(worldSession, worldSession.getCameraPosition(), 10);
 //            System.out.println("Retrieve the state: " + (System.currentTimeMillis() - t) + "ms");
 
+            System.out.println("~~ PROCESSING LATENCY: " + (System.currentTimeMillis() - t));
+
             //Response:
-            return GetStateResponse.newBuilder()
+            t = System.currentTimeMillis();
+            GetStateResponse response = GetStateResponse.newBuilder()
                     .setStatus(GetStateResponse.Status.OK)
                     .setMessage("OK")
                     .setResourceSet(
@@ -59,6 +61,10 @@ public class GetState implements AthlosService<GetStateRequest, GetStateResponse
                     )
                     .setPartialState(mpPartialStateProto)
                     .build();
+            System.out.println("~~ RESPONSE FORMATION: " + (System.currentTimeMillis() - t));
+
+            return response;
+
 
         } catch (Exception e) {
             e.printStackTrace();

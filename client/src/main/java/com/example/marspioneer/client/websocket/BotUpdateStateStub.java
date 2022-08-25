@@ -29,8 +29,15 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
 
     @Override
     public void onReceive(byte[] bytes) {
+
+        long latency = System.currentTimeMillis() - bot.getLastSendTime();
+        bot.getStateUpdateLatencies().add(latency);
+        System.out.println("~~ Egress network: " + latency);
+
         try {
+            long t = System.currentTimeMillis();
             UpdateStateResponse response = UpdateStateResponse.parseFrom(bytes);
+            System.out.println("~~ De-serialization: " + (System.currentTimeMillis() - t));
             handleResponse(response);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
@@ -38,8 +45,7 @@ public class BotUpdateStateStub extends BinaryWebSocketClient {
     }
     
     public void handleResponse(UpdateStateResponse response) {
-        long latency = System.currentTimeMillis() - bot.getLastSendTime();
-        bot.getStateUpdateLatencies().add(latency);
+
         if (response.getStatus() == UpdateStateResponse.Status.OK) {
 //            System.out.println("[" + bot.getBotName() + "] State update received.");
 
